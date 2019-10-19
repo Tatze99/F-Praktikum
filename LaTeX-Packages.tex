@@ -1,0 +1,105 @@
+\usepackage[ngerman]{babel}         % Deutsches Sprachpaket
+\usepackage[utf8]{inputenc}         % Eingaben codieren
+\usepackage[T1]{fontenc}            % Umlaute codieren, Silbentrennung
+\usepackage{amsmath, amssymb}       % Mathe
+\usepackage{amsthm,amstext,amsxtra} % Symbole für Mathe
+\usepackage{mathtools}              % \Aboxed Boxen in align
+\usepackage{wrapfig}                % Bilder umfließen
+\usepackage{svg}                    % Vektorgraphiken einbinden
+\usepackage{geometry}               % Papierformat
+\usepackage{tabularx}               % Tabellen
+\usepackage{xcolor,colortbl}        % Farben
+\usepackage{graphicx}               % Für Limes Definition wichtig
+\usepackage{soul}                   % Unterstreichungen
+\usepackage[section]{placeins}      % \Floatbarrier
+\usepackage{wrapfig}                % Bilder umfließen
+\usepackage{enumerate}              % Aufzählungen
+\usepackage{footnote}               % Fußzeilen
+\usepackage{booktabs}               % publication quality tables
+\usepackage[hyphens]{url}           % \url{}
+\usepackage{bm}                     % bold symbols \bm{r}
+\usepackage{dsfont}                 % identity matrix \mathds{1}
+\usepackage{enumitem}               % itemize Umgebungen customizen
+\usepackage{esint}                  % Doppelintegrale
+\usepackage{fancyhdr}               % schöne Kopf- und Fußzeilen
+\usepackage{lmodern}
+\usepackage[labelfont=bf]{subcaption}
+\usepackage[square,numbers,sort&compress]{natbib}
+\usepackage[detect-all,
+            locale=DE,binary-units,
+            exponent-product=\cdot
+            ]{siunitx}              % \SI{12}{\gram}
+%siunitx stellt für Tabellen den Spaltentyp S bereit ==> Ausrichtung an Dezimaltrennzeichen
+\usepackage[position=below,
+            tableposition=top,
+            format=hang,
+            labelfont=it,
+            labelfont=bf
+            ]{caption}              % Settings für Captions
+\usepackage[europeanvoltages,
+            europeancurrents,
+            europeanresistors,
+            americaninductors,
+            europeanports
+            ]{circuitikz}           % Schaltungen
+\usepackage{chngcntr}               % vor hyperref laden!
+  \counterwithin*{equation}{section}
+  \counterwithin*{figure}{section}
+  \counterwithin*{table}{section}
+
+\usepackage[final,
+            pdfauthor={Martin Beyer, Vanessa Huth},
+            pdfsubject={Fortgeschrittenen-Praktikum},
+            pdffitwindow=true,      % resize document window
+            pdftitle={Fortgeschrittenen-Praktikum},
+            bookmarks=true,         % lesezeichen-Liste
+            bookmarksopen=true,     % Lesezeichen geöffnet
+            bookmarksopenlevel=1,
+            bookmarksnumbered=true,
+            colorlinks=true,        % fuer Druckversion auf "false"
+            linkcolor=blue,         % Table of Contents, Footnotes
+            urlcolor=blue,          % fuer eingebunden URLs
+            citecolor=blue,         % Equations, References
+            filecolor=blue,
+            pdfborder={0 0 0},      % keine Rahmen um Links: {0 0 0}
+            ]{hyperref}
+
+
+% Commands
+\renewcommand{\sfdefault}{lmss}     % latin modern sans serif
+\newcommand{\R}{\mathbb{R}}         % Reelle Zahlen
+\newcommand{\N}{\mathbb{N}}         % Natürliche Zahlen
+\newcommand{\C}{\mathbb{C}}         % Komplexe Zahlen
+\newcommand{\de}{\mathrm{\;d}}      % Differential
+\newcommand{\entspricht}{\mathrel{\widehat{=}}}
+
+\DeclareSIUnit{\eV}{\text{eV}}
+\DeclareSIUnit{\voltpeakpeak}{\volt{\textsubscript{pp}}}
+
+% Dokumenteneinstellungen
+\setlength{\parindent}{0px}         % remove indent in new paragraph
+\setlength{\parindent}{0px}         % keine Absätze durch Leerzeilen im Code
+\emergencystretch=1em % Definiert den Leerraum, der innerhalb einer Zeile zusätzlich verteilt werden darf.
+\setlength{\topmargin}{-5mm} % 210mm = 8.2677165in
+\newlength{\mylength}
+\setlength{\mylength}{\paperwidth}
+\addtolength{\mylength}{-2in} % standardmäßig wird den Seitenrändern jeweils noch 1in = 25.4mm hinzuaddiert
+\setlength{\textwidth}{145mm}
+\setlength{\textheight}{230mm}
+\addtolength{\mylength}{-\textwidth}
+\setlength{\oddsidemargin}{10mm}
+\addtolength{\mylength}{-\oddsidemargin}
+\setlength{\evensidemargin}{\mylength}
+\setlength{\marginparwidth}{1.7cm}
+\interfootnotelinepenalty=10000
+
+% Umdefinition von \textcolor ********************************************************
+\makeatletter
+\renewcommand*{\@textcolor}[3]{%
+	\protect\leavevmode
+	\begingroup
+	\color#1{#2}#3%
+	\endgroup
+}
+\makeatother
+% Damit das auch im Mathemodus anwendbar ist und dort z.B. die Leerzeichen nicht wie im Textmodus gesetzt werden.
