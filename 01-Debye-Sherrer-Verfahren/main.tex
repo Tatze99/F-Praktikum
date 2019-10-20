@@ -50,13 +50,13 @@
 
 \section{Aufgabenstellung} \label{sec:Aufgabenstellung}
 \paragraph{Aufgabe 1}$~$\\
-nehmen Sie zwei Diffraktogramme einer polykristallinen kubischen Substanz mit einer Debye\--Scherrer\--Ka\-me\-ra auf, einmal ohne und einmal mit einem geeigneten Absorptionsfilter für die Röntgenspektrallinien von Kupfer. Ordnen Sie die Debye-Sherrer-Ringe beider Aufnahmen der K$\alpha$- und K$\beta$- Linie zu. Identifizieren Sie durch Zuordnung der Gitterkonstanten die von Ihnen untersuchte Substanz.
+ Es sollen zwei Diffraktogramme einer polykristallinen kubischen Substanz mit einer Debye\--Scherrer\--Ka\-me\-ra aufgenommen werden, einmal ohne und einmal mit einem geeigneten Absorptionsfilter für die Röntgenspektrallinien von Kupfer. Anschließend sind die Debye-Sherrer-Ringe beider Aufnahmen den K$\alpha$- und K$\beta$- Linien zuzuordnen. Durch Zuordnung der Gitterkonstanten soll die untersuchte Substanz identifiziert werden. Dafür müssen die Reflexe indiziert werden, systematische Auslöschungen benannt werden und eine ausführliche Fehlerdiskussion der Gitterkonstanten unter Verwendung eines geeigneten Extrapolationsverfahrens durchgeführt werden.
 \paragraph{Aufgabe 2}$~$\\
-Berechnen Sie die maximale Probenabsorption unter Annahme der Festkörperdichte für die Probe. Bei der Benutzung einer Glaskapillare als Probenhalter soll auch der Absorption für die verwendete charakteristische Strahlung berechnet werden. Diskutieren Sie das Ergebnis im Zusammenhang mit den Ergebnissen auf Aufgabe 1.
+Die maximale Probenabsorption soll unter Annahme der Festkörperdichte für die Probe berechnet werden. Bei der Benutzung einer Glaskapillare als Probenhalter soll auch deren Absorption für die verwendete charakteristische Strahlung berechnet werden. Anschließend ist das Ergebnis im Zusammenhang mit den Ergebnissen aus Aufgabe 1 zu diskutieren.
 \paragraph{Aufgabe 3}$~$\\
-Berechnen Sie die Reflexintensitäten und vergleichen Sie diese mit den aus der Filmtransmission ermittelten Intensitätsverhältnissen der Reflexe.
+Eine Berechnung der Reflexintensitäten soll durchgeführt und mit den aus der Filmtransmission ermittelteten Intensitätsverhältnissen verglichen werden.
 \paragraph{Aufgabe 4}$~$\\
-Werten Sie das von Ihnen getestete Röntgen-Analyse-Verfahren nach Debye und Scherrer (als nicht nur rein \glqq historische\grqq{} Methode der Pulverdiffraktometrie).
+Das getestete Röntgen-Analyse-Verfahren nach Debye und Scherrer (als nicht nur rein \glqq historische\grqq{} Methode der Pulverdiffraktometrie) soll gewertet werden..
 
 
 % *********************************************
@@ -64,13 +64,23 @@ Werten Sie das von Ihnen getestete Röntgen-Analyse-Verfahren nach Debye und Sch
 % *********************************************
 \section{Grundlagen} \label{sec:Grundlagen}
 
-% \begin{figure}[htp]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{Bilder/Beispielbild.png}
-%     \caption{Beschreibung der Abbildung}
-%     \label{fig:Abbildung1}
-% \end{figure}\\
-
+\subsection{Röntgenstrahlung}
+Röntgenstrahlen wurden 1895 von \textsc{Wilhelm Conrad Röntgen} entdeckt und stellen einen Teil des elektromagnetischen Spektrums im Bereich von $\lambda = \SI{5}{\pico \metre}\hdots \SI{1}{\nano\metre}$ dar. Sie zeichnen sich durch ihre hohe Photonenenergie und ein großes Durchdringungsvermögen aus. Die hohe Durchdringungsrate lässt sich zur zerstörungsfreien Untersuchung von Stoffen verwenden. Bei der im Versuch verwendeten Methode handelt es sich um eine Feinstrukturuntersuchung, wo beim Durchgang der Röntgenstrahlen durch kristalline Substanzen charakteristische Beugungserscheinungen zu beobachten sind.\\
+Da die Brechzahl in allen Materialien im Röntgenbereich sich kaum von 1 unterscheidet, lassen sich keine optischen Bauelemente wie Prismen oder Linsen verwenden. Stattdessen wird die Braggreflexion an ebenen Kristallen genutzt.\\
+Die Röntgenstrahlung in diesem Versuch wird durch eine Röntgenröhre erzeugt, wo in einem evakuierten Raum mithilfe hoher Spannungen an einer Kathode Elektronen herausgelöst und fokussiert und auf auf eine Anode beschleunigt werden.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Abbildungen/WaterCooledXrayTube.pdf}
+    \caption{Schematischer Aufbau einer Röntgenröhre nach~\cite{Roentgenroehre}. Da beim Aufprall der Elektronen viel Wärme entsteht, muss die Anode mithilfe eines Wasserzuflusses $W_\text{in}$ gekühlt werden.}
+    \label{fig:Roentgenroehre}
+\end{figure}\\
+Beim Aufschlagen auf die Anode werden die Elektronen abgebremst und strahlen Energie in Form von elektromagnetischen Wellen ab. Idealerweise würde die gesamte kinetische Energie in Röntgenstrahlung umgewandelt werden.
+\begin{align}
+  e U = E_\text{kin} = h \cdot \nu_\text{max} = \frac{hc}{\lamda_\text{min}}
+\end{align}
+Allerdings wird ein großer Teil der kinetischen Energie in Wärme umgesetzt, sodass die Anode gekühlt werden muss. Der schematische Aufbau einer Röntgenröhre ist in Abbildung \ref{fig:Roentgenroehre} dargestellt.\\
+Das Emissionsspektrum der Anode wird durch ihr Material und der Beschleunigungsspannung der Röntgenröhre bestimmt und setzt sich aus zwei Komponenten zusammen.\\
+Die erste Komponente wird \glqq{}weiße Röntgenstrahlung\grqq{} genannt und erscheint allein durch das Abbremsen der Elektronen in der Oberflächenschicht des Targets. Die zweite Komponente bildet die charakteristische Röntgenstrahlung, die normalerweise aus zwei Linien besteht. Hier geschehen Übergänge zwischen den inneren Schalen der Atome des Targets. Gewöhnlich sind die Schalen vollständig mit Elektronen besetzt, jedoch können die hochenergetischen, eingeschossenen Elektronen die gebundenen Elektronen herausschlagen und dort freie Energieniveaus erzeugen. In diese können anschließend Elektronen höherer Niveaus unter Photonenemission übergehen. Diese Linien fester Frequenz werden im Spektrum als K$_\alpha$- bzw. als K$_\beta$-Linien bezeichnet. Das 'K' steht für die Schale, die besetzt wird und der Index beschreibt, aus welcher Schale das Elektron kam, welches den Platz besetzt. Für $\alpha$ handelt es sich um die nächstliegende L-Schale.
 % ***** Zwei Bilder nebeneinander *****
 
 % \begin{figure}[htp]
@@ -85,18 +95,18 @@ Werten Sie das von Ihnen getestete Röntgen-Analyse-Verfahren nach Debye und Sch
 % \end{figure}
 
 %***** Tabellen *****
-\begin{table}[ht]
-	\centering
-	\caption{Überschrift der Tabelle}
-	\label{tab:Tabelle1}
-	\begin{tabular}{l c c c}
-		\toprule
-	    text & text & text & text\\
-	 	\midrule
-			text & text & text & text\\
-			text & text & text & text
-	\end{tabular}
-\end{table}
+% \begin{table}[ht]
+% 	\centering
+% 	\caption{Überschrift der Tabelle}
+% 	\label{tab:Tabelle1}
+% 	\begin{tabular}{l c c c}
+% 		\toprule
+% 	    text & text & text & text\\
+% 	 	\midrule
+% 			text & text & text & text\\
+% 			text & text & text & text
+% 	\end{tabular}
+% \end{table}
 
 % *********************************************
 % ***** KAPITEL 3 *****************************
@@ -127,6 +137,8 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 	R. Glocker: \textit{Materialprüfung mit Röntgenstrahlen}. Springer Verlag Berlin Heidelberg New York 1985.
   \bibitem{Kleber}
 	W. Kleber u.a.: \textit{Einführung in die Kristallographie}. Verlag Technik GmbH 2010 (19. Auflage).
+  \bibitem{Roentgenroehre}
+  Url: \url{https://commons.wikimedia.org/wiki/File:WaterCooledXrayTube.svg}, (Stand: 20.10.2019)
 \end{thebibliography}
 
 \end{document}
