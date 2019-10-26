@@ -88,7 +88,33 @@ Damit sich aus dem breiten Spektrum einer Röntgenröhre eine möglichst monochr
 Hierbei bezeichnet $I$ die Intensität nach dem Durchdringen der Schicht der Dicke $d$ mit dem Absorptionskoeffizienten $\mu$. Das Absorptionsspektrum der Elemente weißt eine Kantenstruktur auf. Die $K_\beta$-Strahlung eines Elements der Ordnungszahl $Z$ kann durch den Einsatz eines Absorptionsfilters bestehend aus einem Element mit $Z-1$ eliminiert werden, da sich Absorptionskante und K$_\beta$-Linie überdecken. Das im Versuch verwendete Target ist Kupfer, somit sollte der Absorptionsfilter aus Nickel bestehen.
 
 \subsection{Kristallographie}
+Festkörper lassen sich in verschiedene Klassen einteilen. Ein spezielles Kriterium stellt ihre räumliche Struktur dar. Dabei wird unterschieden zwischen Einkristallen, polykristallinen Festkörpern, amorphen Festkörpern und Flüssigkristallen~\cite{Demtroeder}. Im Folgenden wird sich auf die Einkristalle beschränkt, bei denen die Orte der Atome durch ein periodisches Gitter von Raumpunkten beschreibbar ist. Für ideale Einkristalle erstreckt sich das periodische Gitter über den gesamten Kristall. Dies wird Fernordnung genannt.\\
+Für die analytische Beschreibung des Gitters, wird dem Gitter ein Koordinatensystem zugrunde gelegt. Der Nullpunkt wird in einen beliebigen Gitterpunkt gesetzt und die Ortsvektoren $\bm{a}, \bm{b}, \bm{c}$ zu den drei Nachbarpunkten stellen die Basis des Gitters dar. Die entsprechenden Winkel zwischen den Vektoren werden mit $\alpha, \beta, \gamma$ bezeichnet. Die Beträge der Vektoren $a_0, b_0, c_0$ werden als Gitterkonstanten bezeichnet. Das Parallelipiped, welches sich aus den drei Basisvektoren aufbaut, wird Elementarzelle genannt. Lässt sich das gesamte Gitter, durch Translationen einer Elementarzelle aufbauen, so wird es auch Translationsgitter genannt~\cite{Demtroeder}. Da die Wahl der Elementarzelle nicht eindeutig ist, werden die Achsen des Gitters so gewählt, dass die Translationen möglichst \textit{kurz} sind. Unter dieser Voraussetzung lassen sich alle Einkristalle in sieben verschiedene Achsensysteme einteilen:
+\begin{enumerate}
+  \item Triklin: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha \neq \beta \neq \gamma\neq \alpha$
+  \item Monoklin: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha = \beta = 90^\circ, \gamma\neq 90^\circ$
+  \item Rhombisch: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha = \beta = \gamma = 90^\circ$
+  \item Hexagonal: $a_0 = b_0 \neq c_0, \quad \alpha = \beta = 90^\circ, \gamma = 120^\circ$
+  \item Rhombobedrisch: $a_0 = b_0 = c_0, \quad \alpha = \beta =\gamma \neq 90^\circ$
+  \item Tetragonal: $a_0 = b_0 \neq c_0, \quad \alpha = \beta =\gamma = 90^\circ$
+  \item Kubisch: $a_0 = b_0 = c_0, \quad \alpha = \beta =\gamma =90^\circ$
+\end{enumerate}
+Werden diese Achsensysteme den möglichen Translationsgittern zugrunde gelegt, ergeben sich 14 Elementarzellen oder \textit{\textsc{Bravais}-Gitter}.\\
+Im Rahmen des Versuchs werden nur die Kubischen Gitter relevant sein, woraus folgt, dass nur eine Gitterkonstante ermittelt werden muss.
+\begin{align}
+  a_0 = b_0 = c_0 =: a_0
+\end{align}
 
+\subsubsection{Millersche Indizes und Netzebenen}
+Eine Möglichkeit zur Beschreibung einer Kristallfläche ist ihren Bezug auf ein bestimmtes Achsensystem anzugeben. Durch drei Gitterpunkte wird eine \textit{Netzebene} definiert. Die relative Ordnung wird durch die Schnittpunkte mit den Achsen festgelegt. Haben die Schnittpunkte die Form
+\begin{align}
+  S_1 = m_1 \bm{a} \qquad S_2 = m_2 \bm{b} \qquad S_3 = m_3 \bm{c},
+\end{align}
+dann bilden die reziproken Werte multipliziert mit einer kleinsten ganzen Zahl $p$, welche die Kehrwerte zu teilerfremden ganzen Zahlen macht, die \textit{\textsc{Miller}'schen Indizes}.
+\begin{align}
+  h = \frac{p}{m_1} \qquad k = \frac{p}{m_2} \qquad l = \frac{p}{m_3}
+\end{align}
+Jedes Tripel (hkl) definiert eine Schar paralleler Netzebenen. Die Richtung der Ebenen wird durch die Ebenennormale $\bm{n} = (h,k,l)$ bestimmt.
 % ***** Zwei Bilder nebeneinander *****
 
 % \begin{figure}[htp]
