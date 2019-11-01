@@ -1,7 +1,6 @@
 \documentclass[a4paper,twoside,final]{article}
 %----Eingebundene Bibliotheken-----
 \input{../LaTeX-Packages.tex}
-
 \begin{document}
 \setlength{\marginparsep}{2em}
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
@@ -50,7 +49,7 @@
 
 \section{Aufgabenstellung} \label{sec:Aufgabenstellung}
 \paragraph{Aufgabe 1}$~$\\
- Es sollen zwei Diffraktogramme einer polykristallinen kubischen Substanz mit einer Debye\--Scherrer\--Ka\-me\-ra aufgenommen werden, einmal ohne und einmal mit einem geeigneten Absorptionsfilter für die Röntgenspektrallinien von Kupfer. Anschließend sind die Debye-Sherrer-Ringe beider Aufnahmen den K$\alpha$- und K$\beta$- Linien zuzuordnen. Durch Zuordnung der Gitterkonstanten soll die untersuchte Substanz identifiziert werden. Dafür müssen die Reflexe indiziert werden, systematische Auslöschungen benannt werden und eine ausführliche Fehlerdiskussion der Gitterkonstanten unter Verwendung eines geeigneten Extrapolationsverfahrens durchgeführt werden.
+ Es sollen zwei Diffraktogramme einer polykristallinen kubischen Substanz mit einer Debye\--Scherrer\--Ka\-me\-ra aufgenommen werden, einmal ohne und einmal mit einem geeigneten Absorptionsfilter für die Röntgenspektrallinien von Kupfer. Anschließend sind die Debye-Sherrer-Ringe beider Aufnahmen den K$\alpha$- und K$\beta$- Linien zuzuordnen. Durch Zuordnung der Gitterkonstanten soll die untersuchte Substanz identifiziert werden. Dafür müssen die Reflexe indiziert, systematische Auslöschungen benannt und eine ausführliche Fehlerdiskussion der Gitterkonstanten unter Verwendung eines geeigneten Extrapolationsverfahrens durchgeführt werden.
 \paragraph{Aufgabe 2}$~$\\
 Die maximale Probenabsorption soll unter Annahme der Festkörperdichte für die Probe berechnet werden. Bei der Benutzung einer Glaskapillare als Probenhalter soll auch deren Absorption für die verwendete charakteristische Strahlung berechnet werden. Anschließend ist das Ergebnis im Zusammenhang mit den Ergebnissen aus Aufgabe 1 zu diskutieren.
 \paragraph{Aufgabe 3}$~$\\
@@ -78,27 +77,54 @@ Beim Aufschlagen auf die Anode werden die Elektronen abgebremst und strahlen Ene
 \begin{align}
   e U = E_\text{kin} = h \cdot \nu_\text{max} = \frac{hc}{\lambda_\text{min}}
 \end{align}
-Allerdings wird ein großer Teil der kinetischen Energie in Wärme umgesetzt, sodass die Anode gekühlt werden muss. Der schematische Aufbau einer Röntgenröhre ist in Abbildung \ref{fig:Roentgenroehre} dargestellt.\\
+Allerdings wird ein großer Teil der kinetischen Energie in Wärme umgesetzt, sodass die Anode gekühlt werden muss. Der schematische Aufbau einer Röntgenröhre ist in Abbildung~\ref{fig:Roentgenroehre} dargestellt.\\
 Das Emissionsspektrum der Anode wird durch ihr Material und der Beschleunigungsspannung der Röntgenröhre bestimmt und setzt sich aus zwei Komponenten zusammen.\\
-Die erste Komponente wird \glqq{}weiße Röntgenstrahlung\grqq{} genannt und erscheint allein durch das Abbremsen der Elektronen in der Oberflächenschicht des Targets. Die zweite Komponente bildet die charakteristische Röntgenstrahlung, die normalerweise aus zwei Linien besteht. Hier geschehen Übergänge zwischen den inneren Schalen der Atome des Targets. Gewöhnlich sind die Schalen vollständig mit Elektronen besetzt, jedoch können die hochenergetischen, eingeschossenen Elektronen die gebundenen Elektronen herausschlagen und dort freie Energieniveaus erzeugen. In diese können anschließend Elektronen höherer Niveaus unter Photonenemission übergehen. Diese Linien fester Frequenz werden im Spektrum als K$_\alpha$- bzw. als K$_\beta$-Linien bezeichnet. Das 'K' steht für die Schale, die besetzt wird und der Index beschreibt, aus welcher Schale das Elektron kam, welches den Platz besetzt. Für $\alpha$ handelt es sich um die nächstliegende L-Schale.\\
+Die erste Komponente wird \glqq{}weiße Röntgenstrahlung\grqq{} genannt und erscheint allein durch das Abbremsen der Elektronen in der Oberflächenschicht des Targets. Die zweite Komponente bildet die charakteristische Röntgenstrahlung, die normalerweise aus zwei Linien besteht. Hier geschehen Übergänge zwischen den inneren Schalen der Atome des Targets. Gewöhnlich sind die Schalen vollständig mit Elektronen besetzt, jedoch können die hochenergetischen, eingeschossenen Elektronen die gebundenen Elektronen herausschlagen und dort freie Energieniveaus erzeugen. In diese können anschließend Elektronen höherer Niveaus unter Photonenemission übergehen. Diese Linien fester Frequenz werden im Spektrum als K$_\alpha$- bzw. als K$_\beta$-Linien bezeichnet (siehe Abbildung~\ref{fig:Roentgenspektrum}). Das 'K' steht für die Schale, die besetzt wird und der Index beschreibt, aus welcher Schale das Elektron kam, welches den Platz besetzt. Für $\alpha$ handelt es sich um die nächstliegende L-Schale.\vspace{-5mm}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Abbildungen/Roentgenspektrum.pdf}
+    \caption{Brems- und charakteristisches Spektrum von Röntgenröhren mit verschiedenem Anodenmaterial. Bei der größten Emissionslinie handelt es sich um die K$_\alpha$-Linien. Bei $\lambda =\SI{0,21}{\nano\metre}$ befinden sich die K$_\beta$-Linien.~\cite[S.361]{Kleber}}
+    \label{fig:Roentgenspektrum}
+\end{figure}\\
 Damit sich aus dem breiten Spektrum einer Röntgenröhre eine möglichst monochromatische Linie ergibt, wird meist ein Filter verwendet, um die weiße Bremssstrahlung und höhere charakteristische Linien wie K$_\beta$ auszublenden. Hierbei wird ausgenutzt, dass bei dem Durchgang durch ein Medium die Röntgenstrahlung zum Teil absorbiert nach einem Exponentialgesetz absorbiert wird.
 \begin{align}
   I = I_0 \exp(-\mu d)
 \end{align}
-Hierbei bezeichnet $I$ die Intensität nach dem Durchdringen der Schicht der Dicke $d$ mit dem Absorptionskoeffizienten $\mu$. Das Absorptionsspektrum der Elemente weißt eine Kantenstruktur auf. Die $K_\beta$-Strahlung eines Elements der Ordnungszahl $Z$ kann durch den Einsatz eines Absorptionsfilters bestehend aus einem Element mit $Z-1$ eliminiert werden, da sich Absorptionskante und K$_\beta$-Linie überdecken. Das im Versuch verwendete Target ist Kupfer, somit sollte der Absorptionsfilter aus Nickel bestehen.
+Hierbei bezeichnet $I$ die Intensität nach dem Durchdringen der Schicht der Dicke $d$ mit dem Absorptionskoeffizienten $\mu$. Das Absorptionsspektrum der Elemente weißt eine Kantenstruktur auf. Die $K_\beta$-Strahlung eines Elements der Ordnungszahl $Z$ kann durch den Einsatz eines Absorptionsfilters bestehend aus einem Element mit $Z-1$ eliminiert werden, da sich Absorptionskante und K$_\beta$-Linie überdecken. Das im Versuch verwendete Target ist Kupfer, weshalb sich ein Absorptionsfilter aus Nickel anbietet.
 
 \subsection{Kristallographie}
 Festkörper lassen sich in verschiedene Klassen einteilen. Ein spezielles Kriterium stellt ihre räumliche Struktur dar. Dabei wird unterschieden zwischen Einkristallen, polykristallinen Festkörpern, amorphen Festkörpern und Flüssigkristallen~\cite{Demtroeder}. Im Folgenden wird sich auf die Einkristalle beschränkt, bei denen die Orte der Atome durch ein periodisches Gitter von Raumpunkten beschreibbar ist. Für ideale Einkristalle erstreckt sich das periodische Gitter über den gesamten Kristall. Dies wird Fernordnung genannt.\\
-Für die analytische Beschreibung des Gitters, wird dem Gitter ein Koordinatensystem zugrunde gelegt. Der Nullpunkt wird in einen beliebigen Gitterpunkt gesetzt und die Ortsvektoren $\bm{a}, \bm{b}, \bm{c}$ zu den drei Nachbarpunkten stellen die Basis des Gitters dar. Die Beträge der Vektoren $a_0, b_0, c_0$ und die entsprechenden Winkel zwischen den Vektoren $\alpha, \beta, \gamma$ werden als Gitterkonstanten bezeichnet. Das Parallelipiped, welches sich aus den drei Basisvektoren aufbaut, wird Elementarzelle genannt. Lässt sich das gesamte Gitter, durch Translationen einer Elementarzelle aufbauen, so wird es auch Translationsgitter genannt~\cite{Demtroeder}. Da die Wahl der Elementarzelle nicht eindeutig ist, werden die Achsen des Gitters so gewählt, dass die Translationen möglichst \textit{kurz} sind. Unter dieser Voraussetzung lassen sich alle Einkristalle in sieben verschiedene Achsensysteme einteilen:
-\begin{enumerate}
-  \item Triklin: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha \neq \beta \neq \gamma\neq \alpha$
-  \item Monoklin: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha = \beta = 90^\circ, \gamma\neq 90^\circ$
-  \item Rhombisch: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha = \beta = \gamma = 90^\circ$
-  \item Hexagonal: $a_0 = b_0 \neq c_0, \quad \alpha = \beta = 90^\circ, \gamma = 120^\circ$
-  \item Rhombobedrisch: $a_0 = b_0 = c_0, \quad \alpha = \beta =\gamma \neq 90^\circ$
-  \item Tetragonal: $a_0 = b_0 \neq c_0, \quad \alpha = \beta =\gamma = 90^\circ$
-  \item Kubisch: $a_0 = b_0 = c_0, \quad \alpha = \beta =\gamma =90^\circ$
-\end{enumerate}
+Für die analytische Beschreibung wird dem Gitter ein Koordinatensystem zugrunde gelegt. Der Nullpunkt wird in einen beliebigen Gitterpunkt gesetzt und die Ortsvektoren $\bm{a}, \bm{b}, \bm{c}$ zu den drei Nachbarpunkten stellen die Basis des Gitters dar. Die Beträge der Vektoren $a_0, b_0, c_0$ und die entsprechenden Winkel zwischen den Vektoren $\alpha, \beta, \gamma$ werden als Gitterkonstanten bezeichnet. Das Parallelipiped, welches sich aus den drei Basisvektoren aufbaut, wird Elementarzelle genannt. Lässt sich das gesamte Gitter, durch Translationen einer Elementarzelle aufbauen,
+\begin{align}
+  \bm{R} = \sum_{i=1}^3 n_i \cdot \bm{a}_i \qquad \text{mit}\quad n_i \in \mathbb{Z}
+\end{align}
+so wird es auch Translationsgitter genannt~\cite{Demtroeder}. Da die Wahl der Elementarzelle nicht eindeutig ist, werden die Achsen des Gitters so gewählt, dass die Translationen möglichst \textit{kurz} sind. Unter dieser Voraussetzung lassen sich alle Einkristalle in sieben verschiedene Achsensysteme einteilen:
+\begin{table}[ht]
+	\centering
+	\caption{Einteilung der Einkristalle in Achsensystem nach~\cite{Kleber}.}
+	\label{tab:Achsensysteme}
+	\begin{tabular}{l l l l}
+		\toprule
+	   Gitterart & Gittervektoren & Gitterwinkel\\
+	 	\midrule
+			Triklin & $a_0 \neq b_0 \neq c_0 \neq a_0$ & $\alpha \neq \beta \neq \gamma\neq \alpha$\\
+			Monoklin & $a_0 \neq b_0 \neq c_0 \neq a_0$ & $\alpha = \beta = 90^\circ, \gamma\neq 90^\circ$\\
+      Rhombisch & $a_0 \neq b_0 \neq c_0 \neq a_0$ & $\alpha = \beta =\gamma =90^\circ$\\
+      Hexagonal & $a_0 = b_0 \neq c_0$ & $\alpha = \beta = 90^\circ, \gamma = 120^\circ$\\
+      Rhombobedrisch & $a_0 = b_0 = c_0$ & $\alpha = \beta =\gamma \neq 90^\circ$\\
+      Tetragonal & $a_0 = b_0 \neq c_0$ & $\alpha = \beta =\gamma =90^\circ$\\
+      Kubisch & $a_0 = b_0 = c_0$ & $\alpha = \beta =\gamma =90^\circ$\\
+	\end{tabular}
+\end{table}\\
+% \begin{enumerate}
+%   \item Triklin: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha \neq \beta \neq \gamma\neq \alpha$
+%   \item Monoklin: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha = \beta = 90^\circ, \gamma\neq 90^\circ$
+%   \item Rhombisch: $a_0 \neq b_0 \neq c_0 \neq a_0, \quad \alpha = \beta = \gamma = 90^\circ$
+%   \item Hexagonal: $a_0 = b_0 \neq c_0, \quad \alpha = \beta = 90^\circ, \gamma = 120^\circ$
+%   \item Rhombobedrisch: $a_0 = b_0 = c_0, \quad \alpha = \beta =\gamma \neq 90^\circ$
+%   \item Tetragonal: $a_0 = b_0 \neq c_0, \quad \alpha = \beta =\gamma = 90^\circ$
+%   \item Kubisch: $a_0 = b_0 = c_0, \quad \alpha = \beta =\gamma =90^\circ$
+% \end{enumerate}
 Werden diese Achsensysteme den möglichen Translationsgittern zugrunde gelegt, ergeben sich 14 Elementarzellen oder \textit{\textsc{Bravais}-Gitter}.\\
 Im Rahmen des Versuchs werden nur die Kubischen Gitter betrachtet, woraus folgt, dass nur eine Gitterkonstante ermittelt werden muss.
 \begin{align}
@@ -115,6 +141,47 @@ dann bilden die reziproken Werte multipliziert mit einer kleinsten ganzen Zahl $
   h = \frac{p}{m_1} \qquad k = \frac{p}{m_2} \qquad l = \frac{p}{m_3}
 \end{align}
 Jedes Tripel (hkl) definiert eine Schar paralleler Netzebenen. Die Richtung der Ebenen wird durch die Ebenennormale $\bm{n} = (h,k,l)$ bestimmt.
+
+\subsubsection{Laue-Gleichungen und Bragg'sche Bedingung}
+Treffen Röntgenstrahlen auf ein Elektron auf, wird dieses in Schwingung versetzt und oszilliert in Phase mit der Röntgenwelle und stellt ebenso eine Quelle von Kugelwellen dar, die miteinander interferieren. Wird ein Atom von der Röntgenwelle getroffen, so streut das gesamte Elektronen-Ensemble.\\
+Die Beugung an einem Kristallgitter kann analog zur Begung an einem eindimensionalen Punktgitter betrachtet werden. Für einen Einfallswinkel $\varphi_0$ paralleler Röntgenstrahlen auf das Gitter, die unter dem Winkel $\varphi$ gebeugt wird ergibt sich aus der Forderung für konstruktiver Interferenz bei einem Gangunterschied von einem Vielfachen der Wellenlänge folgende Bedingung
+\begin{align}
+  a_0 (\cos(\varphi) - \cos(\varphi_0)) = h\,\lambda.\label{eqn:Laue1}
+\end{align}
+Da sich die Elementarzelle aus drei Punktgittern entlang der gewählten Koordinatenachsen aufbaut, ergeben sich aus \eqref{eqn:Laue1} die \textit{\textsc{Laue}-Gleichungen}
+\begin{align}\label{eqn:Laue2}
+  a_0 (\cos(\varphi_a) - \cos(\varphi_{a0})) &= h\,\lambda\notag\\
+  b_0 (\cos(\varphi_b) - \cos(\varphi_{b0})) &= k\,\lambda\\
+  c_0 (\cos(\varphi_c) - \cos(\varphi_{c0})) &= l\,\lambda\notag.
+\end{align}
+Die \textsc{Laue}-Indizes $(hkl)$ stellen dabei die mit der Beugungsordnung $n$ multiplizierten \textsc{Miller}-Indizes dar.
+Eine zu den \textsc{Laue}-Gleichung äquivalente Bedingung ergibt sich, wenn die Beugung der Röntgenstrahlen als eine Reflexion an den Netzebenen des Gitters gedeutet wird.  Dies führt zur \textit{Bragg-Bedingung}
+\begin{align}
+  n\cdot \lambda = 2d\cdot \sin(\vartheta),
+\end{align}
+wobei $\theta$ den Einfalls- und Reflexionswinkel an der Netzebenenschar beschreibt (siehe Abbildung~\ref{fig:Roentgenbeugung}).
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Abbildungen/Roentgenbeugung.pdf}
+    \caption{Beugung eines Röntgenstrahlbündels an einer Netzebenenschar mit Abstand $d_{hkl}$.~\cite[S.367]{Kleber}}
+    \label{fig:Roentgenbeugung}
+\end{figure}\\
+Der Abstand $d$ einer Netzebenschar parallel zum Normalenvektor $\bm{n}=(h,k,l)$ ist abhängig von den Laue-Indizes und den Dimensionen der Elementarzelle und nimmt folgende Form an:
+\begin{align}
+  d_{hkl} = \frac{1}{\sqrt{\left(\frac{h}{a_0}\right)^2+\left(\frac{k}{b_0}\right)^2+\left(\frac{l}{c_0}\right)^2}}\label{eqn:Ebenabstand}
+\end{align}
+Für die im Versuch betrachteten kubischen Kristallgitter vereinfacht sich \eqref{eqn:Ebenabstand} zu
+\begin{align}
+  d_{hkl} = \frac{a_0}{\sqrt{h^2+k^2+l^2}}
+\end{align}
+
+\subsection{Das Debye-Scherrer Verfahren}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Abbildungen/Debye-Sherrer-Kamera.pdf}
+    \caption{Strahlenverlauf beim Debye-Scherrer-Verfahren.~\cite[S.375]{Kleber}}
+    \label{fig:Debye-Kamera}
+\end{figure}\\
 % ***** Zwei Bilder nebeneinander *****
 
 % \begin{figure}[htp]
@@ -178,9 +245,9 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 	\bibitem{Glockner}
 	R. Glocker: \textit{Materialprüfung mit Röntgenstrahlen}. Springer Verlag Berlin Heidelberg New York 1985.
   \bibitem{Kleber}
-	W. Kleber u.a.: \textit{Einführung in die Kristallographie}. Verlag Technik GmbH 2010 (19. Auflage).
+	W. Kleber u.a.: \textit{Einführung in die Kristallographie}. Oldenbourg Wissenschaftsverlage 2010 (19. Auflage).
   \bibitem{Roentgenroehre}
-  Url: \url{https://commons.wikimedia.org/wiki/File:WaterCooledXrayTube.svg}, (Stand: 20.10.2019)
+  Aufbau einer Röntgenröhre: \url{wikimedia.org/wiki/File:WaterCooledXrayTube.svg}. Stand: 20.10.2019
 \end{thebibliography}
 
 \end{document}
