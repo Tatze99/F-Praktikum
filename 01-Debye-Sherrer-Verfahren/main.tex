@@ -181,8 +181,7 @@ Für die im Versuch betrachteten kubischen Kristallgitter vereinfacht sich \eqre
     \includegraphics[width=0.3\textwidth]{Abbildungen/Debye-Sherrer-Kamera.pdf}
     \caption{Strahlenverlauf beim Debye-Scherrer-Verfahren.~\cite[S.375]{Kleber}}
     \label{fig:Debye-Kamera}
-\end{figure}\\
-
+\end{figure}
 % *********************************************
 % ***** KAPITEL 3 *****************************
 % *********************************************
@@ -208,7 +207,7 @@ Zuerst wurde ein kristallines Salz untersucht, indem die Beugungsringe auf dem R
 \begin{figure}[htp]
     \centering
         \includegraphics[width=0.9\textwidth]{Abbildungen/Roentgenfilm_mit_Filter.jpg}
-    \caption{Eingescannter Roentgenfilm der Aufnahme mit Verwendung eines Nickelfilters und einer Belichtungszeit von \SI{30}{\minute}.}
+    \caption{Eingescannter Röntgenfilm der Aufnahme mit Verwendung eines Nickelfilters und einer Belichtungszeit von \SI{30}{\minute}.}
     \label{fig:Film_mitFilter}
 \end{figure}\\
 Die deutlich erkennbaren Streifen entstanden wahrscheinlich durch Belichtung der Filme mit normalen Licht, als sich ein weiterer Filmstreifen schräg über dem Röntgenfilm befand. Dieser Streifen hat jedoch keinen Einfluss auf das Ausmessen der Beugungsringe.\\
@@ -223,49 +222,132 @@ Aufgrund der großen Anzahl an Beugungsringen erfolgte die Bestimmung des Fehler
 \end{align}
 Zur Bestimmung der Gitterkonstanten wird die \textsc{Bragg}-Bedingung~\eqref{eqn:Bragg} benötigt. Mithilfe von \eqref{eqn:Abstand_kubisch} ergibt sich folgende Gleichung
 \begin{align}
-  \sin^2(\vartheta) &= \frac{\lambda^2}{4d^2}\nonumber\\
-  &\overset{\eqref{eqn:Abstand_kubisch}}{=} \frac{\lambda^2}{4 a_0^2}\cdot (h^2+k^2+l^2).
+  \sin^2(\vartheta) &= \frac{\lambda^2}{4d^2} \overset{\eqref{eqn:Abstand_kubisch}}{=} \frac{\lambda^2}{4 a_0^2}\cdot (h^2+k^2+l^2).
 \end{align}
-Der Vorfaktor ist für eine gegebene Wellenlänge $\lambda$ konstant und wird als $Q :=\frac{\lambda^2}{4 a_0^2}$ definiert. Die Messergebnisse dazu zeigt Tabelle~\ref{tab:Q_Paramter}.
-
+Der Vorfaktor ist für eine gegebene Wellenlänge $\lambda$ konstant und wird als
+\begin{align}
+  Q :=\frac{\lambda^2}{4 a_0^2} = \frac{\sin^2(\vartheta)}{h^2 + k^2+l^2}\label{eqn:Q_Parameter}
+\end{align} definiert. Die Messergebnisse dazu zeigt Tabelle~\ref{tab:Q_Paramter}.
 \begin{table}[ht]
 	\centering
-	\caption{Durchmesser $s$ der Beugungsringe und daraus berechnete Beugungswinkel $\vartheta$}
+	\caption{Durchmesser $s$ der Beugungsringe und daraus berechnete Beugungswinkel $\vartheta$. Mithilfe der Beugungswinkel lässt sich durch Indizierung $Q$ durch Ausklammern der ganzen Zahl $n = h^2 +k^2 +l^2$}
 	\label{tab:Q_Paramter}
-	\begin{tabular}{l c c c c | c c c}
+	\begin{tabular}{l c c c c c | c c c c}
 		\toprule
-      Nr. & $s [\text{inch}]$ & $\vartheta [\si{\degree}]$ & $\Delta \vartheta [\si{\degree}]$ & $\sin^2 \vartheta $ & $Q$ & $(hkl)$ & $a_0 [\si{\textup{\AA}}]$\\
+      Nr. & $s [\text{inch}]$ & Intensität & $\vartheta [\si{\degree}]$ & $\Delta \vartheta [\si{\degree}]$ & $\sin^2 \vartheta $ & $Q$ & $(hkl)$ & $n$ & $a_0 [\si{\textup{\AA}}]$\\
     \midrule
-    1  & 0,99 & 12,60 & 0,30 & 0,0476 &         &     &       \\
-    2  & 1,09 & 13,90 & 0,56 & 0,0577 & 0,02884 & 110 & 4,538 \\
-    3  & 1,55 & 19,76 & 0,33 & 0,1143 & 0,02858 & 200 & 4,559 \\
-    4  & 1,59 & 20,27 & 0,33 & 0,1201 &         &     &       \\
-    5  & 1,91 & 24,35 & 0,34 & 0,1700 & 0,02834 & 211 & 4,579 \\
-    6  & 1,96 & 24,99 & 0,35 & 0,1785 &         & 211 &       \\
-    7  & 2,23 & 28,43 & 0,36 & 0,2267 & 0,02834 & 220 & 4,579 \\
-    8  & 2,30 & 29,33 & 0,36 & 0,2399 &         &     &       \\
-    9  & 2,52 & 32,13 & 0,37 & 0,2829 & 0,02829 & 310 & 4,583 \\
-    10 & 2,59 & 33,02 & 0,37 & 0,2970 &         &     &       \\
-    11 & 2,80 & 35,70 & 0,38 & 0,3405 & 0,02838 & 222 & 4,576 \\
-    12 & 2,87 & 36,59 & 0,39 & 0,3554 &         &     &       \\
-    13 & 3,05 & 38,89 & 0,40 & 0,3941 &         &     &       \\
-    14 & 3,21 & 40,91 & 0,40 & 0,4288 & 0,02859 &     & 4,559 \\
-    15 & 3,59 & 45,79 & 0,77 & 0,5139 & 0,02855 & 330 & 4,562 \\
-    16 & 3,71 & 47,32 & 0,77 & 0,5405 & 0,02845 & 331 & 4,570 \\
-    17 & 3,85 & 49,11 & 0,78 & 0,5715 & 0,02857 & 420 & 4,560 \\
-    18 & 3,99 & 50,89 & 0,79 & 0,6021 & 0,02867 & 421 & 4,552 \\
-    19 & 4,11 & 52,42 & 0,79 & 0,6281 & 0,02855 & 332 & 4,562 \\
-    20 & 4,29 & 54,68 & 0,78 & 0,6658 &         &     &       \\
-    21 & 4,41 & 56,18 & 0,81 & 0,6901 & 0,02876 & 422 & 4,545 \\
-    22 & 4,68 & 59,65 & 0,80 & 0,7448 & 0,02864 & 431 & 4,554 \\
-    23 & 4,87 & 62,08 & 0,94 & 0,7807 &         &     &       \\
-    24 & 5,22 & 66,54 & 0,95 & 0,8415 &         &     &       \\
-    25 & 5,31 & 67,69 & 0,96 & 0,8559 & 0,02853 & 521 & 4,563 \\
-    26 & 6,25 & 79,67 & 0,87 & 0,9679 & 0,02847 & 433 & 4,564 \\
-    27 & 6,31 & 80,44 & 0,87 & 0,9724 & 0,02860 & 530 & 4,566
+1  & 0,99 & hell      & 12,60 & 0,30 & 0,0476 &         &     &    &       \\
+2  & 1,09 & dunkel    & 13,90 & 0,56 & 0,0577 & 0,02884 & 110 & 2  & 4,538 \\
+3  & 1,55 & hell      & 19,76 & 0,33 & 0,1143 & 0,02858 & 200 & 4  & 4,559 \\
+4  & 1,59 & dunkel    & 20,27 & 0,33 & 0,1201 &         &     &    &       \\
+5  & 1,91 & dunkel    & 24,35 & 0,34 & 0,1700 & 0,02834 & 211 & 6  & 4,579 \\
+6  & 1,96 & hell      & 24,99 & 0,35 & 0,1785 &         &     &    &       \\
+7  & 2,23 & hell      & 28,43 & 0,36 & 0,2267 & 0,02834 & 220 & 8  & 4,579 \\
+8  & 2,30 & hell      & 29,33 & 0,36 & 0,2399 &         &     &    &       \\
+9  & 2,52 & hell      & 32,13 & 0,37 & 0,2829 & 0,02829 & 310 & 10 & 4,583 \\
+10 & 2,59 & hell      & 33,02 & 0,37 & 0,2970 &         &     &    &       \\
+11 & 2,80 & sehr hell & 35,70 & 0,38 & 0,3405 & 0,02838 & 222 & 12 & 4,576 \\
+12 & 2,87 & hell      & 36,59 & 0,39 & 0,3554 &         &     &    &       \\
+13 & 3,05 & hell      & 38,89 & 0,40 & 0,3941 &         &     &    &       \\
+14 & 3,21 & hell      & 40,91 & 0,40 & 0,4288 &         &     &    &       \\
+15 & 3,59 & hell      & 45,79 & 0,77 & 0,5139 & 0,02855 & 330 & 18 & 4,562 \\
+16 & 3,71 & hell      & 47,32 & 0,77 & 0,5405 & 0,02845 & 331 & 19 & 4,570 \\
+17 & 3,85 & hell      & 49,11 & 0,78 & 0,5715 & 0,02857 & 420 & 20 & 4,560 \\
+18 & 3,99 & hell      & 50,89 & 0,79 & 0,6021 & 0,02867 & 421 & 21 & 4,552 \\
+19 & 4,11 & hell      & 52,42 & 0,79 & 0,6281 & 0,02855 & 332 & 22 & 4,562 \\
+20 & 4,29 & hell      & 54,68 & 0,78 & 0,6658 &         &     &    &       \\
+21 & 4,41 & hell      & 56,18 & 0,81 & 0,6901 & 0,02876 & 422 & 24 & 4,545 \\
+22 & 4,68 & hell      & 59,65 & 0,80 & 0,7448 & 0,02864 & 431 & 26 & 4,554 \\
+23 & 4,87 & hell      & 62,08 & 0,94 & 0,7807 &         &     &    &       \\
+24 & 5,22 & hell      & 66,54 & 0,95 & 0,8415 &         &     &    &       \\
+25 & 5,31 & hell      & 67,69 & 0,96 & 0,8559 & 0,02853 & 521 & 30 & 4,563 \\
+26 & 6,25 & dunkel    & 79,67 & 0,87 & 0,9679 & 0,02847 & 433 & 34 & 4,564 \\
+27 & 6,31 & hell      & 80,44 & 0,87 & 0,9724 & 0,02860 & 530 & 34 & 4,566
 	\end{tabular}
-\end{table}
-
+\end{table}\\
+Zur Bestimmung der Konstanten $Q$ muss eine Indizierung der Reflexe durchgeführt werden. Dafür wird jeder Term von $\sin^2 \vartheta $ durch eine ganze Zahl $n = h^2 + k^2 + l^2$ geteilt, sodass das entsprechende Ergebnis für alle Messwerte eine Konstante ist. Dies wurde für alle gemessenen Reflexe durchgeführt und dabei festgestellt, dass einige Winkel nah beeinander liegen und die Indizierung der beiden Reflexe mit einer einzigen Konstanten $Q$ nicht möglich ist. Die Reflexe unterschieden sich auch nicht speziell durch ihre Intensität von den restlichen Ergebnissen, weshalb Reflexe, die durch die $K_\beta$-Linie des Röntgenspektrums verursacht werden, dafür ausgeschlossen werden können. Es wird davon ausgegangen, dass bei den Werten, wo keine Indizierung möglich war, Messfehler auftraten. Beispielsweise können Reflexe durch die Beugung der Röntgenstrahlen am Messing der Blendenvorrichtung entstehen.
+\paragraph{Auslöschungsregeln} Für die Bestimmung der Gitterstruktur wird untersucht, welche Reflexe für bestimmte Kristallgitterarten auftreten können. Dies wird durch die \textit{Auslöschungsregeln} beschrieben. Für Raumzentrierte Gitter muss die Summe der Indizes $(hkl)$ eine gerade Zahl sein. Bei Raumzentrierten Gittern muss jeweils die Summe zweier Indizes gerade sein. Da für kubisch primitive Gitter nur ein Atom pro Elementarzelle vorhanden ist, sind alle möglichen Kombinationen von $(hkl)$ möglich. Dies lässt sich zusammenfassen zu:
+\begin{align}
+  \text{Innenzentriert:} & \qquad h + k +l = 2n\nonumber\\
+  \text{Raumzentriert:}  & \qquad h, k, l \text{ alle gerade oder ungerade}\\
+  \text{Primitiv:} & \qquad h, k, l \text{ beliebig}\nonumber
+\end{align}
+Werden nun also die möglichen Kombinationen von $(hkl)$ den einzelnen Gitterstrukturen zugeordnet, ergibt sich die in Tabelle \ref{tab:Indizierung} gezeigte Übersicht.
+\begin{table}[ht]
+	\centering
+	\caption{Darstellung der möglichen $(hkl)$ Kombinationen für verschiedene Gitterarten. Es gilt $n = h^2+k^2+l^2$.}
+	\label{tab:Indizierung}
+	\begin{tabular}{c c c l c c c l c c c l}
+		\toprule
+      \multicolumn{4}{c}{Primitiv} & \multicolumn{4}{c}{Flächenzentriert} & \multicolumn{4}{c}{Raumzentriert}\\
+      \cmidrule(lr){1-4}\cmidrule(lr){5-8}\cmidrule(lr){9-12}
+      h & k & l & n & h & k & l & n & h & k & l & n \\
+      \midrule
+      1 & 0 & 0 & 1   & 1 & 1 & 1 & 3   & 1 & 1 & 0 & 2   \\
+      1 & 1 & 0 & 2   & 2 & 0 & 0 & 4   & 2 & 0 & 0 & 4   \\
+      1 & 1 & 1 & 3   & 2 & 2 & 0 & 8   & 2 & 1 & 1 & 6   \\
+      2 & 0 & 0 & 4   & 3 & 1 & 1 & 11  & 2 & 2 & 0 & 8   \\
+      2 & 1 & 0 & 5   & 2 & 2 & 2 & 12  & 3 & 1 & 0 & 10  \\
+      2 & 1 & 1 & 6   & 4 & 0 & 0 & 16  & 2 & 2 & 2 & 12  \\
+      2 & 2 & 1 & 9   & 3 & 3 & 1 & 19  & 3 & 2 & 1 & 14  \\
+      2 & 2 & 2 & 12  & 4 & 2 & 0 & 20  & 4 & 0 & 0 & 16  \\
+      3 & 2 & 1 & 14  & 4 & 2 & 2 & 24  & 3 & 3 & 0 & 18  \\
+      3 & 2 & 2 & 17  & 3 & 3 & 3 & 27  & 4 & 1 & 1 & 18  \\
+      3 & 3 & 2 & 22  & 5 & 1 & 1 & 27  & 4 & 2 & 0 & 20  \\
+      3 & 3 & 3 & 27  & 4 & 4 & 0 & 32  & 3 & 3 & 2 & 22  \\
+      4 & 1 & 1 & 18  & 5 & 3 & 3 & 43  & 5 & 2 & 1 & 30  \\
+      4 & 2 & 1 & 21  & 4 & 4 & 4 & 48  & 4 & 4 & 0 & 32
+	\end{tabular}
+\end{table}\\
+In Tabelle \ref{tab:Q_Paramter} wurden bereits alle möglichen Indizierungen gezeigt, für welche ein mögliches $n = h^2+ k^2 +l^2$ auftreten können. Es stellt sich heraus, dass besonders viele Werte von $n$ geradzahlig sind, was auf kubisch innenzentrierten Gittercharakter hindeutet. Da jedoch auch ungerade $n$ auftauchen, handelt es sich wahrscheinlich um ein kubisch primitives Gitter.\\
+\paragraph{Bestimmung der Gitterkonstante} Die Gitterkonstante des primitiven Gitters ergibt sich nun aus der Konstanten $Q$ und der Wellenlänge $\lambda$.\\
+Für die Wellenlänge wurde bei den ersten 25 Werten eine gemittelte Wellenlänge der $K_\alpha$- und $K_\beta$-Linie angenommen. Diese berechnet sich durch
+\begin{align}
+  \lambda_{K_\alpha} = \frac{2\lambda_{K_{\alpha_1}}+\lambda_{K_{\alpha_2}}}{3}
+\end{align}
+Für die $K_\alpha$-Linien von Kupfer gelten folgende Literaturwerte
+\begin{align}
+  \lambda_{K_{\alpha_1}} &= \SI{1,54015}{\textup{\AA}}\nonumber\\
+  \lambda_{K_{\alpha_2}} &= \SI{1,54433}{\textup{\AA}}\\
+\Rightarrow \lambda_{K_\alpha} &= \SI{1,54154}{\textup{\AA}}.\nonumber
+\end{align}
+Die Formel der Gitterkonstante ergibt sich mithilfe von \eqref{eqn:Q_Parameter}
+\begin{align}
+  a_0 &= \frac{\lambda}{2 \sqrt{Q}}\\
+  \Delta a_0 &= \frac{1}{2\sqrt{Q}} \left[\Delta \lambda + \frac{\lambda \Delta Q}{\sqrt{Q}}\right].
+\end{align}
+Nach \eqref{eqn:Q_Parameter} folgt für den Fehler des Q-Parameters und für die Gitterkonstante
+\begin{align}
+  \Delta Q &= \frac{2 \sin(\vartheta)\Delta \vartheta}{h^2+k^2+l^2}\\
+  \Rightarrow \Delta a_0 &= \frac{1}{2\sqrt{Q}} \left[\Delta \lambda + \frac{\lambda 2 \sin(\vartheta)\Delta \vartheta}{n\sqrt{Q}}\right] \quad \text{mit }n = h^2+k^2+l^2.
+\end{align}
+Die Ergebnisse der Rechnungen werden in Tabelle~\ref{tab:Ergebnisse} nochmal ausführlich dargestellt. Es wurde auf die nicht-indizierbaren Reflexe verzichtet.
+\begin{table}[ht]
+	\centering
+	\caption{Beugungswinkel an den Netzebenen mit Parametern $(hkl)$ und daraus berechnete Gitterkonstante $a_0$.}
+	\label{tab:Ergebnisse}
+	\begin{tabular}{c c c c}
+		\toprule
+      $\vartheta~[\si{\degree}]$ & $(hkl)$ & $a_0~[\si{\textup{\AA}}]$ & $\Delta a_0~[\si{\textup{\AA}}]$\\
+    \midrule
+    13,90 & 110 & 4,538 & 0,113 \\
+    19,76 & 200 & 4,559 & 0,042 \\
+    24,35 & 211 & 4,579 & 0,054 \\
+    28,43 & 220 & 4,579 & 0,051 \\
+    32,13 & 310 & 4,583 & 0,049 \\
+    35,70 & 222 & 4,576 & 0,048 \\
+    45,79 & 330 & 4,562 & 0,073 \\
+    47,32 & 331 & 4,570 & 0,072 \\
+    49,11 & 420 & 4,560 & 0,071 \\
+    50,89 & 421 & 4,552 & 0,070 \\
+    52,42 & 332 & 4,562 & 0,069 \\
+    56,18 & 422 & 4,545 & 0,068 \\
+    59,65 & 431 & 4,554 & 0,059 \\
+    67,69 & 521 & 4,563 & 0,064 \\
+    79,67 & 433 & 4,564 & 0,059 \\
+    80,44 & 530 & 4,566 & 0,059
+	\end{tabular}
+\end{table}\\
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
