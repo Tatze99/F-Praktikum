@@ -157,7 +157,7 @@ Da sich die Elementarzelle aus drei Punktgittern entlang der gewählten Koordina
 Die \textsc{Laue}-Indizes $(hkl)$ stellen dabei die mit der Beugungsordnung $n$ multiplizierten \textsc{Miller}-Indizes dar.
 Eine zu den \textsc{Laue}-Gleichung äquivalente Bedingung ergibt sich, wenn die Beugung der Röntgenstrahlen als eine Reflexion an den Netzebenen des Gitters gedeutet wird.  Dies führt zur \textit{Bragg-Bedingung}
 \begin{align}
-  n\cdot \lambda = 2d\cdot \sin(\vartheta),
+  n\cdot \lambda = 2d\cdot \sin(\vartheta)\label{eqn:Bragg},
 \end{align}
 wobei $\theta$ den Einfalls- und Reflexionswinkel an der Netzebenenschar beschreibt (siehe Abbildung~\ref{fig:Roentgenbeugung}).
 \begin{figure}[htp]
@@ -172,7 +172,7 @@ Der Abstand $d$ einer Netzebenschar parallel zum Normalenvektor $\bm{n}=(h,k,l)$
 \end{align}
 Für die im Versuch betrachteten kubischen Kristallgitter vereinfacht sich \eqref{eqn:Ebenabstand} zu
 \begin{align}
-  d_{hkl} = \frac{a_0}{\sqrt{h^2+k^2+l^2}}
+  d_{hkl} = \frac{a_0}{\sqrt{h^2+k^2+l^2}}\label{eqn:Abstand_kubisch}
 \end{align}
 
 \subsection{Das Debye-Scherrer Verfahren}
@@ -182,32 +182,6 @@ Für die im Versuch betrachteten kubischen Kristallgitter vereinfacht sich \eqre
     \caption{Strahlenverlauf beim Debye-Scherrer-Verfahren.~\cite[S.375]{Kleber}}
     \label{fig:Debye-Kamera}
 \end{figure}\\
-% ***** Zwei Bilder nebeneinander *****
-
-% \begin{figure}[htp]
-%     \centering
-%     \begin{subfigure}{0.45\textwidth}
-%         \includegraphics[width=\textwidth]{Bilder/Beispielbild.png}
-%     \end{subfigure}
-%     \begin{subfigure}{0.45\textwidth}
-%         \includegraphics[width=\textwidth]{Bilder/Beispielbild.png}
-%     \end{subfigure}
-%     \caption{Beschreibung}
-% \end{figure}
-
-%***** Tabellen *****
-% \begin{table}[ht]
-% 	\centering
-% 	\caption{Überschrift der Tabelle}
-% 	\label{tab:Tabelle1}
-% 	\begin{tabular}{l c c c}
-% 		\toprule
-% 	    text & text & text & text\\
-% 	 	\midrule
-% 			text & text & text & text\\
-% 			text & text & text & text
-% 	\end{tabular}
-% \end{table}
 
 % *********************************************
 % ***** KAPITEL 3 *****************************
@@ -228,8 +202,69 @@ Anschließend wurde der Film kurz in einem Wasserbad gewässert und anschließen
 % ***** KAPITEL 4 *****************************
 % *********************************************
 \section{Ergebnisse und Diskussion}
-Tabellen mit gemessenen und berechneten Werten, Abbildungen, Diagramme usw. mit Unterschriften sowie Vorgehensweise, Kommentare, Fehlerrechnung.\\
-Diskussion der Messergebnisse, Diagramme, Fehlerquellen usw. aus physikalischer Sicht, Vergleich mit der Literatur und theoretischen Werten usw.
+\subsection{Berechnung der Gitterkonstanten}
+\subsubsection{Salzstruktur mit Nickelfilter}
+Zuerst wurde ein kristallines Salz untersucht, indem die Beugungsringe auf dem Röntgenfilm ausgemessen wurden. Zunächst wurde der Röntgenfilm dafür eingescannt. Das zugehörige Bild zeigt Abbildung~\ref{fig:Film_mitFilter}.
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=0.9\textwidth]{Abbildungen/Roentgenfilm_mit_Filter.jpg}
+    \caption{Eingescannter Roentgenfilm der Aufnahme mit Verwendung eines Nickelfilters und einer Belichtungszeit von \SI{30}{\minute}.}
+    \label{fig:Film_mitFilter}
+\end{figure}\\
+Die deutlich erkennbaren Streifen entstanden wahrscheinlich durch Belichtung der Filme mit normalen Licht, als sich ein weiterer Filmstreifen schräg über dem Röntgenfilm befand. Dieser Streifen hat jedoch keinen Einfluss auf das Ausmessen der Beugungsringe.\\
+Jeweils rechts und links des Fängerloches wurde die Position der Beugungsringe mithilfe des Programms \textit{ImageJ} bestimmt und durch Mittelwertbildung die Position des Fängerloches berechnet. Die gleiche Berechnung erfolgte für die Beugungsringe um das Strahleingangsloch. Der Abstand beider Löcher ergab sich zu:
+\begin{align}
+  A = \SI{3,529\pm 0,013}{\text{inch}}.
+\end{align}
+Aufgrund der großen Anzahl an Beugungsringen erfolgte die Bestimmung des Fehlers für die Positionen der Strahllöcher durch statistische Auswertung der bestimmten Positionen und anschließende Addition der Fehler. Der Abstand $A$ entspricht \SI{180}{\degree} in der Kamera, da sich beide Punkte genau gegenüberliegen. Aus einer Verhältnisgleichung lässt sich nun der \textsc{Bragg}-Winkel jedes Beugungsringes aus dem Durchmesser $s$ berechnen
+\begin{align}
+  \vartheta &= \frac{\SI{180}{\degree}s}{4\cdot A}\\
+  \Delta \vartheta &= \frac{\SI{180}{\degree}}{4}\left[\frac{\Delta s}{A} + \frac{s\Delta A}{A^2}\right].
+\end{align}
+Zur Bestimmung der Gitterkonstanten wird die \textsc{Bragg}-Bedingung~\eqref{eqn:Bragg} benötigt. Mithilfe von \eqref{eqn:Abstand_kubisch} ergibt sich folgende Gleichung
+\begin{align}
+  \sin^2(\vartheta) &= \frac{\lambda^2}{4d^2}\nonumber\\
+  &\overset{\eqref{eqn:Abstand_kubisch}}{=} \frac{\lambda^2}{4 a_0^2}\cdot (h^2+k^2+l^2).
+\end{align}
+Der Vorfaktor ist für eine gegebene Wellenlänge $\lambda$ konstant und wird als $Q :=\frac{\lambda^2}{4 a_0^2}$ definiert. Die Messergebnisse dazu zeigt Tabelle~\ref{tab:Q_Paramter}.
+
+\begin{table}[ht]
+	\centering
+	\caption{Durchmesser $s$ der Beugungsringe und daraus berechnete Beugungswinkel $\vartheta$}
+	\label{tab:Q_Paramter}
+	\begin{tabular}{l c c c c | c c c}
+		\toprule
+      Nr. & $s [\text{inch}]$ & $\vartheta [\si{\degree}]$ & $\Delta \vartheta [\si{\degree}]$ & $\sin^2 \vartheta $ & $Q$ & $(hkl)$ & $a_0 [\si{\textup{\AA}}]$\\
+    \midrule
+    1  & 0,99 & 12,60 & 0,30 & 0,0476 &         &     &       \\
+    2  & 1,09 & 13,90 & 0,56 & 0,0577 & 0,02884 & 110 & 4,538 \\
+    3  & 1,55 & 19,76 & 0,33 & 0,1143 & 0,02858 & 200 & 4,559 \\
+    4  & 1,59 & 20,27 & 0,33 & 0,1201 &         &     &       \\
+    5  & 1,91 & 24,35 & 0,34 & 0,1700 & 0,02834 & 211 & 4,579 \\
+    6  & 1,96 & 24,99 & 0,35 & 0,1785 &         & 211 &       \\
+    7  & 2,23 & 28,43 & 0,36 & 0,2267 & 0,02834 & 220 & 4,579 \\
+    8  & 2,30 & 29,33 & 0,36 & 0,2399 &         &     &       \\
+    9  & 2,52 & 32,13 & 0,37 & 0,2829 & 0,02829 & 310 & 4,583 \\
+    10 & 2,59 & 33,02 & 0,37 & 0,2970 &         &     &       \\
+    11 & 2,80 & 35,70 & 0,38 & 0,3405 & 0,02838 & 222 & 4,576 \\
+    12 & 2,87 & 36,59 & 0,39 & 0,3554 &         &     &       \\
+    13 & 3,05 & 38,89 & 0,40 & 0,3941 &         &     &       \\
+    14 & 3,21 & 40,91 & 0,40 & 0,4288 & 0,02859 &     & 4,559 \\
+    15 & 3,59 & 45,79 & 0,77 & 0,5139 & 0,02855 & 330 & 4,562 \\
+    16 & 3,71 & 47,32 & 0,77 & 0,5405 & 0,02845 & 331 & 4,570 \\
+    17 & 3,85 & 49,11 & 0,78 & 0,5715 & 0,02857 & 420 & 4,560 \\
+    18 & 3,99 & 50,89 & 0,79 & 0,6021 & 0,02867 & 421 & 4,552 \\
+    19 & 4,11 & 52,42 & 0,79 & 0,6281 & 0,02855 & 332 & 4,562 \\
+    20 & 4,29 & 54,68 & 0,78 & 0,6658 &         &     &       \\
+    21 & 4,41 & 56,18 & 0,81 & 0,6901 & 0,02876 & 422 & 4,545 \\
+    22 & 4,68 & 59,65 & 0,80 & 0,7448 & 0,02864 & 431 & 4,554 \\
+    23 & 4,87 & 62,08 & 0,94 & 0,7807 &         &     &       \\
+    24 & 5,22 & 66,54 & 0,95 & 0,8415 &         &     &       \\
+    25 & 5,31 & 67,69 & 0,96 & 0,8559 & 0,02853 & 521 & 4,563 \\
+    26 & 6,25 & 79,67 & 0,87 & 0,9679 & 0,02847 & 433 & 4,564 \\
+    27 & 6,31 & 80,44 & 0,87 & 0,9724 & 0,02860 & 530 & 4,566
+	\end{tabular}
+\end{table}
 
 % *********************************************
 % ***** KAPITEL 4 *****************************
