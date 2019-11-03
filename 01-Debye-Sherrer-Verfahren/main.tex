@@ -65,7 +65,7 @@ Das getestete Röntgen-Analyse-Verfahren nach Debye und Scherrer (als nicht nur 
 
 \subsection{Röntgenstrahlung}
 Röntgenstrahlen wurden 1895 von \textsc{Wilhelm Conrad Röntgen} entdeckt und stellen einen Teil des elektromagnetischen Spektrums im Bereich von $\lambda = \SI{5}{\pico \metre}\hdots \SI{1}{\nano\metre}$ dar. Sie zeichnen sich durch ihre hohe Photonenenergie und ein großes Durchdringungsvermögen aus. Die hohe Durchdringungsrate lässt sich zur zerstörungsfreien Untersuchung von Stoffen verwenden. Bei der im Versuch verwendeten Methode handelt es sich um eine Feinstrukturuntersuchung, wo beim Durchgang der Röntgenstrahlen durch kristalline Substanzen charakteristische Beugungserscheinungen zu beobachten sind.\\
-Da die Brechzahl in allen Materialien im Röntgenbereich sich kaum von 1 unterscheidet, lassen sich keine optischen Bauelemente wie Prismen oder Linsen verwenden. Stattdessen wird die Braggreflexion an ebenen Kristallen genutzt.\\
+Da die Brechzahl in allen Materialien im Röntgenbereich sich kaum von 1 unterscheidet, lassen sich keine optischen Bauelemente wie Prismen oder Linsen verwenden. Stattdessen wird die \textsc{Bragg}reflexion an ebenen Kristallen genutzt.\\
 Die Röntgenstrahlung in diesem Versuch wird durch eine Röntgenröhre erzeugt, wo in einem evakuierten Raum mithilfe hoher Spannungen an einer Kathode Elektronen herausgelöst und fokussiert und auf auf eine Anode beschleunigt werden.
 \begin{figure}[htp]
     \centering
@@ -159,7 +159,7 @@ Eine zu den \textsc{Laue}-Gleichung äquivalente Bedingung ergibt sich, wenn die
 \begin{align}
   n\cdot \lambda = 2d\cdot \sin(\vartheta)\label{eqn:Bragg},
 \end{align}
-wobei $\theta$ den Einfalls- und Reflexionswinkel an der Netzebenenschar beschreibt (siehe Abbildung~\ref{fig:Roentgenbeugung}).
+wobei $\vartheta$ den Einfalls- und Reflexionswinkel an der Netzebenenschar beschreibt (siehe Abbildung~\ref{fig:Roentgenbeugung}).
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.3\textwidth]{Abbildungen/Roentgenbeugung.pdf}
@@ -176,37 +176,27 @@ Für die im Versuch betrachteten kubischen Kristallgitter vereinfacht sich \eqre
 \end{align}
 
 \subsection{Das Debye-Scherrer Verfahren}
-Beim Debye-Scherrer-Verfahren handelt es sich um ein Verfahren der Röntgenfeinstrukturanalyse. Hierbei wird monochromatische Röntgenstrahlung an einem pulverförmigen Präparat gebeugt. Aus den auf einem zylindrisch um die Probe, mit der Zylinderachse senkrecht zur Primärstrahlrichtung, eingelegten Röntgenfilm entstehenden Beugungsringen, deren Entstehung im Folgenden beschrieben wird, lassen sich die Braggwinkel $\theta$, der Gitterparameter a \textsubscript{0} (für kubische Bravaisgitter) sowie die Millerschen Indizes der jeweiligen Ebenen bestimmen. Damit kann abschließend die Substanz indentifiziert werden.\\
-Das \textit{Prinzip} des Versuchs soll mit Hilfe von Abb. \ref{fig:Debye-Kamera} beschrieben werden. Das durch die Blende begrenzte monochromatische Strahlenbündel trifft auf die vorher in Stäbchenform gebrachte Pulverprobe. In dem feinkörnigen Pulver befinden sich unterschiedlich orientierte Kriställchen. Hier finden sich so nun stets Kriställchen, die zufällig so orientiert sind, dass sie für irgendwelche Netzebenenscharen die Braggsche Beugungsbedingung:
-\begin{align}
-   2 \cdot d \textsubscript{hkl} \cdot \sin(\theta) = n\cdot \lambda
-\end{align}
-für ein festes $\lambda$ und jeweils festes d, erfüllen.
-Durch zusätzliches Drehen der Probe können weitere Variationen der Kistallorientierung erreicht werden.\\
-Betrachtet man nun alle Kriställchen, die für eine bestimmte Netzebenenschar (hkl) zufällig in Reflexionsstellung sind bzw. anders formuliert die Netzebenen, die wegen der zufällligen Lage des betreffenden Kriställchens mit dem Primärstrahl den nach der Bragg Bedinung erforderlichen Winkel einschließen, reflektieren diese alle unter dem gleichen Winkel $\theta$ \textsubscript{hkl}, bzw gleichem Ablenkwinkel 2\cdot $\theta$ \textsubscript{hkl}. Durch die Vielzahl von Kriställchen bzw. Ebenen, an denen die Bedingung erfüllt ist, resultiert aus den sich ergebenden Strahlen ein Kegel um den Primärstrahl mit dem Öffnungswinkel 4\cdot$\theta$\textsubscript{hkl}. \\
-Da d für jede Netzebenenart unterschiedlich ist, treten mehrere Ringe auf dem Röntgenfilm auf. Jeder Debye-Ring entspricht dabei der Reflexion der Wellenlänge an einer Netzebenenart.\\
-
-
+Beim Debye-Scherrer-Verfahren handelt es sich um ein Verfahren der Röntgenfeinstrukturanalyse. Hierbei wird monochromatische Röntgenstrahlung an einem pulverförmigen Präparat gebeugt. Aus den auf einem zylindrisch um die Probe, mit der Zylinderachse senkrecht zur Primärstrahlrichtung, eingelegten Röntgenfilm entstehenden Beugungsringen, deren Entstehung im Folgenden beschrieben wird, lassen sich die \textsc{Bragg}winkel $\vartheta$, der Gitterparameter a \textsubscript{0} (für kubische Bravaisgitter) sowie die Millerschen Indizes der jeweiligen Ebenen bestimmen. Damit kann abschließend die Substanz indentifiziert werden.\\
+Das \textit{Prinzip} des Versuchs soll mit Hilfe von Abb. \ref{fig:Debye-Kamera} beschrieben werden. Das durch die Blende begrenzte monochromatische Strahlenbündel trifft auf die vorher in Stäbchenform gebrachte Pulverprobe. In dem feinkörnigen Pulver befinden sich unterschiedlich orientierte Kriställchen. Hier finden sich so nun stets Kriställchen, die zufällig so orientiert sind, dass sie für irgendwelche Netzebenenscharen die \textsc{Bragg}'sche Beugungsbedingung~\eqref{eqn:Bragg} für ein festes $\lambda$ und jeweils festes d, erfüllen. Durch zusätzliches Drehen der Probe können weitere Variationen der Kistallorientierung erreicht werden.\\
+Betrachtet man nun alle Kriställchen, die für eine bestimmte Netzebenenschar (hkl) zufällig in Reflexionsstellung sind bzw. anders formuliert die Netzebenen, die wegen der zufällligen Lage des betreffenden Kriställchens mit dem Primärstrahl den nach der \textsc{Bragg}-Bedinung erforderlichen Winkel einschließen, reflektieren diese alle unter dem gleichen Winkel $\vartheta_\text{hkl}$, bzw gleichem Ablenkwinkel $2\cdot\vartheta_\text{hkl}$. Durch die Vielzahl von Kriställchen bzw. Ebenen, an denen die Bedingung erfüllt ist, resultiert aus den sich ergebenden Strahlen ein Kegel um den Primärstrahl mit dem Öffnungswinkel $4\cdot\vartheta_\text{hkl}$. \\
+Da d für jede Netzebenenart unterschiedlich ist, treten mehrere Ringe auf dem Röntgenfilm auf. Jeder Debye-Ring entspricht dabei der Reflexion der Wellenlänge an einer Netzebenenart.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.3\textwidth]{Abbildungen/Debye-Sherrer-Kamera.pdf}
     \caption{Strahlenverlauf beim Debye-Scherrer-Verfahren.~\cite[S.375]{Kleber}}
     \label{fig:Debye-Kamera}
-\end{figure}
-=======
 \end{figure}\\
-
-Um die Schwierigkeit zu umgehen, dass der Filmdurchmesser nicht exakt gleich dem Kameradurchmesser ist (Einfluss der Luftfeuchtigkeit etc.), wird das Verfahren von Straumanis bei der Einlegung des Films verwendet: Dabei wird der Film so in die Kamera eingelegt, dass die Enden des Films in der Zylinderkammer mit dem Primärstrahl einen Winkel von etwa 90 \degree einschließen.\\
-Bei der \textit{Auswertung} wird nun der Abstand des Ein- und des Austrittsloch (A) bestimmt, der 180 \degree entspricht. Mit Hilfe der Verhältnisgleichung
+Um die Schwierigkeit zu umgehen, dass der Filmdurchmesser nicht exakt gleich dem Kameradurchmesser ist (Einfluss der Luftfeuchtigkeit etc.), wird das Verfahren von Straumanis bei der Einlegung des Films verwendet: Dabei wird der Film so in die Kamera eingelegt, dass die Enden des Films in der Zylinderkammer mit dem Primärstrahl einen Winkel von etwa \SI{90}{\degree} einschließen.\\
+Bei der \textit{Auswertung} wird nun der Abstand des Ein- und des Austrittsloch (A) bestimmt, der \SI{180}{\degree} entspricht. Mit Hilfe der Verhältnisgleichung
 \begin{align}
-  \frac{180 \degree}{A} = \frac{x}{\Delta s}
+  \frac{\SI{180}{\degree}}{A} = \frac{\vartheta}{\Delta s}\label{eqn:Verhältnisgleichung}
 \end{align}
-kann dann mit der Kenntnis des Abstandes jeweils zwei zum gleichen Kegel gehörenden Schnittringe $\Delta s$, der Braggwinkel x bestimmt werden. \\
+kann dann mit der Kenntnis des Abstandes jeweils zwei zum gleichen Kegel gehörenden Schnittringe $\Delta s$, der \textsc{Bragg}winkel $\vartheta$ bestimmt werden. \\
 Für kubische Gitter wird wie folgt vorgegangen: Aus \eqref{eqn:Bragg} und \eqref{eqn:Abstand_kubisch} erhält man durch Quadrierung:
 \begin{align}
-  \sin^2(\theta) = (\frac{\lambda}{2\cdot a_o})^2 (h^2+k^2+l^2)
+  \sin^2(\vartheta) = \left(\frac{\lambda}{2\cdot a_0}\right)^2 (h^2+k^2+l^2)
 \end{align}
-Dabei kann sin^2($\theta$) bei Kenntnis von $\theta$ errechnet werden. Beim ersten Faktor auf der rechten Seite handelt es sich um eine Konstante, während der zweite Faktor eine ganze Zahl sein muss. sin^2($\theta$) wird nun als Produkt aus Konstanter und ganzer Zahl dargestellt, wobei bei der ganzen Zahl nur solche möglich sind, die nach den Auslöschungsregeln für das jeweilige Gitter auftreten können. Durch die größtmögliche Anzahl von Relfexen, die auf diese Art zugeordnet werden können, wird die Gitterart und aus der sich ergebenden Konstanten, der Gitterparameter $a_0$ bestimmt. 
+Dabei kann $\sin^2\vartheta$ bei Kenntnis von $\vartheta$ errechnet werden. Beim ersten Faktor auf der rechten Seite handelt es sich um eine Konstante, während der zweite Faktor eine ganze Zahl sein muss. $\sin^2\vartheta$) wird nun als Produkt aus Konstanter und ganzer Zahl dargestellt, wobei bei der ganzen Zahl nur solche möglich sind, die nach den Auslöschungsregeln für das jeweilige Gitter auftreten können. Durch die größtmögliche Anzahl von Relfexen, die auf diese Art zugeordnet werden können, wird die Gitterart und aus der sich ergebenden Konstanten, der Gitterparameter $a_0$ bestimmt.
 
 % ***** Zwei Bilder nebeneinander *****
 
@@ -268,7 +258,7 @@ Jeweils rechts und links des Fängerloches wurde die Position der Beugungsringe 
 \begin{align}
   A = \SI{3,529\pm 0,013}{\text{inch}}.
 \end{align}
-Aufgrund der großen Anzahl an Beugungsringen erfolgte die Bestimmung des Fehlers für die Positionen der Strahllöcher durch statistische Auswertung der bestimmten Positionen und anschließende Addition der Fehler. Der Abstand $A$ entspricht \SI{180}{\degree} in der Kamera, da sich beide Punkte genau gegenüberliegen. Aus einer Verhältnisgleichung lässt sich nun der \textsc{Bragg}-Winkel jedes Beugungsringes aus dem Durchmesser $s$ berechnen
+Aufgrund der großen Anzahl an Beugungsringen erfolgte die Bestimmung des Fehlers für die Positionen der Strahllöcher durch statistische Auswertung der bestimmten Positionen und anschließende Addition der Fehler. Der Abstand $A$ entspricht \SI{180}{\degree} in der Kamera, da sich beide Punkte genau gegenüberliegen. Aus der Verhältnisgleichung~\eqref{eqn:Verhältnisgleichung} lässt sich nun der \textsc{Bragg}-Winkel jedes Beugungsringes aus dem Durchmesser $s$ berechnen
 \begin{align}
   \vartheta &= \frac{\SI{180}{\degree}s}{4\cdot A}\\
   \Delta \vartheta &= \frac{\SI{180}{\degree}}{4}\left[\frac{\Delta s}{A} + \frac{s\Delta A}{A^2}\right].
