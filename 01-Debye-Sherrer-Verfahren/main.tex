@@ -354,7 +354,7 @@ Für die Wellenlänge wurde bei den ersten 25 Werten eine gemittelte Wellenläng
 Für die $K_\alpha$-Linien von Kupfer gelten folgende Literaturwerte
 \begin{align}
   \lambda_{K_{\alpha_1}} &= \SI{1,54015}{\textup{\AA}}\nonumber\\
-  \lambda_{K_{\alpha_2}} &= \SI{1,54433}{\textup{\AA}}\\
+  \lambda_{K_{\alpha_2}} &= \SI{1,54433}{\textup{\AA}}\label{eqn:Wellenlänge}\\
 \Rightarrow \lambda_{K_\alpha} &= \SI{1,54154}{\textup{\AA}}.\nonumber
 \end{align}
 Die Formel der Gitterkonstante ergibt sich mithilfe von \eqref{eqn:Q_Parameter}
@@ -483,6 +483,55 @@ Durch Kontrasterhöhung des Scans lassen sich die Reflexe um das Strahleintritts
 \end{table}\\
 Wie bereits am Anfang diskutiert, lassen sich bei dem Röntgenfilm ohne Filter ähnlich viele Reflexe feststellen. Im Vergleich fällt auf, dass die gemessenen Beugungswinkel $\vartheta$ im Fehlerintervall mit den Beugungswinkeln der anderen Messung übereinstimmen. Da sich bei der Messung keine Reflexe feststellen lassen, welche auf dem Röntgenfilm ohne Nickelfilter fehlen, kann ausgeschlossen werden, dass Reflexe von der $K_\beta$-Linie der Kupferanode verursacht wurden.\\
 Cäsiumiodid wirkt sehr fluoreszierend und führt deshalb zu einer leichten Schwärzung des gesamten Röntgenfilms, was zu einer Überdeckung der schwachen $K_\beta$ Reflexe führen kann.
+\FloatBarrier
+\subsection{Metalldraht mit Nickelfilter}
+Als weitere Probe wurde ein dünner Metalldraht verwendet, und der Röntgenfilm wurde $\SI{25}{\min}$ beleuchtet. Das entstandene Beugungsmuster ist in Abbildung~\ref{fig:Metalldraht} dargestellt.
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=0.9\textwidth]{Abbildungen/Roentgenfilm_Metalldraht_Filter.jpg}
+    \caption{Eingescannter Röntgenfilm der Aufnahme des Metalldrahtes mit Verwendung eines Nickelfilters.}
+    \label{fig:Metalldraht}
+\end{figure}\\
+Die Auswertung der Reflexe erfolgte analog zu der zuvor ausgewerteten Salzprobe. Für die ersten gemessenen Reflexe wurde keine passende Indizierung gefunden, allerdings war die Intensität im Vergleich zu den restlichen Reflexen sehr schwach. Da durch den Filter die schwache $K_\beta$-Linie herausgefiltert wird und keine Unterscheidung zwischen $K_{\alpha_1}$- und $K_{\alpha_2}$-Linie möglich ist, wird wieder die gemittelte Wellenlänge aus~\eqref{eqn:Wellenlänge} verwendet.
+\begin{table}[ht]
+	\centering
+	\caption{Berechnung der Gitterkonstante des Metalldrahtes. Da die Intensität der ersten Reflexe sehr schwach war, werden diese aus der Berechnung herausgenommen.}
+	\label{tab:Ergebnisse_Metalldraht}
+	\begin{tabular}{l c c c c c | c c c c c}
+		\toprule
+      Nr. & $s [\text{inch}]$ & Intensität & $\vartheta [\si{\degree}]$ & $\Delta \vartheta [\si{\degree}]$ & $\sin^2 \vartheta $ & $Q$ & $(hkl)$ & $n$ & $a_0 [\si{\textup{\AA}}]$ & $\Delta a_0 [\si{\textup{\AA}}]$\\
+    \midrule
+    1  & 0,65 & sehr hell    & 8,2  & 0,3 & 0,0205 &         &     &    &        &        \\
+    2  & 1,01 & sehr hell    & 12,8 & 0,2 & 0,0491 &         &     &    &        &        \\
+    3  & 1,15 & sehr hell    & 14,6 & 0,1 & 0,0636 &         &     &    &        &        \\
+    4  & 1,53 & dunkel       & 19,4 & 0,2 & 0,1102 & 0,05510 & 110 & 2  & 3,2835 & 0,0386 \\
+    5  & 1,98 & hell         & 25,1 & 0,2 & 0,1798 &         &     &    &        &        \\
+    6  & 2,21 & mitteldunkel & 28,0 & 0,3 & 0,2205 & 0,05512 & 200 & 4  & 3,2830 & 0,0401 \\
+    7  & 2,76 & dunkel       & 35,0 & 0,2 & 0,3286 & 0,05476 & 211 & 6  & 3,2936 & 0,0298 \\
+    8  & 3,27 & dunkel       & 41,4 & 0,3 & 0,4380 & 0,05475 & 220 & 8  & 3,2941 & 0,0339 \\
+    9  & 4,27 & hell         & 54,1 & 0,4 & 0,6568 & 0,05473 & 222 & 12 & 3,2946 & 0,0344 \\
+    10 & 4,81 & dunkel       & 61,0 & 0,3 & 0,7647 & 0,05462 & 321 & 14 & 3,2980 & 0,0267 \\
+    11 & 5,44 & hell         & 69,0 & 0,3 & 0,8712 & 0,05445 & 400 & 16 & 3,3032 & 0,0267 \\
+    12 & 6,46 & dunkel       & 81,9 & 0,5 & 0,9801 & 0.05445 & 411 & 18 & 3,3031 & 0,0378
+	\end{tabular}
+\end{table}\\
+Die ersten vermessenen Reflexe erscheinen im Vergleich sehr schwach und liefern bei der Auswertung keine passenden Indizierungen. Der letzte Reflex liefert eine Gitterkonstante von
+\begin{align}
+  a_0 = \SI{3,3031 \pm0,0378}{\textup{\AA}}.\label{eqn:Gitterkonstante_Metalldraht}
+\end{align}
+Es werden hier drei signifikante Stellen angegeben, da der berechnete Fehler für die Gitterkonstante sehr groß ist.
+Zusätzlich wird wieder \textsc{Nelson-Niley}-Extrapolation zur Bestimmung der Gitterkonstanten $a_0$ bei $\vartheta = \SI{90}{\degree}$ verwendet. Dabei ergibt sich die in Abbildung~\ref{fig:Extrapolation_Metalldraht} dargestellte lineare Funktion.
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=0.9\textwidth]{Abbildungen/Extrapolation_Metalldraht.pdf}
+    \caption{Extrapolationsverfahren zur Bestimmung der Gitterkonstante bei $\vartheta = \SI{90}{\degree}$.}
+    \label{fig:Extrapolation_Metalldraht}
+\end{figure}\\
+Durch die Extrapolation ergibt sich eine Gitterkonstante von
+\begin{align}
+  a_0 =  \SI{3,3051 \pm 0,0060}{\textup{\AA}}.\label{eqn:Extrapolation_Metalldraht}
+\end{align}
+Die im Anhang von \cite{Uschmann} angegeben Gitterkonstanten zeigen eine große Übereinstimmung mit Tantal, für welches ein Literaturwert von $a_0 = \SI{3,303}{\textup{\AA}}$ angegeben wird, welcher mit~\eqref{eqn:Gitterkonstante_Metalldraht} übereinstimmt und bei~\eqref{eqn:Extrapolation_Metalldraht} im Fehlerintervall liegt.
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
