@@ -176,6 +176,17 @@ Für die im Versuch betrachteten kubischen Kristallgitter vereinfacht sich \eqre
 \end{align}
 
 \subsection{Das Debye-Scherrer Verfahren}
+Beim Debye-Scherrer-Verfahren handelt es sich um ein Verfahren der Röntgenfeinstrukturanalyse. Hierbei wird monochromatische Röntgenstrahlung an einem pulverförmigen Präparat gebeugt. Aus den auf einem zylindrisch um die Probe, mit der Zylinderachse senkrecht zur Primärstrahlrichtung, eingelegten Röntgenfilm entstehenden Beugungsringen, deren Entstehung im Folgenden beschrieben wird, lassen sich die Braggwinkel $\theta$, der Gitterparameter a \textsubscript{0} (für kubische Bravaisgitter) sowie die Millerschen Indizes der jeweiligen Ebenen bestimmen. Damit kann abschließend die Substanz indentifiziert werden.\\
+Das \textit{Prinzip} des Versuchs soll mit Hilfe von Abb. \ref{fig:Debye-Kamera} beschrieben werden. Das durch die Blende begrenzte monochromatische Strahlenbündel trifft auf die vorher in Stäbchenform gebrachte Pulverprobe. In dem feinkörnigen Pulver befinden sich unterschiedlich orientierte Kriställchen. Hier finden sich so nun stets Kriställchen, die zufällig so orientiert sind, dass sie für irgendwelche Netzebenenscharen die Braggsche Beugungsbedingung:
+\begin{align}
+   2 \cdot d \textsubscript{hkl} \cdot \sin(\theta) = n\cdot \lambda
+\end{align}
+für ein festes $\lambda$ und jeweils festes d, erfüllen.
+Durch zusätzliches Drehen der Probe können weitere Variationen der Kistallorientierung erreicht werden.\\
+Betrachtet man nun alle Kriställchen, die für eine bestimmte Netzebenenschar (hkl) zufällig in Reflexionsstellung sind bzw. anders formuliert die Netzebenen, die wegen der zufällligen Lage des betreffenden Kriställchens mit dem Primärstrahl den nach der Bragg Bedinung erforderlichen Winkel einschließen, reflektieren diese alle unter dem gleichen Winkel $\theta$ \textsubscript{hkl}, bzw gleichem Ablenkwinkel 2\cdot $\theta$ \textsubscript{hkl}. Durch die Vielzahl von Kriställchen bzw. Ebenen, an denen die Bedingung erfüllt ist, resultiert aus den sich ergebenden Strahlen ein Kegel um den Primärstrahl mit dem Öffnungswinkel 4\cdot$\theta$\textsubscript{hkl}. \\
+Da d für jede Netzebenenart unterschiedlich ist, treten mehrere Ringe auf dem Röntgenfilm auf. Jeder Debye-Ring entspricht dabei der Reflexion der Wellenlänge an einer Netzebenenart.\\
+
+
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.3\textwidth]{Abbildungen/Debye-Sherrer-Kamera.pdf}
@@ -184,6 +195,18 @@ Für die im Versuch betrachteten kubischen Kristallgitter vereinfacht sich \eqre
 \end{figure}
 =======
 \end{figure}\\
+
+Um die Schwierigkeit zu umgehen, dass der Filmdurchmesser nicht exakt gleich dem Kameradurchmesser ist (Einfluss der Luftfeuchtigkeit etc.), wird das Verfahren von Straumanis bei der Einlegung des Films verwendet: Dabei wird der Film so in die Kamera eingelegt, dass die Enden des Films in der Zylinderkammer mit dem Primärstrahl einen Winkel von etwa 90 \degree einschließen.\\
+Bei der \textit{Auswertung} wird nun der Abstand des Ein- und des Austrittsloch (A) bestimmt, der 180 \degree entspricht. Mit Hilfe der Verhältnisgleichung
+\begin{align}
+  \frac{180 \degree}{A} = \frac{x}{\Delta s}
+\end{align}
+kann dann mit der Kenntnis des Abstandes jeweils zwei zum gleichen Kegel gehörenden Schnittringe $\Delta s$, der Braggwinkel x bestimmt werden. \\
+Für kubische Gitter wird wie folgt vorgegangen: Aus \eqref{eqn:Bragg} und \eqref{eqn:Abstand_kubisch} erhält man durch Quadrierung:
+\begin{align}
+  \sin^2(\theta) = (\frac{\lambda}{2\cdot a_o})^2 (h^2+k^2+l^2)
+\end{align}
+Dabei kann sin^2($\theta$) bei Kenntnis von $\theta$ errechnet werden. Beim ersten Faktor auf der rechten Seite handelt es sich um eine Konstante, während der zweite Faktor eine ganze Zahl sein muss. sin^2($\theta$) wird nun als Produkt aus Konstanter und ganzer Zahl dargestellt, wobei bei der ganzen Zahl nur solche möglich sind, die nach den Auslöschungsregeln für das jeweilige Gitter auftreten können. Durch die größtmögliche Anzahl von Relfexen, die auf diese Art zugeordnet werden können, wird die Gitterart und aus der sich ergebenden Konstanten, der Gitterparameter $a_0$ bestimmt. 
 
 % ***** Zwei Bilder nebeneinander *****
 
