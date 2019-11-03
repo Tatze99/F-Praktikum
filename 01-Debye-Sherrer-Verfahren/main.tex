@@ -245,8 +245,8 @@ Anschließend wurde der Film kurz in einem Wasserbad gewässert und anschließen
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}
-\subsection{Berechnung der Gitterkonstanten}
-\subsubsection{Salzstruktur mit Nickelfilter}
+\subsection{Salzstruktur mit Nickelfilter}
+\subsubsection{Indizierung der Reflexe}
 Zuerst wurde ein kristallines Salz untersucht, indem die Beugungsringe auf dem Röntgenfilm ausgemessen wurden. Zunächst wurde der Röntgenfilm dafür eingescannt. Das zugehörige Bild zeigt Abbildung~\ref{fig:Film_mitFilter}.
 \begin{figure}[htp]
     \centering
@@ -310,7 +310,8 @@ Der Vorfaktor ist für eine gegebene Wellenlänge $\lambda$ konstant und wird al
 	\end{tabular}
 \end{table}\\
 Zur Bestimmung der Konstanten $Q$ muss eine Indizierung der Reflexe durchgeführt werden. Dafür wird jeder Term von $\sin^2 \vartheta $ durch eine ganze Zahl $n = h^2 + k^2 + l^2$ geteilt, sodass das entsprechende Ergebnis für alle Messwerte eine Konstante ist. Dies wurde für alle gemessenen Reflexe durchgeführt und dabei festgestellt, dass einige Winkel nah beeinander liegen und die Indizierung der beiden Reflexe mit einer einzigen Konstanten $Q$ nicht möglich ist. Die Reflexe unterschieden sich auch nicht speziell durch ihre Intensität von den restlichen Ergebnissen, weshalb Reflexe, die durch die $K_\beta$-Linie des Röntgenspektrums verursacht werden, dafür ausgeschlossen werden können. Es wird davon ausgegangen, dass bei den Werten, wo keine Indizierung möglich war, Messfehler auftraten. Beispielsweise können Reflexe durch die Beugung der Röntgenstrahlen am Messing der Blendenvorrichtung entstehen.
-\paragraph{Auslöschungsregeln} Für die Bestimmung der Gitterstruktur wird untersucht, welche Reflexe für bestimmte Kristallgitterarten auftreten können. Dies wird durch die \textit{Auslöschungsregeln} beschrieben. Für Raumzentrierte Gitter muss die Summe der Indizes $(hkl)$ eine gerade Zahl sein. Bei Raumzentrierten Gittern muss jeweils die Summe zweier Indizes gerade sein. Da für kubisch primitive Gitter nur ein Atom pro Elementarzelle vorhanden ist, sind alle möglichen Kombinationen von $(hkl)$ möglich. Dies lässt sich zusammenfassen zu:
+\subsubsection{Auslöschungsregeln}
+Für die Bestimmung der Gitterstruktur wird untersucht, welche Reflexe für bestimmte Kristallgitterarten auftreten können. Dies wird durch die \textit{Auslöschungsregeln} beschrieben. Für Raumzentrierte Gitter muss die Summe der Indizes $(hkl)$ eine gerade Zahl sein. Bei Raumzentrierten Gittern muss jeweils die Summe zweier Indizes gerade sein. Da für kubisch primitive Gitter nur ein Atom pro Elementarzelle vorhanden ist, sind alle möglichen Kombinationen von $(hkl)$ möglich. Dies lässt sich zusammenfassen zu:
 \begin{align}
   \text{Innenzentriert:} & \qquad h + k +l = 2n\nonumber\\
   \text{Raumzentriert:}  & \qquad h, k, l \text{ alle gerade oder ungerade}\\
@@ -344,7 +345,8 @@ Werden nun also die möglichen Kombinationen von $(hkl)$ den einzelnen Gitterstr
 	\end{tabular}
 \end{table}\\
 In Tabelle \ref{tab:Q_Paramter} wurden bereits alle möglichen Indizierungen gezeigt, für welche ein mögliches $n = h^2+ k^2 +l^2$ auftreten können. Es stellt sich heraus, dass besonders viele Werte von $n$ geradzahlig sind, was auf kubisch innenzentrierten Gittercharakter hindeutet. Da jedoch auch ungerade $n$ auftauchen, handelt es sich wahrscheinlich um ein kubisch primitives Gitter.\\
-\paragraph{Bestimmung der Gitterkonstante} Die Gitterkonstante des primitiven Gitters ergibt sich nun aus der Konstanten $Q$ und der Wellenlänge $\lambda$.\\
+\subsubsection{Bestimmung der Gitterkonstante}
+Die Gitterkonstante des primitiven Gitters ergibt sich nun aus der Konstanten $Q$ und der Wellenlänge $\lambda$.\\
 Für die Wellenlänge wurde bei den ersten 25 Werten eine gemittelte Wellenlänge der $K_\alpha$- und $K_\beta$-Linie angenommen. Diese berechnet sich durch
 \begin{align}
   \lambda_{K_\alpha} = \frac{2\lambda_{K_{\alpha_1}}+\lambda_{K_{\alpha_2}}}{3}
@@ -370,28 +372,74 @@ Die Ergebnisse der Rechnungen werden in Tabelle~\ref{tab:Ergebnisse} nochmal aus
 	\centering
 	\caption{Beugungswinkel an den Netzebenen mit Parametern $(hkl)$ und daraus berechnete Gitterkonstante $a_0$.}
 	\label{tab:Ergebnisse}
-	\begin{tabular}{c c c c}
+	\begin{tabular}{l c c c c}
 		\toprule
-      $\vartheta~[\si{\degree}]$ & $(hkl)$ & $a_0~[\si{\textup{\AA}}]$ & $\Delta a_0~[\si{\textup{\AA}}]$\\
+      Nr. & $\vartheta~[\si{\degree}]$ & $(hkl)$ & $a_0~[\si{\textup{\AA}}]$ & $\Delta a_0~[\si{\textup{\AA}}]$\\
     \midrule
-    13,90 & 110 & 4,538 & 0,113 \\
-    19,76 & 200 & 4,559 & 0,042 \\
-    24,35 & 211 & 4,579 & 0,054 \\
-    28,43 & 220 & 4,579 & 0,051 \\
-    32,13 & 310 & 4,583 & 0,049 \\
-    35,70 & 222 & 4,576 & 0,048 \\
-    45,79 & 330 & 4,562 & 0,073 \\
-    47,32 & 331 & 4,570 & 0,072 \\
-    49,11 & 420 & 4,560 & 0,071 \\
-    50,89 & 421 & 4,552 & 0,070 \\
-    52,42 & 332 & 4,562 & 0,069 \\
-    56,18 & 422 & 4,545 & 0,068 \\
-    59,65 & 431 & 4,554 & 0,059 \\
-    67,69 & 521 & 4,563 & 0,064 \\
-    79,67 & 433 & 4,564 & 0,059 \\
-    80,44 & 530 & 4,566 & 0,059
+    1  & 13,90 & 110 & 4,538 & 0,113 \\
+    2  & 19,76 & 200 & 4,559 & 0,042 \\
+    3  & 24,35 & 211 & 4,579 & 0,054 \\
+    5  & 28,43 & 220 & 4,579 & 0,051 \\
+    7  & 32,13 & 310 & 4,583 & 0,049 \\
+    9  & 35,70 & 222 & 4,576 & 0,048 \\
+    11 & 45,79 & 330 & 4,562 & 0,073 \\
+    16 & 47,32 & 331 & 4,570 & 0,072 \\
+    17 & 49,11 & 420 & 4,560 & 0,071 \\
+    18 & 50,89 & 421 & 4,552 & 0,070 \\
+    19 & 52,42 & 332 & 4,562 & 0,069 \\
+    21 & 56,18 & 422 & 4,545 & 0,068 \\
+    22 & 59,65 & 431 & 4,554 & 0,059 \\
+    25 & 67,69 & 521 & 4,563 & 0,064 \\
+    26 & 79,67 & 433 & 4,564 & 0,059 \\
+    27 & 80,44 & 530 & 4,566 & 0,059
 	\end{tabular}
-\end{table}\\
+\end{table}
+\subsubsection{Korrektur nach Hadding}
+Findet eine hohe Absorption der Probe statt, dann tritt die \textsc{Bragg}-Reflexion fast nur an der Oberfläche der Probe auf, sodass sich die Radien der beobachtbaren Ringe auf dem Röntgenfilm verändern. Nach \textsc{Hadding} lässt sich dieser Fehler folgendermaßen korrigieren:
+\begin{align}
+  2r_\text{korr} = 2r - \rho (1+\cos(2\vartheta))
+\end{align}
+Dabei ist $r_\text{korr}$ der korrigierte Ringradius, $r$ der gemessene Radius der Beugungsringe, $\vartheta$ der gemessene \textsc{Bragg}-Winkel und $\rho$ beschreibt den Radius der Probe. Im Experiment wurde der Durchmesser der Glaskapillare auf
+\begin{align}
+  2\rho = \SI{0,1}{\milli\metre} = \SI{3,937e-3}{\text{inch}}
+\end{align}
+bestimmt. Mit dieser Korrektur wurden die \textsc{Bragg}-Winkel neu berechnet und daraus eine korrigierte Gitterkonstante bestimmt. Die Ergebnisse sind in Tabelle~\ref{tab:Hadding} dargestellt.
+\begin{table}[ht]
+	\centering
+	\caption{Korrektur des Durchmessers $s_\text{korr}$ der Beugungsringe und daraus berechnete Gitterkonstanten.}
+	\label{tab:Hadding}
+	\begin{tabular}{l c c c c c}
+		\toprule
+      Nr. & $s_\text{korr}$ & $\vartheta_\text{korr}~[\si{\degree}]$ & $Q_\text{korr}$ & $a_{0,\text{korr}}~[\si{\textup{\AA}}]$ & $\Delta a_{0,\text{korr}}~[\si{\textup{\AA}}]$\\
+    \midrule
+    2  & 1,09 & 13,9 & 0,0287 & 4,553 & 0,114 \\
+    3  & 1,55 & 19,7 & 0,0285 & 4,569 & 0,059 \\
+    5  & 1,91 & 24,3 & 0,0282 & 4,586 & 0,054 \\
+    7  & 2,23 & 28,4 & 0,0283 & 4,585 & 0,051 \\
+    9  & 2,52 & 32,1 & 0,0282 & 4,588 & 0,049 \\
+    11 & 2,80 & 35,7 & 0,0283 & 4,579 & 0,048 \\
+    14 & 3,21 & 40,9 & 0,0286 & 4,561 & 0,046 \\
+    16 & 3,71 & 47,3 & 0,0284 & 4,572 & 0,072 \\
+    17 & 3,85 & 49,1 & 0,0286 & 4,561 & 0,071 \\
+    18 & 3,99 & 50,9 & 0,0287 & 4,553 & 0,070 \\
+    19 & 4,11 & 52,4 & 0,0285 & 4,563 & 0,069 \\
+    21 & 4,40 & 56,2 & 0,0287 & 4,546 & 0,068 \\
+    22 & 4,68 & 59,6 & 0,0286 & 4,555 & 0,059 \\
+    25 & 5,31 & 67,7 & 0,0285 & 4,564 & 0,064 \\
+    26 & 6,25 & 79,7 & 0,0285 & 4,564 & 0,059 \\
+    27 & 6,31 & 80,4 & 0,0286 & 4,566 & 0,059
+	\end{tabular}
+\end{table}
+\FloatBarrier
+\subsection{Salzstruktur ohne Nickelfilter}
+Von der gleichen Salzprobe wurde ebenfalls eine Aufnahme ohne Nickelfilter aufgenommen. Die Belichtungszeit war mit \SI{10}{\min} kürzer, weshalb die aufgenommen Ringe weniger gut zu sehen sind (siehe Abb.~\ref{fig:Film_ohneFilter}).
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=0.9\textwidth]{Abbildungen/Roentgenfilm_ohne_Filter.jpg}
+    \caption{Eingescannter Röntgenfilm der Aufnahme mit Verwendung eines Nickelfilters und einer Belichtungszeit von \SI{30}{\minute}.}
+    \label{fig:Film_ohneFilter}
+\end{figure}\\
+Durch Kontrasterhöhung des Scans lassen sich die Reflexe um das Strahleintrittsloch trotzdem auslesen.
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
