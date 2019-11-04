@@ -397,8 +397,9 @@ Die Ergebnisse der Rechnungen werden in Tabelle~\ref{tab:Ergebnisse} nochmal aus
     27 & 80,44 & 530 & 4,566 & 0,059
 	\end{tabular}
 \end{table}
+
 \subsubsection{Korrektur nach Hadding}
-Findet eine hohe Absorption der Probe statt, dann tritt die \textsc{Bragg}-Reflexion fast nur an der Oberfläche der Probe auf, sodass sich die Radien der beobachtbaren Ringe auf dem Röntgenfilm verändern. Nach \textsc{Hadding} lässt sich, da von einer völlig undurchlässigen Probe ausgegangen wird, dieser Fehler folgendermaßen korrigieren:
+Findet eine hohe Absorption der Probe statt, dann tritt die \textsc{Bragg}-Reflexion fast nur an der Oberfläche der Probe auf, sodass sich die Radien der beobachtbaren Ringe auf dem Röntgenfilm verändern. Nach \textsc{Hadding} lässt sich, da von einer völlig undurchlässigen Probe ausgegangen wird (siehe \ref{sec:Probenabsorption}), dieser Fehler folgendermaßen korrigieren:
 \begin{align}
   2r_\text{korr} = 2r - \rho (1+\cos(2\vartheta))
 \end{align}
@@ -470,8 +471,67 @@ Aufgrund des so ermittelten Gitterparameters lässt sich die untersuchte unbekan
 
 welches sowohl im Fehlerintervall von \ref{equ:a01}, als auch in dem von \ref{equ:a02} liegt. \\
 Cäsium-Iodid hat ein kubisch primitives Bravaisgitter. Auch dies zeigt sich in den Messergebnissen. In \ref{sec:Auslöschungsregeln} wird auf ein kubisch primitves Gitter geschlossen, welches jedoch kubisch innenzentrierte Tendenzen aufweist. Letzteres wird bei einer Betrachtung des Atomformfaktors beider Elemente erklärbar: Cäsium (Atomformfaktor bei $\frac{\sin(\theta)}{\lambda} = \SI{0.6}{\textup{\AA}}: 26,5 \; \cite{Uschmann}$, Anhang D ) und Iod (Atomformfaktor bei $\frac{\sin(\theta)}{\lambda} = \SI{0.6}{\textup{\AA}}: 25,3 \; \cite{Uschmann}$, Anhang D) haben sehr ähnliche Atomformfaktoren, weshalb es, obwohl es ein zweiatomiges kubisch primitives Gitter ist, teilweise als kubisch flächenzentriertes Gitter beugt.
-
 \FloatBarrier
+
+
+\subsubsection{maximale Probenabsorption}\label{sec:Probenabsorption}
+
+Die Strahlungsintensität $I_0$ vor und $I$ hinter einer Schicht hängen über folgende Beziehung zusammen:
+\begin{align}\label{equ:Probenabsorption}
+  I = I_0 \cdot e^{-\mu D}
+\end{align}
+Dabei ist $\mu$ der Schwächungskoeffizient. \\
+Der Massenschwächungskoeffizienten $\frac{\mu}{\rho}$ eines Stoffes, dessen chemische Zusammensetzung bekannt ist, lässt sich über
+\begin{align}
+  \frac{\mu}{\rho} = \frac{\alpha_1}{100}\frac{\mu_1}{\rho_1}+\frac{\alpha_2}{100}\frac{\mu_2}{\rho_2}+\frac{\alpha_3}{100}\frac{\mu_3}{\rho_3}+\hdots
+\end{align}
+bestimmen, wobei $\alpha_1, \alpha_2$,$\hdots$ die Gewichtsprozente, $\mu_1$, $\mu_2$, $\hdots$ die Schwächungskoeffizienten und $\rho_1$, $\rho_2$, $\hdots$  die Dichten der jeweiligen darin enthaltenenen Elemente sind. \cite{Glocker}\\
+Für Cäsium-Iodid ergibt sich so
+\begin{align}
+  \mu_{CsI} = \rho_{CsI} \cdot \left[\frac{M_{Cs}}{M_{Cs}+M_{I}}\cdot \frac{\mu_{Cs}}{\rho_{Cs}}+\frac{M_{I}}{M_{Cs}+M_I}\cdot \frac{\mu_I}{\rho_I}\right]
+\end{align}
+Wird für $\rho_{CsI} = \SI{4,51}{\frac{\gram}{\centi\meter\cubed}},\; M_{Cs} = \SI{132,90545}{\text{u}}=\SI{2,20686E-22}{\gram},\; M_{I} = \SI{126,90447}{\text{u}}=\SI{2,10723E-22}{\gram},\; \frac{\mu_{Cs}}{\rho_{Cs}} = \SI{318}{\frac{\centi\meter\squared}{\gram}}, \;\frac{\mu_{I}}{\rho_{I}} = \SI{294}{\frac{\centi\meter\squared}{\gram}} $
+verwendet, lässt sich der Abschwächungskoeffizient für Cäsium-Iodid zu
+\begin{align}\label{equ:mü_CSI}
+\mu_{CsI}= \SI{1381,3}{\frac{1}{\centi\meter}}
+\end{align}
+bestimmen.
+Analoge Überlegungen führen auf
+\begin{align}
+  \mu_{SiO_2} = \rho_{Si0_2} \cdot \left[\frac{M_{Si}}{M_{Si}+2\cdot M_{O}}\cdot \frac{\mu_{Si}}{\rho_{Si}}+\frac{2\cdot M_{O}}{M_{Si}+2\cdot M_O}\cdot \frac{\mu_O}{\rho_O}\right]
+\end{align}
+
+Mit
+$\rho_{SiO_2} = \SI{2,2}{\frac{\gram}{\centi\meter\cubed}},\; M_{Si} = \SI{28,0855}{\text{u}}=\SI{4,66371E-23}{\gram},\; M_{O} = \SI{15,999}{\text{u}}=\SI{2,6567E-23
+}{\gram},\; \frac{\mu_{Si}}{\rho_{Si}} = \SI{60,6}{\frac{\centi\meter\squared}{\gram}}, \;\frac{\mu_{O}}{\rho_{O}} = \SI{11,5}{\frac{\centi\meter\squared}{\gram}} $
+ergibt sich
+\begin{align}\label{equ:mü_SIO2}
+\mu_{SiO_2}= \SI{75,8}{\frac{1}{\centi\meter}}
+\end{align}
+Wird nun eine zylindrische Probenform betrachtet, welche aus einem Kapilarrohr aus $SiO_2$ besteht und in dessen Innenraum sich $CsI$ befinden, gilt für die Intensität bei maximaler Probenabsorption
+\begin{align}\label{equ:Intensität}
+  I_1 &= I_0 \cdot e^{-\mu_{Si0_2}\cdot d_1} \nonumber\\
+  I_2 &= I_1 \cdot e^{-\mu_{CsI}\cdot d_2}\nonumber \\
+  I_{ges}& = I_2 \cdot e^{-\mu_{SiO_2}\cdot d_1} = I_0 \cdot e^{-2\cdot\mu_{SiO_2}\cdot d_1}\cdot e^{-\mu_{CsI}\cdot d_2}
+\end{align}
+wobei $d_1$ die Dicke der Wand der Kapillare und $d_2$ der Durchmesser des Innenraums dieser ist. \\
+Damit ergibt sich bei einem Außendurchmesser der Probe von \SI{0,3}{\milli\meter} und einer Wanddicke von \SI{0,01}{\milli\meter}
+\begin{align}\label{equ:dWerte}
+  d_1 = \SI{0,01}{\milli\meter}=\SI{0,001}{\centi\meter}\\
+  d_2 = \SI{0,28}{\milli\meter}=\SI{0,028}{\centi\meter}\\
+\end{align}
+Nach Einsetzen von \ref{equ:mü_CSI}, \ref{equ:mü_SIO2}, \ref{equ:dWerte} in \ref{equ:Intensität}, ergibt sich:
+\begin{align}
+  \frac{I}{I_0} = 1,3712\cdot 10^{-17}
+\end{align}
+weshalb die Probe als undurchlässig angenommen werden kann.\\
+Außerdem zeigt sich, dass der Einfluss der Glaskapillare vernachlässigt werden kann.\\
+Als charakteristische Größe wird auch die Eindringtiefe t = $\frac{1}{\mu}$ ausgerechnet, welche die Tiefe beschreibt, bei der die Intensität auf $\frac{1}{e}$ abgefallen ist.  Diese liegt bei:
+\begin{align}
+  t = \SI{0,0072}{\milli\meter}
+\end{align}
+und zeigt, dass die Strahlung kaum in die Probe eindringen kann.
+
 \subsection{Salzstruktur ohne Nickelfilter}
 Von der gleichen Salzprobe wurde ebenfalls eine Aufnahme ohne Nickelfilter aufgenommen. Die Belichtungszeit war mit $\SI{10}{\min}$ kürzer, weshalb die aufgenommen Ringe weniger gut zu sehen sind (siehe Abb.~\ref{fig:Film_ohneFilter}).
 \begin{figure}[htp]
@@ -569,23 +629,47 @@ Durch die Extrapolation ergibt sich eine Gitterkonstante von
 \end{align}
 Die im Anhang von \cite{Uschmann} angegeben Gitterkonstanten zeigen eine große Übereinstimmung mit Tantal, für welches ein Literaturwert von $a_0 = \SI{3,303}{\textup{\AA}}$ angegeben wird, welcher mit~\eqref{eqn:Gitterkonstante_Metalldraht} übereinstimmt und bei~\eqref{eqn:Extrapolation_Metalldraht} im Fehlerintervall liegt. Es bestätigt ebenfalls die bestimmte Art des Gitters, denn Tantal hat einen kubisch innenzentrierten Gittertyp.
 
+\subsubsection{maximale Probenabsorption}
+Da beim Metalldraht keine Glaskapillare als Halterung verwendet wurde, wird die Intensität wie in Formel \ref{equ:Probenabsorption} berechnet. Dabei konnte der Durchmesser des Drahtes, also die maximale Schichtdicke, auf
+\begin{align}
+  d = \SI{0,31}{\milli\meter}=\SI{0,031}{\centi\meter}
+\end{align}
+bestimmt werden. Für den Massenabsorptionskoeffizienten von Niob gilt:
+\begin{align}
+  \mu_{Nb}= \SI{153}{\frac{\centi\meter\cubed}{\gram}}
+\end{align}
+Damit folgt
+\begin{align}
+  \frac{I}{I_0}=e^{-\mu_{Nb}\cdot d} = \SI{0,0087}{\centi\meter}
+\end{align}
+und entsprechend
+\begin{align}
+  t = \frac{1}{\mu} = \SI{0,00654}{\centi\meter} =  \SI{0,0654}{\milli\meter}
+\end{align}
+Hier dringt die Strahlung also deutlich tiefer in die Probe ein, als bei der Salzprobe.
+
 \subsection{Wertung des Debye-Scherrer-Verfahrens}
-Mit dem getesteten Röntgen-Analyse-Verfahren nach Debye-Scherrer konnten die Gitterkonstanten der unterschiedlichen Stoffe genau bestimmt und die jeweiligen Stoffe sehr sicher zugeordnet werden. Außerdem ist das Messverfahren bzw. die Justage einfach und systematische Messfehler können gut korigiert werden. Als weiterer großer Vorteil ist zu sehen, dass nur pulverisiertes Material und keine größeren, gut ausgebildeten Kristalle nötig sind.\\
-Schwierigkeiten und Potential für Unsicherheiten bietet das Indizieren der Reflexe, was hauptsächlich durch Ausprobieren möglich war. Außerdem können nur einfache Kristallstrukturen derart unaufwändig ausgewertet werden.
+Mit dem getesteten Röntgen-Analyse-Verfahren nach Debye-Scherrer konnten die Gitterkonstanten der unterschiedlichen Stoffe genau bestimmt und die jeweiligen Stoffe relativ sicher zugeordnet werden. Außerdem ist das Messverfahren bzw. die Justage einfach und systematische Messfehler können gut korigiert werden. Als weiterer großer Vorteil ist zu sehen, dass nur pulverisiertes Material und keine größeren, gut ausgebildeten Kristalle nötig sind.\\
+Schwierigkeiten und Potential für Unsicherheiten bietet das Indizieren der Reflexe, was hauptsächlich durch Ausprobieren möglich war. Außerdem können nur einfache Kristallstrukturen derart unaufwändig ausgewertet werden. Einen weitere Grenze des Verfahrens zeigt die Bestimmung der Metallprobe auf: Hier war eine Bestimmung des Stoffes ausschließlich durch das Debye-Scherrer-Verfahren nicht möglich, da hierbei keine sichere Zuordnung der Gitterkonstanten zu einem Stoff möglich war. Es wäre eine Dichtebestimmung nötig gewesen, um eine sichere Zuordnung zu treffen.
 
 
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
 \section{Zusammenfassung}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Aus den zwei mit einer Debye-Scherrer-Kamera aufgenommenen Difraktorgrammen, einmal mit und einmal ohne Nickel-Filter zur Absorption der $CuK_{\alpha}$ konnte die unbekannte Pulverprobe als Cäsium-Iodid bestimmt werden. \\
+Bei Vergleich beider Filme fiel auf, dass beide Aufnahmen, sowohl mit Filter, als auch ohne, die gleiche Anzahl an Ringen und im Fehlerbereich auch gleiche Winkel zeigen. Dies kann durch die geprüfte Probensubstanz Cäsium-Iodid erklärt werden: Da dieses selbst flouresziert und damit den Film eigens leicht schwärzt, sind die in ihrer Intensität viel schwächeren $K_\beta$ Linien nicht zu sehen. Ein weiteres Ergebnis ist, dass auch zusätzliche nicht zur Probensubstanz und damit unindizierbare Ringe auftraten. Hier gab es Störeinflüsse der Blende und von verdampftem Wolfram. Außerdem konnte bei einem großen Braggwinkel auch die Feinstrukturaufspaltung der $K_{\alpha_1}$- und $K_{\alpha_2}$-Linie beobachtet werden.
+Nach Indizierung der einzelnen zum untersuchten Stoff gehörenden Ringe unter Berücksichtigung der systematischen Auslöschungen konnten die Gitterkonstanten bestimmt und nach spezieller Extrapolation ein im Wert genaues Ergebnis erzielt werden. Durch die Extrapolation konnten die systematischen Fehler der Veränderung der Lage der Debye-Scherrer-Ringe durch Absorption sowie durch die Kameraverzerrung korrigiert werden. Die Berechnung der maximalen Probenabsorption zeigt, dass hier erstens die Glaskapillare keinen Einfluss nimmt und zweitens von einer undurchlässigen Probe ausgegangen werden kann, womit die Hadding-Korrektur gerechtfertigt wird. Diese liefert auch für kleinere und nicht extrapolierte Winkel genauere Werte. Die absoluten Fehler jedes einzelnen Wertes ...???\\
+Für die Metallprobe ermöglichte die Auswertung des mit Nickel-Filter aufgenommenen Difraktogramms eine Bestimmung des Stoffes als Niob, wobei hier auch eine Zuordnung als Tantal nahe liegt. Diese Unterscheidung ließe sich durch eine Dichtebestimmung konkretisieren. Hier ist die maximale Probenabsorption geringer, als beim zuerst untersuchten Cäsium-Iodid.\\
+Das Debye-Scherrer Verfahren ermöglich die Analyse von Strukturen in der Größenordnung $10^{-10}$ mit verhältnismäßig geringem Aufwand. Trotz relativ einfachem Mess- und Justageprozess gelingt es durch Ausmessen der Debye-Scherrer-Ringe eine Indizierung der Relfexe, Gitterkonstantenbestimmung und damit Substanzidentifikation zu erreichen. Für genauere Messungen bzw. sicherere Zuordnungen könnte der Aufbau etwas modifiziert oder anschließende zusätzliche Messungen durchgeführt werden.
+
 
 % ***** Literaturverzeichnis ******************
 
 \begin{thebibliography}{xxx}
 	\bibitem{Demtroeder}
 	W. Demtröder: \textit{Experimentalphysik}. Springer Verlag Berlin Heidelberg New York 2008 (5. Auflage).
-	\bibitem{Glockner}
+	\bibitem{Glocker}
 	R. Glocker: \textit{Materialprüfung mit Röntgenstrahlen}. Springer Verlag Berlin Heidelberg New York 1985.
   \bibitem{Kleber}
 	W. Kleber u.a.: \textit{Einführung in die Kristallographie}. Oldenbourg Wissenschaftsverlag 2010 (19. Auflage).
