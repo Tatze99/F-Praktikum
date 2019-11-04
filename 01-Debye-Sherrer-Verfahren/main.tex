@@ -193,7 +193,7 @@ Bei der \textit{Auswertung} wird nun der Abstand des Ein- und des Austrittsloch 
 \end{align}
 kann dann mit der Kenntnis des Abstandes jeweils zwei zum gleichen Kegel gehörenden Schnittringe $\Delta s$, der \textsc{Bragg}winkel $\vartheta$ bestimmt werden. \\
 Für kubische Gitter wird wie folgt vorgegangen: Aus \eqref{eqn:Bragg} und \eqref{eqn:Abstand_kubisch} erhält man durch Quadrierung:
-\begin{align}
+\begin{align}\label{equ:Auswertung}
   \sin^2(\vartheta) = \left(\frac{\lambda}{2\cdot a_0}\right)^2 (h^2+k^2+l^2)
 \end{align}
 Dabei kann $\sin^2\vartheta$ bei Kenntnis von $\vartheta$ errechnet werden. Beim ersten Faktor auf der rechten Seite handelt es sich um eine Konstante, während der zweite Faktor eine ganze Zahl sein muss. $\sin^2\vartheta$) wird nun als Produkt aus Konstanter und ganzer Zahl dargestellt, wobei bei der ganzen Zahl nur solche möglich sind, die nach den Auslöschungsregeln für das jeweilige Gitter auftreten können. Durch die größtmögliche Anzahl von Relfexen, die auf diese Art zugeordnet werden können, wird die Gitterart und aus der sich ergebenden Konstanten, der Gitterparameter $a_0$ bestimmt.
@@ -245,9 +245,10 @@ Anschließend wurde der Film kurz in einem Wasserbad gewässert und anschließen
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}
+Es wurden zwei Difraktogramme einer gegebenen unbekannten polykristallinen kubischen Substanz mit einer Debye-Scherrer Kamera aufgenommen. Dabei wurde die Messung einmal mit und einmal ohne einen Nickel-Absorptionsfilter zur Herausfilterung der $K_{\beta}$ Linie durchgeführt. Im Vergleich beider Difraktogramme wird nach Ausmessen der Linien festgestellt, dass sowohl mit- als auch ohne Filter die gleiche Anzahl von Linien auftreten. Daraus kann geschlussfolgert werden, dass es sich bei allen auch ohne Filter auftretenden Linien um $K_{\alpha}$-Linien handelt.
 \subsection{Salzstruktur mit Nickelfilter}
 \subsubsection{Indizierung der Reflexe}
-Zuerst wurde ein kristallines Salz untersucht, indem die Beugungsringe auf dem Röntgenfilm ausgemessen wurden. Zunächst wurde der Röntgenfilm dafür eingescannt. Das zugehörige Bild zeigt Abbildung~\ref{fig:Film_mitFilter}.
+Zuerst wird ein kristallines Salz untersucht, indem die Beugungsringe auf dem Röntgenfilm ausgemessen werden. Zunächst wird der Röntgenfilm dafür eingescannt. Das zugehörige Bild zeigt Abbildung~\ref{fig:Film_mitFilter}.
 \begin{figure}[htp]
     \centering
         \includegraphics[width=0.9\textwidth]{Abbildungen/Roentgenfilm_mit_Filter.jpg}
@@ -255,7 +256,7 @@ Zuerst wurde ein kristallines Salz untersucht, indem die Beugungsringe auf dem R
     \label{fig:Film_mitFilter}
 \end{figure}\\
 Die deutlich erkennbaren Streifen entstanden wahrscheinlich durch Belichtung der Filme mit normalen Licht, als sich ein weiterer Filmstreifen schräg über dem Röntgenfilm befand. Dieser Streifen hat jedoch keinen Einfluss auf das Ausmessen der Beugungsringe.\\
-Jeweils rechts und links des Fängerloches wurde die Position der Beugungsringe mithilfe des Programms \textit{ImageJ} bestimmt und durch Mittelwertbildung die Position des Fängerloches berechnet. Die gleiche Berechnung erfolgte für die Beugungsringe um das Strahleingangsloch. Der Abstand beider Löcher ergab sich zu:
+Jeweils rechts und links des Fängerloches wird die Position der Beugungsringe mithilfe des Programms \textit{ImageJ} entlang einer festen manuell eingefügten Mittellinie bestimmt und durch Mittelwertbildung die Position des Fängerloches berechnet. Die gleiche Berechnung erfolgte für die Beugungsringe um das Strahleingangsloch. Der Abstand beider Löcher ergab sich zu:
 \begin{align}
   A = \SI{3,529\pm 0,013}{\text{inch}}.
 \end{align}
@@ -264,11 +265,8 @@ Aufgrund der großen Anzahl an Beugungsringen erfolgte die Bestimmung des Fehler
   \vartheta &= \frac{\SI{180}{\degree}s}{4\cdot A}\\
   \Delta \vartheta &= \frac{\SI{180}{\degree}}{4}\left[\frac{\Delta s}{A} + \frac{s\Delta A}{A^2}\right].
 \end{align}
-Zur Bestimmung der Gitterkonstanten wird die \textsc{Bragg}-Bedingung~\eqref{eqn:Bragg} benötigt. Mithilfe von \eqref{eqn:Abstand_kubisch} ergibt sich folgende Gleichung
-\begin{align}
-  \sin^2(\vartheta) &= \frac{\lambda^2}{4d^2} \overset{\eqref{eqn:Abstand_kubisch}}{=} \frac{\lambda^2}{4 a_0^2}\cdot (h^2+k^2+l^2).
-\end{align}
-Der Vorfaktor ist für eine gegebene Wellenlänge $\lambda$ konstant und wird als
+Zur Bestimmung der Gitterkonstanten wird wie in \ref{sec:Verfahren} beschrieben, vorgegangen. Der konstante Faktor auf der linken Seite von Gleichung \ref{equ:Auswertung}
+wird als:
 \begin{align}
   Q :=\frac{\lambda^2}{4 a_0^2} = \frac{\sin^2(\vartheta)}{h^2 + k^2+l^2}\label{eqn:Q_Parameter}
 \end{align} definiert. Die Messergebnisse dazu zeigt Tabelle~\ref{tab:Q_Paramter}.
@@ -309,8 +307,8 @@ Der Vorfaktor ist für eine gegebene Wellenlänge $\lambda$ konstant und wird al
 27 & 6,31 & hell      & 80,44 & 0,87 & 0,9724 & 0,02860 & 530 & 34 & 4,566
 	\end{tabular}
 \end{table}\\
-Zur Bestimmung der Konstanten $Q$ muss eine Indizierung der Reflexe durchgeführt werden. Dafür wird jeder Term von $\sin^2 \vartheta $ durch eine ganze Zahl $n = h^2 + k^2 + l^2$ geteilt, sodass das entsprechende Ergebnis für alle Messwerte eine Konstante ist. Dies wurde für alle gemessenen Reflexe durchgeführt und dabei festgestellt, dass einige Winkel nah beeinander liegen und die Indizierung der beiden Reflexe mit einer einzigen Konstanten $Q$ nicht möglich ist. Die Reflexe unterschieden sich auch nicht speziell durch ihre Intensität von den restlichen Ergebnissen, weshalb Reflexe, die durch die $K_\beta$-Linie des Röntgenspektrums verursacht werden, dafür ausgeschlossen werden können. Es wird davon ausgegangen, dass bei den Werten, wo keine Indizierung möglich war, Messfehler auftraten. Beispielsweise können Reflexe durch die Beugung der Röntgenstrahlen am Messing der Blendenvorrichtung entstehen.
-\subsubsection{Auslöschungsregeln}
+Zur Bestimmung der Konstanten $Q$ muss eine Indizierung der Reflexe durchgeführt werden. Dafür wird jeder Term von $\sin^2 \vartheta $ durch eine ganze Zahl $n = h^2 + k^2 + l^2$ geteilt, sodass das entsprechende Ergebnis für alle Messwerte eine Konstante ist. Dies wird für alle gemessenen Reflexe durchgeführt und dabei festgestellt, dass einige Winkel nah beeinander liegen und die Indizierung der beiden Reflexe mit einer einzigen Konstanten $Q$ nicht möglich ist. Die Reflexe unterscheiden sich auch nicht speziell durch ihre Intensität von den restlichen Ergebnissen, weshalb Reflexe, die durch die $K_\beta$-Linie des Röntgenspektrums verursacht werden, dafür ausgeschlossen werden können. Es wird davon ausgegangen, dass bei den Werten, wo keine Indizierung möglich war, Messfehler auftraten. Beispielsweise können Reflexe durch die Beugung der Röntgenstrahlen am Messing der Blendenvorrichtung entstehen.
+\subsubsection{Auslöschungsregeln}\label{sec:Auslöschungsregeln}
 Für die Bestimmung der Gitterstruktur wird untersucht, welche Reflexe für bestimmte Kristallgitterarten auftreten können. Dies wird durch die \textit{Auslöschungsregeln} beschrieben. Für Raumzentrierte Gitter muss die Summe der Indizes $(hkl)$ eine gerade Zahl sein. Bei Raumzentrierten Gittern muss jeweils die Summe zweier Indizes gerade sein. Da für kubisch primitive Gitter nur ein Atom pro Elementarzelle vorhanden ist, sind alle möglichen Kombinationen von $(hkl)$ möglich. Dies lässt sich zusammenfassen zu:
 \begin{align}
   \text{Innenzentriert:} & \qquad h + k +l = 2n\nonumber\\
@@ -344,7 +342,7 @@ Werden nun also die möglichen Kombinationen von $(hkl)$ den einzelnen Gitterstr
       4 & 2 & 1 & 21  & 4 & 4 & 4 & 48  & 4 & 4 & 0 & 32
 	\end{tabular}
 \end{table}\\
-In Tabelle \ref{tab:Q_Paramter} wurden bereits alle möglichen Indizierungen gezeigt, für welche ein mögliches $n = h^2+ k^2 +l^2$ auftreten können. Es stellt sich heraus, dass besonders viele Werte von $n$ geradzahlig sind, was auf kubisch innenzentrierten Gittercharakter hindeutet. Da jedoch auch ungerade $n$ auftauchen, handelt es sich wahrscheinlich um ein kubisch primitives Gitter.\\
+In Tabelle \ref{tab:Q_Paramter} werden bereits alle möglichen Indizierungen gezeigt, für welche ein mögliches $n = h^2+ k^2 +l^2$ auftreten können. Es stellt sich heraus, dass besonders viele Werte von $n$ in \ref{tab:Q_Paramter} geradzahlig sind, was auf kubisch innenzentrierten Gittercharakter hindeutet. Da jedoch auch ungerade $n$ auftauchen, wird auf ein kubisch primitves Gitter geschlossen.\\
 \subsubsection{Bestimmung der Gitterkonstante}
 Die Gitterkonstante des primitiven Gitters ergibt sich nun aus der Konstanten $Q$ und der Wellenlänge $\lambda$.\\
 Für die Wellenlänge wurde bei den ersten 25 Werten eine gemittelte Wellenlänge der $K_\alpha$- und $K_\beta$-Linie angenommen. Diese berechnet sich durch
@@ -400,7 +398,7 @@ Die Ergebnisse der Rechnungen werden in Tabelle~\ref{tab:Ergebnisse} nochmal aus
 	\end{tabular}
 \end{table}
 \subsubsection{Korrektur nach Hadding}
-Findet eine hohe Absorption der Probe statt, dann tritt die \textsc{Bragg}-Reflexion fast nur an der Oberfläche der Probe auf, sodass sich die Radien der beobachtbaren Ringe auf dem Röntgenfilm verändern. Nach \textsc{Hadding} lässt sich dieser Fehler folgendermaßen korrigieren:
+Findet eine hohe Absorption der Probe statt, dann tritt die \textsc{Bragg}-Reflexion fast nur an der Oberfläche der Probe auf, sodass sich die Radien der beobachtbaren Ringe auf dem Röntgenfilm verändern. Nach \textsc{Hadding} lässt sich, da von einer völlig undurchlässigen Probe ausgegangen wird, dieser Fehler folgendermaßen korrigieren:
 \begin{align}
   2r_\text{korr} = 2r - \rho (1+\cos(2\vartheta))
 \end{align}
@@ -435,6 +433,44 @@ bestimmt. Mit dieser Korrektur wurden die \textsc{Bragg}-Winkel neu berechnet un
     27 & 6,31 & 80,4 & 0,0286 & 4,566 & 0,059
 	\end{tabular}
 \end{table}
+
+\subsubsection{Extrapolation, Gitterkonstanten- und Substanzbestimmung}
+Bei der Messung können mehrere systematische Fehler auftreten, deren Einfluss durch geeignete Extrapolation eliminiert wird.\\ Als ein systematischer Fehler ist aufzuführen, dass die Lage der Debye-Ringe stark von der Absorption des Präparats abhängig ist. Hierbei wird die Verschiebung der Debye-Ringe mit zunehmendem Bragg-Winkel kleiner und bei $\vartheta$ = \SI{90}{\degree} ist keine Verschiebung mehr festzustellen. \\
+Einen weiteren systematischen Fehler, der die Lage der Beugungsringe beeinflusst, stellt die Kameraverzerrung dar. Auch diese ist winkelabhängig und minimal für $\vartheta$ = \SI{90}{\degree}\\
+Um diese bei der Gitterkonstantenbestimmung zu eliminieren, wird eine im Bereich von $\SI{60}{\degree} \leq \vartheta \geq \SI{90}{\degree}$ annährend linear verlaufende und bei $\vartheta$ = \SI{90}{\degree} den Wert Null annehmende Extrapolationsfunktion - die Nelson-Riley-funktion- verwendet: \\
+\begin{align}
+  a_{0,hkl,gemessen} = f(\frac{1}{2}\cdot[\frac{cos^2(\vartheta)}{\vartheta}+\frac{cos^2(\vartheta)}{sin(\vartheta)}])
+\end{align}
+
+Werden nun die $a_{0}$-Werte, die zu $\vartheta$ gehören, für das gilt $\SI{60}{\degree} \leq \vartheta \geq \SI{90}{\degree}$ über der sich aus $(\frac{1}{2}\cdot[\frac{cos^2(\vartheta)}{\vartheta}+\frac{cos^2(\vartheta)}{sin(\vartheta)}])$ ergebenden Abzissenachsenwerten aufgetragen und mit einer linearen Funktion gefittet, lässt sich der korrigierte Wert der Gitterkonstanten aufgrund obiger Überlegungen als Schnittpunkt mit der Ordinatenachse ablesen. In der durchgeführten Extrapolation \ref{fig:Extrapolation} wurden dabei Winkel für $\vartheta$ $\SI{56,18}{\degree} \leq \vartheta \geq \SI{80,44}{\degree}$ verwendet.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Abbildungen/Extrapolation_anichtkorr.pdf}
+    \caption{Gitterparameter $a_{0}$ über Nelson-Riley-Funktion zur Extrapolation.}
+    \label{fig:Extrapolation}
+\end{figure}\\
+\FloatBarrier
+Aus der Extrapolation ergibt sich für
+\begin{align}\label{equ:a01}
+   a_{0} = \SI{4,568 \pm 0,002}{\textup{\AA}}
+\end{align}
+
+Als Vergleich wird der beim größten $\vartheta$-Wert errechnete Gitterparamter $a_{0}$ herangezogen, da hier der systematische Fehler aufgrund obiger Diskussion am kleinsten ist:
+\begin{align}\label{equ:a02}
+   a_{0} = \SI{4,566 \pm 0,059}{\textup{\AA}}
+\end{align}
+
+Dieser entspricht auch dem nach der Hadding-Korrektur errechneten Wert für $a_0$. Diese ist also als zur Bestimmung der Gitterkonstanten als wenig sinnvoll einzuschätzen, da sie für große Winkel, die für eine Bestimmung der Gitterkonstanten betrachtet werden, keine Korrektur mehr bewirkt. \\
+
+Aufgrund des so ermittelten Gitterparameters lässt sich die untersuchte unbekannte Substanz als Cäsium-Iodid bestimmen. Dieses hat eine Gitterkonstante von
+\begin{align}
+  a_{0} = \SI{0,4567}{\nano\meter} = \SI{4,567}{\textup\AA}      \cite{Uschmann}
+\end{align}
+
+welches sowohl im Fehlerintervall von \ref{equ:a01}, als auch in dem von \ref{equ:a02} liegt. \\
+Cäsium-Iodid hat ein kubisch primitives Bravaisgitter. Auch dies zeigt sich in den Messergebnissen. In \ref{sec:Auslöschungsregeln} wird auf ein kubisch primitves Gitter geschlossen, welches jedoch kubisch innenzentrierte Tendenzen aufweist. Letzteres wird bei einer Betrachtung des Atomformfaktors beider Elemente erklärbar: Cäsium (Atomformfaktor bei $\frac{\sin(\theta)}{\lambda} = \SI{0.6}{\textup{\AA}}: 26,5 \; \cite{Uschmann}$, Anhang D ) und Iod (Atomformfaktor bei $\frac{\sin(\theta)}{\lambda} = \SI{0.6}{\textup{\AA}}: 25,3 \; \cite{Uschmann}$, Anhang D) haben sehr ähnliche Atomformfaktoren, weshalb es, obwohl es ein zweiatomiges kubisch primitives Gitter ist, teilweise als kubisch flächenzentriertes Gitter beugt.
+
 \FloatBarrier
 \subsection{Salzstruktur ohne Nickelfilter}
 Von der gleichen Salzprobe wurde ebenfalls eine Aufnahme ohne Nickelfilter aufgenommen. Die Belichtungszeit war mit $\SI{10}{\min}$ kürzer, weshalb die aufgenommen Ringe weniger gut zu sehen sind (siehe Abb.~\ref{fig:Film_ohneFilter}).
@@ -532,6 +568,12 @@ Durch die Extrapolation ergibt sich eine Gitterkonstante von
   a_0 =  \SI{3,3051 \pm 0,0060}{\textup{\AA}}.\label{eqn:Extrapolation_Metalldraht}
 \end{align}
 Die im Anhang von \cite{Uschmann} angegeben Gitterkonstanten zeigen eine große Übereinstimmung mit Tantal, für welches ein Literaturwert von $a_0 = \SI{3,303}{\textup{\AA}}$ angegeben wird, welcher mit~\eqref{eqn:Gitterkonstante_Metalldraht} übereinstimmt und bei~\eqref{eqn:Extrapolation_Metalldraht} im Fehlerintervall liegt. Es bestätigt ebenfalls die bestimmte Art des Gitters, denn Tantal hat einen kubisch innenzentrierten Gittertyp.
+
+\subsection{Wertung des Debye-Scherrer-Verfahrens}
+Mit dem getesteten Röntgen-Analyse-Verfahren nach Debye-Scherrer konnten die Gitterkonstanten der unterschiedlichen Stoffe genau bestimmt und die jeweiligen Stoffe sehr sicher zugeordnet werden. Außerdem ist das Messverfahren bzw. die Justage einfach und systematische Messfehler können gut korigiert werden. Als weiterer großer Vorteil ist zu sehen, dass nur pulverisiertes Material und keine größeren, gut ausgebildeten Kristalle nötig sind.\\
+Schwierigkeiten und Potential für Unsicherheiten bietet das Indizieren der Reflexe, was hauptsächlich durch Ausprobieren möglich war. Außerdem können nur einfache Kristallstrukturen derart unaufwändig ausgewertet werden.
+
+
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
@@ -549,6 +591,8 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 	W. Kleber u.a.: \textit{Einführung in die Kristallographie}. Oldenbourg Wissenschaftsverlag 2010 (19. Auflage).
   \bibitem{Roentgenroehre}
   Aufbau einer Röntgenröhre: \url{wikimedia.org/wiki/File:WaterCooledXrayTube.svg}. Stand: 20.10.2019
+  \bibitem{Uschmann}
+  I.Uschmann: \textit{FSU Fortgeschrittenenen Praktikum: Debye-Scherrer-Verfahren DS}Friedrich Schiller Universität Oktober 2013
 \end{thebibliography}
 
 \end{document}
