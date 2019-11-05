@@ -1,0 +1,28 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Aufgabenstellung}{3}{section.1}% 
+\contentsline {paragraph}{Aufgabe 1}{3}{section*.2}% 
+\contentsline {paragraph}{Aufgabe 2}{3}{section*.3}% 
+\contentsline {paragraph}{Aufgabe 3}{3}{section*.4}% 
+\contentsline {paragraph}{Aufgabe 4}{3}{section*.5}% 
+\contentsline {section}{\numberline {2}Grundlagen}{3}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}R\IeC {\"o}ntgenstrahlung}{3}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Kristallographie}{5}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Millersche Indizes und Netzebenen}{5}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Laue-Gleichungen und Bragg'sche Bedingung}{6}{subsubsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Das Debye-Scherrer Verfahren}{7}{subsection.2.3}% 
+\contentsline {section}{\numberline {3}Versuchsdurchf\IeC {\"u}hrung}{8}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Aufnahme der Beugungsbilder}{8}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Entwicklung des R\IeC {\"o}ntgenfilms}{8}{subsection.3.2}% 
+\contentsline {section}{\numberline {4}Ergebnisse und Diskussion}{9}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Salzstruktur mit Nickelfilter}{9}{subsection.4.1}% 
+\contentsline {subsubsection}{\numberline {4.1.1}Indizierung der Reflexe}{9}{subsubsection.4.1.1}% 
+\contentsline {subsubsection}{\numberline {4.1.2}Ausl\IeC {\"o}schungsregeln}{10}{subsubsection.4.1.2}% 
+\contentsline {subsubsection}{\numberline {4.1.3}Bestimmung der Gitterkonstante}{11}{subsubsection.4.1.3}% 
+\contentsline {subsubsection}{\numberline {4.1.4}Korrektur nach Hadding}{12}{subsubsection.4.1.4}% 
+\contentsline {subsubsection}{\numberline {4.1.5}Extrapolation, Gitterkonstanten- und Substanzbestimmung}{13}{subsubsection.4.1.5}% 
+\contentsline {subsubsection}{\numberline {4.1.6}Maximale Probenabsorption}{14}{subsubsection.4.1.6}% 
+\contentsline {subsection}{\numberline {4.2}Salzstruktur ohne Nickelfilter}{16}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Metalldraht mit Nickelfilter}{17}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}Bestimmung der Reflexintensit\IeC {\"a}ten}{19}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}Wertung des Debye-Scherrer-Verfahrens}{20}{subsection.4.5}% 
+\contentsline {section}{\numberline {5}Zusammenfassung}{20}{section.5}% 
