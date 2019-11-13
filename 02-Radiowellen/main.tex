@@ -1,0 +1,130 @@
+\documentclass[a4paper,twoside,final]{article}
+%----Eingebundene Bibliotheken-----
+\input{../LaTeX-Packages.tex}
+\begin{document}
+\setlength{\marginparsep}{2em}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% Anfang ********************************************************
+\begin{center}
+\thispagestyle{empty}
+  \includegraphics[width=0.75\textwidth]{UniJena_BildWortMarke_black.pdf}\\[4em]
+  \Large
+  Ausarbeitung zum Versuch\\[2em]
+  \Huge
+  Radiowellen auf Leitungen\\
+  und im freien Raum
+  \vspace{2cm}
+  \Large
+  Martin Beyer und Vanessa Huth\\[2em]
+  Abgabe: 03. Dezember 2019\\[2em]
+  Betreuer: \\[5em]
+  \begin{flushleft}
+  	Bewertung und Ausarbeitung:\\[2em]
+		Protokollführung und Form:\\[1em]
+		Ergebnisse, Auswertung und Interpretation:\\[1em]
+		Bemerkungen und Hinweise des Betreuers:
+  \end{flushleft}
+\end{center}
+\clearpage
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[RO,LE]{\textbf{Radiowellen}}
+\fancyhead[RE,LO]{\rightmark}
+\fancyfoot[LE,RO]{\bfseries\thepage}
+\fancyfoot[CO,CE]{Protokoll}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+
+% *********************************************
+% ***** KAPITEL 1 *****************************
+% *********************************************
+\tableofcontents
+\newpage
+\section{Aufgabenstellung} \label{sec:Aufgabenstellung}
+\subsection{Elektromagnetische Wellen auf Leitungen}
+\paragraph{Sinussignale}$~$\\
+Es wird Das Verhalten von Sinussignalen auf der Leitung bei verschiedenen Kabelsorten und -anordnungen untersucht. Es folgt eine grafische Darstellung mit Bestimmung des Verkürzungsfaktors, der Ausbreitungsgeschwindigkeit und Permittivität für die verwendeten Kabel.
+\paragraph{Rechtecksignale}$~$\\
+Es werden Rechtecksignale erzeugt und am \textit{Scope} mit verschiedenen Eingangswiderständen oszillographiert. Dabei werden Koaxial-Kabel unterschiedlicher Länge verwendet. Es erfolgt ebenfalls die Bestimmung der Ausbreitungsgeschwindigkeit, des Verkürzungsfaktors und der Permittivität der Anordnungen.
+\paragraph{Wellenwiderstand}$~$\\
+Es wird experimentell der Wellenwiderstand eines RG58 Koaxialkabels mit Rechteckimpulsen bestimmt unter Verwendung verschiedener Methoden.
+
+\subsection{Modulation}
+\paragraph{Amplitudenmodulation}$~$\\
+Additive und multiplikative Amplitudenmodulation wird mithilfe von LabView simuliert. Parallel dazu wir die Modulation im Experiment realisiert und der Modulationsgrad varriert. Das amplitudenmodulierte Signal wird mithilfe eines Hüllkurvendemodulators demoduliert.
+\paragraph{Frequenzmodulation}$~$\\
+Die Frequenzmodulation wird mit LabView simuliert und parallel im Experiment realisert.
+
+\subsection{Radiowellen im freien Raum}
+\paragraph{paragraph name}
+
+
+
+% *********************************************
+% ***** KAPITEL 2 *****************************
+% *********************************************
+\section{Grundlagen} \label{sec:Grundlagen}
+
+\subsection{Röntgenstrahlung}
+% \begin{figure}[htp]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{Abbildungen/WaterCooledXrayTube.pdf}
+%     \caption{}
+%     \label{fig:Roentgenroehre}
+% \end{figure}\\
+
+
+\subsection{Kristallographie}
+% \begin{table}[ht]
+% 	\centering
+% 	\caption{}
+% 	\label{tab:Achsensysteme}
+% 	\begin{tabular}{l l l l}
+% 		\toprule
+% 	 	\midrule
+% 	\end{tabular}
+% \end{table}\\
+
+% *********************************************
+% ***** KAPITEL 3 *****************************
+% *********************************************
+\section{Versuchsdurchführung} \label{sec:Versuchsdurchführung}
+
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\newpage
+\section{Ergebnisse und Diskussion}
+
+
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\section{Zusammenfassung}
+
+
+% ***** Literaturverzeichnis ******************
+
+\begin{thebibliography}{xxx}
+	\bibitem{Demtroeder}
+	W. Demtröder: \textit{Experimentalphysik 3: Atome, Moleküle und Festkörper}. Springer Verlag Berlin Heidelberg 2009 (4. Auflage).
+	\bibitem{Glocker}
+	R. Glocker: \textit{Materialprüfung mit Röntgenstrahlen}. Springer Verlag Berlin Heidelberg New York 1985 (5. Auflage).
+  \bibitem{Kleber}
+	W. Kleber u.a.: \textit{Einführung in die Kristallographie}. Oldenbourg Wissenschaftsverlag 2010 (19. Auflage).
+  \bibitem{Uschmann}
+  I. Uschmann: \textit{FSU Fortgeschrittenenen Praktikum: Debye-Scherrer-Verfahren}, Fried\-rich-Schil\-ler-Uni\-versi\-tät Oktober 2013
+  \bibitem{Roentgenroehre}
+  Aufbau einer Röntgenröhre: \url{wikimedia.org/wiki/File:WaterCooledXrayTube.svg}. Stand: 20.10.2019
+\end{thebibliography}
+
+\end{document}
