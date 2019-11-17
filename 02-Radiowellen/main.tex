@@ -10,12 +10,12 @@
 % Anfang ********************************************************
 \begin{center}
 \thispagestyle{empty}
-  \includegraphics[width=0.75\textwidth]{UniJena_BildWortMarke_black.pdf}\\[4em]
+  \includegraphics[width=0.75\textwidth]{../UniJena_BildWortMarke_black.pdf}\\[4em]
   \Large
   Ausarbeitung zum Versuch\\[2em]
   \Huge
   Radiowellen auf Leitungen\\
-  und im freien Raum
+  und im freien Raum\\
   \vspace{2cm}
   \Large
   Martin Beyer und Vanessa Huth\\[2em]
@@ -52,26 +52,33 @@
 \section{Aufgabenstellung} \label{sec:Aufgabenstellung}
 \subsection{Elektromagnetische Wellen auf Leitungen}
 \paragraph{Sinussignale}$~$\\
-Es wird Das Verhalten von Sinussignalen auf der Leitung bei verschiedenen Kabelsorten und -anordnungen untersucht. Es folgt eine grafische Darstellung mit Bestimmung des Verkürzungsfaktors, der Ausbreitungsgeschwindigkeit und Permittivität für die verwendeten Kabel.
+Es wird Das Verhalten von Sinussignalen auf der Leitung bei verschiedenen Kabelsorten und -anordnungen im Bereich von $1\hdots\SI{100}{\mega\hertz}$ untersucht. Es folgt eine grafische Darstellung mit Bestimmung des Verkürzungsfaktors, der Ausbreitungsgeschwindigkeit und Permittivität für die verwendeten Kabel.
 \paragraph{Rechtecksignale}$~$\\
 Es werden Rechtecksignale erzeugt und am \textit{Scope} mit verschiedenen Eingangswiderständen oszillographiert. Dabei werden Koaxial-Kabel unterschiedlicher Länge verwendet. Es erfolgt ebenfalls die Bestimmung der Ausbreitungsgeschwindigkeit, des Verkürzungsfaktors und der Permittivität der Anordnungen.
-\paragraph{Wellenwiderstand}$~$\\
-Es wird experimentell der Wellenwiderstand eines RG58 Koaxialkabels mit Rechteckimpulsen bestimmt unter Verwendung verschiedener Methoden.
+\paragraph{Messungen am Koaxialkabel}$~$\\
+Es wird experimentell der Wellenwiderstand eines RG58 Koaxialkabels mit Rechteckimpulsen unter Verwendung verschiedener Methoden bestimmt. Zudem wird die Dispersion und das verwendete Dielektrikum des Koaxialkabels bestimmt. Für ein unbekanntest Kabelstück soll ebenfalls das Dielektrikum bestimmt werden. In einem LAN-Netzwerkkabel wird der Wellenwiderstand und der Frequenzgang bestimmt und mit dem Koaxialkabel verglichen.
 
 \subsection{Modulation}
 \paragraph{Amplitudenmodulation}$~$\\
-Additive und multiplikative Amplitudenmodulation wird mithilfe von LabView simuliert. Parallel dazu wir die Modulation im Experiment realisiert und der Modulationsgrad varriert. Das amplitudenmodulierte Signal wird mithilfe eines Hüllkurvendemodulators demoduliert.
+Additive und multiplikative Amplitudenmodulation wird mithilfe von LabView simuliert. Parallel dazu wird die Modulation im Experiment realisiert und der Modulationsgrad varriert. Das amplitudenmodulierte Signal wird mithilfe eines Hüllkurvendemodulators demoduliert.
 \paragraph{Frequenzmodulation}$~$\\
 Die Frequenzmodulation wird mit LabView simuliert und parallel im Experiment realisert.
 
 \subsection{Radiowellen im freien Raum}
-\paragraph{paragraph name}
-
+Es sollen die Grundlagen der Dimensionierung und Berechnung von einer Halbwellendipolantenne und Viertelwellenstrahler recherchiert werden.\\
+Mithilfe eines Reflektometers wird der Reflexionsfaktor eines Koaxialkabels in Abhängigkeit von der Frequenz $\SI{10}{\mega\hertz}\hdots\SI{1}{\giga\hertz}$ bestimmt. Es soll untersucht werden, welche Möglichkeiten zur messung der Ausbreitungsgeschwindigkeit in Luft realisiertbarsind.\\
+Weiterhin wird ein amplitudenmoduliertes Signal über einen Halbwellendipol abgestrahlt, empfangen und demoduliert. \\
+Zudem wird eine Übersicht der verwendeten Funkfrequenzen und deren Verwendungszweck erstellt. Das örtliche Frequenzspektrum und die zugehörigen Funkdienste werden bestimmt.\\
+Die Ausbreitung von EM-Wellen in Wasser wird unterrsucht.
+%% More to do
+%%
+%%
 
 
 % *********************************************
 % ***** KAPITEL 2 *****************************
 % *********************************************
+\newpage
 \section{Grundlagen} \label{sec:Grundlagen}
 
 \subsection{Röntgenstrahlung}
@@ -83,7 +90,49 @@ Die Frequenzmodulation wird mit LabView simuliert und parallel im Experiment rea
 % \end{figure}\\
 
 
-\subsection{Kristallographie}
+\subsection{Modulation}
+Als Modulation wird das Aufprägen einer Information auf eine Trägerschwingung bezeichnet. Dabei wird das zu übertragene Nutzsignal in einen definierten höheren Frequenzbereich verschoben. Dies wird benötigt, weil der direkte Übertragungsweg des Signals durch ein Medium wie z.\,B. Schall häufig nicht über lange Strecken möglich ist. Im Allgemeinen erfolgt die Signalübertragung über einen Kanal wie Luft oder Kabel. Im Kanal tritt eine frequenzabhängige Dämpfung auf, weshalb das Signal auf eine Frequenz innerhalb eines dämpfungsarmen Frequenzfensters moduliert wird. Für das Nutzsignal und den Träger lassen sich folgende Formeln aufstellen.
+\begin{align}
+    U_\text{Nutz}(t) &= U_\text{N}\cdot\cos(\omega_\text{N}t) & \text{Spannung Nutzfrequenz}\\
+    U_\text{Träger}(t) &= U_\text{T}\cdot\cos(\omega_\text{T}t) & \text{Spannung Trägerfrequenz}
+\end{align}
+Der Träger wird benötigt, um die Information des Nutzsignals durch spätere Demodulation wieder zu erhalten.\\
+Die Mischung zweier Signale wird technisch auf gleiche Weise realisiert wie die Modulation. Bei der Mischung wird nur eine der entstehenden Frequenzen weiter benutzt, während bei der Modulation mehrere Mischprodukte weiter verwendet werden.
+\subsubsection{Amplitudenmodulation}
+Bei der Amplitudenmodulation wird das Signal in der Amplitude der Trägerschwingung kodiert. Die Amplitude des modulierten Signals ändert sich mit der Frequenz des Nutzsignals, während die Schwingungsfrequenz durch den Träger vorgegeben wird. Es lassen sich zwei verschiedene Verfahren unterscheiden.
+\paragraph{Additive Amplitudenmodulation}
+Hierbei handelt es sich um die am einfachsten realisierbare Variante. Die zu modulierenden Signale werden überlagert und anschließend an einer Kennlinie (Diode oder Transistor) mit exponentiellen Verlauf verzerrt. Dabei entstehen neue Frequenzkomponenten.
+\begin{align}
+  U_\text{AM}(t) = U_\text{T}\cos(\omega_\text{T}t) + U_\text{N}\cos(\omega_\text{N}t)\cdot U_\text{T}\cos(\omega_\text{T}t)
+\end{align}
+Neben der Trägerfrequenz $\omega_\text{T}$ entstehen im amplitudenmodulierten Signal zwei weitere Frequenzen. Diese Schwebungsfrequenzen $\omega_\text{T} \pm \omega_\text{N}$ werden als Seitenbänder bezeichnet.
+\begin{align}
+  U_\text{oberes Seitenband}\cos(\omega_\text{T} + \omega_\text{N})\\
+  U_\text{unteres Seitenband}\cos(\omega_\text{T} - \omega_\text{N})
+\end{align}
+Üblicherweise wird die Trägerfrequenz $\omega_\text{T}$ so gewählt, dass sie viel größer als die Signalfrequenz ist, $\omega_\text{S} \ll \omega_\text{T}$, weshalb alle auftretenden Frequenzen im Größenbereich der Trägerfrequenz liegen.\\
+Eine weitere charakteristische Größe stellt der Modulationsgrad $M$ dar. Dieser ist definiert als Verhältnis der Hüllkurvenamplitude zur Trägeramplitude und berechnet sich folgendermaßen
+\begin{align}
+  M = \frac{U_N}{U_T} = \frac{\text{max}-\text{min}}{\text{max}+\text{min}},
+\end{align}
+wobei die beiden Größen in Abbildung~\ref{fig:Amplitudenmodulation} eingezeichnet sind.
+\begin{figure}[htp]
+    \centering
+        \input{Schaltungen/Amplitudenmodulation.tex}
+    \caption{Amplitudenmodulation eines Signals $f_\text{N} = \SI{1.5}{\hertz}$ mit der Trägerfrequenz $f_\text{T} = \SI{20}{\hertz}$ mit Modulationstiefe $M = \SI{50}{\percent}$ (eigene Abbildung).}
+    \label{fig:Amplitudenmodulation}
+\end{figure}\\
+Bei einem Modulationsgrad von $\SI{100}{\percent}$ fällt die Amplitude des modulierten Signals auf $\SI{0}{\volt}$ ab.
+\paragraph{Multiplikative Amplitudenmodulation}
+Diese Modulationsvariante wird in der Praxis häufiger eingesetzt und kann mit Diodenringmodulatoren realisiert werden. Dabei werden die beiden Schwingungen direkt miteinander multipliziert
+\begin{align}
+    U_\text{AM} = U_\text{N} \cos(\omega_\text{N})\cdot U_\text{T} \cos(\omega_\text{T}).
+\end{align}
+Der Unterschied zur additiven Variante besteht darin, dass die Trägerfrequenz nicht mit erzeugt wird und unerwünschte Nebenfrequenzen unterdrückt werden. Das Minimum im Zeitsignal zeigt einen Phasensprung.
+
+\subsection{Frequenzmodulation}
+Bei der Frequenzmodulation wird die Amplitude des modulierten Signals konstante gehalten und durch das Trägersignal charakterisiert. Die Information des Nutzsignals
+
 % \begin{table}[ht]
 % 	\centering
 % 	\caption{}
@@ -115,16 +164,12 @@ Die Frequenzmodulation wird mit LabView simuliert und parallel im Experiment rea
 % ***** Literaturverzeichnis ******************
 
 \begin{thebibliography}{xxx}
-	\bibitem{Demtroeder}
-	W. Demtröder: \textit{Experimentalphysik 3: Atome, Moleküle und Festkörper}. Springer Verlag Berlin Heidelberg 2009 (4. Auflage).
-	\bibitem{Glocker}
-	R. Glocker: \textit{Materialprüfung mit Röntgenstrahlen}. Springer Verlag Berlin Heidelberg New York 1985 (5. Auflage).
-  \bibitem{Kleber}
-	W. Kleber u.a.: \textit{Einführung in die Kristallographie}. Oldenbourg Wissenschaftsverlag 2010 (19. Auflage).
-  \bibitem{Uschmann}
-  I. Uschmann: \textit{FSU Fortgeschrittenenen Praktikum: Debye-Scherrer-Verfahren}, Fried\-rich-Schil\-ler-Uni\-versi\-tät Oktober 2013
-  \bibitem{Roentgenroehre}
-  Aufbau einer Röntgenröhre: \url{wikimedia.org/wiki/File:WaterCooledXrayTube.svg}. Stand: 20.10.2019
+	\bibitem{Meinke}
+	H. Meinke: \textit{Taschenbuch der Hochfrequenztechnik}. Springer Verlag Berlin Heidelberg New York 1992 (5. Auflage).
+	\bibitem{Perner}
+  I. Perner: \textit{FSU Fortgeschrittenenen Praktikum: Radiowellen}, Fried\-rich-Schil\-ler-Uni\-versi\-tät Juli 2019
+  \bibitem{Amplitudenmodulation}
+  Amplitudenmodulation: \url{https://de.wikipedia.org/wiki/Amplitudenmodulation}. Stand: 17.11.2019
 \end{thebibliography}
 
 \end{document}
