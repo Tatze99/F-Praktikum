@@ -81,13 +81,17 @@ Die Ausbreitung von EM-Wellen in Wasser wird unterrsucht.
 \newpage
 \section{Grundlagen} \label{sec:Grundlagen}
 
-\subsection{Röntgenstrahlung}
-% \begin{figure}[htp]
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{Abbildungen/WaterCooledXrayTube.pdf}
-%     \caption{}
-%     \label{fig:Roentgenroehre}
-% \end{figure}\\
+\subsection{Elektromagnetische Wellen auf Leitungen}
+Die Leitungstheorie befasst sich mit Vorgängen auf Leitungen deren Länge sich in der Größenordnung der Wellenlänge
+des zu übertragenden Signals befindet, wodurch sie unter anderem in der Hochfrequenztechnik anzuwenden ist. Beispielsweise hat eine elektromagnetische Welle der Frequenz $\nu = \SI{100}{\mega\hertz}$ eine Wellenlänge von $\SI{3}{\metre}$.\\
+Es gilt das Leistungsanpassungsgesetz mit $Z_Q$ als Quellwiderstand und $Z_A$, dem Abschlusswiderstand. Bei $Z_Q = Z_A$ entsteht eine Leistungsanpassung, d.\,h. maximale Leistung wird übertragen.\\
+Im Hochfrequenzbereich muss eine weitere Größe, der \textit{Wellenwiderstand} $Z_L$ der Leitung berücksichtigt werden. Hierbei wird gefordert, dass $Z_L = Z_A$ idealerweise gelten muss, um stehende Wellen zu vermeiden. 
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Schaltungen/Ersatzschaltbild.pdf}
+    \caption{Ersatzschaltbild eines homogenen Leitungsstücks von $x$ bist $x+\de x$.}
+    \label{fig:Ersatzschaltbild}
+\end{figure}\\
 
 
 \subsection{Modulation}
