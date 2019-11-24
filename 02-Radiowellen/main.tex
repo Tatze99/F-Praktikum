@@ -93,7 +93,6 @@ Im Hochfrequenzbereich muss eine weitere Größe, der \textit{Wellenwiderstand} 
     \label{fig:Ersatzschaltbild}
 \end{figure}\\
 
-
 \subsection{Modulation}
 Als Modulation wird das Aufprägen einer Information auf eine Trägerschwingung bezeichnet. Dabei wird das zu übertragene Nutzsignal in einen definierten höheren Frequenzbereich verschoben. Dies wird benötigt, weil der direkte Übertragungsweg des Signals durch ein Medium wie z.\,B. Schall häufig nicht über lange Strecken möglich ist. Im Allgemeinen erfolgt die Signalübertragung über einen Kanal wie Luft oder Kabel. Im Kanal tritt eine frequenzabhängige Dämpfung auf, weshalb das Signal auf eine Frequenz innerhalb eines dämpfungsarmen Frequenzfensters moduliert wird. Für das Nutzsignal und den Träger lassen sich folgende Formeln aufstellen.
 \begin{align}
@@ -107,7 +106,7 @@ Bei der Amplitudenmodulation wird das Signal in der Amplitude der Trägerschwing
 \paragraph{Additive Amplitudenmodulation}
 Hierbei handelt es sich um die am einfachsten realisierbare Variante. Die zu modulierenden Signale werden überlagert und anschließend an einer Kennlinie (Diode oder Transistor) mit exponentiellen Verlauf verzerrt. Dabei entstehen neue Frequenzkomponenten.
 \begin{align}
-  U_\text{AM}(t) = U_\text{T}\cos(\omega_\text{T}t) + U_\text{N}\cos(\omega_\text{N}t)\cdot U_\text{T}\cos(\omega_\text{T}t)
+  U_\text{AM}(t) = U_\text{T}\cos(\omega_\text{T}t) + U_\text{N}\cos(\omega_\text{N}t)\cdot\cos(\omega_\text{T}t)
 \end{align}
 Neben der Trägerfrequenz $\omega_\text{T}$ entstehen im amplitudenmodulierten Signal zwei weitere Frequenzen. Diese Schwebungsfrequenzen $\omega_\text{T} \pm \omega_\text{N}$ werden als Seitenbänder bezeichnet.
 \begin{align}
@@ -130,7 +129,7 @@ Bei einem Modulationsgrad von $\SI{100}{\percent}$ fällt die Amplitude des modu
 \paragraph{Multiplikative Amplitudenmodulation}
 Diese Modulationsvariante wird in der Praxis häufiger eingesetzt und kann mit Diodenringmodulatoren realisiert werden. Dabei werden die beiden Schwingungen direkt miteinander multipliziert
 \begin{align}
-    U_\text{AM} = U_\text{N} \cos(\omega_\text{N})\cdot U_\text{T} \cos(\omega_\text{T}).
+    U_\text{AM} = U_\text{N} \cos(\omega_\text{N}t)\cdot U_\text{T} \cos(\omega_\text{T}t).
 \end{align}
 Der Unterschied zur additiven Variante besteht darin, dass die Trägerfrequenz nicht mit erzeugt wird und unerwünschte Nebenfrequenzen unterdrückt werden. Das Minimum im Zeitsignal zeigt einen Phasensprung.
 
@@ -147,6 +146,13 @@ Bei der Frequenzmodulation wird die Amplitude des modulierten Signals konstante 
 % 	\end{tabular}
 % \end{table}\\
 
+\subsection{Demodulation}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Schaltungen/Demodulator.pdf}
+    \caption{}
+    \label{fig:Demodulator}
+\end{figure}
 % *********************************************
 % ***** KAPITEL 3 *****************************
 % *********************************************
