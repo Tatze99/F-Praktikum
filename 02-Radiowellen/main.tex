@@ -85,10 +85,10 @@ Die Ausbreitung von EM-Wellen in Wasser wird unterrsucht.
 Die Leitungstheorie befasst sich mit Vorgängen auf Leitungen deren Länge sich in der Größenordnung der Wellenlänge
 des zu übertragenden Signals befindet, wodurch sie unter anderem in der Hochfrequenztechnik anzuwenden ist. Beispielsweise hat eine elektromagnetische Welle der Frequenz $\nu = \SI{100}{\mega\hertz}$ eine Wellenlänge von $\SI{3}{\metre}$.\\
 Es gilt das Leistungsanpassungsgesetz mit $Z_Q$ als Quellwiderstand und $Z_A$, dem Abschlusswiderstand. Bei $Z_Q = Z_A$ entsteht eine Leistungsanpassung, d.\,h. maximale Leistung wird übertragen.\\
-Im Hochfrequenzbereich muss eine weitere Größe, der \textit{Wellenwiderstand} $Z_L$ der Leitung berücksichtigt werden. Hierbei wird gefordert, dass $Z_L = Z_A$ idealerweise gelten muss, um stehende Wellen zu vermeiden. 
+Im Hochfrequenzbereich muss eine weitere Größe, der \textit{Wellenwiderstand} $Z_L$ der Leitung berücksichtigt werden. Hierbei wird gefordert, dass $Z_L = Z_A$ idealerweise gelten muss, um stehende Wellen zu vermeiden.
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=0.8\textwidth]{Schaltungen/Ersatzschaltbild.pdf}
+    \includegraphics{Schaltungen/Ersatzschaltbild.pdf}
     \caption{Ersatzschaltbild eines homogenen Leitungsstücks von $x$ bist $x+\de x$.}
     \label{fig:Ersatzschaltbild}
 \end{figure}\\
@@ -106,7 +106,7 @@ Bei der Amplitudenmodulation wird das Signal in der Amplitude der Trägerschwing
 \paragraph{Additive Amplitudenmodulation}
 Hierbei handelt es sich um die am einfachsten realisierbare Variante. Die zu modulierenden Signale werden überlagert und anschließend an einer Kennlinie (Diode oder Transistor) mit exponentiellen Verlauf verzerrt. Dabei entstehen neue Frequenzkomponenten.
 \begin{align}
-  U_\text{AM}(t) = U_\text{T}\cos(\omega_\text{T}t) + U_\text{N}\cos(\omega_\text{N}t)\cdot\cos(\omega_\text{T}t)
+  U_\text{AM}(t) = U_\text{T}\cos(\omega_\text{T}t) + U_\text{N}\cos(\omega_\text{N}t)\cdot\cos(\omega_\text{T}t)\label{eqn:AM_additiv}
 \end{align}
 Neben der Trägerfrequenz $\omega_\text{T}$ entstehen im amplitudenmodulierten Signal zwei weitere Frequenzen. Diese Schwebungsfrequenzen $\omega_\text{T} \pm \omega_\text{N}$ werden als Seitenbänder bezeichnet.
 \begin{align}
@@ -116,7 +116,7 @@ Neben der Trägerfrequenz $\omega_\text{T}$ entstehen im amplitudenmodulierten S
 Üblicherweise wird die Trägerfrequenz $\omega_\text{T}$ so gewählt, dass sie viel größer als die Signalfrequenz ist, $\omega_\text{S} \ll \omega_\text{T}$, weshalb alle auftretenden Frequenzen im Größenbereich der Trägerfrequenz liegen.\\
 Eine weitere charakteristische Größe stellt der Modulationsgrad $M$ dar. Dieser ist definiert als Verhältnis der Hüllkurvenamplitude zur Trägeramplitude und berechnet sich folgendermaßen
 \begin{align}
-  M = \frac{U_N}{U_T} = \frac{\text{max}-\text{min}}{\text{max}+\text{min}},
+  M = \frac{U_N}{U_T} = \frac{\text{max}-\text{min}}{\text{max}+\text{min}},\label{eqn:Modulationsgrad}
 \end{align}
 wobei die beiden Größen in Abbildung~\ref{fig:Amplitudenmodulation} eingezeichnet sind.
 \begin{figure}[htp]
@@ -129,30 +129,51 @@ Bei einem Modulationsgrad von $\SI{100}{\percent}$ fällt die Amplitude des modu
 \paragraph{Multiplikative Amplitudenmodulation}
 Diese Modulationsvariante wird in der Praxis häufiger eingesetzt und kann mit Diodenringmodulatoren realisiert werden. Dabei werden die beiden Schwingungen direkt miteinander multipliziert
 \begin{align}
-    U_\text{AM} = U_\text{N} \cos(\omega_\text{N}t)\cdot U_\text{T} \cos(\omega_\text{T}t).
+    U_\text{AM} = U_\text{N} \cos(\omega_\text{N}t)\cdot U_\text{T} \cos(\omega_\text{T}t).\label{eqn:AM_multiplikativ}
 \end{align}
 Der Unterschied zur additiven Variante besteht darin, dass die Trägerfrequenz nicht mit erzeugt wird und unerwünschte Nebenfrequenzen unterdrückt werden. Das Minimum im Zeitsignal zeigt einen Phasensprung.
 
 \subsection{Frequenzmodulation}
-Bei der Frequenzmodulation wird die Amplitude des modulierten Signals konstante gehalten und durch das Trägersignal charakterisiert. Die Information des Nutzsignals
+Bei der Frequenzmodulation wird die Amplitude des modulierten Signals konstant gehalten und durch das Trägersignal charakterisiert. Die Information des Nutzsignals wird durch die sich ändernde Frequenz übertragen. Es ergibt sich für die Frequenzmodulation folgende Formel
+\begin{align}
+  U_\text{FM}(t) = U_\text{T} \cos\left[\omega_\text{T} \frac{\Delta f}{f_\text{S}}\cdot \sin(\omega_\text{S}t)\right].
+\end{align}
+Es wird ein symmetrisch zur Trägerfrequenz $\omega_\text{T}$ liegender Frequenzbereich durchlaufen. Die maximale Abweichung von der Trägerfrequenz wird mit $\Delta \omega = (\omega_\text{max}-\omega_\text{min})/2$ bezeichnet. Für die nachfolgende Betrachtung ist es sinnvoll, den Modulationsindex $\eta$ als das Verhältnis aus Frequenzhub $\Delta \omega$ und Nutzfrequenz $\omega_\text{N}$ zu definieren
+\begin{align}
+  \eta = \frac{\Delta \omega}{\omega_\text{N}} = \frac{\text{Frequenzhub}}{\text{Signalfrequenz}}.
+\end{align}
+Abbildung~\ref{fig:FM} zeigt den Zeitverlauf eines frequenzmodulierten Signals mit Frequenzhub $\Delta f = \SI{5}{\hertz}$ und Modulationsindex $\eta = 3,33$.
+\begin{figure}[htp]
+    \centering
+        \input{Schaltungen/Frequenzmodulation.tex}
+    \caption{Frequenzmodulation eines sinusförmigen Signals der Frequenz $f_\text{S} = \SI{2}{\hertz}$ auf eine Trägerschwingung der Frequenz $f_\text{T} = \SI{20}{\hertz}$}
+    \label{fig:FM}
+\end{figure}
+\FloatBarrier
+\noindent
+Die Auswirkung des Modulationsindex auf das Frequenzspektrum des modulierten Signals lässt sich mathematisch mithilfe von Bessel-Funktionen ausdrücken.
+\begin{align}
+    J_m(\eta) &= \frac{1}{\pi}\int_0^\pi \cos(\eta\sin \vartheta - m\vartheta)\; \text{d}\vartheta\\
+    J_{m+1} (\eta) &= \frac{2m}{\eta} \cdot J_m(\eta) - J_{m-1}(\eta).
+\end{align}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Schaltungen/Besselfunktion.pdf}
+    \caption{Verlauf der Besselfunktionen. Die Amplitude der Besselfunktion $J_i$ gibt den Anteil der Seitenbänder $\omega_\text{T}\pm\omega_{i\cdot\text{N}}$ im Frequenzspektrum an.}
+    \label{fig:Besselfunktionen}
+\end{figure}
+Zum Herausfiltern von bestimmten Frequenzanteilen aus dem Signal, muss ein Modulationsindex $\eta$ gewählt werden, für den die entsprechende Besselfunktion eine Nullstelle aufweist.
 
-% \begin{table}[ht]
-% 	\centering
-% 	\caption{}
-% 	\label{tab:Achsensysteme}
-% 	\begin{tabular}{l l l l}
-% 		\toprule
-% 	 	\midrule
-% 	\end{tabular}
-% \end{table}\\
-
+\newpage
 \subsection{Demodulation}
+Bei der Demodulation wird aus dem übertragenen modulierten Signal wieder das ursprüngliche Nutzsignal zurückgewonnen. Für die Demodulation wird das Signal zunächst mit einer Diode gleichgerichtet, um die untere Halbwelle des Signals zu entfernen. Im zweiten Schritt wird das Signal mithilfe eines Kondensators geglättet, der aufgrund seiner im Vergleich zur Trägerfrequenz großen Zeitkonstante einen Spannungsverlauf erzeugt, der dem Verlauf der Hüllkurve ähnelt. Der Kondensator wirkt also eine Art Tiefpass. Am Ende ergibt sich die Hüllkurve, welche bis auf einem konstanten Gleichstromanteil dem ursprünglichen Signal entspricht. Der im Versuch verwendete Modulator lässt sich durch das Schaltbild in Abbildung~\ref{fig:Demodulator} veranschaulichen.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.5\textwidth]{Schaltungen/Demodulator.pdf}
-    \caption{}
+    \caption{Schaltbild des im Versuch verwendeten Demodulators.}
     \label{fig:Demodulator}
-\end{figure}
+\end{figure}\\
+Durch einen weiteren, in Reihe geschalteten Kondensator lässt sich zusätzlich noch der Gleichspannungsanteil des demodulierten Signals entfernen.
 % *********************************************
 % ***** KAPITEL 3 *****************************
 % *********************************************
@@ -163,6 +184,119 @@ Bei der Frequenzmodulation wird die Amplitude des modulierten Signals konstante 
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}
+
+\subsection{Modulation}
+\subsubsection{Simulation mit LabView}
+Zuerst wurde mithilfe eines LabView Programms eine Simulation von additiver und multiplikativer Amplitudenmodulation durchgeführt. Dabei wurde eine Nutzfrequenz $f_\text{N} = \SI{5}{\kilo\hertz}$ und eine Trägerfrequenz $f_\text{T} = \SI{100}{\kilo\hertz}$ zur Simulation des modulierten Signals benutzt.\\
+Zunächst wurden die beiden Signale nur addiert, wodurch noch keine Modulation entsteht. Die Verläufe im Zeit- und Frequenzbereich sind in Abbildung~\ref{fig:Addition} dargestellt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Addition_Zeitverlauf.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Addition_Frequenzverlauf.pdf}
+    \end{subfigure}
+    \caption{Zeitverlauf und Frequenzspektrum der addierten Signale nach der Formel $U(t) = \sin(\omega_\text{N}) + a\cdot \sin(\omega_\text{T})$ mit Amplitude $a = \SI{1}{\volt}$.}
+    \label{fig:Addition}
+\end{figure}\\
+Es zeigt sich, dass beide Frequenz wieder im Frequenzbereich auffindbar sind, was verdeutlicht, dass hierbei keine Modulation stattgefunden hat.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM1_additiv_Zeit.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM1_additiv_Frequenz.pdf}
+    \end{subfigure}
+    \caption{Zeitverlauf und Frequenzspektrum der additiv amplitudenmodulierten Signale nach Formel \eqref{eqn:AM_additiv} mit Modulationsgrad $M = 0,4$.}
+    \label{fig:AM1_additiv}
+\end{figure}\\
+Weiterhin wurde eine additive Amplitudenmodulation mit verschiedenen Modulationsgraden durchgeführt. Wie zuvor wurden als Nutzfrequenz $f_\text{N} = \SI{5}{\kilo\hertz}$ und Trägerfrequenz $f_\text{T} = \SI{100}{\kilo\hertz}$ verwendet. Die Amplitude des Nutzsignals wird mit $U_\text{T} = \SI{1}{\volt}$ wird festgehalten. Als Amplitude $U_\text{N}$ des Signals wurden $\SI{400}{\milli\volt}$ gewählt. Damit ergibt sich nach Gleichung~\eqref{eqn:Modulationsgrad} ein Modulationsgrad von $M = 0,4$. Die Ergebnisse der Simulation zeigt Abbildung~\ref{fig:AM1_additiv}.\\
+Bei der Betrachtung des Frequenzspektrums erscheint wieder die Trägerfrequenz mit einer hohen Amplitude und symmetrisch im Abstand von $\SI{5}{\kilo\hertz}$ die beiden Seitenbänder $f_\text{T}\pm f_\text{N}$.\\
+Es lässt sich erkennen, dass die Hüllkurve der Modulationsschwingung kein Minimum aufweist. Wird nun wie in Abbildung~\ref{fig:AM2_additiv} (links) ein Modulationsgrad von $M = 1$ gewählt, indem die Amplitude $U_\text{N} = \SI{1}{\volt}$ gesetzt wird, dann sinkt die Amplitude eine einhüllenden Kurve auf $\SI{0}{\volt}$ ab.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM2_additiv_Zeit.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM3_additiv_Zeit.pdf}
+    \end{subfigure}
+    \caption{Veränderung des Modulationsgrades bei der additiven Amplitudenmodulation. Links wurde $U_\text{N} = \SI{1}{\volt}$ gewählt, was einem Modulationsgrad von $M = 1$ entspricht. Im rechten Bild war $U_\text{N} = \SI{1,45}{\volt}$ mit Modulationsgrad $M = 1,45$.}
+    \label{fig:AM2_additiv}
+\end{figure}\\
+Wird die Amplitude des Nutzsignals größer als die des Trägers, dann ergibt sich ein Modulationsgrad $M > 1$ und es treten weitere Schwingungsbäuche auf. Abbildung~\ref{fig:AM2_additiv} zeigt den zeitlichen Verlauf einer solchen Schwingung. Eine solche Modulation sollte allerdings immer vermieden werden, da es durch die zusätzlichen Schwingungsbäuche zu einer Fehlinterpretation der auftretenden Frequenzen kommen kann.
+\FloatBarrier
+\newpage
+\paragraph{Multiplikative Amplitudenmodulation}$~$\\
+Weiterhin wurde noch eine multiplikative Amplitudenmodulation simuliert. Analog zu den vorherigen Simulationen wurde die Nutzfrequenz $ = \SI{5}{\kilo\hertz}$ und Trägerfrequenz $f_\text{T} = \SI{100}{\kilo\hertz}$ gewählt, siehe Abbildung~\ref{fig:AM1_multiplikativ}.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM1_mult_Zeit.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM1_mult_Frequenz.pdf}
+    \end{subfigure}
+    \caption{Zeitverlauf und Frequenzspektrum der multiplikativ amplitudenmodulierten Signale nach Formel \eqref{eqn:AM1_multiplikativ}. Es wurde eine Amplitude von $U_\text{N} = U_\text{T} = \SI{1}{\volt}$ gewählt.}
+    \label{fig:AM1_multiplikativ}
+\end{figure}\\
+Bei der Analyse der Frequenzbereichs fällt auf, dass die Trägerfrequenz verschwunden ist und nur noch die beiden Seitenbänder sichtbar sind.\\
+Für einen besseren Vergleich mit der additiven Amplitudenmodulation wurden ebenfalls die Amplituden des Nutzsignals auf $U_\text{N} = \SI{0,4}{\volt}$ (Abbildung~\ref{fig:AM2_multiplikativ} links) und auf $U_\text{N} = \SI{1,45}{\volt}$ (Abbildung~\ref{fig:AM2_multiplikativ} rechts) gesetzt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM2_mult_Zeit.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM3_mult_Zeit.pdf}
+    \end{subfigure}
+    \caption{Veränderung der Amplitude der multiplikativen Amplitudenmodulation bei Änderung der Amplitude des Nutzsignals.}
+    \label{fig:AM2_multiplikativ}
+\end{figure}\\
+Es zeigt sich, die einhüllende Kurve der Modulation unabhängig von der Amplitude des Nutzsignals immer eine Nullstelle aufweist.
+\FloatBarrier
+\subsubsection{Amplitudenmodulation im Experiment}
+Nun wurde die Amplitudenmodulation experimentell durchgeführt. Dabei wurde eine Nutzfrequenz von $f_\text{N} = \SI{100}{\kilo\hertz}$ und eine Trägerfrequenz von $f_\text{T} = \SI{100}{\mega\hertz}$ additiv überlagert. Dies wurde mithilfe einer Modulationsbox realisiert, deren Schaltplan in Abbildung~\ref{fig:AM_Modulator} dargestellt ist.
+\begin{figure}[htp]
+  \centering
+  \includegraphics{Schaltungen/AM-Modulator.pdf}
+  \caption{Schaltplan des im Versuch verwendeten AM-Modulators.}
+  \label{fig:AM_Modulator}
+\end{figure}\\
+Das Zeitbild wurde an einem analogen Oszilloskop dargestellt, weil das \textit{HP 54845A} nicht gleichzeitig auf diese beiden unterschiedlichen Frequenzen triggern konnte, um ein stabiles Bild zu erzeugen. Da auch hier keine Möglichkeit zur Speicherung der Daten vorhanden war, sind die folgenden Verläufe als Photo dargestellt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_400mV_Amplitude.jpg}
+        \caption{Zeitverlauf}
+    \end{subfigure}\hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_400mV_Frequenz.jpg}
+        \caption{Frequenzverlauf}
+    \end{subfigure}
+    \caption{Additiv amplitudenmoduliertes Signal mit $f_\text{N} = \SI{100}{\kilo\hertz}$ und $f_\text{T} = \SI{100}{\mega\hertz}$ und einer Amplitude des Nutzsignals von $U_N = \SI{400}{\milli\volt_\text{PP}}$.}
+    \label{fig:Modulation_400mV}
+\end{figure}\\
+Das Trägersignal wurde mit einer effektiven Spannung von $\SI{1}{\volt}$ generiert und mit einem $10:1$ Element abgeschwächt. Als Amplitude des Nutzsignals wurde $U_N = \SI{400}{\milli\volt_\text{PP}}$ eingestellt. Im Zeitverlauf sieht das modulierte Signal verschoben aus, die Minima und Maxima der Hüllkurve sind zueinander verschoben.\\
+Das Frequenzspektrum wurde an einem analogen Frequenzspektrographen mit logarithmischer Ordinate dargestellt. Ein Kästchen entlang der Ordinate beschreibt eine Intensitätsabschwächung von $\SI{10}{\deci\bel} \approx 0,32$. Die Amplituden der ersten Seitenbänder entsprechen demnach etwa nur $\SI{30}{\percent}$ der Amplitude der Trägerfrequenz. Im Unterschied zur Simulation treten hier Seitenbänder höherer Ordnung $\omega_\text{T}\pm n\cdot \omega_\text{N}$ auf. Diese sind aber um 40 bzw. $\SI{50}{\deci\bel}$ gegenüber der Trägerfrequenz abgeschwächt, was einer Abschwächung um Faktor 100 bzw. 300. Die Nebenfrequenzen treten auf, weil die Kennlinien der zur Modulation verwendeten Dioden nicht exakt quadratisch sind.\\ %ToDo mehr dazu
+Weiterhin wurde die Modulation mit gleichen Frequenzen von Signal und Träger aber einer anderen Amplitude $U_\text{N} = \SI{800}{\milli\volt}$ wiederholt. Das Ergebnis zeigt Abbildung~\ref{fig:Modulation_800mV}
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_800mV_Amplitude.jpg}
+        \caption{Zeitverlauf}
+    \end{subfigure}\hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_800mV_Frequenz.jpg}
+        \caption{Frequenzverlauf}
+    \end{subfigure}
+    \caption{Additiv amplitudenmoduliertes Signal mit $f_\text{N} = \SI{100}{\kilo\hertz}$ und $f_\text{T} = \SI{100}{\mega\hertz}$ und einer Amplitude des Nutzsignals von $U_N = \SI{800}{\milli\volt_\text{PP}}$.}
+    \label{fig:Modulation_800mV}
+\end{figure}\\
+Im Zeitverlauf ist der höhere Modulationsgrad gut erkennbar und kann als $M = 1$ abgeschätzt werden. Jedoch tritt weiterhin die Verschiebung der Einhüllenden Kurve auf. Im Frequenzspektrum sind die Seitenbänder wesentlich stärker ausgeprägt. Das erste Seitenband ist um $\SI{5}{\deci\bel}$ abgeschwächt, was einer Abschwächung von $\SI{50}{\percent}$ gegenüber der Trägerfrequenz entspricht. Dabei stimmt die Abschwächung mit dem erwarteten Ergebnis mit Modulationsgrad $M =1$ überein.
+\subsection{Demodulation}
 
 
 % *********************************************
