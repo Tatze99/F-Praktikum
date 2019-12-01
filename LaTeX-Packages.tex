@@ -23,8 +23,10 @@
 \usepackage{esint}                  % Doppelintegrale
 \usepackage{fancyhdr}               % schöne Kopf- und Fußzeilen
 \usepackage{lmodern}
+\usepackage{pgfmath, pgfplots}
 \usepackage[labelfont=bf]{subcaption}
 \usepackage[square,numbers,sort&compress]{natbib}
+\usepackage{mhchem}                 % Chemistry Package
 \usepackage[detect-all,
             locale=DE,binary-units,
             exponent-product=\cdot
@@ -70,7 +72,7 @@
 \newcommand{\R}{\mathbb{R}}         % Reelle Zahlen
 \newcommand{\N}{\mathbb{N}}         % Natürliche Zahlen
 \newcommand{\C}{\mathbb{C}}         % Komplexe Zahlen
-\newcommand{\de}{\mathrm{\;d}}      % Differential
+\newcommand{\de}{\mathrm{d}}      % Differential
 \newcommand{\entspricht}{\mathrel{\widehat{=}}}
 
 \DeclareSIUnit{\eV}{\text{eV}}
@@ -103,3 +105,29 @@
 }
 \makeatother
 % Damit das auch im Mathemodus anwendbar ist und dort z.B. die Leerzeichen nicht wie im Textmodus gesetzt werden.
+
+\pgfplotsset
+{compat=newest, % aktuelle Version: 1.16 [29.05.2018]
+	/pgf/number format/.cd, % cd steht fuer current directory
+	%  	use comma, % Komma als Dezimaltrennzeichen %%% UNCOMMENT THIS !!!
+	1000 sep={} % Legt das Tausendertrennzeichen fest
+}
+%\usepgfplotslibrary{external} % Section 7.1.1 Using the Automatic Externalization Framework of TikZ
+%\tikzexternalize[prefix=FiguresTikZ/] % activate externalization! Use subdirectory [FiguresTikZ]
+\usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{polar}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{intersections}
+\usetikzlibrary{patterns}
+\usetikzlibrary{pgfplots.colormaps}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{shapes.geometric}
+
+% Generelle Festlegung des Styles fuer Blockschemata (Plaene fuer Regelkreise, etc.)
+\tikzstyle{block} = [draw, fill=blue!20, rectangle, minimum height=1cm, minimum width=1cm]%, minimum width=6em]
+\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]

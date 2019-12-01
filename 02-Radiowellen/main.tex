@@ -1,0 +1,401 @@
+\documentclass[a4paper,twoside,final]{article}
+%----Eingebundene Bibliotheken-----
+\input{../LaTeX-Packages.tex}
+\begin{document}
+\setlength{\marginparsep}{2em}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% Anfang ********************************************************
+\begin{center}
+\thispagestyle{empty}
+  \includegraphics[width=0.75\textwidth]{../UniJena_BildWortMarke_black.pdf}\\[4em]
+  \Large
+  Ausarbeitung zum Versuch\\[2em]
+  \Huge
+  Radiowellen auf Leitungen\\
+  und im freien Raum\\
+  \vspace{2cm}
+  \Large
+  Martin Beyer und Vanessa Huth\\[2em]
+  Abgabe: 03. Dezember 2019\\[2em]
+  Betreuer: \\[5em]
+  \begin{flushleft}
+  	Bewertung und Ausarbeitung:\\[2em]
+		Protokollführung und Form:\\[1em]
+		Ergebnisse, Auswertung und Interpretation:\\[1em]
+		Bemerkungen und Hinweise des Betreuers:
+  \end{flushleft}
+\end{center}
+\clearpage
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[RO,LE]{\textbf{Radiowellen}}
+\fancyhead[RE,LO]{\rightmark}
+\fancyfoot[LE,RO]{\bfseries\thepage}
+\fancyfoot[CO,CE]{Protokoll}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+
+% *********************************************
+% ***** KAPITEL 1 *****************************
+% *********************************************
+\tableofcontents
+\newpage
+\section{Aufgabenstellung} \label{sec:Aufgabenstellung}
+\subsection{Elektromagnetische Wellen auf Leitungen}
+\paragraph{Sinussignale}$~$\\
+Es wird Das Verhalten von Sinussignalen auf der Leitung bei verschiedenen Kabelsorten und -anordnungen im Bereich von $1\hdots\SI{100}{\mega\hertz}$ untersucht. Es folgt eine grafische Darstellung mit Bestimmung des Verkürzungsfaktors, der Ausbreitungsgeschwindigkeit und Permittivität für die verwendeten Kabel.
+\paragraph{Rechtecksignale}$~$\\
+Es werden Rechtecksignale erzeugt und am \textit{Scope} mit verschiedenen Eingangswiderständen oszillographiert. Dabei werden Koaxial-Kabel unterschiedlicher Länge verwendet. Es erfolgt ebenfalls die Bestimmung der Ausbreitungsgeschwindigkeit, des Verkürzungsfaktors und der Permittivität der Anordnungen.
+\paragraph{Messungen am Koaxialkabel}$~$\\
+Es wird experimentell der Wellenwiderstand eines RG58 Koaxialkabels mit Rechteckimpulsen unter Verwendung verschiedener Methoden bestimmt. Zudem wird die Dispersion und das verwendete Dielektrikum des Koaxialkabels bestimmt. Für ein unbekanntest Kabelstück soll ebenfalls das Dielektrikum bestimmt werden. In einem LAN-Netzwerkkabel wird der Wellenwiderstand und der Frequenzgang bestimmt und mit dem Koaxialkabel verglichen.
+
+\subsection{Modulation}
+\paragraph{Amplitudenmodulation}$~$\\
+Additive und multiplikative Amplitudenmodulation wird mithilfe von LabView simuliert. Parallel dazu wird die Modulation im Experiment realisiert und der Modulationsgrad varriert. Das amplitudenmodulierte Signal wird mithilfe eines Hüllkurvendemodulators demoduliert.
+\paragraph{Frequenzmodulation}$~$\\
+Die Frequenzmodulation wird mit LabView simuliert und parallel im Experiment realisert.
+
+\subsection{Radiowellen im freien Raum}
+Es sollen die Grundlagen der Dimensionierung und Berechnung von einer Halbwellendipolantenne und Viertelwellenstrahler recherchiert werden.\\
+Weiterhin wird ein amplitudenmoduliertes Signal über einen Halbwellendipol abgestrahlt, empfangen und demoduliert. \\
+%% More to do
+%%
+
+
+% *********************************************
+% ***** KAPITEL 2 *****************************
+% *********************************************
+\newpage
+\section{Grundlagen} \label{sec:Grundlagen}
+
+\subsection{Elektromagnetische Wellen auf Leitungen}
+Die Leitungstheorie befasst sich mit Vorgängen auf Leitungen deren Länge sich in der Größenordnung der Wellenlänge
+des zu übertragenden Signals befindet, wodurch sie unter anderem in der Hochfrequenztechnik anzuwenden ist. Beispielsweise hat eine elektromagnetische Welle der Frequenz $\nu = \SI{100}{\mega\hertz}$ eine Wellenlänge von $\SI{3}{\metre}$. \\
+Es gilt das Leistungsanpassungsgesetz mit $Z_Q$ als Quellwiderstand und $Z_A$, dem Abschlusswiderstand. Bei $Z_Q = Z_A$ entsteht eine Leistungsanpassung, d.\,h. maximale Leistung wird übertragen. Sind die charakteristischen Leitungsgrößen gleichmäßig über die Leitung verteilt, wird von einer homogenen Leitung gesprochen.
+\subsubsection{Reale Leiter}
+Nur in der Versorgungstechnik unter Einsatz von Gleichstrom oder Wechelstrom niedriger Frequenz reicht es aus einen Leiter mit einem ohmschen Ersatzwiderstand zu beschreiben. Für einen realen Leiter in der Hochfrequenztechnik wird ein Ersatzschaltbild eingeführt, welches Ersatzkapazitäten, Widerstände und Induktivitäten für einen Leiterabschnitt von $x$ bis $x+\de x$ enthält. Der Schaltplan ist in Abbildung~\ref{fig:Ersatzschaltbild} dargestellt.
+\begin{figure}[htp]
+    \centering
+    \includegraphics{Schaltungen/Ersatzschaltbild.pdf}
+    \caption{Ersatzschaltbild eines homogenen Leitungsstücks infinitesimaler Länge von $x$ bis $x+\de x$.}
+    \label{fig:Ersatzschaltbild}
+\end{figure}
+\paragraph{Induktivität} Ein realer Leiter kann als eine abgewickelte Spule mit einer Windung aufgefasst werden. Es wird im Ersatzschaltbild eine Induktivität $L'\de x$ eingezeichnet, wobei $L' = \frac{L}{\de x}$ den Induktivitätsbelag der Leitung bezeichnet. Der Wert der Induktivität setzt sich aus einem äußeren und inneren Induktivitätsbelag zusammen. Der äußere Induktivitätsbelag ist abhängig vom geometischen Grundaufbau und den magnetischen Eigenschaften der Leitung. Der innere Induktivitätsbelag wird durch magnetische Wechselfelder innerhalb des Leiters verursacht.
+\paragraph{Kapazität} Eine Leitung besteht aus mehreren Leiteradern innerhalb des Kabels. Die gegenüberliegenden Flächen der Adern besitzen eine geringe Kapazität $C'\de x$. Der Wert der Kapazität ist abhängig vom geometrischen Aufbau der Leitung und der Dielektrizitätskonstante der Isolierung. Die Kapazität steigt mit geringerem Adernabstand, größerer Leiteroberfläche und höherer Dielektrizitätskonstante an.
+\paragraph{Widerstand} Der Widerstand $R' \de x$ einer Leitung beschreibt den den Gleichstromwiderstand einer Ader im Kabel. Mit zunehmender Frequenz nimmt der ohmsche Wechselstromwiderstand der Leitung zu, da durch den Skineffekt die Elektronen an die Leiteroberfläche gedrängt werden und somit der stromdurchflossene Leiterquerschnitt kleiner wird.\\
+Der \textbf{Isolationswiderstand} $G'\de x$ beschreibt die Isolations- und dielektrischen Verluste der Leitung. Der Isolationswiderstand ist frequenzabhängig und wird teilweise auch mithilfe des Verlustfaktors $\tan \delta$ angegeben
+\begin{align}
+  \tan \delta = \frac{G'}{\omega C'}.
+\end{align}
+\subsubsection{Leitungsgleichungen und Wellenwiderstand}
+Zur Beschreibung der Ausbreitung von Strom und Spannung auf einer geraden zweiadrigen Leitung dienen die Leitungsgleichungen. Dabei handelt es sich um ein System gekoppelter partieller Differentialgleichungen, welche unter Verwendung von Knoten- und Maschenregel hergeleitet werden können~\cite{Leitungsgleichungen}
+\begin{align}
+  \frac{\partial U(x, t)}{\partial x}&=-L'(x) \frac{\partial I(x, t)}{\partial t}-R'(x) I(x, t)\\
+  \frac{\partial I(x, t)}{\partial x}&=-G'(x) U(x, t)-C'(x) \frac{\partial U(x, t)}{\partial t}.
+\intertext{Unter der Annahme stationärer sinusförmiger Signale ergeben sich folgende Differentialgleichungen der homogenen Leitung}
+  \frac{\de U}{\de x} &= -(R' + i\omega L')\cdot I\\
+  \frac{\de I}{\de x} &= -(G' + i\omega C')\cdot U
+\intertext{Aus diesen Gleichungen lässt sich nun der Wellenwiderstand $Z_L$ bestimmen zu}
+  Z_L &= \sqrt{\frac{R'+i\omega L'}{G' + i\omega C'}}\\
+  &= \sqrt{\frac{L'}{C'}}\quad \text{verlustfrei.}\label{eqn:Wellenwiderstand}
+\end{align}
+Bei der Übertragung von Radiowellen wird mit hohen Frequenzen gearbeitet. Deshalb werden die Größen für Isolations- und Widerstandsbelag vernachlässigbar klein, woraus der Leitungswiderstand der verlustlosen Leitung~\eqref{eqn:Wellenwiderstand} resultiert.
+
+\subsubsection{Leistungsanpassung und Reflexionsfaktor}
+Im Hochfrequenzbereich muss der \textit{Wellenwiderstand} $Z_L$ der Leitung berücksichtigt werden. Dieser ist eine Kenngröße zur Berechnung des optimalen Abschlusswiderstandes. Dies wird \textit{Widerstandsanpassung} genannt. Hierbei wird gefordert, dass $Z_L = Z_A$ idealerweise gelten muss, um stehende Wellen aufgrund von Reflexionen am Leitungsende zu vermeiden. Dies führt dazu, dass keine Phasenverschiebung zwischen $E$-Feld und $B$-Feld am Leitungsende auftritt und somit keine Leistung reflektiert wird.\\
+Wird das Leitungsende kurzgeschlossen, findet eine Reflexion statt und am Leitungsende tritt ein Strommaximum und Spannungsminimum auf. Für eine offene Leitung mit einem theoretisch unendlich großen Abschlusswiderstand wird am Ende die Spannung maximal und der fließende Strom minimal.\\
+Zur Beschreibung des Reflexionsanteils wird der \textit{Reflexionsfaktor} $r$ eingeführt als das Verhältnis aus rücklaufender $U_\text{rück}$ und hinlaufender Spannung $U_\text{hin}$
+\begin{align}
+  r=\frac{U_{\text{Rück}}}{U_{\text{Hin}}}=\frac{Z_{A}-Z_{L}}{Z_{A}+Z_{L}} \Rightarrow-1 \leq r \leq 1.
+\end{align}
+Bei der Verwendung von Sinussignalen bilden sich stehende Wellen durch Interferenz von hinlaufender und refelektiereter Welle aus. Alternativ zum Reflexionsfaktor wird das Stehwellenverhältnis \text{VSWR} (voltage standing wave ratio) definiert
+\begin{align}
+  VSWR=\frac{U_{\max }}{U_{\min }}= \frac{U_\text{Hin}+U_\text{Rück}}{U_\text{Hin}-U_\text{Rück}}\frac{1+|r|}{1-|r|} \Rightarrow 1 \leq VSWR<\infty.
+\end{align}
+Es gibt das Verhältnis von Spannungsmaximum und -minimum der stehenden Welle innerhalb des Leiters an.
+
+\subsubsection{Leitungsarten}
+Da zur Übertragung hoher Frequenzen $\nu > \SI{1}{\mega\hertz}$ gewöhnliche Laborkabel mit Bananenstecker ungeeignet sind, werden alternative Leitungsarten eingesetzt. Bei den im Praktikum verwendeten Kabeln handelt es sich um Koaxialleitungen, welche selbstabschirmend sind und einen Wellenwiderstand von $Z_L = \SI{50}{\ohm}$ (in der Antennentechnik $Z_L = \SI{75}{\ohm}$) besitzen. Koaxialkabel sind die am meisten verwendete Leitungsart.\\
+Die Lecherleitung bzw. Zweidrahtleitung ist die ursprüngliche Leitungsart zu Übertragung hochgfrequenter Signale. Aufgrund der kostengünstigen Herstellung werden sie häufig in der Computertechnik eingesetzt.\\
+In der Telekommunikations- und Computertechnik werden ebenso \textit{Twisted-Pair}-Kabel benutzt, deren Adernpaare miteinander verdrillt sind. Der bekannteste Anwendungsbereich sind Netzwerkkabel, wo vier Adernpaare zu einem Kabel zusammengefasst sind.
+Für die Übertragung höhrerer Frequenzen ab $\SI{6}{\giga\hertz}$ sollten Hohlleiter verwendet werden, da diese verlustärmer sind als Koaxialkabel. Allerdings sind Hohlleiter erst ab einer kritischen Frequenz funktionsfähig.
+
+\subsection{Modulation}
+Als Modulation wird das Aufprägen einer Information auf eine Trägerschwingung bezeichnet. Dabei wird das zu übertragene Nutzsignal in einen definierten höheren Frequenzbereich verschoben. Dies wird benötigt, weil der direkte Übertragungsweg des Signals durch ein Medium wie z.\,B. Schall häufig nicht über lange Strecken möglich ist. Im Allgemeinen erfolgt die Signalübertragung über einen Kanal wie Luft oder Kabel. Im Kanal tritt eine frequenzabhängige Dämpfung auf, weshalb das Signal auf eine Frequenz innerhalb eines dämpfungsarmen Frequenzfensters moduliert wird. Für das Nutzsignal und den Träger lassen sich folgende Formeln aufstellen.
+\begin{align}
+    U_\text{Nutz}(t) &= U_\text{N}\cdot\cos(\omega_\text{N}t) & \text{Spannung Nutzfrequenz}\\
+    U_\text{Träger}(t) &= U_\text{T}\cdot\cos(\omega_\text{T}t) & \text{Spannung Trägerfrequenz}
+\end{align}
+Der Träger wird benötigt, um die Information des Nutzsignals durch spätere Demodulation wieder zu erhalten.\\
+Die Mischung zweier Signale wird technisch auf gleiche Weise realisiert wie die Modulation. Bei der Mischung wird nur eine der entstehenden Frequenzen weiter benutzt, während bei der Modulation mehrere Mischprodukte weiter verwendet werden.
+\subsubsection{Amplitudenmodulation}
+Bei der Amplitudenmodulation wird das Signal in der Amplitude der Trägerschwingung kodiert. Die Amplitude des modulierten Signals ändert sich mit der Frequenz des Nutzsignals, während die Schwingungsfrequenz durch den Träger vorgegeben wird. Es lassen sich zwei verschiedene Verfahren unterscheiden.
+\paragraph{Additive Amplitudenmodulation}
+Hierbei handelt es sich um die am einfachsten realisierbare Variante. Die zu modulierenden Signale werden überlagert und anschließend an einer Kennlinie (Diode oder Transistor) mit exponentiellen Verlauf verzerrt. Dabei entstehen neue Frequenzkomponenten.
+\begin{align}
+  U_\text{AM}(t) = U_\text{T}\cos(\omega_\text{T}t) + U_\text{N}\cos(\omega_\text{N}t)\cdot\cos(\omega_\text{T}t)\label{eqn:AM_additiv}
+\end{align}
+Neben der Trägerfrequenz $\omega_\text{T}$ entstehen im amplitudenmodulierten Signal zwei weitere Frequenzen. Diese Schwebungsfrequenzen $\omega_\text{T} \pm \omega_\text{N}$ werden als Seitenbänder bezeichnet.
+\begin{align}
+  U_\text{oberes Seitenband}\cos(\omega_\text{T} + \omega_\text{N})\\
+  U_\text{unteres Seitenband}\cos(\omega_\text{T} - \omega_\text{N})
+\end{align}
+Üblicherweise wird die Trägerfrequenz $\omega_\text{T}$ so gewählt, dass sie viel größer als die Signalfrequenz ist, $\omega_\text{S} \ll \omega_\text{T}$, weshalb alle auftretenden Frequenzen im Größenbereich der Trägerfrequenz liegen.\\
+Eine weitere charakteristische Größe stellt der Modulationsgrad $M$ dar. Dieser ist definiert als Verhältnis der Hüllkurvenamplitude zur Trägeramplitude und berechnet sich folgendermaßen
+\begin{align}
+  M = \frac{U_N}{U_T} = \frac{\text{max}-\text{min}}{\text{max}+\text{min}},\label{eqn:Modulationsgrad}
+\end{align}
+wobei die beiden Größen in Abbildung~\ref{fig:Amplitudenmodulation} eingezeichnet sind.
+\begin{figure}[htp]
+    \centering
+        \input{Schaltungen/Amplitudenmodulation.tex}
+    \caption{Amplitudenmodulation eines Signals $f_\text{N} = \SI{1.5}{\hertz}$ mit der Trägerfrequenz $f_\text{T} = \SI{20}{\hertz}$ mit Modulationstiefe $M = \SI{50}{\percent}$ (eigene Abbildung).}
+    \label{fig:Amplitudenmodulation}
+\end{figure}\\
+Bei einem Modulationsgrad von $\SI{100}{\percent}$ fällt die Amplitude des modulierten Signals auf $\SI{0}{\volt}$ ab.
+\paragraph{Multiplikative Amplitudenmodulation}
+Diese Modulationsvariante wird in der Praxis häufiger eingesetzt und kann mit Diodenringmodulatoren realisiert werden. Dabei werden die beiden Schwingungen direkt miteinander multipliziert
+\begin{align}
+    U_\text{AM} = U_\text{N} \cos(\omega_\text{N}t)\cdot U_\text{T} \cos(\omega_\text{T}t).\label{eqn:AM_multiplikativ}
+\end{align}
+Der Unterschied zur additiven Variante besteht darin, dass die Trägerfrequenz nicht mit erzeugt wird und unerwünschte Nebenfrequenzen unterdrückt werden. Das Minimum im Zeitsignal zeigt einen Phasensprung.
+
+\subsubsection{Frequenzmodulation}
+Bei der Frequenzmodulation wird die Amplitude des modulierten Signals konstant gehalten und durch das Trägersignal charakterisiert. Die Information des Nutzsignals wird durch die sich ändernde Frequenz übertragen. Es ergibt sich für die Frequenzmodulation folgende Formel
+\begin{align}
+  U_\text{FM}(t) = U_\text{T} \cos\left[\omega_\text{T} \frac{\Delta f}{f_\text{S}}\cdot \sin(\omega_\text{S}t)\right].
+\end{align}
+Es wird ein symmetrisch zur Trägerfrequenz $\omega_\text{T}$ liegender Frequenzbereich durchlaufen. Die maximale Abweichung von der Trägerfrequenz wird mit $\Delta \omega = (\omega_\text{max}-\omega_\text{min})/2$ bezeichnet. Für die nachfolgende Betrachtung ist es sinnvoll, den Modulationsindex $\eta$ als das Verhältnis aus Frequenzhub $\Delta \omega$ und Nutzfrequenz $\omega_\text{N}$ zu definieren
+\begin{align}
+  \eta = \frac{\Delta \omega}{\omega_\text{N}} = \frac{\text{Frequenzhub}}{\text{Signalfrequenz}}.
+\end{align}
+Abbildung~\ref{fig:FM} zeigt den Zeitverlauf eines frequenzmodulierten Signals mit Frequenzhub $\Delta f = \SI{5}{\hertz}$ und Modulationsindex $\eta = 3,33$.
+\begin{figure}[htp]
+    \centering
+        \input{Schaltungen/Frequenzmodulation.tex}
+    \caption{Frequenzmodulation eines sinusförmigen Signals der Frequenz $f_\text{S} = \SI{2}{\hertz}$ auf eine Trägerschwingung der Frequenz $f_\text{T} = \SI{20}{\hertz}$}
+    \label{fig:FM}
+\end{figure}
+\FloatBarrier
+\noindent
+Die Auswirkung des Modulationsindex auf das Frequenzspektrum des modulierten Signals lässt sich mathematisch mithilfe von Bessel-Funktionen ausdrücken.
+\begin{align}
+    J_m(\eta) &= \frac{1}{\pi}\int_0^\pi \cos(\eta\sin \vartheta - m\vartheta)\; \text{d}\vartheta\\
+    J_{m+1} (\eta) &= \frac{2m}{\eta} \cdot J_m(\eta) - J_{m-1}(\eta).
+\end{align}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Schaltungen/Besselfunktion.pdf}
+    \caption{Verlauf der Besselfunktionen. Die Amplitude der Besselfunktion $J_i$ gibt den Anteil der Seitenbänder $\omega_\text{T}\pm\omega_{i\cdot\text{N}}$ im Frequenzspektrum an.}
+    \label{fig:Besselfunktionen}
+\end{figure}
+Zum Herausfiltern von bestimmten Frequenzanteilen aus dem Signal, muss ein Modulationsindex $\eta$ gewählt werden, für den die entsprechende Besselfunktion eine Nullstelle aufweist.
+
+\subsection{Demodulation}
+Bei der Demodulation wird aus dem übertragenen modulierten Signal wieder das ursprüngliche Nutzsignal zurückgewonnen. Für die Demodulation wird das Signal zunächst mit einer Diode gleichgerichtet, um die untere Halbwelle des Signals zu entfernen. Im zweiten Schritt wird das Signal mithilfe eines Kondensators geglättet, der aufgrund seiner im Vergleich zur Trägerfrequenz großen Zeitkonstante einen Spannungsverlauf erzeugt, der dem Verlauf der Hüllkurve ähnelt. Der Kondensator wirkt also eine Art Tiefpass. Am Ende ergibt sich die Hüllkurve, welche bis auf einem konstanten Gleichstromanteil dem ursprünglichen Signal entspricht. Der im Versuch verwendete Modulator lässt sich durch das Schaltbild in Abbildung~\ref{fig:Demodulator} veranschaulichen.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Schaltungen/Demodulator.pdf}
+    \caption{Schaltbild des im Versuch verwendeten Demodulators.}
+    \label{fig:Demodulator}
+\end{figure}\\
+Durch einen weiteren, in Reihe geschalteten Kondensator lässt sich zusätzlich noch der Gleichspannungsanteil des demodulierten Signals entfernen.
+
+\subsection{Elektromagnetische Wellen im freien Raum}
+Die Propagation von elektromagnetischen Wellen im freien Raum bildet die Grundlage aller Funkanwendungen und ist im Alltag unabdingbar. Zur Nutzung der elektromagnetischen Wellen im freien Raum müssen diese über Antennen abgestrahlt und empfangen werden. Dabei muss eine Anpassung an den Wellenwiderstand des freien Raumes durchgeführt werden. Dieser gibt das Verhältnis der Beträge von elektrischem und magnetischem Feld an
+\begin{align}
+  Z_0 = \frac{|\bm{E}|}{|\bm{H}|} = \sqrt{\frac{\mu_0}{\varepsilon_0}} \approx \SI{377}{\ohm}.
+\end{align}\\
+Die für die Signalübertragung verwendeten Antennen bilden einen schwingenden Dipol aus einem Kondensator und einer Spule. Technisch wird eine Antenne durch das Aufklappen eines Dipols realisiert, welcher elektromagnetische Wellen in alle Richtungen (mit Ausnahme der Bewegungsrichtung der Elektronen in der Antenne) abstrahlt.
+\begin{figure}[htp]
+    \centering
+    \includegraphics{Schaltungen/offenerSchwingkreis.pdf}
+    \caption{Prinzipielle Konstruktion einer Antenne als ein offener Schwingkreis.}
+    \label{fig:Schwingkreis}
+\end{figure}\\
+Die durch die Abstrahlung elektromagnetischer Wellen entnommene Energie muss dem Schwingkreis durch einen Generator wieder zugeführt werden.
+\paragraph{Antennen}
+Prinzipiell gibt es zwei Möglichkeiten, eine Antenne zu konstruieren. Es wird zwischen Halbwellendipolen und Viertelwellendipolen unterschieden. Bei beiden Konstruktionsarten wird das Ausbilden stehender Wellen im Leiter explizit genutzt und die Länge der Antenne entsprechend eingestellt. Wie die Bezeichnung bereits impliziert, wird die Länge der Antenne für eine bestimmte Empfangs- oder Abstrahlungsfrequenz so eingestellt, dass ihre Länge genau der Hälfte, bzw. dem Viertel der Wellenlänge entspricht.\\
+Bei einer $\lambda/2$-Antenne gibt es zwei Enden mit einem offenen Abschluss, in der Mitte (Fußpunkt) wird das Signal abgeführt. Durch den hohen Abschlusswiderstand tritt am Antennenende ein Spannungsmaximum auf, wodurch am Fußpunkt bei $\lambda/4$ ein Spannungsminimum und Strommaximum entsteht.\\
+Bei der $\lambda/4$-Antenne befindet sich der Fußpunkt am Antennenende, am offenen Ende liegt wieder ein Spannungsmaximum vor, woraus ein Minimum am Fußpunkt resultiert. Es ist jedoch wichtig, darauf zu achten, dass der materialbedingte Verkürzungsfaktor der Antenne bei der Längeneinstellung beachtet wird.\\
+Für einen unendlich dünnen Halbwellendipol gilt für die Antenenimpendanz
+\begin{align}
+  Z_\text{Ant} = R_\text{Ant} + i X_\text{Ant} = (73,13 + i\cdot 42,54)\si{\ohm}
+\end{align}
+Damit eine reelle Antennenimpendanz erzielt wird, um die Antenne in Resonanz betreiben zu können, muss der induktive Anteil verschwinden. Dies wird durch Verkürzen der Antenne erreicht und es ergibt sich ein Verkürzungsfaktor von
+\begin{align}
+  K_\text{Ant} = 0,96.
+\end{align}
+% *********************************************
+% ***** KAPITEL 3 *****************************
+% *********************************************
+\section{Versuchsdurchführung} \label{sec:Versuchsdurchführung}
+
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\newpage
+\section{Ergebnisse und Diskussion}
+
+\subsection{Modulation}
+\subsubsection{Simulation mit LabView}
+Zuerst wurde mithilfe eines LabView Programms eine Simulation von additiver und multiplikativer Amplitudenmodulation durchgeführt. Dabei wurde eine Nutzfrequenz $f_\text{N} = \SI{5}{\kilo\hertz}$ und eine Trägerfrequenz $f_\text{T} = \SI{100}{\kilo\hertz}$ zur Simulation des modulierten Signals benutzt.\\
+Zunächst wurden die beiden Signale nur addiert, wodurch noch keine Modulation entsteht. Die Verläufe im Zeit- und Frequenzbereich sind in Abbildung~\ref{fig:Addition} dargestellt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Addition_Zeitverlauf.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Addition_Frequenzverlauf.pdf}
+    \end{subfigure}
+    \label{fig:Addition}
+    \caption{Zeitverlauf und Frequenzspektrum der addierten Signale nach der Formel $U(t) = \sin(\omega_\text{N}) + a\cdot \sin(\omega_\text{T})$ mit Amplitude $a = \SI{1}{\volt}$.}
+\end{figure}\\
+Es zeigt sich, dass beide Frequenz wieder im Frequenzbereich auffindbar sind, was verdeutlicht, dass hierbei keine Modulation stattgefunden hat.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM1_additiv_Zeit.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM1_additiv_Frequenz.pdf}
+    \end{subfigure}
+    \caption{Zeitverlauf und Frequenzspektrum der additiv amplitudenmodulierten Signale nach Formel \eqref{eqn:AM_additiv} mit Modulationsgrad $M = 0,4$.}
+    \label{fig:AM1_additiv}
+\end{figure}\\
+Weiterhin wurde eine additive Amplitudenmodulation mit verschiedenen Modulationsgraden durchgeführt. Wie zuvor wurden als Nutzfrequenz $f_\text{N} = \SI{5}{\kilo\hertz}$ und Trägerfrequenz $f_\text{T} = \SI{100}{\kilo\hertz}$ verwendet. Die Amplitude des Nutzsignals wird mit $U_\text{T} = \SI{1}{\volt}$ wird festgehalten. Als Amplitude $U_\text{N}$ des Signals wurden $\SI{400}{\milli\volt}$ gewählt. Damit ergibt sich nach Gleichung~\eqref{eqn:Modulationsgrad} ein Modulationsgrad von $M = 0,4$. Die Ergebnisse der Simulation zeigt Abbildung~\ref{fig:AM1_additiv}.\\
+Bei der Betrachtung des Frequenzspektrums erscheint wieder die Trägerfrequenz mit einer hohen Amplitude und symmetrisch im Abstand von $\SI{5}{\kilo\hertz}$ die beiden Seitenbänder $f_\text{T}\pm f_\text{N}$.\\
+Es lässt sich erkennen, dass die Hüllkurve der Modulationsschwingung kein Minimum aufweist. Wird nun wie in Abbildung~\ref{fig:AM2_additiv} (links) ein Modulationsgrad von $M = 1$ gewählt, indem die Amplitude $U_\text{N} = \SI{1}{\volt}$ gesetzt wird, dann sinkt die Amplitude eine einhüllenden Kurve auf $\SI{0}{\volt}$ ab.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM2_additiv_Zeit.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM3_additiv_Zeit.pdf}
+    \end{subfigure}
+    \caption{Veränderung des Modulationsgrades bei der additiven Amplitudenmodulation. Links wurde $U_\text{N} = \SI{1}{\volt}$ gewählt, was einem Modulationsgrad von $M = 1$ entspricht. Im rechten Bild war $U_\text{N} = \SI{1,45}{\volt}$ mit Modulationsgrad $M = 1,45$.}
+    \label{fig:AM2_additiv}
+\end{figure}\\
+Wird die Amplitude des Nutzsignals größer als die des Trägers, dann ergibt sich ein Modulationsgrad $M > 1$ und es treten weitere Schwingungsbäuche auf. Abbildung~\ref{fig:AM2_additiv} zeigt den zeitlichen Verlauf einer solchen Schwingung. Eine solche Modulation sollte allerdings immer vermieden werden, da es durch die zusätzlichen Schwingungsbäuche zu einer Fehlinterpretation der auftretenden Frequenzen kommen kann.
+\FloatBarrier
+\newpage
+\paragraph{Multiplikative Amplitudenmodulation}$~$\\
+Weiterhin wurde noch eine multiplikative Amplitudenmodulation simuliert. Analog zu den vorherigen Simulationen wurde die Nutzfrequenz $ = \SI{5}{\kilo\hertz}$ und Trägerfrequenz $f_\text{T} = \SI{100}{\kilo\hertz}$ gewählt, siehe Abbildung~\ref{fig:AM1_multiplikativ}.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM1_mult_Zeit.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM1_mult_Frequenz.pdf}
+    \end{subfigure}
+    \caption{Zeitverlauf und Frequenzspektrum der multiplikativ amplitudenmodulierten Signale nach Formel \eqref{eqn:AM1_multiplikativ}. Es wurde eine Amplitude von $U_\text{N} = U_\text{T} = \SI{1}{\volt}$ gewählt.}
+    \label{fig:AM1_multiplikativ}
+\end{figure}\\
+Bei der Analyse der Frequenzbereichs fällt auf, dass die Trägerfrequenz verschwunden ist und nur noch die beiden Seitenbänder sichtbar sind.\\
+Für einen besseren Vergleich mit der additiven Amplitudenmodulation wurden ebenfalls die Amplituden des Nutzsignals auf $U_\text{N} = \SI{0,4}{\volt}$ (Abbildung~\ref{fig:AM2_multiplikativ} links) und auf $U_\text{N} = \SI{1,45}{\volt}$ (Abbildung~\ref{fig:AM2_multiplikativ} rechts) gesetzt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM2_mult_Zeit.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM3_mult_Zeit.pdf}
+    \end{subfigure}
+    \caption{Veränderung der Amplitude der multiplikativen Amplitudenmodulation bei Änderung der Amplitude des Nutzsignals.}
+    \label{fig:AM2_multiplikativ}
+\end{figure}\\
+Es zeigt sich, die einhüllende Kurve der Modulation unabhängig von der Amplitude des Nutzsignals immer eine Nullstelle aufweist.
+\FloatBarrier
+\subsubsection{Amplitudenmodulation im Experiment}
+Nun wurde die Amplitudenmodulation experimentell durchgeführt. Dabei wurde eine Nutzfrequenz von $f_\text{N} = \SI{100}{\kilo\hertz}$ und eine Trägerfrequenz von $f_\text{T} = \SI{100}{\mega\hertz}$ additiv überlagert. Dies wurde mithilfe einer Modulationsbox realisiert, deren Schaltplan in Abbildung~\ref{fig:AM_Modulator} dargestellt ist.
+\begin{figure}[htp]
+  \centering
+  \includegraphics{Schaltungen/AM-Modulator.pdf}
+  \caption{Schaltplan des im Versuch verwendeten AM-Modulators.}
+  \label{fig:AM_Modulator}
+\end{figure}\\
+Das Zeitbild wurde an einem analogen Oszilloskop dargestellt, weil das \textit{HP 54845A} nicht gleichzeitig auf diese beiden unterschiedlichen Frequenzen triggern konnte, um ein stabiles Bild zu erzeugen. Da auch hier keine Möglichkeit zur Speicherung der Daten vorhanden war, sind die folgenden Verläufe als Photo dargestellt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_400mV_Amplitude.jpg}
+        \caption{Zeitverlauf}
+    \end{subfigure}\hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_400mV_Frequenz.jpg}
+        \caption{Frequenzverlauf}
+    \end{subfigure}
+    \caption{Additiv amplitudenmoduliertes Signal mit $f_\text{N} = \SI{100}{\kilo\hertz}$ und $f_\text{T} = \SI{100}{\mega\hertz}$ und einer Amplitude des Nutzsignals von $U_N = \SI{400}{\milli\volt_\text{PP}}$.}
+    \label{fig:Modulation_400mV}
+\end{figure}\\
+Das Trägersignal wurde mit einer effektiven Spannung von $\SI{1}{\volt}$ generiert und mit einem $10:1$ Element abgeschwächt. Als Amplitude des Nutzsignals wurde $U_N = \SI{400}{\milli\volt_\text{PP}}$ eingestellt. Im Zeitverlauf sieht das modulierte Signal verschoben aus, die Minima und Maxima der Hüllkurve sind zueinander verschoben.\\
+Das Frequenzspektrum wurde an einem analogen Frequenzspektrographen mit logarithmischer Ordinate dargestellt. Ein Kästchen entlang der Ordinate beschreibt eine Intensitätsabschwächung von $\SI{10}{\deci\bel} \approx 0,32$. Die Amplituden der ersten Seitenbänder entsprechen demnach etwa nur $\SI{30}{\percent}$ der Amplitude der Trägerfrequenz. Im Unterschied zur Simulation treten hier Seitenbänder höherer Ordnung $\omega_\text{T}\pm n\cdot \omega_\text{N}$ auf. Diese sind aber um 40 bzw. $\SI{50}{\deci\bel}$ gegenüber der Trägerfrequenz abgeschwächt, was einer Abschwächung um Faktor 100 bzw. 300. Die Nebenfrequenzen treten auf, weil die Kennlinien der zur Modulation verwendeten Dioden nicht exakt quadratisch sind.\\ %ToDo mehr dazu
+Weiterhin wurde die Modulation mit gleichen Frequenzen von Signal und Träger aber einer anderen Amplitude $U_\text{N} = \SI{800}{\milli\volt}$ wiederholt. Das Ergebnis zeigt Abbildung~\ref{fig:Modulation_800mV}
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_800mV_Amplitude.jpg}
+        \caption{Zeitverlauf}
+    \end{subfigure}\hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_800mV_Frequenz.jpg}
+        \caption{Frequenzverlauf}
+    \end{subfigure}
+    \caption{Additiv amplitudenmoduliertes Signal mit $f_\text{N} = \SI{100}{\kilo\hertz}$ und $f_\text{T} = \SI{100}{\mega\hertz}$ und einer Amplitude des Nutzsignals von $U_N = \SI{800}{\milli\volt_\text{PP}}$.}
+    \label{fig:Modulation_800mV}
+\end{figure}\\
+Im Zeitverlauf ist der höhere Modulationsgrad gut erkennbar und kann als $M = 1$ abgeschätzt werden. Jedoch tritt weiterhin die Verschiebung der Einhüllenden Kurve auf. Im Frequenzspektrum sind die Seitenbänder wesentlich stärker ausgeprägt. Das erste Seitenband ist um $\SI{5}{\deci\bel}$ abgeschwächt, was einer Abschwächung von $\SI{50}{\percent}$ gegenüber der Trägerfrequenz entspricht. Dabei stimmt die Abschwächung mit dem erwarteten Ergebnis mit Modulationsgrad $M =1$ überein.
+\subsection{Demodulation}
+Die nach der im letzten Abschnitt behandelten Methode der Amplitudenmodulation werden nun über eine $\SI{25}{\metre}$ lange Koaxialleitung transportiert und anschließend demoduliert. Hierfür wurde eine Nutzfrequenz von $f_\text{N} =\SI{500}{\hertz}$ mit einem Träger von $f_\text{T}=\SI{100}{\mega\hertz}$ verwendet. Das Signal wurde zunächst mit einem analogen Oszilloskop im Zeitverlauf analysiert (Abbildung~\ref{fig:Demodulation} links) und am Frequenzspektrographen auf das Spektrum analysiert. Jedoch liegen die Seitenbänder mit $f_\text{T}\pm\SI{500}{\hertz}$ zu nah an der Trägerfrequenz, um sie am Spektrographen aufzulösen.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_500Hz_200MHz.jpg}
+        \caption{Moduliertes Signal}
+    \end{subfigure}\hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_500Hz_demoduliert.jpg}
+        \caption{Demoduliertes Signal}
+    \end{subfigure}
+    \caption{Additiv amplitudenmoduliertes Signal mit $f_\text{N} = \SI{500}{\hertz}$ und $f_\text{T} = \SI{200}{\mega\hertz}$ und anschließend demoduliertes Nutzsignal.}
+    \label{fig:Demodulation}
+\end{figure}\\
+In Abbildung~\ref{fig:Demodulation} rechts ist der Zeitverlauf des demodulierten Signals dargestellt. Um ein stabiles Bild zu erhalten, wurde das Oszilloskop extern von einem Frequenzgenerator mit Rechteckimpulsen einer Frequenz von $\SI{500}{\hertz}$ getriggert.\\
+Um die erhaltene Frequenz zu überprüfen, wurde aus dem Bild die Periodendauer abgelesen und die Frequenz berechnet. Dabei entsprach ein Kästchen auf dem Oszilloskop einer Zeit von $\SI{0,2}{\milli\second}$.
+\begin{align}
+  \nu &= \frac{1}{T} = \frac{1}{9,6\cdot \SI{0,2}{\milli\second}} = \SI{521}{\hertz}\\
+  \Delta \nu &= \frac{\Delta T}{T^2} = \frac{0,2\cdot \SI{0,2}{\milli\second}}{(9,6\cdot \SI{0,2}{\milli\second})^2} = \SI{11}{\hertz}.
+\end{align}
+Die Signalfrequenz liegt nicht im Konfidenzintervall der Frequenzbestimmung von $\nu = \SI{521\pm 11}{\hertz}$. Dies lässt auf Fehler bei der Modulation schließen, denn bei Betrachtung von Abbildung~\ref{fig:Demodulation} links wird deutlich, dass die Modulation aufgrund der nicht exakt quadratischen Diodenkennlinie verzerrt wird. Fehler können auch bei der Demodulation an der Diode oder dem Glättungskondensator entstehen.
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\section{Zusammenfassung}
+
+
+% ***** Literaturverzeichnis ******************
+
+\begin{thebibliography}{xxx}
+	\bibitem{Meinke}
+	H. Meinke: \textit{Taschenbuch der Hochfrequenztechnik}. Springer Verlag Berlin Heidelberg New York 1992 (5. Auflage).
+	\bibitem{Perner}
+  I. Perner: \textit{FSU Fortgeschrittenenen Praktikum: Radiowellen}, Fried\-rich-Schil\-ler-Uni\-versi\-tät Juli 2019
+  \bibitem{Amplitudenmodulation}
+  Amplitudenmodulation: \url{https://de.wikipedia.org/wiki/Amplitudenmodulation}. Stand: 17.11.2019
+  \bibitem{Leitungsgleichungen}
+  Amplitudenmodulation: \url{https://de.wikipedia.org/wiki/Leitungsgleichung}. Stand: 01.12.2019
+\end{thebibliography}
+
+\end{document}

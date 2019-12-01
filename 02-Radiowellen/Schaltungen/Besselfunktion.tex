@@ -1,0 +1,63 @@
+% \begin{center}
+% 	\newcommand\maxx{10}
+% 	\begin{tikzpicture}
+% 	\begin{axis}[
+% 		width=0.9\textwidth, height=0.3\textwidth,
+% 		xlabel={Modulationsindex $\eta$},
+% 		xmin=0, xmax=\maxx,
+% 		ymin=-0.6, ymax=1.2,
+% 		xtick distance=5,
+% 		minor tick num=4,
+% 		legend style={cells={anchor=west}, legend pos=outer north east,},
+% 	]
+% 	\draw [gray] (0,0) -- (\maxx,0);
+% 	\addplot+[id=Bessel0,domain=0:\maxx, samples=500, mark=none, thick, color=blue, solid]
+% 	gnuplot{besj0(x)};
+% 	\addlegendentry{$J_0(\eta)$}
+% 	\addplot+[id=Bessel1,domain=0:\maxx, samples=500, mark=none, thick, color=red, solid]
+% 	gnuplot{besj1(x)};
+% 	\addlegendentry{$J_1(\eta)$}
+% 	\addplot+[id=Bessel2,domain=0:\maxx, samples=500, mark=none, thick, color=orange, solid]
+% 	gnuplot{2*1/x*besj1(x)-besj0(x)}; % m = 1 in Rekursion
+% 	\addlegendentry{$J_2(\eta)$}
+% 	\addplot+[id=Bessel3,domain=0:\maxx, samples=500, mark=none, thick, color=olive, solid]
+% 	gnuplot{2*2/x*(2*1/x*besj1(x)-besj0(x))-besj1(x)}; % m = 2 in Rekursion
+% 	\addlegendentry{$J_3(\eta)$}
+% 	\addplot+[id=Bessel4,domain=0:\maxx, samples=500, mark=none, thick, color=green, solid]
+% 	\end{axis}
+% 	\end{tikzpicture}
+% \end{center}
+\begin{center}
+	\newcommand\maxx{20}
+	\begin{tikzpicture}
+	\begin{axis}[
+		width=0.9\textwidth, height=0.3\textwidth,
+		xlabel={Modulationsindex $\eta$},
+		xmin=0, xmax=\maxx,
+		ymin=-0.6, ymax=1.2,
+		xtick distance=5,
+		minor tick num=4,
+		legend style={cells={anchor=west}, legend pos=outer north east,},
+	]
+	\draw [gray] (0,0) -- (\maxx,0);
+	\addplot+[id=Bessel0,domain=0:\maxx, samples=500, mark=none, thick, color=blue, solid]
+	gnuplot{besj0(x)};
+	\addlegendentry{$J_0(\eta)$}
+	\addplot+[id=Bessel1,domain=0:\maxx, samples=500, mark=none, thick, color=red, solid]
+	gnuplot{besj1(x)};
+	\addlegendentry{$J_1(\eta)$}
+	\addplot+[id=Bessel2,domain=0:\maxx, samples=500, mark=none, thick, color=orange, solid]
+	gnuplot{2*1/x*besj1(x)-besj0(x)}; % m = 1 in Rekursion
+	\addlegendentry{$J_2(\eta)$}
+	\addplot+[id=Bessel3,domain=0:\maxx, samples=500, mark=none, thick, color=olive, solid]
+	gnuplot{2*2/x*(2*1/x*besj1(x)-besj0(x))-besj1(x)}; % m = 2 in Rekursion
+	\addlegendentry{$J_3(\eta)$}
+	\addplot+[id=Bessel4,domain=0:\maxx, samples=500, mark=none, thick, color=green, solid]
+	gnuplot{2*3/x*(2*2/x*(2*1/x*besj1(x)-besj0(x))-besj1(x))-(2*1/x*besj1(x)-besj0(x))}; % m = 3 in Rekursion
+	\addlegendentry{$J_4(\eta)$}
+	\addplot+[id=Bessel5,domain=0:\maxx, samples=500, mark=none, thick, color=cyan, solid]
+	gnuplot{2*4/x*(2*3/x*(2*2/x*(2*1/x*besj1(x)-besj0(x))-besj1(x))-(2*1/x*besj1(x)-besj0(x)))-(2*2/x*(2*1/x*besj1(x)-besj0(x))-besj1(x))}; % m = 4 in Rekursion
+	\addlegendentry{$J_5(\eta)$}
+	\end{axis}
+	\end{tikzpicture}
+\end{center}
