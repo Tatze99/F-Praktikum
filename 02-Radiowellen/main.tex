@@ -66,12 +66,8 @@ Die Frequenzmodulation wird mit LabView simuliert und parallel im Experiment rea
 
 \subsection{Radiowellen im freien Raum}
 Es sollen die Grundlagen der Dimensionierung und Berechnung von einer Halbwellendipolantenne und Viertelwellenstrahler recherchiert werden.\\
-Mithilfe eines Reflektometers wird der Reflexionsfaktor eines Koaxialkabels in Abhängigkeit von der Frequenz $\SI{10}{\mega\hertz}\hdots\SI{1}{\giga\hertz}$ bestimmt. Es soll untersucht werden, welche Möglichkeiten zur messung der Ausbreitungsgeschwindigkeit in Luft realisiertbarsind.\\
 Weiterhin wird ein amplitudenmoduliertes Signal über einen Halbwellendipol abgestrahlt, empfangen und demoduliert. \\
-Zudem wird eine Übersicht der verwendeten Funkfrequenzen und deren Verwendungszweck erstellt. Das örtliche Frequenzspektrum und die zugehörigen Funkdienste werden bestimmt.\\
-Die Ausbreitung von EM-Wellen in Wasser wird unterrsucht.
 %% More to do
-%%
 %%
 
 
@@ -84,14 +80,51 @@ Die Ausbreitung von EM-Wellen in Wasser wird unterrsucht.
 \subsection{Elektromagnetische Wellen auf Leitungen}
 Die Leitungstheorie befasst sich mit Vorgängen auf Leitungen deren Länge sich in der Größenordnung der Wellenlänge
 des zu übertragenden Signals befindet, wodurch sie unter anderem in der Hochfrequenztechnik anzuwenden ist. Beispielsweise hat eine elektromagnetische Welle der Frequenz $\nu = \SI{100}{\mega\hertz}$ eine Wellenlänge von $\SI{3}{\metre}$.\\
-Es gilt das Leistungsanpassungsgesetz mit $Z_Q$ als Quellwiderstand und $Z_A$, dem Abschlusswiderstand. Bei $Z_Q = Z_A$ entsteht eine Leistungsanpassung, d.\,h. maximale Leistung wird übertragen.\\
-Im Hochfrequenzbereich muss eine weitere Größe, der \textit{Wellenwiderstand} $Z_L$ der Leitung berücksichtigt werden. Hierbei wird gefordert, dass $Z_L = Z_A$ idealerweise gelten muss, um stehende Wellen zu vermeiden.
+Es gilt das Leistungsanpassungsgesetz mit $Z_Q$ als Quellwiderstand und $Z_A$, dem Abschlusswiderstand. Bei $Z_Q = Z_A$ entsteht eine Leistungsanpassung, d.\,h. maximale Leistung wird übertragen. Sind die charakteristischen Leitungsgrößen gleichmäßig über die Leitung verteilt, wird von einer homogenen Leitung gesprochen.
+\subsubsection{Reale Leiter}
+Die elektrischen Grundeigenschaften realer Leiter können mithilfe eines Ersatzschaltbildes beschrieben werden, welches in Abbildung~\ref{fig:Ersatzschaltbild} dargestellt ist.
 \begin{figure}[htp]
     \centering
     \includegraphics{Schaltungen/Ersatzschaltbild.pdf}
-    \caption{Ersatzschaltbild eines homogenen Leitungsstücks von $x$ bist $x+\de x$.}
+    \caption{Ersatzschaltbild eines homogenen Leitungsstücks infinitesimaler Länge von $x$ bis $x+\de x$.}
     \label{fig:Ersatzschaltbild}
-\end{figure}\\
+\end{figure}
+\paragraph{Induktivität $L'\de x$} Ein realer Leiter kann als eine abgewickelte Spule mit einer Windung aufgefasst werden. Es wird im Ersatzschaltbild eine Induktivität $L'\de x$ eingezeichnet, wobei $L'$ den Induktivitätsbelag der Leitung bezeichnet. Der Induktivitätsbelag ist definiert als $L' = \frac{L}{\de x}$ Induktivität pro Länge und bezeichnet die induktive Wirkung des infinitesimalen Leiterstücks von $x$ bis $x+\de x$. \\
+Der Wert der Induktivität setzt sich aus einem äußeren und inneren Induktivitätsbelag zusammen. Der äußere Induktivitätsbelag ist abhängig vom geometischen Grundaufbau und den magnetischen Eigenschaften der Leitung. Der innere Induktivitätsbelag wird durch magnetische Wechselfelder innerhalb des Leiters verursacht.
+
+\paragraph{Kapazität $C'\de x$} Eine Leitung besteht aus mehreren Leiteradern innerhalb des Kabels. Die gegenüberliegenden Flächen der Adern besitzen eine geringe Kapazität $C'\de x$. Der Wert der Kapazität ist abhängig vom geometrischen Aufbau der Leitung und der Dielektrizitätskonstante der Isolierung. Die Kapazität steigt mit geringerem Adernabstand, größerer Leiteroberfläche und höherer Dielektrizitätskonstante an.
+
+\paragraph{Widerstand} Der Widerstand $R' \de x$ einer Leitung beschreibt den den Gleichstromwiderstand einer Ader im Kabel. Mit zunehmender Frequenz nimmt der ohmsche Wechselstromwiderstand der Leitung zu, da durch den Skineffekt die Elektronen an die Leiteroberfläche gedrängt werden und somit der stromdurchflossene Leiterquerschnitt kleiner wird.\\
+Der \textbf{Isolationswiderstand} $G'\de x$ beschreibt die Isolations- und dielektrischen Verluste der Leitung. Der Isolationswiderstand ist frequenzabhängig und wird teilweise auch mithilfe des Verlustfaktors $\tan \delta$ angegeben
+\begin{align}
+  \tan \delta = \frac{G'}{\omega C'}.
+\end{align}
+\subsubsection{Leitungsgleichungen und Wellenwiderstand}
+Zur Beschreibung der Ausbreitung von Strom und Spannung auf einer geraden zweiadrigen Leitung dienen die Leitungsgleichungen. Dabei handelt es sich um ein System gekoppelter partieller Differentialgleichungen, welche unter Verwendung von Knoten- und Maschenregel hergeleitet werden können~\cite{Leitungsgleichungen}
+\begin{align}
+  \frac{\partial U(x, t)}{\partial x}&=-L'(x) \frac{\partial I(x, t)}{\partial t}-R'(x) I(x, t)\\
+  \frac{\partial I(x, t)}{\partial x}&=-G'(x) U(x, t)-C'(x) \frac{\partial U(x, t)}{\partial t}.
+\intertext{Unter der Annahme stationärer sinusförmiger Signale ergeben sich folgende Differentialgleichungen der homogenen Leitung}
+  \frac{\de U}{\de x} &= -(R' + i\omega L')\cdot I\\
+  \frac{\de I}{\de x} &= -(G' + i\omega C')\cdot U
+\intertext{Aus diesen Gleichungen lässt sich nun der Wellenwiderstand $Z_L$ bestimmen zu}
+  Z_L &= \sqrt{\frac{R'+i\omega L'}{G' + i\omega C'}}\\
+  &= \sqrt{\frac{L'}{C'}}\quad \text{verlustfrei.}\label{eqn:Wellenwiderstand}
+\end{align}
+Bei der Übertragung von Radiowellen wird mit hohen Frequenzen gearbeitet. Deshalb werden die Größen für Isolations- und Widerstandsbelag vernachlässigbar klein, woraus der Leitungswiderstand der verlustlosen Leitung~\eqref{eqn:Wellenwiderstand} resultiert.
+
+\subsubsection{Leistungsanpassung und Reflexionsfaktor}
+Im Hochfrequenzbereich der \textit{Wellenwiderstand} $Z_L$ der Leitung berücksichtigt werden. Dieser beschreibt nicht die Dämpfung des Signals innerhalb des Kabels sondern ist eine Kenngröße zur Berechnung des optimalen Abschlusswiderstandes. Dies wird \textit{Widerstandsanpassung} genannt. Hierbei wird gefordert, dass $Z_L = Z_A$ idealerweise gelten muss, um stehende Wellen aufgrund von Reflexionen am Leitungsende zu vermeiden. Dies führt dazu, dass keine Phasenverschiebung zwischen $E$-Feld und $B$-Feld am Leitungsende auftritt und somit keine Leistung reflektiert wird.\\
+Wird das Leitungsende kurzgeschlossen, findet eine Reflexion statt und am Leitungsende tritt ein Strommaximum und Spannungsminimum auf. Für eine offene Leitung mit einem theoretisch unendlich großen Abschlusswiderstand wird am Ende die Spannung maximal und der fließende Strom minimal.\\
+Zur Beschreibung des Reflexionsanteils wird der \textit{Reflexionsfaktor} $r$ eingeführt als das Verhältnis aus rücklaufender $U_\text{rück}$ und hinlaufender Spannung $U_\text{hin}$
+\begin{align}
+  r=\frac{U_{\text{Rück}}}{U_{\text{Hin}}}=\frac{Z_{A}-Z_{L}}{Z_{A}+Z_{L}} \Rightarrow-1 \leq r \leq 1.
+\end{align}
+Bei der Verwendung von Sinussignalen bilden sich stehende Wellen durch Interferenz von hinlaufender und refelektiereter Welle aus. Alternativ zum Reflexionsfaktor wird das Stehwellenverhältnis \text{VSWR} (voltage standing wave ratio) definiert
+\begin{align}
+  VSWR=\frac{U_{\max }}{U_{\min }}= \frac{U_\text{Hin}+U_\text{Rück}}{U_\text{Hin}-U_\text{Rück}}\frac{1+|r|}{1-|r|} \Rightarrow 1 \leq VSWR<\infty.
+\end{align}
+Es gibt das Verhältnis von Spannungsmaximum und -minimum der stehenden Welle innerhalb des Leiterst an.
 
 \subsection{Modulation}
 Als Modulation wird das Aufprägen einer Information auf eine Trägerschwingung bezeichnet. Dabei wird das zu übertragene Nutzsignal in einen definierten höheren Frequenzbereich verschoben. Dies wird benötigt, weil der direkte Übertragungsweg des Signals durch ein Medium wie z.\,B. Schall häufig nicht über lange Strecken möglich ist. Im Allgemeinen erfolgt die Signalübertragung über einen Kanal wie Luft oder Kabel. Im Kanal tritt eine frequenzabhängige Dämpfung auf, weshalb das Signal auf eine Frequenz innerhalb eines dämpfungsarmen Frequenzfensters moduliert wird. Für das Nutzsignal und den Träger lassen sich folgende Formeln aufstellen.
@@ -133,7 +166,7 @@ Diese Modulationsvariante wird in der Praxis häufiger eingesetzt und kann mit D
 \end{align}
 Der Unterschied zur additiven Variante besteht darin, dass die Trägerfrequenz nicht mit erzeugt wird und unerwünschte Nebenfrequenzen unterdrückt werden. Das Minimum im Zeitsignal zeigt einen Phasensprung.
 
-\subsection{Frequenzmodulation}
+\subsubsection{Frequenzmodulation}
 Bei der Frequenzmodulation wird die Amplitude des modulierten Signals konstant gehalten und durch das Trägersignal charakterisiert. Die Information des Nutzsignals wird durch die sich ändernde Frequenz übertragen. Es ergibt sich für die Frequenzmodulation folgende Formel
 \begin{align}
   U_\text{FM}(t) = U_\text{T} \cos\left[\omega_\text{T} \frac{\Delta f}{f_\text{S}}\cdot \sin(\omega_\text{S}t)\right].
@@ -174,6 +207,32 @@ Bei der Demodulation wird aus dem übertragenen modulierten Signal wieder das ur
     \label{fig:Demodulator}
 \end{figure}\\
 Durch einen weiteren, in Reihe geschalteten Kondensator lässt sich zusätzlich noch der Gleichspannungsanteil des demodulierten Signals entfernen.
+
+\subsection{Elektromagnetische Wellen im freien Raum}
+Die Propagation von elektromagnetischen Wellen im freien Raum bildet die Grundlage aller Funkanwendungen und ist im Alltag unabdingbar. Zur Nutzung der elektromagnetischen Wellen im freien Raum müssen diese über Antennen abgestrahlt und empfangen werden. Dabei muss eine Anpassung an den Wellenwiderstand des freien Raumes durchgeführt werden. Dieser gibt das Verhältnis der Beträge von elektrischem und magnetischem Feld an
+\begin{align}
+  Z_0 = \frac{|\bm{E}|}{|\bm{H}|} = \sqrt{\frac{\mu_0}{\varepsilon_0}} \approx \SI{377}{\ohm}.
+\end{align}\\
+Die für die Signalübertragung verwendeten Antennen bilden einen schwingenden Dipol aus einem Kondensator und einer Spule. Technisch wird eine Antenne durch das Aufklappen eines Dipols realisiert, welcher elektromagnetische Wellen in alle Richtungen (mit Ausnahme der Bewegungsrichtung der Elektronen in der Antenne) abstrahlt.
+\begin{figure}[htp]
+    \centering
+    \includegraphics{Schaltungen/offenerSchwingkreis.pdf}
+    \caption{Prinzipielle Konstruktion einer Antenne als ein offener Schwingkreis.}
+    \label{fig:Schwingkreis}
+\end{figure}\\
+Die durch die Abstrahlung elektromagnetischer Wellen entnommene Energie muss dem Schwingkreis durch einen Generator wieder zugeführt werden.
+\paragraph{Antennen}
+Prinzipiell gibt es zwei Möglichkeiten, eine Antenne zu konstruieren. Es wird zwischen Halbwellendipolen und Viertelwellendipolen unterschieden. Bei beiden Konstruktionsarten wird das Ausbilden stehender Wellen im Leiter explizit genutzt und die Länge der Antenne entsprechend eingestellt. Wie die Bezeichnung bereits impliziert, wird die Länge der Antenne für eine bestimmte Empfangs- oder Abstrahlungsfrequenz so eingestellt, dass ihre Länge genau der Hälfte, bzw. dem Viertel der Wellenlänge entspricht.\\
+Bei einer $\lambda/2$-Antenne gibt es zwei Enden mit einem offenen Abschluss, in der Mitte (Fußpunkt) wird das Signal abgeführt. Durch den hohen Abschlusswiderstand tritt am Antennenende ein Spannungsmaximum auf, wodurch am Fußpunkt bei $\lambda/4$ ein Spannungsminimum und Strommaximum entsteht.\\
+Bei der $\lambda/4$-Antenne befindet sich der Fußpunkt am Antennenende, am offenen Ende liegt wieder ein Spannungsmaximum vor, woraus ein Minimum am Fußpunkt resultiert. Es ist jedoch wichtig, darauf zu achten, dass der materialbedingte Verkürzungsfaktor der Antenne bei der Längeneinstellung beachtet wird.\\
+Für einen unendlich dünnen Halbwellendipol gilt für die Antenenimpendanz
+\begin{align}
+  Z_\text{Ant} = R_\text{Ant} + i X_\text{Ant} = (73,13 + i\cdot 42,54)\si{\ohm}
+\end{align}
+Damit eine reelle Antennenimpendanz erzielt wird, um die Antenne in Resonanz betreiben zu können, muss der induktive Anteil verschwinden. Dies wird durch Verkürzen der Antenne erreicht und es ergibt sich ein Verkürzungsfaktor von
+\begin{align}
+  K_\text{Ant} = 0,96.
+\end{align}
 % *********************************************
 % ***** KAPITEL 3 *****************************
 % *********************************************
@@ -297,8 +356,27 @@ Weiterhin wurde die Modulation mit gleichen Frequenzen von Signal und Träger ab
 \end{figure}\\
 Im Zeitverlauf ist der höhere Modulationsgrad gut erkennbar und kann als $M = 1$ abgeschätzt werden. Jedoch tritt weiterhin die Verschiebung der Einhüllenden Kurve auf. Im Frequenzspektrum sind die Seitenbänder wesentlich stärker ausgeprägt. Das erste Seitenband ist um $\SI{5}{\deci\bel}$ abgeschwächt, was einer Abschwächung von $\SI{50}{\percent}$ gegenüber der Trägerfrequenz entspricht. Dabei stimmt die Abschwächung mit dem erwarteten Ergebnis mit Modulationsgrad $M =1$ überein.
 \subsection{Demodulation}
-
-
+Die nach der im letzten Abschnitt behandelten Methode der Amplitudenmodulation werden nun über eine $\SI{25}{\metre}$ lange Koaxialleitung transportiert und anschließend demoduliert. Hierfür wurde eine Nutzfrequenz von $f_\text{N} =\SI{500}{\hertz}$ mit einem Träger von $f_\text{T}=\SI{100}{\mega\hertz}$ verwendet. Das Signal wurde zunächst mit einem analogen Oszilloskop im Zeitverlauf analysiert (Abbildung~\ref{fig:Demodulation} links) und am Frequenzspektrographen auf das Spektrum analysiert. Jedoch liegen die Seitenbänder mit $f_\text{T}\pm\SI{500}{\hertz}$ zu nah an der Trägerfrequenz, um sie am Spektrographen aufzulösen.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_500Hz_200MHz.jpg}
+        \caption{Moduliertes Signal}
+    \end{subfigure}\hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/AM_500Hz_demoduliert.jpg}
+        \caption{Demoduliertes Signal}
+    \end{subfigure}
+    \caption{Additiv amplitudenmoduliertes Signal mit $f_\text{N} = \SI{500}{\hertz}$ und $f_\text{T} = \SI{200}{\mega\hertz}$ und anschließend demoduliertes Nutzsignal.}
+    \label{fig:Demodulation}
+\end{figure}\\
+In Abbildung~\ref{fig:Demodulation} rechts ist der Zeitverlauf des demodulierten Signals dargestellt. Um ein stabiles Bild zu erhalten, wurde das Oszilloskop extern von einem Frequenzgenerator mit Rechteckimpulsen einer Frequenz von $\SI{500}{\hertz}$ getriggert.\\
+Um die erhaltene Frequenz zu überprüfen, wurde aus dem Bild die Periodendauer abgelesen und die Frequenz berechnet. Dabei entsprach ein Kästchen auf dem Oszilloskop einer Zeit von $\SI{0,2}{\milli\second}$.
+\begin{align}
+  \nu &= \frac{1}{T} = \frac{1}{9,6\cdot \SI{0,2}{\milli\second}} = \SI{521}{\hertz}\\
+  \Delta \nu &= \frac{\Delta T}{T^2} = \frac{0,2\cdot \SI{0,2}{\milli\second}}{(9,6\cdot \SI{0,2}{\milli\second})^2} = \SI{11}{\hertz}.
+\end{align}
+Die Signalfrequenz liegt nicht im Konfidenzintervall der Frequenzbestimmung von $\nu = \SI{521\pm 11}{\hertz}$. Dies lässt auf Fehler bei der Modulation schließen, denn bei Betrachtung von Abbildung~\ref{Demodulation} links wird deutlich, dass die Modulation aufgrund der nicht exakt quadratischen Diodenkennlinie verzerrt wird. Fehler können auch bei der Demodulation an der Diode oder dem Glättungskondensator entstehen.
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
@@ -314,6 +392,8 @@ Im Zeitverlauf ist der höhere Modulationsgrad gut erkennbar und kann als $M = 1
   I. Perner: \textit{FSU Fortgeschrittenenen Praktikum: Radiowellen}, Fried\-rich-Schil\-ler-Uni\-versi\-tät Juli 2019
   \bibitem{Amplitudenmodulation}
   Amplitudenmodulation: \url{https://de.wikipedia.org/wiki/Amplitudenmodulation}. Stand: 17.11.2019
+  \bibitem{Leitungsgleichungen}
+  Amplitudenmodulation: \url{https://de.wikipedia.org/wiki/Leitungsgleichung}. Stand: 01.12.2019
 \end{thebibliography}
 
 \end{document}
