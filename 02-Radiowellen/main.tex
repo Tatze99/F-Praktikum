@@ -268,7 +268,7 @@ Anschließend wird ein \SI{25}{\metre} langes Koaxialkabel mit einem T-Stück al
   \item $Z_A = \SI{0}{\ohm}$ (Kurzschlussstecker)
   \item $Z_A = Z_L$ (Stecker mit Wellenwiderstand \SI{50}{\ohm})
 \end{itemize}
-Anschließend wird für $Z_A=Z_L$ und $Z_A = \infty$ das Signal zusätzlich am Ende des Stichkabels beobachtet. Dazu wird das Ende des Stichkabels an den 2. Eingang des Scopes angeschlossen und der Eingangswiderstand dieses Eingangs einmal auf \SI{50}{\ohm} (entspricht $Z_A = Z_L$) und einmal auf \SI{1}{\mega\ohm} (entspricht $Z_A = \infty)$ eingestellt. \\
+Anschließend wird für $Z_A=Z_L$ und $Z_A = \infty$ das Signal zusätzlich am Ende des Stichkabels beobachtet. Dazu wird das Ende des Stichkabels an den 2. Eingang des \textit{Scopes} angeschlossen und der Eingangswiderstand dieses Eingangs einmal auf \SI{50}{\ohm} (entspricht $Z_A = Z_L$) und einmal auf \SI{1}{\mega\ohm} (entspricht $Z_A = \infty)$ eingestellt. \\
 
 Außerdem wird der gleiche Rechteckpuls mit Laborkabeln übertragen. Auch hierbei wird der Eingangswiderstand einmal auf \SI{50}{\ohm} und einmal auf \SI{1}{\mega\ohm} eingestellt. \\
 
@@ -284,7 +284,7 @@ Für diese Messung wird eine $LC$-Messbrücke verwendet. Für die Messung der Ka
 Zunächst werden mithilfe eines LabView Programms die Addition von Signalen, sowie additive und multiplikative Amplitudenmodulation simuliert und ausgewertet.\\
 Anschließend erfolgt eine additive Amplitudenmodulation mithilfe eines Modulators (siehe Abbildung~\ref{fig:AM_Modulator}).\\
 Das modulierte Signal wird am \textit{Scope} und am Spektrumsanalysator dargestellt und ausgewertet. Die Messung wird für verschiedene Modulationsgrade unter Variation der Signalspannung wiederholt.\\
-Schließlich wird eine Demodulation eines amplitudenmodulierten Signals der Frequenz $\nu_\text{N} = \SI{500}{\hertz}$ durchgeführt und mithilfe des Scopes ausgewertet. Für das demodulierte Signal wird eine Frequenzbestimmung vorgenommen.
+Schließlich wird eine Demodulation eines amplitudenmodulierten Signals der Frequenz $\nu_\text{N} = \SI{500}{\hertz}$ durchgeführt und mithilfe des \textit{Scopes} ausgewertet. Für das demodulierte Signal wird eine Frequenzbestimmung vorgenommen.
 
 \subsection{Elektromagnetische Wellen im freien Raum}
 Es wird eine $\lambda/2$ Antenne auf eine Frequenz von \SI{200}{\mega\hertz} eingestellt. Dazu wird ein Reflektometer genutzt um bei Veränderung der Länge der Antenne, die jeweilige Frequenz zu finden, bei der die rücklaufende Spannung ein Minimum aufweist. Das Reflektometer wird dazu zwischen Spannunsgquelle und Antenne geschaltet und die rücklaufende Spannung am entsprechenden Ast abgenommen und am \textit{Scope} dargestellt. Es wird die Länge eingestellt, sodass sich das Minimum der Spannung bei der gegebenen Frequenz befindet. Anschließend werden Stehwellenverhältnis, Reflektionsfaktor und Verkürzungsfaktor bestimmt und eine zweite Antenne mit den gleichen Maßen eingestellt. \\
@@ -308,12 +308,12 @@ Während der Messung mit den Laborkabeln fällt auf, dass sich durch kleine Ver�
     \caption{Frequenzgang von Laborkabeln als Verbindung zwischen Generator und \textit{Scope} (Eingangswiderstand \SI{50}{\ohm} und \SI{1}{\mega\ohm}) }
     \label{fig:Frequenzgang_Laborkabel}
 \end{figure}\\
-Im Allgemeinen weisen die Kabel sowohl bei \SI{50}{\ohm}, als auch bei \SI{1}{\mega\ohm} Eingangswiderstand des Scopes einen chaotischen Frequenzgang auf (bei \SI{1}{\mega\ohm} wurden nur globale Maxima und Minima vermessen, aber auch zwischen diesen Peaks wurden immer wieder lokale Minima und Maxima festgestellt). Bei \SI{1}{\mega\ohm} kommt es dazu, dass die Spannung bei bestimmten Frequenzen höher wird, die ursprünglich angelegte Spannung. Das Kabel wirkt hierbei als Transformator.
-Auch bei Verwendung eines \SI{50}{\ohm} Eingangswiderstandes des Scopes schwankt die Spannung bei Erhöhung der Frequenz. Innerhalb kleiner Frequenzbereiche zeigen sich immer wieder lokale Minima und Maxima.\\
+Im Allgemeinen weisen die Kabel sowohl bei \SI{50}{\ohm}, als auch bei \SI{1}{\mega\ohm} Eingangswiderstand des \textit{Scopes} einen chaotischen Frequenzgang auf (bei \SI{1}{\mega\ohm} wurden nur globale Maxima und Minima vermessen, aber auch zwischen diesen Peaks wurden immer wieder lokale Minima und Maxima festgestellt). Bei \SI{1}{\mega\ohm} kommt es dazu, dass die Spannung bei bestimmten Frequenzen höher wird, die ursprünglich angelegte Spannung. Das Kabel wirkt hierbei als Transformator.
+Auch bei Verwendung eines \SI{50}{\ohm} Eingangswiderstandes des \textit{Scopes} schwankt die Spannung bei Erhöhung der Frequenz. Innerhalb kleiner Frequenzbereiche zeigen sich immer wieder lokale Minima und Maxima.\\
 Wegen der bereits diskutierten Abhängigkeit eines Spannungswertes bei gleicher Frequenz von der Anordnung der Kabel sowie des chaotischen Verlaufs auch bei \SI{50}{\ohm} sind die Laborkabel als ungeeignet für Messungen in der Hochfrequenztechnik einzustufen.
 
 \paragraph{Koaxialkabel (Länge ca. \SI{2}{\metre})}
-Auch bei den Koaxialkabeln werden bei einem Eingangswiderstand des Scopes von \SI{1}{\mega\ohm} bei Frequenzen von ungefähr \SI{20}{\mega\hertz} und \SI{70}{\mega\hertz} Maxima festgestellt, an denen Spannungen gemessen werden, die über der Spannung liegt, die eingegeben wurde. Diese Maxima treten periodisch auf, wie in Abbildung~\ref{fig:Frequenzverlauf_Koaxialkabel} dargestellt wird.
+Auch bei den Koaxialkabeln werden bei einem Eingangswiderstand des \textit{Scopes} von \SI{1}{\mega\ohm} bei Frequenzen von ungefähr \SI{20}{\mega\hertz} und \SI{70}{\mega\hertz} Maxima festgestellt, an denen Spannungen gemessen werden, die über der Spannung liegt, die eingegeben wurde. Diese Maxima treten periodisch auf, wie in Abbildung~\ref{fig:Frequenzverlauf_Koaxialkabel} dargestellt wird.
 \begin{figure}[htp]
     \centering
     \vspace{-0.5cm}
@@ -322,7 +322,7 @@ Auch bei den Koaxialkabeln werden bei einem Eingangswiderstand des Scopes von \S
     \caption{Frequenzgang von Koaxialkabel als Verbindung zwischen Generator und \textit{Scope} (Eingangswiderstand \SI{50}{\ohm} und \SI{1}{\mega\ohm})}
     \label{fig:Frequenzverlauf_Koaxialkabel}
 \end{figure}
-Bei einem Eingangswiderstand des Scopes von \SI{1}{\mega\ohm} liegt eine falsche Anpassung vor, welche zu Reflexion und zu stehenden Wellen führt. In den genannten Fällen kommt es so zu einer Spannungsverstärkung. Diese Eigenschaft eröffnet die Möglichkeit der Verwendung der Koaxialkabel bei diesem Frequenzen als Transformator und bietet damit eine Alternative zum Transformieren mit einem Schwingkreis.
+Bei einem Eingangswiderstand des \textit{Scopes} von \SI{1}{\mega\ohm} liegt eine falsche Anpassung vor, welche zu Reflexion und zu stehenden Wellen führt. In den genannten Fällen kommt es so zu einer Spannungsverstärkung. Diese Eigenschaft eröffnet die Möglichkeit der Verwendung der Koaxialkabel bei diesem Frequenzen als Transformator und bietet damit eine Alternative zum Transformieren mit einem Schwingkreis.
 Ebenso periodisch treten auch Minima auf. Hier kommt es aufgrund der Reflexionen zu Auslöschungen und damit zu niedrigeren gemessenen Spannungen. Diese eignen sich in der Praxis besser zum Auswerten. Ein Spannungsmaximum ist nicht so gut messbar, da das Messgerät in diesem Fall sehr hochohmig sein müsste. Dies ist praktisch schwer zu realisieren, weshalb es zu einer Verfälschung der Spannung bei der Messung von Maxima kommt.\\
 Bei einem Eingangswiderstand von \SI{50}{\ohm} wird Anpassung erreicht. Die komplette Energie der Welle wird in den Abschlusswiderstand aufgenommen, es kommt nicht zu Reflexionen und damit zu einer konstanten Spannung über alle Frequenzen.
 
@@ -388,7 +388,7 @@ c = \frac{c_0}{\sqrt{\varepsilon_R}} = c_0 \cdot K = \SI{198300000}{\metre\per\s
 
 \subsubsection{Verhalten von Rechtecksignalen}
 \paragraph{Rechtecksignal über \SI{2}{\metre} langes Koaxialkabel}
-Es wurde ein Rechtecksignal an das \textit{Scope} übertragen bei verschiedenen Eingangswiderständen aufgenommen. Die erhaltenen Darstellungen sind nicht in Abbildung~\ref{fig:Rechtecksignal_Koaxialkabel} im gleichen Maßstab abgebildet.
+Es wurde ein Rechtecksignal an das \textit{Scope} übertragen bei verschiedenen Eingangswiderständen aufgenommen. Die erhaltenen Darstellungen sind in Abbildung~\ref{fig:Rechtecksignal_Koaxialkabel} nicht im gleichen Maßstab abgebildet.
 \begin{figure}[h]
   \centering
   \begin{subfigure}{0.45\textwidth}
@@ -399,13 +399,13 @@ Es wurde ein Rechtecksignal an das \textit{Scope} übertragen bei verschiedenen 
     \includegraphics[width=\textwidth]{Bilder/Bild2.jpg}
     \caption{Eingangswiderstand \SI{1}{\mega\ohm}}
   \end{subfigure}
-  \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Koaxialkabel bei unterschiedlichen Eingangswiderständen des Scopes}
+  \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Koaxialkabel bei unterschiedlichen Eingangswiderständen des \textit{Scopes}}
   \label{fig:Rechtecksignal_Koaxialkabel}
 \end{figure}\\
 Zum besseren Vergleich wurde die Verstärkung erhöht und der Offset korrigiert um einen qualitativen Vergleich zu ermöglichen. In diesem wird festgestellt, dass bei dem Rechtecksignal, das mit einem, beim \textit{Scope} eingestellten, Eingangswiderstand von \SI{50}{\ohm} aufgenommen wurde, die Flanken steiler sind, als bei dem Rechteckpuls, das mit dem \textit{Scope} beim Eingangswiderstand von \SI{1}{\mega\ohm} beobachtet wurde.
 
 \paragraph{Rechtecksignal \SI{25}{\metre} Stichkabel}\label{par:Stichkabel}
-Es wurde an das Verbindungskabel ein \SI{25}{\metre} langes Stichkabel mit den Abschlusswiderständen $Z_A = \infty $, $Z_A = \SI{0}{\ohm}$ und $Z_A = Z_L$ angeschlossen und ein Eingangswiderstand von $\SI{50}{\ohm}$ am \textit{Scope} gewählt. Zum Vergleich wurde für $Z_A = \infty$ auch ein Bild mit Eingangswiderstand des Scopes von $\SI{1}{\mega\ohm}$ aufgenommen. Hierbei kann festgestellt werden, dass der charakteristische Verlauf der gleiche bleibt, jedoch auf den Pulsen Überschwingungen sichtbar werden, die sich aufgrund der aus der Fehlanpassung resultierender Reflexionen ergeben.
+Es wurde an das Verbindungskabel ein \SI{25}{\metre} langes Stichkabel mit den Abschlusswiderständen $Z_A = \infty $, $Z_A = \SI{0}{\ohm}$ und $Z_A = Z_L$ angeschlossen und ein Eingangswiderstand von $\SI{50}{\ohm}$ am \textit{Scope} gewählt. Zum Vergleich wurde für $Z_A = \infty$ auch ein Bild mit Eingangswiderstand des \textit{Scopes} von $\SI{1}{\mega\ohm}$ aufgenommen. Hierbei kann festgestellt werden, dass der charakteristische Verlauf der Gleiche bleibt, jedoch auf den Pulsen Überschwingungen sichtbar werden, die sich aufgrund der aus der Fehlanpassung resultierenden Reflexionen ergeben.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -418,7 +418,7 @@ Es wurde an das Verbindungskabel ein \SI{25}{\metre} langes Stichkabel mit den A
     \end{subfigure}
     \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Koaxialkabel mit \SI{25}{\metre} langem Stichkabel mit offenem Ende.}
 \end{figure}\\
-Für $Z_A = \infty$ (realisiert durch offenes Ende des Stichkabels) können drei Pulse beobachtet werden. Der erste ist der direkt durch das kurze Kabel durchlaufende, unreflektierte Puls. Der zweite Puls stellt den am Ende des Stichkabels reflektierten Puls dar. Dieser ist kleiner und zeigt weniger scharfe Kanten, als der Unreflektierte. Das Aufweichen der scharfen Kanten ergibt sich aus einem Verlust der hohen Frequenzen, welcher aufgrund der längeren Laufzeit dieses Pulses durch das Kabel auftritt. Hierbei erfährt er eine Dämpfung seiner hohen Frequenzen, deren Ursache im frequenzabhängigen Skineffekt liegt. Die Reduktion der Größe lässt sich folgendermaßen erklären: Am Ende des Stichkabels wird der Puls reflektiert und hat zum Zeitpunkt nach der Reflexion noch die fast die gleiche Größe, wie der ursprüngliche Puls. Der Anfang des Stichkabels kann nun auch als Ende eines Kabels aufgefasst werden. Der Abschlusswiderstand hier ergibt sich aus der Parallelschaltung des Widerstand des Scopes und des Frequenzgenerators. Dieser resultierende Widerstand ist kleiner, als der Wellenwiderstand der Leitung, weshalb es zur Invertierung eines Teils des Pules kommt. Hier wird nur ein Teil invertiert, da der Abschlusswiderstand nicht dem Grenzfall $Z_A = \SI{0}{\ohm}$, sondern einem Zwischenzustand $Z_A \leq \infty$ entspricht. Instantan überlagern der vom Ende des Stichkabels reflektierter rücklaufender Puls mit seinem invertierten Teil. Resultierend darauf ergibt sich ein kleinerer Puls, der auf dem \textit{Scope} zu sehen ist. Der dritte Puls entspricht dem am Anfang des Stichkabels invertierten und nochmals zum Ende des Stichkabels laufenden Teils des Pulses. Dieser wird am Ende wieder refkletiert, am Anfang dann wieder mit seinem invertierten Anteil überlagert usw.
+Für $Z_A = \infty$ (realisiert durch offenes Ende des Stichkabels) können drei Pulse beobachtet werden. Der erste ist der direkt durch das kurze Kabel durchlaufende, unreflektierte Puls. Der zweite Puls stellt den am Ende des Stichkabels reflektierten Puls dar. Dieser ist kleiner und zeigt weniger scharfe Kanten, als der Unreflektierte. Das Aufweichen der scharfen Kanten ergibt sich aus einem Verlust der hohen Frequenzen, welcher aufgrund der längeren Laufzeit dieses Pulses durch das Kabel auftritt. Hierbei erfährt er eine Dämpfung seiner hohen Frequenzen, deren Ursache im frequenzabhängigen Skineffekt liegt. Die Reduktion der Größe lässt sich folgendermaßen erklären: Am Ende des Stichkabels wird der Puls reflektiert und hat zum Zeitpunkt nach der Reflexion noch die fast die gleiche Größe, wie der ursprüngliche Puls. Der Anfang des Stichkabels kann nun auch als Ende eines Kabels aufgefasst werden. Der Abschlusswiderstand hier ergibt sich aus der Parallelschaltung des Widerstandes des \textit{Scopes} und des Frequenzgenerators. Dieser resultierende Widerstand ist kleiner, als der Wellenwiderstand der Leitung, weshalb es zur Invertierung eines Teils des Pules kommt. Hier wird nur ein Teil invertiert, da der Abschlusswiderstand nicht dem Grenzfall $Z_A = \SI{0}{\ohm}$, sondern einem Zwischenzustand $Z_A \leq \infty$ entspricht. Instantan überlagert sich der vom Ende des Stichkabels reflektierte rücklaufende Puls mit seinem invertierten Teil. Resultierend darauf ergibt sich ein kleinerer Puls, der auf dem \textit{Scope} zu sehen ist. Der dritte Puls entspricht dem am Anfang des Stichkabels invertierten und nochmals zum Ende des Stichkabels laufenden Teils des Pulses. Dieser wird am Ende wieder refkletiert, am Anfang dann wieder mit seinem invertierten Anteil überlagert.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -432,30 +432,26 @@ Für $Z_A = \infty$ (realisiert durch offenes Ende des Stichkabels) können drei
     \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Koaxialkabel mit \SI{25}{\metre} langem Stichkabel verschiedener Abshlusswiderstände, Eingangswiderstand Scope: \SI{50}{\ohm}}
     \label{fig:Stichkabel_Kurzschluss_Wellenwiderstand}
 \end{figure}\\
-Für $Z_A = \SI{0}{\ohm}$, realisiert durch einen Kurzschlussstecker (siehe Abbildung~\ref{fig:Stichkabel_Kurzschluss_Wellenwiderstand} links) können ebensfalls drei Pulse beobachtet werden. Das Prinzip ihrer Entstehung und \glqq Verschmierung\grqq{} ist das gleiche, wie für den ersten diskutierten Fall. Jedoch wird in diesem Fall am Ende des Stichkabels das Signal invertiert, weshalb der zweite Puls negativ ist. \\
-Für $Z_A = Z_L$, realisiert durch einen \SI{50}{\ohm}-Stecker, (siehe Abbildung~\ref{fig:Stichkabel_Kurzschluss_Wellenwiderstand} rechts) wird nur der unrefkletierte Puls beobachtet. In diesem Fall wird die Energie des in das Stichkabel laufenden Pulses am Ende des Kabels vom Abschlusswiderstand aufgrund der gewährleiteten Anpassung komplett aufgenommen. Es kommt zu keiner Relfexion, weshalb auch am \textit{Scope} kein Puls, bis auf den ursprünglichen, zu sehen ist.
+Für $Z_A = \SI{0}{\ohm}$, realisiert durch einen Kurzschlussstecker (siehe Abbildung~\ref{fig:Stichkabel_Kurzschluss_Wellenwiderstand} links) können ebenfalls drei Pulse beobachtet werden. Das Prinzip ihrer Entstehung und \glqq Verschmierung\grqq{} ist das gleiche, wie für den ersten diskutierten Fall. Jedoch wird in diesem Fall am Ende des Stichkabels das Signal invertiert, weshalb der zweite Puls negativ ist. \\
+Für $Z_A = Z_L$, realisiert durch einen \SI{50}{\ohm}-Stecker, (siehe Abbildung~\ref{fig:Stichkabel_Kurzschluss_Wellenwiderstand} rechts) wird nur der unreflektierte Puls beobachtet. In diesem Fall wird die Energie des in das Stichkabel laufenden Pulses am Ende des Kabels vom Abschlusswiderstand aufgrund der gewährleisteten Anpassung komplett aufgenommen. Es kommt zu keiner Reflexion, weshalb auch am \textit{Scope} kein Puls, bis auf den ursprünglichen, zu sehen ist.
 
 \paragraph{Beobachtung des Signals am Ende des Stichkabels }
-Beim der Beobachtung des Signals am Ende des Kabels für $Z_A = Z_L$ (realisiert durch Einstellen von \SI{50}{\ohm} für den Eingansgwiderstand) und $Z_A = \infty$ (realisiert durch Einstellen von \SI{1}{\mega\ohm} für den Eingangswiderstand des Scopes)) wird sowohl das Signals am Ende des Kabels (Kanal 1: gelb) als auch das Signal am Ende des Stichkabels (Kanal 2: grün) dargestellt.\\
-
+Bei der Beobachtung des Signals am Ende des Kabels für $Z_A = Z_L$ (realisiert durch Einstellen von \SI{50}{\ohm} für den Eingangswiderstand) und $Z_A = \infty$ (realisiert durch Einstellen von \SI{1}{\mega\ohm} für den Eingangswiderstand des Scopes)) wird sowohl das Signal am Ende des Kabels (Kanal 1: gelb) als auch das Signal am Ende des Stichkabels (Kanal 2: grün) dargestellt.
 \begin{figure}[htp]
     \centering
         \includegraphics[width=0.45\textwidth]{Bilder/Bild7.jpg}
-    \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Koaxialkabel mit \SI{25}{\metre} langem Stichkabel, welches mit dem zweiten Eingang des Scopes verbunden ist (Eingangewiderstand \textit{Scope} 2. Eingang: \SI{1}{\mega\ohm}), 1. Eingang \textit{Scope} : \SI{50}{\ohm}}
-\end{figure}
-
-Für \textbf{$Z_A = \infty$ am Ende des Stichkabels}(realisiert durch Anschließen des Stichkabels an den zweiten Eingang des Scopes und dortigem Einstellen eines Eingangswiderstandes von \SI{1}{\mega\ohm}) wird deutlich, dass der erste grüne Puls, der am Ende des Stichkabels ankommende, noch größere Puls, ist. Dieser wird dann wie oben beschrieben am Anfang des Stichkabels teiilweise invertiert und überlagert sich direkt mit dem urpsrünglichen rücklaufenden Puls, daraus entsteht dann der zweite gelbe Puls, aber läuft eben auch teilweise invertiert wieder zurück zum Ende des Stichkabels, was dann am zweiten grünen Puls ersichtlich wird. Der dritte gelbe Puls entsteht wie oben beschrieben durch das erneute teilweise Invertieren am Stichkabelanfang und instantanem Überlagern mit den ursprünglich zurücklaufenden Puls. Gleichzeitig wird ein Teil dieses am Stichkabelanfang invertierten Pulses aber auch wieder in das Stichkabel hinein geschickt, woraus sich der dritte grüne Puls ergibt. \\
-
+    \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Koaxialkabel mit \SI{25}{\metre} langem Stichkabel, welches mit dem zweiten Eingang des \textit{Scopes} verbunden ist (Eingangewiderstand \textit{Scope} 2. Eingang: \SI{1}{\mega\ohm}), 1. Eingang \textit{Scope} : \SI{50}{\ohm}}
+\end{figure}\\
+Für $Z_A = \infty$ am Ende des Stichkabels (realisiert durch Anschließen des Stichkabels an den zweiten Eingang des \textit{Scopes} und dortigem Einstellen eines Eingangswiderstandes von \SI{1}{\mega\ohm}) wird deutlich, dass der erste grüne Puls, der am Ende des Stichkabels ankommende, noch größere Puls, ist. Dieser wird dann wie oben beschrieben am Anfang des Stichkabels teilweise invertiert und überlagert sich direkt mit dem ursprünglichen rücklaufenden Puls, daraus entsteht dann der zweite gelbe Puls, welcher teilweise invertiert wieder zurück zum Ende des Stichkabels läuft, was dann am zweiten grünen Puls ersichtlich wird. Der dritte gelbe Puls entsteht wie oben beschrieben durch das erneute teilweise Invertieren am Stichkabelanfang und instantanem Überlagern mit den ursprünglich zurücklaufenden Puls. Gleichzeitig wird ein Teil dieses am Stichkabelanfang invertierten Pulses aber auch wieder in das Stichkabel hinein geschickt, woraus sich der dritte grüne Puls ergibt.
 \begin{figure}[htp]
     \centering
         \includegraphics[width=0.45\textwidth]{Bilder/Bild8.jpg}
-    \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Koaxialkabel mit \SI{25}{\metre} langem Stichkabel, welches mit dem zweiten Eingang des Scopes verbunden ist (Eingangewiderstand \textit{Scope} 2. Eingang: \SI{50}{\ohm}), 1. Eingang Scope: \SI{50}{\ohm}}
-\end{figure}
-
-Für \textbf{$Z_A = Z_L$ am Ende des Stichkabels}(realisiert durch Anschließen des Stichkabels an den zweiten Eingang des Scopes und dortigem Einstellen eines Eingangswiderstandes von \SI{50}{\ohm}) erschheint am Ende des Stichkabels bereits nur noch ein deutlich kleinerer Puls, der dann von dem Abschlusswiderstand komplett aufgenommen wird.\\
+    \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Koaxialkabel mit \SI{25}{\metre} langem Stichkabel, welches mit dem zweiten Eingang des \textit{Scopes} verbunden ist (Eingangewiderstand \textit{Scope} 2. Eingang: \SI{50}{\ohm}), 1. Eingang Scope: \SI{50}{\ohm}}
+\end{figure}\\
+Für $Z_A = Z_L$ am Ende des Stichkabels (realisiert durch Anschließen des Stichkabels an den zweiten Eingang des \textit{Scopes} und dortigem Einstellen eines Eingangswiderstandes von \SI{50}{\ohm}) erscheint am Ende des Stichkabels bereits nur noch ein deutlich kleinerer Puls, der dann von dem Abschlusswiderstand komplett aufgenommen wird.\\
 
 \paragraph{Verwendung einfacher Laborkabel zur Übertragung des Rechteckpulses}
-
+Wird der Rechteckpuls mit einfachen Laborkabeln übertragen, wird auch bei optimaler Einstellung von einem Eingangswiderstand des \textit{Scopes} von \SI{50}{\ohm} Abschlusswiderstand kein scharfer Rechteckpuls übertragen. Anstattdessen wird auf dem \textit{Scope} wie in Abbildung~\ref{fig:Rechtecksignal_Laborkabel} ein Peak erkannt.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -467,41 +463,38 @@ Für \textbf{$Z_A = Z_L$ am Ende des Stichkabels}(realisiert durch Anschließen 
         \caption{Eingangswiderstan \SI{1}{\mega\ohm}}
     \end{subfigure}
     \caption{Übertragung des Rechtecksignals über \SI{2}{\metre} lange Laborkabel bei unterschiedlichen Eingangswiderständen des Scopes}
-\end{figure}
-
-Wird der Rechteckpuls mit einfachen Laborkabeln übertragen, wird auch bei optimaler Einstellung von einem Eingangswiderstand des Scopes von \SI{50}{\ohm} Abschlusswiderstand kein scharfer Rechteckpuls übertragen. Anstattdessen wird auf dem \textit{Scope} ein Peak erkannt. Die bereits am Anfang des Versuchs aufgenommene chaotische Frequenzabhängigkeit der Spannung kommt hier zum Tragen und macht die Übertragung eines Rechteckpulses, womit die Übertragung vieler Frequenzen verbunden ist, unmöglich. \\
-Bei \SI{1}{\mega\ohm} Eingangswiderstand kommen zusätzlich noch die Relektionen dazu. Ein chaotisches Bild zeigt sich, dass für den ungeübten Beobachter den Anschein einer Schwingung macht.
+    \label{fig:Rechtecksignal_Laborkabel}
+\end{figure}\\
+Die bereits am Anfang des Versuchs aufgenommene chaotische Frequenzabhängigkeit der Spannung kommt hier zum Tragen und macht die Übertragung eines Rechteckpulses, womit die Übertragung vieler Frequenzen verbunden ist, unmöglich. \\
+Bei \SI{1}{\mega\ohm} Eingangswiderstand kommen zusätzlich noch die Relexionen dazu. Ein chaotisches Bild zeigt sich, dass für den ungeübten Beobachter den Anschein einer Schwingung macht.
 \newpage
 \paragraph{Bestimmung der Ausbreitungsgeschwindigkeit, Verkürzungfaktor und Permittivität}
 Die Bestimmung erfolgte auf zwei verschiedene Weisen. \\
 Zunächst wird der Aufbau genutzt, bei dem ein Stichkabel (Länge: \SI{25}{\metre} mithilfe eines T-Stücks auf das, den \textit{Scope} mit dem Frequenzgenerator verbindende, Kabel angebracht wird. Dabei werden Messwerte bei offenem Ende des Stichkabels bei \SI{50}{\ohm} sowie \SI{1}{\mega\ohm} und bei Kurzschlusstecker am Ende des Stichkabels bei \SI{50}{\ohm} sowie \SI{1}{\mega\ohm} aufgenommen. Jeweils gemessen wird der Abstand der ersten Flanke des ersten Pulses zur gleichen Flanke des gleichen Pulses. Bei allen Messungen belief sich diese Verschiebung auf:
 \begin{align}
-\Delta_1 = \SI{255}{\nano\second}
+\Delta_1 = \SI{255}{\nano\second}.
 \end{align}
-
-Wird berücksichtigt, dass die Strecke vom T-Stück zum \textit{Scope} im Vergleich zur Länge des Stichkabels vernachlässigbar klein ist und für die Rechnung nur die doppelte Länge des Stichkabels berücksichtigt werden muss, ergibt sich c zu
+Wird berücksichtigt, dass die Strecke vom T-Stück zum \textit{Scope} im Vergleich zur Länge des Stichkabels vernachlässigbar klein ist und für die Rechnung nur die doppelte Länge des Stichkabels berücksichtigt werden muss, ergibt sich $c$ zu
 \begin{align}
-c = \frac{\SI{50}{\metre}}{\SI{255,35}{\nano\second}} = \SI{196e6}{\metre\per\second}
+c = \frac{\SI{50}{\metre}}{\SI{255,35}{\nano\second}} = \SI{196e6}{\metre\per\second}.
 \end{align}
-
 Somit folgt für K
 \begin{align}
 K = \frac{c}{c_0} = 0,654
 \end{align}
-
 und damit für $\varepsilon_R$
 \begin{align}
-\frac{1}{\sqrt{\varepsilon_R}} = 0,654 \Rightarrow \varepsilon_R = 2,34
+\frac{1}{\sqrt{\varepsilon_R}} = 0,654 \Rightarrow \varepsilon_R = 2,34.
 \end{align}
 
-Eine andere Möglichkeit besteht darin, die drei Größen über den zuletzt verwendeten Aufbau zu erhalten. Ist das Ende des Stichkabels mit dem \textit{Scope} (Eingangswiderstand \SI{50}{\ohm}) verbunden und werden erste Flanke des Pulses, der unreflektiert durch geht, mit der ersten Flanke des am Ende des Stichkabels beobachteten Pulses verglichen, ergibt sich deren Verschiebung zu:
+Eine andere Möglichkeit besteht darin, die drei Größen über den zuletzt verwendeten Aufbau zu erhalten. Ist das Ende des Stichkabels mit dem \textit{Scope} (Eingangswiderstand \SI{50}{\ohm}) verbunden und werden die erste Flanke (unreflektiert) des Pulses, mit der ersten Flanke des am Ende des Stichkabels beobachteten Pulses verglichen, ergibt sich deren Verschiebung zu:
 \begin{align}
 \Delta_2  = \SI{123,68}{\nano\second}
 \end{align}
 
-Hierbei ergibt sich c zu
+Hierbei ergibt sich $c$ zu
 \begin{align}
-c = \frac{\SI{24}{\metre}}{\SI{123,68}{\nano\second}}= \SI{194e6}{\metre\per\second}
+c = \frac{\SI{24}{\metre}}{\SI{123,68}{\nano\second}}= \SI{194e6}{\metre\per\second}.
 \end{align}
 
 Für $\varepsilon_R$ und K folgt
@@ -521,7 +514,7 @@ Für die Messung mit Kurzschlussstecker am RG58 Koaxialkabels wird ein Wert von
 \begin{align}
 L = \SI{0,12}{\micro\henry}
 \end{align}
-für die Induktivität aufgenommen. Für die Messung bei offenem Ende wird ein Wert für die Kapazität von
+für die Induktivität aufgenommen. Für die Messung bei offenem Ende folgender Wert für die Kapazität ermittelt:
 \begin{align}
 C = \SI{35,6}{\pico\farad}.
 \end{align}
@@ -529,7 +522,7 @@ Damit ergibt sich R zu
 \begin{align}
 R = \sqrt{\frac{L}{C}} =  \SI{58,0}{\ohm}.
 \end{align}
-Die Abweichung zum idealen Wellenwiderstand ergibt sich daraus, dass bei der Verwendung des Kurzschlusssteckers nicht exakt $Z_A = \SI{0}{\ohm}$ und bei Offen-Lassen nicht exakt $Z_A = \infty$ erreicht wird.
+Die Abweichung zum idealen Wellenwiderstand ergibt sich daraus, dass bei der Verwendung des Kurzschlusssteckers nicht exakt $Z_A = \SI{0}{\ohm}$ galt und ein offener Abschlusswiderstand  endlich groß ist $Z_A < \infty$.
 \subsection{Modulation}
 \subsubsection{Simulation mit LabView}
 Zuerst wurde mithilfe eines LabView Programms eine Simulation von additiver und multiplikativer Amplitudenmodulation durchgeführt. Dabei wurde eine Nutzfrequenz $\nu_\text{N} = \SI{5}{\kilo\hertz}$ und eine Trägerfrequenz $\nu_\text{T} = \SI{100}{\kilo\hertz}$ zur Simulation des modulierten Signals benutzt.\\
@@ -542,8 +535,8 @@ Zunächst wurden die beiden Signale nur addiert, wodurch noch keine Modulation e
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]{Bilder/Addition_Frequenzverlauf.pdf}
     \end{subfigure}
-    \label{fig:Addition}
     \caption{Zeitverlauf und Frequenzspektrum der addierten Signale nach der Formel $U(t) = \sin(\omega_\text{N}) + a\cdot \sin(\omega_\text{T})$ mit Amplitude $a = \SI{1}{\volt}$.}
+    \label{fig:Addition}
 \end{figure}\\
 Es zeigt sich, dass beide Frequenz wieder im Frequenzbereich auffindbar sind, was verdeutlicht, dass hierbei keine Modulation stattgefunden hat.
 \begin{figure}[htp]
@@ -625,8 +618,8 @@ Das Zeitbild wurde an einem analogen Oszilloskop dargestellt, weil das \textit{H
     \label{fig:Modulation_400mV}
 \end{figure}\\
 Das Trägersignal wurde mit einer effektiven Spannung von $\SI{1}{\volt}$ generiert und mit einem $10:1$ Element abgeschwächt. Als Amplitude des Nutzsignals wurde $U_N = \SI{400}{\milli\volt_\text{PP}}$ eingestellt. Im Zeitverlauf sieht das modulierte Signal verschoben aus, die Minima und Maxima der Hüllkurve sind zueinander verschoben.\\
-Das Frequenzspektrum wurde an einem analogen Frequenzspektrographen mit logarithmischer Ordinate dargestellt. Ein Kästchen entlang der Ordinate beschreibt eine Intensitätsabschwächung von $\SI{10}{\deci\bel} \approx 0,32$. Die Amplituden der ersten Seitenbänder entsprechen demnach etwa nur $\SI{30}{\percent}$ der Amplitude der Trägerfrequenz. Im Unterschied zur Simulation treten hier Seitenbänder höherer Ordnung $\omega_\text{T}\pm n\cdot \omega_\text{N}$ auf. Diese sind aber um 40 bzw. $\SI{50}{\deci\bel}$ gegenüber der Trägerfrequenz abgeschwächt, was einer Abschwächung um Faktor 100 bzw. 300. Die Nebenfrequenzen treten auf, weil die Kennlinien der zur Modulation verwendeten Dioden nicht exakt quadratisch sind.\\ %ToDo mehr dazu
-Weiterhin wurde die Modulation mit gleichen Frequenzen von Signal und Träger aber einer anderen Amplitude $U_\text{N} = \SI{800}{\milli\volt}$ wiederholt. Das Ergebnis zeigt Abbildung~\ref{fig:Modulation_800mV}
+Das Frequenzspektrum wurde an einem analogen Frequenzspektrographen mit logarithmischer Ordinate dargestellt. Ein Kästchen entlang der Ordinate beschreibt eine Intensitätsabschwächung von $\SI{10}{\deci\bel} \approx 0,32$. Die Amplituden der ersten Seitenbänder entsprechen demnach etwa nur $\SI{30}{\percent}$ der Amplitude der Trägerfrequenz. Im Unterschied zur Simulation treten hier Seitenbänder höherer Ordnung $\omega_\text{T}\pm n\cdot \omega_\text{N}$ auf. Diese sind aber um 40 bzw. $\SI{50}{\deci\bel}$ gegenüber der Trägerfrequenz abgeschwächt, was einer Abschwächung um Faktor 100 bzw. 300 entspricht. Die Nebenfrequenzen treten auf, weil die Kennlinien der zur Modulation verwendeten Dioden nicht exakt quadratisch sind.\\ %ToDo mehr dazu
+Weiterhin wurde die Modulation mit gleichen Frequenzen von Signal und Träger aber einer anderen Amplitude $U_\text{N} = \SI{800}{\milli\volt}$ wiederholt. Das Ergebnis zeigt Abbildung~\ref{fig:Modulation_800mV}.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -640,9 +633,9 @@ Weiterhin wurde die Modulation mit gleichen Frequenzen von Signal und Träger ab
     \caption{Additiv amplitudenmoduliertes Signal mit $\nu_\text{N} = \SI{100}{\kilo\hertz}$ und $\nu_\text{T} = \SI{100}{\mega\hertz}$ und einer Amplitude des Nutzsignals von $U_N = \SI{800}{\milli\volt_\text{PP}}$.}
     \label{fig:Modulation_800mV}
 \end{figure}\\
-Im Zeitverlauf ist der höhere Modulationsgrad gut erkennbar und kann als $M = 1$ abgeschätzt werden. Jedoch tritt weiterhin die Verschiebung der Einhüllenden Kurve auf. Im Frequenzspektrum sind die Seitenbänder wesentlich stärker ausgeprägt. Das erste Seitenband ist um $\SI{5}{\deci\bel}$ abgeschwächt, was einer Abschwächung von $\SI{50}{\percent}$ gegenüber der Trägerfrequenz entspricht. Dabei stimmt die Abschwächung mit dem erwarteten Ergebnis mit Modulationsgrad $M =1$ überein.
+Im Zeitverlauf ist der höhere Modulationsgrad gut erkennbar und kann als $M = 1$ abgeschätzt werden. Jedoch tritt weiterhin die Verschiebung der einhüllenden Kurve auf. Im Frequenzspektrum sind die Seitenbänder wesentlich stärker ausgeprägt. Das erste Seitenband ist um $\SI{5}{\deci\bel}$ abgeschwächt, was einer Abschwächung von $\SI{50}{\percent}$ gegenüber der Trägerfrequenz entspricht. Dabei stimmt die Abschwächung mit dem erwarteten Ergebnis mit Modulationsgrad $M =1$ überein.
 \subsection{Demodulation}
-Die nach der im letzten Abschnitt behandelten Methode der Amplitudenmodulation werden nun über eine $\SI{25}{\metre}$ lange Koaxialleitung transportiert und anschließend demoduliert. Hierfür wurde eine Nutzfrequenz von $\nu_\text{N} =\SI{500}{\hertz}$ mit einem Träger von $\nu_\text{T}=\SI{100}{\mega\hertz}$ verwendet. Das Signal wurde zunächst mit einem analogen Oszilloskop im Zeitverlauf analysiert (Abbildung~\ref{fig:Demodulation} links) und am Frequenzspektrographen auf das Spektrum analysiert. Jedoch liegen die Seitenbänder mit $\nu_\text{T}\pm\SI{500}{\hertz}$ zu nah an der Trägerfrequenz, um sie am Spektrographen aufzulösen.
+Die nach der im letzten Abschnitt behandelten Methode der Amplitudenmodulation modulierten Signale werden nun über eine $\SI{25}{\metre}$ lange Koaxialleitung transportiert und anschließend demoduliert. Hierfür wurde eine Nutzfrequenz von $\nu_\text{N} =\SI{500}{\hertz}$ mit einem Träger von $\nu_\text{T}=\SI{100}{\mega\hertz}$ verwendet. Das Signal wurde zunächst mit einem analogen Oszilloskop im Zeitverlauf analysiert (Abbildung~\ref{fig:Demodulation} links) und am Frequenzspektrographen auf das Spektrum analysiert. Jedoch liegen die Seitenbänder mit $\nu_\text{T}\pm\SI{500}{\hertz}$ zu nah an der Trägerfrequenz, um sie am Spektrographen aufzulösen.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -669,7 +662,7 @@ Zunächst wird eine $\lambda/2$ Antenne auf \SI{200}{\mega\hertz} eingestellt. D
 \begin{align}
 L = \frac{\lambda_\text{eff}}{2} = \frac{c_0 \cdot K}{2 \cdot f} = \frac{\SI{3e8}{\metre\per\second} \cdot 0,98}{2 \cdot \SI{200e8}{\hertz}}  = \SI{0,74}{\metre}.
 \end{align}
-Die tatsächliche Länge der Antenne wird dann durch systematisches Probieren ermittelt. Der oben errechnete Wert wird als Ausgangspunkt benutzt. Mit Hilfe des Reflektiometers wird das rücklaufende Signal beobachtet und in Abhängigkeit der eingestellten Länge bestimmt, bei welcher Frequenz dieses sein Minimum annimmt. Die Länge der Antenne wird solang verändert bis das Minimum der rücklaufenden Welle bei der gegebenen Frequenz vorliegt. Dies ist bei einer Länge von $L = \SI{73,3}{\centi\metre}$ der Fall. Dann gilt $U_\text{Rück, min} = \SI{19}{\milli\volt}$ und gleichzeitig $U_\text{Hin} = \SI{74}{\milli\volt}$. Damit lässt sich der Reflekionsfaktor r sowie das Stehwellenverhältnis VSWR berechnen:
+Die tatsächliche Länge der Antenne wird dann durch systematisches Probieren ermittelt. Der oben errechnete Wert wird als Ausgangspunkt benutzt. Mit Hilfe des Reflektiometers wird das rücklaufende Signal beobachtet und in Abhängigkeit der eingestellten Länge bestimmt, bei welcher Frequenz dieses sein Minimum annimmt. Die Länge der Antenne wird solange verändert bis das Minimum der rücklaufenden Welle bei der gegebenen Frequenz vorliegt. Dies ist bei einer Länge von $L = \SI{73,3}{\centi\metre}$ der Fall. Dann gilt $U_\text{Rück, min} = \SI{19}{\milli\volt}$ und gleichzeitig $U_\text{Hin} = \SI{74}{\milli\volt}$. Damit lässt sich der Reflekionsfaktor r sowie das Stehwellenverhältnis VSWR berechnen:
 \begin{align}
 r = \frac{U_\text{Rück}}{U_\text{Hin}} = \frac{\SI{19}{\milli\volt}}{\SI{74}{\milli\volt}} = 0,2568
 \end{align}
@@ -689,10 +682,10 @@ bestimmt.\\
 
 Dabei wird beobachtet, dass ein Drehen der Antenne zu einem veränderten rücklaufenden Anteil führt. Dies ist durch die sich verändernden parasitären Kapazitäten etc. in der Umgebung relativ zur Ausrichtung der Antenne zu erklären.  \\
 Es wird eine zweite Antenne mit den gleichen Abmessungen eingestellt. Eine der beiden identischen Antennen wird im Folgenden zum Senden, die andere zum Empfangen genutzt. \\
-Um die Leistung zu berechnen, wird, da kein Messequipement für \SI{75}{\ohm} Wellenwiderstände vorhanden ist, mit \SI{50}{\ohm} gerechnet. \\
+Um die Leistung zu berechnen, wird, da kein Messequipment für \SI{75}{\ohm} Wellenwiderstände vorhanden ist, mit \SI{50}{\ohm} gerechnet. \\
 Als eingegebene Spannung wird
 \begin{align}
-U_\text{in} = \SI{1,35}{\volt_\text{PP}} = \frac{\SI{1,35}{\volt}}{2*\sqrt{2}} = \SI{0,4773}{\volt}\quad (\text{Effektivwert})
+U_\text{in} = \SI{1,35}{\volt_\text{PP}} = \frac{\SI{1,35}{\volt}}{2\sqrt{2}} = \SI{0,4773}{\volt}\quad (\text{Effektivwert})
 \end{align}
 bestimmt. Damit ergibt sich die Sendeleistung zu
 \begin{align}
@@ -702,12 +695,12 @@ P_\text{send} = \frac{U^2}{R} =  \SI{4,56}{\milli\watt}.
 Die Sendeantenne wird im Abstand von ungefähr \SI{3}{\metre} platziert. Je nach Orientierung der Empfangsantenne werden unterschiedliche Spannungen empfangen. \\
 Sind beide Antennen parallel zu einander ausgerichtet, wird eine Spannung von $U_\text{par}$ = $\SI{90}{\milli\volt_\text{PP}}$ empfangen. Das entspricht einer Empfangsleistung von
 \begin{align}
-P_\text{empf} =   \frac{\SI{1}{\milli\volt\squared}}{\SI{50}{\ohm}} = \SI{2,02e-5}{\watt} = \SI{0,02}{\milli\watt}
+P_\text{empf} =   \frac{\SI{1}{\milli\volt\squared}}{\SI{50}{\ohm}} = \SI{2,02e-5}{\watt} = \SI{0,02}{\milli\watt}.
 \end{align}
 
 Bei senkrechter Ausrichtung der beiden Antennen zueinander wird eine Spannung von $\SI{23}{\milli\volt_\text{PP}} = \SI{0,008}{\volt_\text{eff.}}$ (Effektivspannung), damit ergibt sich
 \begin{align}
-P_{\text{empf},2} = \SI{0,001}{\milli\volt}
+P_{\text{empf},2} = \SI{0,001}{\milli\volt}.
 \end{align}
 Es wird also nur ein Bruchteil der gesendeten Leistung empfangen. Ein Minimum der empfangenen Spannung stellt sich dabei nicht bei genau senkrechter Lage der Antennen zueinander ein, sondern bei Abweichung der Empfangantenne von der senkrechten Position. Diese Beobachtung lässt sich durch die im Raum befindlichen Störfaktoren
 erklären. So treten zum Beispiel viele Reflexionen im Raum auf, die die Übertragung merklich beeinflussen. \\
@@ -717,7 +710,7 @@ Beim parallelen Ausrichten der Empfangs- und der Sendeantenne zueinander zeigt s
     \centering
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]{Bilder/Antenne_Phasenverschiebung1.jpg}
-        \caption{parallele Ausrichtung beider Antennen}
+        \caption{parallele Ausrichtung beider Antennen\\$~$}
     \end{subfigure}\hspace{1cm}
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]{Bilder/Antenne_Phasenverschiebung2.jpg}
@@ -741,14 +734,14 @@ Beim Senden des modulierten Signals zeigt sich bei paralleler Ausrichtung beider
     \caption{empfangenes demoduliertes Signal bei unterschiedlicher Ausrichtung der Antennen zueinander}
 \end{figure}
 
-Außerdem wird das empfangene Signal hörbar gemacht. Dazu wird ein Lautsprecher anstelle des Spektrumanalysators angeschlossen. Beim Erhöhen der Amplitude der Nutzfrequenz wird der höhrbare Ton lauter. Wird die Frequenz der Nutzfrequenz erhöht, wird der Ton höher.
+Außerdem wird das empfangene Signal hörbar gemacht. Dazu wird ein Lautsprecher anstelle des Spektrumanalysators angeschlossen. Beim Erhöhen der Amplitude der Nutzfrequenz wird der hörbare Ton lauter. Wird die Frequenz der Nutzfrequenz erhöht, steigt die Tonhöhe.
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
 \section{Zusammenfassung}
-Mithilfe der Untersuchung des Verhaltens von Sinussignalen auf verschiedenen Leitungen bei verschiedenen Anpassungen kann festgestellt werden, dass Laborkabel aufgrund ihres chaotischen Verhaltens bezüglich des Frequenzsgangs ungeeignet sind für die Übertragung von Hochfrequenzsignalen. Koaxialkabel bei einem Eingangswiderstand des Scopes von \SI{50}{\ohm} ermöglichen eine über alle Frequenzen gleiche Spannungsübertragung und verhindern das Ausbilden von Reflexionen. Die Fehlanpassung, die damit verbundene Ausbildung von Relfexionen und Verstärkung bzw Abschwächung der Spannung bei bestimmten Frequenzen kann jedoch auch bewusst genutzt werden. So kann ein Stichkabel mit offenem bzw. abgeschlossenem Ende verwendet werden, um dadurch einen Filter für bestimmte Frequenzen oder die Hochtransformation der Spannung bei bestimmten Frequenzen zu realisieren. \\
+Mithilfe der Untersuchung des Verhaltens von Sinussignalen auf verschiedenen Leitungen bei unterschiedlichen Anpassungen kann festgestellt werden, dass Laborkabel aufgrund ihres chaotischen Verhaltens bezüglich des Frequenzgangs ungeeignet sind für die Übertragung von Hochfrequenzsignalen. Koaxialkabel bei einem Eingangswiderstand des \textit{Scopes} von \SI{50}{\ohm} ermöglichen eine über alle Frequenzen gleiche Spannungsübertragung und verhindern das Ausbilden von Reflexionen. Die Fehlanpassung, die damit verbundene Ausbildung von Relfexionen und Verstärkung bzw Abschwächung der Spannung bei bestimmten Frequenzen kann jedoch auch bewusst genutzt werden. So kann ein Stichkabel mit offenem bzw. abgeschlossenem Ende verwendet werden, um dadurch einen Filter für bestimmte Frequenzen oder die Hochtransformation der Spannung bei bestimmten Frequenzen zu realisieren. \\
 Bei der Untersuchung des Verhaltens von Rechtecksignalen auf Leitungen werden die unterschiedlichen Verhalten der Spannungen am Ende der Leitung bei unterschiedlichen Anpassungen bestätigt. Der Verlauf eines Signals durch die Leitung wird explizit deutlich. Außerdem wird festgestellt, dass dadurch die Ausbreitungsgeschwindigkeit, Verküzungsfaktor und Permittivität ermittelt werden können.\\ Zum Ende des ersten Versuchsteils werden zwei unterschiedliche Varianten zur Ermittlung des Wellenwiderstandes angewendet.\\
-Da Signale niedriger Frequenz im freien Raum stark gedämpft werden, ist die Modulation der Nutzsignale auf Trägersignale hoher Frequenzen sinnvoll. Dabei wird das Signal per Amplituden- oder Frequenzmodulation in einen höheren Frequenzbereich verschoben. Der Empfänger gewinnt mithilfe eines Demodulators wieder das ursprüngliche Signal. Die Modulation liefert die Grundlage für die breiten Radiofrequenzbereich und verhindert, dass Programme auf gleichen Frequenzen gesendet werden, da bei der Modulation das Trägersignal beliebig wählbar ist.\\
+Da Signale niedriger Frequenz im freien Raum stark gedämpft werden, ist die Modulation der Nutzsignale auf Trägersignale hoher Frequenzen sinnvoll. Dabei wird das Signal per Amplituden- oder Frequenzmodulation in einen höheren Frequenzbereich verschoben. Der Empfänger gewinnt mithilfe eines Demodulators wieder das ursprüngliche Signal. Die Modulation liefert die Grundlage für die breiten Radiofrequenzbereiche und verhindert, dass Programme auf gleichen Frequenzen gesendet werden, da bei der Modulation das Trägersignal beliebig wählbar ist.\\
 Bei der Untersuchung der elektromagnetischen Wellen im freien Raum wird herausgefunden, dass nur ein Bruchteil der Sendeleistung auch wieder empfangen werden kann. Für das empfangene Signal ist die Orientierung der Sende- und Empfangsantennen von essentieller Bedeutung. Senkrechtes Ausrichten führt zu einem Auslöschen des Signals, während paralleles Ausrichten ein Maximum hervorruft, außerdem kann dadurch die Phasenverschiebung der Signale beeinflusst werden. Die Modulation wird als zentrales Element bei der Übertragung von Signalen bestätigt.
 
 % ***** Literaturverzeichnis ******************
