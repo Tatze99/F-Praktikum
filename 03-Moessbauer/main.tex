@@ -1,0 +1,119 @@
+\documentclass[a4paper,twoside,final]{article}
+%----Eingebundene Bibliotheken-----
+\input{../LaTeX-Packages.tex}
+\begin{document}
+\setlength{\marginparsep}{2em}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% Anfang ********************************************************
+\begin{center}
+\thispagestyle{empty}
+  \includegraphics[width=0.75\textwidth]{../UniJena_BildWortMarke_black.pdf}\\[4em]
+  \Large
+  Ausarbeitung zum Versuch\\[2em]
+  \Huge
+  Mößbauer Spektroskopie\\
+  \vspace{2cm}
+  \Large
+  Martin Beyer und Vanessa Huth\\[2em]
+  Abgabe: 07. Januar 2020\\[2em]
+  Betreuer: Dr. Udo Reislöhner\\[5em]
+  \begin{flushleft}
+  	Bewertung und Ausarbeitung:\\[2em]
+		Protokollführung und Form:\\[1em]
+		Ergebnisse, Auswertung und Interpretation:\\[1em]
+		Bemerkungen und Hinweise des Betreuers:
+  \end{flushleft}
+\end{center}
+\clearpage
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[RO,LE]{\textbf{Mößbauer Spektroskopie}}
+\fancyhead[RE,LO]{\rightmark}
+\fancyfoot[LE,RO]{\bfseries\thepage}
+\fancyfoot[CO,CE]{Protokoll}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+
+% *********************************************
+% ***** KAPITEL 1 *****************************
+% *********************************************
+\tableofcontents
+\pagenumbering{gobble}% remove page numbering
+\newpage
+\pagenumbering{arabic}
+\section{Aufgabenstellung} \label{sec:Aufgabenstellung}
+\subsection{Abschätzung einer oberen Strahlendosis}
+\paragraph{Aufgabe 1}$~$\\
+Abschätzung der oberen Grenze der zusätzlichen Äquivalenzdosis einer $^{60}$Co-Quelle die ohne Abschirmung 12 Stunden lang in einem Meter Abstand. Das Ergebnis wird mit der durchschnittlichen Strahlenbelastung eines Bürgers verglichen.
+\subsection{Messung des Energiespektrums der $^{57}Co-Quelle$}
+
+\paragraph{Aufgabe 2a}$~$\\
+Es wird das Energiespektrum der $^{57}$Co-Quelle aufgenommen, mit dem Oszilloskop das Ausgangssignal des Verstärkers gemessen und der Zusammenhang mit dem dem Energiespektrum hergestellt. Die Verstärkung wird variiert.
+\paragraph{Aufgabe 2b}$~$\\
+Mithilfe verschiedener Strahler wird eine Energiekalibrierung durchgeführt und die \SI{14,4}{\kilo\text{e}\volt}-Linie identifiziert.
+
+\subsection{Einstellung des Energiefensters auf die \SI{14,4}{\kilo\text{e}\volt}-Linie}
+\paragraph{Aufgabe 3a}$~$\\
+Das Fenster des Einkanal-Diskriminators wird auf die Resonanzabsorptionslinie eingestallt, indem das Energiesignal mit dem Ausgangssignal des \textit{SCA} getriggert wird.
+\paragraph{Aufgabe 3b}$~$\\
+Mithilfe des Vielkanalanalysators wird durch die Triggerung des ADC über den Gate-Eingang kann die Wirkung der Fenstereinstellung am \textit{SCA} direkt am Vielkanalanalysator beobachtet werden. Gegebenenfalls wird die Fenstereinstellung nachjustiert und der eingestellte Bereich im Energiespektrum skizziert.
+
+\subsection{Messung und Auswertung von Mößbauerspektren}
+\paragraph{Aufgabe 4a}$~$\\
+Das Mößbauerspektrum von natürlichem Eisen wird gemessen und erklärt.
+Dabei wird folgendes bestimmt:
+\begin{itemize}
+  \item Energieaufspaltung $\Delta E_g$ im Grundzustand und $\Delta E_a$ im angeregten Zustand bestimmt und mit der Energie der $\gamma$-Quanten verglichen
+  \item Betrag des $B$-Feldes am Ort der $^{57}$Fe-Kerne bestimmt
+  \item das magnetische Moment des ersten angeregten Zustands
+  \item die Isomerieverschiebung bezüglich der Quelle
+  \item die Linienbreite für große und kleine Geschwindigkeiten
+\end{itemize}
+\paragraph{Aufgabe 4b}$~$\\
+Das Mößbauerspektrum von Edelstahl wird gemessen und disktutiert (Linienzahl, Isomerieverschiebung, Linienbreite)
+\paragraph{Aufgabe 4c}$~$\\
+Das Mößbauerspektrum von Eisensulfat wird gemessen und diskutiert (Linienzahl, Energieaufspaltung, Isomerieverschiebung, Linienbreite).
+% *********************************************
+% ***** KAPITEL 2 *****************************
+% *********************************************
+\newpage
+\section{Grundlagen} \label{sec:Grundlagen}
+\subsection{Mößbauer-Spektroskopie}
+\subsection{Gammastrahlung}
+\subsection{Radioaktivität}
+
+% *********************************************
+% ***** KAPITEL 3 *****************************
+% *********************************************
+\section{Versuchsdurchführung} \label{sec:Versuchsdurchführung}
+
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\newpage
+\section{Ergebnisse und Diskussion}
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\section{Zusammenfassung}
+% ***** Literaturverzeichnis ******************
+
+\begin{thebibliography}{xxx}
+	\bibitem{Meinke}
+	H. Meinke: \textit{Taschenbuch der Hochfrequenztechnik}. Springer Verlag Berlin Heidelberg New York 1992 (5. Auflage).
+	\bibitem{Perner}
+  I. Perner: \textit{FSU Fortgeschrittenenen Praktikum: Radiowellen}, Fried\-rich-Schil\-ler-Uni\-versi\-tät Juli 2019
+  \bibitem{Amplitudenmodulation}
+  Amplitudenmodulation: \url{https://de.wikipedia.org/wiki/Amplitudenmodulation}. Stand: 17.11.2019
+\end{thebibliography}
+
+\end{document}
