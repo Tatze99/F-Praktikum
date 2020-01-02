@@ -47,9 +47,9 @@
 % ***** KAPITEL 1 *****************************
 % *********************************************
 \tableofcontents
-\pagenumbering{gobble}% remove page numbering
+% \pagenumbering{gobble}% remove page numbering
 \newpage
-\pagenumbering{arabic}
+% \pagenumbering{arabic}
 \section{Aufgabenstellung} \label{sec:Aufgabenstellung}
 \subsection{Abschätzung einer oberen Strahlendosis}
 \paragraph{Aufgabe 1}$~$\\
@@ -102,6 +102,218 @@ Das Mößbauerspektrum von Eisensulfat wird gemessen und diskutiert (Linienzahl,
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}
+\subsection{Abschätzung einer oberen Strahlendosis}
+Vor Beginn des Experiments wurde eine Abschätzung durchgeführt, wie groß die aufgenommene Äquivalentdosis $H$ im Verlauf des Versuchs maximal werden kann. Dabei wurde ein Abstand von \SI{1}{\metre} ohne Abschirmung gewählt. Es gilt folgende Formel:
+\begin{align}
+  H = \Gamma_H \frac{A t}{r^2}.
+\end{align}
+Die Aktivität $A$ der $^{60}$Co Quelle beträgt etwa \SI{200}{\kilo\becquerel}. Bei $\Gamma_H$ handelt es sich um eine Proportionalitätskonstante, es gilt $\Gamma_H(^{60}\text{Co})= \SI{351}{\micro\sievert\metre\squared\per\hour\per\giga\becquerel}$. Damit ergibt sich für eine Praktikumszeit von 12 Stunden eine Strahlendosis von
+\begin{align}
+  H = \SI[per-mode=fraction]{351}{\micro\sievert\metre\squared\per\hour\per\giga\becquerel} \cdot\frac{\SI{2e5}{\becquerel}\cdot\SI{12}{\hour}}{\SI{1}{\metre\squared}}= \SI{0,84}{\micro\sievert} \ll \SI{4}{\milli\sievert}.
+\end{align}
+Die Strahlendosis ist geringer als die täglich zulässige Strahlenbelastung und befindet sich im Größenbereich der statistischen Schwankungen der Radioaktivität. Die durch das Experiment aufgenommene Strahlendosis kann somit als unbedenklich eingestuft werden.
+
+\subsection{Messung des Energiespektrums der $^{57}$Co-Quelle}
+\subsubsection{Aufnahme verschiedener Energiespektren}
+Zunächst wurden mithilfe des Programms \textit{WISSOFT2003} Energiespektren verschiedener Strahler aufgenommen. Dafür wurde eine Pulshöhenanalyse (PHA) durchgeführt. Die Gammastrahlung wird detektiert, digitalisiert und in einem, der Impulshöhe entsprechenden, Kanal abgelegt. Die Messung verlief jeweils über mehrere Minuten. Die Spektren der drei verwendeten Strahler sind in Abbildung~\ref{fig:Energiespektren} dargestellt.
+\begin{figure}[htp]
+    \vspace{-0.5cm}
+    \centering
+    \includegraphics[width=0.95\textwidth]{Bilder/Energiespektren_Am_Ba_Co.pdf}
+    \caption{Energiespektren der drei überprüften radioaktiven Quellen. Die Messwerte wurden auf eine Zahl von 1000 \glqq normiert\grqq.}
+    \label{fig:Energiespektren}
+\end{figure}
+\subsubsection{Identifizierung der \SI{14,4}{\kilo\electronvolt} Linie}
+Mithilfe der am Versuchsplatz vorhandenen Datenblätter wird mithilfe der Energiespektren von $^{241}$Am (Americium) und $^{133}$Co (Kobalt) eine Energiekalibrierung durchgeführt. Dafür wird der Kanal der bekannten Spektrallinie dieser Isotope identifiziert und auf die zugehörige Energie kalibriert. Für Barium befand sich die \SI{30,85}{\kilo\electronvolt} Linie bei Channel 97 und bei Americium die \SI{16,6}{\kilo\electronvolt} Linie bei Channel 42. Nun erfolgt eine erneute Aufnahme des Kobaltspektrums, woraus ein Ausschnitt in Abbildung~\ref{fig:Spektrum_Co} dargestellt ist.
+\begin{figure}[htp]
+    \vspace{-0.5cm}
+    \centering
+    \includegraphics[width=0.95\textwidth]{Bilder/Energiespektrum_Co_kalibriert.pdf}
+    \caption{Energiespektrum der $^{57}$Co Quelle mit kalibrierter Skala zur Identifizierung der \SI{14,4}{\kilo\electronvolt} Linie.}
+    \label{fig:Spektrum_Co}
+\end{figure}
+%
+% MORE
+% To
+% DO
+%
+\subsection{Auswertung der Mößbauerspektren}
+\subsubsection{Spektrum von Eisen}
+Zur Aufnahme des Mößbauerspektrums wurde als Absorber Eisen mit einer Folienstärke von $d = \SI{25}{\micro\metre}$ gewählt. Mithilfe des \textit{Mößbauer Drive} wird die radioaktive Quelle bewegt. Zunächst erfolgt eine Testaufnahme von $\SI{20}{\min}$, um eine passende maximale Probengeschwindigkeit zu ermittelt. Nun wird an der Steuereinheit eine maximale Probengeschwindigkeit von $v_\text{max} = \SI{5,99}{\milli\metre\per\second}$ eingestellt und die Messung 8 Stunden lang durchgeführt. Es ergibt sich nun ein Transmissionsspektrum über 1024 Kanäle. Dabei folgt die zugehörige Geschwindigkeit der Kanäle einem Kosinus. Mithilfe der Formel
+\begin{align}
+  v(n) = -\cos\left(\frac{n\cdot2\pi}{N}\right), \quad N = 1024
+\end{align}
+wurde die zugehörige Geschwindigkeit zum Kanal $n$ berechnet. Die Werte gleicher Geschwindigkeit wurden anschließend aufaddiert und es ergibt sich das in Abbildung~\ref{fig:Spektrum_Eisen} dargestellte Spektrum.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Bilder/Moessbauer_Fe25_Lorentz.pdf}
+    \caption{Mößbauerspektrum von Eisen.}
+    \label{fig:Spektrum_Eisen}
+\end{figure}\\
+Das beobachtete Transmissionsspektrum besteht aus sechs annähernd symmetrisch zur Ruhelage liegenden, äquidistanten Absorptionslinien. Diese Linien werden durch die magnetische Wechselwirkung des Kerns mit einem äußeren $\bm{B}$-Feld verursacht, was zu einer Hyperfeinstrukturaufspaltung führt. Das Intensitätsverhältnis der Linien beträgt etwa $1:2:3$, was auf eine unmagnetisierte Probe schließen lässt.
+Die einzelnen Absorptionslinien wurden in \textit{Origin} mithilfe eines Lorentzfits der Form
+\begin{align}
+  y= y_0 + \frac{2A}{\pi}\frac{w}{4(x-x_c)^2+w^2}\label{eqn:Lorentzfits}
+\end{align}
+an die Messdaten angepasst. Aus der Fitfunktion wurde die durch den Parameter $x_c$ die Position der Absorptionslinie bestimmt. Die in Abbildung~\ref{fig:Spektrum_Eisen} abgebildeten Absorptionslinien entsprechen von links nach rechts in aufsteigender Reihenfolge der Energieaufspaltung im Eisen. Dies lässt sich dadurch begründen, dass sich bei einer negativen Geschwindigkeit die Probe vom Absorber wegbewegt und dadurch nach Gleichung~\eqref{eqn:Dopplereffekt} eine \glqq Rotverschiebung\grqq{} aufgrund des Dopplereffekts auftritt und somit die Energie der Gammastrahlung sinkt. Analog dazu tritt bei positiver Geschwindigkeit eine \glqq Blauverschiebung\grqq{} auf. Alle möglichen Übergänge sind in Abbildung~\ref{fig:Termschema_Eisen} dargestellt. Dabei wurden die Auswahlregeln $\Delta l = \Delta J = \pm 1$ und $\Delta m = 0; \pm 1$ beachtet.
+\begin{figure}[htp]
+    \centering
+    \includegraphics{Bilder/Termschema_Eisen.pdf}
+    \caption{Das Termschema von Eisenkernen in einem $\bm{B}$-Feld. Alle möglichen Übergänge sind nach den Auswahlregeln $\Delta l = \pm 1 , \Delta m = 0; \pm 1$ nach aufsteigender Energie sortiert (eigene Abbildung nach~\cite{Schatz}).}
+    \label{fig:Termschema_Eisen}
+\end{figure}\\
+Um nun daraus die Energieaufspaltung im Grundzustand $\Delta E_g$ bzw. im angeregten Zustand $\Delta E_a$ zu bestimmen, müssen die Energien bestimmter Übergänge voneinander subtrahiert werden. Für die Energieaufspaltung des Grundzustandes werden zwei Übergänge vom gleichen angeregten Zustand in zwei unterschiedliche Grundzustände benötigt. Dies ist bei Übergang 2 und 4, sowie 3 und 5 der Fall. Zur Berechnung der Aufspaltung der angeregten Zustände werden zwei Übergänge aus unterschiedlichen angeregten Zuständen in den gleichen Grundzuststand benötigt, wie beispielsweise bei Übergang 1 und 2.\\
+Zunächst wird aus den gewonnenen Geschwindigkeiten mithilfe von \eqref{eqn:Dopplereffekt} die Energiedifferenz zu einer Bezugsgröße bei $v = \SI{0}{\milli\metre\per\second}$ bestimmt
+\begin{align}
+  \Delta E &= \hbar \omega - \hbar \omega_0 = \hbar k v, \quad k = \frac{\omega}{c} = \frac{E}{\hbar c}\\
+  \Rightarrow \Delta E &= v\frac{E}{c}.\label{eqn:Energieaufspaltung}
+\end{align}
+Für die Energie wird $E = \SI{14,4}{\kilo\electronvolt}$ verwendet. Die Ergebnisse dieser Rechnungen sind ausführlich in Tabelle~\ref{tab:Isomerieverschiebung_Eisen} zusammengefasst.
+\begin{table}[ht]
+	\centering
+	\caption{Auswertung der Absorptionslinien von Eisen und Bestimmung Energieaufspaltung . Die Geschwindigkeit $v$ wurde aus dem Parameter $x_c$ der Lorentzanpassung gewonnen. $\Delta E_g$ bezeichnet die Energieaufspaltung des Grundzustandes und $\Delta E_a$ die Aufspaltung der angeregten Zustände.}
+	\label{tab:Isomerieverschiebung_Eisen}
+  \begin{tabular}{c S[table-format=-1.4(5),separate-uncertainty] S[table-format=-3.2(3), separate-uncertainty] c S[table-format=3.2(3),separate-uncertainty] S[table-format=3.2(3),separate-uncertainty]}
+  \toprule
+  Nr. &{$v$ [\si{\milli\metre\per\second}]} & {$E-E_0$ [\SI{e-9}{\electronvolt}]} & Übergang & {$\Delta E_g$ [\SI{e-9}{\electronvolt}]} &{$\Delta E_a$ [\SI{e-9}{\electronvolt}]}\\
+   \midrule
+  1 & -5.3492 +- 0.0016 & -256.94 +- 0.07 & $E_2-E_1$ &               &  106.31 +- 0.18 \\
+  2 & -3.1359 +- 0.0022 & -150.63 +- 0.10 & $E_3-E_2$ &               &  106.33 +- 0.27\\
+  3 & -0.9223 +- 0.0036 & -44.30  +- 0.17 & $E_4-E_2$ & 185.96 +- 0.27           &        \\
+  4 & 0.7357  +- 0.0034 & 35.34   +- 0.16 & $E_5-E_3$ & 185.83 +- 0.28           &        \\
+  5 & 2.9466  +- 0.0022 & 141.53  +- 0.11 & $E_5-E_4$ &               &  106.20 +- 0.27\\
+  6 & 5.1499  +- 0.0014 & 247.37  +- 0.07 & $E_6-E_5$ &               &  105.83 +- 0.27\\ \bottomrule
+  \end{tabular}
+\end{table}\\
+Durch Mittelung der berechneten Werte und Berechnung der Standardabweichung ergeben sich folgende Werte für die Energieaufspaltung:
+\begin{align}
+  \Delta E_g &= \SI[separate-uncertainty]{185,90 \pm 0,22 e-9}{\electronvolt}\\
+  \Delta E_a &= \SI[separate-uncertainty]{106,17 \pm 0,24 e-9}{\electronvolt}
+\end{align}
+\paragraph{Magnetfeld und magnetisches Moment}$~$\\
+Aus den gewonnenen Werten für die Aufspaltung des Grundzustandes lässt sich nun mithilfe von Gleichung~\eqref{eqn:Magnetfeld} das Magnetfeld $B$ am Ort der $^{57}Fe$-Kerne berechnen. Es folgt mit dem magnetischen Kernmoment
+\begin{align}
+  \mu_K = \frac{e}{2m_p}\hbar = \SI[per-mode=fraction]{5,050783e-27}{\joule\per\tesla}
+  \end{align}
+und $J_g = \frac{1}{2}$ im Grundzustand die Formel für das Magnetfeld
+  \begin{align}
+  \Rightarrow B = -\frac{\Delta E_g I_g}{\mu_g} = -\frac{\Delta E_g I_g}{0,0906\cdot\mu_K} = \SI[separate-uncertainty]{-32,54 \pm 0,04}{\tesla}.
+  \end{align}
+Das negative Vorzeichen bedeutet, dass das $\bm{B}$-Feld und die äußere Magnetisierung der Probe entgegengesetzt zueinander orientiert sind. Für das magnetische Moment des angeregten Zustands ergibt sich mit $I_a = \frac{3}{2}$ analog nun
+  \begin{align}
+  \mu_a &= \frac{\Delta E_a I_a}{B} = \SI[per-mode=fraction]{-0,7840 \pm 0,0027e-27}{\joule\per\tesla}\\
+  &= \SI[separate-uncertainty]{-0,1552\pm 0,0005}{\micro_K}
+\end{align}
+Die in der Literatur~\cite{Schatz} (S.71) angegebenen Werte lauten
+\begin{align}
+  B &= \SI[separate-uncertainty]{-33,3 \pm 1,0}{\tesla}\\
+  \mu_a &= \SI[separate-uncertainty]{0,153\pm 0,004}{\micro_K}.
+\end{align}
+Somit liegen die gemessenen Werte innerhalb der Fehlertoleranzbereichs der Literaturwerte.
+\paragraph{Isomerieverschiebung und Linienbreite}$~$\\
+Die Isomerieverschiebung ist eine Relativgröße, weshalb immer eine Bezugssubstanz angegeben werden muss. In diesem Fall nimmt die Quelle die Rolle der Bezugssubstanz ein. Die Isomerieverschiebung bewirkt eine Verschiebung der Symmetrielage des Mößbauerspektrums gegenüber des Nullpunktes. Zur Berechnung der Verschiebung wird das arithmetische Mittel zwischen zwei symmetrisch gegenüberliegenden Linien des Spektrums, was grafisch in Abbildung~\ref{fig:Eisen_Isomerieverschiebung} dargestellt ist.
+\begin{figure}[htp]
+    \centering
+    \vspace{-0.5cm}
+    \includegraphics[width=0.95\textwidth]{Bilder/Eisen_Isomerieverschiebung.pdf}
+    \caption{Grafische Veranschaulichung der Isomerieverschiebung des Mößbauerspektrums von Eisen und Ermittlung der Linienbreite der Absorptionslinien.}
+    \label{fig:Eisen_Isomerieverschiebung}
+\end{figure}\\
+Zur Ermittlung der Linienbreite wird der Parameter $w$ der Lorentzanpassung \eqref{eqn:Lorentzfits} benötigt. Dieser gibt Halbwertsbreite FWHM (\textit{Full Width at Half Maximum}) an und repräsentiert direkt die Linienbreite $\Gamma$. Die gemessene Isomerieverschiebung und Linienbreiten sind in Tabelle~\ref{tab:Isomerieverschiebung_Eisen} dargestellt.
+\begin{table}[ht]
+	\centering
+	\caption{Bestimmung der Isomerieverschiebung und der Linienbreite der Absorptionslinien von Eisen.}
+	\label{tab:Isomerieverschiebung_Eisen}
+  \begin{tabular}{c S[table-format=-1.4(5),separate-uncertainty] S[table-format=-1.2(3),separate-uncertainty] c  S[table-format=1.3(4), separate-uncertainty] S[table-format=2.2(3),separate-uncertainty]}
+  \toprule
+  {Linien} & {$v_\text{res}$ [\si{\milli\metre\per\second}]} & {$v_\text{res}$ [\SI{e-9}{\electronvolt}]} & {Nr.} & {$v_\text{Linie}$ [\si{\milli\metre\per\second}]} & {$E_\text{Linie}$ [\SI{e-9}{\electronvolt}]}\\
+   \midrule
+  1 und 6 & -0.0997 \pm 0,0030& -4,79 \pm 0,14  &1  & 0,291 \pm 0,006     & 13,98 \pm 0,28 \\
+          &                   &                 &2  & 0,258 \pm 0,008    &12,39 \pm 0,36 \\
+  2 und 5 & -0,0947 \pm 0,0044 & -4,55\pm 0,21  &3   &0,230 \pm 0,012     & 11,02 \pm 0,59 \\
+          &                   &                 &4  & 0,209 \pm 0,012    &10,04 \pm 0,57 \\
+  3 und 4 & -0,0933 \pm 0,0070 & -4,48 \pm 0,33 &5  &0,250 \pm 0,008     & 12,01 \pm 0,37 \\
+          &                   &                 &6  & 0,287 \pm 0,005    &13,77 \pm 0,24 \\
+  \midrule
+  \addlinespace
+  \textbf{Mittelwert}  & -0,0959 \pm 0,0259 & -4,61	\pm 1,25
+& & 0,254 \pm 0,073 & 12,20  \pm3,50 \\ \bottomrule
+  \end{tabular}
+\end{table}\\
+Bei dem Vergleich der Linienbreiten fällt eine Zunahme der Breite für betragsmäßig größere Geschwindigkeiten auf.
+%%%
+%%% WARUM????
+%%%
+Die natürliche Linienbreite ist bestimmt durch die \textsc{Heisenberg}'sche Unschärferelation, wonach das Produkt aus Zeit- und Energieunschärfe gleich dem reduzierten \textsc{Planck}'schen Wirkungsquantum sind. Die Linienbreite $\Gamma$ stellt die Energieunschärfe dar. Wird die Zeitunschärfe als die mittlere Lebensdauer des Kernzustandes identifiziert, folgt
+\begin{align}
+  \Gamma \Delta t \ge \hbar \Rightarrow \Gamma = \frac{\hbar}{\tau_N}
+\end{align}
+Nach dem Zerfallsschema~\ref{fig:Zerfallsschema} besitzt der Kernzustand eine Halbwertszeit von \SI{98}{\nano\second}, wodurch sich die Linienbreite zu
+\begin{align}
+  \Gamma = \hbar \frac{\ln 2}{t_{1/2}}= \SI{4.66e-9}{\electronvolt}, \quad t_{1/2} = \tau_n \ln 2
+\end{align}
+ergibt. Diese Linienbreite erfasst jedoch nur die Quelle, der Absorber besitzt (im Spezialfall von Eisen) die gleiche Linienbreite, wodurch sich das Ergebnis verdoppelt zu $\Gamma = \SI{9.32e-9}{\electronvolt}$. Der Grund, warum die gemessene Linienbreite größer ist, liegt an der endlichen Dicke der Probe. Mit steigender Probendicke nimmt ebenfalls die Linienbreite zu.
+
+\subsubsection{Spektrum von Edelstahl}
+Die Aufnahme des Mößbauerspektrums von Edelstahl erfolgte auf analoge Art und Weise mit einer Messdauer von 20 Stunden, allerdings wurde eine maximale Geschwindigkeit des Mößbauerantriebs von $v_\text{max} = \SI{2,41}{\milli\metre\per\second}$ eingestellt, da im Spektrum nur ein Absorptionslinie auftaucht. Es lässt sich also keine magnetische Aufspaltung erkennen. Das Spektrum ist in Abbildung~\ref{fig:Edelstahl_Spektrum} dargestellt.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Bilder/Moessbauer_Edelstahl_Lorentz.pdf}
+    \caption{Mößbauerspektrum von Edelstahl. Es wurde wieder eine Lorentzanpassung der Form~\eqref{eqn:Lorentzfits} vorgenommen.}
+    \label{fig:Edelstahl_Spektrum}
+\end{figure}\\
+Es lässt sich wieder die Isomerieverschiebung als die Verschiebung der Absorptionslinie zum Nullpunkt ablesen. Es ergibt sich
+\begin{align}
+  v_\text{res} &= \SI[per-mode=fraction, separate-uncertainty]{-0,1942\pm 0,0013}{\milli\metre\per\second}\\
+  E_\text{res} &= \SI[separate-uncertainty]{-9,33
+\pm 0,06}{\electronvolt}
+\end{align}
+Bei Edelstahl handelt es sich um eine Legierung, weshalb die Eisen-Atome in unterschiedlicher chemischer Bindung vorliegen. Deshalb treten verschiedene Isomerieverschiebungen auf. Jedoch liegen diese so dicht beieinander, dass sie aufgrund der natürlichen Linienbreiten nicht als einzelne Absorptionslinien identifizierbar sind. Die bestimmte Isomerieverschiebung stellt deshalb einen Effektivwert dar. Trotzdem führt dies zu einer Verbreiterung der Linienbreite. Aus den Fitparametern lässt sich diese zu
+\begin{align}
+  v_\text{Linie} = \SI[per-mode=fraction, separate-uncertainty]{0,3982 \pm 0,0039}{\milli\metre\per\second}
+\end{align}
+bestimmen und ist somit größer als die größte Linienbreite im Eisenspektrum.
+
+\subsubsection{Spektrum von Eisensulfat}
+Die Aufnahme des Mößbauerspektrums von FeSO$_4$ erfolgte über einem Zeitraum von mehr als 24 Stunden. Als maximale Probengeschwindigkeit wurde $v_\text{max} = \SI{4,01}{\milli\metre\per\second}$ gewählt, um beide Absorptionslinien zu erfassen. Das gemessene Spektrum ist in Abbildung~\ref{fig:Moessbauer_FeSO4_Lorentz.pdf} dargestellt.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Bilder/Moessbauer_FeSO4_Lorentz.pdf}
+    \caption{Mößbauerspektrum von Eisensulfat (FeSO$_4$). Die Anpassung der Fitfunktion erfolgte durch eine Lorentzanpassung der Form~\eqref{eqn:Lorentzfits}.}
+    \label{fig:Moessbauer_FeSO4_Lorentz.pdf}
+\end{figure}\\
+Die beobachtete Aufspaltung lässt sich auf die elektrische Quadrupolwechselwirkung zurückführen. Im FeSO$_4$ ist das Eisen zweiwertig, die Valenzelektronen sind sechs 3$d$-Elektronen. Die ersten fünf Elektronen führen zu einer halbbesetzten 3$d$-Schale und tragen aufgrund der kugelsymmetrischen Ladungsverteilung nciht zum elektrischen Feldgradienten $V_{zz}$ bei~\cite{Schatz}. Der Feldgradient wird durch das sechste Elektron außerhalb der halbgefüllten 3$d$-Schale bestimmt.\\
+Die Quadrupolaufspaltung ergibt sich als Abstand der beiden Absorptionslinien
+\begin{align}
+  \Delta v = x_{c2} - x_{c1} = \SI[per-mode=fraction, separate-uncertainty]{2,7006 \pm 0,0068}{\milli\metre\per\second}.
+\end{align}
+Die zugehörige Energieauspaltung ergibt sich nach Gleichung \eqref{eqn:Energieaufspaltung} zu
+\begin{align}
+  \Delta E_Q = \SI[per-mode=fraction, separate-uncertainty]{129,72
+\pm 0,33e-9}{\electronvolt}
+\end{align}
+Die Aufspaltung verläuft nicht symmetrisch zum Nullpunkt, da zusätzlich noch eine Isomerieverschiebung vorliegt. Diese ergibt sich wieder als das arithmetische Mittel der beiden Mößbauerlinien und berechnet sich zu
+\begin{align}
+  v_\text{res} &= \frac{x_{c2} + x_{c1}}{2} = \SI[per-mode=fraction, separate-uncertainty]{1,1383 \pm 0,0068}{\milli\metre\per\second}\\
+  E_\text{res} &= \SI[per-mode=fraction, separate-uncertainty]{54,68
+\pm 0,33e-9}{\electronvolt}.
+\end{align}
+Die Linienbreiten lassen sich mithilfe des Fitparameters $w$ gewinnen und sind in Tabelle~\ref{tab:Linienbreite_Eisensulfat} zusammengefasst.
+\begin{table}[ht]
+	\centering
+	\caption{Bestimmung der Linienbreite von Eisensulfat. }
+	\label{tab:Linienbreite_Eisensulfat}
+  \begin{tabular}{c S[table-format=1.4(5),separate-uncertainty] S[table-format=2.2(3),separate-uncertainty]}
+  \toprule
+  {Nr.} & {$v_\text{Linie}$ [\si{\milli\metre\per\second}]} & {$E_\text{Linie}$ [\SI{e-9}{\electronvolt}]}\\
+   \midrule
+   1& 0,3371	\pm 0,0096 & 16,19\pm	0,46\\
+   2& 0,3225	\pm0,0124 & 15,49\pm	0,60\\
+  \midrule
+  \addlinespace
+  \textbf{Mittelwert}  & 0,330\pm	0,072 & 15,9	\pm 3,5\\ \bottomrule
+  \end{tabular}
+\end{table}\\
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
@@ -110,7 +322,7 @@ Das Mößbauerspektrum von Eisensulfat wird gemessen und diskutiert (Linienzahl,
 
 \begin{thebibliography}{xxx}
 	\bibitem{Schatz}
-	H. Meinke: \textit{Nukleare Festkörperphysik}. Teubner Stuttgart 1997 (3. Auflage).
+	G. Schatz: \textit{Nukleare Festkörperphysik}. Teubner Stuttgart 1997 (3. Auflage).
   \bibitem{Mayer}
 	T. Mayer-Kuckuk: \textit{Kernphysik}. Teubner Stuttgart 1996 (6. Auflage).
   \bibitem{Bethge}
