@@ -63,7 +63,7 @@ Mithilfe verschiedener Strahler wird eine Energiekalibrierung durchgeführt und 
 
 \subsection{Einstellung des Energiefensters auf die \SI{14,4}{\kilo\text{e}\volt}-Linie}
 \paragraph{Aufgabe 3a}$~$\\
-Das Fenster des Einkanal-Diskriminators wird auf die Resonanzabsorptionslinie eingestallt, indem das Energiesignal mit dem Ausgangssignal des \textit{SCA} getriggert wird.
+Das Fenster des Einkanal-Diskriminators wird auf die Resonanzabsorptionslinie eingestellt, indem das Energiesignal mit dem Ausgangssignal des \textit{SCA} getriggert wird.
 \paragraph{Aufgabe 3b}$~$\\
 Mithilfe des Vielkanalanalysators wird durch die Triggerung des ADC über den Gate-Eingang kann die Wirkung der Fenstereinstellung am \textit{SCA} direkt am Vielkanalanalysator beobachtet werden. Gegebenenfalls wird die Fenstereinstellung nachjustiert und der eingestellte Bereich im Energiespektrum skizziert.
 
@@ -87,21 +87,175 @@ Das Mößbauerspektrum von Eisensulfat wird gemessen und diskutiert (Linienzahl,
 % *********************************************
 \newpage
 \section{Grundlagen} \label{sec:Grundlagen}
-\subsection{Mößbauer-Spektroskopie}
+\subsection{Mößbauerspektroskopie}
 
-\subsection{Gammastrahlung}
-\subsection{Radioaktivität}
+\subsubsection{Der $\gamma$-Zerfall des Kerns und Rückstoßenergieverlust}\label{sec:Rückstoß}
+Atomkerne besitzen diskrete Energieniveaus. Beim Übergang von einem höheren zu einem niedrigeren Energieniveau kommt es häufig zur Emmitierung von $\gamma$-Strahlung. Dabei gilt Energie-, Drehimpuls- und Praitätserhaltung. Wird ein $\gamma$-Quant emmitiert, wird dem emmitierenden Kern dabei deshalb ein Rückstoß erteilt. So erhält das Quant nicht die gesamte Anregungsenergie. \\
+Für ein einatomiges Gas im thermischen Gleichgewicht gilt für die Energie des angeregten Atomkerns vor der Emmission:
+\begin{align}
+E_{vor} = E_a+\frac{\vec{p}^2}{2M}.
+\end{align}
+Wobei \vec{p} = M\vec{v} der Impuls und M die Masse des Atoms ist. \\
+Der Impuls ist wegen der Impulserhaltung nach der Emmission um den Impuls des $\gamma$-Quants $\hbar\vec{k}$ reduziert. Außerderdem muss hier die Energie im Grundzustand $E_g$ verwendet werden. Nach der Emission beläuft sich die Energie des Atomkerns also auf
+\begin{align}
+E_{nach} = E_g+\frac{(\vec{p}-\hbar\vec{k})^2}{2M}.
+\end{align}
+Somit ergibt sich die Energiedifferenz und damit die Energie des emmitierten Quants zu:
+\begin{align}\label{equ:EnergieGamma}
+E_{vor}-E_{nach}= \hbar \omega = \hbar \omega_0 + \hbar (\vec{k}\cdot\vec{v})-\frac{\hbar^2\vec{k}^2}{2M}.
+\end{align}
+
+\subsubsection{natürliche Linienbreite}
+Aufgrund der Unschärferelation muss es eine Energieunschärfe der $\gamma$-Quanten geben. Bei genauerer Betrachtung kann rausgefunden werden, dass das Frequenzspektrum der emmittierten $\gamma$-Strahlung eine Lorentz-Verteilung um die Freqenz $\omega_0$ mit der Halbwertsbreite $\frac{\Gamma}{\hbar}$ ist. Es gilt
+\begin{align}
+I(\omega) = \frac{I_0}{1+[(\omega-\omega_0)2\hbar/\Gamma]^2}
+\end{align}
+wobei I($\omega$) die Intensität der Strahlung mit der Frquenz $\omgega$ angibt.
+$\Gamma$ ist die sogenannte natürliche Linienbreite und gibt die Energieunschärfe an. Für sie gilt:
+\begin{align}
+\Gamma = \hbar / \tau_N
+\end{align}
+mit $\tau_N$ der mittleren Lebensdauer des Kernzustands.
+
+\subsubsection{Prinzip Mößbauereffekt}
+Ein $\gamma$-Quant kann beim Auftreffen auf einen Atomkern nur absorbiert werden, wenn die Energie des Quants gerade der Anregungsenergie eines Kernniveaus entspricht. \\
+
+Der naheliegende Gedanke, dies sei immer gegeben, wenn Emmission und Absorption am gleichen Kernübergang erfolgen, ist aufgrund des in \ref{sec:Rückstoß} beschriebeneb Effekts jedoch falsch. Außerdem wird beim Absorbieren aus Impulserhaltungsgründen ein Teil der Energie des Quants in kinetische Energie des Kerns umgewandelt. \\
+
+Ein $\gamma$-Quant kann also bei der Verwendung von Atomen der gleichen Sorte zur Emmission und Absorption nur absorbiert werden, wenn beide Vorgänge unverschoben erfolgen, also beidenfalls eine Energieverschiebung vermieden wird. Dies kann durch den Einbau der Atome in Kristallgitter gewährleistet werden. In diesem Fall wird bei einem Teil der Emmissionen der Rückstoß auf den gesamten Kristall übertragen, womit aufgrund dessen viel größerer Masse, praktisch keine Energieübertragung verbunden ist.\\
+Dann gilt unter Verwendung von \ref{equ:EnergieGamma}
+\begin{align}
+\hbar\omega = \lim\limits_{M \to \infty}{(\hbar \omega_0 + \hbar (\vec{k}\cdot\vec{v})-\frac{\hbar^2\vec{k}^2}{2M})} = \hbar\omega+\hbar(\vec{k}\vec{v})
+\end{align}
+
+\subsubsection{Debye-Waller-Faktor}
+Der Debye-Waller-Faktor ist der Anteil der unverschobenen $\gamma$-Emissionen zu allen $\gamma$-Emissionen. Er lässt sich auf
+\begin{align}
+f(T) = exp\left(-\frac{\hbar k^2}{6MN}\int_{0}^{\infty} \frac{Z(\Omega)}{\Omega}\left[1+\frac{2}{exp(\frac{\hbar\Omega}{k_B T}-1)}\right] d\Omega\right)
+\end{align}
+bestimmen. Für tiefe Temperaturen im Rahmen des Debye-Modell findet man
+\begin{align}
+f_D(T) = exp\left(-\frac{\hbar^2k^2}{2M}\frac{3}{2k_B\Theta}\left[1+\frac{2\pi^2}{3}\left(\frac{T}{\Theta}\right)^2\right]\right)
+\end{align}
+Der Debye-Waller-Faktor ist temperaturabhängig und findet sein Maximum bei T = 0. Auch beim absoluten Nullpunkt gilt jedoch f < 1 aufgrund der Nullpunktschwingung. Allgemein sollte die Temperatur nicht zu groß werden und es sollte gelten$ T < \Theta$.\\
+Mit wachsender Rückstoßenergie $\hbar^2k^2/2M$ wird der Debye-Waller-Faktor kleiner. Aufgrund des Zusammenhangs $\hbar k = E_\gamma / c $, bedeutet das direkt, dass auch für größere $E_\gamma$ f(T) kleiner wird. Um also einen für den Mößbauereffekt wichtigen großen Debyye-Waller-Faktor zu erhalten, ist es wichtig, dass die $\gamma$-Energie nicht zu groß wird.
+
+\subsubsection{Mößbauerquellen}
+Da die Absoprtion im Allgemeinen nur durch einen Kern im Grundzustand erfolgen wird, können nur Emmissionsübergänge, die zum Grundzustand führen verwendet werden. Der Debye-Waller-Faktor des als Quelle verwendeten Stoffes darf nicht zu klein sein. Aufgrund von \ref{} sind dafür eine nicht zu große $\gamma$-Energie, hohe Debye-Temperatur und große Atommasse günstig. Um eine nicht zu große Linienbreite zu erhalten und damit eine zu schlechte Energieauflösung zu vermeiden, darf die Lebensdauer des entpsprechenden Mößbauerniveaus nicht zu kurz sein. Außerdem sollten die Eigenschaften des Mutterisotops (Lebensdauer, chemische und metallurgische Eigenschaften usw.) und die Herstellungsmöglichkeiten des Isotops günstig sein.
+
+
+\paragraph{Zerfallsschema \textsuperscript{57}Co}
+In Abbildung \ref{} ist das Zerfallsschema von \textsuperscript{57}Co dargestellt. \textsuperscript{57}Co zerfällt überwiegend über den Einfang eines Elektrons aus der K-Schale der Atomhülle in den angeregten Zustand I = 3/2 des \textsuperscript{57}Fe. Dabei entsteht ein Loch in der K-Schale, welches durch ein Elektron aus einer höheren Schale unter Emmission von \SI{6,4}{\keV} Röntgenstrahlung wieder aufgefüllt wird. Das angeregte \textsuperscript{57}Fe geht dann unter $\gamma$-Emmission bzw. innerer Komversion in den Grundzustand I = 1/2 über.\\
+Das im Versuch verwendete \textsuperscript{57}Co - \textsuperscript{57}Fe eignet sich aufgrund mehrerer Eigenschaften als Mößbauerquelle: Mit 270 Tagen ist die Halbwertszeit des Mutterisotops ausreichend lang um ein zu häufiges Wechseln zu vermeiden, die Lebensdauer des Mößbauerniveaus von $t_1/2$=\SI{98}{\nano\seconds} ermöglicht eine ausreichende Energieauflösung und die Energie von \SI{14,4}{\eV} ist hinreichend klein, um auch bei Zimmertemperatur einen hohen Debye-Waller-Faktor zu gewährleisten.
+
+
+ABBILDUNG ENIFÜGEN S.51
+
+
+\subsubsection{Hyperfeinwechselwirkung}
+Hyperfeinwechselwirkung ist die Wechselwirkung des Kerns mit elektrischen oder magnetischen Feldern, die im Festkörper von Elektronen oder Atomrümpfen in der Umgebung des Kerns hervorgerufen oder auch extern angelegt werden.
+\paragraph{magnetische Wechselwirkung}
+Bei magnetischer Wechselwirkung ergibt sich eine Wechselwirkungsenergie bzw. Zusatzenergie
+\begin{align}\label{equ:Emag}
+E_{magn} = - \vec{\mu}\cdot\vec{B}
+\end{align}
+wobei $\vec{\mu}$ das magnetische Kerndipolmoment und $\vec{B}$ die magnetische Flussdichte am Kernort ist, die zu einer zeitlichen Veränderung des Kernspins und  der Aufhebung der energetischen M-Entartung der Kerniveaus führt:\\
+Aufgrund von \ref{equ:Emag} hängt $E_{magn}$ vom Winkel zwischen $\vec{B}$ und $\vec{\mu}$ ab. Wegen der quantenmechanischen Richtungsquantelung des Drehimpulses und sich damit ergebenden bestimmten Einstellungsmöglichkeiten von $\vec{\mu}$, folgt eine äquidistante Aufspaltung zwischen benachbarten M-Zuständen. \\
+Denn es gilt(wenn z-Achse parrellel zum $\vec{B}$-Feld)
+\begin{align}
+E_{magn} = -\gamma B_z \hbar M .
+\end{align}
+Mit $\gamma = \frac{\mu}{\hbar I}$ folgt
+\begin{align}
+E_{magn} = - \frac{\mu}{I} B_z M
+\end{align}
+
+Für \textsuperscript{57}Fe können experimentell die sechs für M1-Strahlung erlaubten Übergänge beobachtet werden. Für die Übergangsenergien gilt:
+\begin{align}
+\hbar\omega (M_a \rightarrow M_g) = \left(E_a - \frac{\mu_a} {I_a} M_a B \right) - \left(E_g - \frac{\mu_g} {I_g} M_g B \right)  = \hbar\omega_0 - \left(\frac{\mu_a }{I_a} M_a - \frac{\mu_g}{I_g} M_g\right) B
+\end{align}
+
+ABBILDUNG EINFÜGEN !!! S.64
+
+\subsubsection{Isomerieverschiebung}
+Aufgrund der elektrostatischen Wechselwirkung des ausgedehnten Kerns mit den Elektronen am Kernort ergibt sich eine Energieverschiebung zwischen der Energie eines Kernzustandes für einen ausgedehnten Kern und der Energie des Kernzustands für einen punktförmigen Kern. \\
+Bei der Mößbauerspektroskopie wird diese Energiedifferenz durch die Bewegung der Quelle und Nutzung des Dopllereffekts ausgeglichen. Als Isomerieverschiebung wird hier die Geschwindigkeit der Quelle, bei der Resonaznabsorption auftritt, bezeichnet (wenn Hyperfeinstrukturwechselwirkung vernachlässtigt werden können).
+
+
+\subsection{Nachweis von $\gamma$-Strahlung}
+\subsubsection{Wechselwirkung von $\gamma$-Strahlung mit der Materie}
+Bei der Wechselwirkung von $\gamma$-Strahlung mit der Materie werden drei Prozesse beobachtet: Paarbildung, Comptoneffekt und Photoeffekt. Zum Nachweis von $\gamma$-Strahlung werden die zwei letzten grundlegenden Prozesse verwendet.
+\paragraph{Photoeffekt}
+Beim Photoeffekt überträgt das $\gamma$-Quant seine komplette Energie auf ein gebundenes Elektron. Für die Energie des Elektrons gilt $E_e = E_\gamma - E_B$. Auch die Bindungsenergie steht für den Szinitllationsprozess zur Verfügung. Zunächst als Anregungenergie im Atom zurückbleibend wird sie unmittelbar über Auger-Elektronen oder Röntgenstrahlung frei. Es kann nährungsweise folgende Proportionalität gefunden werden:
+\begin{align}
+\sigma  \propto E_\gamma ^(-7/2) Z^5
+\end{align}
+\paragraph{Comptoneffekt}
+Compton-Effekt ist die elastische Streeung eines $\gamma$-Quants an einem freien Elektronen. Von quasifreier Streuung wird gesprochen, wenn die Elektronen im Atom gebunden sind, die Bindungsenergie aber bei den äußeren Elektronen vernachlässigt werden kann. Die Energie des Photons ändert sich, die Wellenlänge wird größer, das gestoßene Elektron wird frei und seine Energie ist abhängig vom Streuwinkel. \\
+Hierbei gilt folgende Proportionalität
+\begin{align}
+\sigma \propto E_{\gamma} ^(-1) Z
+\end{align}
+
+
+\paragraph{Szintillationsdetektor}
+Zum eigentlichen Nachweis werden die durch Photo- oder Comptoneffekt freigesetzen Elektronen verwendet. Hierzu wird z.B. ein Szintillationsdetektor verwendet, dessen Aufbau in Abbildung \ref{} ersichtlich wird.\\
+Der $\gamma$-Quant trifft auf den Scintillator und erzeugt durch Photo- und Comptoneffekt Primärelektronen. Das Primärelektron wird abgebremst und ionsiert (oder regt an) die Szinitllatoratome. Dabei ist die Anzahl der ionisierten Atome proprtional zur Energie des Elektrons. Es kommt zu einer Rekombination dieser unter Aussendung von Licht. Dieses Licht löst dann aus der Photokathode Elektronen aus, welche an den Dynoden des Primärelektronenvervielfachers verstärkt wird.
+
+ABBILDUNG EINFÜGEN!
+
+\subsection{$\gamma$-Spektrum}
+Das Spektrum von \textsuperscript{137} Cs ist beispielhaft in Abbildung \ref{} dargestellt. An diesem werden die charakteristischen Elemente eines $\gamma$-Spektrums im Folgenden erklärt. \\
+Mit Nummer 1 beschriftet ist die \textit{Gesamtabsoptionslinie}, auch Photopeak genannt. Bei dieser Energie kommt es zum Photoeffekt - das Photon gibt seine gesamte Energie an ein gebundenes Elektron ab. Da die Anzahl der ionisierten Atome von der Energie des Elektrons abhängt, ist hier ein deutliches Peak zu erkennen. Das \textit{Comptonkontinuum} sind die über einen breiten Energiebereich verteilten Ereignisse im niederenergetischen Bereich des Spektrums. Für das Auslösen der Elektronen ist in diesem Bereich hauptsächlich der Comptoneffekt verantwortlich. Dabei wird nur ein Teil der Energie des $\gamma$-Quants an die Elektronen abgegeben. Außerdem ist die Energie der freiwerdenden Elektronen abhängig vom Streuwinkel und damit kontinuierlich. Für \SI{180}{\degree} wird ein maximaler Energiebetrag erreicht. Dieser markiert die \textit{Comptonkante}. Die \textit{Rückstreulinie} ergibt sich, da das radiaktove Präparat in alle Richtungen emittiert. So kommt es vor, dass Quanten in die dem Zähler entgegengesetzte Richtung gestrahlt werden in der Nähe des Präparats Compton gestreut werden und als Streuquanten vom Szintillationsdetektor registriert werden. Wird den Zusammenhang zwischen Streuwinkel und Energie des gestreuten Quants genaer, kann festgestellt werden, dass Energiequanten im Winkelbereich zwischen \SI{100}{\degree} und \SI{180}{\degree} einem eng begrenzten Energiebereich zugeordnet werden. Diese Quanten werden mittels Photoeffekt im Szintillationskristall registriert, weshalb sich ein Maximum ergibt. Außerdem erscheint im Spektrum bei Nummer 4 die K--Röntgen-Linie von Blei, da eine Bleiabschirmung verwendet wurde.
+
+BILD EINFÜGEN INTERNET!
 
 % *********************************************
 % ***** KAPITEL 3 *****************************
 % *********************************************
-\section{Versuchsdurchführung} \label{sec:Versuchsdurchführung}
+\section{Messaperatur und Versuchsdurchführung} \label{sec:Versuchsdurchführung}
+\subsection{Messung des Energiespektrums der \textsuperscript{57}Co-Quelle}
+\begin{figure}[htp]
+    \centering
+    \includegraphics{Schaltungen/Blockschaltbild_Energiespektren.pdf}
+    \caption{Blockschaltbild zur Messung von Energiespektren}
+    \label{fig:BlockEnergiespektren}
+\end{figure}
+
+Zur Messung des Energiespektrums wird nach dem in Abbildung \ref{fig:BlockEnergiespektren} gezeigten Schema vorgegangen: Die $\gamma$-Strahlung wird mit einem NaI(TI)-Szintillationsdetektor registriert, das Detektorsiignal wird anschließend verstärkt (amplifier), digitalisiert (Analog-Digital-Converter) und in einem der jeweiligen Impulshöhe ensprechendem Kanal eines Histogrammspeichers (Multi-Channel-Analyser) abgelegt, sodass die Zahl der Ereignisse über der jeweils im Detektor deponierten Energie dargestellt wird. Dieses Verfahren wird Puls-Höhen-Analyse genannt (PHA). \\
+Das Ausgangssignal des Verstäkers wird zusätzlich am Ozilloskop dargestellt, um den Zusammenhang zwischen Energiesprektrum und Ausgangssignal des Verstärkers herzustellen. \\
+\paragraph{Energiekallibrierung}
+Um den einheitenlosen Kanälen eine Energie zuzuordnen, werden \textsuperscript{133}Ba und \textsuperscript{241}Am zur Kalibrierung verwendet. Beide Stoffe werden in die Absorberhaltung eingesetzt und deren charakteristische Linien im Spektrum identifiziert. Dadurch wird eine Kalibrierung der Achse vorgenommen und die \SI{14,4}{\kili\eV} Linie des \textsuperscript{57}Co kann bei Aufnahme des Spektrums ohne Absorber identifziert werden.
+
+\subsection{Einstellung des Energiefensters auf die \SI{14,4}{\kilo\eV} Linie}
+\paragraph{Einstellung mit dem Oszilloskop}
+Das Fenster des Einkanal-Diskriminators wird auf die Resonanzabsoprtionslinie bei \SI{14,4}{\kilo\eV} eingestellt, indem das Energiesignal mit dem Ausgangssigmal des SCA getriggert wird. \\
+Dazu wird der Ausgang des Amplifiers (Energiesignal) an den Oszilloskop-Eingang 1 angelegt und der Ausgang des SCA an den Oszilloskop-Eingang 2. Das Triggerlevel wird auf das SCA Signal gelegt. Nun wird das lower level (E) am SCA so eingestellt, dass es beinah bei 0 aber noch etwas darüber liegt, um Rauschen zu vermeiden. Das Window $\Delta$ E wird anschließend so eingestellt, dass nur noch die unter der sich zwischen den Signalbergen auftuenden Lücke sichtbaren Linien dargestellt werden. Praktisch ist dies gut umzusetzen, indem das Signal so verschoben wird, dass die \SI{14,4}{\kilo\eV} darstellende Linie (sich unterhalb der Lücke befindliche Linie) auf einem Orientierungsstrich des Oszilloskops liegt. Dann kann dass Window $\Delta$ E so eingestellt werden, dass die Linien bis zu der vorher eingestellten Grenze weggeschnitten werden.
+
+\paragraph{Einstellung mit Vielkanalanalysator}
+Durch Triggerung des  ADC über seinen Gate-Eingang kann die Wirkung der Fenstereinstellung am SCA direkt am Vielkanalanalysator beobachtet und dadurch die Resonanzabsoprtionslinie genauer eingestellt werden. \\
+Dazu wird der Output des SCA in den Delay-Gate-Generator eingegeben. Der Ausgang letzterem wird am Oszilloskop sichtbar gemacht. Der Output des Amplifiers wurd in den Delay Amplifier eingegeben. Auch hier wird der Output am Ozilloskop dargestellt. Jetzt werden die Einstellungen am Deley-Gate-Generator und am Delay Amplifier so verändert, dass das Rechtecksignal genau die Breite der Erhebung des Energiesignals hat und die Flanken am Anfang bzw. am Ende der Erhebung liegen. Dazu wird am $t_d$ und $t_w$ Knop des DGG gedreht und die Schalter des Delay Amplifiers ein- bzw ausgeeschaltet. Nach der Optimierung der Einstellungen wird das Ausgangssignal des DGG an den Gate-Anschluss des ADC und das Ausgangssignal des Delay Amplifiers an die PHA Buchse angelegt. Nun wird auf dem Vielkanalanalysator genau der Ausschnitt des Energiespektrums angezeigt, der die \SI{14,4}{\kilo\eV} zeigt. Um einen kürzeren Ausschnitt zu sehen, wird $\Delta$ E kleiner eingestellt, um einen Ausschnitt höherer Energien zu sehen, wird das LowerLevel nach oben korrigiert. \\
+
+\subsection{Messung und Auswertung von Mößbauerspektren}
+Hierfür wird der Output des SCA nach Einstellung des Fensters auf die \SI{14,4}{\kilo\eV} Linie - die vom SCA erzeugten Pulse entsprechen nun dieser ausgewählten Energie-
+an den MCA Eingang des ADC angeschlossen.
+Die Messung erfolgt nach dem in Abbildung \ref{} dargestellten Prinzip:
+
+PRINZIP SIEHE VERSUCHSANLEITUNG!!!!!
+
+Das Mößbauerspektrum von natürlichem Eisen (Folienstärke \SI{25}{\micro\meter}), von Edelstahl und von Eisensulfat werden
+
+WIE LANG??????
+
+
 
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}
+
+
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
@@ -117,6 +271,8 @@ Das Mößbauerspektrum von Eisensulfat wird gemessen und diskutiert (Linienzahl,
   K. Bethge: \textit{Kernphysik. Eine Einführung}. Springer Verlag Berlin Heidelberg New York 1996
 	\bibitem{Reisloehner}
   U. Reislöhner: \textit{FSU Fortgeschrittenenen Praktikum: Mößbauer Spektroskopie}, Fried\-rich-Schil\-ler-Uni\-versi\-tät März 2017
+  \bibitem{Grossberger}
+  http://www.grossberger.net/atomphysik/gamma1.html, 03.01.2020
 \end{thebibliography}
 
 \end{document}
