@@ -128,6 +128,11 @@ Dann gilt unter Verwendung von \ref{equ:EnergieGamma}
 \hbar\omega = \lim\limits_{M \to \infty}{(\hbar \omega_0 + \hbar (\vec{k}\cdot\vec{v})-\frac{\hbar^2\vec{k}^2}{2M})} = \hbar\omega+\hbar(\vec{k}\vec{v})
 \end{align}
 
+\subsubsection{Mößbauer-Apperatur}
+Der prinzipielle Aufbau der Mößbauer-Apperatur ist in Abbildung \ref{} dargestellt. Die grundsätzlichen Bestandteile der Apperatur sind die radioaktive Quelle, welche bewegt werden kann, ein Absorber und ein Detektor. Es werden zwei unterschiedliche Aufbauarten unterschieden: die Transmissionsgeometrie, in welcher ein Minimum des Signals bei der Geschwindigkeit wo Resonanzabsorption auftritt, festgestellt wird und eine Streugeometrie, bei welcher man die Floureszensstrahlung nachweist.
+
+ABBILDUNG EINFÜGEN
+
 \subsubsection{Debye-Waller-Faktor}
 Der Debye-Waller-Faktor ist der Anteil der unverschobenen $\gamma$-Emissionen zu allen $\gamma$-Emissionen. Er lässt sich auf
 \begin{align}
@@ -145,11 +150,16 @@ Da die Absoprtion im Allgemeinen nur durch einen Kern im Grundzustand erfolgen w
 
 
 \paragraph{Zerfallsschema \textsuperscript{57}Co}
-In Abbildung \ref{} ist das Zerfallsschema von \textsuperscript{57}Co dargestellt. \textsuperscript{57}Co zerfällt überwiegend über den Einfang eines Elektrons aus der K-Schale der Atomhülle in den angeregten Zustand I = 3/2 des \textsuperscript{57}Fe. Dabei entsteht ein Loch in der K-Schale, welches durch ein Elektron aus einer höheren Schale unter Emmission von \SI{6,4}{\keV} Röntgenstrahlung wieder aufgefüllt wird. Das angeregte \textsuperscript{57}Fe geht dann unter $\gamma$-Emmission bzw. innerer Komversion in den Grundzustand I = 1/2 über.\\
+In Abbildung \ref{fig:zerfallsschema}} ist das Zerfallsschema von \textsuperscript{57}Co dargestellt. \textsuperscript{57}Co zerfällt überwiegend über den Einfang eines Elektrons aus der K-Schale der Atomhülle in den angeregten Zustand I = 3/2 des \textsuperscript{57}Fe. Dabei entsteht ein Loch in der K-Schale, welches durch ein Elektron aus einer höheren Schale unter Emmission von \SI{6,4}{\keV} Röntgenstrahlung wieder aufgefüllt wird. Das angeregte \textsuperscript{57}Fe geht dann unter $\gamma$-Emmission bzw. innerer Komversion in den Grundzustand I = 1/2 über.\\
 Das im Versuch verwendete \textsuperscript{57}Co - \textsuperscript{57}Fe eignet sich aufgrund mehrerer Eigenschaften als Mößbauerquelle: Mit 270 Tagen ist die Halbwertszeit des Mutterisotops ausreichend lang um ein zu häufiges Wechseln zu vermeiden, die Lebensdauer des Mößbauerniveaus von $t_1/2$=\SI{98}{\nano\seconds} ermöglicht eine ausreichende Energieauflösung und die Energie von \SI{14,4}{\eV} ist hinreichend klein, um auch bei Zimmertemperatur einen hohen Debye-Waller-Faktor zu gewährleisten.
 
 
-ABBILDUNG ENIFÜGEN S.51
+\begin{figure}[htp]
+    \centering
+    \includegraphics{Bilder/Zerfallsschema_Kobalt.pdf}
+    \caption{Zerfallsschema \textsubscript{57}Co}
+    \label{fig:zerfallsschema}
+\end{figure}
 
 
 \subsubsection{Hyperfeinwechselwirkung}
@@ -175,11 +185,14 @@ Für \textsuperscript{57}Fe können experimentell die sechs für M1-Strahlung er
 \hbar\omega (M_a \rightarrow M_g) = \left(E_a - \frac{\mu_a} {I_a} M_a B \right) - \left(E_g - \frac{\mu_g} {I_g} M_g B \right)  = \hbar\omega_0 - \left(\frac{\mu_a }{I_a} M_a - \frac{\mu_g}{I_g} M_g\right) B
 \end{align}
 
-ABBILDUNG EINFÜGEN !!! S.64
+%ABBILDUNG EINFÜGEN !!! S.64
 
 \subsubsection{Isomerieverschiebung}
 Aufgrund der elektrostatischen Wechselwirkung des ausgedehnten Kerns mit den Elektronen am Kernort ergibt sich eine Energieverschiebung zwischen der Energie eines Kernzustandes für einen ausgedehnten Kern und der Energie des Kernzustands für einen punktförmigen Kern. \\
-Bei der Mößbauerspektroskopie wird diese Energiedifferenz durch die Bewegung der Quelle und Nutzung des Dopllereffekts ausgeglichen. Als Isomerieverschiebung wird hier die Geschwindigkeit der Quelle, bei der Resonaznabsorption auftritt, bezeichnet (wenn Hyperfeinstrukturwechselwirkung vernachlässtigt werden können).
+Bei der Mößbauerspektroskopie wird diese Energiedifferenz durch die Bewegung der Quelle und Nutzung des Doppllereffekts ausgeglichen. Als Isomerieverschiebung wird hier die Geschwindigkeit der Quelle, bei der Resonaznabsorption auftritt, bezeichnet (wenn Hyperfeinstrukturwechselwirkung vernachlässtigt werden können). Bei Vorliegen einer Aufspaltung wird als Isomerieverschiebung die Abweichung des Schwerpunkts zweier zueinandergehörender Minima von der 0 gesehen. \\
+
+\subsection{elektrische Quadropulaufspaltung}
+Wenn der deformierte Kern mit einem elektrischen Fedlgradienten wechselwirkt, kommt es zur Aufhebung der Energieentartung bezüglich der M-Unterzustände. Die zugehörige Energiedifferenz wird durch die Geschwindigkeitsdifferenz der sich ergebenden Minima bestimmt.
 
 
 \subsection{Nachweis von $\gamma$-Strahlung}
@@ -188,7 +201,7 @@ Bei der Wechselwirkung von $\gamma$-Strahlung mit der Materie werden drei Prozes
 \paragraph{Photoeffekt}
 Beim Photoeffekt überträgt das $\gamma$-Quant seine komplette Energie auf ein gebundenes Elektron. Für die Energie des Elektrons gilt $E_e = E_\gamma - E_B$. Auch die Bindungsenergie steht für den Szinitllationsprozess zur Verfügung. Zunächst als Anregungenergie im Atom zurückbleibend wird sie unmittelbar über Auger-Elektronen oder Röntgenstrahlung frei. Es kann nährungsweise folgende Proportionalität gefunden werden:
 \begin{align}
-\sigma  \propto E_\gamma ^(-7/2) Z^5
+\sigma  \propto E_{\gamma} ^(-7/2) Z^5
 \end{align}
 \paragraph{Comptoneffekt}
 Compton-Effekt ist die elastische Streeung eines $\gamma$-Quants an einem freien Elektronen. Von quasifreier Streuung wird gesprochen, wenn die Elektronen im Atom gebunden sind, die Bindungsenergie aber bei den äußeren Elektronen vernachlässigt werden kann. Die Energie des Photons ändert sich, die Wellenlänge wird größer, das gestoßene Elektron wird frei und seine Energie ist abhängig vom Streuwinkel. \\
@@ -225,7 +238,7 @@ BILD EINFÜGEN INTERNET!
 Zur Messung des Energiespektrums wird nach dem in Abbildung \ref{fig:BlockEnergiespektren} gezeigten Schema vorgegangen: Die $\gamma$-Strahlung wird mit einem NaI(TI)-Szintillationsdetektor registriert, das Detektorsiignal wird anschließend verstärkt (amplifier), digitalisiert (Analog-Digital-Converter) und in einem der jeweiligen Impulshöhe ensprechendem Kanal eines Histogrammspeichers (Multi-Channel-Analyser) abgelegt, sodass die Zahl der Ereignisse über der jeweils im Detektor deponierten Energie dargestellt wird. Dieses Verfahren wird Puls-Höhen-Analyse genannt (PHA). \\
 Das Ausgangssignal des Verstäkers wird zusätzlich am Ozilloskop dargestellt, um den Zusammenhang zwischen Energiesprektrum und Ausgangssignal des Verstärkers herzustellen. \\
 \paragraph{Energiekallibrierung}
-Um den einheitenlosen Kanälen eine Energie zuzuordnen, werden \textsuperscript{133}Ba und \textsuperscript{241}Am zur Kalibrierung verwendet. Beide Stoffe werden in die Absorberhaltung eingesetzt und deren charakteristische Linien im Spektrum identifiziert. Dadurch wird eine Kalibrierung der Achse vorgenommen und die \SI{14,4}{\kili\eV} Linie des \textsuperscript{57}Co kann bei Aufnahme des Spektrums ohne Absorber identifziert werden.
+Um den einheitenlosen Kanälen eine Energie zuzuordnen werden \textsuperscript{133}Ba und \textsuperscript{241}Am zur Kalibrierung verwendet. Beide Stoffe werden in die Absorberhaltung eingesetzt und deren charakteristische Linien im Spektrum identifiziert. Dadurch wird eine Kalibrierung der Achse vorgenommen und die \SI{14,4}{\kili\eV} Linie des \textsuperscript{57}Co kann bei Aufnahme der Spektren identifziert werden.
 
 \subsection{Einstellung des Energiefensters auf die \SI{14,4}{\kilo\eV} Linie}
 \paragraph{Einstellung mit dem Oszilloskop}
@@ -240,15 +253,19 @@ Dazu wird der Output des Amplifiers in Eingang des SCA und in den Delay Amplifie
 Auch hier wird der Output am Ozilloskop dargestellt. Jetzt werden die Einstellungen am Deley-Gate-Generator und am Delay Amplifier so verändert, dass das Rechtecksignal genau die Breite der Erhebung des Energiesignals hat und die Flanken am Anfang bzw. am Ende der Erhebung liegen. Dazu wird am $t_d$ und $t_w$ Knop des DGG gedreht und die Schalter des Delay Amplifiers ein- bzw ausgeeschaltet. Nach der Optimierung der Einstellungen wird das Ausgangssignal des DGG an den Gate-Anschluss des ADC und das Ausgangssignal des Delay Amplifiers an die PHA Buchse angelegt. Nun wird auf dem Vielkanalanalysator genau der Ausschnitt des Energiespektrums angezeigt, der die \SI{14,4}{\kilo\eV} zeigt. Um einen kürzeren Ausschnitt zu sehen, wird $\Delta$ E kleiner eingestellt, um einen Ausschnitt höherer Energien zu sehen, wird das LowerLevel nach oben korrigiert. \\
 
 \subsection{Messung und Auswertung von Mößbauerspektren}
-Hierfür wird der Output des Amplifiers in den SCA dingegeben. Der Output des SCA wird nach Einstellung des Fensters auf die \SI{14,4}{\kilo\eV} Linie - die vom SCA erzeugten Pulse entsprechen nun dieser ausgewählten Energie-
+Hierfür wird der Output des Amplifiers in den SCA eingegeben. Der Output des SCA wird nach Einstellung des Fensters auf die \SI{14,4}{\kilo\eV} Linie - die vom SCA erzeugten Pulse entsprechen nun dieser ausgewählten Energie-
 an den MCA Eingang des ADC angeschlossen.
-Die Messung erfolgt nach dem in Abbildung \ref{} dargestellten Prinzip:
+Die Messung erfolgt nach dem in Abbildung \ref{fig:BlockMoessbauerspektren} dargestellten Prinzip:
+\begin{figure}[htp]\label{fig:BlockMossbauerspektren}
+    \centering
+    \includegraphics{Schaltungen/Blockschaltbild.pdf}
+    \caption{Blockschaltbild zur Messung von Mößbauerspektren}
+    \label{fig:BlockMoessbauerspektren}
+\end{figure}
 
-PRINZIP SIEHE VERSUCHSANLEITUNG!!!!!
+Im Versuch wird eine Transmissionsgeometrie verwendet. \textsuperscript{57}Co wird als radioaktive Quelle genutzt und mit dem Mössbauer Drive, einem lautsprecherähnlichen Antrieb, bewegt. Der Impulsgenerator gibt die Geschwindigkeit der Quelle vor, die im Versuch einem cosinusförmigen Verlauf folgt und über die Mössbauer Driving Unit an den Mößbauer Drive übertragen wird. Durch die oben beschriebenen Fenstereinstellungen ist gewährleistet, dass die vom SCA erzeugten Pulse den Ereignisse der \SI{14,4}{\electronvolt}-Energie entsprechen. Diese werden von der Zähleinheit im MCS-Modus registriert und MCA aufsummiert. Der Impulsgenerator gibt dabei Triggerpulse zur Weiterschaltung des Kanals, diese erfolgt in äquidistanten Zeitschritten, sowie zur Zurücksetzung der Kanalnummer bei $ v = V_{max} $ an den MSC.  So ist es möglich zu messen, wie viele Ereignisse bei einer bestimmten Geschwindigkeit auftreten. Mit dem Messprogramm "WISSOFT2003" kann der Histogrammspeicher MCA ausgelesen werden.
 
-Das Mößbauerspektrum von natürlichem Eisen (Folienstärke \SI{25}{\micro\meter}), von Edelstahl und von Eisensulfat werden
-
-WIE LANG??????
+Das Mößbauerspektrum von natürlichem Eisen (Folienstärke \SI{25}{\micro\meter}), von Edelstahl und von Eisensulfat werden aufgenommen, indem der genannte Stoff jeweils als Absorber eingelegt wird.
 
 
 
