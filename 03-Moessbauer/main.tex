@@ -95,7 +95,7 @@ Für ein einatomiges Gas im thermischen Gleichgewicht gilt für die Energie des 
 \begin{align}
 E_{vor} = E_a+\frac{\vec{p}^2}{2M}.
 \end{align}
-Wobei \vec{p} = M\vec{v} der Impuls und M die Masse des Atoms ist. \\
+Wobei $\vec{p}$ = M$\vec{v}$ der Impuls und M die Masse des Atoms ist. \\
 Der Impuls ist wegen der Impulserhaltung nach der Emmission um den Impuls des $\gamma$-Quants $\hbar\vec{k}$ reduziert. Außerderdem muss hier die Energie im Grundzustand $E_g$ verwendet werden. Nach der Emission beläuft sich die Energie des Atomkerns also auf
 \begin{align}
 E_{nach} = E_g+\frac{(\vec{p}-\hbar\vec{k})^2}{2M}.
@@ -110,7 +110,7 @@ Aufgrund der Unschärferelation muss es eine Energieunschärfe der $\gamma$-Quan
 \begin{align}
 I(\omega) = \frac{I_0}{1+[(\omega-\omega_0)2\hbar/\Gamma]^2}
 \end{align}
-wobei I($\omega$) die Intensität der Strahlung mit der Frquenz $\omgega$ angibt.
+wobei I($\omega$) die Intensität der Strahlung mit der Frquenz $\omega$ angibt.
 $\Gamma$ ist die sogenannte natürliche Linienbreite und gibt die Energieunschärfe an. Für sie gilt:
 \begin{align}
 \Gamma = \hbar / \tau_N
@@ -150,8 +150,8 @@ Da die Absoprtion im Allgemeinen nur durch einen Kern im Grundzustand erfolgen w
 
 
 \paragraph{Zerfallsschema \textsuperscript{57}Co}
-In Abbildung \ref{fig:zerfallsschema}} ist das Zerfallsschema von \textsuperscript{57}Co dargestellt. \textsuperscript{57}Co zerfällt überwiegend über den Einfang eines Elektrons aus der K-Schale der Atomhülle in den angeregten Zustand I = 3/2 des \textsuperscript{57}Fe. Dabei entsteht ein Loch in der K-Schale, welches durch ein Elektron aus einer höheren Schale unter Emmission von \SI{6,4}{\keV} Röntgenstrahlung wieder aufgefüllt wird. Das angeregte \textsuperscript{57}Fe geht dann unter $\gamma$-Emmission bzw. innerer Komversion in den Grundzustand I = 1/2 über.\\
-Das im Versuch verwendete \textsuperscript{57}Co - \textsuperscript{57}Fe eignet sich aufgrund mehrerer Eigenschaften als Mößbauerquelle: Mit 270 Tagen ist die Halbwertszeit des Mutterisotops ausreichend lang um ein zu häufiges Wechseln zu vermeiden, die Lebensdauer des Mößbauerniveaus von $t_1/2$=\SI{98}{\nano\seconds} ermöglicht eine ausreichende Energieauflösung und die Energie von \SI{14,4}{\eV} ist hinreichend klein, um auch bei Zimmertemperatur einen hohen Debye-Waller-Faktor zu gewährleisten.
+In Abbildung \ref{fig:zerfallsschema} ist das Zerfallsschema von \textsuperscript{57}Co dargestellt. \textsuperscript{57}Co zerfällt überwiegend über den Einfang eines Elektrons aus der K-Schale der Atomhülle in den angeregten Zustand I = 3/2 des \textsuperscript{57}Fe. Dabei entsteht ein Loch in der K-Schale, welches durch ein Elektron aus einer höheren Schale unter Emmission von \SI{6,4}{\keV} Röntgenstrahlung wieder aufgefüllt wird. Das angeregte \textsuperscript{57}Fe geht dann unter $\gamma$-Emmission bzw. innerer Komversion in den Grundzustand I = 1/2 über.\\
+Das im Versuch verwendete \textsuperscript{57}Co - \textsuperscript{57}Fe eignet sich aufgrund mehrerer Eigenschaften als Mößbauerquelle: Mit 270 Tagen ist die Halbwertszeit des Mutterisotops ausreichend lang um ein zu häufiges Wechseln zu vermeiden, die Lebensdauer des Mößbauerniveaus von $t_1/2$=\SI{98}{\nano\second} ermöglicht eine ausreichende Energieauflösung und die Energie von \SI{14,4}{\electronvolt} ist hinreichend klein, um auch bei Zimmertemperatur einen hohen Debye-Waller-Faktor zu gewährleisten.
 
 
 \begin{figure}[htp]
@@ -212,16 +212,26 @@ Hierbei gilt folgende Proportionalität
 
 
 \paragraph{Szintillationsdetektor}
-Zum eigentlichen Nachweis werden die durch Photo- oder Comptoneffekt freigesetzen Elektronen verwendet. Hierzu wird z.B. ein Szintillationsdetektor verwendet, dessen Aufbau in Abbildung \ref{} ersichtlich wird.\\
+Zum eigentlichen Nachweis werden die durch Photo- oder Comptoneffekt freigesetzen Elektronen verwendet. Hierzu wird z.B. ein Szintillationsdetektor verwendet, dessen Aufbau in Abbildung \ref{fig:Szintillationsdetektor} ersichtlich wird.\\
 Der $\gamma$-Quant trifft auf den Scintillator und erzeugt durch Photo- und Comptoneffekt Primärelektronen. Das Primärelektron wird abgebremst und ionsiert (oder regt an) die Szinitllatoratome. Dabei ist die Anzahl der ionisierten Atome proprtional zur Energie des Elektrons. Es kommt zu einer Rekombination dieser unter Aussendung von Licht. Dieses Licht löst dann aus der Photokathode Elektronen aus, welche an den Dynoden des Primärelektronenvervielfachers verstärkt wird.
 
-ABBILDUNG EINFÜGEN!
+\begin{figure}[htp]
+    \centering
+    \includegraphics{Bilder/Szintillationsdetektor.pdf}
+    \caption{Prinzipskizze Szintillationsdetektor}
+    \label{fig:Szintillationsdetektor}
+\end{figure}
 
 \subsection{$\gamma$-Spektrum}
-Das Spektrum von \textsuperscript{137} Cs ist beispielhaft in Abbildung \ref{} dargestellt. An diesem werden die charakteristischen Elemente eines $\gamma$-Spektrums im Folgenden erklärt. \\
+Das Spektrum von \textsuperscript{137} Cs ist beispielhaft in Abbildung \ref{figCsSpek} dargestellt. An diesem werden die charakteristischen Elemente eines $\gamma$-Spektrums im Folgenden erklärt. \\
 Mit Nummer 1 beschriftet ist die \textit{Gesamtabsoptionslinie}, auch Photopeak genannt. Bei dieser Energie kommt es zum Photoeffekt - das Photon gibt seine gesamte Energie an ein gebundenes Elektron ab. Da die Anzahl der ionisierten Atome von der Energie des Elektrons abhängt, ist hier ein deutliches Peak zu erkennen. Das \textit{Comptonkontinuum} sind die über einen breiten Energiebereich verteilten Ereignisse im niederenergetischen Bereich des Spektrums. Für das Auslösen der Elektronen ist in diesem Bereich hauptsächlich der Comptoneffekt verantwortlich. Dabei wird nur ein Teil der Energie des $\gamma$-Quants an die Elektronen abgegeben. Außerdem ist die Energie der freiwerdenden Elektronen abhängig vom Streuwinkel und damit kontinuierlich. Für \SI{180}{\degree} wird ein maximaler Energiebetrag erreicht. Dieser markiert die \textit{Comptonkante}. Die \textit{Rückstreulinie} ergibt sich, da das radiaktove Präparat in alle Richtungen emittiert. So kommt es vor, dass Quanten in die dem Zähler entgegengesetzte Richtung gestrahlt werden in der Nähe des Präparats Compton gestreut werden und als Streuquanten vom Szintillationsdetektor registriert werden. Wird den Zusammenhang zwischen Streuwinkel und Energie des gestreuten Quants genaer, kann festgestellt werden, dass Energiequanten im Winkelbereich zwischen \SI{100}{\degree} und \SI{180}{\degree} einem eng begrenzten Energiebereich zugeordnet werden. Diese Quanten werden mittels Photoeffekt im Szintillationskristall registriert, weshalb sich ein Maximum ergibt. Außerdem erscheint im Spektrum bei Nummer 4 die K--Röntgen-Linie von Blei, da eine Bleiabschirmung verwendet wurde.
 
-BILD EINFÜGEN INTERNET!
+\begin{figure}[htp]
+    \centering
+    \includegraphics{Bilder/SpektrumCs.png}
+    \caption{$\gamma$-Spektrum von \textsuperscript{137}Cs}
+    \label{figCsSpek}
+\end{figure}
 
 % *********************************************
 % ***** KAPITEL 3 *****************************
@@ -238,7 +248,7 @@ BILD EINFÜGEN INTERNET!
 Zur Messung des Energiespektrums wird nach dem in Abbildung \ref{fig:BlockEnergiespektren} gezeigten Schema vorgegangen: Die $\gamma$-Strahlung wird mit einem NaI(TI)-Szintillationsdetektor registriert, das Detektorsiignal wird anschließend verstärkt (amplifier), digitalisiert (Analog-Digital-Converter) und in einem der jeweiligen Impulshöhe ensprechendem Kanal eines Histogrammspeichers (Multi-Channel-Analyser) abgelegt, sodass die Zahl der Ereignisse über der jeweils im Detektor deponierten Energie dargestellt wird. Dieses Verfahren wird Puls-Höhen-Analyse genannt (PHA). \\
 Das Ausgangssignal des Verstäkers wird zusätzlich am Ozilloskop dargestellt, um den Zusammenhang zwischen Energiesprektrum und Ausgangssignal des Verstärkers herzustellen. \\
 \paragraph{Energiekallibrierung}
-Um den einheitenlosen Kanälen eine Energie zuzuordnen werden \textsuperscript{133}Ba und \textsuperscript{241}Am zur Kalibrierung verwendet. Beide Stoffe werden in die Absorberhaltung eingesetzt und deren charakteristische Linien im Spektrum identifiziert. Dadurch wird eine Kalibrierung der Achse vorgenommen und die \SI{14,4}{\kili\eV} Linie des \textsuperscript{57}Co kann bei Aufnahme der Spektren identifziert werden.
+Um den einheitenlosen Kanälen eine Energie zuzuordnen werden \textsuperscript{133}Ba und \textsuperscript{241}Am zur Kalibrierung verwendet. Beide Stoffe werden in die Absorberhaltung eingesetzt und deren charakteristische Linien im Spektrum identifiziert. Dadurch wird eine Kalibrierung der Achse vorgenommen und die \SI{14,4}{\kilo\electronvolt} Linie des \textsuperscript{57}Co kann bei Aufnahme der Spektren identifziert werden.
 
 \subsection{Einstellung des Energiefensters auf die \SI{14,4}{\kilo\eV} Linie}
 \paragraph{Einstellung mit dem Oszilloskop}
