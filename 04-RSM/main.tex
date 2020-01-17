@@ -33,7 +33,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.5pt}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
-\fancyhead[RO,LE]{\textbf{Mößbauer Spektroskopie}}
+\fancyhead[RO,LE]{\textbf{Rastersondenmikroskopie}}
 \fancyhead[RE,LO]{\rightmark}
 \fancyfoot[LE,RO]{\bfseries\thepage}
 \fancyfoot[CO,CE]{Protokoll}
@@ -51,13 +51,55 @@
 \newpage
 % \pagenumbering{arabic}
 \section{Aufgabenstellung} \label{sec:Aufgabenstellung}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph*{Präparation von Tunnelspitzen}$~$\\
+Es erfolgt eine Herstellung der Tunnelspitzen nach der in~\cite{Nanosurf} beschriebenen Anleitung durch Abschneiden
+\subsection{Untersuchung polykristalliner Goldoberflächen}
+Es werden reproduzierbare Bilder mehrerer Vergrößerungsstufen aufgenommen und eine Optimierung der mikroskopischen Auflösung und Abbildungsqualität durchgeführt. Dabei werden insbesondere die Tunnelparameter, Regelkreisparameter und Abtastgeschwindigkeit variiert. Es erfolgt eine geeignete Darstelunng der mikroskopischen Aufnahmen vor und nach der Bildbearbeitung.\\
+Weiterhin wird die Probenoberfläche quantitativ und qualitativ charakterisiert, indem die Rauheit, Kristallitgrößen, -durchmesser und -höhen ausgemessen werden.
+\subsection{Untersuchung verschiedener Proben}
+Analog zur Goldoberfläche wird die Bildaufnahme optimiert und Probenparameter charakterisiert. Es werden folgende Proben untersucht:
+\begin{itemize}
+  \item Einkristallines Graphen auf Siliziumkarbid:
+  \begin{enumerate}
+    \item Dabei soll atomare Auflösung erreicht werden und auftretende Probleme diskutiert und der Einfluss der Tunnelspannung untersucht werden.
+    \item Die Atomabstände und Stufenhöhen im Graphen werden ausgemessen und durch FFT ausgewertet.
+  \end{enumerate}
+  \item Kohlenstoffnanoröhren auf graphitisierten Siliziumkarbid werden untersucht und charakterisiert. Probleme bei der Aufnahme sollen diskutiert werden.
+  \item Durch Vakuumbedampfung werden eigene Metallschichten hergestellt und untersucht.
+\end{itemize}
+
+\paragraph{Erklären von Abbildungsfehlern}$~$\\
+Typisch auftretende Abbildungsfehler, welche durch Spitze, Piezoscanner, Elektronik, Regelkreis, äußere Störungen, oder Software verursacht werden, sollen erkannt und anhand von Beispielen der eiegenen Messung beschrieben und erklärt werden.
+
+\paragraph{Bildbearbeitung mit Gwyddion}$~$\\
+Das Programm Gwyddion~\cite{Gwyddion} wird zur Kontrastierung und Untergrundkorrektur benutzt. Es erfolgt eine Bildbearbeitung mit einer zweidimensionalen Fast Fourier Transformation (FFT).\\
+Weiterhinn können Filter eingestellt, Glättung durchgeführt und Probenparameter (Gitterkonstanten, Stufenhöhen, Rauheit) bestimmt werden.
 % *********************************************
 % ***** KAPITEL 2 *****************************
 % *********************************************
 \newpage
 \section{Grundlagen} \label{sec:Grundlagen}
 \subsection{Rastertunnelmikroskop}
+\subsubsection{Aufbau und Funktionsweise}
+Bei einem Rastertunnelmikroskop STM (\textit{Scanning Transmission Microscope}) wird eine idealerweise einatomar dünne metallische Spitze als Sonde zur Abrasterung einer elektrisch leitfähigen Probe benutzt. Dabei wird die Tunnelspitze auf etwas \SI{1}{\nano\metre} an die Oberfläche herangeführt, bis bei einer angelegten Spannung ein elektrischer Tunnelstrom fließt~\cite{Versuchsanleitung}. Nachdem ein Tunnelkontakt hergestellt wurde, wird die Spitze durch eine Rastereinheit bestehend aus piezoelektrischen Stellelementen rasterförmig über einen kleinen Bereich von wenigen \si{\nano\metre} bis \si{\micro\metre} über die Probe bewegt. Der fließende Strom $I_T$ ist dabei abhängig von der angelegten Vorspannung und der elektrischen Zustandsdichte $\rho$ der Probe und Tunnelspitze bei der Fermienergie $E_F$. Es ergibt sich folgender Zusammenhang:
+\begin{align}
+  I_T \propto \int_{E_F}^{E_F+ eU_V} \rho_\text{Spitze}(E_F)\;\rho_\text{Probe}(E_F+eU_V) \;T(E,U_V)\,\de E.
+\end{align}
+Bei $T$ handelt es sich um einen Transmissionskoeffizienten, der von der Energie und Vorspannung abhängt. Für kleine Spannungen bildet das Rastertunnelmikroskop die elektronische Zustandsdichte der Oberfläche nahe der Fermienergie ab. Daraus lässt sich folgern, dass die Aufnahme eines STM nicht die Atome direkt, sondern die an die Atome gebundenen Zustände abbildet.\\
+Die Zustandsdichte der Oberflächenzustande fällt exponentiell mit der inversen Abfallslänge $\kappa$ ab, woraus ein exponentieller Abfall des Tunnelstroms mit wachsendem Proben-Spitzen Abstand $d$ resultiert
+\begin{align}
+  I \propto \exp(-2\kappa d).
+\end{align}
+Die exponentielle Spannungs-Strom Abhängigkeit ist wesentlich für eine präzise Messgenauigkeit des Rastertunnelmikroskops.\\
+Der schematische Aufbau eines STM ist in Abbildung~\ref{fig:Rastertunnelmikroskop} dargestellt. Dabei wird die Spitze meist zusätzlich noch mit einem PID-Regelkreis angesteuert, um den Spitzen-Proben Abstand zu regeln.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Bilder/Raster_Tunnelmikroskop.pdf}
+    \caption{Schematischer Aufbau eines Rastertunnelmikroskops aus~\cite{Demtroeder}.}
+    \label{fig:Rastertunnelmikroskop}
+\end{figure}
+
+\subsubsection{}
 \subsection{Rasterkraftmiskroskop}
 Das Kernstück des Rasterkraftmikroskop (RKM, englisch auch Atomic Force Microscope (AFM)) ist im Wesentlichen identisch zu dem des Rastertunnelmiskroskops. Auch hier wird eine feine Spitze verwendet, welche in einem charakteristisch kleinem Abstand gegenüber der Probe über diese gerastert wird. Die Höhe der Spitze über der Probe wird in beiden Fällen durch piezoelektrische Stellelemente realisiert. \\
 Der Unterschied zwischen beiden Miksrokopiearten besteht in der vorrausgesetzen Probeneigenschaften. Während beim Rastertunnelmiskroskop, da hier ein elektrischer Tunnelstrom gemessen wird, ausschließlich leitende Proben verwendet werden können, sind für Messungen mit dem Rasterkraftmikroskop auch Isolatoren geeignet.
@@ -105,7 +147,18 @@ Neben den oben genannten, gibt es auch weitere  Rastersondenmikroskope, die die 
 % ***** Literaturverzeichnis ******************
 
 \begin{thebibliography}{xxx}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Hamann}
+C. Hamann und M. Hietschold: \textit{Raster-Tunnel-Mikroskopie}. Akademie Verlag GmbH, Berlin 1991.
+\bibitem{Mayer}
+D. Bonnell: \textit{Scanning Tunneling Microscopy and Spectroskopy}. VCH Publishers, Inc. 1993.
+\bibitem{Versuchsanleitung}
+M. Grünewald: \textit{FSU Fortgeschrittenenen Praktikum: SPM}. Fried\-rich-Schil\-ler-Uni\-versi\-tät, Mai 2019.
+\bibitem{Demtroeder}
+W. Demtroeder: \textit{Experimentalphysik 3: Atome, Moleküle und Festkörper}. Springer-Verlag Berlin Heidelberg 2016 (5. Auflage).
+\bibitem{Nanosurf}
+Nanosurf AG: \textit{easyScan 2 STM: Operating Instructions}. Liestal 2009.
+\bibitem{Gwyddion}
+D. Nečas und P. Klapetek: \textit{Gwyddion: Free SPM (AFM, SNOM/NSOM, STM, MFM, $\hdots$), data analysis software}. Version 2.55, \url{gwyddion.net}, (Stand: 17.01.2020).
 \end{thebibliography}
 
 \end{document}
