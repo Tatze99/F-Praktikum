@@ -80,10 +80,10 @@ Weiterhinn können Filter eingestellt, Glättung durchgeführt und Probenparamet
 \newpage
 \section{Grundlagen} \label{sec:Grundlagen}
 \subsection{Rastertunnelmikroskop}
-\subsubsection{Aufbau und Funktionsweise}
+\subsubsection{Aufbau und Funktionsweise}\label{sec:STM_Aufbau}
 Bei einem Rastertunnelmikroskop STM (\textit{Scanning Transmission Microscope}) wird eine idealerweise einatomar dünne metallische Spitze als Sonde zur Abrasterung einer elektrisch leitfähigen Probe benutzt. Dabei wird die Tunnelspitze auf etwas \SI{1}{\nano\metre} an die Oberfläche herangeführt, bis bei einer angelegten Spannung ein elektrischer Tunnelstrom fließt~\cite{Versuchsanleitung}. Nachdem ein Tunnelkontakt hergestellt wurde, wird die Spitze durch eine Rastereinheit bestehend aus piezoelektrischen Stellelementen rasterförmig über einen kleinen Bereich von wenigen \si{\nano\metre} bis \si{\micro\metre} über die Probe bewegt. Der fließende Strom $I_T$ ist dabei abhängig von der angelegten Vorspannung und der elektrischen Zustandsdichte $\rho$ der Probe und Tunnelspitze bei der Fermienergie $E_F$. Es ergibt sich folgender Zusammenhang:
 \begin{align}
-  I_T \propto \int_{E_F}^{E_F+ eU_V} \rho_\text{Spitze}(E_F)\;\rho_\text{Probe}(E_F+eU_V) \;T(E,U_V)\,\de E.
+  I_T \propto \int_{E_F}^{E_F+ eU_V} \rho_\text{Spitze}(E_F)\;\rho_\text{Probe}(E_F+eU_V) \;T(E,U_V)\,\de E.\label{eqn:Tunnelstrom}
 \end{align}
 Bei $T$ handelt es sich um einen Transmissionskoeffizienten, der von der Energie und Vorspannung abhängt. Für kleine Spannungen bildet das Rastertunnelmikroskop die elektronische Zustandsdichte der Oberfläche nahe der Fermienergie ab. Daraus lässt sich folgern, dass die Aufnahme eines STM nicht die Atome direkt, sondern die an die Atome gebundenen Zustände abbildet.\\
 Die Zustandsdichte der Oberflächenzustande fällt exponentiell mit der inversen Abfallslänge $\kappa$ ab, woraus ein exponentieller Abfall des Tunnelstroms mit wachsendem Proben-Spitzen Abstand $d$ resultiert
@@ -99,7 +99,64 @@ Der schematische Aufbau eines STM ist in Abbildung~\ref{fig:Rastertunnelmikrosko
     \label{fig:Rastertunnelmikroskop}
 \end{figure}
 
-\subsubsection{}
+\subsubsection{Tunneleffekt}
+Um das auftreten des Tunnelstroms zu erklären, muss analysiert werden, wie Ladungsträger von besetzten Zuständen einer Elektrode durch einen Potentialwall in die unbesetzten Zustände einer zweiten Elektrode gelangen können. Im Rahmen der klassischen Physik kann ein Teilchen diesen Potentialwall nur überwinden, wenn seine Energie $E$ größer als das Maximum des Potentialwalls ist. Laut der Quantenmechanik ist ein Elektron mithilfe einer Wellenfunktion $\Psi(x)$ beschreibbar, dessen Verlauf im eindimensionalen Fall in Abbildung~\ref{fig:Tunneleffekt} gezeigt wird.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Bilder/Tunneleffekt.pdf}
+    \caption{Quantenmechanischer Tunnelffekt an einer rechteckigen Potentialbarriere der Höhe $E_0$ aus~\cite{Demtroeder}}
+    \label{fig:Tunneleffekt}
+\end{figure}
+Für dieses zeitunabhängige Problem $\Psi(x,t) = \Phi(x)\cdot\exp(-iEt/\hbar)$ gehorcht das Elektron der stationären Schrödingergleichung
+\begin{align}
+  E \Psi(x) = \left[-\frac{\hbar^2}{2m_e}\Delta + V(x)\right] \Psi(x),
+\end{align}
+welche eine Differentialgleichung für den harmonischen Oszillator darstellt mit der Lösung
+\begin{align}
+  \Psi(x) = A_1 \exp(ikx) + A_2 \exp(-ikx), \quad k=\sqrt{\frac{2m(E-V)}{\hbar^2}}.
+\end{align}
+Im Bereich II ergibt sich mit $E_0 > E$ ein exponentiell abfallender Verlauf der Wellenfunktion. Jedoch verschwindet die Wellenfunktion im Bereich III nicht, sodass das Elektron mit endlicher Wahrscheinlichkeit durch den Potentialwall in die Probe tunneln kann. Im Mittel tunneln jedoch Elektronen auch zu gleicher Anzahl von der Probe in die Spitze, sodass kein Nettostrom messbar ist. Wird nun noch eine Spannung zwischen Spitze (I) und Probe (III) angelegt, dann ergibt sich der in Abbildung~\ref{fig:Tunneleffekt_Spannung} dargestellte Potentialverlauf. Die Energieniveaus der Tunnelspitze liegen nun höher und es bildet sich eine Vorzugsrichtung des Tunneleffektes aus. Hierbei fließt nun ein Tunnelstrom von der Probe zur Spitze.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Bilder/Tunneleffekt_Spannung.pdf}
+    \caption{Potentialverlauf zwischen Spitze (I) und Probe (III) bei angelegter Spannung $U$ nach~\cite{Hamann} (eigene Abbildung)}
+    \label{fig:Tunneleffekt_Spannung}
+\end{figure}
+
+\subsubsection{Betriebsarten}
+Es gibt prinzipiell zwei verschiedene Arten, ein Rastertunnelmikroskop zu betreiben. Je nach Art und Struktur der Probe bieten diese jeweils Vorteile.
+\paragraph{Konstante Höhe} Am leichtesten lässt sich das Tunnelbild realisieren, indem die Variation des Tunnelstroms direkt als Funktion des Ortes gemessen wird, wobei die Spitze auf konstanter Höhe verweilt. Dabei ergibt sich ein Strombild. Das Verfahren hat den Vorteil, dass die Probe besonders schnell abgerastert werden kann und die Höhe der Spitze nicht mithilfe eines Regelkreises gesteuert werden muss. Allerdings eignet sich das Verfahren nur für flache Proben, da sonst die Spitze mit der Probe kollidieren kann. Eine Kollision stellt dabei eine starke Wechselwirkung mit der Probe dar, welche die Spitze verformt oder der direkte mechanische Kontakt.
+\paragraph{Konstanter Strom} Meist ist es jedoch vorteilhafter auf das langsamere Verfahren des konstanten Stroms zurückzugreifen. Hierbei wird ein Piezoelelement der Spitze mit einem PID-Regelkreis verbunden, der dafür sorgt, dass der fließende Strom konstant gehalten wird. Dabei wird die Variation der exponentiell zum Abstand abfallenden Zustandsdichte der Probenoberfläche gemessen. Das resultierende Bild entspricht also einer Fläche konstanter Zustandsdichte der Probe. Je nach Geschwindigkeit des Regelkreises kann dies allerdings dazu führen, dass scharfe Kanten der Probe durch die Spitze nicht registriert werden. Dies wird am Spitzenverlauf in Abbildung~\ref{fig:Betriebsmodi} ersichtlich. Da bei diesem Verfahren die Höhe der Spitze ständig angepasst wird, ist sie auch für raue Proben geeignet, allerdings aufgrund der Regelzeit entsprechend langsamer.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics{Bilder/STM_konstStrom.pdf}
+        \caption{Konstanter Strom}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics{Bilder/STM_konstHoehe.pdf}
+        \caption{Konstante Höhe}
+    \end{subfigure}
+    \caption{Darstellung der beiden Betriebsmodi eines STM.}
+    \label{fig:Betriebsmodi}
+\end{figure}
+
+\subsubsection{PID-Regelkreis}
+Ein Regelkreis stellt einen Wirkungsablauf zur Beeinflussung einer physikalischen Größe in einem technischen Prozess dar. Dabei wird der aktuelle Wert an den Regler zurückgeführt und mit einer Führungsgröße, dem Sollwert verglichen. In diesem Experiment soll der Tunnelstrom geregelt werden. Der Regler wirkt der Abweichung entgegen und besteht aus verschiedenen Gliedern die im Schema~\ref{fig:PID} zusammengefasst sind.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Bilder/PID-Regler.pdf}
+    \caption{Schematischer Aufbau des verwendeten PID-Regelkreises nach~\cite{Versuchsanleitung}.}
+    \label{fig:PID}
+\end{figure}\\
+Heutzutage wird hauptsächlich eine Kombination von Proportional-, Integral- und Differenzialregler verwendet und unter dem Begriff des PID-Reglers zusammengefasst.
+\paragraph{Proportionalregler} Das P-Glied besteht aus einem proportionalen Anteil mit der Verstärkung $K_P$. Als Regler eingesetzt multipliziert es die Regelabweichung mit seinem Verstärkungsfaktor $K_P$ und gibt das Ergebnis weiter. Ein P-Regler allein kann eine Regelabweichung nicht beheben.
+\paragraph{Integralregler} Das I-Glied besitzt ein integratives Verhalten, denn es summiert die Regelabweichung zeitlich auf und multipliziert die Summe mit dem Faktor $K_I$. Je länge die Regelabweichung anhält, desto größer wird die Stellgröße des I-Gliedes.
+\paragraph{Differenzialregler} Das D-Glied besitzt ein differentielles Verhalten, es bewertet die Änderung der Regelabweichung und berechnet die Änderungsgeschwindigkeit, welche mit dem Faktor $K_D$ multipliziert wird. Das D-Glied kann durch die Bildung der Ableitung den Verlauf des Signals \glqq vorhersagen\grqq, ist allerdings wirkungslos, wenn sich die Abweichung nicht ändert.\\
+
+Ein PID-Regler ist geeignet, um den Tunnelstrom während einer STM-Messung konstant zu halten. In seiner Gesamtheit wirkt ein PID-Regler außerdem als ein Tiefpass und kann dazu eingesetzt werden, Rauschsignale zu filtern. Durch Anpassung der verschiedenen Faktoren kann die Regelgeschwindigkeit optimiert werden.
+
 \subsection{Rasterkraftmiskroskop}
 Das Kernstück des Rasterkraftmikroskop (RKM, englisch auch Atomic Force Microscope (AFM)) ist im Wesentlichen identisch zu dem des Rastertunnelmiskroskops. Auch hier wird eine feine Spitze verwendet, welche in einem charakteristisch kleinem Abstand gegenüber der Probe über diese gerastert wird. Die Höhe der Spitze über der Probe wird in beiden Fällen durch piezoelektrische Stellelemente realisiert. \\
 Der Unterschied zwischen beiden Miksrokopiearten besteht in der vorrausgesetzen Probeneigenschaften. Während beim Rastertunnelmiskroskop, da hier ein elektrischer Tunnelstrom gemessen wird, ausschließlich leitende Proben verwendet werden können, sind für Messungen mit dem Rasterkraftmikroskop auch Isolatoren geeignet.
@@ -130,13 +187,230 @@ Neben den oben genannten, gibt es auch weitere  Rastersondenmikroskope, die die 
 % *********************************************
 % ***** KAPITEL 3 *****************************
 % *********************************************
+\newpage
 \section{Messapparatur und Versuchsdurchführung} \label{sec:Versuchsdurchführung}
+%%% To Do: Messapparatur beschreiben
+%%% To Do: Spitzenpräparation (Vergleich mit Wolframspitzen)
+%%% To Do: Probenbedampfung und Berechnung Menge an Bedampfungsmaterial
+%%% To Do: Beschreibung der Piezoscanneinheit
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false} %%% Ab hier werden Captions links aligned
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bildbearbeitung mit Gwyddion}
+Die durch das Nanosurf easyScan System aufgenommenen Daten werden als Rohdaten in einer Datei gespeichert, die von Gwyddion ausgewertet werden kann. Die Rohdaten enthalten jeweils das Strom- und Höhenbild der Messung. Mithilfe von Gwyddion werden nun die Bilder geöffnet und bearbeitet. Dabei erfolgt analog zur Darstellung der Messbilder in der Steuersoftware des easyScan Messinstruments eine Korrektur, indem am Höhenbild der Aufnahme verschiedene Werkzeuge angewendet werden. Zunächst werden die Daten durch Subtraktion der Mittelebene nivelliert und anschließend mithilfe polynomaler Anpassung die Reihen angeglichen. Gegebenenfalls wurden zusätzlich noch horizontale Fehlerzeilen entfernt und der polynomielle Untergrund entfernt. Die Ergebnisse dieser Anpassung sind in Abbildung~\ref{fig:Bildbearbeitung} dargestellt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Image01963_Strom.pdf}
+        \caption{Strombild}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Image01963_Rohdaten.pdf}
+        \caption{Rohdaten Höhenbild}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Image01963_bearbeitet.pdf}
+        \caption{Bearbeitetes Höhenbild}
+    \end{subfigure}
+    \caption{Bearbeitung der STM-Aufnahme einer Goldprobe mithilfe von Gwyddion. In der Mitte sind die importierten Rohdaten dargestellt. Rechts befindet sich das bearbeitete Höhenbild.}
+    \label{fig:Bildbearbeitung}
+\end{figure}
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
+\subsection{Untersuchung der Goldprobe}
+\subsubsection{Optimierung der Tunnelparameter}
+Zunächst wurde versucht, durch Anpassung der verschiedenen Parameter in der Steuersoftware, ein möglich gutes Bild zu erhalten. Dafür wurde ein Scanbereich von $\SI{130}{\nano\metre} \times \SI{130}{\nano\metre}$ gewählt und die einzelnen Parameter variiert.
+Die verfügbaren Parameter sind in folgender Tabelle zusammengefasst:
+\begin{table}[ht]
+	\centering
+	\caption{Standardparameter für die STM-Aufnahme mithilfe der Steuersoftware Nanosurf easyScan}
+	\label{tab:Parameter}
+  \begin{tabular}{l c c c}
+   \toprule
+   Parameter   &       & Standardwert          & Wertebereich\\
+   \midrule
+   Setpoint    & $I$   & \SI{1}{\nano\ampere}  & $0.02-\SI{5}{\nano\ampere}$\\
+   Tip Voltage & $U$   & \SI{1}{\volt}         & $-2 - \SI{2}{\volt}$\\
+   P-Gain      & $K_P$ & 1000                  & 600-2000\\
+   I-Gain      & $K_I$ & 500                   & 100-1500\\
+   D-Gain      & $K_D$ & 0                     & \\
+   Image Size  &       & \SI{130}{\nano\metre} & $4-\SI{512}{\nano\metre}$\\
+   Time per Line &     & \SI{0.35}{\second}    & $0.052 - \SI{0.5}{\second}$\\
+   Points per Line &   & 256                   &\\
+   Rotation    &       & \SI{0}{\degree}       &\\ \bottomrule
+  \end{tabular}
+\end{table}
+\paragraph{Optimierung des Tunnelstroms}$~$\\
+Wie in Abschnitt \ref{sec:STM_Aufbau} bereits gezeigt wurde, entspricht ein aufgenommenes Bild konstanten Tunnelstroms einer Fläche konstanter Zustandsdichte. Zudem fällt der Tunnelstrom exponentiell mit steigendem Spitze-Probe Abstand ab. Wird nun die Spitze näher an die Probe herangeführt, fließt ein stärkerer Tunnelstrom und die Messung ergibt eine höhere Zustandsdichte. Werden nun bei einer STM Aufnahme die Tunnelströme variiert, ergibt sich das in Abbildung~\ref{fig:Stromvariation_1} gezeigte Bild.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01958_Stromvariation_Strom.pdf}
+        \caption{Strombild}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01958_Stromvariation.pdf}
+        \caption{Höhenbild}
+    \end{subfigure}
+    \caption{Variation des Setpoints $I$ innerhalb einer STM Aufnahme. Von unten nach oben wurde der Setpoint von $1 \text{ bis } \SI{4}{\nano\ampere}$ in gleichmäßigen Abständen variiert.}
+    \label{fig:Stromvariation_1}
+\end{figure}\\
+Bei Erhöhung des Tunnelstroms zeigt sich eine leichte Verbesserung der Bildqualität, da durch den geringeren Abstand zwischen Probe und Spitze feine Details besser detektierbar sind. Wird die Stromstärke jedoch zu groß gewählt, tauchen deutliche Artefakte im Strombild auf, welche sich im Höhenbild niederschlagen. Zudem kann es bei diesen Strömen aufgrund der starken Wechselwirkung zwischen Spitze und Probe zur Umstruktuierung der Spitze kommen, was zur Zerstörung dieser führen kann. Jedoch kann ein hoher Tunnelstrom auch zur Konditionierung der Spitze verwendet werden, um eine Doppelspitze zu beheben. Weiterhin besteht bei einem höheren Tunnelstrom die Gefahr einer Kollision zwischen Probe und Spitze.\\
+Wird der Tunnelstrom ausgehend vom Standardwert nach unten korrigiert lässt sich eine Verschmierung der Oberflächendetails beobachten (Abbildung~\ref{fig:Stromvariation_2}).
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01959_Stromvariation_Strom.pdf}
+        \caption{Strombild}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01959_Stromvariation.pdf}
+        \caption{Höhenbild}
+    \end{subfigure}
+    \caption{Variation des Setpoints $I$ innerhalb einer STM Aufnahme. Im oberen Drittel lag der Setpoint bei \SI{1}{\nano\ampere}, im mittlere Drittel bei \SI{0.5}{\nano\ampere} und im unteren Drittel bei \SI{0.05}{\nano\ampere}.}
+    \label{fig:Stromvariation_2}
+\end{figure}\\
+Die Verschmierung wird verursacht durch den steigenden Einfluss der Zustandsdichte $\rho_\text{Spitze}$ der Tunnelspitze gegenüber der Zustandsdichte $\rho_\text{Probe}$ der Probe, da diese unabhängig vom Abstand zur Probe ist. Dadurch wird das Bild immer stärker durch die Struktur der Spitze beeinflusst und die Aufnahme verschmiert. Wird ein zu geringer Tunnelstrom (\SI{0.05}{\nano\ampere}) angelegt, dann besteht das Risiko, dass die Spitze den Kontakt zur Probe verliert. Es zeigt sich also, dass eine Variation des Tunnelstroms nach unten nicht sinnvoll ist.
+\paragraph{Optimierung der Vorspannung}$~$\\
+Zur weiteren Untersuchung der Tunnelparameter wird bei eingestellten Standardwerten die Spannung der Spitze (\textit{Tip Voltage}) innerhalb des Wertebereichs variiert. Wie in Abbildung~\ref{fig:Spannungsvariation} zu sehen ist, wurde die Spannung zwischen 1 bis \SI{2}{\volt} eingestellt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01960_Spannungsvariation_Strom.pdf}
+        \caption{Strombild}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01960_Spannungsvariation.pdf}
+        \caption{Höhenbild}
+    \end{subfigure}
+    \caption{Variation \textit{Tip Voltage} zwischen \SI{2}{\volt} im oberen Drittel, \SI{1.5}{\volt} in der Mitte und \SI{1}{\volt} im unteren Drittel.}
+    \label{fig:Spannungsvariation}
+\end{figure}\\
+Mithilfe von Formel~\eqref{eqn:Tunnelstrom} lässt sich der Einfluss der Vorspannung $U$ auf den Tunnelstrom beschreiben. Durch Erhöhung der Spannung muss zur Berechnung des Tunnelstroms über einen größeren Bereich integriert werden. Da der Integrand positiv ist, resultiert dies direkt in einer Erhöhung des Tunnelstroms. Somit treten die für die bereits bei Erhöhung des Tunnelstroms beobachteten Artefakte auch hier auf. Bei der Erhöhung des Tunnelstroms reagiert gleichzeitig auch der PID-Regelkreis und sorgt dafür, dass der Abstand zwischen Probe und Spitze erhöht wird, damit wieder ein konstanter Tunnelstrom herrscht. Es treten zusätzlich noch die für kleine Tunnelströme beobachteten Verschmierungen auf, was zeigt, dass eine Erhöhung der Vorspannung auf mehr als \SI{1}{\volt} für die Aufnahme von STM-Bildern nicht geeignet ist.\\
+Allerdings ist es möglich durch kurzzeitige Erhöhung der Spannung mithilfe eines Spannungspulses die Spitze zu konditionieren und eine Doppelspitze zu beheben. In der \textit{Nanosurf easyScan} Steuersoftware gibt es dafür die Schaltfläche \textit{Tip Cleaning Pulse}.\\
+Es sollte in allen Fällen vermieden werden, bei der Variation von $U$ eine Spannung von \SI{0}{\volt} einzustellen. Wenn dies geschieht, fließt kein Tunnelstrom mehr und der PID-Regelkreis steuert die Spitze zur Erhöhung des Tunnelstroms in die Probe hinein und die Spitze wird beschädigt. Weiterhin treten Probleme auf, wenn negative Spannungen verwendet werden. Theoretisch sollte sich beim Vorzeichenwechsel der Spannung die Richtung des Tunnelstroms ändern, jedoch trat im Experiment bei negativen Spannungen ein Kontaktverlust zwischen Probe und Spitze auf, was bei einer erneuten Annäherung zur Probe zu einer Kollision führte. Aus diesem Grund wird im Folgenden auf die Verwendung von negativen Spannungen verzichtet.
+\paragraph{Optimierung der Regelparameter}$~$\\
+Im weiteren Verlauf findet eine Optimierung der drei Regelparameter statt, damit die Oberfläche mit einer geeigneten Geschwindigkeit abgetastet wird. Aufgrund der endlichen Regelzeit, kann der PID-Regler nicht instantan auf Änderungen der Zustandsdichte reagieren, weshalb scharfe Kanten verschmieren. Das generelle Ziel ist es, eine möglichst scharfes Höhenbild ohne Artefakte zu erzeugen. Das Strombild zeigt im Idealfall eine homogene Struktur und gibt Aufschluss über die Effektivität der Regelung. Sind im Strombild Strukturen zu erkennen, dann sollte die Regelung angepasst werden.\\
+Zunächst wurde der Faktor $K_P$ des Proportionalgliedes verändert (siehe Abbildung~\ref{fig:PGlied}).
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01979_PGain_Strom.pdf}
+        \caption{Strombild}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01979_PGain.pdf}
+        \caption{Höhenbild}
+    \end{subfigure}
+    \caption{Variation von $K_P$ von oben nach unten mit $K_P = 1000, 1500, 2000, 600$}
+    \label{fig:PGlied}
+\end{figure}\\
+In dem aufgenommen Bild zeigt sich keine große Abweichung bei der Änderung des P-Gain Parameters $K_P$.\\
+Theoretisch sorgt ein größerer Werte von $K_P$ für die Ausbildung einer Schwingung des Regelkreises, welche zur Aufweichung von Kanten führt. Wird die Regelgröße zu groß gewählt, kann sich eine Überschwingung ausbilden, was das Risiko der Spitzenkollision birgt. Jedoch zeigt sich, dass diese Schwingungen für die verwendeten Parameter (innerhalb des empfohlenen Wertebereichs) nicht signifikant genug auftreten, um die Bildqualität zu beeinträchtigen.\\
+
+Als zweites wurde der Einfluss des $K_I$ Parameters auf die Messung untersucht. Dafür wurde der I-Gain ausgehend von den Standardwerten nach oben und unten variiert und in Abbildung~\ref{fig:IGlied} dargestellt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01980_IGain_Strom.pdf}
+        \caption{Strombild}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01980_IGain.pdf}
+        \caption{Höhenbild}
+    \end{subfigure}
+    \caption{Variation von $K_I$ von unten nach oben mit $K_I = 500, 1000, 1500, 100$}
+    \label{fig:IGlied}
+\end{figure}\\
+Im Höhenbild ist erkennbar, dass die Schärfe des Bildes für steigende Werte des Parameters $K_I$ zunimmt. Dies lässt sich dadurch erklären, dass die Regelung für kleine Werte träge wird. Im Strombild ist dies dadurch erkennbar, dass dort die Struktur der Probe auftaucht. Da die Information des Bildes nun auf Strom- und Höhenbild verteilt wird, tritt eine Verschlechterung des Höhenbildes auf und es erscheint verschmiert. Für zu hohe Werte treten allerdings wieder Artefakte auf, was auf den durch die Regelung kurzzeitigen hohen Tunnelstrom zurückzuführen ist.\\
+Da der I-Regler durch die Summation der Regelung langanhaltene Veränderungen der Stellgröße registiert, werden niedrige Frequenzen verstärkt, was auf ein Tiefpassverhalten schließen lässt.\\
+Der differentielle Parameter $K_D$ wird standardmäßig auf Null gesetzt wird in dieser Messung nicht varriert, denn er verstärkt aufgrund seines intensiven Regelverhaltens für schnelle Veränderungen das Auftreten von Artefakten und zeigt damit ein Hochpassverhalten.
+\paragraph{Optimierung der Abtastgeschwindigkeit}
+Zur besseren Analyse der Abtastgeschwindigkeit wurde zur Aufnahme der Bilder die Auflösung heraufgesetzt auf 512 Messpunkte pro Linie, um Unterschiede besser erkennen zu können.
+Es wurde nun während der Aufnahme die Abtastgeschwindigkeit von \SI{0.4}{\second\per\text{Line}} auf \SI{0.8}{\second\per\text{Line}} erhöht (siehe Abbildung~\ref{fig:Abtastgeschwindigkeit}).
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01982_ppl512_Strom.pdf}
+        \caption{Strombild}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01982_ppl512.pdf}
+        \caption{Höhenbild}
+    \end{subfigure}
+    \caption{Änderung der Abtastgeschwindigkeit pro Zeile von oben nach unten: \SI{0,4}{\second\per\text{Line}}, \SI{0.8}{\second\per\text{Line}}}
+    \label{fig:Abtastgeschwindigkeit}
+\end{figure}\\
+Zunächst wird die Abbildung aufgrund der höheren Bildauflösung schärfer. Weiterhin ist erkennbar, dass für eine langsamere Abtastgeschwindigkeit im unteren Teil des Strombildes die Struktur nicht mehr so gut erkennbar ist, was zu einer Verbesserung des Höhenbildes führt. Dieses zeigt zusätzlich in der unteren Bildhälfte weniger Artefakte. Die kleinere Abtastgeschwindigkeit lässt dem Regelkreis mehr Zeit, die Höhe der Spitze anzupassen und das Strombild wird homogener. Allerdings ist diese Methode zeitaufwändig und nicht praktikabel, wenn der Einfluss des thermischen Drifts sehr hoch ist (siehe Graphenprobe).\\
+
+Zusammenfassend ergeben sich nun folgende angepasste Parametergrößen:
+\begin{table}[ht]
+	\centering
+	\caption{Anpassung der Parameter}
+	\label{tab:Parameteranpassung}
+  \begin{tabular}{c c c c c c}
+   \toprule
+   Setpoint & Tip Voltage & P-Gain & I-Gain & D-Gain & time/Line\\
+   \midrule
+   \SI{1}{\nano\ampere} & \SI{0.5}{\volt} & 1500 & 1000 & 0 & 0.35\\
+   \bottomrule
+  \end{tabular}
+\end{table}\\
+Allerdings ist die Anpassung der Parameter auch abhängig von der Beschaffenheit der Probe, weshalb die Parameter für andere Proben individuell angepasst wurden.
+
+\subsubsection{Probenaufnahme und thermischer Drift}
+Zur Überprüfung der aufgenommen Probe auf das Vorliegen einer Doppelspitze oder anderen Artefakten wurde das Bild in verschiedenen Größen aufgenommen, um eventuell auftauchende periodische Strukturen auszuschließen.
+Für die einzelnen Bildausschnitte wurde jeweils die Abtastgeschwindigkeit pro Linie angepasst, damit kein Qualitätsverlust auftritt. Die Ergebnisse zeigt Abbildung~\ref{fig:verschiedeneGroesse}.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Image01989_50nm.pdf}
+        \caption{$\SI{50}{\nano\metre}\times\SI{50}{\nano\metre}$}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Image01985_130nm.pdf}
+        \caption{$\SI{130}{\nano\metre}\times\SI{130}{\nano\metre}$}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Image01986_512nm.pdf}
+        \caption{$\SI{512}{\nano\metre}\times\SI{512}{\nano\metre}$}
+    \end{subfigure}
+    \caption{Aufnahme der Probe in verschiedenen Größen. Dabei wurde die Abtastgeschwindigkeit entsprechend zwischen \SI{0,3}{\second\per\text{Line}} bis \SI{0,5}{\second\per\text{Line}} variiert.}
+    \label{fig:verschiedeneGroesse}
+\end{figure}\\
+Bei einigen Aufnahmen ließ sich ein besonderes Phänomen beobachten. Das Programm \textit{Nanosurf easyScan} Steuersoftware, scannt den Bereich immer abwechselnd von oben nach unten und vice versa. Dabei erschienen die einzelnen Goldatome manchmal tropfenförmig verzerrt, während sie in der zweiten Aufnahme normal erscheinen. Eine Aufnahme davon ist im folgenden Bild~\ref{fig:ThermischerDrift} dargestellt.
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01966_Drift_obenunten.pdf}
+        \caption{Abtastung von oben nach unten}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01965_Drift_untenoben.pdf}
+        \caption{Abtastung von unten nach oben}
+    \end{subfigure}
+    \caption{Veranschaulichung des Thermischen Drifts der Goldprobe bei Abtastung des gleichen Ausschnitts entlang und entgegen des thermischen Drifts.}
+    \label{fig:ThermischerDrift}
+\end{figure}\\
+Dies wird durch den thermischen Drift verursacht, welcher durch die unterschiedliche thermische Ausdehnung von Probe und Tunnelspitze infolge des Tunnelstroms auftritt. Zudem können Schwankungen der Raumtemperatur den thermischen Drift beeinflussen.\\
+Wird nun die Probe entlang des thermischen Drifts abgerastert erscheinen die Atome länglich verzerrt, findet die Abrasterung entgegen des Drifts statt, werden die Atome gestaucht. Es sollten bei Möglichkeit immer zwei Aufnahme der Probe gemacht werden, um Einflüsse des thermischen Drifts auszuschließen.\\
+Im Verlauf der Messung wird der Effekt des thermischen Drifts geringer. In der Praxis wird die Probe gekühlt, um thermische Effekte zu minimieren.
+
+\subsubsection{Charakterisierung der Probenoberfläche}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % *********************************************
@@ -152,13 +426,14 @@ C. Hamann und M. Hietschold: \textit{Raster-Tunnel-Mikroskopie}. Akademie Verlag
 \bibitem{Mayer}
 D. Bonnell: \textit{Scanning Tunneling Microscopy and Spectroskopy}. VCH Publishers, Inc. 1993.
 \bibitem{Versuchsanleitung}
-M. Grünewald: \textit{FSU Fortgeschrittenenen Praktikum: SPM}. Fried\-rich-Schil\-ler-Uni\-versi\-tät, Mai 2019.
+M. Grünewald: \textit{FSU Fortgeschrittenenen Praktikum: SPM}. Fried\-rich-Schil\-ler-Uni\-versi\-tät Jena, Mai 2019.
 \bibitem{Demtroeder}
 W. Demtroeder: \textit{Experimentalphysik 3: Atome, Moleküle und Festkörper}. Springer-Verlag Berlin Heidelberg 2016 (5. Auflage).
 \bibitem{Nanosurf}
 Nanosurf AG: \textit{easyScan 2 STM: Operating Instructions}. Liestal 2009.
 \bibitem{Gwyddion}
 D. Nečas und P. Klapetek: \textit{Gwyddion: Free SPM (AFM, SNOM/NSOM, STM, MFM, $\hdots$), data analysis software}. Version 2.55, \url{gwyddion.net}, (Stand: 17.01.2020).
+\bibitem{Forker}
+R. Forker: \textit{Tutorial zum Messtechnikpraktikum: Versuch 5, PID-Regler}. Fried\-rich-Schil\-ler-Uni\-versi\-tät Jena, 2019.
 \end{thebibliography}
-
 \end{document}
