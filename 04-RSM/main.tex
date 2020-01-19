@@ -74,6 +74,7 @@ Typisch auftretende Abbildungsfehler, welche durch Spitze, Piezoscanner, Elektro
 \paragraph{Bildbearbeitung mit Gwyddion}$~$\\
 Das Programm Gwyddion~\cite{Gwyddion} wird zur Kontrastierung und Untergrundkorrektur benutzt. Es erfolgt eine Bildbearbeitung mit einer zweidimensionalen Fast Fourier Transformation (FFT).\\
 Weiterhinn können Filter eingestellt, Glättung durchgeführt und Probenparameter (Gitterkonstanten, Stufenhöhen, Rauheit) bestimmt werden.
+
 % *********************************************
 % ***** KAPITEL 2 *****************************
 % *********************************************
@@ -99,7 +100,6 @@ Der schematische Aufbau eines STM ist in Abbildung~\ref{fig:Rastertunnelmikrosko
     \label{fig:Rastertunnelmikroskop}
 \end{figure}
 
-\subsubsection{}
 \subsection{Rasterkraftmiskroskop}
 Das Kernstück des Rasterkraftmikroskop (RKM, englisch auch Atomic Force Microscope (AFM)) ist im Wesentlichen identisch zu dem des Rastertunnelmiskroskops. Auch hier wird eine feine Spitze verwendet, welche in einem charakteristisch kleinem Abstand gegenüber der Probe über diese gerastert wird. Die Höhe der Spitze über der Probe wird in beiden Fällen durch piezoelektrische Stellelemente realisiert. \\
 Der Unterschied zwischen beiden Miksrokopiearten besteht in der vorrausgesetzen Probeneigenschaften. Während beim Rastertunnelmiskroskop, da hier ein elektrischer Tunnelstrom gemessen wird, ausschließlich leitende Proben verwendet werden können, sind für Messungen mit dem Rasterkraftmikroskop auch Isolatoren geeignet.
@@ -126,7 +126,14 @@ Mit dem Magnetkraftmikroskop gelingt es die lokale Magnetstärke in der Probe zu
 
 \subsection{weitere Rastersondenmikroskope}
 Neben den oben genannten, gibt es auch weitere  Rastersondenmikroskope, die die Wechselwirkung zwischen Sonde und Probe nutzen und die die Probe Punkt für Punkt abtasten. Das Grundprinzip aller ist dabei gleich des oben beschriebenen, sie unterscheiden sich im Wesentlichen durch die Abstastung anderer Probeneigenschaften. Dazu zählen zum Beispiel das Optische Rasternahfeldmikroskop (engl. Scanning Nearfiel Optical Microscope, kurz SNOM), das Rasterelektronenmikroskop (REM, engl. SEM) sowie das akustische Rasternahfeldmikroskop (ARNM, engl. scanning near-field acoustic microscope (SNAM).
-\subsection{Piezoeffekt und Piezoelektrische Stellelemente}
+\subsection{Piezoeffekt und piezoelektrische Stellelemente}
+Für die Bedienung und Funktionsweise der Rastersondenmikroskope ist das Einstellen der Position der Sonde im Subnanometerbereich von entscheidender Bedeutung. Dies wird durch piezoelektrische Stellelemente realisiert. Hierbei wird der \textbf{(inverse) piezoelektrische Effekt} genutzt.
+\paragraph{Piezoelektrischer Effekt} Wird Druck auf einen piezoelektrischen Kristall ausgeübt, kommt es zur Dipolbildung in der Elementarzelle und makroskopisch ist eine elektrische Spannung messbar. Ein Jahr nach der Endeckung des piezoelektrischen Effekts 1880 fanden dessen Entdecker Jaques und Pierre Curie auch den inversen piezoelektrischen Effekt: Wird ein elektrisches Feld angelegt, verformt sich der Kristall. Diese Eigenschaft wird in piezoelektrischen Stellelementen genutzt.
+\paragraph{piezoelektrische Stellelemente}
+Häufig verwendete Bauformen piezoelektrischer Stellelemente sind Rohraktoren, Stapeltranslatoren und Streifenaktoren.
+\textbf{Rohraktoren} sind monnolithische Keramikrohre, die innen und außen mit Elektroden beschichtet sind. Sind die Außenelektroden in vier \SI{90}{\degree} Segmente geteilt,  bewirkt eine differentielle Ansteuerung gegenüberliegender Elektroden eine Verbiegung des Rohrs. Diese Bauform findet häufig Einsatz als XY-Stelleinheit in Rastersondenmiskroskopen. \\
+Stapeltranslatoren sind Linearaktoren und bestehen aus Stapeln von Keramikscheiben, zwischen denen sich Elektroden befinden. Bei Streifenaktoren handelt es sich um Konktraktoren. Sie bestehen aus dünnen laminierten Keramikstreifen und nutzen die Auslenkung orthogonal zur Richtung des elektrischen Feldes. 
+
 % *********************************************
 % ***** KAPITEL 3 *****************************
 % *********************************************
