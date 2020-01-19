@@ -1,0 +1,117 @@
+\documentclass[a4paper,twoside,final]{article}
+%----Eingebundene Bibliotheken-----
+\input{../LaTeX-Packages.tex}
+\begin{document}
+\setlength{\marginparsep}{2em}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% Anfang ********************************************************
+\begin{center}
+\thispagestyle{empty}
+  \includegraphics[width=0.75\textwidth]{../UniJena_BildWortMarke_black.pdf}\\[4em]
+  \Large
+  Ausarbeitung zum Versuch\\[2em]
+  \Huge
+  Rastersondenmikroskopie\\
+  \vspace{2cm}
+  \Large
+  Martin Beyer und Vanessa Huth\\[2em]
+  Abgabe: 14. Januar 2020\\[2em]
+  Betreuer: Dr. Marco Grünewald\\[5em]
+  \begin{flushleft}
+  	Bewertung und Ausarbeitung:\\[2em]
+		Protokollführung und Form:\\[1em]
+		Ergebnisse, Auswertung und Interpretation:\\[1em]
+		Bemerkungen und Hinweise des Betreuers:
+  \end{flushleft}
+\end{center}
+\clearpage
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[RO,LE]{\textbf{Mößbauer Spektroskopie}}
+\fancyhead[RE,LO]{\rightmark}
+\fancyfoot[LE,RO]{\bfseries\thepage}
+\fancyfoot[CO,CE]{Protokoll}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+
+% *********************************************
+% ***** KAPITEL 1 *****************************
+% *********************************************
+\tableofcontents
+% \pagenumbering{gobble}% remove page numbering
+\newpage
+% \pagenumbering{arabic}
+\section{Aufgabenstellung} \label{sec:Aufgabenstellung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% *********************************************
+% ***** KAPITEL 2 *****************************
+% *********************************************
+\newpage
+\section{Grundlagen} \label{sec:Grundlagen}
+\subsection{Rastertunnelmikroskop}
+\subsection{Rasterkraftmiskroskop}
+Das Kernstück des Rasterkraftmikroskop (RKM, englisch auch Atomic Force Microscope (AFM)) ist im Wesentlichen identisch zu dem des Rastertunnelmiskroskops. Auch hier wird eine feine Spitze verwendet, welche in einem charakteristisch kleinem Abstand gegenüber der Probe über diese gerastert wird. Die Höhe der Spitze über der Probe wird in beiden Fällen durch piezoelektrische Stellelemente realisiert. \\
+Der Unterschied zwischen beiden Miksrokopiearten besteht in der vorrausgesetzen Probeneigenschaften. Während beim Rastertunnelmiskroskop, da hier ein elektrischer Tunnelstrom gemessen wird, ausschließlich leitende Proben verwendet werden können, sind für Messungen mit dem Rasterkraftmikroskop auch Isolatoren geeignet.
+
+\subsubsection{Aufbau}
+Die Besonderheit im Aufbau des RKM liegt darin, dass hier die Spitze auf eine Blattfeder montiert ist. Das Gebilde aus Blattfeder und Spitze wird Cantilever genannt. Je nach Modi wird die Spitzen-Blattfeder-Konstruktion auf unterschiedliche Weise über die Probe gerastert.
+
+\subsubsection{unterschiedliche Messmodi}
+Beim RKM werden grundsätzlich 3 verschiedene Messmodi unterschieden.
+\subparagraph{Kontaktmodus}
+Die feine Spitze wird in diesem Messmodus mit Federkraft auf die Probe gedrückt, steht also in direktem mechanischem Kontakt zur Oberfläche. \\
+Erfolgt die Messung nach der \textbf{constant height method}, hält die Spitze eine konstante Höhe in z-Richtung. Die Abtastnadel verbiegt sich hierbei entsprechend der Oberfläche. Diese Messmethode findet auch beim RTM Anwendung. \\
+Die \textbf{constant force method} ist entsprechend der constant current method beim RTM und unterscheidet sich nur in der gemessenen Größe, welche konstant gehalten wird. Bei der constant force method wird der Cantilever mittels eines piezoelektrischen Steuerelements so über die Probe gerastert, dass die Auslenkung des Cantilevers und damit die Kraft zwischen Spitze und Probe gleich bleibt. Das Auslenkungssignal der Blattfeder wird hierbei als Regelgröße in einen Regelkreis gegeben, der anschließend die Höhe der Spitze anpasst.\\
+Vor- und Nachteile dieser Methoden sind identisch zu den äquivalenten Methoden beim RTM \ref{}.
+
+\paragraph{Nicht-Kontaktmodus}
+Beim Nicht-Konktaktmodus berührt die Spitze die Probe nicht. Der Cantilever wird hierbei mit der Schwingungsfrequenz $\omega_N$ zum Schwingen angeregt. Beim Schweben der Spitze über die Probe kommt es zu anziehenden Kräften zwischen Spitze und Oberfläche. Meist handelt es sich um Van der Waals Kräfte, je nach Spitzenmaterial können aber auch elektrische oder magnetische Kräfte auftreten. Die Kräfte beeinflussen die Resonanzfrequenz der Feder und die darausfolgendde Änderung wird gemessen.
+
+\paragraph{Tappping Modus}
+Auch bei diesem Messmodus wird die Spitze zu Schwingungen angeregt, tippt die Oberfläche aber bei ihren Schwnigungen leicht an.
+
+\subsection{Magnetkraftmikroskop}
+Mit dem Magnetkraftmikroskop gelingt es die lokale Magnetstärke in der Probe zu untersuchen. Hierbei ist die Abstastnadel mit einem ferromagnetischen Material beschichtet. Die Messung für jede Bildzeile erfolgt in zwei Durchläufen. Im ersten Durchgang wird mittels eines der vorher beschriebenen Messmodi das Höhenprofil aufgenommen. Im zweiten Durchgang wird die Messnadel mit konstantem Abstand über die Oberfläche gerastert.
+
+\subsection{weitere Rastersondenmikroskope}
+Neben den oben genannten, gibt es auch weitere  Rastersondenmikroskope, die die Wechselwirkung zwischen Sonde und Probe nutzen und die die Probe Punkt für Punkt abtasten. Das Grundprinzip aller ist dabei gleich des oben beschriebenen, sie unterscheiden sich im Wesentlichen durch die Abstastung anderer Probeneigenschaften. Dazu zählen zum Beispiel das Optische Rasternahfeldmikroskop (engl. Scanning Nearfiel Optical Microscope, kurz SNOM), das Rasterelektronenmikroskop (REM, engl. SEM) sowie das akustische Rasternahfeldmikroskop (ARNM, engl. scanning near-field acoustic microscope (SNAM).
+\subsection{Piezoeffekt und piezoelektrische Stellelemente}
+Für die Bedienung und Funktionsweise der Rastersondenmikroskope ist das Einstellen der Position der Sonde im Subnanometerbereich von entscheidender Bedeutung. Dies wird durch piezoelektrische Stellelemente realisiert. Hierbei wird der \textbf{(inverse) piezoelektrische Effekt} genutzt.
+\paragraph{Piezoelektrischer Effekt} Wird Druck auf einen piezoelektrischen Kristall ausgeübt, kommt es zur Dipolbildung in der Elementarzelle und makroskopisch ist eine elektrische Spannung messbar. Ein Jahr nach der Endeckung des piezoelektrischen Effekts 1880 fanden dessen Entdecker Jaques und Pierre Curie auch den inversen piezoelektrischen Effekt: Wird ein elektrisches Feld angelegt, verformt sich der Kristall. Diese Eigenschaft wird in piezoelektrischen Stellelementen genutzt.
+\paragraph{piezoelektrische Stellelemente}
+Häufig verwendete Bauformen piezoelektrischer Stellelemente sind Rohraktoren, Stapeltranslatoren und Streifenaktoren.\\
+\textbf{Rohraktoren} sind monnolithische Keramikrohre, die innen und außen mit Elektroden beschichtet sind. Sind die Außenelektroden in vier \SI{90}{\degree} Segmente geteilt,  bewirkt eine differentielle Ansteuerung gegenüberliegender Elektroden eine Verbiegung des Rohrs. Diese Bauform findet häufig Einsatz als XY-Stelleinheit in Rastersondenmiskroskopen. \\
+Stapeltranslatoren sind Linearaktoren und bestehen aus Stapeln von Keramikscheiben, zwischen denen sich Elektroden befinden. Bei Streifenaktoren handelt es sich um Konktraktoren. Sie bestehen aus dünnen laminierten Keramikstreifen und nutzen die Auslenkung orthogonal zur Richtung des elektrischen Feldes. 
+% *********************************************
+% ***** KAPITEL 3 *****************************
+% *********************************************
+\section{Messapparatur und Versuchsdurchführung} \label{sec:Versuchsdurchführung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\newpage
+\section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% *********************************************
+% ***** KAPITEL 5 *****************************
+% *********************************************
+\section{Zusammenfassung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ***** Literaturverzeichnis ******************
+
+\begin{thebibliography}{xxx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{thebibliography}
+
+\end{document}
