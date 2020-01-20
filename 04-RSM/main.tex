@@ -52,17 +52,17 @@
 % \pagenumbering{arabic}
 \section{Aufgabenstellung} \label{sec:Aufgabenstellung}
 \paragraph*{Präparation von Tunnelspitzen}$~$\\
-Es erfolgt eine Herstellung der Tunnelspitzen nach der in~\cite{Nanosurf} beschriebenen Anleitung durch Abschneiden.
+Es erfolgt eine Herstellung der Tunnelspitzen nach der in~\cite{Nanosurf} beschriebenen Anleitung.
 \subsection{Untersuchung polykristalliner Goldoberflächen}
-Es werden reproduzierbare Bilder mehrerer Vergrößerungsstufen aufgenommen und eine Optimierung der mikroskopischen Auflösung und Abbildungsqualität durchgeführt. Dabei werden insbesondere die Tunnelparameter, Regelkreisparameter und Abtastgeschwindigkeit variiert. Es erfolgt eine geeignete Darstelunng der mikroskopischen Aufnahmen vor und nach der Bildbearbeitung.\\
+Es werden reproduzierbare Bilder mehrerer Vergrößerungsstufen aufgenommen und eine Optimierung der mikroskopischen Auflösung und Abbildungsqualität durchgeführt. Dabei werden insbesondere die Tunnelparameter, Regelkreisparameter und Abtastgeschwindigkeit variiert. Es erfolgt eine geeignete Darstellung der mikroskopischen Aufnahmen vor und nach der Bildbearbeitung.\\
 Weiterhin wird die Probenoberfläche quantitativ und qualitativ charakterisiert, indem die Rauheit, Kristallitgrößen, -durchmesser und -höhen ausgemessen werden.
 \subsection{Untersuchung verschiedener Proben}
 Analog zur Goldoberfläche wird die Bildaufnahme optimiert und Probenparameter charakterisiert. Es werden folgende Proben untersucht:
 \begin{itemize}
   \item Einkristallines Graphen auf Siliziumkarbid:
   \begin{enumerate}
-    \item Dabei soll atomare Auflösung erreicht werden und auftretende Probleme diskutiert und der Einfluss der Tunnelspannung untersucht werden.
-    \item Die Atomabstände und Stufenhöhen im Graphen werden ausgemessen und durch FFT ausgewertet.
+    \item Dabei soll atomare Auflösung erreicht, auftretende Probleme diskutiert und der Einfluss der Tunnelspannung untersucht werden.
+    \item Die Atomabstände und Stufenhöhen im Graphen werden ausgemessen und durch eine Fast Fourier Transformation (FFT) ausgewertet.
   \end{enumerate}
   \item Kohlenstoffnanoröhren auf graphitisierten Siliziumkarbid werden untersucht und charakterisiert. Probleme bei der Aufnahme sollen diskutiert werden.
   \item Durch Vakuumbedampfung werden eigene Metallschichten hergestellt und untersucht.
@@ -99,15 +99,15 @@ Der schematische Aufbau eines STM ist in Abbildung~\ref{fig:Rastertunnelmikrosko
     \caption{Schematischer Aufbau eines Rastertunnelmikroskops aus~\cite{Demtroeder}.}
     \label{fig:Rastertunnelmikroskop}
 \end{figure}
-
+\newpage
 \subsubsection{Tunneleffekt}
-Um das auftreten des Tunnelstroms zu erklären, muss analysiert werden, wie Ladungsträger von besetzten Zuständen einer Elektrode durch einen Potentialwall in die unbesetzten Zustände einer zweiten Elektrode gelangen können. Im Rahmen der klassischen Physik kann ein Teilchen diesen Potentialwall nur überwinden, wenn seine Energie $E$ größer als das Maximum des Potentialwalls ist. Laut der Quantenmechanik ist ein Elektron mithilfe einer Wellenfunktion $\Psi(x)$ beschreibbar, dessen Verlauf im eindimensionalen Fall in Abbildung~\ref{fig:Tunneleffekt} gezeigt wird.
+Um das Auftreten des Tunnelstroms zu erklären, muss analysiert werden, wie Ladungsträger von besetzten Zuständen einer Elektrode durch einen Potentialwall in die unbesetzten Zustände einer zweiten Elektrode gelangen können. Im Rahmen der klassischen Physik kann ein Teilchen diesen Potentialwall nur überwinden, wenn seine Energie $E$ größer als das Maximum des Potentialwalls ist. Laut der Quantenmechanik ist ein Elektron mithilfe einer Wellenfunktion $\Psi(x)$ beschreibbar, dessen Verlauf im eindimensionalen Fall in Abbildung~\ref{fig:Tunneleffekt} gezeigt wird.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.7\textwidth]{Bilder/Tunneleffekt.pdf}
-    \caption{Quantenmechanischer Tunnelffekt an einer rechteckigen Potentialbarriere der Höhe $E_0$ aus~\cite{Demtroeder}}
+    \caption{Quantenmechanischer Tunneleffekt an einer rechteckigen Potentialbarriere der Höhe $E_0$ aus~\cite{Demtroeder}}
     \label{fig:Tunneleffekt}
-\end{figure}
+\end{figure}\\
 Für dieses zeitunabhängige Problem $\Psi(x,t) = \Phi(x)\cdot\exp(-iEt/\hbar)$ gehorcht das Elektron der stationären Schrödingergleichung
 \begin{align}
   E \Psi(x) = \left[-\frac{\hbar^2}{2m_e}\Delta + V(x)\right] \Psi(x),
@@ -124,12 +124,13 @@ Im Bereich II ergibt sich mit $E_0 > E$ ein exponentiell abfallender Verlauf der
     \label{fig:Tunneleffekt_Spannung}
 \end{figure}
 
-\subsubsection{Betriebsarten}
+\subsubsection{Betriebsarten}\label{sec:Betriebsarten}
 Es gibt prinzipiell zwei verschiedene Arten, ein Rastertunnelmikroskop zu betreiben. Je nach Art und Struktur der Probe bieten diese jeweils Vorteile.
-\paragraph{Konstante Höhe} Am leichtesten lässt sich das Tunnelbild realisieren, indem die Variation des Tunnelstroms direkt als Funktion des Ortes gemessen wird, wobei die Spitze auf konstanter Höhe verweilt. Dabei ergibt sich ein Strombild. Das Verfahren hat den Vorteil, dass die Probe besonders schnell abgerastert werden kann und die Höhe der Spitze nicht mithilfe eines Regelkreises gesteuert werden muss. Allerdings eignet sich das Verfahren nur für flache Proben, da sonst die Spitze mit der Probe kollidieren kann. Eine Kollision stellt dabei eine starke Wechselwirkung mit der Probe dar, welche die Spitze verformt oder der direkte mechanische Kontakt.
+\paragraph{Konstante Höhe} Am leichtesten lässt sich das Tunnelbild realisieren, indem die Variation des Tunnelstroms direkt als Funktion des Ortes gemessen wird, wobei die Spitze auf konstanter Höhe verweilt. Dabei ergibt sich ein Strombild. Das Verfahren hat den Vorteil, dass die Probe besonders schnell abgerastert werden kann und die Höhe der Spitze nicht mithilfe eines Regelkreises gesteuert werden muss. Allerdings eignet sich das Verfahren nur für flache Proben, da sonst die Spitze mit der Probe kollidieren kann. Eine Kollision stellt dabei eine starke Wechselwirkung mit der Probe dar welche die Spitze verformt oder der direkte mechanische Kontakt.
 \paragraph{Konstanter Strom} Meist ist es jedoch vorteilhafter auf das langsamere Verfahren des konstanten Stroms zurückzugreifen. Hierbei wird ein Piezoelelement der Spitze mit einem PID-Regelkreis verbunden, der dafür sorgt, dass der fließende Strom konstant gehalten wird. Dabei wird die Variation der exponentiell zum Abstand abfallenden Zustandsdichte der Probenoberfläche gemessen. Das resultierende Bild entspricht also einer Fläche konstanter Zustandsdichte der Probe. Je nach Geschwindigkeit des Regelkreises kann dies allerdings dazu führen, dass scharfe Kanten der Probe durch die Spitze nicht registriert werden. Dies wird am Spitzenverlauf in Abbildung~\ref{fig:Betriebsmodi} ersichtlich. Da bei diesem Verfahren die Höhe der Spitze ständig angepasst wird, ist sie auch für raue Proben geeignet, allerdings aufgrund der Regelzeit entsprechend langsamer.
 \begin{figure}[htp]
     \centering
+    \vspace{-2mm}
     \begin{subfigure}{0.45\textwidth}
         \includegraphics{Bilder/STM_konstStrom.pdf}
         \caption{Konstanter Strom}
@@ -148,61 +149,109 @@ Ein Regelkreis stellt einen Wirkungsablauf zur Beeinflussung einer physikalische
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.7\textwidth]{Bilder/PID-Regler.pdf}
-    \caption{Schematischer Aufbau des verwendeten PID-Regelkreises nach~\cite{Versuchsanleitung}.}
+    \caption{Schematischer Aufbau des verwendeten PID-Regelkreises nach~\cite{Nanosurf}.}
     \label{fig:PID}
 \end{figure}\\
-Heutzutage wird hauptsächlich eine Kombination von Proportional-, Integral- und Differenzialregler verwendet und unter dem Begriff des PID-Reglers zusammengefasst.
-\paragraph{Proportionalregler} Das P-Glied besteht aus einem proportionalen Anteil mit der Verstärkung $K_P$. Als Regler eingesetzt multipliziert es die Regelabweichung mit seinem Verstärkungsfaktor $K_P$ und gibt das Ergebnis weiter. Ein P-Regler allein kann eine Regelabweichung nicht beheben.
-\paragraph{Integralregler} Das I-Glied besitzt ein integratives Verhalten, denn es summiert die Regelabweichung zeitlich auf und multipliziert die Summe mit dem Faktor $K_I$. Je länge die Regelabweichung anhält, desto größer wird die Stellgröße des I-Gliedes.
-\paragraph{Differenzialregler} Das D-Glied besitzt ein differentielles Verhalten, es bewertet die Änderung der Regelabweichung und berechnet die Änderungsgeschwindigkeit, welche mit dem Faktor $K_D$ multipliziert wird. Das D-Glied kann durch die Bildung der Ableitung den Verlauf des Signals \glqq vorhersagen\grqq, ist allerdings wirkungslos, wenn sich die Abweichung nicht ändert.\\
+Heutzutage wird hauptsächlich eine Kombination von Proportional-, Integral- und Differentialregler verwendet und unter dem Begriff des PID-Reglers zusammengefasst.
+\paragraph{Proportionalregler} Das P-Glied besteht aus einem proportionalen Anteil mit der Verstärkung $K_P$. Als Regler eingesetzt multipliziert es die Regelabweichung mit seinem Verstärkungsfaktor $K_P$ und gibt das Ergebnis weiter. Ein P-Regler allein kann eine Regelabweichung nicht beheben~\cite{Forker}.
+\paragraph{Integralregler} Das I-Glied besitzt ein integratives Verhalten, denn es summiert die Regelabweichung zeitlich auf und multipliziert die Summe mit dem Faktor $K_I$. Je länge die Regelabweichung anhält, desto größer wird die Stellgröße des I-Gliedes~\cite{Forker}.
+\paragraph{Differentialregler} Das D-Glied besitzt ein differentielles Verhalten, es bewertet die Änderung der Regelabweichung und berechnet die Änderungsgeschwindigkeit, welche mit dem Faktor $K_D$ multipliziert wird. Das D-Glied kann durch die Bildung der Ableitung den Verlauf des Signals \glqq vorhersagen\grqq, ist allerdings wirkungslos, wenn sich die Abweichung nicht ändert~\cite{Forker}.\\
 Ein PID-Regler ist geeignet, um den Tunnelstrom während einer STM-Messung konstant zu halten. In seiner Gesamtheit wirkt ein PID-Regler außerdem als ein Tiefpass und kann dazu eingesetzt werden, Rauschsignale zu filtern. Durch Anpassung der verschiedenen Faktoren kann die Regelgeschwindigkeit optimiert werden.
 \subsection{Rasterkraftmiskroskop}
-Das Kernstück des Rasterkraftmikroskop (RKM, englisch auch Atomic Force Microscope (AFM)) ist im Wesentlichen identisch zu dem des Rastertunnelmiskroskops. Auch hier wird eine feine Spitze verwendet, welche in einem charakteristisch kleinem Abstand gegenüber der Probe über diese gerastert wird. Die Höhe der Spitze über der Probe wird in beiden Fällen durch piezoelektrische Stellelemente realisiert. \\
-Der Unterschied zwischen beiden Miksrokopiearten besteht in der vorrausgesetzen Probeneigenschaften. Während beim Rastertunnelmiskroskop, da hier ein elektrischer Tunnelstrom gemessen wird, ausschließlich leitende Proben verwendet werden können, sind für Messungen mit dem Rasterkraftmikroskop auch Isolatoren geeignet.
+Das Kernstück des Rasterkraftmikroskops (RKM, englisch: Atomic Force Microscope (AFM)) ist im Wesentlichen identisch zu dem des Rastertunnelmikroskops. Auch hier wird eine feine Spitze verwendet, welche in einem charakteristisch kleinem Abstand über die Probe gerastert wird. Die Höhe der Spitze über der Probe wird in beiden Fällen durch piezoelektrische Stellelemente realisiert. \\
+Der Unterschied zwischen beiden Miksrokopiearten besteht in der vorrausgesetzen Probeneigenschaften. Während beim Rastertunnelmiskroskop, da hier ein elektrischer Tunnelstrom gemessen wird, ausschließlich leitende Proben verwendet werden können, sind für Messungen mit dem Rasterkraftmikroskop auch Isolatoren geeignet.\\
 
-\subsubsection{Aufbau}
-Die Besonderheit im Aufbau des RKM liegt darin, dass hier die Spitze auf eine Blattfeder montiert ist. Das Gebilde aus Blattfeder und Spitze wird Cantilever genannt. Je nach Modi wird die Spitzen-Blattfeder-Konstruktion auf unterschiedliche Weise über die Probe gerastert.
-
-\subsubsection{unterschiedliche Messmodi}
+Die Besonderheit im Aufbau des RKM liegt darin, dass hier die Spitze auf eine Blattfeder montiert ist. Das Gebilde aus Blattfeder und Spitze wird Cantilever genannt. Je nach Modi wird die Spitzen-Blattfeder-Konstruktion auf unterschiedliche Weise über die Probe gerastert.\\
 Beim RKM werden grundsätzlich 3 verschiedene Messmodi unterschieden.
-\subparagraph{Kontaktmodus}
+\paragraph{Kontaktmodus}
 Die feine Spitze wird in diesem Messmodus mit Federkraft auf die Probe gedrückt, steht also in direktem mechanischem Kontakt zur Oberfläche. \\
-Erfolgt die Messung nach der \textbf{constant height method}, hält die Spitze eine konstante Höhe in z-Richtung. Die Abtastnadel verbiegt sich hierbei entsprechend der Oberfläche. Diese Messmethode findet auch beim RTM Anwendung. \\
-Die \textbf{constant force method} ist entsprechend der constant current method beim RTM und unterscheidet sich nur in der gemessenen Größe, welche konstant gehalten wird. Bei der constant force method wird der Cantilever mittels eines piezoelektrischen Steuerelements so über die Probe gerastert, dass die Auslenkung des Cantilevers und damit die Kraft zwischen Spitze und Probe gleich bleibt. Das Auslenkungssignal der Blattfeder wird hierbei als Regelgröße in einen Regelkreis gegeben, der anschließend die Höhe der Spitze anpasst.\\
-Vor- und Nachteile dieser Methoden sind identisch zu den äquivalenten Methoden beim RTM \ref{}.
+Erfolgt die Messung nach der \textit{constant height method}, hält die Spitze eine konstante Höhe in z-Richtung. Die Abtastnadel verbiegt sich hierbei entsprechend der Oberfläche. Diese Messmethode findet auch beim RTM Anwendung. \\
+Die \textit{constant force method} ist entsprechend der constant current method beim RTM und unterscheidet sich nur in der gemessenen Größe, welche konstant gehalten wird. Bei der constant force method wird der Cantilever mittels eines piezoelektrischen Steuerelements so über die Probe gerastert, dass die Auslenkung des Cantilevers und damit die Kraft zwischen Spitze und Probe gleich bleibt. Das Auslenkungssignal der Blattfeder wird hierbei als Regelgröße in einen Regelkreis gegeben, der anschließend die Höhe der Spitze anpasst.\\
+Vor- und Nachteile dieser Methoden sind identisch zu den äquivalenten Methoden beim RTM aus Abschnitt \ref{sec:Betriebsarten}.
 
 \paragraph{Nicht-Kontaktmodus}
 Beim Nicht-Konktaktmodus berührt die Spitze die Probe nicht. Der Cantilever wird hierbei mit der Schwingungsfrequenz $\omega_N$ zum Schwingen angeregt. Beim Schweben der Spitze über die Probe kommt es zu anziehenden Kräften zwischen Spitze und Oberfläche. Meist handelt es sich um Van der Waals Kräfte, je nach Spitzenmaterial können aber auch elektrische oder magnetische Kräfte auftreten. Die Kräfte beeinflussen die Resonanzfrequenz der Feder und die darausfolgendde Änderung wird gemessen.
 
 \paragraph{Tappping Modus}
-Auch bei diesem Messmodus wird die Spitze zu Schwingungen angeregt, tippt die Oberfläche aber bei ihren Schwnigungen leicht an.
+Auch bei diesem Messmodus wird die Spitze zu Schwingungen angeregt, tippt die Oberfläche aber bei ihren Schwingungen leicht an.
 
-\subsection{Magnetkraftmikroskop}
-Mit dem Magnetkraftmikroskop gelingt es die lokale Magnetstärke in der Probe zu untersuchen. Hierbei ist die Abstastnadel mit einem ferromagnetischen Material beschichtet. Die Messung für jede Bildzeile erfolgt in zwei Durchläufen. Im ersten Durchgang wird mittels eines der vorher beschriebenen Messmodi das Höhenprofil aufgenommen. Im zweiten Durchgang wird die Messnadel mit konstantem Abstand über die Oberfläche gerastert.
+\subsection{Weitere Rastersondenmikroskope}
+Mit dem Magnetkraftmikroskop gelingt es die lokale Magnetstärke in der Probe zu untersuchen. Hierbei ist die Abstastnadel mit einem ferromagnetischen Material beschichtet. Die Messung für jede Bildzeile erfolgt in zwei Durchläufen. Im ersten Durchgang wird mittels eines der vorher beschriebenen Messmodi das Höhenprofil aufgenommen. Im zweiten Durchgang wird die Messnadel mit konstantem Abstand über die Oberfläche gerastert.\\
 
-\subsection{weitere Rastersondenmikroskope}
-Neben den oben genannten, gibt es auch weitere  Rastersondenmikroskope, die die Wechselwirkung zwischen Sonde und Probe nutzen und die die Probe Punkt für Punkt abtasten. Das Grundprinzip aller ist dabei gleich des oben beschriebenen, sie unterscheiden sich im Wesentlichen durch die Abstastung anderer Probeneigenschaften. Dazu zählen zum Beispiel das Optische Rasternahfeldmikroskop (engl. Scanning Nearfiel Optical Microscope, kurz SNOM), das Rasterelektronenmikroskop (REM, engl. SEM) sowie das akustische Rasternahfeldmikroskop (ARNM, engl. scanning near-field acoustic microscope (SNAM).
+Zusätzlich gibt es noch weitere Rastersondenmikroskope, die die Wechselwirkung zwischen Sonde und Probe nutzen und die die Probe Punkt für Punkt abtasten. Das Grundprinzip aller ist dabei gleich des oben beschriebenen, sie unterscheiden sich im Wesentlichen durch die Abstastung anderer Probeneigenschaften. Dazu zählen zum Beispiel das Optische Rasternahfeldmikroskop (engl. Scanning Nearfiel Optical Microscope, kurz SNOM), das Rasterelektronenmikroskop (REM, engl. SEM) sowie das akustische Rasternahfeldmikroskop (ARNM, engl. scanning near-field acoustic microscope (SNAM).
+
 \subsection{Piezoeffekt und piezoelektrische Stellelemente}
-Für die Bedienung und Funktionsweise der Rastersondenmikroskope ist das Einstellen der Position der Sonde im Subnanometerbereich von entscheidender Bedeutung. Dies wird durch piezoelektrische Stellelemente realisiert. Hierbei wird der \textbf{(inverse) piezoelektrische Effekt} genutzt.
-\paragraph{Piezoelektrischer Effekt} Wird Druck auf einen piezoelektrischen Kristall ausgeübt, kommt es zur Dipolbildung in der Elementarzelle und makroskopisch ist eine elektrische Spannung messbar. Ein Jahr nach der Endeckung des piezoelektrischen Effekts 1880 fanden dessen Entdecker Jaques und Pierre Curie auch den inversen piezoelektrischen Effekt: Wird ein elektrisches Feld angelegt, verformt sich der Kristall. Diese Eigenschaft wird in piezoelektrischen Stellelementen genutzt.
+Für die Bedienung und Funktionsweise der Rastersondenmikroskope ist das Einstellen der Position der Sonde im Subnanometerbereich von entscheidender Bedeutung. Dies wird durch piezoelektrische Stellelemente realisiert. Hierbei wird der \textit{(inverse) piezoelektrische Effekt} genutzt.
+\paragraph{Piezoelektrischer Effekt} Wird Druck auf einen piezoelektrischen Kristall ausgeübt, kommt es zur Dipolbildung in der Elementarzelle und makroskopisch ist eine elektrische Spannung messbar. Ein Jahr nach der Endeckung des piezoelektrischen Effekts 1880 fanden dessen Entdecker Jaques und Pierre Curie auch den inversen piezoelektrischen Effekt: Wird ein elektrisches Feld angelegt, verformt sich der Kristall. Diese Eigenschaft wird in piezoelektrischen Stellelementen genutzt~\cite{Versuchsanleitung}.
 \paragraph{piezoelektrische Stellelemente}
 Häufig verwendete Bauformen piezoelektrischer Stellelemente sind Rohraktoren, Stapeltranslatoren und Streifenaktoren.
-\textbf{Rohraktoren} sind monnolithische Keramikrohre, die innen und außen mit Elektroden beschichtet sind. Sind die Außenelektroden in vier \SI{90}{\degree} Segmente geteilt,  bewirkt eine differentielle Ansteuerung gegenüberliegender Elektroden eine Verbiegung des Rohrs. Diese Bauform findet häufig Einsatz als XY-Stelleinheit in Rastersondenmiskroskopen. \\
-Stapeltranslatoren sind Linearaktoren und bestehen aus Stapeln von Keramikscheiben, zwischen denen sich Elektroden befinden. Bei Streifenaktoren handelt es sich um Konktraktoren. Sie bestehen aus dünnen laminierten Keramikstreifen und nutzen die Auslenkung orthogonal zur Richtung des elektrischen Feldes.
+\textit{Rohraktoren} sind monolithische Keramikrohre, die innen und außen mit Elektroden beschichtet sind. Sind die Außenelektroden in vier \SI{90}{\degree} Segmente geteilt,  bewirkt eine differentielle Ansteuerung gegenüberliegender Elektroden eine Verbiegung des Rohrs. Diese Bauform findet häufig Einsatz als XY-Stelleinheit in Rastersondenmiskroskopen.
+Stapeltranslatoren sind Linearaktoren und bestehen aus Stapeln von Keramikscheiben, zwischen denen sich Elektroden befinden. Bei Streifenaktoren handelt es sich um Konktraktoren. Sie bestehen aus dünnen laminierten Keramikstreifen und nutzen die Auslenkung orthogonal zur Richtung des elektrischen Feldes.\\
+Piezoeelemente bieten Vorteile gegenüber mechanischen Stellelementen, denn sie können sehr robust gebaut werden und unterliegen werder Reibung noch Verschleiß. Meist weisen sie eine hohe Langzeitstabilität auf und sind einfach herstellbar~\cite{Versuchsanleitung}.
+\newpage
+\begin{wrapfigure}{r}{5.6cm}
+  \centering
+  \vspace{-3mm}
+  \includegraphics[width=5.4cm]{Bilder/Piezoscanner.pdf}
+  \caption{Darstellung der Piezoscanneinheit~\cite{Nanosurf}}
+  \label{fig:Piezo}
+\end{wrapfigure}\\
+Im Praktikum wird die in Abbildung~\ref{fig:Piezo} dargestellte Piezoeinheit verwendet. Unter Nutzung des inversen piezoelektrischen Effekts wird der \textit{Sampleholder} schrittweise an die Probe angenähert und während der Messung durch die $x$- und $y$-Piezos horizontal zur Spitze bewegt. Dadurch können Auflösungen im Ångström-Bereich erzielt werden.
+Trotz ihrer hohen Stellgenauigkeit treten bei Piezoelementen Fehler auf. Zunächst zeigen sie meist eine nichtlineare Temperaturabhängigkeit und unterliegen der Hysterese. Dies bedeutet, dass die Verformung des Kristalls gegenüber der Spannungsänderung zeitverzögert verläuft~\cite{Versuchsanleitung}.
 
 % *********************************************
 % ***** KAPITEL 3 *****************************
 % *********************************************
-\newpage
 \section{Messapparatur und Versuchsdurchführung} \label{sec:Versuchsdurchführung}
-%%% To Do: Messapparatur beschreiben
-%%% To Do: Spitzenpräparation (Vergleich mit Wolframspitzen)
-%%% To Do: Probenbedampfung und Berechnung Menge an Bedampfungsmaterial
-%%% To Do: Beschreibung der Piezoscanneinheit
+\subsection{Versuchsaufbau und Spitzenpräparation}
+Die Umsetzung eines SPM-Messsystems gestaltet sich als sehr übersichtlich. Die zwei grundlegenden Instrumente stellen der \textit{easyScan} Scankopf und der Controller dar (Abbildung~\ref{fig:Messsystem}).\\
+\begin{figure}[htp]
+  \vspace{-5mm}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Bilder/EasyScanSystem.pdf}
+    \caption{Darstellung des Controllers und Scankopfes von \textit{Nanosurf easyScan}}
+    \label{fig:Messsystem}
+\end{figure}\\
+Zur Abrasterung der Probe wird ein Draht aus einer Platin-Iridium Legierung verwendet. Die Probe wird mit einer Piezoscanneinheit entlang der Probe geführt und an den Scankopf angenähert.
+\begin{wrapfigure}{r}{5.6cm}
+  \centering
+  \vspace{-5mm}
+  \includegraphics[width=5.5cm]{Bilder/WireCutter.pdf}
+  \caption{Vorgehensweise zur Präparation der Messspitze}
+  \label{fig:Spitzenpräparation}
+\end{wrapfigure}
+Die Probe ist auf einer metallischen Kreisscheibe mithilfe eines Silberleitlackes aufgeklebt. Das Scheibchen wird nun magnetisch an der motorgesteuerten Piezoeinheit angebracht und dies manuell auf wenige Millimeter an die Probe herangeschoben.
+Der gesamte Scankopf steht auf einem separaten Tisch und steht auf einer kleinen Plattform, die Vibrationen dämpft. Zusätzlich befindet sich das Messsystem in einem großen mit Schaumstoff ausgekleideten Kasten.\\
+Der Controller befindet sich außerhalb des Kastens und regelt die elektrische Ansteuerung der Probe, zudem zeigt er mithilfe einer LED den Status der Probe an.\\
+Die Präparation der Spitze erfolgt nun mithilfe einer Pinzette und eines Seitenschneiders. Das hintere Stück des Drahtes wird mit der Pinzette gehalten und die Spitze mithilfe in einem schrägen Winkel abgeschnitten. Damit sich eine möglichst scharfe Spitze ergibt sollte diese eher durch Ziehen abgerissen werden, anstatt sie direkt durchzuschneiden. Die Vorgehensweise wird in Abbildung~\ref{fig:Spitzenpräparation} nochmal verdeutlicht. Die verwendete Spitze sollte an der Luft nicht oxidieren und zudem stabil und gleichzeitig elektrisch leitfähig sein. Aus diesem Grund werden Platinspitzen verwendet, wo Iridium zugesetzt wird. Chemisch geätzte Wolframspitzen weisen eine bessere Qualität auf, allerdings müssen diese im Hochvakuum verwendet werden, da sie sonst oxidieren.
+
+\subsection{Herstellung einer Probe mittels Vakuumbedampfung}
+Im Verlauf des Versuchs soll ebenfalls die Herstellung einer eigenen Gold- oder Silberprobe mittels Bedampfung durchgeführt werden.\\
+Dafür wird eine röhrenförmige, evakuierbare Kammer genutzt, wo eine bestimmte Menge des zu verdampfenden Materials auf ein Wolframschiffchen plaziert wird. Um bei der Bedampfung eine möglichst große freie Weglänge des verdampften Materials wird der Innenraum mithilfe einer Vakkuumpumpe auf einen Druck von $p = \SI{e-6}{\milli\bar}$ evakuiert.\\
+Das zu bedampfende Plättchen wird magnetisch an einer Halterung an der Unterseite des Deckels befestigt. Während der Bedampfung wird durch einen starken Stromfluss durch das Wolframschiffchen das Metall komplett verdampft und verteilt sich im gesamten oberen Halbraum. Um die Menge an zu verdampfenden Materials zu berechnen, wird eine einfache Lambert-Verteilung herangezogen:
+\begin{align}
+  D(\vartheta) = D_\text{max} \cos\vartheta,
+\end{align}
+welche die Schichtdicke als Funktion des Polarwinkels $\vartheta$ bezüglich der senkrechten Achse beschreibt.\\
+Um nun für eine gegebene aufzudampfende Schichtdicke $D \approx \SI{20}{\nano\metre}$ auf das Plättchen die Länge des Drahtes zu ermitteln, wird das Verdampfte Volumen in Beziehung zur Abhängigkeit der Lambert-Verteilung gesetzt
+\begin{align}
+  \de V = D(\vartheta)\de A = D_\text{max}\cos\vartheta\cdot h^2 \sin\vartheta \de \varphi\,\de\vartheta,
+\end{align}
+wobei $h \approx \SI{8}{\centi\metre}$ den vertikalen Abstand des Wolframschiffchens zum Plättchen beschreibt.
+\begin{align}
+  V_\text{Probe} &= V_\text{Draht} \frac{\displaystyle\int_{\varphi=0}^{2\pi}\int_{\vartheta'=0}^\vartheta D_\text{max}\cos\vartheta' h^2 \sin\vartheta'\; \de \vartheta'\,\de\varphi}{\displaystyle\int_{\varphi=0}^{2\pi}\int_{\vartheta'=0}^{\pi/2} D_\text{max}\cos\vartheta' h^2 \sin\vartheta'\; \de \vartheta'\,\de\varphi}.
+  \intertext{Unter der Annahme eines zylindrischen Metalldrahtes $V_\text{Draht}=\pi\frac{d^2}{4}L$ mit $d\approx\SI{0.2}{\milli\metre}$ folgt nun}
+  V_\text{Probe} &= \pi \frac{d^2}{4} L \frac{\displaystyle\int_{\vartheta'=0}^\vartheta\cos\vartheta' \sin\vartheta'\; \de \vartheta'}{\displaystyle\int_{\vartheta'=0}^{\pi/2} \cos\vartheta'\sin\vartheta'\; \de \vartheta'} = \pi \frac{d^2}{4} L \sin^2\vartheta
+  \end{align}
+Es ergibt sich nun bei einem Radius des Plättchens von $r \approx = \SI{0.5}{\centi\metre}$ mit einer Fläche $\pi r^2$ des Plättchens und $V_\text{Probe} = D\cdot\pi r^2$ eine Länge des Drahtes von
+\begin{align}
+  L &= \frac{4 D r^2}{d^2 \sin^2 \vartheta}, \qquad \vartheta = \tan\frac{r}{h}\\
+    &= \frac{4\cdot\SI{20}{\nano\metre} (\SI{0.5}{\centi\metre})^2}{[\SI{0.2}{\milli\metre}\cdot\sin(\arctan(\frac{\SI{0.5}{\centi\metre}}{\SI{8}{\centi\metre}}))]^2} \approx \SI{1.3}{\centi\metre}.
+\end{align}
+Da das Evakuieren der Bedampfungsanlage während der Versuchszeit nicht möglich war, konnten keine Proben bedampft werden, weshalb die Auswertung zu diesem Teil entfällt.
 \captionsetup[subfigure]{justification=justified,singlelinecheck=false} %%% Ab hier werden Captions links aligned
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Bildbearbeitung mit Gwyddion}
-Die durch das Nanosurf easyScan System aufgenommenen Daten werden als Rohdaten in einer Datei gespeichert, die von Gwyddion ausgewertet werden kann. Die Rohdaten enthalten jeweils das Strom- und Höhenbild der Messung. Mithilfe von Gwyddion werden nun die Bilder geöffnet und bearbeitet. Dabei erfolgt analog zur Darstellung der Messbilder in der Steuersoftware des easyScan Messinstruments eine Korrektur, indem am Höhenbild der Aufnahme verschiedene Werkzeuge angewendet werden. Zunächst werden die Daten durch Subtraktion der Mittelebene nivelliert und anschließend mithilfe polynomaler Anpassung die Reihen angeglichen. Gegebenenfalls wurden zusätzlich noch horizontale Fehlerzeilen entfernt und der polynomielle Untergrund entfernt. Die Ergebnisse dieser Anpassung sind in Abbildung~\ref{fig:Bildbearbeitung} dargestellt.
+Die durch das \textit{Nanosurf easyScan} System aufgenommenen Daten werden als Rohdaten in einer Datei gespeichert, die von Gwyddion ausgewertet werden kann. Die Rohdaten enthalten jeweils das Strom- und Höhenbild der Messung. Mithilfe von Gwyddion werden nun die Bilder geöffnet und bearbeitet. Dabei erfolgt analog zur Darstellung der Messbilder in der Steuersoftware des \textit{easyScan} Messinstruments eine Korrektur, indem am Höhenbild der Aufnahme verschiedene Werkzeuge angewendet werden. Zunächst werden die Daten durch Subtraktion der Mittelebene nivelliert und anschließend mithilfe polynomaler Anpassung die Reihen angeglichen. Gegebenenfalls wurden zusätzlich noch horizontale Fehlerzeilen entfernt und der polynomielle Untergrund entfernt. Die Ergebnisse dieser Anpassung sind in Abbildung~\ref{fig:Bildbearbeitung} dargestellt.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.3\textwidth}
@@ -222,6 +271,16 @@ Die durch das Nanosurf easyScan System aufgenommenen Daten werden als Rohdaten i
     \caption{Bearbeitung der STM-Aufnahme einer Goldprobe mithilfe von Gwyddion. In der Mitte sind die importierten Rohdaten dargestellt. Rechts befindet sich das bearbeitete Höhenbild.}
     \label{fig:Bildbearbeitung}
 \end{figure}
+\subsection{Ablauf einer Messung}
+Typischerweise ergibt sich bei einer Messaufnahme folgender Ablauf:
+\begin{enumerate}
+  \item Präparation der Spitze durch Schneiden mithilfe eines Seitenschneiders und anschließendes Platzieren im Scankopf
+  \item Heranschieben des Piezoelements auf wenige Millimeter an die Spitze
+  \item Motorgesteuertes manuelles Annähern der Probe mithilfe der Schaltfläche \textit{Advance} während die Probe durch eine Lupe beobachtet wird
+  \item Durch Anklicken von \textit{Approach} wird die Probe nun vom Controller automatisch an die Spitze angenähert, bis ein Tunnelstrom von \SI{1}{\nano\ampere} fließt
+  \item Wird die Spitze zum ersten Mal verwendet, sollte sie an einer bekannten Goldprobe getestet werden. Falls Spitzenfehler auftreten, können die durch Spitzenkonditionierung (Spannungspulse oder höhere Strome) behoben werden.
+  \item Nun sollte das System bei gegebenen Parametern einige Zeit laufen, bis sich das Messsystem thermisch beruhigt hat. Anschließend kann die Messung gestartet werden.
+\end{enumerate}
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
@@ -229,11 +288,11 @@ Die durch das Nanosurf easyScan System aufgenommenen Daten werden als Rohdaten i
 \section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
 \subsection{Untersuchung der Goldprobe}
 \subsubsection{Optimierung der Tunnelparameter}
-Zunächst wurde versucht, durch Anpassung der verschiedenen Parameter in der Steuersoftware, ein möglich gutes Bild zu erhalten. Dafür wurde ein Scanbereich von $\SI{130}{\nano\metre} \times \SI{130}{\nano\metre}$ gewählt und die einzelnen Parameter variiert.
+Zunächst wird versucht, durch Anpassung der verschiedenen Parameter in der Steuersoftware, ein möglich gutes Bild zu erhalten. Dafür wird ein Scanbereich von $\SI{130}{\nano\metre} \times \SI{130}{\nano\metre}$ gewählt und die einzelnen Parameter variiert.
 Die verfügbaren Parameter sind in folgender Tabelle zusammengefasst:
 \begin{table}[ht]
 	\centering
-	\caption{Standardparameter für die STM-Aufnahme mithilfe der Steuersoftware Nanosurf easyScan}
+	\caption{Standardparameter für die STM-Aufnahme mithilfe der Steuersoftware \textit{Nanosurf easyScan}}
 	\label{tab:Parameter}
   \begin{tabular}{l c c c}
    \toprule
@@ -368,7 +427,7 @@ Zusammenfassend ergeben sich nun folgende angepasste Parametergrößen:
    \toprule
    Setpoint & Tip Voltage & P-Gain & I-Gain & D-Gain & time/Line\\
    \midrule
-   \SI{1}{\nano\ampere} & \SI{0.5}{\volt} & 1500 & 1000 & 0 & 0.35\\
+   \SI{1}{\nano\ampere} & \SI{0.5}{\volt} & 1500 & 1000 & 0 & \SI{0.35}{\second\per\text{Line}}\\
    \bottomrule
   \end{tabular}
 \end{table}\\
@@ -396,7 +455,7 @@ Für die einzelnen Bildausschnitte wurde jeweils die Abtastgeschwindigkeit pro L
     \caption{Aufnahme der Probe in verschiedenen Größen. Dabei wurde die Abtastgeschwindigkeit entsprechend zwischen \SI{0,3}{\second\per\text{Line}} bis \SI{0,5}{\second\per\text{Line}} variiert.}
     \label{fig:verschiedeneGroesse}
 \end{figure}\\
-Bei einigen Aufnahmen ließ sich ein besonderes Phänomen beobachten. Das Programm \textit{Nanosurf easyScan} Steuersoftware, scannt den Bereich immer abwechselnd von oben nach unten und vice versa. Dabei erschienen die einzelnen Goldatome manchmal tropfenförmig verzerrt, während sie in der zweiten Aufnahme normal erscheinen. Eine Aufnahme davon ist im folgenden Bild~\ref{fig:ThermischerDrift} dargestellt.
+Bei einigen Aufnahmen ließ sich ein besonderes Phänomen beobachten. Das Programm \textit{Nanosurf easyScan} Steuersoftware, scannt den Bereich immer abwechselnd von oben nach unten und vice versa. Dabei erschienen die einzelnen Goldatome manchmal tropfenförmig verzerrt, während sie in der zweiten Aufnahme normal erscheinen. Zwei Beispielaufnahmen dazu sind im folgenden Bild~\ref{fig:ThermischerDrift} dargestellt.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -408,14 +467,16 @@ Bei einigen Aufnahmen ließ sich ein besonderes Phänomen beobachten. Das Progra
         \includegraphics[height=4cm]{Bilder/Image01965_Drift_untenoben.pdf}
         \caption{Abtastung von unten nach oben}
     \end{subfigure}
-    \caption{Veranschaulichung des Thermischen Drifts der Goldprobe bei Abtastung des gleichen Ausschnitts entlang und entgegen des thermischen Drifts.}
+    \caption{Veranschaulichung des thermischen Drifts der Goldprobe bei Abtastung des gleichen Ausschnitts entlang und entgegen des thermischen Drifts.}
     \label{fig:ThermischerDrift}
 \end{figure}\\
-Dies wird durch den thermischen Drift verursacht, welcher durch die unterschiedliche thermische Ausdehnung von Probe und Tunnelspitze infolge des Tunnelstroms auftritt. Zudem können Schwankungen der Raumtemperatur den thermischen Drift beeinflussen.\\
+Dieser Bildfehler wird durch den thermischen Drift verursacht, welcher durch die unterschiedliche thermische Ausdehnung von Probe und Tunnelspitze infolge des Tunnelstroms auftritt. Zudem können Schwankungen der Raumtemperatur den thermischen Drift beeinflussen.\\
 Wird nun die Probe entlang des thermischen Drifts abgerastert erscheinen die Atome länglich verzerrt, findet die Abrasterung entgegen des Drifts statt, werden die Atome gestaucht. Es sollten bei Möglichkeit immer zwei Aufnahme der Probe gemacht werden, um Einflüsse des thermischen Drifts auszuschließen.\\
 Im Verlauf der Messung wird der Effekt des thermischen Drifts geringer. In der Praxis wird die Probe gekühlt, um thermische Effekte zu minimieren.
 
 \subsubsection{Charakterisierung der Probenoberfläche}
+Zur Charakterisierung der Goldoberfläche wurde eine Aufnahme der Goldprobe von $\SI{130}{\nano\metre}\times\SI{130}{\nano\metre}$ verwendet. Diese zeigt eine gute Bildqualität zur Auswertung von der Rauheit und den Korngrößen.\\
+Zunächst wurde mithilfe von Gwyddion ein Höhenprofil extrahiert, welches in Abbildung~\ref{fig:HoehenprofilGold} gezeigt wird.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -424,12 +485,58 @@ Im Verlauf der Messung wird der Effekt des thermischen Drifts geringer. In der P
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}{0.45\textwidth}
-        \includegraphics[height=5cm]{Bilder/Image01963_Hoehenprofil.pdf}
+        \includegraphics[height=4cm]{Bilder/Image01963_Hoehenprofil.pdf}
         \caption{Höhenlinie der Goldprobe\\}
     \end{subfigure}
-    \caption{Mithilfe von Gwyddion wurde ein Höhenprofil des aufgenommen Bildes der Goldprobe erstellt.}
-    \label{fig:ThermischerDrift}
+    \caption{Mithilfe von Gwyddion wurde ein Höhenprofil des aufgenommen Bildes der Goldprobe erstellt. In a) ist die Linie eingezeichnet, entlang derer das Höhenprofil aufgenommen wurde.}
+    \label{fig:HoehenprofilGold}
 \end{figure}\\
+
+Es ergibt sich eine unregelmäßige Struktur, mit Korngrößen zwischen 10 und \SI{20}{\nano\metre}, mit maximalen Höhenunterschieden von \SI{2.5}{\nano\metre}.\\
+Um nun die Körnung der Oberfläche statistisch auszuwerten, muss zunächst eine Maskierung der Körner durchgeführt werden. Dafür bietet Gwyddion verschiedene Tools an. Eine rein durch einen Schwellwert basierende Maskierung lieferte ungenügend gute Ergebnisse, weshalb der \textit{Watershed} Algorithmus (zu deutsch: Wasserscheidentransformation) verwendet wurde.~\cite{Gwyddion_documentation} In diesem zweistufigen Algorithmus werden die Körner zunächst lokalisiert und anschließend zusammenhängende Körner segmentiert. Dabei kann zudem ein Schwellwert für die Korngröße eingestellt werden. Die resultierende Maskierung zeigt Abbildung~\ref{fig:Kornflaechen}
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01963_Korngroessen.pdf}
+        \caption{Maskierung der Körner}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01963_ProjizierteFlaeche.pdf}
+        \caption{Projizierte Kornfläche}
+    \end{subfigure}
+    \caption{Anwendung des Watershed Algorithmus auf die Körner. Es wurden folgende Parameter verwendet: Korn-Lokalisierung in 15 Schritten, Tropfengröße \SI{7}{\percent}, Schwellwert \SI{68}{\text{px}\squared}, Segmentierung in 100 Schritten, Tropfengröße, \SI{5}{\percent}}
+    \label{fig:Kornflaechen}
+\end{figure}\\
+Mithilfe der Maskierung können nur durch Gwyddion durch statistische Auswertung verschiedene Charakteristika der Probe ausgemessen werden. In Abbildung~\ref{fig:Kornflaechen} b) ist die Verteilung der projizierten Kornflächen dargestellt. Es zeigt sich eine Häufung der Korngrößen bei einer Fläche von \SI{50}{\nano\metre\squared} und \SI{150}{\nano\metre\squared}.\\
+Zur Angabe der Rauheit einer Oberfläche eignen sich verschiedene Rauheitsangaben. Die mittlere Rauheit $R_a$ gibt den mittleren Abstand zur Mittellinie des Höhenprofils an~\cite{Rauheit}. Er entspricht dem arithmetischen Mittel der betragsmäßigen Abweichung vom Mittelwert. Für ein quadratisches Bild ergibt sich:
+\begin{align}
+  R_a = \frac{1}{N^2} \sum_{m,n = 1}^N |z(x_m, x_n) - \langle z \rangle|,
+\end{align}
+wobei der Mittelwert $\langle z \rangle$ folgendermaßen gegeben ist:
+\begin{align}
+  \langle z \rangle \frac{1}{N^2} \sum_{m,n = 1}^N z(x_m, y_n).
+\end{align}
+Andererseits lässt sich die quadratische Rauheit RMS (\textit{root-mean-squared roughness}) angeben als Wurzel des Mittels der Abweichungsquadrate~\cite{Rauheit}.
+Der RMS Wert entspricht also dem quadratischen Mittel:
+\begin{align}
+  \text{RMS} = \sqrt{\frac{1}{N^2}\sum_{m,n = 1}^N (z(x_m, y_n)-\langle z\rangle)^2}.
+\end{align}
+Die einzelnen Rauhigkeitswerte können in Gwyddion direkt in den Statistiken zur Korngröße abgelesen werden und sind in Tabelle~\ref{tab:ErgebnisseGoldprobe} zusammengefasst.
+\begin{table}[ht]
+	\centering
+	\caption{Ergebnisse der statistischen Auswertung der Probe}
+	\label{tab:ErgebnisseGoldprobe}
+  \begin{tabular}{c c c c}
+   \toprule
+   Größe & Wert & Größe & Wert\\
+   \midrule
+   Kornanzahl & 72 & Mittlere Kornfläche & \SI{149}{\nano\metre\squared}\\
+   Rauheit RMS & \SI{250}{\pico\metre} & Mittlere Korngröße & \SI{11.4}{\nano\metre}\\
+   Mittlere Rauheit $R_a$ & \SI{254}{\pico\metre} & &\\
+   \bottomrule
+  \end{tabular}
+\end{table}\\
 
 \subsection{Untersuchung von Graphen auf Siliziumkarbid}
 \subsubsection{auftretende Probleme}
@@ -623,7 +730,11 @@ W. Demtroeder: \textit{Experimentalphysik 3: Atome, Moleküle und Festkörper}. 
 Nanosurf AG: \textit{easyScan 2 STM: Operating Instructions}. Liestal 2009.
 \bibitem{Gwyddion}
 D. Nečas und P. Klapetek: \textit{Gwyddion: Free SPM (AFM, SNOM/NSOM, STM, MFM, $\hdots$), data analysis software}. Version 2.55, \url{gwyddion.net}, (Stand: 17.01.2020).
+\bibitem{Gwyddion_documentation}
+D. Nečas, P. Klapetek, Christopher Anderson: \textit{Gwyddion user guide}, \url{http://gwyddion.net/documentation/user-guide-en/index.html}, (Stand: 20.01.2020)
 \bibitem{Forker}
 R. Forker: \textit{Tutorial zum Messtechnikpraktikum: Versuch 5, PID-Regler}. Fried\-rich-Schil\-ler-Uni\-versi\-tät Jena, 2019.
+\bibitem{Rauheit}
+URL: \url{https://de.wikipedia.org/wiki/Rauheit}, (Stand: 20.01.2020)
 \end{thebibliography}
 \end{document}
