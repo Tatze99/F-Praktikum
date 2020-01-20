@@ -195,7 +195,7 @@ Piezoeelemente bieten Vorteile gegenüber mechanischen Stellelementen, denn sie 
   \includegraphics[width=5.4cm]{Bilder/Piezoscanner.pdf}
   \caption{Darstellung der Piezoscanneinheit~\cite{Nanosurf}}
   \label{fig:Piezo}
-\end{wrapfigure}\\
+\end{wrapfigure}
 Im Praktikum wird die in Abbildung~\ref{fig:Piezo} dargestellte Piezoeinheit verwendet. Unter Nutzung des inversen piezoelektrischen Effekts wird der \textit{Sampleholder} schrittweise an die Probe angenähert und während der Messung durch die $x$- und $y$-Piezos horizontal zur Spitze bewegt. Dadurch können Auflösungen im Ångström-Bereich erzielt werden.
 Trotz ihrer hohen Stellgenauigkeit treten bei Piezoelementen Fehler auf. Zunächst zeigen sie meist eine nichtlineare Temperaturabhängigkeit und unterliegen der Hysterese. Dies bedeutet, dass die Verformung des Kristalls gegenüber der Spannungsänderung zeitverzögert verläuft~\cite{Versuchsanleitung}.
 
@@ -559,16 +559,15 @@ Der Abstand zweier übernächster Nachbarn im \textit{Realraum} wird anhand der 
 \begin{align}\label{equ:a}
   a = \frac{b}{\sqrt{3}}
 \end{align}
-berechnen.\\
-
-\begin{figure}[htp]
+berechnen.
+\begin{figure}[ht]
   \centering
-    \includegraphics[height = 5cm]{Bilder/Image02001mitHoehenlinien.pdf}
+    \includegraphics[height = 4cm]{Bilder/Image02001mitHoehenlinien.pdf}
     \caption{Höhenbild der Graphenoberfläche im \SI{4}{\nano\meter} Ausschnitt mit eingezeichneten Linien zur Höhenprofilgenerierung}
     \label{fig:STMBildGraphen}
 \end{figure}
 
-\begin{figure}[htp]
+\begin{figure}[ht]
     \centering
     \begin{subfigure}{0.3\textwidth}
         \includegraphics[width=\textwidth]{Bilder/Graphen_Profil1.pdf}
@@ -587,24 +586,21 @@ berechnen.\\
     \caption{Höhenprofile entlang der in \ref{fig:STMBildGraphen} eingezeichneten Linien. Die Maxima innerhalb der eingezeichneten Linien wurden zur Berechnung der jeweiligen Abstände herangezogen.}
     \label{fig:HöhenprofileGraphen}
 \end{figure}
-Die sich so ergebenden Werte für a und b sind in \ref{tab:Gitterkonstante} zusammengefasst. \\
-
-
+Die sich so ergebenden Werte für a und b sind in Tabelle \ref{tab:Gitterkonstante} zusammengefasst.
+\FloatBarrier
 Die Gitterkonstante und der Abstand zweier übernächster Nachbarn werden auch durch Messung im \textit{reziproken Raum} bestimmt. Dazu wird eine 2D-Fourriertransformation durchgeführt. In \ref{fig:MessungModellb} wird deutlich, dass ein scheinbar hexagonales Gitter mit Gitterkosntante b tranformiert wird. Dies muss bei der Auswertung der Fourriertransformation beachtet werden. Als Fourriertransformierte eines hexagonalen Gitters mit Gitterkonstante b ergibt sich ein hexagonales Gitter mit Gitterkonstante
 \begin{align}\label{equ:d}
   d = \frac{4\pi}{\sqrt{3}b}
 \end{align}
 In der 2D-FFT können also die in \ref{fig:2DFFT_Graphen} eingezeichneten Abstände vermessen werden. Diese stellen 2d dar. Über \ref{equ:d} kann dann b und über \ref{equ:a} auch a berechnet werden. Beachtet werden muss hierbei, dass Gwyddion das repiproke Gitter ohne $2\pi$ definiert. So ergeben sich die in \ref{tab:Gitterkonstante} zusammengefassten Werte für b und a.
-
 \begin{figure}[htp]
   \centering
-    \includegraphics[height = 5cm]{Bilder/Image02001_2DFFT.pdf}
+  \vspace{-3mm}
+    \includegraphics[height=4cm]{Bilder/Image02001_2DFFT.pdf}
     \caption{2D Fourriertransformation der Graphenoberfläche im \SI{4}{\nano\meter} Ausschnitt mit eingezeichneten Linien, die zur Vermessung verwendet wurden}
     \label{fig:2DFFT_Graphen}
-\end{figure}
-
-
-
+\end{figure}\\
+In der 2D-FFT können also die in \ref{fig:2DFFT_Graphen} eingezeichneten Abstände vermessen werden. Diese stellen 2d dar. Über \eqref{equ:d} kann dann b und über \eqref{equ:a} auch a berechnet werden. Beachtet werden muss hierbei, dass Gwyddion das repiproke Gitter ohne $2\pi$ definiert. So ergeben sich die in \ref{tab:Gitterkonstante} zusammengefassten Werte für b und a.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -619,14 +615,13 @@ In der 2D-FFT können also die in \ref{fig:2DFFT_Graphen} eingezeichneten Abstä
         \label{fig:MessungModellb}
     \end{subfigure}
     \caption{Messprinzip. a) modellhafte Darstellung der Messung. Rote Punkte repräsentieren Kohlenstoffatome. Die hellblaue Linie stellt den gemessenen Abstand dar. Die Gitterkonstante a und der Abstand zweier übernächster Nachbarn b sind eingezeichnet. b) scheinbare hexagonale Struktur des Gitters mit Gitterkonstante b}
-
 \end{figure}
-
+\FloatBarrier
 Die sich aus den oben beschriebenen Überlegungen ergebenden Gitterkonstanten sind in \ref{tab:Gitterkonstanten} zusammengefasst.
 %Zusammengefasst ergeben sich folgende, aus %den oben beschriebenen Überlegungen %bestimmten,  Gitterkonstanten:
 %würde ich gern so schreiben, aber nur, wenn die Tabelle dann gleich danach kommt.
 
-\begin{table}[h]
+\begin{table}[htp]
 	\centering
 	\caption{auf unterschiedliche Weise berechnete Gitterkonstanten a und Abstände zu übernächsten Nachbarn b}
 	\label{tab:Gitterkonstante}
@@ -643,44 +638,43 @@ Die sich aus den oben beschriebenen Überlegungen ergebenden Gitterkonstanten si
    \bottomrule
   \end{tabular}
 \end{table}
-
 Die auf beide Weisen bestimmten Werte für a und b liegen beidenfallls in der richtigen Größenordnung, allerdings unter den tatsächlichen Werten von b = \SI{0,25}{\nano\meter} und a = \SI{0,14}{\nano\meter}. Dies lässt sich durch
 
-
+\FloatBarrier
 \subsubsection{Bestimmung der Stufenhöhe}
 Für die Bestimmung der Stufenhöhe wird ein Ausschnitt von \SI{500}{\nano\meter} bei einer Abtastgeschwindigkeit von \SI{0,25}{\second} aufgenommen. Das Höhenprofil der in \ref{fig:Kante} abgebildeten Linie wird generiert und in \ref{fig:KanteHöhe} dargestellt. Daraus kann die Kantenhöhe auf \SI{0,425}{\nano\meter} bestimmt werden. Somit ist hier eine einatomare Schicht sichtbar. Die Abweichung zum eigentlichen Wert von \SI{0,34}{\nano\meter} kann von einer Verzerrung durch die Spitze kommen. Spitzen stellen eine abrupte Änderung des Höhenprofils und damit der Spitzenhöhe dar. Hier muss eine Regelung durch den Regelkreis erfolgen, die möglicherweise fehlerbehaftet war.
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}{0.45\textwidth}
-        \includegraphics[height=4cm]{Bilder/Image02125_Kantenmessung_Graphen_richtig_mitLinie.pdf}
+        \includegraphics[height=4.5cm]{Bilder/Image02125_Kantenmessung_Graphen_richtig_mitLinie.pdf}
         \caption{ }
         \label{fig:Kante}
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}{0.45\textwidth}
-        \includegraphics[height=5cm]{Bilder/Graphen_Kante.pdf}
+        \includegraphics[height=4.5cm]{Bilder/Graphen_Kante.pdf}
         \caption{ }
         \label{fig:KanteHöhe}
     \end{subfigure}
     \caption{ a) Höhenbild der Graphenoberfläche im Ausschnitt von \SI{500}{\nano\meter}, b) Höhenprofil der in \ref{fig:Kante} eingezeichneten Linie}
 \end{figure}
+\FloatBarrier
 
-
-\subsubsection{weitere Untersuchungen}
+\subsubsection{Weitere Untersuchungen}
 Im Weiteren wird ein Effekt diskutiert, der bei der Aufnahme eines Ausschnitts von \SI{16}{\nano\meter} auftritt, aber auch schon bei der Aufnahme von Graphen im \SI{4}{\nano\meter} Bereich aufgefallen ist. So wird schon beim Ausschnitt in \ref{fig:STMBildGraphen} eine übergeordnete Struktur beobachtet. Diese ist auch in \ref{fig:16nmGraphen} sichtbar. Bei der 2D Fourriertransformation dieser Aufnahme können 2 übereinanderliegende Gitter beobachtet werden. So wird erkannt, dass jeder Punkt des großen hexagonalen Gitters Bestandteil eines kleinen hexagonalen Gitter ist. Dies lässt sich dadurch erklären, dass hier kein reines Graphen untersucht wird, sondern solches, welches auf Siliziumkarbid aufgebracht ist. Da die Gitterstrukturen der beiden Stoffe nicht vollständig aufeinander passen, kommt es zur Zusammenstauchung der Struktur und das sogenannte atomare Wellblechmuster entsteht. \\
 
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[height=4cm]{Bilder/Image02005.pdf}
-        \caption{ }
+        \caption{$~$}
         \label{fig:16nmGraphen}
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[height=5cm]{Bilder/Image02005_2DFFT.pdf}
-        \caption{ }
+        \caption{$~$}
         \label{fig:16nmFFT}
     \end{subfigure}
     \caption{ a) Höhenbild der Graphenoberfläche im Ausschnitt von \SI{16}{\nano\meter}, b) 2D Fourriertransformation des Ausschnitts}
@@ -691,8 +685,8 @@ Bei der Untersuchung der Probe mit Kohlenstoffnanoröhren auf graphitisiertem Si
 
 \begin{figure}
   \centering
-  \includegraphics{Bilder/Image02138.pdf}[height= 5 cm]
-  \caption{Höhenbild der Kohlenstoffnanoröhreprobe im \SI{500}{\nano\meter}-Ausschnitt
+  \includegraphics[height=5cm]{Bilder/Image02138.pdf}
+  \caption{Höhenbild der Kohlenstoffnanoröhreprobe im \SI{500}{\nano\meter}-Ausschnitt}
   \label{fig:Kohelstoffnanoröhre}
 \end{figure}
 
