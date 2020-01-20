@@ -309,7 +309,7 @@ Die verfügbaren Parameter sind in folgender Tabelle zusammengefasst:
    Rotation    &       & \SI{0}{\degree}       &\\ \bottomrule
   \end{tabular}
 \end{table}
-\paragraph{Optimierung des Tunnelstroms}$~$\\
+\paragraph{Optimierung des Tunnelstroms}\label{par:OptimierungTunnelstrom}$~$\\
 Wie in Abschnitt \ref{sec:STM_Aufbau} bereits gezeigt wurde, entspricht ein aufgenommenes Bild konstanten Tunnelstroms einer Fläche konstanter Zustandsdichte. Zudem fällt der Tunnelstrom exponentiell mit steigendem Spitze-Probe Abstand ab. Wird nun die Spitze näher an die Probe herangeführt, fließt ein stärkerer Tunnelstrom und die Messung ergibt eine höhere Zustandsdichte. Werden nun bei einer STM Aufnahme die Tunnelströme variiert, ergibt sich das in Abbildung~\ref{fig:Stromvariation_1} gezeigte Bild.
 \begin{figure}[htp]
     \centering
@@ -342,7 +342,7 @@ Wird der Tunnelstrom ausgehend vom Standardwert nach unten korrigiert lässt sic
     \label{fig:Stromvariation_2}
 \end{figure}\\
 Die Verschmierung wird verursacht durch den steigenden Einfluss der Zustandsdichte $\rho_\text{Spitze}$ der Tunnelspitze gegenüber der Zustandsdichte $\rho_\text{Probe}$ der Probe, da diese unabhängig vom Abstand zur Probe ist. Dadurch wird das Bild immer stärker durch die Struktur der Spitze beeinflusst und die Aufnahme verschmiert. Wird ein zu geringer Tunnelstrom (\SI{0.05}{\nano\ampere}) angelegt, dann besteht das Risiko, dass die Spitze den Kontakt zur Probe verliert. Es zeigt sich also, dass eine Variation des Tunnelstroms nach unten nicht sinnvoll ist.
-\paragraph{Optimierung der Vorspannung}$~$\\
+\paragraph{Optimierung der Vorspannung}\label{par:OptimierungSpannung}$~$\\
 Zur weiteren Untersuchung der Tunnelparameter wird bei eingestellten Standardwerten die Spannung der Spitze (\textit{Tip Voltage}) innerhalb des Wertebereichs variiert. Wie in Abbildung~\ref{fig:Spannungsvariation} zu sehen ist, wurde die Spannung zwischen 1 bis \SI{2}{\volt} eingestellt.
 \begin{figure}[htp]
     \centering
@@ -433,7 +433,7 @@ Zusammenfassend ergeben sich nun folgende angepasste Parametergrößen:
 \end{table}\\
 Allerdings ist die Anpassung der Parameter auch abhängig von der Beschaffenheit der Probe, weshalb die Parameter für andere Proben individuell angepasst wurden.
 
-\subsubsection{Probenaufnahme und thermischer Drift}
+\subsubsection{Probenaufnahme und thermischer Drift}\label{sec:thermischerDrift}
 Zur Überprüfung der aufgenommen Probe auf das Vorliegen einer Doppelspitze oder anderen Artefakten wurde das Bild in verschiedenen Größen aufgenommen, um eventuell auftauchende periodische Strukturen auszuschließen.
 Für die einzelnen Bildausschnitte wurde jeweils die Abtastgeschwindigkeit pro Linie angepasst, damit kein Qualitätsverlust auftritt. Die Ergebnisse zeigt Abbildung~\ref{fig:verschiedeneGroesse}.
 \begin{figure}[htp]
@@ -637,11 +637,11 @@ Die sich aus den oben beschriebenen Überlegungen ergebenden Gitterkonstanten si
    \bottomrule
   \end{tabular}
 \end{table}
-Die auf beide Weisen bestimmten Werte für a und b liegen beidenfallls in der richtigen Größenordnung, allerdings unter den tatsächlichen Werten von b = \SI{0,25}{\nano\meter} und a = \SI{0,14}{\nano\meter}. Dies lässt sich durch
+Die auf beide Weisen bestimmten Werte für a und b liegen beidenfallls in der richtigen Größenordnung, allerdings unter den tatsächlichen Werten von b = \SI{0,25}{\nano\meter} und a = \SI{0,14}{\nano\meter}. Diese Abweichungen lassen sich durch Störungen in der Messung durch thermischen Drift und Schwingung der Spitze erklären.
 
 \FloatBarrier
 \subsubsection{Bestimmung der Stufenhöhe}
-Für die Bestimmung der Stufenhöhe wird ein Ausschnitt von \SI{500}{\nano\meter} bei einer Abtastgeschwindigkeit von \SI{0,25}{\second} aufgenommen. Das Höhenprofil der in \ref{fig:Kante} abgebildeten Linie wird generiert und in \ref{fig:KanteHöhe} dargestellt. Daraus kann die Kantenhöhe auf \SI{0,425}{\nano\meter} bestimmt werden. Somit ist hier eine einatomare Schicht sichtbar. Die Abweichung zum eigentlichen Wert von \SI{0,34}{\nano\meter} kann von einer Verzerrung durch die Spitze kommen. Spitzen stellen eine abrupte Änderung des Höhenprofils und damit der Spitzenhöhe dar. Hier muss eine Regelung durch den Regelkreis erfolgen, die möglicherweise fehlerbehaftet war.
+Für die Bestimmung der Stufenhöhe wird ein Ausschnitt von \SI{500}{\nano\meter} bei einer Abtastgeschwindigkeit von \SI{0,25}{\second} aufgenommen. Das Höhenprofil der in \ref{fig:Kante} abgebildeten Linie wird generiert und in \ref{fig:KanteHöhe} dargestellt. Daraus kann die Kantenhöhe auf \SI{0,425}{\nano\meter} bestimmt werden. Somit ist hier eine einatomare Schicht sichtbar. Die Abweichung zum eigentlichen Wert von \SI{0,34}{\nano\meter} kann von einer Verzerrung durch die Spitze kommen. Stufen stellen eine abrupte Änderung des Höhenprofils und damit der Spitzenhöhe dar. Hier muss eine Regelung durch den Regelkreis erfolgen, die möglicherweise fehlerbehaftet ist.
 
 \begin{figure}[h]
     \centering
@@ -691,22 +691,62 @@ Bei der Untersuchung der Probe mit Kohlenstoffnanoröhren auf graphitisiertem Si
 
 Hierbei können keine Kohlestoffnanoröhren beobachtet werden, jedoch wird die Struktur der Oberfläche deutlich. Es treten unterschiedlich dicke Stufen auf. Dabei handelt es sich um Silizium- und auch Graphenstufen. Dabei können auch mehrere atomare Lagen sich zu einer Stufe zusammenlagern.
 
-\section{Abbildungsfehler}
+\subsection{Abbildungsfehler}
 Bei der Aufnahme mit dem Rastertunnelmikroskop sind mehrere Abbildungsfehler möglich, von denen einige bereits in den vorhergehenden Abschnitten diskutiert wurden. An dieser Stelle sollen diese nocheinmal zusammenfassend dargestellt werden.
 \paragraph{externe Vibrationen bzw. Störsignale}
 Externe Vibrationen bzw. Störsignale können, dadurch dass sie die Spitze zum Schwingen bringen, Strukturen auf dem STM-Bild erscheinen lassen, die auf der Probe nicht auftreten. Diese lassen sich durch Verkleinerung der Messgeschwindigkeit identifizieren. Scheinen die Strukturen dann weiter zusammen gerückt, handelt es sich um ein externes Störsignal. Solche Störungen können mit Hilfe einer verbesserten Dämpfung vermieden werden.
 
-\paragraph{Schwingungen aufgrund falsch eingestellter Parameter für den Regelkreis}
+\paragraph{Erschütterungen}
+Erschütterungen können das Höhenprofil einer Probe stark verzerren und so auf einer ebenen Probe eine scheinbare Stufe bzw. einen erhöhten Streifen entstehen lassen. Auch dieser Abbildungsfehler lässt sich durch eine Dämpfung korrigieren.
 
+\paragraph{falsch eingestellte Parameter für den Regelkreis}
+Werden I- und/oder P-Gain zu hoch eingestellt, kann es zu Schwingungen des Regelkreises kommen und darausfolgend zu Artefakten auf dem Bild. Werden Tunnelstrom oder Tunnelspannung zu hoch eingestellt, kommt es ebenfalls zu Artfakten, wie in Abschnitt \ref{par:OptimierungTunnelstrom} und \ref{par:OptimierungSpannung} beschrieben und gezeigt ist. Ebenfalls hier thematisiert ist die Verschmierung bei zu kleinen Tunnelströmen. Auf solche kritischen Parameter sollte beim Einstellen des Regelkreises verzichtet werden.
 
 \paragraph{thermischer Drift}
+Wie in Abschnitt \ref{sec:thermischerDrift} beschrieben, wird eine Verzerrung der Bilder je nach dem ob von oben nach unten oder von unten nach oben abgerastert wird, sichtbar. Dies ist in Abbildung \ref{fig:ThermischerDrift} deutlich zu sehen. Die Verzerrungen bzw. Stauchungen entstehen durch Abrastern mit dem bzw. entgegen des thermischen Drifts. Durch Kühlen sowie durch Einlaufen lassen des Systems kann dieser Abbildungsfehler vermieden werden.
 
+
+\paragraph{Piezokriechen}
+Zu Verzerrungen kann es auch durch Piezokriechen kommen. Piezokriechen bedeutet, dass die Verformungsänderung zeitverzögert zu der Spannungsänderung erfolgt, da der inverse Piezoeffekt zeitabhängig ist.
+
+
+\paragraph{Doppel- oder Mehrfachspitze}
+Im Protokoll nicht angeführt sind Aufnahmen, bei denen eine Doppel- oder Mehfachspitze vorliegt. In Abbildung \ref{fig:Doppelspitze} wird deshalb ein mit einer Doppelspitze aufgenommenes Bild gezeigt. Vorallem im unteren Bereich kann das charakteristische mehrfache Vorkommen der gleichen Struktur beobachtet werden.
+
+\begin{figure}
+  \centering
+  \includegraphics[height = 4.5 cm]{Bilder/Image02037_BeispielDoppelspitze.pdf}
+  \caption{Höhenbild einer Goldprobe. Bei der Aufnahme lag eine Doppelspitze vor. Es wurde von unten nach oben gecannt. Im oberen Bereich wurde eine Spitzenkonditionierung durch cleaning pulse vorgenommen.}
+  \label{fig:Doppelspitze}
+\end{figure}
+
+Liegt eine Mehrfachspitze vor, kann versucht werden diese über cleaning pulse oder einen erhöhten Strom zu konditionieren. Liefert dies nicht den gewünschten Erfolg, muss die Spitze ausgetauscht werden.
+
+\FloatBarrier
+
+\paragraph{instabile Spitze}
+Auch Bilder, die mit einer instabilen Spitze aufgenommen wurden, werden bisher im Protokoll nicht angeführt. Auch für diesen Abbildungsfehler wird in Abbildung \ref{fig:instabileSpitze} ein Beispiel gezeigt. Deutlich zu erkennen sind hier die Streifen bzw. Zacken an den Rändern der Goldtröpfchen.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height = 4.5 cm] {Bilder/Image02015_BeispielInstabileSpitze.pdf}
+  \caption{Höhenbild einer Goldprobe. Bei der Aufnahme lag eine instabile Spitze vor.}
+  \label{fig:instabileSpitze}
+\end{figure}
+
+
+Deformationen der Spitze können sich auch in einem zackigen Höhenprofil der eigentlich runden Goldtröpfchen äußern. Zur Behebung des Problems werden die gleichen Maßnahme wie bei einer Doppelspitze ergriffen.
+
+\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % *********************************************
 % ***** KAPITEL 5 *****************************
 % *********************************************
 \section{Zusammenfassung}
+Dieser Versuch markiert die Bedeutung der Rastersonenmikroskopie im Feld der Mikroskope. Bereits ohne Vakuum und heruntergekühlter Anlage können Strukturen unter der von Abbe formulierten Auflösungsgrenze sichtbar gemacht werden. So können erfolgreich Korngrößen vermessen, Gitterkonstanten bestimmt und am Beispiel des Graphens nanoskalige Auflösung erreicht werden. \\
+Während des Versuchs wird der Regelkreis als Schlüsselelement des RTM untersucht und geeignete Paramter zur Verbesserung der Bildqualität gefunden. Die auftrendenden Abbildungsfehler konnten erkannt und ,sofern möglich, vermieden werden. Die Bearbeitungssoftware Gwyddion wird als wichtiges Hilsmittel zur Nachbearbeitung und Korrektur der ausgenommenen Daten bestätigt. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ***** Literaturverzeichnis ******************
 
