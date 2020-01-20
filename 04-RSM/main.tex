@@ -430,6 +430,177 @@ Im Verlauf der Messung wird der Effekt des thermischen Drifts geringer. In der P
     \caption{Mithilfe von Gwyddion wurde ein Höhenprofil des aufgenommen Bildes der Goldprobe erstellt.}
     \label{fig:ThermischerDrift}
 \end{figure}\\
+
+\subsection{Untersuchung von Graphen auf Siliziumkarbid}
+\subsubsection{auftretende Probleme}
+Bei der Messung von Graphen auf Siliziumkarbid wird mit Standardparametern und der schnellstmöglichen Abtastgeschwindigkeit gearbeitet. Dies wird nötig, um einerseits das Abtastheorem zu erfüllen und andererseits das Wegdriften relativ zwischen Spitze und Probe zu verhindern. So kann festgestellt werden, dass bei einem Bildausschnitt von \SI{16}{\nano\meter} und einer Abstastgeschwindigkeit von \SI{0,25}{\second} aus den oben geschilderten Gründen bereits kein Bild mehr aufgenommen werden konnnte. Zusätzlich muss darauf geachtet werden, dass eine stabile Spitze verwendet wird, da die Strukturen von Graphen sonst nicht sichtbar werden. Außerdem muss überprüft werden, ob ein Störsignal über der Messung liegt. Dieses würde anderenfalls die Gitterabstände verfälschen bzw. ein Messen der tatsächlichen Graphenstruktur verhindern. Letzteres gelingt durch Reduzierung der Messgeschwindigkeit während der Messung. Würde ein Störsignal die Messung beinflussen, würde bei Erhöhung der $\frac{time}{line}$ die Strukturen näher zusammen rücken. Dies kann bei den hier ausgewerteten Messungen ausgeschlossen werden.
+
+\subsubsection{Bestimmung der Atomabstände bzw. Gitterkonstanten}
+Die Gitterkonstante bzw. die Atomabstände können sowohl im Realraum als auch im reziproken Raum bestimmt werden. Dazu ist ein genaueres Verständnis von Graphen bzw. Graphit nötig.\\
+Die Ursache für die charakteristische Wabenstruktur des Graphens liegt in der $sp^2$-Hybridisierung der Kohlenstoffatome. Durch letztere werden für jedes C-Atom drei gleichwertige Bindungen mit seinen Nachbarn möglich. Ein p-Orbital bleibt unverändert zurück und steht senkrecht zur Graphen-Ebene.\\
+In Graphit liegt eine ABAB-Stapelfolge vor. So gibt es C-Atome, die kein Nachbaratome in der darunterliegenden Schicht haben ($\beta$), diese sind in \ref{fig:Graphit} als weiße Punkte dargestellt, und solche, die ein Nachbaratom in der darunter liegenden Schicht haben($\alpha$), welche in \ref{fig:Graphit} von grauen Punkten repräsentiert sind. Augrund der Überlappung der $p_z$ - Orbitale der $\alpha$-Atome, ist hier die elektrische Leitfähigkeit eine andere, als bei den $\beta$-Atomen. So kommt es dazu, dass auf dem STM-Bild die $\alpha$-Atome niedriger erscheinen sollten, als die $\beta$-Atome, was in \ref{fig:Graphit} deutlich wird.
+
+\begin{figure}[htp]
+    \centering
+      \includegraphics[height=5.5cm]{Bilder/Gitterstruktur_Graphen.pdf}
+    \caption{Struktur von Graphit in Messung und im Modell. Weiße Punkte stellen Atome dar, welche kein Nachbaratom in der darunterliegenden Lage haben. Graue Punkte repräsentieren Atome, die ein Nachbaratom in der darunter liegenden Lage haben.}
+    \label{fig:Graphit}
+\end{figure}
+
+Die im Rahmen des Versuchs gewonnen Bilder der Graphen-Oberfläche zeigen diese Differenzierung zwischen grauen und weißen Punkten, wie in \ref{fig:STMBildGraphen} zu sehen, nicht.\\
+Der Abstand zweier übernächster Nachbarn im \textit{Realraum} wird anhand der während der Messungen aufgenommenen Bilder, wie in \ref{fig:MessungModella} beschrieben, vermessen. Hier ist zu sehen, dass b durch Ausmessung des Abstands zweier Maxima bestimmt werden kann. b wird anhand der drei in \ref{fig:HöhenprofileGraphen} dargestellten Höhenprofile berechnet. Dazu wurden die drei Höhenprofile entlang der in \ref{fig:STMBildGraphen} gekennzeichneten Linien generiert, jeweils der Abstand zwischen zwei aufeinanderfolgenden Maxima innerhalb der eingezeichneten Linien vermessen und anschließend je Profil der Mittelwert gebildet. Die Gitterkonstante a lässt sich aufgrund von Überlegungen im gleichseitigen Dreieck über
+\begin{align}\label{equ:a}
+  a = \frac{b}{\sqrt{3}}
+\end{align}
+berechnen.\\
+
+\begin{figure}[htp]
+  \centering
+    \includegraphics[height = 5cm]{Bilder/Image02001mitHoehenlinien.pdf}
+    \caption{Höhenbild der Graphenoberfläche im \SI{4}{\nano\meter} Ausschnitt mit eingezeichneten Linien zur Höhenprofilgenerierung}
+    \label{fig:STMBildGraphen}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Graphen_Profil1.pdf}
+        \caption{ }
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Graphen_Profil2.pdf}
+        \caption{ }
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Graphen_Profil3.pdf}
+        \caption{ }
+    \end{subfigure}
+    \caption{Höhenprofile entlang der in \ref{fig:STMBildGraphen} eingezeichneten Linien. Die Maxima innerhalb der eingezeichneten Linien wurden zur Berechnung der jeweiligen Abstände herangezogen.}
+    \label{fig:HöhenprofileGraphen}
+\end{figure}
+Die sich so ergebenden Werte für a und b sind in \ref{tab:Gitterkonstante} zusammengefasst. \\
+
+
+Die Gitterkonstante und der Abstand zweier übernächster Nachbarn werden auch durch Messung im \textit{reziproken Raum} bestimmt. Dazu wird eine 2D-Fourriertransformation durchgeführt. In \ref{fig:MessungModellb} wird deutlich, dass ein scheinbar hexagonales Gitter mit Gitterkosntante b tranformiert wird. Dies muss bei der Auswertung der Fourriertransformation beachtet werden. Als Fourriertransformierte eines hexagonalen Gitters mit Gitterkonstante b ergibt sich ein hexagonales Gitter mit Gitterkonstante
+\begin{align}\label{equ:d}
+  d = \frac{4\pi}{\sqrt{3}b}
+\end{align}
+In der 2D-FFT können also die in \ref{fig:2DFFT_Graphen} eingezeichneten Abstände vermessen werden. Diese stellen 2d dar. Über \ref{equ:d} kann dann b und über \ref{equ:a} auch a berechnet werden. Beachtet werden muss hierbei, dass Gwyddion das repiproke Gitter ohne $2\pi$ definiert. So ergeben sich die in \ref{tab:Gitterkonstante}} zusammengefassten Werte für b und a.
+
+\begin{figure}[htp]
+  \centering
+    \includegraphics[height = 5cm]{Bilder/Image02001_2DFFT.pdf}
+    \caption{2D Fourriertransformation der Graphenoberfläche im \SI{4}{\nano\meter} Ausschnitt mit eingezeichneten Linien, die zur Vermessung verwendet wurden}
+    \label{fig:2DFFT_Graphen}
+\end{figure}
+
+
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Graphen_in_Messung.pdf}
+        \caption{ }
+        \label{fig:MessungModella}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/HexagonalesGitter.pdf}
+        \caption{ }
+        \label{fig:MessungModellb}
+    \end{subfigure}
+    \caption{Messprinzip. a) modellhafte Darstellung der Messung. Rote Punkte repräsentieren Kohlenstoffatome. Die hellblaue Linie stellt den gemessenen Abstand dar. Die Gitterkonstante a und der Abstand zweier übernächster Nachbarn b sind eingezeichnet. b) scheinbare hexagonale Struktur des Gitters mit Gitterkonstante b}
+
+\end{figure}
+
+Die sich aus den oben beschriebenen Überlegungen ergebenden Gitterkonstanten sind in \ref{tab:Gitterkonstanten} zusammengefasst.
+%Zusammengefasst ergeben sich folgende, aus %den oben beschriebenen Überlegungen %bestimmten,  Gitterkonstanten:
+%würde ich gern so schreiben, aber nur, wenn die Tabelle dann gleich danach kommt.
+
+\begin{table}[h]
+	\centering
+	\caption{auf unterschiedliche Weise berechnete Gitterkonstanten a und Abstände zu übernächsten Nachbarn b}
+	\label{tab:Gitterkonstante}
+  \begin{tabular}{l c c c}
+   \toprule
+   Real/Reziproker Raum & verw. Linie & b  & a  \\
+   \midrule
+   Realraum    & 1  & \SI{0,2046}{\nano\meter}  & \SI{0,1181}{\nano\meter}\\
+     & 2 & \SI{0,2088}{\nano\meter}         & \SI{0,1205}{\nano\meter}\\
+   & 3 & \SI{0,2124}{\nano\meter}         & \SI{0,1226}{\nano\meter}\\
+  reziproker Raum  & 1 & \SI{0,2038}{\nano\meter}         & \SI{0,1177}{\nano\meter}\\
+   & 2 & \SI{0,2090}{\nano\meter}         & \SI{0,1207}{\nano\meter}\\
+    & 2 & \SI{0,2091}{\nano\meter}         & \SI{0,1207}{\nano\meter}\\
+   \bottomrule
+  \end{tabular}
+\end{table}
+
+Die auf beide Weisen bestimmten Werte für a und b liegen beidenfallls in der richtigen Größenordnung, allerdings unter den tatsächlichen Werten von b = \SI{0,25}{\nano\meter} und a = \SI{0,14}{\nano\meter}. Dies lässt sich durch
+
+
+\subsubsection{Bestimmung der Stufenhöhe}
+Für die Bestimmung der Stufenhöhe wird ein Ausschnitt von \SI{500}{\nano\meter} bei einer Abtastgeschwindigkeit von \SI{0,25}{\second} aufgenommen. Das Höhenprofil der in \ref{fig:Kante} abgebildeten Linie wird generiert und in \ref{fig:KanteHöhe} dargestellt. Daraus kann die Kantenhöhe auf \SI{0,425}{\nano\meter} bestimmt werden. Somit ist hier eine einatomare Schicht sichtbar. Die Abweichung zum eigentlichen Wert von \SI{0,34}{\nano\meter} kann von einer Verzerrung durch die Spitze kommen. Spitzen stellen eine abrupte Änderung des Höhenprofils und damit der Spitzenhöhe dar. Hier muss eine Regelung durch den Regelkreis erfolgen, die möglicherweise fehlerbehaftet war.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image02125_Kantenmessung_Graphen_richtig_mitLinie.pdf}
+        \caption{ }
+        \label{fig:Kante}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=5cm]{Bilder/Graphen_Kante.pdf}
+        \caption{ }
+        \label{fig:KanteHöhe}
+    \end{subfigure}
+    \caption{ a) Höhenbild der Graphenoberfläche im Ausschnitt von \SI{500}{\nano\meter}, b) Höhenprofil der in \ref{fig:Kante} eingezeichneten Linie}
+\end{figure}
+\FloatingBarrier
+
+\subsubsection{weitere Untersuchungen}
+Im Weiteren wird ein Effekt diskutiert, der bei der Aufnahme eines Ausschnitts von \SI{16}{\nano\meter} auftritt, aber auch schon bei der Aufnahme von Graphen im \SI{4}{\nano\meter} Bereich aufgefallen ist. So wird schon beim Ausschnitt in \ref{fig:STMBildGraphen} eine übergeordnete Struktur beobachtet. Diese ist auch in \ref{fig:16nmGraphen} sichtbar. Bei der 2D Fourriertransformation dieser Aufnahme können 2 übereinanderliegende Gitter beobachtet werden. So wird erkannt, dass jeder Punkt des großen hexagonalen Gitters Bestandteil eines kleinen hexagonalen Gitter ist. Dies lässt sich dadurch erklären, dass hier kein reines Graphen untersucht wird, sondern solches, welches auf Siliziumkarbid aufgebracht ist. Da die Gitterstrukturen der beiden Stoffe nicht vollständig aufeinander passen, kommt es zur Zusammenstauchung der Struktur und das sogenannte atomare Wellblechmuster entsteht. \\
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image02005.pdf}
+        \caption{ }
+        \label{fig:16nmGraphen}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=5cm]{Bilder/Image02005_2DFFT.pdf}
+        \caption{ }
+        \label{fig:16nmFFT}
+    \end{subfigure}
+    \caption{ a) Höhenbild der Graphenoberfläche im Ausschnitt von \SI{16}{\nano\meter}, b) 2D Fourriertransformation des Ausschnitts}
+\end{figure}
+
+\subsection{Untersuchung von Kohlenstoffnanoröhren auf graphitisiertem Siliziumkarbid}
+Bei der Untersuchung der Probe mit Kohlenstoffnanoröhren auf graphitisiertem Siliziumkarbid wird ein \SI{500}{\nano\meter}-Ausschnitt betrachtet.
+
+\begin{figure}
+  \centering
+  \includegraphics{Bilder/Image02138.pdf}[height= 5 cm]
+  \caption{Höhenbild der Kohlenstoffnanoröhreprobe im \SI{500}{\nano\meter}-Ausschnitt
+  \label{fig:Kohelstoffnanoröhre}
+\end{figure}
+
+Hierbei können keine Kohlestoffnanoröhren beobachtet werden, jedoch wird die Struktur der Oberfläche deutlich. Es treten unterschiedlich dicke Stufen auf. Dabei handelt es sich um Silizium- und auch Graphenstufen. Dabei können auch mehrere atomare Lagen sich zu einer Stufe zusammenlagern.
+
+\section{Abbildungsfehler}
+Bei der Aufnahme mit dem Rastertunnelmikroskop sind mehrere Abbildungsfehler möglich, von denen einige bereits in den vorhergehenden Abschnitten diskutiert wurden. An dieser Stelle sollen diese nocheinmal zusammenfassend dargestellt werden.
+\paragraph{externe Vibrationen bzw. Störsignale}
+Externe Vibrationen bzw. Störsignale können, dadurch dass sie die Spitze zum Schwingen bringen, Strukturen auf dem STM-Bild erscheinen lassen, die auf der Probe nicht auftreten. Diese lassen sich durch Verkleinerung der Messgeschwindigkeit identifizieren. Scheinen die Strukturen dann weiter zusammen gerückt, handelt es sich um ein externes Störsignal. Solche Störungen können mit Hilfe einer verbesserten Dämpfung vermieden werden. 
+
+\paragraph{Schwingungen aufgrund falsch eingestellter Parameter für den Regelkreis}
+
+
+\paragraph{thermischer Drift}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % *********************************************
