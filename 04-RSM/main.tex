@@ -368,7 +368,7 @@ Zusammenfassend ergeben sich nun folgende angepasste Parametergrößen:
    \toprule
    Setpoint & Tip Voltage & P-Gain & I-Gain & D-Gain & time/Line\\
    \midrule
-   \SI{1}{\nano\ampere} & \SI{0.5}{\volt} & 1500 & 1000 & 0 & 0.35\\
+   \SI{1}{\nano\ampere} & \SI{0.5}{\volt} & 1500 & 1000 & 0 & \SI{0.35}{\second\per\text{Line}}\\
    \bottomrule
   \end{tabular}
 \end{table}\\
@@ -396,7 +396,7 @@ Für die einzelnen Bildausschnitte wurde jeweils die Abtastgeschwindigkeit pro L
     \caption{Aufnahme der Probe in verschiedenen Größen. Dabei wurde die Abtastgeschwindigkeit entsprechend zwischen \SI{0,3}{\second\per\text{Line}} bis \SI{0,5}{\second\per\text{Line}} variiert.}
     \label{fig:verschiedeneGroesse}
 \end{figure}\\
-Bei einigen Aufnahmen ließ sich ein besonderes Phänomen beobachten. Das Programm \textit{Nanosurf easyScan} Steuersoftware, scannt den Bereich immer abwechselnd von oben nach unten und vice versa. Dabei erschienen die einzelnen Goldatome manchmal tropfenförmig verzerrt, während sie in der zweiten Aufnahme normal erscheinen. Eine Aufnahme davon ist im folgenden Bild~\ref{fig:ThermischerDrift} dargestellt.
+Bei einigen Aufnahmen ließ sich ein besonderes Phänomen beobachten. Das Programm \textit{Nanosurf easyScan} Steuersoftware, scannt den Bereich immer abwechselnd von oben nach unten und vice versa. Dabei erschienen die einzelnen Goldatome manchmal tropfenförmig verzerrt, während sie in der zweiten Aufnahme normal erscheinen. Zwei Beispielaufnahmen dazu sind im folgenden Bild~\ref{fig:ThermischerDrift} dargestellt.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -408,14 +408,16 @@ Bei einigen Aufnahmen ließ sich ein besonderes Phänomen beobachten. Das Progra
         \includegraphics[height=4cm]{Bilder/Image01965_Drift_untenoben.pdf}
         \caption{Abtastung von unten nach oben}
     \end{subfigure}
-    \caption{Veranschaulichung des Thermischen Drifts der Goldprobe bei Abtastung des gleichen Ausschnitts entlang und entgegen des thermischen Drifts.}
+    \caption{Veranschaulichung des thermischen Drifts der Goldprobe bei Abtastung des gleichen Ausschnitts entlang und entgegen des thermischen Drifts.}
     \label{fig:ThermischerDrift}
 \end{figure}\\
-Dies wird durch den thermischen Drift verursacht, welcher durch die unterschiedliche thermische Ausdehnung von Probe und Tunnelspitze infolge des Tunnelstroms auftritt. Zudem können Schwankungen der Raumtemperatur den thermischen Drift beeinflussen.\\
+Dieser Bildfehler wird durch den thermischen Drift verursacht, welcher durch die unterschiedliche thermische Ausdehnung von Probe und Tunnelspitze infolge des Tunnelstroms auftritt. Zudem können Schwankungen der Raumtemperatur den thermischen Drift beeinflussen.\\
 Wird nun die Probe entlang des thermischen Drifts abgerastert erscheinen die Atome länglich verzerrt, findet die Abrasterung entgegen des Drifts statt, werden die Atome gestaucht. Es sollten bei Möglichkeit immer zwei Aufnahme der Probe gemacht werden, um Einflüsse des thermischen Drifts auszuschließen.\\
 Im Verlauf der Messung wird der Effekt des thermischen Drifts geringer. In der Praxis wird die Probe gekühlt, um thermische Effekte zu minimieren.
 
 \subsubsection{Charakterisierung der Probenoberfläche}
+Zur Charakterisierung der Goldoberfläche wurde eine Aufnahme der Goldprobe von $\SI{130}{\nano\metre}\times\SI{130}{\nano\metre}$ verwendet. Diese zeigt eine gute Bildqualität zur Auswertung von der Rauheit und den Korngrößen.\\
+Zunächst wurde mithilfe von Gwyddion ein Höhenprofil extrahiert, welches in Abbildung~\ref{fig:HoehenprofilGold} gezeigt wird.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -424,12 +426,56 @@ Im Verlauf der Messung wird der Effekt des thermischen Drifts geringer. In der P
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}{0.45\textwidth}
-        \includegraphics[height=5cm]{Bilder/Image01963_Hoehenprofil.pdf}
+        \includegraphics[height=4cm]{Bilder/Image01963_Hoehenprofil.pdf}
         \caption{Höhenlinie der Goldprobe\\}
     \end{subfigure}
-    \caption{Mithilfe von Gwyddion wurde ein Höhenprofil des aufgenommen Bildes der Goldprobe erstellt.}
-    \label{fig:ThermischerDrift}
+    \caption{Mithilfe von Gwyddion wurde ein Höhenprofil des aufgenommen Bildes der Goldprobe erstellt. In a) ist die Linie eingezeichnet, entlang derer das Höhenprofil aufgenommen wurde.}
+    \label{fig:HoehenprofilGold}
 \end{figure}\\
+Es ergibt sich eine unregelmäßige Struktur, mit Korngrößen zwischen 10 und \SI{20}{\nano\metre}, mit maximalen Höhenunterschieden von \SI{2.5}{\nano\metre}.\\
+Um nun die Körnung der Oberfläche statistisch auszuwerten, muss zunächst eine Maskierung der Körner durchgeführt werden. Dafür bietet Gwyddion verschiedene Tools an. Eine rein durch einen Schwellwert basierende Maskierung lieferte ungenügend gute Ergebnisse, weshalb der \textit{Watershed} Algorithmus (zu deutsch: Wasserscheidentransformation) verwendet wurde.~\cite{Gwyddion_documentation} In diesem zweistufigen Algorithmus werden die Körner zunächst lokalisiert und anschließend zusammenhängende Körner segmentiert. Dabei kann zudem ein Schwellwert für die Korngröße eingestellt werden. Die resultierende Maskierung zeigt Abbildung~\ref{fig:Kornflaechen}
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01963_Korngroessen.pdf}
+        \caption{Maskierung der Körner}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[height=4cm]{Bilder/Image01963_ProjizierteFlaeche.pdf}
+        \caption{Projizierte Kornfläche}
+    \end{subfigure}
+    \caption{Anwendung des Watershed Algorithmus auf die Körner. Es wurden folgende Parameter verwendet: Korn-Lokalisierung in 15 Schritten, Tropfengröße \SI{7}{\percent}, Schwellwert \SI{68}{\text{px}\squared}, Segmentierung in 100 Schritten, Tropfengröße, \SI{5}{\percent}}
+    \label{fig:Kornflaechen}
+\end{figure}\\
+Mithilfe der Maskierung können nur durch Gwyddion durch statistische Auswertung verschiedene Charakteristika der Probe ausgemessen werden. In Abbildung~\ref{fig:Kornflaechen} b) ist die Verteilung der projizierten Kornflächen dargestellt. Es zeigt sich eine Häufung der Korngrößen bei einer Fläche von \SI{50}{\nano\metre\squared} und \SI{150}{\nano\metre\squared}.\\
+Zur Angabe der Rauheit einer Oberfläche eignen sich verschiedene Rauheitsangaben. Die mittlere Rauheit $R_a$ gibt den mittleren Abstand zur Mittellinie des Höhenprofils an~\cite{Rauheit}. Er entspricht dem arithmetischen Mittel der betragsmäßigen Abweichung vom Mittelwert. Für ein quadratisches Bild ergibt sich:
+\begin{align}
+  R_a = \frac{1}{N^2} \sum_{m,n = 1}^N |z(x_m, x_n) - \langle z \rangle|,
+\end{align}
+wobei der Mittelwert $\langle z \rangle$ folgendermaßen gegeben ist:
+\begin{align}
+  \langle z \rangle \frac{1}{N^2} \sum_{m,n = 1}^N z(x_m, y_n).
+\end{align}
+Andererseits lässt sich die quadratische Rauheit RMS (\textit{root-mean-squared roughness}) angeben als Wurzel des Mittels der Abweichungsquadrate~\cite{Rauheit}.
+Der RMS Wert entspricht also dem quadratischen Mittel:
+\begin{align}
+  \text{RMS} = \sqrt{\frac{1}{N^2}\sum_{m,n = 1}^N (z(x_m, y_n)-\langle z\rangle)^2}.
+\end{align}
+Die einzelnen Rauhigkeitswerte können in Gwyddion direkt in den Statistiken zur Korngröße abgelesen werden und sind in Tabelle~\ref{tab:ErgebnisseGoldprobe} zusammengefasst.
+\begin{table}[ht]
+	\centering
+	\caption{Ergebnisse der statistischen Auswertung der Probe}
+	\label{tab:ErgebnisseGoldprobe}
+  \begin{tabular}{c c c c}
+   \toprule
+   Größe & Wert & Größe & Wert\\
+   \midrule
+   Kornanzahl & 72 & Mittlere Kornfläche & \SI{149}{\nano\metre\squared}\\
+   Rauhigkeit RMS & \SI{245}{\pico\metre} & Mittlere Korngröße & \SI{11.4}{\nano\metre}\\
+   \bottomrule
+  \end{tabular}
+\end{table}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % *********************************************
@@ -452,7 +498,11 @@ W. Demtroeder: \textit{Experimentalphysik 3: Atome, Moleküle und Festkörper}. 
 Nanosurf AG: \textit{easyScan 2 STM: Operating Instructions}. Liestal 2009.
 \bibitem{Gwyddion}
 D. Nečas und P. Klapetek: \textit{Gwyddion: Free SPM (AFM, SNOM/NSOM, STM, MFM, $\hdots$), data analysis software}. Version 2.55, \url{gwyddion.net}, (Stand: 17.01.2020).
+\bibitem{Gwyddion_documentation}
+D. Nečas, P. Klapetek, Christopher Anderson: \textit{Gwyddion user guide}, \url{http://gwyddion.net/documentation/user-guide-en/index.html}, (Stand: 20.01.2020)
 \bibitem{Forker}
 R. Forker: \textit{Tutorial zum Messtechnikpraktikum: Versuch 5, PID-Regler}. Fried\-rich-Schil\-ler-Uni\-versi\-tät Jena, 2019.
+\bibitem{Rauheit}
+URL: \url{https://de.wikipedia.org/wiki/Rauheit}, (Stand: 20.01.2020)
 \end{thebibliography}
 \end{document}
