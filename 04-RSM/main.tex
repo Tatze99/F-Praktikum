@@ -195,7 +195,7 @@ Piezoeelemente bieten Vorteile gegenüber mechanischen Stellelementen, denn sie 
   \includegraphics[width=5.4cm]{Bilder/Piezoscanner.pdf}
   \caption{Darstellung der Piezoscanneinheit~\cite{Nanosurf}}
   \label{fig:Piezo}
-\end{wrapfigure}\\
+\end{wrapfigure}
 Im Praktikum wird die in Abbildung~\ref{fig:Piezo} dargestellte Piezoeinheit verwendet. Unter Nutzung des inversen piezoelektrischen Effekts wird der \textit{Sampleholder} schrittweise an die Probe angenähert und während der Messung durch die $x$- und $y$-Piezos horizontal zur Spitze bewegt. Dadurch können Auflösungen im Ångström-Bereich erzielt werden.
 Trotz ihrer hohen Stellgenauigkeit treten bei Piezoelementen Fehler auf. Zunächst zeigen sie meist eine nichtlineare Temperaturabhängigkeit und unterliegen der Hysterese. Dies bedeutet, dass die Verformung des Kristalls gegenüber der Spannungsänderung zeitverzögert verläuft~\cite{Versuchsanleitung}.
 
@@ -594,7 +594,7 @@ Die Gitterkonstante und der Abstand zweier übernächster Nachbarn werden auch d
 \begin{align}\label{equ:d}
   d = \frac{4\pi}{\sqrt{3}b}
 \end{align}
-In der 2D-FFT können also die in \ref{fig:2DFFT_Graphen} eingezeichneten Abstände vermessen werden. Diese stellen 2d dar. Über \ref{equ:d} kann dann b und über \ref{equ:a} auch a berechnet werden. Beachtet werden muss hierbei, dass Gwyddion das repiproke Gitter ohne $2\pi$ definiert. So ergeben sich die in \ref{tab:Gitterkonstante}} zusammengefassten Werte für b und a.
+In der 2D-FFT können also die in \ref{fig:2DFFT_Graphen} eingezeichneten Abstände vermessen werden. Diese stellen 2d dar. Über \ref{equ:d} kann dann b und über \ref{equ:a} auch a berechnet werden. Beachtet werden muss hierbei, dass Gwyddion das repiproke Gitter ohne $2\pi$ definiert. So ergeben sich die in \ref{tab:Gitterkonstante} zusammengefassten Werte für b und a.
 
 \begin{figure}[htp]
   \centering
@@ -626,7 +626,7 @@ Die sich aus den oben beschriebenen Überlegungen ergebenden Gitterkonstanten si
 %Zusammengefasst ergeben sich folgende, aus %den oben beschriebenen Überlegungen %bestimmten,  Gitterkonstanten:
 %würde ich gern so schreiben, aber nur, wenn die Tabelle dann gleich danach kommt.
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{auf unterschiedliche Weise berechnete Gitterkonstanten a und Abstände zu übernächsten Nachbarn b}
 	\label{tab:Gitterkonstante}
@@ -665,22 +665,22 @@ Für die Bestimmung der Stufenhöhe wird ein Ausschnitt von \SI{500}{\nano\meter
     \end{subfigure}
     \caption{ a) Höhenbild der Graphenoberfläche im Ausschnitt von \SI{500}{\nano\meter}, b) Höhenprofil der in \ref{fig:Kante} eingezeichneten Linie}
 \end{figure}
-\FloatingBarrier
+\FloatBarrier
 
-\subsubsection{weitere Untersuchungen}
+\subsubsection{Weitere Untersuchungen}
 Im Weiteren wird ein Effekt diskutiert, der bei der Aufnahme eines Ausschnitts von \SI{16}{\nano\meter} auftritt, aber auch schon bei der Aufnahme von Graphen im \SI{4}{\nano\meter} Bereich aufgefallen ist. So wird schon beim Ausschnitt in \ref{fig:STMBildGraphen} eine übergeordnete Struktur beobachtet. Diese ist auch in \ref{fig:16nmGraphen} sichtbar. Bei der 2D Fourriertransformation dieser Aufnahme können 2 übereinanderliegende Gitter beobachtet werden. So wird erkannt, dass jeder Punkt des großen hexagonalen Gitters Bestandteil eines kleinen hexagonalen Gitter ist. Dies lässt sich dadurch erklären, dass hier kein reines Graphen untersucht wird, sondern solches, welches auf Siliziumkarbid aufgebracht ist. Da die Gitterstrukturen der beiden Stoffe nicht vollständig aufeinander passen, kommt es zur Zusammenstauchung der Struktur und das sogenannte atomare Wellblechmuster entsteht. \\
 
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[height=4cm]{Bilder/Image02005.pdf}
-        \caption{ }
+        \caption{$~$}
         \label{fig:16nmGraphen}
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[height=5cm]{Bilder/Image02005_2DFFT.pdf}
-        \caption{ }
+        \caption{$~$}
         \label{fig:16nmFFT}
     \end{subfigure}
     \caption{ a) Höhenbild der Graphenoberfläche im Ausschnitt von \SI{16}{\nano\meter}, b) 2D Fourriertransformation des Ausschnitts}
@@ -691,8 +691,8 @@ Bei der Untersuchung der Probe mit Kohlenstoffnanoröhren auf graphitisiertem Si
 
 \begin{figure}
   \centering
-  \includegraphics{Bilder/Image02138.pdf}[height= 5 cm]
-  \caption{Höhenbild der Kohlenstoffnanoröhreprobe im \SI{500}{\nano\meter}-Ausschnitt
+  \includegraphics[height=5cm]{Bilder/Image02138.pdf}
+  \caption{Höhenbild der Kohlenstoffnanoröhreprobe im \SI{500}{\nano\meter}-Ausschnitt}
   \label{fig:Kohelstoffnanoröhre}
 \end{figure}
 
@@ -701,7 +701,7 @@ Hierbei können keine Kohlestoffnanoröhren beobachtet werden, jedoch wird die S
 \section{Abbildungsfehler}
 Bei der Aufnahme mit dem Rastertunnelmikroskop sind mehrere Abbildungsfehler möglich, von denen einige bereits in den vorhergehenden Abschnitten diskutiert wurden. An dieser Stelle sollen diese nocheinmal zusammenfassend dargestellt werden.
 \paragraph{externe Vibrationen bzw. Störsignale}
-Externe Vibrationen bzw. Störsignale können, dadurch dass sie die Spitze zum Schwingen bringen, Strukturen auf dem STM-Bild erscheinen lassen, die auf der Probe nicht auftreten. Diese lassen sich durch Verkleinerung der Messgeschwindigkeit identifizieren. Scheinen die Strukturen dann weiter zusammen gerückt, handelt es sich um ein externes Störsignal. Solche Störungen können mit Hilfe einer verbesserten Dämpfung vermieden werden. 
+Externe Vibrationen bzw. Störsignale können, dadurch dass sie die Spitze zum Schwingen bringen, Strukturen auf dem STM-Bild erscheinen lassen, die auf der Probe nicht auftreten. Diese lassen sich durch Verkleinerung der Messgeschwindigkeit identifizieren. Scheinen die Strukturen dann weiter zusammen gerückt, handelt es sich um ein externes Störsignal. Solche Störungen können mit Hilfe einer verbesserten Dämpfung vermieden werden.
 
 \paragraph{Schwingungen aufgrund falsch eingestellter Parameter für den Regelkreis}
 
