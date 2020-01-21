@@ -145,7 +145,7 @@ Es gibt prinzipiell zwei verschiedene Arten, ein Rastertunnelmikroskop zu betrei
 \end{figure}
 
 \subsubsection{PID-Regelkreis}
-Ein Regelkreis stellt einen Wirkungsablauf zur Beeinflussung einer physikalischen Größe in einem technischen Prozess dar. Dabei wird der aktuelle Wert an den Regler zurückgeführt und mit einer Führungsgröße, dem Sollwert verglichen. In diesem Experiment soll der Tunnelstrom geregelt werden. Der Regler wirkt der Abweichung entgegen und besteht aus verschiedenen Gliedern die im Schema~\ref{fig:PID} zusammengefasst sind.
+Ein Regelkreis stellt einen Wirkungsablauf zur Beeinflussung einer physikalischen Größe in einem technischen Prozess dar. Dabei wird der aktuelle Wert an den Regler zurückgeführt und mit einer Führungsgröße, dem Sollwert, verglichen. In diesem Experiment soll der Tunnelstrom geregelt werden. Der Regler wirkt der Abweichung entgegen und besteht aus verschiedenen Gliedern die im Schema~\ref{fig:PID} zusammengefasst sind.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=0.7\textwidth]{Bilder/PID-Regler.pdf}
@@ -220,14 +220,14 @@ Zur Abrasterung der Probe wird ein Draht aus einer Platin-Iridium Legierung verw
   \caption{Vorgehensweise zur Präparation der Messspitze}
   \label{fig:Spitzenpräparation}
 \end{wrapfigure}
-Die Probe ist auf einer metallischen Kreisscheibe mithilfe eines Silberleitlackes aufgeklebt. Das Scheibchen wird nun magnetisch an der motorgesteuerten Piezoeinheit angebracht und diese manuell auf wenige Millimeter an die Probe herangeschoben.
+Die Probe ist auf einer metallischen Kreisscheibe mithilfe eines Silberleitlackes aufgeklebt. Das Scheibchen wird magnetisch an der motorgesteuerten Piezoeinheit angebracht und diese manuell auf wenige Millimeter an die Probe herangeschoben.
 Der gesamte Scankopf befindet sich auf einem separaten Tisch und steht auf einer kleinen Plattform, die Vibrationen dämpft. Zusätzlich befindet sich das Messsystem in einem großen mit Schaumstoff ausgekleideten Kasten.\\
 Der Controller befindet sich außerhalb des Kastens und regelt die elektrische Ansteuerung der Probe, zudem zeigt er mithilfe einer LED den Status der Probe an.\\
-Die Präparation der Spitze erfolgt nun mithilfe einer Pinzette und eines Seitenschneiders. Das hintere Stück des Drahtes wird mit der Pinzette gehalten und die Spitze in einem schrägen Winkel abgeschnitten. Damit sich eine möglichst scharfe Spitze ergibt sollte diese eher durch Ziehen abgerissen werden, anstatt sie direkt durchzuschneiden. Die Vorgehensweise wird in Abb.~\ref{fig:Spitzenpräparation} nochmal verdeutlicht. Die verwendete Spitze sollte an der Luft nicht oxidieren und zudem stabil und gleichzeitig elektrisch leitfähig sein. Aus diesem Grund werden Platinspitzen verwendet, wo Iridium zugesetzt wird. Chemisch geätzte Wolframspitzen weisen eine bessere Qualität auf, allerdings müssen diese im Hochvakuum verwendet werden, da sie sonst oxidieren.
+Die Präparation der Spitze erfolgt mithilfe einer Pinzette und eines Seitenschneiders. Das hintere Stück des Drahtes wird mit der Pinzette gehalten und die Spitze in einem schrägen Winkel abgeschnitten. Damit sich eine möglichst scharfe Spitze ergibt sollte diese eher durch Ziehen abgerissen werden, anstatt sie direkt durchzuschneiden. Die Vorgehensweise wird in Abb.~\ref{fig:Spitzenpräparation} nochmal verdeutlicht. Die verwendete Spitze sollte an der Luft nicht oxidieren und zudem stabil und gleichzeitig elektrisch leitfähig sein. Aus diesem Grund werden Platinspitzen verwendet, bei welchen Iridium zugesetzt wird. Chemisch geätzte Wolframspitzen weisen eine bessere Qualität auf, allerdings müssen diese im Hochvakuum verwendet werden, da sie sonst oxidieren.
 
 \subsection{Herstellung einer Probe mittels Vakuumbedampfung}
 Im Verlauf des Versuchs soll ebenfalls die Herstellung einer eigenen Gold- oder Silberprobe mittels Bedampfung durchgeführt werden.\\
-Dafür wird eine röhrenförmige, evakuierbare Kammer genutzt, wo eine bestimmte Menge des zu verdampfenden Materials auf ein Wolframschiffchen plaziert wird. Um bei der Bedampfung eine möglichst große freie Weglänge des verdampften Materials zu erreichen, wird der Innenraum mithilfe einer Vakkuumpumpe auf einen Druck von $p = \SI{e-6}{\milli\bar}$ evakuiert.\\
+Dafür wird eine röhrenförmige, evakuierbare Kammer genutzt, in der eine bestimmte Menge des zu verdampfenden Materials auf ein Wolframschiffchen plaziert wird. Um bei der Bedampfung eine möglichst große freie Weglänge des verdampften Materials zu erreichen, wird der Innenraum mithilfe einer Vakkuumpumpe auf einen Druck von $p = \SI{e-6}{\milli\bar}$ evakuiert.\\
 Das zu bedampfende Plättchen wird magnetisch an einer Halterung an der Unterseite des Deckels befestigt. Während der Bedampfung wird durch einen starken Stromfluss durch das Wolframschiffchen das Metall komplett verdampft und verteilt sich im gesamten oberen Halbraum. Um die Menge an zu verdampfenden Materials zu berechnen, wird eine einfache Lambert-Verteilung herangezogen:
 \begin{align}
   D(\vartheta) = D_\text{max} \cos\vartheta,
@@ -251,7 +251,7 @@ Es ergibt sich nun bei einem Radius des Plättchens von $r \approx \SI{0.5}{\cen
 Da das Evakuieren der Bedampfungsanlage während der Versuchszeit nicht möglich war, konnten keine Proben bedampft werden, weshalb die Auswertung zu diesem Teil entfällt.
 \captionsetup[subfigure]{justification=justified,singlelinecheck=false} %%% Ab hier werden Captions links aligned
 \subsection{Bildbearbeitung mit Gwyddion}
-Die durch das \textit{Nanosurf easyScan} System aufgenommenen Daten werden als Rohdaten in einer Datei gespeichert, die von Gwyddion ausgewertet werden kann. Die Rohdaten enthalten jeweils das Strom- und Höhenbild der Messung. Mithilfe von Gwyddion werden nun die Bilder geöffnet und bearbeitet. Dabei erfolgt analog zur Darstellung der Messbilder in der Steuersoftware des \textit{easyScan} Messinstruments eine Korrektur, indem am Höhenbild der Aufnahme verschiedene Werkzeuge angewendet werden. Zunächst werden die Daten durch Subtraktion der Mittelebene nivelliert und anschließend mithilfe polynomialer Anpassung die Reihen angeglichen. Gegebenenfalls wurden zusätzlich noch horizontale Fehlerzeilen entfernt und der polynomielle Untergrund entfernt. Die Ergebnisse dieser Anpassung sind in Abb.~\ref{fig:Bildbearbeitung} dargestellt.
+Die durch das \textit{Nanosurf easyScan} System aufgenommenen Daten werden als Rohdaten in einer Datei gespeichert, die von Gwyddion ausgewertet werden kann. Die Rohdaten enthalten jeweils das Strom- und Höhenbild der Messung. Mithilfe von Gwyddion werden nun die Bilder geöffnet und bearbeitet. Dabei erfolgt analog zur Darstellung der Messbilder in der Steuersoftware des \textit{easyScan} Messinstruments eine Korrektur, indem am Höhenbild der Aufnahme verschiedene Werkzeuge angewendet werden. Zunächst werden die Daten durch Subtraktion der Mittelebene nivelliert und anschließend mithilfe polynomialer Anpassung die Reihen angeglichen. Gegebenenfalls wurden zusätzlich noch horizontale Fehlerzeilen entfernt und der polynomielle Untergrund entfernt. Die Ergebnisse dieser Anpassung sind in Abb.~\ref{fig:Bildbearbeitung} beispielweise für eine Goldprobe dargestellt. Außerdem können mit Gwyddion Höhenprofile gewonnen, 2D Fouriertranformationen durchgeführt, Vermessung der Korngrößen und weitere Auswertungs- und Bearbeitungsfunktionen realisiert werden. Der Einsatz letzterer ist je nach Bild und zu untersuchender Probeneigenschaft unterschiedlich, aber im Folgenden seperat dokumentiert.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}{0.3\textwidth}
@@ -277,7 +277,7 @@ Typischerweise ergibt sich bei einer Messaufnahme folgender Ablauf:
   \item Präparation der Spitze durch Schneiden mithilfe eines Seitenschneiders und anschließendes Platzieren im Scankopf
   \item Heranschieben des Piezoelements auf wenige Millimeter an die Spitze
   \item Motorgesteuertes manuelles Annähern der Probe mithilfe der Schaltfläche \textit{Advance} während die Probe durch eine Lupe beobachtet wird
-  \item Durch Anklicken von \textit{Approach} wird die Probe nun vom Controller automatisch an die Spitze angenähert, bis ein Tunnelstrom von \SI{1}{\nano\ampere} fließt
+  \item Durch Anklicken von \textit{Approach} wird die Probe nun vom Controller automatisch an die Spitze angenähert, bis ein Tunnelstrom von \SI{1}{\nano\ampere} fließt.
   \item Wird die Spitze zum ersten Mal verwendet, sollte sie an einer bekannten Goldprobe getestet werden. Falls Spitzenfehler auftreten, können die durch Spitzenkonditionierung (Spannungspulse oder höhere Strome) behoben werden.
   \item Nun sollte das System bei gegebenen Parametern einige Zeit laufen, bis sich das Messsystem thermisch beruhigt hat. Anschließend kann die Messung gestartet werden.
 \end{enumerate}
@@ -341,7 +341,7 @@ Wird der Tunnelstrom ausgehend vom Standardwert nach unten korrigiert lässt sic
     \caption{Variation des Setpoints $I$ innerhalb einer STM Aufnahme. Im oberen Drittel lag der Setpoint bei \SI{1}{\nano\ampere}, im mittlere Drittel bei \SI{0.5}{\nano\ampere} und im unteren Drittel bei \SI{0.05}{\nano\ampere}.}
     \label{fig:Stromvariation_2}
 \end{figure}\\
-Die Verschmierung wird verursacht durch den steigenden Einfluss der Zustandsdichte $\rho_\text{Spitze}$ der Tunnelspitze gegenüber der Zustandsdichte $\rho_\text{Probe}$ der Probe, da diese unabhängig vom Abstand zur Probe ist. Dadurch wird das Bild immer stärker durch die Struktur der Spitze beeinflusst und die Aufnahme verschmiert. Wird ein zu geringer Tunnelstrom (\SI{0.05}{\nano\ampere}) angelegt, dann besteht das Risiko, dass die Spitze den Kontakt zur Probe verliert. Es zeigt sich also, dass eine Variation des Tunnelstroms nach unten nicht sinnvoll ist.
+Die Verschmierung wird durch den steigenden Einfluss der Zustandsdichte $\rho_\text{Spitze}$ der Tunnelspitze gegenüber der Zustandsdichte $\rho_\text{Probe}$ der Probe verursacht, da diese unabhängig vom Abstand zur Probe ist. Dadurch wird das Bild immer stärker durch die Struktur der Spitze beeinflusst und die Aufnahme verschmiert. Wird ein zu geringer Tunnelstrom (\SI{0.05}{\nano\ampere}) angelegt, dann besteht das Risiko, dass die Spitze den Kontakt zur Probe verliert. Es zeigt sich also, dass eine Variation des Tunnelstroms nach unten nicht sinnvoll ist.
 \paragraph{Optimierung der Vorspannung}\label{par:OptimierungSpannung}$~$\\
 Zur weiteren Untersuchung der Tunnelparameter wird bei eingestellten Standardwerten die Spannung der Spitze (\textit{Tip Voltage}) innerhalb des Wertebereichs variiert. Wie in Abb.~\ref{fig:Spannungsvariation} zu sehen ist, wurde die Spannung zwischen 1 bis \SI{2}{\volt} eingestellt.
 \begin{figure}[htp]
@@ -545,7 +545,7 @@ Bei der Messung von Graphen auf Siliziumkarbid wird mit Standardparametern und d
 \subsubsection{Bestimmung der Atomabstände bzw. Gitterkonstanten}
 Die Gitterkonstante bzw. die Atomabstände können sowohl im Realraum als auch im reziproken Raum bestimmt werden. Dazu ist ein genaueres Verständnis von Graphen bzw. Graphit nötig.\\
 Die Ursache für die charakteristische Wabenstruktur des Graphens liegt in der $sp^2$-Hy\-bri\-di\-sie\-rung der Kohlenstoffatome. Durch letztere werden für jedes C-Atom drei gleichwertige Bindungen mit seinen Nachbarn möglich. Ein $p$-Orbital bleibt unverändert zurück und steht senkrecht zur Graphen-Ebene.\\
-In Graphit liegt eine ABAB-Stapelfolge vor. So gibt es C-Atome, die keine Nachbaratome in der darunterliegenden Schicht haben ($\beta$), diese sind in Abb.~\ref{fig:Graphit} als weiße Punkte dargestellt, und solche, die ein Nachbaratom in der darunter liegenden Schicht haben($\alpha$), welche in \ref{fig:Graphit} von grauen Punkten repräsentiert sind. Augrund der Überlappung der $p_z$ - Orbitale der $\alpha$-Atome, ist hier die elektrische Leitfähigkeit eine andere, als bei den $\beta$-Atomen. So kommt es dazu, dass auf dem STM-Bild die $\alpha$-Atome niedriger erscheinen sollten, als die $\beta$-Atome, was in \ref{fig:Graphit} deutlich wird.
+In Graphit liegt eine ABAB-Stapelfolge vor. So gibt es C-Atome, die keine Nachbaratome in der darunterliegenden Schicht haben ($\beta$), diese sind in Abb.~\ref{fig:Graphit} als weiße Punkte dargestellt, und solche, die ein Nachbaratom in der darunter liegenden Schicht haben($\alpha$), welche in \ref{fig:Graphit} von grauen Punkten repräsentiert sind. Augrund der Überlappung der $p_z$-Orbitale der $\alpha$-Atome, ist hier die elektrische Leitfähigkeit eine andere, als bei den $\beta$-Atomen. So kommt es dazu, dass auf dem STM-Bild die $\alpha$-Atome niedriger erscheinen sollten, als die $\beta$-Atome, was in \ref{fig:Graphit} deutlich wird.
 
 \begin{figure}[htp]
     \centering
@@ -692,7 +692,7 @@ Bei der Untersuchung der Probe mit Kohlenstoffnanoröhren auf graphitisiertem Si
 Hierbei können keine Kohlestoffnanoröhren beobachtet werden, jedoch wird die Struktur der Oberfläche deutlich. Es treten unterschiedlich dicke Stufen auf. Dabei handelt es sich um Silizium- und auch Graphenstufen. Dabei können auch mehrere atomare Lagen sich zu einer Stufe zusammenlagern.
 
 \subsection{Abbildungsfehler}
-Bei der Aufnahme mit dem Rastertunnelmikroskop sind mehrere Abbildungsfehler möglich, von denen einige bereits in den vorhergehenden Abschnitten diskutiert wurden. An dieser Stelle sollen diese noch einmal zusammenfassend dargestellt werden.
+Bei der Aufnahme mit dem Rastertunnelmikroskop sind mehrere Abbildungsfehler möglich, von denen einige bereits in den vorhergehenden Abschnitten diskutiert werden. An dieser Stelle sollen diese noch einmal zusammenfassend dargestellt werden.
 \paragraph{externe Vibrationen bzw. Störsignale}
 Externe Vibrationen bzw. Störsignale können, dadurch dass sie die Spitze zum Schwingen bringen, Strukturen auf dem STM-Bild erscheinen lassen, die auf der Probe nicht auftreten. Diese lassen sich durch Verkleinerung der Messgeschwindigkeit identifizieren. Scheinen die Strukturen dann weiter zusammengerückt, handelt es sich um ein externes Störsignal. Solche Störungen können mit Hilfe einer verbesserten Dämpfung vermieden werden.
 
