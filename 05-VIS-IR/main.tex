@@ -1,0 +1,197 @@
+\documentclass[a4paper,twoside,final]{article}
+%----Eingebundene Bibliotheken-----
+\input{../LaTeX-Packages.tex}
+\begin{document}
+\setlength{\marginparsep}{2em}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% Anfang ********************************************************
+\begin{center}
+\thispagestyle{empty}
+  \includegraphics[width=0.75\textwidth]{../UniJena_BildWortMarke_black.pdf}\\[4em]
+  \Large
+  Ausarbeitung zum Versuch\\[2em]
+  \Huge
+  VIS-IR-Spektroskopie\\
+  \vspace{2cm}
+  \Large
+  Martin Beyer und Vanessa Huth\\[2em]
+  Abgabe: 30. September 2020\\[2em]
+  Betreuer: Dr. Harald Mutschke\\[5em]
+  \begin{flushleft}
+  	Bewertung und Ausarbeitung:\\[2em]
+		Protokollführung und Form:\\[1em]
+		Ergebnisse, Auswertung und Interpretation:\\[1em]
+		Bemerkungen und Hinweise des Betreuers:
+  \end{flushleft}
+\end{center}
+\clearpage
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[RO,LE]{\textbf{Rastersondenmikroskopie}}
+\fancyhead[RE,LO]{\rightmark}
+\fancyfoot[LE,RO]{\bfseries\thepage}
+\fancyfoot[CO,CE]{Protokoll}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+
+% *********************************************
+% ***** KAPITEL 1 *****************************
+% *********************************************
+\tableofcontents
+% \pagenumbering{gobble}% remove page numbering
+\newpage
+% \pagenumbering{arabic}
+\section{Aufgabenstellung} \label{sec:Aufgabenstellung}
+
+\subsection{Aufbau und Wellenlängeneichung eines Prismenmonochromators (SPM1)}
+
+Ein Prismenmonochromator wird in Wadsworth-Anordnung mit Hilfe einer Quecksilberdampflampe justiert. Die Strahlungsdetektion mittels Vakuumthermoelement und Galvanometer wird realisiert. Die Skala der Prismenverstellung bezüglich der Wellenlänge wird mit Hilfe der Linien einer Quecksilberdampflampe geeicht und die spektrale Auflösung mit Hilfe des gelben Linienpaares bei vollem und reduziertem Strahlquerschnitt getestet.
+
+\subsection{Messungen anhand des Wolframlampenspektrums}
+
+\paragraph{Aufgabe 2.1}$~$
+
+Die spektrale Empfindlichkeit eines Halbleiter-Empfängers wird im Vergleich zum Vakuumthermoelement anhand der Energieverteilung der Strahlung der Wolframlampe bestimmt (mit SPM1).
+
+\paragraph{Aufgabe 2.2}$~$
+
+Die spektrale Energieverteilung der Strahlung einer Wolframlampe wird bei zwei wesentlich verschiedenen Betriebsspannungen gemessen und die Temperaturen anhand des Wien'schen Verschiebungsgesetzes bestimmt. Es wird zudem eine Vergleichsmessung mit Handpyrometer durchgeführt.
+
+\subsection{Spektroskopische Messungen an Gasen und Festkörpern mit SPM2}
+Zunächst wird die wellenlängenabhängige Messung mit Vakuumthermoelement realisiert. Dabei wird das Vorgehen im Umgang mit Lock-in-Technik, PC-gestützter Datenaufnahme erarbeitet und die Wellenlängenskalen von SiO$_2$, NaCl-, und KBr-Prisma mittels Quecksilberspektrum überprüft. Es werden folgende Messungen durchgeführt
+\begin{itemize}
+  \item Bestimmung der Molekülschwingungsbanden von Ethanoldampf und atmosphärische Banden im Bereich \SIrange{1}{10}{\micro\metre} mit einem hohen spektralen Auflösungsvermögen.
+  \item Messung von Absorptionsspektren von Flüssigkeiten und Kunststoffen. Zuordnung der Banden zu den entsprechenden Oberschwingungen.
+  \item Bestimmung der Bandlückenenergie von Silizium durch Absorptionsmessung.
+  \item Messung der Absorption durch freie Ladungsträger in niedrigdotierten, bzw. die Plasmareflexion in hochdotierten Halbleitern.
+  \item Messung der Reflektivität eines Lithiumfluorid-Kristalls und/oder einer Glasplatte im Bereich \SIrange{5}{20}{\micro\metre} und anschließender Vergleich mit Literaturdaten.
+\end{itemize}
+
+% *********************************************
+% ***** KAPITEL 2 *****************************
+% *********************************************
+\newpage
+\section{Grundlagen} \label{sec:Grundlagen}
+\subsection{Strahlungsgesetze}
+Alle Körper strahlen in Abhängigkeit zu ihrer Temperatur $T$ elektromagnetische Strahlung ab. Die dabei emittierte Energiedichte $u(\nu,T)$ lässt sich durch die von~\textsc{Max Planck} als Folge der Energiequantisierung aufgestellten Formel aus der \textsc{Heisenberg}'schen Unschärferelation und der Bose-Einstein-Verteilung für Photonen herleiten. Sie ergibt sich zu
+\begin{align}\label{eqn:2.1}
+    u(\nu,T)\dd{\nu} = \frac{8\pi h \nu^3}{c^3}\frac{1}{\exp(\frac{h\nu}{k_B T})-1}\dd{\nu} \quad\text{oder}\quad u(\lambda,T)\dd{\lambda} = \frac{8\pi h c^2}{\lambda^5}\frac{1}{\exp(\frac{hc}{\lambda k_B T})-1}\dd{\lambda}.
+\end{align}
+
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=\textwidth, height=8cm, samples=300, xmin=0.5, xmax=10, ymin=0, ymax=55000, xlabel={Wellenlänge $\lambda$ in \si{\micro\metre}}, ylabel={Energiedichte $u(\lambda,T)$ in \si{\watt\per\metre\per\micro\metre}}]
+      % \addplot[blue, no marks]{(1.495*10^(15)/x^5)*1/(exp(14388/(x*1000))-1)};
+      \addplot[domain=2:10,thick, black, dashed, no marks]{1.495*10^9/(x^5*(exp(14388/(2897.8))-1))};
+      \addlegendentry{Verschiebung}
+      \addplot[domain=.5:10,thick, black, no marks]{1.495*10^9/(x^5*(exp(14388/(x*1000))))};
+      \addlegendentry{\textsc{Wien} \SI{1000}{\kelvin}}
+      \addplot[domain=.5:10,thick, red, no marks]{1.495*10^9/(x^5*(exp(14388/(x*1000))-1))};
+      \addlegendentry{$T=$ \SI{1000}{\kelvin}}
+      \addplot[domain=.5:10,thick, orange, no marks]{1.495*10^9/(x^5*(exp(14388/(x*900))-1))};
+      \addlegendentry{$T=$ \SI{900}{\kelvin}}
+      \addplot[domain=.5:10,thick, green!50!black, no marks]{1.495*10^9/(x^5*(exp(14388/(x*800))-1))};
+      \addlegendentry{$T=$ \SI{800}{\kelvin}}
+      \addplot[domain=.5:10,thick, blue, no marks]{1.495*10^9/(x^5*(exp(14388/(x*700))-1))};
+      \addlegendentry{$T=$ \SI{700}{\kelvin}}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{\textsc{Planck}'sches Strahlungsgesetz in Abhängigkeit der Wellenlänge für verschiedene Temperaturen. Die schwarze Kurve zeigt die \textsc{Wien}'sche Näherung für $T=\SI{1000}{\kelvin}$. Das \textsc{Wien}'sche Verschiebungsgesetz ist gestrichelt dargestellt.}
+\end{figure}
+Für kleine Wellenlängen lässt sich als Näherungsformel der von \textsc{Wien} aufgestellte Ausdruck verwenden. Hier wird die Näherung $\exp\qty(\frac{hc}{\lambda k_B T}) \gg 1$ verwendet:
+\begin{align}
+  u(\lambda,T)\dd{\lambda} = \frac{8\pi h c^2}{\lambda^5}\exp(-\frac{hc}{\lambda k_B T})\dd{\lambda}.
+\end{align}
+Das Maximum der Emission eines schwarzen Strahlers ergibt sich dann durch das \textsc{Wien}'sche Verschiebungsgesetz:
+\begin{align}
+  \lambda_\text{max} = \frac{\SI{2.8978}{\milli\metre\kelvin}}{T}.
+\end{align}
+Es zeigt sich damit, dass das Produkt aus Temperatur und Wellenlänge maximaler Emission eine Konstante ist.
+
+Die gesamte Strahlungsleistung eines schwarzen Körpers lässt sich durch die Integration von~\eqref{eqn:2.1} über den gesamten Spektralbereich und die Oberfläche des Körpers gewinnen. Sie ist durch das \textsc{Stefan-Boltzmann} Gesetz gegeben
+\begin{align}
+  P(T) = \sigma A T^4, \quad \sigma = \SI[per-mode=fraction]{5.67e-8}{\watt\per\metre\squared\per\kelvin}
+\end{align}
+
+\subsection{Prismen-Spektrographen}
+Verfahren zur Vermessung der Wellenlänge werden unter dem Begriff der Spektroskopie zusammengefasst. Ein einfallendes Strahlenbündel soll geometrisch zerlegt werden, indem die wellenlängenabhängige Brechung (Dispersion) oder Interferenz am Prisma oder optischen Gitter genutzt wird. Der im ersten Versuchsteil verwendete Spektrograph ist ein Prismen-Monochromator, dessen schematischer Aufbau in Abbildung~\ref{fig:Prismenspektrograph} dargestellt ist.
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+  \coordinate (B1) at (-1,0);
+  \coordinate (S1) at (5,0);
+  \coordinate(S11) at ($(S1)+(180+105:0.4)$);
+  \coordinate(S12) at ($(S1)+(105:0.4)$);
+  \coordinate(S2) at (-1,-2.1);
+  \coordinate(S21) at ($(S2)+(-45:0.4)$);
+  \coordinate(S22) at ($(S2)+(135:0.4)$);
+  \coordinate (B2) at (2,2);
+  \coordinate (WS) at (3,-1.5);
+  \coordinate (M) at ($(WS)+(-0.479-0.72,0)$);
+  \draw[dashed,thick] ($(S1)!+7.4cm!(B1)$) -- (S1) -- (WS);
+  \draw[thick] ($(S12)!+7.3cm!(B1)$) -- (S12) -- ($(WS)+(-0.479,0)$);
+  \draw[thick] ($(S11)!+7.5cm!(B1)$) -- (S11) -- ($(WS)+(0.479,0)$) -- ($(WS)+(0.479,0)+(-4/3*1.26,1.26)$);
+  \draw[thick] ($(WS)+(-0.6,0)$) rectangle +(1.2,-0.15);
+  \draw[thick] (M) -- +(0.72,0) --+(0,1.73*0.72) --+(-0.72,0) -- cycle;
+  \draw[thick] ($(M)+(0,1.73*0.72)$) --(S22) -- ($(S22)!+6.4cm!(B2)$);
+  \draw[thick] ($(M)+(-0.72,0)$) --(S21)-- ($(S21)!+6.5cm!(B2)$);
+  \draw[thick,dashed] (WS) -- +(-4/3*.62,.62) -- +(-4/3*.62-0.74,.62) -- (S2)-- (B2);
+  \begin{scope}[shift={($(S1)+(-.05,0)$)},rotate=15]
+    \filldraw[thick, fill=white] (0,0.5) arc (30:-30:1cm) -- (0.3,-.5) -- (.3,.5) -- cycle;
+    \node (A) at (.6,0){$S_1$};
+  \end{scope}
+  \begin{scope}[shift={($(S2)+(.05,.05)$)},rotate=-135]
+    \filldraw[thick, fill=white] (0,0.5) arc (30:-30:1cm) -- (0.3,-.5) -- (.3,.5) -- cycle;
+    \node (A) at (.6,0){$S_2$};
+  \end{scope}
+  \draw[<-, thick] (B1) -- +(0,.707)node[above]{$B_1$};
+  \draw[<-, thick] (B1) -- +(0,-.707);
+  \draw[<-, thick] (B2) -- +(.5,-.5);
+  \draw[<-, thick] (B2) -- +(-.5,.5)node[above]{$B_2$};
+  \node (A) at ($(WS)+(0,-.5)$){WS};
+  \node (A) at ($(M)+(0,-.3)$){M};
+\end{tikzpicture}
+  \caption{Schematischer Aufbau eines Prismen-Monochromators mit Wadsworth-Spiegel WS.}
+  \label{fig:Prismenspektrograph}
+\end{figure}
+
+Am Eingang des Spektrographen befindet sich eine Blende, welche als Kollimator dient. Diese befindet sich im Brennpunkt des ersten Spiegels $S_1$, welcher daraufhin ein paralleles Strahlenbündel erzeugt. Anschließend erfolgt über die Reflexion am Wadsworth-Spiegel, welcher die notwendige Minimalablenkung sicherstellt, die wellenlängenabhängige Brechung des Strahlenbündels im Prisma, wobei schließlich nur eine bestimmte Wellenlänge vom zweiten Spiegel $S_2$ auf die Ausgangsblende $B_2$ abgebildet wird. Die minimale Ablenkung tritt ein, wenn das Prisma symmetrisch zur Hauptachse vom Strahl durchlaufen wird. Dies führt zwar zu einem minimalen Auflösungsvermögen, allerdings sind dabei ebenfalls Abbildungsfehler minimiert. In der Wadsworth-Anordnung wird der Spiegel WS parallel zur Basis des Prismas platziert.
+
+\subsection{Lock-In-Verstärker}
+Lock-in-Verstärker wesentliche Bestandteile zahlreicher hochempfindlicher Messaufbauten, denn sie bieten die Möglichkeit, Signale schwacher Amplitude aus dem Rauschen gewinnen zu können und zu messen.
+\begin{figure}[ht]
+    \centering
+    \input{Bilder/Gleichrichtung.tex}
+    \caption{Phasenabhängigkeit der Gleichrichtung im Zeitverlauf.}
+    \label{fig:Gleichrichtung}
+\end{figure}
+
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\newpage
+\section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
+
+\FloatBarrier
+% *********************************************
+% ***** KAPITEL 5 *****************************
+% *********************************************
+\newpage
+\section{Zusammenfassung}
+
+
+% ***** Literaturverzeichnis ******************
+
+\bibliography{Literatur}{}
+\bibliographystyle{plain}
+\end{document}
