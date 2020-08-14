@@ -1,0 +1,15 @@
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Spannung U in \si{volt}, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin = 500, xmax=3250, xtick={}, legend cell align={left}]
+      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Wolframlampe500-1200nm.txt};
+      \addlegendentry{Referenzmessung}
+      \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Glasprisma_Wolframlampe5V_kleinesHalbleiterplaettchen_3_6Grad_500nm_all100nmMaker_Spalt_500mu.txt};
+      \addlegendentry{Silizium}
+      \addplot[green!50!black, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Glasprisma_Wolframlampe5V_mitgrossemHalbleiterplaettchen_3_6Grad_500-3200nm_mitMarkern2_Spalt_500mu.txt};
+      \addlegendentry{Galiumarsenid}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Transmissionsspektren von Silizium und Galiumarsenid im Vergleich zu einer Referenzmessung. Es muss jedoch beachtet werden, dass zur Aufnahme der Transmissionsspektren von Si und GaAs eine höhere Verstärkung im Lock-In verwendet wurde, was einen quantitativen Vergleich der Kurven erschwert.}
+  \label{fig:Halbleitermessung}
+\end{figure}

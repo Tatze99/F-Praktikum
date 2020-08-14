@@ -1,0 +1,15 @@
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Absorptionsrate, xlabel=Wellenlänge $\lambda$ in \si{\micro\metre}, xmin = 1100, xmax=10200, ymin = 0, ymax = 1.1, scaled x ticks={real:1000}, xtick scale label code/.code={}]
+      \addplot[black!50!white, thick, opacity=0.5] file[x index=1,y index=2]{Daten/Kalibrierung_Absorption_NaClPrisma_Keramikstrahler_19_4V_Ethanoldampf_3_6Grad_600nm_bis11_5mu_all200nmMaker_Spalt_1500mu.txt};
+      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Absorption_Smooth_Kalibrierung_NaClPrisma_Keramikstrahler_19_4V_Ethanoldampf_3_6Grad_600nm_bis11_5mu_all200nmMaker_Spalt_1500mu.txt};
+      \draw[<-,thick](3517,0.690) -- +(0,-0.15)node[left, rotate=90]{\footnotesize 3,459};
+      \draw[<-,thick](7200,0.514) -- +(0,-0.15)node[left, rotate=90]{\footnotesize 7,200};
+      \draw[<-,thick](8027,0.527) -- +(0,-0.15)node[left, rotate=90]{\footnotesize 8,027};
+      \draw[<-,thick](9422,0) -- +(0,0.15)node[right, rotate=90]{\footnotesize 9,422};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Aufgenommenes Absorptionsspektrum von Ethanoldampf mit einem NaCl Spektrometer und einer Spaltbreite von \SI{1.5}{\milli\metre}.}
+  \label{fig:Absorption_Ethanol}
+\end{figure}

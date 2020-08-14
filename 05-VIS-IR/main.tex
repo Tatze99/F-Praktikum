@@ -33,7 +33,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.5pt}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
-\fancyhead[RO,LE]{\textbf{Rastersondenmikroskopie}}
+\fancyhead[RO,LE]{\textbf{IR-Spektroskopie}}
 \fancyhead[RE,LO]{\rightmark}
 \fancyfoot[LE,RO]{\bfseries\thepage}
 \fancyfoot[CO,CE]{Protokoll}
@@ -176,12 +176,55 @@ Lock-in-Verstärker wesentliche Bestandteile zahlreicher hochempfindlicher Messa
     \label{fig:Gleichrichtung}
 \end{figure}
 
-% *********************************************
+% *********************************************   
 % ***** KAPITEL 4 *****************************
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
+% \input{Bilder/Kalibrierung_Wolframlampe3_6.tex}
 
+\subsection{Bestimmung der Bandlückenenergie von Halbleitern}
+
+Im Folgenden werden die Transmissionsspektren von zwei zunächst unbekannten Halbleitern untersucht. Zur Verfügung standen hierfür zwei kreisförmige, im sichtbaren Spektrum undurchsichtige, Halbleiterproben. Die Plättchen wurden zur Transmissionsmessung in den Strahlengang gestellt. Die Messergebnisse sind qualitativ in Abbildung~\ref{fig:Halbleitermessung} dargestellt.
+
+\input{Bilder/Wolframlampe5Volt.tex}
+
+Zur besseren Diskussion der Spektren wurden diese durch das in blau dargestellte Spektrum der Referenz geteilt.
+
+\input{Bilder/Halbleitermessung.tex}
+
+\subsection{Molekülschwingungsbanden von Ethanoldampf}
+Zur Untersuchung der Schwingungsbanden von Ethanoldampf wurde ein Glasrohr in der Mitte mit Ethanol gefüllt und ein Transmissionsspektrum aufgenommen, welches anschließend mit einem Referenzspektrum verglichen wurde. Beide Spektren sind im Vergleich in Abbildung~\ref{fig:Ethanoldampf} dargestellt.
+
+\input{Bilder/NaCl_Ethanoldampf1500mu.tex}
+
+Die Spektren wurden jeweils geglättet, um den Einfluss des Rauschens des Lock-In-Verstärkers zu reduzieren. Die Absorptionsrate des Ethanoldampfes ist in Abbildung~\ref{fig:Absorption_Ethanol} dargestellt. Dort ist in grau die Absorptionsrate für die ungeglätteten Kurven der Transmissionsspektren abgebildet. Es zeigt sich, dass die Glättung den qualitativen Verlauf nicht ändert.
+
+\input{Bilder/NaCl_Ethanoldampf1500_Absorption.tex}
+
+\begin{wrapfigure}{r}{4.5cm}
+  \centering
+  \chemfig{C(-[:90]H)(-[:180]H)(-[:270]H)-C(-[:90]H)(-[:270]H)-OH}
+  \caption{Ethanol}
+\end{wrapfigure}
+Im Bereich von \SIrange{2}{10}{\micro\metre} wurden insgesamt vier Absorptionsbanden registriert, die auf Molekülschwingungen zurückzuführen sind. Bei Ethanol handelt es sich um einen Alkohol mit der nebenstehend abgebildeten Strukturformel und der Summenformel \ce{C2H5OH}. Bei dem ersten Peak handelt es sich wahrscheinlich um eine Valenzschwingung einer \ce{OH}- oder \ce{CH} Gruppe~\cite{Roempp}. Beide Schwingungsarten treten im beobachteten Wellenlängenbereich auf. Bei dem zweiten Peak bei \SI{7.2}{\micro\metre} wurden als mögliche Schwingungsbanden Deformationsschwingungen der \ce{CC}- oder \ce{CH} Gruppen zugeordnet~\cite{Roempp}. Die letzten beiden Peaks wurden einer \ce{COH}-Deformationsschwingung und einer \ce{CO}-Streckschwingung zugeordnet. Die jeweiligen Wellenlängenbereiche sind in Tabelle~\ref{tab:Ethanoldampf} aufgelistet.
+
+\begin{table}[htp]
+  \centering
+  \caption{Wellenlängenbereiche der zugeordneten Molekülschwingungen.}
+  \begin{tabular}{c c c c}
+    \toprule
+    $\lambda_\text{gemessen}$ in \si{\micro\metre} & $\lambda_\text{Literatur}$ in \si{\micro\metre} & $\nu_\text{Literatur}$ in \si{\per\centi\metre} & Schwingungsart \\
+    \midrule
+    3,459 & 3,2-4,2 & 2400-3200 & \ce{OH}-Streckschwingung \\
+          & 3,4-3,5 & 2850-2960 & \ce{CH}-Streckschwingung \\
+    7,200 & 7,2-7,3 & 1370-1385 & \ce{CC}-Deformationsschwingung \\
+          & 6,8-7,4 & 1350-1470 & \ce{CH}-Deformationsschwingung \\
+    8,027 & 8,0-10,0 & 1000-1250 & \ce{COH}-Deformationsschwingung \\
+    9,420 & 9,3-10,0 & 1000-1075 & \ce{CO}-Streckschwingung
+  \end{tabular}
+  \label{tab:Ethanoldampf}
+\end{table}
 \FloatBarrier
 % *********************************************
 % ***** KAPITEL 5 *****************************
