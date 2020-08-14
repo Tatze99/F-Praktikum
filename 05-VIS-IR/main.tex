@@ -167,8 +167,12 @@ Verfahren zur Vermessung der Wellenlänge werden unter dem Begriff der Spektrosk
 
 Am Eingang des Spektrographen befindet sich eine Blende, welche als Kollimator dient. Diese befindet sich im Brennpunkt des ersten Spiegels $S_1$, welcher daraufhin ein paralleles Strahlenbündel erzeugt. Anschließend erfolgt über die Reflexion am Wadsworth-Spiegel, welcher die notwendige Minimalablenkung sicherstellt, die wellenlängenabhängige Brechung des Strahlenbündels im Prisma, wobei schließlich nur eine bestimmte Wellenlänge vom zweiten Spiegel $S_2$ auf die Ausgangsblende $B_2$ abgebildet wird. Die minimale Ablenkung tritt ein, wenn das Prisma symmetrisch zur Hauptachse vom Strahl durchlaufen wird. Dies führt zwar zu einem minimalen Auflösungsvermögen, allerdings sind dabei ebenfalls Abbildungsfehler minimiert. In der Wadsworth-Anordnung wird der Spiegel WS parallel zur Basis des Prismas platziert.
 
+\subsection{Spektroskopie mit dem SPM2}
+
+\input{Bilder/SPM2.tex}
+
 \subsection{Lock-In-Verstärker}
-Lock-in-Verstärker wesentliche Bestandteile zahlreicher hochempfindlicher Messaufbauten, denn sie bieten die Möglichkeit, Signale schwacher Amplitude aus dem Rauschen gewinnen zu können und zu messen.
+Lock-in-Verstärker sind wesentliche Bestandteile zahlreicher hochempfindlicher Messaufbauten, denn sie bieten die Möglichkeit, Signale schwacher Amplitude aus dem Rauschen gewinnen zu können und zu messen.
 \begin{figure}[ht]
     \centering
     \input{Bilder/Gleichrichtung.tex}
@@ -176,25 +180,40 @@ Lock-in-Verstärker wesentliche Bestandteile zahlreicher hochempfindlicher Messa
     \label{fig:Gleichrichtung}
 \end{figure}
 
-% *********************************************   
+% *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
 % \input{Bilder/Kalibrierung_Wolframlampe3_6.tex}
+\subsection{Spektroskopische Messungen mit dem SPM2}
 
-\subsection{Bestimmung der Bandlückenenergie von Halbleitern}
+Die Aufnahme der Spektren mit dem SPM2 erfolgte über einen Lock-In-Verstärker und AD-Wandler digital. Dabei wurden drei verschiedene Prismen (Quarzglas \ce{SiO2}, \ce{NaCl} und \ce{KBr}) verwendet, die für verschiedene Bereiche des infraroten Spektrums transparent sind. Als breitbandige Strahlungsquellen stehen eine Wolframlampe und ein Keramikstrahler bereit. Das Spektrum des Keramikstrahlers befindet sich zum größten Teil im infraroten Spektrum und ist nicht sichtbar, was die Justage vor große Herausforderungen stellt.
+
+Zunächst wurden zur Aufzeichnung der Referenz die Spektren der Wolframlampe mithilfe des Prismas aus Quarzglas und das Spektrum des Keramikstrahlers mithilfe der \ce{NaCl} und \ce{KBr} Prismen bei einer angelegten Spannung von \SI{19.4}{\volt} aufgenommen. Die Spektren sind in Abbildung~\ref{fig:Referenzspektren} dargestellt.
+
+\input{Bilder/Referenzspektren.tex}
+
+\subsubsection{Bestimmung der Bandlückenenergie von Halbleitern}
 
 Im Folgenden werden die Transmissionsspektren von zwei zunächst unbekannten Halbleitern untersucht. Zur Verfügung standen hierfür zwei kreisförmige, im sichtbaren Spektrum undurchsichtige, Halbleiterproben. Die Plättchen wurden zur Transmissionsmessung in den Strahlengang gestellt. Die Messergebnisse sind qualitativ in Abbildung~\ref{fig:Halbleitermessung} dargestellt.
 
 \input{Bilder/Wolframlampe5Volt.tex}
 
-Zur besseren Diskussion der Spektren wurden diese durch das in blau dargestellte Spektrum der Referenz geteilt.
+Zur besseren Diskussion der Spektren wurden diese durch das in blau dargestellte Spektrum der Referenz geteilt. Dadurch ergibt sich die Absorptionsrate der Halbleiter als relative Größe. Zur Bestimmung der Bandlückenenergie wird der Punkt gesucht, ab der die Transmissionsrate ansteigt, denn erst Photonen mit einer Energie, die kleiner als die Bandlücke ist, werden von der Probe mit einer Dicke von \SIrange{1}{2}{\milli\metre} nicht mehr absorbiert und können detektiert werden Die entsprechende Grenzwellenlänge ist in Abbildung~\ref{fig:Halbleitermessung_relativ} mit eingezeichnet.
 
 \input{Bilder/Halbleitermessung.tex}
 
-\subsection{Molekülschwingungsbanden von Ethanoldampf}
-Zur Untersuchung der Schwingungsbanden von Ethanoldampf wurde ein Glasrohr in der Mitte mit Ethanol gefüllt und ein Transmissionsspektrum aufgenommen, welches anschließend mit einem Referenzspektrum verglichen wurde. Beide Spektren sind im Vergleich in Abbildung~\ref{fig:Ethanoldampf} dargestellt.
+Die beiden Grenzwellenlängen für den Beginn der Absorption lassen sich über die nach Einstein gegebene Beziehung $E = h \nu = \frac{h c}{\lambda}$ in eine Energie umrechnen. Danach ergibt sich
+\begin{align}
+  E_g(\ce{Si}) &= \frac{h c}{\SI{1050\pm50}{\nano\metre}} = \SI{1.181\pm0.056}{\electronvolt}\\
+  E_g(\ce{Ge}) &= \frac{h c}{\SI{1800\pm50}{\nano\metre}} = \SI{0.689\pm0.019}{\electronvolt}.
+\end{align}
+Die in~\cite{Hunklinger} gegeben Literaturwerte für Silizium $E_g = \SI{1.12}{\electronvolt}$ und Germanium $E_g = \SI{0.66}{\electronvolt}$ bei einer Temperatur von \SI{300}{\kelvin} liegen innerhalb des angegebenen Fehlerintervalls.
+
+
+\subsubsection{Molekülschwingungsbanden von Ethanoldampf}
+Zur Untersuchung der Schwingungsbanden von Ethanoldampf wurde ein Glasrohr in der Mitte mit Ethanol gefüllt und mithilfe des Keramikstrahlers ein Transmissionsspektrum aufgenommen, welches anschließend mit einem Referenzspektrum verglichen wurde. Beide Spektren sind im Vergleich in Abbildung~\ref{fig:Ethanoldampf} dargestellt.
 
 \input{Bilder/NaCl_Ethanoldampf1500mu.tex}
 
@@ -207,7 +226,7 @@ Die Spektren wurden jeweils geglättet, um den Einfluss des Rauschens des Lock-I
   \chemfig{C(-[:90]H)(-[:180]H)(-[:270]H)-C(-[:90]H)(-[:270]H)-OH}
   \caption{Ethanol}
 \end{wrapfigure}
-Im Bereich von \SIrange{2}{10}{\micro\metre} wurden insgesamt vier Absorptionsbanden registriert, die auf Molekülschwingungen zurückzuführen sind. Bei Ethanol handelt es sich um einen Alkohol mit der nebenstehend abgebildeten Strukturformel und der Summenformel \ce{C2H5OH}. Bei dem ersten Peak handelt es sich wahrscheinlich um eine Valenzschwingung einer \ce{OH}- oder \ce{CH} Gruppe~\cite{Roempp}. Beide Schwingungsarten treten im beobachteten Wellenlängenbereich auf. Bei dem zweiten Peak bei \SI{7.2}{\micro\metre} wurden als mögliche Schwingungsbanden Deformationsschwingungen der \ce{CC}- oder \ce{CH} Gruppen zugeordnet~\cite{Roempp}. Die letzten beiden Peaks wurden einer \ce{COH}-Deformationsschwingung und einer \ce{CO}-Streckschwingung zugeordnet. Die jeweiligen Wellenlängenbereiche sind in Tabelle~\ref{tab:Ethanoldampf} aufgelistet.
+Im Bereich von \SIrange{2}{10}{\micro\metre} wurden insgesamt vier Absorptionsbanden registriert, die auf Molekülschwingungen zurückzuführen sind. Bei Ethanol handelt es sich um einen Alkohol mit der nebenstehend abgebildeten Strukturformel und der Summenformel \ce{C2H5OH}. Bei dem ersten Peak handelt es sich wahrscheinlich um eine Valenzschwingung einer \ce{OH}- oder \ce{CH} Gruppe~\cite{Roempp}. Beide Schwingungsarten treten im beobachteten Wellenlängenbereich auf. Bei dem zweiten Peak bei \SI{7.2}{\micro\metre} wurden als mögliche Schwingungsbanden Deformationsschwingungen der \ce{CC}- oder \ce{CH} Gruppen zugeordnet~\cite{Roempp}. Die letzten beiden Peaks wurden einer \ce{COH}-Deformationsschwingung und einer \ce{CO}-Streckschwingung zugeordnet~\cite{Gunzler}. Die jeweiligen Wellenlängenbereiche sind in Tabelle~\ref{tab:Ethanoldampf} aufgelistet.
 
 \begin{table}[htp]
   \centering
@@ -225,6 +244,8 @@ Im Bereich von \SIrange{2}{10}{\micro\metre} wurden insgesamt vier Absorptionsba
   \end{tabular}
   \label{tab:Ethanoldampf}
 \end{table}
+
+Es muss jedoch noch angemerkt werden, dass bei der Messung Fehler auftreten können, da im verwendeten Rohr, in dem sich der Ethanoldampf befand, ebenfalls Absorption an den Glas auftreten kann. Von daher wäre es ratsam gewesen, eine weitere Referenzmessung mit dem Rohr im Strahlengang durchzuführen.
 \FloatBarrier
 % *********************************************
 % ***** KAPITEL 5 *****************************

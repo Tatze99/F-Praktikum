@@ -1,0 +1,15 @@
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=\textwidth, height=6cm, ylabel=Absorptionsrate, xlabel=Wellenlänge $\lambda$ in \si{\micro\metre},xmin=500, xmax=13000, legend cell align={left}, scaled x ticks={real:1000}, xtick scale label code/.code={}]
+      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Wolframlampe500-3200nm.txt};
+      \addlegendentry{Wolframlampe \ce{SiO2}}
+      \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_NaClPrisma_Keramikstrahler_19_4V_3_6Grad_600nm_bis11_5mu_all200nmMaker_Spalt_1500mu_gut.txt};
+      \addlegendentry{Keramikstrahler NaCl}
+      \addplot[green!50!black, thick] file[x index=1,y index=2]{Daten/Kalibrierung_KBrPrisma_Keramik19_4V_3_6Grad_1500nm_all500nmMaker_Spalt_1500mu.txt};
+      \addlegendentry{Keramikstrahler KBr}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Referenzspektren der Wolframlampe (blau) und des Keramikstrahlers (orange, grün) unter Verwendung verschiedener Prismen. Es zeigt sich, dass das Maximum der Strahlungsleistung für den Keramikstrahler bei höheren Wellenlängen liegt.}
+  \label{fig:Referenzspektren}
+\end{figure}

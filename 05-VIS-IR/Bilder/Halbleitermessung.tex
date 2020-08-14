@@ -1,13 +1,17 @@
 \begin{figure}[htp]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Spannung U in \si{volt}, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin = 500, xmax=3250, xtick={}, legend cell align={left}]
-      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Absorption_Smooth_Kalibrierung_Glasprisma_Wolframlampe5V_kleinesHalbleiterplaettchen_3_6Grad_500nm_all100nmMaker_Spalt_500mu.txt};
+    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Absorptionsrate, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin = 950, xmax=2150, xtick={}, ymin =-.1, ymax = 1.15, legend cell align={left}]
+      \filldraw[draw=white!80!orange,fill=white!90!orange] (1020,-.1) rectangle (1080,1.2);
+      \draw[thick, white!50!orange] (1050,-.1) -- (1050,1.2);
+      \filldraw[draw=green!50!black, draw opacity = 0.2,fill=green!50!black, fill opacity = 0.1] (1770,-.1) rectangle (1830,1.2);
+      \draw[thick, green!50!black, opacity = 0.5] (1800,-.1) -- (1800,1.2);
+      \addplot[orange, thick] file[x index=1,y index=2]{Daten/Absorption_Smooth_Kalibrierung_Glasprisma_Wolframlampe5V_kleinesHalbleiterplaettchen_3_6Grad_500nm_all100nmMaker_Spalt_500mu.txt};
       \addlegendentry{Silizium}
       \addplot[green!50!black, thick] file[x index=1,y index=2]{Daten/Absorption_Smooth_Kalibrierung_Glasprisma_Wolframlampe5V_mitgrossemHalbleiterplaettchen_3_6Grad_500-3200nm_mitMarkern2_Spalt_500mu.txt};
-      \addlegendentry{Galiumarsenid}
+      \addlegendentry{Germanium}
     \end{axis}
   \end{tikzpicture}
-  \caption{Absorptionsrate von Silizium und Galiumarsenid.}
-  \label{fig:Halbleitermessung}
+  \caption{Transmissionsrate von Silizium und Germanium.}
+  \label{fig:Halbleitermessung_relativ}
 \end{figure}

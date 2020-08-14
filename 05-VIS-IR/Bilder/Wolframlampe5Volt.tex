@@ -2,7 +2,7 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Spannung U in \si{volt}, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin = 500, xmax=3250, xtick={}, legend cell align={left}]
-      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Wolframlampe500-1200nm.txt};
+      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Wolframlampe500-3200nm.txt};
       \addlegendentry{Referenzmessung}
       \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Glasprisma_Wolframlampe5V_kleinesHalbleiterplaettchen_3_6Grad_500nm_all100nmMaker_Spalt_500mu.txt};
       \addlegendentry{Silizium}

@@ -5,46 +5,50 @@ Reallocating 'name_of_file' (item size: 1) to 10 items.
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Database file #1: Literatur.bib
-Warning--to sort, need author or key in Roempp
-You've used 1 entry,
+I was expecting a `,' or a `}'---line 19 of file Literatur.bib
+ :   
+ :   note={\url{https://roempp.thieme.de/lexicon/RD-09-01400}},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 3 entries,
             2118 wiz_defined-function locations,
-            501 strings with 4046 characters,
-and the built_in function-call counts, 172 in all, are:
-= -- 13
-> -- 1
+            513 strings with 4231 characters,
+and the built_in function-call counts, 679 in all, are:
+= -- 57
+> -- 27
 < -- 0
-+ -- 1
-- -- 0
-* -- 8
-:= -- 24
-add.period$ -- 1
-call.type$ -- 1
-change.case$ -- 3
++ -- 11
+- -- 8
+* -- 27
+:= -- 122
+add.period$ -- 8
+call.type$ -- 3
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 7
-empty$ -- 24
-format.name$ -- 0
-if$ -- 39
+cite$ -- 3
+duplicate$ -- 31
+empty$ -- 67
+format.name$ -- 8
+if$ -- 142
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 6
-num.names$ -- 0
-pop$ -- 9
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 17
+num.names$ -- 6
+pop$ -- 25
 preamble$ -- 1
-purify$ -- 2
+purify$ -- 10
 quote$ -- 0
-skip$ -- 8
+skip$ -- 23
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 15
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
-warning$ -- 1
-while$ -- 0
-width$ -- 2
-write$ -- 8
-(There was 1 warning)
+type$ -- 8
+warning$ -- 0
+while$ -- 6
+width$ -- 4
+write$ -- 29
+(There was 1 error message)
