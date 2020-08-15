@@ -78,10 +78,6 @@
 \newcommand{\N}{\mathbb{N}}         % Natürliche Zahlen
 \newcommand{\C}{\mathbb{C}}         % Komplexe Zahlen
 \newcommand{\de}{\mathrm{d}}      % Differential
-\newcommand{\entspricht}{\mathrel{\widehat{=}}}
-
-\DeclareSIUnit{\eV}{\text{eV}}
-\DeclareSIUnit{\voltpeakpeak}{\volt{\textsubscript{pp}}}
 
 % Dokumenteneinstellungen
 \setlength{\parindent}{0px}         % remove indent in new paragraph
@@ -100,15 +96,6 @@
 \setlength{\marginparwidth}{1.7cm}
 \interfootnotelinepenalty=10000
 
-% Umdefinition von \textcolor ********************************************************
-\makeatletter
-\renewcommand*{\@textcolor}[3]{%
-	\protect\leavevmode
-	\begingroup
-	\color#1{#2}#3%
-	\endgroup
-}
-\makeatother
 % Damit das auch im Mathemodus anwendbar ist und dort z.B. die Leerzeichen nicht wie im Textmodus gesetzt werden.
 
 \pgfplotsset
@@ -123,6 +110,7 @@
 \usepgfplotslibrary{polar}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{calc}
+\usetikzlibrary{decorations}
 \usetikzlibrary{datavisualization.formats.functions}
 \usetikzlibrary{intersections}
 \usetikzlibrary{patterns}

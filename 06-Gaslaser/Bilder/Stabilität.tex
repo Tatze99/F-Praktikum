@@ -1,0 +1,52 @@
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[baseline,every text node part/.style={align=left}]
+    \begin{axis}[
+      disabledatascaling,
+      height = 9cm, width = 9cm,
+      xlabel={$g_1$}, ylabel={$g_2$},
+      xtick={1}, ytick={1},
+      axis lines=middle, samples=200, thick,
+      ymax = 3, ymin = -3,
+      y label style={at={(axis description cs:0.5,0.95)},anchor=east},
+      x label style={at={(axis description cs:0.95,0.5)},anchor=north}
+    ]
+      \addplot[name path=g1, domain=-3:-0.05,no marks, blue, thick] {1/x};
+      \addplot[name path=g2, domain=0.05:3,no marks, blue, thick] {1/x};
+
+      \path[name path=axis1] (-3,0) -- (0,0);
+      \path[name path=axis2] (3,0) -- (0,0);
+
+      \addplot [thick,color=blue,fill=blue,fill opacity=0.05] fill between[of=g1 and axis1,];
+      \addplot [thick,color=blue,fill=blue,fill opacity=0.05] fill between[of=g2 and axis2,];
+      \addplot[dashed] {x};
+      \coordinate[label=above:$A$] (A) at (1,1);
+      \coordinate[label=above left:$B$] (B) at (0,0);
+      \coordinate[label=below:$C$] (C) at (-1,-1);
+      \coordinate[label=above right:$D$] (D) at (0,1);
+      \coordinate[label=left:$E$] (E) at (0.4,1.8);
+      \fill (A) circle (1pt);
+      \fill (B) circle (1pt);
+      \fill (C) circle (1pt);
+      \fill (D) circle (1pt);
+      \fill (E) circle (1pt);
+      \draw[dashed] (0,1) -- (1,1) -- (1,0);
+      \draw[dashed] (0,-1) -- (-1,-1) -- (-1,-0);
+      \node[fill=white,rotate=45] (S) at (-2,-2){Symmetrische\\Resonatoren};
+    \end{axis}
+    \begin{scope}[shift={(0,-0.5)}]
+      \node[anchor=west] (a1) at (8,7.25){A.)};
+      \node[anchor=west] (a2) at (8.8,7){Planar\\$(R_1 = R_2 = \infty)$};
+      \node[anchor=west] (b1) at (8,5.75){B.)};
+      \node[anchor=west] (b2) at (8.8,5.5){Symmetrisch konfokal\\$(R_1 = R_2 = -L)$};
+      \node[anchor=west] (c1) at (8,4.25){C.)};
+      \node[anchor=west] (c2) at (8.8,4){Symmetrisch konzentrisch\\$(R_1 = R_2 = -L/2)$};
+      \node[anchor=west] (d1) at (8,2.75){D.)};
+      \node[anchor=west] (d2) at (8.8,2.5){Konfokal planar\\$(R_1 =-d, R_2 = \infty)$};
+      \node[anchor=west] (e1) at (8,1.25){E.)};
+      \node[anchor=west] (e2) at (8.8,1){Konkav konvex\\$(R_1 < 0, R_2 > 0)$};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Resonator-Stabilitäts-Diagramm nach~\cite{Peschel}: Ein sphärischer Resonator ist stabil, wenn die Parameter $g_1 = 1 + L/R_1$ und $g_2 = 1 + L/R_2$ in den schattierten Regionen, welche durch die Koordinatenachsen begrenzt werden, liegen. Alle symmetrischen Resonatoren liegen entlang der Linie $g_2=g_1$.}
+  \label{fig:Stabilität}
+\end{figure}

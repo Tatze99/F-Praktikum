@@ -1,0 +1,231 @@
+\documentclass[a4paper,twoside,final]{article}
+%----Eingebundene Bibliotheken-----
+\input{../LaTeX-Packages.tex}
+\begin{document}
+\setlength{\marginparsep}{2em}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% Anfang ********************************************************
+\begin{center}
+\thispagestyle{empty}
+  \includegraphics[width=0.75\textwidth]{../UniJena_BildWortMarke_black.pdf}\\[4em]
+  \Large
+  Ausarbeitung zum Versuch\\[2em]
+  \Huge
+  VIS-IR-Spektroskopie\\
+  \vspace{2cm}
+  \Large
+  Martin Beyer und Vanessa Huth\\[2em]
+  Abgabe: 30. September 2020\\[2em]
+  Betreuer: Dr. Joachim Hein\\[5em]
+  \begin{flushleft}
+  	Bewertung und Ausarbeitung:\\[2em]
+		Protokollführung und Form:\\[1em]
+		Ergebnisse, Auswertung und Interpretation:\\[1em]
+		Bemerkungen und Hinweise des Betreuers:
+  \end{flushleft}
+\end{center}
+\clearpage
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[RO,LE]{\textbf{Gaslaser}}
+\fancyhead[RE,LO]{\rightmark}
+\fancyfoot[LE,RO]{\bfseries\thepage}
+\fancyfoot[CO,CE]{Protokoll}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+
+% *********************************************
+% ***** KAPITEL 1 *****************************
+% *********************************************
+\tableofcontents
+% \pagenumbering{gobble}% remove page numbering
+\newpage
+% \pagenumbering{arabic}
+\section{Aufgabenstellung} \label{sec:Aufgabenstellung}
+
+\subsection{Messungen der räumlichen Intensitätsverteilung}
+
+\paragraph{Aufgabe 1.1}$~$
+
+Es wird experimentell der Taillenradius $w_0$ für drei verschiedene Resonatorlängen ($L= \SI{0.5}{\metre}, \SI{0.75}{\metre}, \SI{0.9}{\metre}$) bestimmt und mit den theoretischen Vorhersagen verglichen. Dabei werden folgende Methoden benutzt:
+\begin{enumerate}
+  \item Durch Einbringen eines dünnen Drahtes $(d =\SI{50}{\micro\metre})$ \emph{in den Resonator} werden verschiedene transversale Moden erzwungen. Durch transversales verfahren wird die Differenz der Positionen vermessen, an denen die TEM$_{02}$-Mode erscheint und daraus die Taille $w_0$ berechnet. Es wird eine Fehlerbetrachtung durchgeführt.
+  \item Der Bündelradius $w(z)$ \emph{außerhalb des Resonators} wird durch Ausmessen der Knotenlinien der TEM$_{02}$-Mode bestimmt. Daraus wird der Taillenradius $w_0$ unterr der Beachtung berechnet, dass der Auskoppelspiegel als plankonkave Linse wirkt. Die Berechnung wird ebenfalls ohne Berücksichtigung des Auskoppelspiegels durchgeführt.
+\end{enumerate}
+
+\paragraph{Aufgabe 1.2}$~$
+
+Die Laserleistung in der TEM$_{00}$-Grundmode wird für verschiedene Resonatorlängen und die Leistungen der höheren Moden für eine Resonatorlänge gemessen und interpretiert.
+
+\paragraph{Aufgabe 1.3}$~$
+
+Unter Wahl einer geeigneten Resonatorkonfiguration werden höhere Transversalmoden selektiert und fotografiert. Es werden die Beugungsverluste höherer Transversalmoden gegenüber der TEM$_{00}$-Mode diskutiert und die Frage beantwortet, wie die TEM$_{00}$-Mode sicher erzeugt werden kann.
+
+\subsection{Messungen der spektralen Intensitätsverteilung}
+
+\paragraph{Aufgabe 2.1}$~$
+
+Der Zeitverlauf eines Single-Mode-Lasers SML mit periodisch variierender Resonatorlänge (Wobbelungs-Betrieb) wird mithilfe eines Oszilloskops gemessen. Es wird erklärt, wie auf diese Weise das Spektrum gemessen werden kann. Es wird die Oszillationsbandbreite des SML, der minimal auflösbare Frequenzabstand bestimmt, mit dem Auflösungsvermögen eines Prismenspektrometers verglichen und die Frage beantwortet, welche Längenänderung mit der Anordnung noch messbar ist.
+
+\paragraph{Aufgabe 2.2}$~$
+
+Der Lamb-Dip wird identifiziert, vermessen und die Absenkung im Intensitätsprofil erklärt. Aus der Halbwertsbreite des Lamb-Dip $\Delta v_{LD}$ wird die Größenordnung der homogenen Linienbreite $\Delta v_{HL}$ abgeschätzt und mit der Dopplerbreite $\Delta v_{D}$, sowie der natürlichen Linienbreite des Übergangs verglichen. Das Verstärkungsprofil des He-Ne-Lasers wird skizziert.
+
+\paragraph{Aufgabe 2.3}$~$
+
+Die Lage der Axialmoden des Multi-Mode-Lasers MML wird mit Hilfe eines \emph{optischen Heterodyns} festgestellt. Dafür werden MML und SML derart überlagert, dass sich gut interferieren können. Es wird die zeitliche Konstanz der Axialmoden diskutiert und die Resonatorlänge des MML variiert.
+
+\paragraph{Aufgabe 2.4}$~$
+
+Das Schwebungssignal zwischen den Frequenzen beider Laser wird in Echtzeit (SML ohne Wobbelung) beobachtet und die Größenordnungen der Kurzzeitfluktuationen der Laserfrequenz eines freilaufenden Lasers angegeben.
+
+% *********************************************
+% ***** KAPITEL 2 *****************************
+% *********************************************
+\newpage
+\section{Grundlagen} \label{sec:Grundlagen}
+Ein Laser besteht aus zwei grundlegenden Elementen, einem verstärkenden Material (aktives Medium) und einem Resonator, welcher im einfachsten Fall aus zwei Spiegeln besteht. Die Verstärkung des Lichtes erfolgt durch stimulierte Emission.
+
+\subsection{Absorption und Emission von Licht}
+Nach dem \textsc{Bohr}'schen Atommodell besteht ein Atom aus einem punktförmigen Kern und einer Elektronenhülle, in der sich die Elektronen auf diskreten Bahnen bewegen. Den Bahnen werden Energien zugeordnet, welche in der Summe das Energieniveau des Atoms ergeben. Im Folgenden werden zwei Energieniveaus $E_1$ und $E_2$ betrachtet, deren Besetzungszahlen (Anzahl an Atomen pro Volumen) mit $N_1$ und $N_2$ bezeichnet werden. Die Änderung des Energieniveaus von Zustand $E_1$ zu $E_2$ kann durch Emission oder Absorption von Photonen der Energie
+\begin{align}
+  h\nu = |E_2 - E_1|
+\end{align}
+erreicht werden, vorausgesetzt, der Übergang ist nach den Auswahlregeln der Quantenmechanik erlaubt.
+
+\input{Bilder/Absorption_Emission.tex}
+
+Befindet sich das Atom in einem angeregten Zustand $E_2$, dann kann es unter Emission eines Photons in den niedrigeren Zustand $E_1$ fallen (siehe Abbildung~\ref{fig:Absorption_Emission}). Erfolgen diese Emissionen ohne jeglichen Einfluss von außen, wird von \emph{spontaner} Emission gesprochen. Das ausgesendete Licht steht untereinander in keiner festen Phasenbeziehung, Ausbreitungsrichtung oder Polarisation.
+
+Die Rate der Emissionsprozesse ist proportional zur Anzahl an Atomen im angeregten Zustand $N_2$. Bei der \emph{induzierten} Emission, wird das angeregte Atom durch ein äußeres Photon zur Emission gezwungen, wobei zwei identische Photonen entstehen. Die Rate der induzierten Emission ist zusätzlich noch proportional zur spektralen Energiedichte $u(\nu)$ des Strahlungsfeldes. Diese Zusammenhänge lassen sich mithilfe folgender Differentialgleichungen mathematisch formulieren:
+\begin{align}
+  \dv{N_1}{t} &= - B_{12} N_1 u(\nu) & \text{Absorption}\\
+  \dv{N_2}{t} &= - A_{12} N_2 u(\nu) & \text{spontane Emission}\\
+  \dv{N_2}{t} &= - B_{21} N_2 u(\nu) & \text{induzierte Emission}.
+\end{align}
+Die Proportionalitätskonstanten stellen hierbei die Einsteinkoeffizienten dar. Im thermodynamischen Gleichgewicht ergibt sich eine Balance zwischen Absorption und Emission:
+\begin{align}
+  N_2 = N_1 \exp\qty(-\frac{h\nu}{k_B T}).
+\end{align}
+Wird damit nun die spektrale Energiedichte $u(\nu)$ bestimmt und mit der \textsc{Planck}'schen Strahlungsformel verglichen, ergibt sich
+\begin{align}
+  \frac{A_{21}}{B_{21}} = \frac{8\pi h \nu^3}{c^3} \quad \text{und} \quad B_{12} = B_{21}.
+\end{align}
+Es ergibt sich somit eine Gleichheit der Koeffizienten der Absorption und induzierten Emission. Zudem ist für hohe Frequenzen die spontane Emission $A_{21}$ dominant gegenüber der induzierten Emission $B_{21}$, was den Grund darstellt, warum es schwierig ist, UV-Laser zu konstruieren.
+
+\subsection{Linienbreite}
+Bei der Absorption oder Emission elektromagnetischer Strahlung bei einem Übergang zwischen zwei Energieniveaus ist die Frequenz nicht streng monochromatisch.
+
+\paragraph{Natürliche Linienbreite}$~$
+
+Die natürliche Linienbreite ist eine Folge der endlichen Lebensdauer der Zustände bei der spontanen Emission. Nach der \textsc{Heisenberg}'schen Unschärferelation, ergibt sich die Energieunschärfe des Übergangs zu
+\begin{align}
+  \Delta \nu_\text{nat.} = \frac{1}{2\pi \tau},
+\end{align}
+wobei die Lebensdauer $\tau$ für den im Versuch verwendeten He-Ne-Laser $\tau = \SI{10}{\nano\second}$ beträgt, was einer natürlichen Linienbreite von \SI{16}{\mega\hertz} entspricht. Die Form der Emissionslinie lässt sich mithilfe des Oszillatormodells der Elektronen herleiten und ergibt als Spektrum ein Lorentz-Profil.
+
+\paragraph{Stoßverbreiterung}$~$
+
+Zusätzlich zur endlichen Lebensdauer können elastische Stöße zwischen den Gasteilchen auftreten. Diese Verbreiterung wird \emph{homogen} genannt, da sie alle Atome gleichermaßen betrifft. Da die Zahl der Stöße druckabhängig ist, wird ebenfalls von Stoßverbreiterung gesprochen. Die Halbwertsbreite ergibt sich analog zu
+\begin{align}
+    \Delta \nu_\text{St.} = \frac{1}{2\pi \tau_\text{St.}},
+\end{align}
+wobei $\tau_\text{St.}$ die mittlere Zeit zwischen zwei Stößen angibt. Für den He-Ne-Laser ergibt sich damit einer Verbreiterung von \SI{50}{\mega\hertz\per\milli\bar}.
+Im Festkörper beruht die Stoßverbreiterung auf der Wechselwirkung von Phonen.
+
+\paragraph{Dopplerverbreiterung}$~$
+
+Bewegt sich das angeregte Atom mit der Geschwindigkeit $\bm{v}$, so wird die Mittenfrequenz $\nu_0$ um einen Betrag verschoben, welcher der Dopplerverschiebung einer bewegten Quelle entspricht. Es handelt sich hierbei um eine inhomogene Verbreiterung, welche sich in einem gaußförmigen Linienprofil zeigt. Für den im Versuch benutzten Übergang beträgt die Dopplerverbreiterung \SI{1500}{\mega\hertz} und stellt die dominante Größe der Verbreiterung dar.
+
+\subsection{Die Laserbedingungen}
+
+\subsection{Der Inversionsabbau und Lamb-Dip}
+
+\subsection{Gaußsche Strahlenoptik}
+Um die Eigenschaften der Strahlenoptik, welche die Ausbreitung von Licht in optischen Systemen beschreibt, mit der Wellenoptik zu vereinen, werden Gaußstrahlen eingeführt. Sie stellen eine paraxiale Lösung der \textsc{Helmholtz}-Gleichung dar und eignen sich zur Beschreibung der Ausbreitung kohärenter Laserstrahlen. Ein kollimierte Laserstrahl propagiert gerichtet in einem homogenen Material. Aufgrund von Dispersioneffekten divergiert der Gaußstrahl jedoch. Der Gaußstrahl wird im Gegensatz zu einer ebenen Welle modelliert mit einer gaußförmig verlaufenden Amplitude entlang axialer Richtung. Damit lässt sich die komplexe Amplitude des Gaußstrahles schreiben als~\cite{Saleh}
+\begin{align}
+  E(\bm{r}) = E_0 \frac{W_0}{W(z)} \exp\qty(-\frac{\varrho}{W(Z)})^2 \exp[-\i\qty(kz + k \frac{\varrho^2}{2R(z)}+ \arctan\qty(\frac{z}{z_R})^2)].
+\end{align}
+Der Ausdruck $W(z)$ beschreibt den Radius des Strahls entlang der Ausbreitungsrichtung $z$ und $R(z)$ definiert den Krümmungsradius der Wellenfront aufgrund der Divergenz des Strahls. Sie sind definiert als
+\begin{align}
+  W(z) = W_0 \sqrt{1+\qty(\frac{z}{z_R})^2}, \qquad R(Z) = z \qty[1+\qty(\frac{z_R}{z})^2]
+\end{align}
+Die Größe $z_R$ wird \textsc{Rayleigh}-Länge genannt und beschreibt den Abstand zum Fokuspunkt ($z=0$) bei dem die Leistung der Strahlungsachse auf die Hälfte des Maximalwertes abgefallen ist. Es ergibt sich
+\begin{align}
+  z_R = \frac{\pi W_0^2}{\lambda}.
+\end{align}
+
+\subsubsection{Strahlparameter und Matrizenoptik}
+Wie in der Strahlenoptik lässt sich die Ausbreitung eines Gaußstrahls mithilfe von Matrizen beschreiben. Dabei kann die Propagation im freien Raum und durch optische Bauelemente bequem durch eine Matrix beschrieben werden. Diese ist im Folgenden für verschiedene Optische Elemente dargelegt~\cite{Peschel}:
+\begin{align}
+  M &= \begin{pmatrix}
+    1 & L \\ 0 & 1
+\end{pmatrix} & \text{Freiraum der Länge }L\\
+  M &= \begin{pmatrix}
+  1 & 0 \\ -\frac{1}{f} & 1
+\end{pmatrix} & \text{Linse mit Brennweite }f\\
+  M &= \begin{pmatrix}
+  1 & 0 \\ \frac{2}{R} & 1
+\end{pmatrix} & \text{Spiegel mit Krümmungsradius }R.
+\end{align}
+
+Zur vereinfachten Beschreibung des Gaußstrahls werden seine Kenngrößen zu einem komplexen Parameter $q$ zusammengefasst
+\begin{align}
+  q = z_F - \mathrm{i} z_0 \qquad \frac{1}{q} = \frac{1}{R(z)} + \mathrm{i}\frac{\lambda}{\pi}\frac{1}{W(z)^2}
+\end{align}
+Dabei bezeichnet $z_F$ den Abstand zum Fokus (Strahltaille) und $z_0$ die \textsc{Rayleigh}-Länge. Für ein optisches System mit der Transfermatrix $M$ ergibt sich der neue $q$-Parameter wie folgt:
+\begin{align}\label{eqn:Transfermatrix}
+  M = \begin{pmatrix}
+    A & B \\ C & D
+\end{pmatrix}, \qquad q_+ = \frac{A q_- + B}{C q_- + D}.
+\end{align}
+
+\subsubsection{Resonatortypen}
+Ein optischer Resonator besteht typischerweise aus zwei Spiegeln und wird charakterisiert durch die Resonatorlänge $L$ und den Krümmungsradius $R$ der Spiegel. Der Umlauf im Resonator lässt sich durch eine Matrix beschreiben. Damit sich ein Gaußstrahl auf sich selbst abbildet, muss $q_+ = q_- = q$ gelten. Das führt mit Gleichung~\eqref{eqn:Transfermatrix} auf eine quadratische Gleichung, deren Lösung für einen klassischen Laserresonator mit zwei Hohlspiegeln durch folgende Beziehung gegeben ist:
+\begin{align}\label{eqn:Resonatorformel}
+  |2g_1 g_2 -1 | < 1, \qquad g_x = 1 + \frac{L}{R_x}.
+\end{align}
+Dabei bezeichnen $g_1$ und $g_2$ die Spiegelparameter des Laserresonators. Ein Resonator ist also nur dann stabil, wenn~\eqref{eqn:Resonatorformel} gilt. Die Bereiche, für die ein stabiler Resonator möglich ist, sind in Abbildung~\ref{fig:Stabilität} dargestellt.
+
+\input{Bilder/Stabilität.tex}
+
+Hinsichtlich der Krümmungsradien lassen sich drei wichtige Typen unterscheiden:
+
+\begin{enumerate}[label=\Alph*)]
+  \item \emph{Planspiegelresonator} (Fabry-Perot-Resonator): Hier sind zwei planare Spiegel im Abstand $L$ angeordnet. Die transversale Ausdehnung des Strahls bestimmt das aktive Medium oder der Spiegeldurchmesser. Es bildet sich eine Feldverteilung, die $\cos^2$-förmig variiert entlang des Querschnitts.
+  \item \emph{Konfokaler Resonator}: Hier bildet sich ohne Einfluss begrenzender Aperturen eine begrenzte, gaußförmige Feldverteilung aus.
+  \item \emph{Konzentrischer Resonator}: Hier liegen die Krümmungsmittelpunkte im gleichen Punkt, die Spiegel weisen den Abstand $L=2R$ auf. Die transversale Ausdehnung der Feldverteilung hängt nur von den begrenzenden Aperturen ab. 
+\end{enumerate}
+\subsection{Der Helium-Neon-Laser}
+
+
+
+% *********************************************
+% ***** KAPITEL 4 *****************************
+% *********************************************
+\newpage
+\section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
+% \input{Bilder/Kalibrierung_Wolframlampe3_6.tex}
+
+\FloatBarrier
+% *********************************************
+% ***** KAPITEL 5 *****************************
+% *********************************************
+\newpage
+\section{Zusammenfassung}
+
+
+% ***** Literaturverzeichnis ******************
+
+\bibliography{Literatur}{}
+\bibliographystyle{plain}
+\end{document}
