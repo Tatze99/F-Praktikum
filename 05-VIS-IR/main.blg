@@ -1,4 +1,8 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Database file #1: Literatur.bib
 I was expecting a `,' or a `}'---line 19 of file Literatur.bib
@@ -11,4 +15,45 @@ I was expecting a `,' or a `}'---line 39 of file Literatur.bib
  : author={Br{\"u}gel, Werner}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            513 strings with 4231 characters,
+and the built_in function-call counts, 679 in all, are:
+= -- 57
+> -- 27
+< -- 0
++ -- 11
+- -- 8
+* -- 27
+:= -- 122
+add.period$ -- 8
+call.type$ -- 3
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 31
+empty$ -- 67
+format.name$ -- 8
+if$ -- 142
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 17
+num.names$ -- 6
+pop$ -- 25
+preamble$ -- 1
+purify$ -- 10
+quote$ -- 0
+skip$ -- 23
+stack$ -- 0
+substring$ -- 15
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 0
+while$ -- 6
+width$ -- 4
+write$ -- 29
 (There were 2 error messages)

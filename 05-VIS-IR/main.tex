@@ -64,7 +64,7 @@ Die spektrale Empfindlichkeit eines Halbleiter-Empfängers wird im Vergleich zum
 
 \paragraph{Aufgabe 2.2}$~$
 
-Die spektrale Energieverteilung der Strahlung einer Wolframlampe wird bei zwei wesentlich verschiedenen Betriebsspannungen gemessen und die Temperaturen anhand des Wien'schen Verschiebungsgesetzes bestimmt. Es wird zudem eine Vergleichsmessung mit Handpyrometer durchgeführt.
+Die spektrale Energieverteilung der Strahlung einer Wolframlampe wird bei zwei wesentlich verschiedenen Betriebsspannungen gemessen und die Temperaturen anhand des \textsc{Wien}'schen Verschiebungsgesetzes bestimmt. Es wird zudem eine Vergleichsmessung mit Handpyrometer durchgeführt.
 
 \subsection{Spektroskopische Messungen an Gasen und Festkörpern mit SPM2}
 Zunächst wird die wellenlängenabhängige Messung mit Vakuumthermoelement realisiert. Dabei wird das Vorgehen im Umgang mit Lock-in-Technik, PC-gestützter Datenaufnahme erarbeitet und die Wellenlängenskalen von SiO$_2$, NaCl-, und KBr-Prisma mittels Quecksilberspektrum überprüft. Es werden folgende Messungen durchgeführt
@@ -125,7 +125,7 @@ Die gesamte Strahlungsleistung eines schwarzen Körpers lässt sich durch die In
 
 \subsection{Prismen-Spektrographen}
 Verfahren zur Vermessung der Wellenlänge werden unter dem Begriff der Spektroskopie zusammengefasst. Ein einfallendes Strahlenbündel soll geometrisch zerlegt werden, indem die wellenlängenabhängige Brechung (Dispersion) oder Interferenz am Prisma oder optischen Gitter genutzt wird.
-\paragraph{Wadsworth-Anordung} Die im Versuch verwendeten Prismen sind beide in sogenannter Wadworth-Anordnung aufgebaut. Durch einen Spiegel, der sich in der Ebene der Basisfläche des Prismas befindet, wird erreicht, dass der Strahl der Wellenlänge, der das Prisma in minimaler Ablenkung durchsetzt, hinter dem Prisma parallel zum Strahl vor dem Prisma liegt. Genau die Richtung, in der das für eine bestimmte Wellenlänge der Fall ist, wird durch den Austrittsspalt aussiertuert.
+\paragraph{Wadsworth-Anordnung} Die im Versuch verwendeten Prismen sind beide in sogenannter Wadworth-Anordnung aufgebaut. Durch einen Spiegel, der sich in der Ebene der Basisfläche des Prismas befindet, wird erreicht, dass der Strahl der Wellenlänge, der das Prisma in minimaler Ablenkung durchsetzt, hinter dem Prisma parallel zum Strahl vor dem Prisma liegt. Genau die Richtung, in der das für eine bestimmte Wellenlänge der Fall ist, wird durch den Austrittsspalt aussortiert.
 
 \paragraph{SPM1} Der im ersten Versuchsteil verwendete Spektrograph ist ein Prismen-Monochromator, dessen schematischer Aufbau in Abbildung~\ref{fig:Prismenspektrograph} dargestellt ist.
 \begin{figure}[htp]
@@ -181,13 +181,13 @@ Der schematische Aufbau des SPM2s ist in Abbildung \ref{fig:SPM2} dargestellt. D
 
 \input{Bilder/SPM2.tex}\label{fig:ModellSPM2}
 
-Eintrits (2)- und Austrittsspalt(8) liegen sich gegenüber und in deren Verbindungslinie befindet sich ein Umlenkspiegel(7), der so in Verbindung mit dem Parabolspiegel(1) sowohl als Kollimator, als auch auf Kameraspiegel verwendet wird. Die Spalte befinden sich dabei jeweils in dessen Brennweite. Das Prisma (3) wird doppelt durchsetzt und ist in Verbindung mit einem Wadsworth-Spiegel (4) aufgebaut, was wie schon beim SPM1 für eine minimale Ablenkung der selektierten Wellenlänge sorgt. Entscheidend beim SPM2 ist, dass das Verändern der Prismenschraube automatisch durch das angeschlossene Labview Programm gesteuert wird. Auf dem SMP2 befindet sich eine, je nach verwendeten Prisma angepasste, Anzeige der Wellenlänge. Diese Eichung muss in die digitialisierten Daten übernommen werden. Dieses Verfahren wird in \ref{par:EichungSPM2} beschrieben.
+Eintrits (2)- und Austrittsspalt(8) liegen sich gegenüber und in deren Verbindungslinie befindet sich ein Umlenkspiegel(7), der so in Verbindung mit dem Parabolspiegel(1) sowohl als Kollimator, als auch auf Kameraspiegel verwendet wird. Die Spalte befinden sich dabei jeweils in dessen Brennweite. Das Prisma (3) wird doppelt durchsetzt und ist in Verbindung mit einem Wadsworth-Spiegel (4) aufgebaut, was wie schon beim SPM1 für eine minimale Ablenkung der selektierten Wellenlänge sorgt. Entscheidend beim SPM2 ist, dass das Verändern der Prismenschraube automatisch durch das angeschlossene Labview Programm gesteuert wird. Auf dem SMP2 befindet sich eine, je nach verwendeten Prisma angepasste, Anzeige der Wellenlänge. Diese Eichung muss in die digitalisierten Daten übernommen werden. Dieses Verfahren wird in \ref{par:EichungSPM2} beschrieben.
 
 
 
 \subsection{Lock-In-Verstärker}
 Lock-in-Verstärker sind wesentliche Bestandteile zahlreicher hochempfindlicher Messaufbauten, denn sie bieten die Möglichkeit, Signale schwacher Amplitude aus dem Rauschen gewinnen zu können und zu messen.
-Dazu wird die Strahlung periodisch unterbrochen bzw. moduliert. So gelingt es, das Signal gut von der Umgebungsstrahlung unterscheiden zu können sowie es leichter elektronisch verarbeiten zu können. Ein Lock-Inn-Verstärker ist folgerdermaßen aufgebaut: zuerst befindet sich ein Modulator mit Lichtschranke im Strhalengang. Dahinter folgt ein Empfänger (z.B. wie im Versuch ein Vakuumthermoelement).Von dort aus gelangt das Signal in einen aus drei Komponenten aufgebauten Selektivverstärker, bestehend aus einem Breitbandverstärker, einem TT-Filter in Gegenkopplung und einem Nachverstärker. Anschließend passiert das Signal einen Verstärker mit Relais, der als phasenempfindlicher Gleichrichter wirkt, sowie ein RC-Glied, durch welches das Signal geglättet wird. Der Verlauf des Signals ist in Abbildung \ref{fig:Lock-Inn} dargestellt.
+Dazu wird die Strahlung periodisch unterbrochen bzw. moduliert. So gelingt es, das Signal gut von der Umgebungsstrahlung unterscheiden zu können sowie es leichter elektronisch verarbeiten zu können. Ein Lock-Inn-Verstärker ist folgendermaßen aufgebaut: zuerst befindet sich ein Modulator mit Lichtschranke im Strahlengang. Dahinter folgt ein Empfänger (z.B. wie im Versuch ein Vakuumthermoelement).Von dort aus gelangt das Signal in einen aus drei Komponenten aufgebauten Selektivverstärker, bestehend aus einem Breitbandverstärker, einem TT-Filter in Gegenkopplung und einem Nachverstärker. Anschließend passiert das Signal einen Verstärker mit Relais, der als phasenempfindlicher Gleichrichter wirkt, sowie ein RC-Glied, durch welches das Signal geglättet wird. Der Verlauf des Signals ist in Abbildung \ref{fig:Lock-Inn} dargestellt.
 
 \begin{figure}[ht]\label{fig:Lock-Inn}
     \centering
@@ -200,7 +200,7 @@ So gelingt es, Signale, deren Phasenlage gegenüber dem Referenzsignal nicht kon
 
 \subsection{Auflösung und spektralen Spaltbreite}\label{sec:spektraleSpaltbreite}
 \subsubsection{Auflösung}
-Um die Auflösung der Abbildung mit einem Prismenspektrometer herzuleiten, werden geoemtrische Überlegungen angestellt. Grundlage der Herleitung ist die Tatsache, dass das Strahlenbündel beim Passieren des Prismas eingeschränkt wird, weshalb dieses als Spalt wirkt und es deshalb zu Beugungsphänomenen kommt. Resultat dieser Herleitung ist das theoretische beugungsbegrenzte Auflösungsvermögen eines Prismas
+Um die Auflösung der Abbildung mit einem Prismenspektrometer herzuleiten, werden geometrische Überlegungen angestellt. Grundlage der Herleitung ist die Tatsache, dass das Strahlenbündel beim Passieren des Prismas eingeschränkt wird, weshalb dieses als Spalt wirkt und es deshalb zu Beugungsphänomenen kommt. Resultat dieser Herleitung ist das theoretische beugungsbegrenzte Auflösungsvermögen eines Prismas
 \begin{align}
   R = - P \frac{dn}{d\lambda}
 \end{align}
@@ -212,25 +212,25 @@ Das reale Auflösungsvermögen ergibt sich dann zu
 mit $\Phi$ = Kollimatorspiegeldurchmesser/Brennweite und b=Spaltbreite.
 
 \subsubsection{spektrale Spaltbreit}
-Bei Messungen dieser Art liegt immer eine konstante geometrische Spaltbreite vor. Aufgrund der Winkeldispersion passieren diesen Spalt nicht nur Strahlen einer Wellenlänge, sondern immer die eines ganzen Wellenlängenintervalls. Dabei zeigt die Abhängigkeit der spektralen Strahlungsleistung eines engen Wellenlängenintervalls nach dem Durchgang durch einen Spalt einen charakteristischen Verlauf. Bei gleicher Eintritts- und Austrittsspaltbreite kann diese durch eine Dreiecksfunktion mit Maximum bei der eingestellten Wellenlänge beschrieben werden. Diese Funktion gibt eine Wahrscheinslichtkeitsaussage über denjenigen Strahlungsanteil, der den Detektor erreicht, an. \\
-Das Wellenlängenintervall, das diese immer gleiche geometrische Spaltbreite passiert ist jedoch auf Grund der Winkeldispersion des Prismas nicht immer gleich groß, sondern abhängig von dem Wellenlängenbereich, der betrachtet wird. So ist bei der Aufnahme der Spektralverteilung zu beachten, dass die Strahlungsdichte aus dem Planck-Gesetz von einem konstanten Wellenlängenintervall ausgeht. Um die Messwerte als mit den Theoriewerten in Deckung zu bringen, ist eine Korrektur durch Division $\Delta \lambda$ = const*$\frac{d\lambda}{dl}$ nötig, wobei dl die infinitesimale Änderung der Schraubeneinstellung darstellt.
+Bei Messungen dieser Art liegt immer eine konstante geometrische Spaltbreite vor. Aufgrund der Winkeldispersion passieren diesen Spalt nicht nur Strahlen einer Wellenlänge, sondern immer die eines ganzen Wellenlängenintervalls. Dabei zeigt die Abhängigkeit der spektralen Strahlungsleistung eines engen Wellenlängenintervalls nach dem Durchgang durch einen Spalt einen charakteristischen Verlauf. Bei gleicher Eintritts- und Austrittsspaltbreite kann diese durch eine Dreiecksfunktion mit Maximum bei der eingestellten Wellenlänge beschrieben werden. Diese Funktion gibt eine Wahrscheinlichtkeitsaussage über denjenigen Strahlungsanteil, der den Detektor erreicht, an. \\
+Das Wellenlängenintervall, das diese immer gleiche geometrische Spaltbreite passiert ist jedoch auf Grund der Winkeldispersion des Prismas nicht immer gleich groß, sondern abhängig von dem Wellenlängenbereich, der betrachtet wird. So ist bei der Aufnahme der Spektralverteilung zu beachten, dass die Strahlungsdichte aus dem Planck-Gesetz von einem konstanten Wellenlängenintervall ausgeht. Um die Messwerte als mit den Theoriewerten in Deckung zu bringen, ist eine Korrektur durch Division $\Delta \lambda$ = const$\cdot \dv{\lambda}{l}$ nötig, wobei $\dd{l}$ die infinitesimale Änderung der Schraubeneinstellung darstellt.
 
 \subsection{Empfänger}\label{sec:Empfänger)}
 \subsubsection{thermische Detektoren}
 Thermische Detektoren beruhen auf der Messung von Effekten, die aufgrund der Temperaturänderung nach Strahlungseinfall enstehen. Deshalb ist das so entstehende Photosignal nur vom auftreffenden Strahlungsfluss abhängig und deshalb wellenlängenunabhängig. \\
-Je nach ausgenutzten Effekt unterscheidet man unterschiedliche thermische Detektoren. Das \textsc{Thermoelement} nutzt die temperaturabhängige Änderung der Thermospannung, die sich an der Kontaktstelle zweier verschiedener Materialien ergibt, da deren Ferminiveaus sich bei Änderung der Temperatur materialspezifisch verschieben.
-Die Widerstandsänderung eines elektrischen Leiters aufgrund der Temperaturänderung durch Strahlungsabsorption zu messen, ist das Prinzip des \textsc{Bolometers}.
-\textsc{Pyroelektrische Strahlunsgempfänger} nutzen den Effekt aus, dass bei ferromagnetischen Materialien unterhalb des Curriepunktes Polarisationsänderungen auftreten. Die bei bestimmten Materialien auftretende spontante Polarisation kann als elektrisches Signal gemessen werden. Der \textsc{Golay-Detektor} beruht auf der Änderung des Gasdruckes durch die Absoprtionswärme. Diese verformt einen flexibelen Spiegel, der Teil eines optisches Systems ist, welches in Folge dessen eine Änderung registriert.
+Je nach ausgenutzten Effekt unterscheidet man unterschiedliche thermische Detektoren. Das \emph{Thermoelement} nutzt die temperaturabhängige Änderung der Thermospannung, die sich an der Kontaktstelle zweier verschiedener Materialien ergibt, da deren Ferminiveaus sich bei Änderung der Temperatur materialspezifisch verschieben.
+Die Widerstandsänderung eines elektrischen Leiters aufgrund der Temperaturänderung durch Strahlungsabsorption zu messen, ist das Prinzip des \emph{Bolometers}.
+\emph{Pyroelektrische Strahlunsgempfänger} nutzen den Effekt aus, dass bei ferromagnetischen Materialien unterhalb des \textsc{Curie}-Punktes Polarisationsänderungen auftreten. Die bei bestimmten Materialien auftretende spontane Polarisation kann als elektrisches Signal gemessen werden. Der \emph{Golay-Detektor} beruht auf der Änderung des Gasdruckes durch die Absorptionswärme. Diese verformt einen flexiblen Spiegel, der Teil eines optisches Systems ist, welches in Folge dessen eine Änderung registriert.
 
 \subsubsection{Photodetektoren}
 Auch hier können zwei unterschiedliche Effekte genutzt werden.\\
-\textsc{Photoleitfähigkeit}: Die einfallende Strahlung erzeugt Elektronen-Loch-Paare. Dadurch ändert sich die elektrische Leitfähigkeit eines Halbleiters beim Einfall von Strahlung. Das Photosignal wird dann entweder als Spannungsänderung über einen Widerstand abgenommen oder als Stromänderung gemessen. \\
-\textsc{Photospannung}: Detektoren, die auf diesem Effekt beruhen, bestehen aus einer n- sowie einer p-Schicht. Durch die einfallende Strahlung bildet sich ein Ladungsträgerpaar, welches über die n- und p-Grenzschicht getrennt wird und damit eine elektrische Spannung entsteht, die gemessen wird. \\
-Photodetektoren haben eine höhrere Emüfindlichkeit, als thermische Detektoren, sind aber aufgrund der Notwenigkeit der Überwindung der Bandlücke wellenlängenabhägig in ihrer Emfpindlichkeit.
+\emph{Photoleitfähigkeit}: Die einfallende Strahlung erzeugt Elektronen-Loch-Paare. Dadurch ändert sich die elektrische Leitfähigkeit eines Halbleiters beim Einfall von Strahlung. Das Photosignal wird dann entweder als Spannungsänderung über einen Widerstand abgenommen oder als Stromänderung gemessen. \\
+\emph{Photospannung}: Detektoren, die auf diesem Effekt beruhen, bestehen aus einer n- sowie einer p-Schicht. Durch die einfallende Strahlung bildet sich ein Ladungsträgerpaar, welches über die n- und p-Grenzschicht getrennt wird und damit eine elektrische Spannung entsteht, die gemessen wird. \\
+Photodetektoren haben eine höhere Empfindlichkeit, als thermische Detektoren, sind aber aufgrund der Notwenigkeit der Überwindung der Bandlücke wellenlängenabhängig in ihrer Empfindlichkeit.
 
 \subsubsection{spektrale Empfindlichkeit}
-Weil thermische Empfänger aussschließlich auf Effekten beruhen, die aufgrund einer Termperaturänderung auftreten, ist die Empfindlichkeit dieser Empfänger wellenlängenunabhängig. Anders verhält es sich mit den Halbleiterdektoren. Da es bei diesen nur dann zur Entstehung eines Signals kommen kann, wenn die Energie aufgebracht wird, um ein Elektron vom Valenz- ins Leitungsband zu heben, also wenn mindestens die Bandlückenenergie aufgebracht wird, zeigen diese Detektoren eine Wellenlängenabhängigkeit. \\
-Die spektrale Emfpindlichkeit $r(\lambda)$ eines Empfängern bei der Wellenlänge $\lambda$ ist definiert als Verhältnis der vom Empfänger abgegebenen Messgröße $M(\lambda)$ (z.B. Spannung, Strom, Ausschlag) zu der Strahlungsleistung $P_S(\lambda)$:
+Weil thermische Empfänger ausschließlich auf Effekten beruhen, die aufgrund einer Temperaturänderung auftreten, ist die Empfindlichkeit dieser Empfänger wellenlängenunabhängig. Anders verhält es sich mit den Halbleiterdetektoren. Da es bei diesen nur dann zur Entstehung eines Signals kommen kann, wenn die Energie aufgebracht wird, um ein Elektron vom Valenz- ins Leitungsband zu heben, also wenn mindestens die Bandlückenenergie aufgebracht wird, zeigen diese Detektoren eine Wellenlängenabhängigkeit. \\
+Die spektrale Empfindlichkeit $r(\lambda)$ eines Empfängern bei der Wellenlänge $\lambda$ ist definiert als Verhältnis der vom Empfänger abgegebenen Messgröße $M(\lambda)$ (z.B. Spannung, Strom, Ausschlag) zu der Strahlungsleistung $P_S(\lambda)$:
 \begin{align}
   r(\lambda) = \frac{M(\lambda)}{P_S(\lambda)}
 \end{align}
@@ -243,20 +243,20 @@ wobei A der Ausschlag des Galvanometers ist.
 
 \subsection{Absorption und Reflexion}\label{sec:AbsorptionundReflexion}
 \subsubsection{Absorption}
-Die Transmission eines homogenen Stoffes mit geringem Reflexionsvermögen wird beschrieben durch das Beersche Gesetz:
+Die Transmission eines homogenen Stoffes mit geringem Reflexionsvermögen wird beschrieben durch das \textsc{Beer}'sche Gesetz:
 \begin{align}
   T=\frac{I_D}{I_0}=(1-R)^2*\exp(-Kd)
 \end{align}
 wobei K die Extinktionskonstante ist und d die Schichtdicke angibt.
 \subsubsection{Reflexionsvermögen}
-Bei quasi senkrechtem Licheinfall berechnet sich das Reflexionsvermögen an einer Grenzfläche bei Anwesenheit von Absorption zu
+Bei quasi senkrechtem Lichteinfall berechnet sich das Reflexionsvermögen an einer Grenzfläche bei Anwesenheit von Absorption zu
 
 \begin{align}
   R(\lambda)=\frac{N_1(\lambda)-N_2(\lambda)}{N_1(\lambda)+N_2(\lambda)}
 \end{align}
 
-mit dem komplexen Brechungsindex $N(\lambda) = n(\lambda)+ik(\lambda)$  und dem Absorptionsindex k.
-Werden als Medien Luft (N=1) und ein beliebiges Medium mit $N_2 = N$ verwendet, ergibt sich für das Refflexionsvermögen
+mit dem komplexen Brechungsindex $N(\lambda) = n(\lambda)+\mathrm{i}k(\lambda)$  und dem Absorptionsindex k.
+Werden als Medien Luft (N=1) und ein beliebiges Medium mit $N_2 = N$ verwendet, ergibt sich für das Reflexionsvermögen
 \begin{align}
   R(\lambda)=\frac{(n-1)^2+k^2}{(n+1)^2+k^2}
 \end{align}
@@ -269,12 +269,12 @@ Daraus wird ersichtlich, dass in den Wellenlängenbereichen, wo Absorption auftr
 \newpage
 \section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
 % \input{Bilder/Kalibrierung_Wolframlampe3_6.tex}
-\subsection{Aufbau und Wellenlängeneichung eines Prismenmonochromators (SPM2)}
+\subsection{Aufbau und Wellenlängeneichung eines Prismenmonochromators (SPM1)}
 \subsubsection{Justieren des Prismenmonochromators in Wadsworth-Anordung}
-Um den Prismenmonochromator in Wadsworth-Anordung zu justieren wird eine Quecksilberdampflampe verwendet. Diese wird so justiert, dass der Fokuspunkt ihres Strahls auf dem Eintrittsspalt lokalisiert ist. Gleichzeitig ist darauf zu achten, dass der erste Spiegel möglichst voll ausgeleuchtet ist. Auch der zweite Spiegel wird so justiert, dass die aus dem Prisma kommenden Strahlen auf diesen fallen. Die Austrittsblende agiert als Monochromator. Mit der Kombination aus Thermoelemnt und Galvanometer kann auch bei optimaler Justage kein Ausschlag gemessen werden, weshalb eine Photodiode als Empfänger genutzt wird. Diese wird so positioniert, dass der Detektor sich im Fokuspunkt des Strahls befindet.
+Um den Prismenmonochromator in Wadsworth-Anordnung zu justieren wird eine Quecksilberdampflampe verwendet. Diese wird so justiert, dass der Fokuspunkt ihres Strahls auf dem Eintrittsspalt lokalisiert ist. Gleichzeitig ist darauf zu achten, dass der erste Spiegel möglichst voll ausgeleuchtet ist. Auch der zweite Spiegel wird so justiert, dass die aus dem Prisma kommenden Strahlen auf diesen fallen. Die Austrittsblende agiert als Monochromator. Mit der Kombination aus Thermoelement und Galvanometer kann auch bei optimaler Justage kein Ausschlag gemessen werden, weshalb eine Photodiode als Empfänger genutzt wird. Diese wird so positioniert, dass der Detektor sich im Fokuspunkt des Strahls befindet.
 
 \subsubsection{Eichung und Auflösungsvermögen}
-Die Skale der Prismenverstellung wird bezüglich der Wellenlänge mit Hilfe der Linien der Queckssilberdampflampe geeicht. Zum Eichen wird bei der grünen Spektrallinie begonnen, da die Photodiode bei dieser eine bessere Empfindlichkeit aufweist, als für den blauen Spektralbereich. Dazu wird das Prisma so eingestellt, dass die grüne Spektrallinie den Austrittsspalt passieren kann. Aufgrund der bekannten Daten für die Spektrallinien der Queckssilberdampflampe kann dem in dem Bereich gefunden Maxima und dem dazugehörigem am Rad der Prisemeinstellung abgelesenen Skalenwert eine Wellenlänge zugeorndet werden. Die unterschiedlichen Einstellungen des Prismas werden durchgefahren und jeweils bei den gefundenen Maximas kann dem zugehörigen Skalenwert nach gleichem Prinzip wie oben beschrieben eine Wellenlänge zugeordnet werden. Die erhaltenen Datenpaare können dargestellt und gefittet werden, woraus eine Funktion erhalten wird, die den am Rad der Prismeneinstellung abgelesenenen Skalenwerten eine Wellenlänge zuordnet.
+Die Skale der Prismenverstellung wird bezüglich der Wellenlänge mit Hilfe der Linien der Quecksilberdampflampe geeicht. Zum Eichen wird bei der grünen Spektrallinie begonnen, da die Photodiode bei dieser eine bessere Empfindlichkeit aufweist, als für den blauen Spektralbereich. Dazu wird das Prisma so eingestellt, dass die grüne Spektrallinie den Austrittsspalt passieren kann. Aufgrund der bekannten Daten für die Spektrallinien der Quecksilberdampflampe kann dem in dem Bereich gefunden Maxima und dem dazugehörigem am Rad der Prismeneinstellung abgelesenen Skalenwert eine Wellenlänge zugeordnet werden. Die unterschiedlichen Einstellungen des Prismas werden durchgefahren und jeweils bei den gefundenen Maxima kann dem zugehörigen Skalenwert nach gleichem Prinzip wie oben beschrieben eine Wellenlänge zugeordnet werden. Die erhaltenen Datenpaare können dargestellt und gefittet werden, woraus eine Funktion erhalten wird, die den am Rad der Prismeneinstellung abgelesenen Skalenwerten eine Wellenlänge zuordnet.
 \begin{figure}[htp]
     \centering
         \includegraphics[width=0.9\textwidth]{Bilder/Eichung_SPM1_mitQuecksilberdapflampe.pdf}
@@ -282,13 +282,13 @@ Die Skale der Prismenverstellung wird bezüglich der Wellenlänge mit Hilfe der 
     \label{fig:EichungSPM1}
 \end{figure}
 
-Zur Abschätzung der Auflösung wird die Natriumdampflampe verwendet. Der Aufbau wird auf die Doppellinie des Natriums eingestellt. Anstelle des Spiegels zwei wird ein Fernrohr aufgebaut, um die Linien direkt beobachten zu können. Trotz kleinster Öffnungsweite der Blenden können die zwei gelben Linien des Natriums, welche sich bei \SI{588,9951}{\nano\meter} und bei \SI{589,5924}{\nano\meter} befinden, nicht unterschieden werden.
+Zur Abschätzung der Auflösung wird die Natriumdampflampe verwendet. Der Aufbau wird auf die Doppellinie des Natriums eingestellt. Anstelle des Spiegels zwei wird ein Fernrohr aufgebaut, um die Linien direkt beobachten zu können. Trotz kleinster Öffnungsweite der Blenden können die zwei gelben Linien des Natriums, welche sich bei \SI{588.9951}{\nano\meter} und bei \SI{589.5924}{\nano\meter} befinden, nicht unterschieden werden.
 
 \subsection{Messungen anhand des Wolframlampenspektrums}
 \subsubsection{Spektrale Empfindlichkeit eines Halbleiterempfängers}
-Die spektrale Empfindlichkeit eines Empfängers kann nach Abschnitt \ref{sec:Empfänger)} berechnet werden, indem das Signal mit dem Empfänger, sowie mit einem Thermoelement vermessen  und das Verhältnis der Messwerte gebildet wird. Dazu wird nach der Austrittsblende einmal das Thermoelement, sowie bei anschließenden Messungen ein InGaAs-Halbleiterdetektor und ein Si-Halbleiterdetektor in den Fokuspunkt des austretenden Strahl positioniert. Das Signal der Halbleiterdetektoren wird mit einem Verstäker verstärkt und anschließend am Multimeter abgelesen, während das Signal des Thermoelements mit dem Galvanometer vermessen wird. Bei Letzterem ist das Ablesen nur mit einer sehr schlechten Auflösung möglich, weshalb vorallem kleine Signale schlecht vermessen bzw. überhaupt detektiert werden können. So ergibt sich, dass nur die Bereich der Empfindlichkeitskurven vermessen werden können, in denen das Signal des Thermoelements sich von Null unterscheiden lässt, weshalb die erhaltenen Empfindlichkeitskurven nur unvollstädig vermessen werden konnten. Eine vollständige Vermessung kann mit einem Messgerät mit besserer Auflösung vorallem in niedrigen Signalbereichen realisiert werden.
+Die spektrale Empfindlichkeit eines Empfängers kann nach Abschnitt \ref{sec:Empfänger)} berechnet werden, indem das Signal mit dem Empfänger, sowie mit einem Thermoelement vermessen  und das Verhältnis der Messwerte gebildet wird. Dazu wird nach der Austrittsblende einmal das Thermoelement, sowie bei anschließenden Messungen ein InGaAs-Halbleiterdetektor und ein Si-Halbleiterdetektor in den Fokuspunkt des austretenden Strahl positioniert. Das Signal der Halbleiterdetektoren wird mit einem Verstärker verstärkt und anschließend am Multimeter abgelesen, während das Signal des Thermoelements mit dem Galvanometer vermessen wird. Bei Letzterem ist das Ablesen nur mit einer sehr schlechten Auflösung möglich, weshalb vorallem kleine Signale schlecht vermessen bzw. überhaupt detektiert werden können. So ergibt sich, dass nur die Bereich der Empfindlichkeitskurven vermessen werden können, in denen das Signal des Thermoelements sich von Null unterscheiden lässt, weshalb die erhaltenen Empfindlichkeitskurven nur unvollständig vermessen werden konnten. Eine vollständige Vermessung kann mit einem Messgerät mit besserer Auflösung vorallem in niedrigen Signalbereichen realisiert werden.
 
-\begin{figure}[h]
+\begin{figure}[htp]
   \centering
   \begin{subfigure}{0.9\textwidth}
     \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_InGaAs.pdf}
@@ -302,7 +302,7 @@ Die spektrale Empfindlichkeit eines Empfängers kann nach Abschnitt \ref{sec:Emp
   \label{fig:Empf_InGaAs}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htp]
   \centering
   \begin{subfigure}{0.9\textwidth}
     \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_SI.pdf}
@@ -319,11 +319,11 @@ Die spektrale Empfindlichkeit eines Empfängers kann nach Abschnitt \ref{sec:Emp
 \FloatBarrier
 
 Es wird festgestellt, dass die Bereiche die aufgrund der Auflösung vermessbar sind, gut mit den vom Hersteller angegebenen Verlauf übereinstimmen. \\
-Es zeigt sich deutlich, dass die Empfindlichkeit des Empfängers stark von der Wellenlänge abhängig ist, weshalb bei jeder Messung zu überlegen ist, in welchem Spektralbereich die zu vermessenden Werte liegen und daraus den passenden Halbleiterdektektor zu wählen ist. Wie in Abschnitt \ref{sec:Empfänger)} beschrieben, ergibt sich der Abknickpunkt als Bandlückenenergie des jeweiligen Halbleiters. Auch dies kann anhang der Messwerte des Siliziums bestätigt werden. Die Bandlückenenergie von Silizium bei \SI{300}{\kelvin} liegt bei \SI{1,12}{\electronvolt}. Dies entspricht einer Wellenlänge von \SI{1,11}{\micro\meter}. Der vermessene Abknickpunkt liegt in diesem Bereich.
+Es zeigt sich deutlich, dass die Empfindlichkeit des Empfängers stark von der Wellenlänge abhängig ist, weshalb bei jeder Messung zu überlegen ist, in welchem Spektralbereich die zu vermessenden Werte liegen und daraus den passenden Halbleiterdetektor zu wählen ist. Wie in Abschnitt \ref{sec:Empfänger)} beschrieben, ergibt sich der Abknickpunkt als Bandlückenenergie des jeweiligen Halbleiters. Auch dies kann anhand der Messwerte des Siliziums bestätigt werden. Die Bandlückenenergie von Silizium bei \SI{300}{\kelvin} liegt bei \SI{1.12}{\electronvolt}. Dies entspricht einer Wellenlänge von \SI{1.11}{\micro\meter}. Der vermessene Abknickpunkt liegt in diesem Bereich.
 
 \subsubsection{spektrale Energieverteilung einer Wolframlampe}
 Für diese Messung wird das SPM2 verwendet.
-\paragraph{Eichung SPM2}\label{par:EichungSPM2} Das SPM2 enthält eine eingebaute Wellenlängenanzeige. Diese wird verwendet, um auch die digitialisierten Daten zu eichen. Dazu wird in vorher festgelegten regelmäßigen Abständen bei der Aufnahme der Daten ein Marker gesetzt. Aus diesem Marker sowie der Kenntnis des Abstandes, in dem die Marker gesetzt werden, lassen sich Wellenlängen-Samplezahl Paare finden, womit eine Eichfunktion, also der Zusammenhang zwischen Sample und Wellenlänge, rekonstruiert werden kann und damit dann die Sampleanzahl in eine Wellenlänge umgerechnet wird.
+\paragraph{Eichung SPM2}\label{par:EichungSPM2} Das SPM2 enthält eine eingebaute Wellenlängenanzeige. Diese wird verwendet, um auch die digitalisierten Daten zu eichen. Dazu wird in vorher festgelegten regelmäßigen Abständen bei der Aufnahme der Daten ein Marker gesetzt. Aus diesem Marker sowie der Kenntnis des Abstandes, in dem die Marker gesetzt werden, lassen sich Wellenlängen-Samplezahl Paare finden, womit eine Eichfunktion, also der Zusammenhang zwischen Sample und Wellenlänge, rekonstruiert werden kann und damit dann die Sampleanzahl in eine Wellenlänge umgerechnet wird.
 
 Als Strahlungsquelle dient eine Wolframlampe, die bei einer Betriebsspannung von \SI{2}{V} und \SI{5}{V} betrieben wird. Die spektrale Energieverteilung wird mit einem Thermoelement, das an einen Lock-In-Verstärker angeschlossen ist, detektiert. Zu beachten ist hier die Theorie der spektralen Spaltbreite, die in \ref{sec:spektraleSpaltbreite} eingeführt wurde. Aufgrund der wellenlängenabhängigen Brechung des Prismas sind die mit der konstanten geometrischen Spaltbreite erfassten Wellenlängenbereiche unterschiedlich breit. Dies erfordert die Korrektur der gemessen Werte, indem durch $\Delta \lambda$ dividiert wird, um diese mit dem Planckspektrum vergleichen zu können. Für $\Delta \lambda$ gilt
 \begin{align}
@@ -333,10 +333,10 @@ Als Strahlungsquelle dient eine Wolframlampe, die bei einer Betriebsspannung von
 wobei dl die Verschiebung der Mikrometerschraube ist.
 $\frac{d\lambda}{dl}$ wird durch die Ableitung der oben beschriebenen Eichfunktion erhalten.\\
 
-Aus den gemessenen Spektren wird mit Hilfe des Wienschen Verschiebungsgesetzes die Temperatur der Wolframlampe berechnet. Hierzu wird das Maximum der gemessenen Verteilung bestimmt sowie die dazugehörige Wellenlänge. Über die Gleichung \ref{equ:WienscheVerschiebung} wird dann die Temperatur gewonnen. \\
+Aus den gemessenen Spektren wird mit Hilfe des \textsc{Wien}'schen Verschiebungsgesetzes die Temperatur der Wolframlampe berechnet. Hierzu wird das Maximum der gemessenen Verteilung bestimmt sowie die dazugehörige Wellenlänge. Über die Gleichung \ref{equ:WienscheVerschiebung} wird dann die Temperatur gewonnen. \\
 Mit dieser Temperatur lässt sich die theoretische Planckkurve nach Gleichung \ref{eqn:2.1} berechnen.
 
-\begin{figure}[h]
+\begin{figure}[htp]
   \centering
   \begin{subfigure}{0.9\textwidth}
     \includegraphics[width=\textwidth]{Bilder/Wolframlampe2V.jpg}
@@ -352,7 +352,7 @@ Mit dieser Temperatur lässt sich die theoretische Planckkurve nach Gleichung \r
 
 \FloatBarrier
 An den Grafiken ist zu erkennen, dass die Messwerte dem in Abbildung \ref{fig:Planck} dargestellten Verhalten folgen. Für höhere Temperaturen schiebt sich das Maxima zu kleineren Wellenlängen, außerdem wird die Kurve höher. Die theoretische Kurve passt bei \SI{5}{\volt} Betriebsspannung sehr gut mit den gemessenen Werten überein. Bei \SI{2}{\volt} bestätigt sich der prinzipielle Verlauf, wenn auch die Kurve schmaler ist, als die Theoriekurve.\\
-Der gemessene Galvanometerausschlag ergibt sich aus der Strahlungsdichte, einem Dispersionsanteil, sowie der Transmissionsfunktion. Durch Letztere wird berücksichtig, dass die sich im Strahlengang befindlichen Stoffe, wie z.B. die Aluminiumspiegel sowie das Prisma und die Luft, Strahlung absorbieren bzw. reflektieren können. An den Grafiken sind die Wellenlängen, bei denen es zu Absorption deutlich sichtbar. So finden sich in den Messungen die Absorptionsbanden von $H_2O$ und $CO_2$, die theoretisch bei \SI{1,38}{\micro\meter} und \SI{1,87}{\micro\meter} liegen bei \SI{1,41}{\micro\meter} und \SI{1,89}{\micro\meter} für \SI{2}{\volt} bzw. \SI{5}{\volt}. Auch die Absoprtion der Aluminiumspiegel, die theoretisch bei \SI{0,85}[\micro\meter} liegt, tritt im Spektrum bei \SI{0,83}{\micro\meter} auf.
+Der gemessene Galvanometerausschlag ergibt sich aus der Strahlungsdichte, einem Dispersionsanteil, sowie der Transmissionsfunktion. Durch Letztere wird berücksichtig, dass die sich im Strahlengang befindlichen Stoffe, wie z.B. die Aluminiumspiegel sowie das Prisma und die Luft, Strahlung absorbieren bzw. reflektieren können. An den Grafiken sind die Wellenlängen, bei denen es zu Absorption deutlich sichtbar. So finden sich in den Messungen die Absorptionsbanden von \ce{H2O} und \ce{CO2}, die theoretisch bei \SI{1.38}{\micro\meter} und \SI{1.87}{\micro\meter} liegen bei \SI{1.41}{\micro\meter} und \SI{1.89}{\micro\meter} für \SI{2}{\volt} bzw. \SI{5}{\volt}. Auch die Absorption der Aluminiumspiegel, die theoretisch bei \SI{0.85}{\micro\meter} liegt, tritt im Spektrum bei \SI{0.83}{\micro\meter} auf.
 %DIE ANDEREN WERTE???
 
 \subsection{Spektroskopische Messungen mit dem SPM2}
@@ -418,35 +418,35 @@ Es muss jedoch noch angemerkt werden, dass bei der Messung Fehler auftreten kön
 \FloatBarrier
 
 
-\subsubsection{Absorption und Relfektivität von $SiO_2$}
+\subsubsection{Absorption und Reflektivität von \ce{SiO2}}
 \paragraph{Absorption}
-Um die Absoprtion von $SiO_2$ zu messen, wurde sowohl ein Plättchen aus undotiertem als auch ein Plättchen mit dotiertem $SiO_2$ in den Strahlengang positioniert.
-\begin{figure}[h]
+Um die Absorption von \ce{SiO2} zu messen, wurde sowohl ein Plättchen aus undotiertem als auch ein Plättchen mit dotiertem \ce{SiO2} in den Strahlengang positioniert.
+\begin{figure}[htp]
   \centering
     \includegraphics[width=\textwidth]{Bilder/AbsorptionSiO2.pdf}
-    \caption{Signale am Thermoelement bei Plättchen mit dotiertem sowie mit undotierten $SiO_2$ im Strahlengang sowie ohne Plättchen im Strahlengang}
+    \caption{Signale am Thermoelement bei Plättchen mit dotiertem sowie mit undotierten \ce{SiO2} im Strahlengang sowie ohne Plättchen im Strahlengang}
 \end{figure}
 Um Gebiete mit Absorption besser kenntlich zu machen, wird das Verhältnis aus jeweiligem Signal zu Referenzsignal dargestellt.
 
-\begin{figure}[h]
+\begin{figure}[htp]
   \centering
     \includegraphics[width=\textwidth]{Bilder/Absorptionsrate_Si02.pdf}
     \caption{Verhältnis jeweiliges Signal zu Referenzsignal}
 \end{figure}
 \FloatBarrier
-Der Bereich der Absorption ist beim undotierten Präparat im Strahlengang deutlich zu erkennen und liegt bei \SI{10,24}{\micro\meter}.
+Der Bereich der Absorption ist beim undotierten Präparat im Strahlengang deutlich zu erkennen und liegt bei \SI{10.24}{\micro\meter}.
 
 \paragraph{Reflexionsvermögen}
-Für die Messung des Reflexionsvermögens wird der Aufbau teilweise geändert.Vom zweitem Spiegel wird der Strahl auf eine relfektierende Einheit gelenkt. Der Detektor ist so positioniert, um den reflektierten Anteil zu erfassen. Die Messung wird zweimal durchgeführt. Einmal mit einem komplett reflektierenden Aluminiumspiegel als reflektierendes Element (Referenz) und einmal ist an der exakt selben Stelle ein $SiO_2$ Plättchen positioniert.
-\begin{figure}[h]
+Für die Messung des Reflexionsvermögens wird der Aufbau teilweise geändert. Vom zweitem Spiegel wird der Strahl auf eine reflektierende Einheit gelenkt. Der Detektor ist so positioniert, um den reflektierten Anteil zu erfassen. Die Messung wird zweimal durchgeführt. Einmal mit einem komplett reflektierenden Aluminiumspiegel als reflektierendes Element (Referenz) und einmal ist an der exakt selben Stelle ein \ce{SiO2} Plättchen positioniert.
+\begin{figure}[htp]
   \centering
     \includegraphics[width=\textwidth]{Bilder/Reflektivität_SiO2.pdf}
-    \caption{Messungen des Signals nach Reflexion an $SiO_2$ Plättchen bzw. an Aluminiumspiegel. Die Darstellung ist nicht maßstabsgetreuen. Zusätzlich ist die Relfexionsrate, also das Verhältnis aus Signal zu Referenz, dargestellt. Der zweite Peak des $SiO_2$ Signal entspricht ungefähr \SI{50}{\percent} des ursprünglichen Signals. }
+    \caption{Messungen des Signals nach Reflexion an \ce{SiO2} Plättchen bzw. an Aluminiumspiegel. Die Darstellung ist nicht maßstabsgetreuen. Zusätzlich ist die Reflexionsrate, also das Verhältnis aus Signal zu Referenz, dargestellt. Der zweite Peak des \ce{SiO2} Signal entspricht ungefähr \SI{50}{\percent} des ursprünglichen Signals. }
 \end{figure}
 \FloatBarrier
-Wie an der Reflexionsrate zu erkennen ist, ist die Reflexion vorallem im Bereich um $\lambda$ = \SI{9,01}{\micro\meter} besonders groß. Obwohl hier der Referenzwert der reflektierten Strahlung sehr gering ist, wird fast genauso viel reflektiert, wie in dem Bereich, in dem die Referenz ihr deutliches Maximum trägt.\\
+Wie an der Reflexionsrate zu erkennen ist, ist die Reflexion vor allem im Bereich um $\lambda = \SI{9.01}{\micro\meter}$ besonders groß. Obwohl hier der Referenzwert der reflektierten Strahlung sehr gering ist, wird fast genauso viel reflektiert, wie in dem Bereich, in dem die Referenz ihr deutliches Maximum trägt.\\
 
-Wie in Abschnitt \ref{sec:AbsorptionundReflexion} diskutiert, sind die Wellenlängebereiche hohrer Absorption zugleich diese, in denen gut reflektiert wird. Das können die Messdaten teilweise bestätigen. Der Absorptionsbereich liegt im Bereich um \SI{10,24}{\micro\meter}, während der Reflexionsbereich um die \SI{9,01}{\micro\meter} lokalisiert ist. Die Größenordnung ist somit bei beiden Messungen die gleiche und es treten Überschneidungen der Bereiche auf. Die Abweichung lässt sich durch möglicherweise auftretenden Verunreinigungen des $SiO_2$ auf den beiden unterschieldichen Elementen sowie durch etwaige abweichende chemische Zusammensetzung oder Reinheit erklären.
+Wie in Abschnitt \ref{sec:AbsorptionundReflexion} diskutiert, sind die Wellenlängenbereiche hoher Absorption zugleich diese, in denen gut reflektiert wird. Das können die Messdaten teilweise bestätigen. Der Absorptionsbereich liegt im Bereich um \SI{10.24}{\micro\meter}, während der Reflexionsbereich um die \SI{9.01}{\micro\meter} lokalisiert ist. Die Größenordnung ist somit bei beiden Messungen die gleiche und es treten Überschneidungen der Bereiche auf. Die Abweichung lässt sich durch möglicherweise auftretenden Verunreinigungen des \ce{SiO2} auf den beiden unterschiedlichen Elementen sowie durch etwaige abweichende chemische Zusammensetzung oder Reinheit erklären.
 
 
 
