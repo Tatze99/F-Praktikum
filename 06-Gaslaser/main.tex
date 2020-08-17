@@ -223,6 +223,31 @@ Hinsichtlich der Krümmungsradien lassen sich drei wichtige Typen unterscheiden:
 \newpage
 \section{Zusammenfassung}
 
+\appendix
+\section{Fresnel Formeln dielektrischer Medien}
+Im Folgenden wird die Bedeutung der \textsc{Fresnel}'schen Formeln für die Reflexion an Grenzflächen verdeutlicht. Für ideale dielektrische Medien ist der Absorptionskoeffizient $\kappa$ des komplexen Brechungsindex gleich Null. Auf beiden Seiten der Grenzfläche wird elektromagnetische Strahlung nicht absorbiert. Damit vereinfachen sich die \textsc{Fresnel}'schen Formeln und es gilt für den Transmissionsfaktor $r$ und Reflexionsfaktor $t$~\cite{Demtröder2}
+\begin{itemize}
+  \item \emph{Senkrechte Polarisation} (TE)
+  \begin{align}
+    \qty(\frac{E_t}{E_e})_s &= t_s = \frac{2 n_1 \cos \alpha}{n_1 \cos\alpha + n_2 \cos \beta}\\
+    \qty(\frac{E_r}{E_e})_s &= r_s = \frac{n_1 \cos\alpha - n_2 \cos\beta}{n_1 \cos\alpha + n_2 \cos \beta} = -\frac{\sin(\alpha -\beta)}{\sin(\alpha + \beta)}
+  \end{align}
+  \item \emph{Parallele Polarisation} (TM)
+  \begin{align}
+    \qty(\frac{E_t}{E_e})_p &= t_p = \frac{2 n_1 \cos \alpha}{n_2 \cos\alpha + n_1 \cos \beta}\\
+    \qty(\frac{E_r}{E_e})_p &= r_p = \frac{n_2 \cos\alpha - n_1 \cos\beta}{n_2 \cos\alpha + n_1 \cos \beta} = -\frac{\tan(\alpha -\beta)}{\tan(\alpha + \beta)}.\label{eqn:Parallele_Polarisation}
+  \end{align}
+\end{itemize}
+Dabei beschreibt $E$ jeweils die Amplitude des elektrischen Feldes. $\alpha$ bezeichnet den Einfallswinkel des Strahls, welcher am Übergang von $n_1$ zu $n_2$ unter dem Winkel $\beta$ gebrochen wird.
+Es wird dabei zwischen transversal (TE) und parallel polarisierten Strahlen (TM) bezüglich der Reflexionsebene unterschieden. Die Reflektivität (reflektierte Intensität) ergibt sich aus dem Quadrat des Reflexionsfaktors, analog ergibt sich die Transmittivität. Die Reflektivität von Quarzglas mit einer Brechzahl $n = 1.5$ zeigt Abbildung~\ref{fig:Reflektivität_Fresnel}
+
+\input{Bilder/Reflektivität_Fresnel.tex}
+
+Für den Spezialfall des senkrechten Einfalls gilt $\alpha = \beta = 0$. Hier vereinfachen sich die Formeln für die Reflektivität und es ergibt sich
+\begin{align}
+  R = \qty(\frac{n_1-n_2}{n_1 + n_2}) = \SI{3.5}{\percent}.
+\end{align}
+Das entspricht der bekannten Reflektivität von Glas. Für senkrecht polarisiertes Licht ergibt sich nach Gleichung~\eqref{eqn:Parallele_Polarisation} eine Nullstelle für $\alpha + \beta =\SI{90}{\degree}$. Dieser Winkel entspricht dem \textsc{Brewster}-Winkel $\varphi_\text{Brewst.}$, welcher für Quarzglas \SI{56.31}{\degree}. Die parallele Komponente des Strahls wird nicht mehr reflektiert. Im Helium-Neon-Laser, welcher im Praktikum verwendet wird, wird dieser Effekt benutzt, um die auftretenden Reflexionsverluste zu minimieren. Dafür wird das Ende der mit dem aktiven Medium gefüllten Glaskapillare geneigt (Brewsterfenster). Zusätzlich kann damit sichergestellt werden, dass das Laserlicht parallel polarisiert ist.
 
 % ***** Literaturverzeichnis ******************
 
