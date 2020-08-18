@@ -164,6 +164,13 @@ Die Größe $z_R$ wird \textsc{Rayleigh}-Länge genannt und beschreibt den Absta
   z_R = \frac{\pi W_0^2}{\lambda}.
 \end{align}
 
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=.7\textwidth]{Bilder/Gauss_Strahl.pdf}
+  \caption{Schematische Darstellung eines Gaußstrahls mit Abmessungen, Strahlbegrenzung, Wellenfronten und Intensitätsprofil. Von Aleph - Eigenes Werk, CC BY-SA 2.5, \url{https://commons.wikimedia.org/w/index.php?curid=3807143}}
+  \label{fig:Gauss_Strahl}
+\end{figure}
+
 \subsubsection{Strahlparameter und Matrizenoptik}
 Wie in der Strahlenoptik lässt sich die Ausbreitung eines Gaußstrahls mithilfe von Matrizen beschreiben. Dabei kann die Propagation im freien Raum und durch optische Bauelemente bequem durch eine Matrix beschrieben werden. Diese ist im Folgenden für verschiedene Optische Elemente dargelegt~\cite{Peschel}:
 \begin{align}
@@ -222,16 +229,18 @@ Zur Vorbereitung der Aufgabe wird die Größe der Strahltaille $w_0$ für versch
   R\qty(\frac{L}{2}) \overset{\eqref{eqn:Strahlradius_Krümmung} }{=} \frac{L}{2} \qty(\frac{4 z_r^2}{L^2} + 1) \overset{!}{=} R.
 \end{align}
 Für die \textsc{Rayleigh}-Länge und folglich auch die Strahltaille $w_0$ ergibt sich dann
-\begin{align}
+\begin{align}\label{eqn:Strahltaille}
   z_r^2 = \frac{R \cdot L}{2} - \frac{L^2}{4} \quad \overset{\eqref{eqn:z_r}}{\Rightarrow} w_0(L) = \sqrt{\frac{\lambda}{\pi} z_r(L)} = \sqrt{\frac{\lambda}{2\pi}}\sqrt[4]{2 R \cdot L - L^2}.
 \end{align}
 Der sich ergebende Verlauf der Strahltaille als Funktion der Resonatorlänge ist in Abbildung~\ref{fig:Strahltaille_Theorie} dargestellt.
 
 \input{Bilder/Strahltaille_Theorie.tex}
 
-\paragraph{Bestimmung des Bündelradius außerhalb des Resonators}$~$
+Es zeigt sich, dass für $L = 2R = \SI{1}{\metre}$ der konfokale Resonator in den konzentrischen übergeht und die Strahltaille $w_0$ gegen Null läuft. Da die Strahldivergenz $\theta$ proportional zur inversen Strahltaille ist, geht hier die Strahldivergenz gegen unendlich und der Resonator wird instabil. Für den Fall planarer Spiegel bei $L/R = 0$ tritt unendliche Strahldivergenz ebenfalls auf. Im Fall des konfokalen Resonators ist der Einfluss einer Aperturblende geringer als im konzentrischen Resonator, da hier die transversale Feldverteilung bereits durch den Resonatoraufbau begrenzt wird.
 
-Um den Bündelradius $w(z)$ außerhalb des Resonators zu bestimmen, werden die Knotenlinien der TEM$_{02}$ Mode ausgemessen. Entlang der $y$-Achse bei $x=0$ gilt dann für das elektrische Feld der zweiten transversalen Mode~\cite{Eichler}
+\subsubsection{Bestimmung des Bündelradius und der Strahltaille}
+
+Um den Bündelradius $w(z)$ zu bestimmen, werden die Knotenlinien der TEM$_{02}$ Mode ausgemessen. Entlang der $y$-Achse bei $x=0$ gilt dann für das elektrische Feld der zweiten transversalen Mode~\cite{Eichler}
 \begin{align}\label{eqn:3.TEM02}
   E_{02}(0,y) = H_0(0) H_2(\xi) \exp\qty(-\frac{\xi^2}{2}), \quad \text{mit} \quad \xi = \frac{x\sqrt{2}}{w(z)}.
 \end{align}
@@ -239,7 +248,14 @@ Die Funktionen $H_m(\xi)$ bezeichnen die Hermite-Polynome, wobei $H_1(\xi) = 1$ 
 \begin{align}
   E_{02}(0,y) \overset{!}{=} 0, \quad \Rightarrow \xi = \pm \frac{1}{\sqrt{2}} = \frac{y \sqrt{2}}{w(z)}.
 \end{align}
-Damit folgt direkt $w(z) = 2y$. Somit ergibt sich, dass der Abstand der Nullstellen der TEM$_{02}$-Mode mit der Bündelbreite $w(z)$ übereinstimmt.
+Damit folgt direkt $w(z) = 2y$. Somit ergibt sich, dass der Abstand der Nullstellen der TEM$_{02}$-Mode mit der Bündelbreite $w(z)$ übereinstimmt. Die TEM$_{02}$-Mode kann erzwungen werden, indem ein dünner Draht in den Resonator platziert wird. Wird dieser nun in einer Nullstelle einer Mode positioniert, so bleibt die Feldverteilung dieser Mode unbeeinflusst und alle anderen Moden können ausgeblendet werden. Aufgrund der endlichen Dicke des Drahtes ist es sinnvoll, den Draht möglichst nah am Resonatorspiegel zu platzieren, da hier die Moden besonders ausgedehnt sind. Der durch die Messung ermittelte Radius $w(z)$ lässt sich nun angeben, in beide Gleichungen aus~\eqref{eqn:Strahlradius_Krümmung} ineinander eingesetzt werden. Für einen festen Bündelradius $w(z)$ ergibt sich die Breite der Strahltaille zu~\cite{Anleitung}
+\begin{align}
+  w_0(w,z) = \sqrt{\frac{1}{2}} \sqrt{w^2 \pm \sqrt{w^4-\frac{4z^2 \lambda^2}{\pi^2}}}.
+\end{align}
+Es muss jedoch noch diskutiert werden, welche Lösung zur Berechnung der Strahltaille verwendet werden muss. Dafür wird eine geometrische Abschätzung durchgeführt. Das Strahlbündel hat bei $z = z_r$ die Ausdehnung $w_0 \sqrt{2}$, wie Abbildung~\ref{fig:Gauss_Strahl} zeigt. Wird $w(z)$ außerhalb der \textsc{Rayleigh}-Länge $z_r$ gemessen, dann ist $w_0 \sqrt{2} < w(z)$ und es muss das Minus beim Vorzeichen gewählt werden. Für $z < z_r$ wird dann das positive Vorzeichen der Wurzel gewählt. Im konfokalen Resonator gilt $R=L$, somit liegt nach Gleichung~\eqref{eqn:Strahltaille} die \textsc{Rayleigh}-Länge bei $z = L/2$, weshalb in diesem Aufbau immer das positive Vorzeichen gewählt wird. Für die anderen Resonatorlängen wird die Rayleigh-Länge mit der Position des Drahtes verglichen, um zu entscheiden, welche Lösung gewählt werden muss. 
+
+\paragraph{Strahltaillenbestimmung innerhalb des Resonators}$~$
+
 
 
 
