@@ -153,14 +153,14 @@ Bewegt sich das angeregte Atom mit der Geschwindigkeit $\bm{v}$, so wird die Mit
 \subsection{Gaußsche Strahlenoptik}
 Um die Eigenschaften der Strahlenoptik, welche die Ausbreitung von Licht in optischen Systemen beschreibt, mit der Wellenoptik zu vereinen, werden Gaußstrahlen eingeführt. Sie stellen eine paraxiale Lösung der \textsc{Helmholtz}-Gleichung dar und eignen sich zur Beschreibung der Ausbreitung kohärenter Laserstrahlen. Ein kollimierte Laserstrahl propagiert gerichtet in einem homogenen Material. Aufgrund von Dispersioneffekten divergiert der Gaußstrahl jedoch. Der Gaußstrahl wird im Gegensatz zu einer ebenen Welle modelliert mit einer gaußförmig verlaufenden Amplitude entlang axialer Richtung. Damit lässt sich die komplexe Amplitude des Gaußstrahles schreiben als~\cite{Saleh}
 \begin{align}
-  E(\bm{r}) = E_0 \frac{W_0}{W(z)} \exp\qty(-\frac{\varrho}{W(Z)})^2 \exp[-\i\qty(kz + k \frac{\varrho^2}{2R(z)}+ \arctan\qty(\frac{z}{z_R})^2)].
+  E(\bm{r}) = E_0 \frac{W_0}{W(z)} \exp\qty(-\frac{\varrho}{W(Z)})^2 \exp[-\mathrm{i}\qty(kz + k \frac{\varrho^2}{2R(z)}+ \arctan\qty(\frac{z}{z_R})^2)],
 \end{align}
-Der Ausdruck $W(z)$ beschreibt den Radius des Strahls entlang der Ausbreitungsrichtung $z$ und $R(z)$ definiert den Krümmungsradius der Wellenfront aufgrund der Divergenz des Strahls. Sie sind definiert als
-\begin{align}
+wobei $\varrho^2 = x^2 + y^2$ die transversale Koordinate beschreibt. Der Ausdruck $W(z)$ beschreibt den Radius des Strahls entlang der Ausbreitungsrichtung $z$ und $R(z)$ definiert den Krümmungsradius der Wellenfront aufgrund der Divergenz des Strahls. Sie sind definiert als
+\begin{align}\label{eqn:Strahlradius_Krümmung}
   W(z) = W_0 \sqrt{1+\qty(\frac{z}{z_R})^2}, \qquad R(Z) = z \qty[1+\qty(\frac{z_R}{z})^2]
 \end{align}
 Die Größe $z_R$ wird \textsc{Rayleigh}-Länge genannt und beschreibt den Abstand zum Fokuspunkt ($z=0$) bei dem die Leistung der Strahlungsachse auf die Hälfte des Maximalwertes abgefallen ist. Es ergibt sich
-\begin{align}
+\begin{align}\label{eqn:z_r}
   z_R = \frac{\pi W_0^2}{\lambda}.
 \end{align}
 
@@ -214,7 +214,34 @@ Hinsichtlich der Krümmungsradien lassen sich drei wichtige Typen unterscheiden:
 % *********************************************
 \newpage
 \section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
-% \input{Bilder/Kalibrierung_Wolframlampe3_6.tex}
+
+\subsection{Messungen der räumlichen Intensitätsverteilung}
+
+Zur Vorbereitung der Aufgabe wird die Größe der Strahltaille $w_0$ für verschiedene Längen $0 < L < 2R$ eines symmetrischen Resonators $L = \SI{50}{\centi\metre}$ berechnet. Hierfür wird die Tatsache genutzt, dass der Krümmungsradius des Strahlenbündels am Ort des Spiegels dessen Krümmungsradius entspricht. Es ergibt sich mithilfe von~\eqref{eqn:Strahlradius_Krümmung}
+\begin{align}
+  R\qty(\frac{L}{2}) \overset{\eqref{eqn:Strahlradius_Krümmung} }{=} \frac{L}{2} \qty(\frac{4 z_r^2}{L^2} + 1) \overset{!}{=} R.
+\end{align}
+Für die \textsc{Rayleigh}-Länge und folglich auch die Strahltaille $w_0$ ergibt sich dann
+\begin{align}
+  z_r^2 = \frac{R \cdot L}{2} - \frac{L^2}{4} \quad \overset{\eqref{eqn:z_r}}{\Rightarrow} w_0(L) = \sqrt{\frac{\lambda}{\pi} z_r(L)} = \sqrt{\frac{\lambda}{2\pi}}\sqrt[4]{2 R \cdot L - L^2}.
+\end{align}
+Der sich ergebende Verlauf der Strahltaille als Funktion der Resonatorlänge ist in Abbildung~\ref{fig:Strahltaille_Theorie} dargestellt.
+
+\input{Bilder/Strahltaille_Theorie.tex}
+
+\paragraph{Bestimmung des Bündelradius außerhalb des Resonators}$~$
+
+Um den Bündelradius $w(z)$ außerhalb des Resonators zu bestimmen, werden die Knotenlinien der TEM$_{02}$ Mode ausgemessen. Entlang der $y$-Achse bei $x=0$ gilt dann für das elektrische Feld der zweiten transversalen Mode~\cite{Eichler}
+\begin{align}\label{eqn:3.TEM02}
+  E_{02}(0,y) = H_0(0) H_2(\xi) \exp\qty(-\frac{\xi^2}{2}), \quad \text{mit} \quad \xi = \frac{x\sqrt{2}}{w(z)}.
+\end{align}
+Die Funktionen $H_m(\xi)$ bezeichnen die Hermite-Polynome, wobei $H_1(\xi) = 1$ und $H_2(\xi) = 4\xi^2- 2$ gilt. Die Nullstellen der Intensität bzw. von~\eqref{eqn:3.TEM02} ergeben sich dann mit der Nullstelle des zweiten Hermite-Polynoms
+\begin{align}
+  E_{02}(0,y) \overset{!}{=} 0, \quad \Rightarrow \xi = \pm \frac{1}{\sqrt{2}} = \frac{y \sqrt{2}}{w(z)}.
+\end{align}
+Damit folgt direkt $w(z) = 2y$. Somit ergibt sich, dass der Abstand der Nullstellen der TEM$_{02}$-Mode mit der Bündelbreite $w(z)$ übereinstimmt.
+
+
 
 \FloatBarrier
 % *********************************************
