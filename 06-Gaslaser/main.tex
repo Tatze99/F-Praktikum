@@ -1,6 +1,14 @@
 \documentclass[a4paper,twoside,final]{article}
 %----Eingebundene Bibliotheken-----
 \input{../LaTeX-Packages.tex}
+
+\pgfplotstableread{
+x         y    y-min  y-max
+0.5       239  27     18
+0.75      250  74     0
+0.95      155  33     90
+}{\mytable}
+
 \begin{document}
 \setlength{\marginparsep}{2em}
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
@@ -176,20 +184,20 @@ Wie in der Strahlenoptik lässt sich die Ausbreitung eines Gaußstrahls mithilfe
 \begin{align}
   M &= \begin{pmatrix}
     1 & L \\ 0 & 1
-\end{pmatrix} & \text{Freiraum der Länge }L\\
+\end{pmatrix} & \text{Freiraum der Länge }L \label{eqn:Matrix_Freiraum}\\
   M &= \begin{pmatrix}
   1 & 0 \\ -\frac{1}{f} & 1
-\end{pmatrix} & \text{Linse mit Brennweite }f\\
+\end{pmatrix} & \text{Linse mit Brennweite }f \label{eqn:Matrix_Brennweite}\\
   M &= \begin{pmatrix}
   1 & 0 \\ \frac{2}{R} & 1
 \end{pmatrix} & \text{Spiegel mit Krümmungsradius }R.
 \end{align}
 
 Zur vereinfachten Beschreibung des Gaußstrahls werden seine Kenngrößen zu einem komplexen Parameter $q$ zusammengefasst
-\begin{align}
-  q = z_F - \mathrm{i} z_0 \qquad \frac{1}{q} = \frac{1}{R(z)} + \mathrm{i}\frac{\lambda}{\pi}\frac{1}{W(z)^2}
+\begin{align}\label{eqn:q-Parameter}
+  q = z_F - \mathrm{i} z_r \qquad \frac{1}{q} = \frac{1}{R(z)} + \mathrm{i}\frac{\lambda}{\pi}\frac{1}{W(z)^2}
 \end{align}
-Dabei bezeichnet $z_F$ den Abstand zum Fokus (Strahltaille) und $z_0$ die \textsc{Rayleigh}-Länge. Für ein optisches System mit der Transfermatrix $M$ ergibt sich der neue $q$-Parameter wie folgt:
+Dabei bezeichnet $z_F$ den Abstand zum Fokus (Strahltaille) und $z_r$ die \textsc{Rayleigh}-Länge. Für ein optisches System mit der Transfermatrix $M$ ergibt sich der neue $q$-Parameter wie folgt:
 \begin{align}\label{eqn:Transfermatrix}
   M = \begin{pmatrix}
     A & B \\ C & D
@@ -230,7 +238,7 @@ Zur Vorbereitung der Aufgabe wird die Größe der Strahltaille $w_0$ für versch
 \end{align}
 Für die \textsc{Rayleigh}-Länge und folglich auch die Strahltaille $w_0$ ergibt sich dann
 \begin{align}\label{eqn:Strahltaille}
-  z_r^2 = \frac{R \cdot L}{2} - \frac{L^2}{4} \quad \overset{\eqref{eqn:z_r}}{\Rightarrow} w_0(L) = \sqrt{\frac{\lambda}{\pi} z_r(L)} = \sqrt{\frac{\lambda}{2\pi}}\sqrt[4]{2 R \cdot L - L^2}.
+  z_r^2 = \frac{R \cdot L}{2} - \frac{L^2}{4} \quad \overset{\eqref{eqn:z_r}}{\Rightarrow} w_0(L) = \sqrt{\frac{\lambda}{\pi} z_r(L)} = \sqrt{\frac{\lambda}{2\pi}\sqrt{L(2R - L)}}.
 \end{align}
 Der sich ergebende Verlauf der Strahltaille als Funktion der Resonatorlänge ist in Abbildung~\ref{fig:Strahltaille_Theorie} dargestellt.
 
@@ -248,17 +256,113 @@ Die Funktionen $H_m(\xi)$ bezeichnen die Hermite-Polynome, wobei $H_1(\xi) = 1$ 
 \begin{align}
   E_{02}(0,y) \overset{!}{=} 0, \quad \Rightarrow \xi = \pm \frac{1}{\sqrt{2}} = \frac{y \sqrt{2}}{w(z)}.
 \end{align}
-Damit folgt direkt $w(z) = 2y$. Somit ergibt sich, dass der Abstand der Nullstellen der TEM$_{02}$-Mode mit der Bündelbreite $w(z)$ übereinstimmt. Die TEM$_{02}$-Mode kann erzwungen werden, indem ein dünner Draht in den Resonator platziert wird. Wird dieser nun in einer Nullstelle einer Mode positioniert, so bleibt die Feldverteilung dieser Mode unbeeinflusst und alle anderen Moden können ausgeblendet werden. Aufgrund der endlichen Dicke des Drahtes ist es sinnvoll, den Draht möglichst nah am Resonatorspiegel zu platzieren, da hier die Moden besonders ausgedehnt sind. Der durch die Messung ermittelte Radius $w(z)$ lässt sich nun angeben, in beide Gleichungen aus~\eqref{eqn:Strahlradius_Krümmung} ineinander eingesetzt werden. Für einen festen Bündelradius $w(z)$ ergibt sich die Breite der Strahltaille zu~\cite{Anleitung}
-\begin{align}
+Damit folgt direkt $w(z) = 2y$. Somit ergibt sich, dass der Abstand der Nullstellen der TEM$_{02}$-Mode mit der Bündelbreite $w(z)$ übereinstimmt. Die TEM$_{02}$-Mode kann erzwungen werden, indem ein dünner Draht in den Resonator platziert wird. Wird dieser nun in einer Nullstelle einer Mode positioniert, so bleibt die Feldverteilung dieser Mode unbeeinflusst und alle anderen Moden können ausgeblendet werden. Der durch die Messung ermittelte Radius $w(z)$ lässt sich nun angeben, in beide Gleichungen aus~\eqref{eqn:Strahlradius_Krümmung} ineinander eingesetzt werden. Für einen festen Bündelradius $w(z)$ ergibt sich die Breite der Strahltaille zu~\cite{Anleitung}
+\begin{align}\label{eqn:Strahltaille_Experimentell}
   w_0(w,z) = \sqrt{\frac{1}{2}} \sqrt{w^2 \pm \sqrt{w^4-\frac{4z^2 \lambda^2}{\pi^2}}}.
 \end{align}
-Es muss jedoch noch diskutiert werden, welche Lösung zur Berechnung der Strahltaille verwendet werden muss. Dafür wird eine geometrische Abschätzung durchgeführt. Das Strahlbündel hat bei $z = z_r$ die Ausdehnung $w_0 \sqrt{2}$, wie Abbildung~\ref{fig:Gauss_Strahl} zeigt. Wird $w(z)$ außerhalb der \textsc{Rayleigh}-Länge $z_r$ gemessen, dann ist $w_0 \sqrt{2} < w(z)$ und es muss das Minus beim Vorzeichen gewählt werden. Für $z < z_r$ wird dann das positive Vorzeichen der Wurzel gewählt. Im konfokalen Resonator gilt $R=L$, somit liegt nach Gleichung~\eqref{eqn:Strahltaille} die \textsc{Rayleigh}-Länge bei $z = L/2$, weshalb in diesem Aufbau immer das positive Vorzeichen gewählt wird. Für die anderen Resonatorlängen wird die Rayleigh-Länge mit der Position des Drahtes verglichen, um zu entscheiden, welche Lösung gewählt werden muss. 
+Es muss jedoch noch diskutiert werden, welche Lösung zur Berechnung der Strahltaille verwendet werden muss. Dafür wird eine geometrische Abschätzung durchgeführt. Das Strahlbündel hat bei $z = z_r$ die Ausdehnung $w_0 \sqrt{2}$, wie Abbildung~\ref{fig:Gauss_Strahl} zeigt. Wird $w(z)$ außerhalb der \textsc{Rayleigh}-Länge $z_r$ gemessen, dann ist $w_0 \sqrt{2} < w(z)$ und es muss das Minus beim Vorzeichen gewählt werden. Für $z < z_r$ wird dann das positive Vorzeichen der Wurzel gewählt. Im konfokalen Resonator gilt $R=L$, somit liegt nach Gleichung~\eqref{eqn:Strahltaille} die \textsc{Rayleigh}-Länge bei $z = L/2$, weshalb in diesem Aufbau immer das positive Vorzeichen gewählt wird. Für die anderen Resonatorlängen wird die \textsc{Rayleigh}-Länge mit der Position des Drahtes verglichen, um zu entscheiden, welche Lösung gewählt werden muss.
 
 \paragraph{Strahltaillenbestimmung innerhalb des Resonators}$~$
 
+Für den ersten Versuchsteil wurde der dünne Draht innerhalb des Resonators eingesetzt. Aufgrund der endlichen Dicke des Drahtes ist es sinnvoll, diesen möglichst nah am Resonatorspiegel zu platzieren, da hier die Moden besonders ausgedehnt sind. Es wurde nun der Abstand der Nullstellen der TEM$_{02}$-Mode für drei verschiedene Resonatorlängen gemessen, mithilfe von~\eqref{eqn:Strahltaille_Experimentell} die Strahltaille bestimmt und mit der theoretischen Vorhersage~\eqref{eqn:Strahltaille} verglichen. Für $\lambda$ wird die Übergangswellenlänge $\lambda = \SI{632.8}{\nano\metre}$ eingesetzt. Die Ergebnisse zeigt Tabelle~\ref{tab:Strahltaille_innerhalb}.
 
+\begin{table}[htp]
+  \centering
+  \caption{Vergleich der berechneten Strahltaille aus den gemessenen Abständen der TEM$_{02}$-Mode und der Theorie. Für $L=\SI{75}{\centi\metre}$ und $L=\SI{90}{\centi\metre}$ wird das Minus als Vorzeichen in Gleichung~\eqref{eqn:Strahltaille_Experimentell} verwendet. Für $L=\SI{75}{\centi\metre}$ ergibt sich kein reelles Ergebnis der Strahltaille. Hier ist nur ein Bereich möglicher Werte gegeben, die mit der Messungenauigkeit verträglich sind.}
+  \begin{tabular}{c c c c c c}
+    \toprule
+    $L$ [\si{\centi\metre}] & $z_r$ [\si{\centi\metre}] &$z$ [\si{\centi\metre}]  &  $w(z)$ [\si{\milli\metre}] & $w_{0,\text{Mess}}$ [\si{\micro\metre}] & $w_{0,\text{Theorie}}$ [\si{\micro\metre}]\\
+    \midrule
+    50 & 25.0 & $20.5\pm 0.5$ & $0.295 \pm 0.08$ & $239_{-27}^{+18}$  & 224\\
+    75 & 21.6 & $33.0\pm 0.5$ & $0.336 \pm 0.08$ & $176\hdots250$& 209\\
+    95 & 10.9 & $43.0\pm 0.5$ & $0.578 \pm 0.15$ & $155_{-33}^{+90}$ & 148\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:Strahltaille_innerhalb}
+\end{table}
 
+\input{Bilder/Strahltaille_Messung.tex}
 
+Für $L = \SI{75}{\centi\metre}$ ergibt sich in der Rechnung kein reelles Ergebnis für die Strahltaille. Es kann jedoch eine obere Grenze für die Strahltaille angegeben werden, da das Ergebnis für $w(z) > \SI{0.365}{\milli\metre}$ reell wird und den Wert \SI{250}{\micro\metre} annimmt. Für die anderen beiden Messwerte zeigt sich, dass der Theoriewert für die Strahltaille innerhalb des ermittelten Fehlerintervalls liegt. Die gute Übereinstimmung des Wertes für $L = \SI{95}{\centi\metre}$ ist jedoch wahrscheinlich zufällig, da aufgrund der bereits recht großen Ausdehnung der TEM$_{02}$-Mode, ihre Position nur schwer einsetzbar ist, da sich ihre Form über \SI{100}{\micro\metre} kaum ändert. Weitere Fehlerquellen stellen das Feinmessgerät und die endliche Dicke des Drahtes dar. Weiterhin ergeben sich Messfehler bei der Bestimmung von der Drahtposition $z$.
+
+\paragraph{Strahltaillenbestimmung außerhalb des Resonators}$~$
+
+Zusätzlich zur Messung der Bündelbreite innerhalb des Resonators wurde die durch den Draht erzwungene TEM$_{02}$-Mode auf einen Schirm im Abstand von $D = \SI{4.84}{\metre}$ projiziert und dort der Abstand der Nullstellen der TEM$_{02}$-Mode mithilfe von Millimeterpapier ausgemessen. Zur Berechnung der Strahltaille kann die Veränderung des $q$-Parameters genutzt werden. Hierfür wird angenommen, dass der Spiegel zur Auskoppelung des Laserstrahls aus dem Resonator als eine Linse wirkt, deren Brennweite unter Annahme einer dünnen Linse mit der ``Linsenmacher''-Formel berechnet werden kann~\cite{Hecht}:
+\begin{align}
+  \frac{1}{f} = (n-1)\qty(\frac{1}{R_1}-\frac{1}{R_2}), \qquad \text{mit } R_2 = \infty, R_1 = -\SI{0.5}{\metre}, n = 1.5.
+\end{align}
+Damit ergibt sich direkt $f = -\SI{1}{\metre}$ als Brennweite der plank-konkaven Linse. Das optische System von der Strahltaille bis zum Schirm lässt sich nun mithilfe der Transfermatrizen~\eqref{eqn:Matrix_Freiraum} und~\eqref{eqn:Matrix_Linse} beschreiben und nimmt folgende Form an:
+\begin{align}\label{eqn:Transfermatrix_Praxis}
+  M = \begin{pmatrix}
+    1 & D-\frac{L}{2} \\ 0 & 1
+\end{pmatrix} \begin{pmatrix}
+  1 & 0 \\ -\frac{1}{f} & 1
+\end{pmatrix} \begin{pmatrix}
+  1 & \frac{L}{2} \\ 0 & 1
+\end{pmatrix} = \frac{1}{4f} \begin{pmatrix}
+  -4D+2L +4f & L^2 - 2DL + 4Df \\ -4 & -2(L-2f)
+\end{pmatrix}
+\end{align}
+% Da allerdings $q_+ = D - \mathrm{i}z_r$ bekannt ist, muss zur Ermittelung von $q_-$ in der Strahltaille die Matrix $M$ invertiert werden indem der Quotient aus adjungierter Matrix und der Determinante gebildet wird:
+% \begin{align}
+%   M^{-1} = \frac{1}{4f} \begin{pmatrix}
+%     -2(L-2f) & - L^2 + 2DL -4Df \\ 4 & -4D +2L +4f
+%   \end{pmatrix}.
+% \end{align}
+% Der alte $q_-$-Parameter lässt sich nun mithilfe von Gleichung~\eqref{eqn:Transfermatrix} bestimmen
+% \begin{align}
+%   q_- = \frac{-2(L-2f)(D - \mathrm{i}z_r) - L^2 + 2DL -4Df}{4(D - \mathrm{i}z_r)-4D +2L +4f}
+% \end{align}
+% Nach Gleichung~\eqref{eqn:q-Parameter} lässt sich der Taillenradius $w_0$ nun folgendermaßen berechnen:
+% \begin{align}
+%   w_0 = \sqrt{\frac{\lambda}{\pi}\frac{1}{\Im\qty(\frac{1}{q_-})}}.
+% \end{align}
+Der $q$-Parameter in der Strahltaille lautet nach Definition $q_- = -\mathrm{i} z_r$. Der neue $q_+$-Parameter lässt sich nun mithilfe von Gleichung~\eqref{eqn:Transfermatrix} bestimmen
+\begin{align}
+  q_+ = \frac{-2\mathrm{i}z_r(-2D+L+2f) + L^2 -2DL + 4Df}{4\mathrm{i}z_r -2(L-2f)}.
+\end{align}
+Für die \textsc{Rayleigh}-Länge $z_r$ wird der bereits theoretisch ermittelte Wert aus Tabelle~\ref{tab:Strahltaille_innerhalb} verwendet.
+Nach Gleichung~\eqref{eqn:q-Parameter} ist der Bündelradius folgendermaßen mit dem $q$-Paramter verknüpft
+\begin{align}
+  \Im\qty(\frac{1}{q_+}) = \frac{\lambda}{\pi}\frac{1}{w(z)^2} \quad \Rightarrow \quad w = \sqrt{\frac{\lambda}{\pi}\frac{1}{\Im\qty(\frac{1}{q_+})}}.
+\end{align}
+Der $q_+$-Parameter wird mithilfe von WolframAlpha berechnet und in die Formel für die Strahlbreite eingesetzt, um die Bündelbreite mit dem theoretischen Wert zu vergleichen. Wird der Einfluss der Auskoppelspiegels vernachlässigt, so vereinfach sich Gleichung~\eqref{eqn:Transfermatrix_Praxis} zu
+\begin{align}
+  M = \begin{pmatrix}
+  1 & D \\ 0 & 1
+\end{pmatrix} \quad \Rightarrow \quad q_+ = D-\mathrm{i}z_r.
+\end{align}
+In diesem Fall ist $\Im(1/q_+)$ trivial berechenbar und es folgt
+\begin{align}
+    \Im\qty(\frac{1}{q_+}) = \frac{z_r}{D^2 + z_r^2} \quad \Rightarrow \quad w = \sqrt{\frac{\lambda}{\pi}\frac{D^2 + z_r^2}{z_r}}
+\end{align}
+Die Ergebnisse sind in Tabelle~\ref{tab:Strahltaille_außerhalb} zusammengefasst.
+
+\begin{table}[htp]
+  \centering
+  \caption{Vergleich des gemessenen und berechneten Bündelradius nach einer Propagationslänge von $D=\SI{4.84\pm 1}{\metre}$ von der Strahltaille aus. Die Fehlerwerte für Bündelbreite unter Einbeziehung der Linse wurden durch Variation von $n$ mit $\Delta n = 0.05$ und dem Abstand $\Delta D = \SI{2}{\centi\metre}$ ermittelt. Für die Auswertung ohne Linse wurde die Fehlerfortpflanzung bezüglich $D$ verwendet.}
+  \begin{tabular}{c c c c c c}
+    \toprule
+    $L$ [\si{\centi\metre}] & $z_r$ [\si{\centi\metre}] & $\Im(1/q_+)$ [\si{\per\metre}]& $w(D)$ [\si{\milli\metre}] & $w_\text{mitLinse}(D)$ [\si{\milli\metre}] & $w_\text{ohneLinse}(D)$ [\si{\milli\metre}]\\
+    \midrule
+    50 & 25.0 & 0.003551 & $5 \pm 1$ & $5.51\pm 0.18$  & $4.35 \pm 0.03$\\
+    75 & 21.6 & 0.002626 & $6.5 \pm 1$ & $6.39\pm 0.20$  & $4.68\pm 0.03$\\
+    95 & 10.9 & 0.001197 & $9 \pm 1$ & $9.43\pm 0.29$  & $6.59\pm 0.05$\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:Strahltaille_außerhalb}
+\end{table}
+
+Der Vergleich für die berechneten Bündelbreiten zeigt, dass die Berücksichtigung der Linsenwirkung des Auskoppelspiegels nicht vernachlässigbar ist. Die größte Fehlerquelle in diesem Teil ist die Ausmessung der Nullstellen der TEM$_{02}$-Moden auf dem Schirm, da diese meist \SIrange{1}{2}{\milli\metre} breit sind. \\
+Es wird weiterhin noch angemerkt, dass durch Ausmessen der Strahltaille außerhalb des Resonators prinzipiell eine Bestimmung der Strahltaille im Resonator möglich ist, indem die Matrix $M$ invertiert wird und der $q$-Parameter des Gaußbündels auf dem Schirm $q = z_F - z_R'$ eingesetzt wird (für die Bestimmung des $q$-Parameters ist die Kenntnis der Strahltaille $w_0'$ außerhalb nötig).
+
+\subsection{Messung der Laserleistung}
+
+Im Folgenden Versuchsteil wurde jeweils die Laserleistung für verschiedene Moden und Resonatorlängen gemessen. Die Erzeugung der Moden erfolgte wieder durch eine Positionierung des Drahtes im Resonator. Zur Aufnahme der Grundmode muss beachtet werden, dass sie sich optisch kaum vom normalen Laserstrahl unterscheidet, jedoch liegen dort alle Moden überlagert vor, was eine Leistungsmessung verfälschen würde. Da sich die Grundmode jedoch nicht durch einen Draht erzeugen lässt, wurde hier eine Blende in den Strahlengang platziert, da die höheren Moden jeweils eine größere transversale Ausdehnung besitzen und auf der Strahlachse eine Nullstelle aufweisen. Die Blendenpositionierung kann durch Variation der Drahtposition überprüft werden, da entweder nur ein kreisförmiger Strahl oder gar nichts zu sehen sein sollte. Der Verlauf der Laserleistung ist in Abbildung~\ref{fig:Laserleistung} dargestellt.
+
+\input{Bilder/Laserleistung.tex}
+
+Abbildung~\ref{fig:Laserleistung} zeigt, dass die Leistung mit steigender Resonatorlänge abnimmt. Dies lässt sich dadurch begründen, dass aufgrund der sinkenden Strahltaille und steigenden Divergenz Beugungsverluste auftreten. Es fällt ebenso auf, dass die Grundmode für alle drei Resonatorlängen entgegen der Erwartung nicht die höchste Leistung aller transversaler Moden liefert. Die Ursache dafür kann eine zu geringe Öffnung der verwendeten Blende sein, sodass auch große Teile der Grundmode herausgeblendet wurden oder die Detektorfläche nicht mittig ausgeleuchtet wurde, weshalb entlang der Strahlachse weniger Leistung detektiert wurde. 
 \FloatBarrier
 % *********************************************
 % ***** KAPITEL 5 *****************************
