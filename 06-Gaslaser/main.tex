@@ -358,12 +358,73 @@ Es wird weiterhin noch angemerkt, dass durch Ausmessen der Strahltaille außerha
 
 \subsection{Messung der Laserleistung}
 
-Im Folgenden Versuchsteil wurde jeweils die Laserleistung für verschiedene Moden und Resonatorlängen gemessen. Die Erzeugung der Moden erfolgte wieder durch eine Positionierung des Drahtes im Resonator. Zur Aufnahme der Grundmode muss beachtet werden, dass sie sich optisch kaum vom normalen Laserstrahl unterscheidet, jedoch liegen dort alle Moden überlagert vor, was eine Leistungsmessung verfälschen würde. Da sich die Grundmode jedoch nicht durch einen Draht erzeugen lässt, wurde hier eine Blende in den Strahlengang platziert, da die höheren Moden jeweils eine größere transversale Ausdehnung besitzen und auf der Strahlachse eine Nullstelle aufweisen. Die Blendenpositionierung kann durch Variation der Drahtposition überprüft werden, da entweder nur ein kreisförmiger Strahl oder gar nichts zu sehen sein sollte. Der Verlauf der Laserleistung ist in Abbildung~\ref{fig:Laserleistung} dargestellt.
+Im Folgenden Versuchsteil wurde jeweils die Laserleistung für verschiedene Moden und Resonatorlängen gemessen. Die Erzeugung der Moden erfolgte wieder durch eine Positionierung des Drahtes im Resonator. Zur Aufnahme der Grundmode muss beachtet werden, dass sie sich optisch kaum vom normalen Laserstrahl unterscheidet, jedoch liegen dort alle Moden überlagert vor, was eine Leistungsmessung verfälschen würde. Da sich die Grundmode jedoch nicht durch einen Draht erzeugen lässt, wurde hier eine Blende in den Strahlengang platziert, da die höheren Moden jeweils eine größere transversale Ausdehnung besitzen und auf der Strahlachse eine Nullstelle aufweisen. Die Blendenpositionierung kann durch Variation der Drahtposition überprüft werden, da entweder nur ein kreisförmiger Strahl oder gar nichts zu sehen sein sollte. Der Verlauf der Laserleistung ist in Abbildung~\ref{fig:Laserleistung} gezeigt und die Messwerte nochmals in Tabelle~\ref{tab:Laserleistung} dargestellt.
+
+\begin{table}[htp]
+  \centering
+  \caption{Darstellung der gemessenen Laserleistung für verschiedene Resonatorlängen und transversale Moden. Die Messfehler sind (ausgenommen TEM$_{04}$ mit $\Delta P =\SI{0.04}{\milli\watt}$) jeweils $\pm \SI{0.02}{\milli\watt}$.}
+  \begin{tabular}{c c c c c c c }
+    \toprule
+    $L$ [\si{\centi\metre}] & TEM$_{00}$& TEM$_{01}$& TEM$_{02}$ & TEM$_{03}$& TEM$_{04}$& TEM$_{05}$ \\
+    \midrule
+    50 &\SI{0.34}{\milli\watt} & \SI{0.47}{\milli\watt} & \SI{0.40}{\milli\watt} & & &\\
+    75 & \SI{0.215}{\milli\watt} & \SI{0.23}{\milli\watt} & \SI{0.15}{\milli\watt} & & &\\
+    95 &\SI{0.14}{\milli\watt} & \SI{0.41}{\milli\watt} & \SI{0.38}{\milli\watt} & \SI{0.33}{\milli\watt} & \SI{0.16}{\milli\watt} & \SI{0.11}{\milli\watt}\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:Laserleistung}
+\end{table}
 
 \input{Bilder/Laserleistung.tex}
 
-Abbildung~\ref{fig:Laserleistung} zeigt, dass die Leistung mit steigender Resonatorlänge abnimmt. Dies lässt sich dadurch begründen, dass aufgrund der sinkenden Strahltaille und steigenden Divergenz Beugungsverluste auftreten. Es fällt ebenso auf, dass die Grundmode für alle drei Resonatorlängen entgegen der Erwartung nicht die höchste Leistung aller transversaler Moden liefert. Die Ursache dafür kann eine zu geringe Öffnung der verwendeten Blende sein, sodass auch große Teile der Grundmode herausgeblendet wurden oder die Detektorfläche nicht mittig ausgeleuchtet wurde, weshalb entlang der Strahlachse weniger Leistung detektiert wurde. 
+Abbildung~\ref{fig:Laserleistung} zeigt, dass die Leistung mit steigender Resonatorlänge abnimmt. Dies lässt sich dadurch begründen, dass aufgrund der sinkenden Strahltaille und steigenden Divergenz Beugungsverluste auftreten. Im Grenzfall $L = 2R$ des konzentrischen Resonators sind die Verluste so groß, dass der Resonator instabil wird. Nun noch Strahlen, die durch das Zentrum des Resonators verlaufen, verbleiben dort. Zur Charakterisierung der transversalen Moden eignet sich die Beugungsmaßzahl $M^2$. Für eine TEM$_{0n}$ Mode lässt sie sich schreiben als~\cite{Eichler_strahlqualitaet}
+\begin{align}
+  M_x^2 = 1, \quad M_y^2 = 2n +1.
+\end{align}
+Die Beugungsmaßzahl limitiert die Fokussierung bei einer vorgegebenen Strahldivergenz und damit die maximale Leistungsdichte. Es ergibt sich folgender Zusammenhang:~\cite{Sigrist}
+\begin{align}
+  \theta w_0 = M^2 \frac{\lambda}{\pi}.
+\end{align}
+Die Größe $\theta$ beschreibt die Strahldivergenz, bzw. den Fernfeldöffnungswinkel. Die Formel zeigt, dass mit steigender Beugungsmaßzahl die Divergenz steigt. Höhere Moden lassen sich trotzdem besser bei längeren Resonatoren beobachten. Das liegt daran, dass sich die Intensität der Moden mit steigender Ordnung weiter nach außen verlagert und für konfokale Resonatoren die höheren Moden aufgrund der breiteren Strahltaille nicht mehr durch die Kapillare gelangen können. Deshalb lassen sich für $L=\SI{0.9}{\metre}$ höhere Modenordnungen beobachten.
+
+Es fällt ebenso auf, dass die Grundmode für alle drei Resonatorlängen entgegen der Erwartung nicht die höchste Leistung aller transversaler Moden liefert. Die Ursache dafür kann eine zu geringe Öffnung der verwendeten Blende sein, sodass auch große Teile der Grundmode herausgeblendet wurden oder die Detektorfläche nicht mittig ausgeleuchtet wurde, weshalb entlang der Strahlachse weniger Leistung detektiert wurde.
+
+Die Fotos in Abbildung~\ref{fig:TransversaleModen} zeigen, dass für steigende Ordnung und Beugungsmaßzahl eine Verbreiterung stattfindet mit einer stärkeren Intensität am Rand.
+
+\begin{figure}[ht!]
+  \centering
+  \begin{subfigure}[b!]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/TEM00_low.jpg}
+    \caption{TEM$_{00}$, $M_y^2 = 1$}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/TEM01_low.jpg}
+    \caption{TEM$_{01}$, $M_y^2 = 3$}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/TEM02_low.jpg}
+    \caption{TEM$_{02}$, $M_y^2 = 5$}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/TEM03_low.jpg}
+    \caption{TEM$_{03}$, $M_y^2 = 7$}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/TEM04_low.jpg}
+    \caption{TEM$_{04}$, $M_y^2 = 9$}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/TEM05_low.jpg}
+    \caption{TEM$_{05}$, $M_y^2 = 11$}
+  \end{subfigure}
+  \caption{Aufgenommene Bilder verschiedener Moden bei einer Resonatorlänge von $L = \SI{0.95}{\metre}$.}
+  \label{fig:TransversaleModen}
+\end{figure}
 \FloatBarrier
+
+\subsection{Messungen der spektralen Intensitätsverteilung}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
 % *********************************************
 % ***** KAPITEL 5 *****************************
 % *********************************************

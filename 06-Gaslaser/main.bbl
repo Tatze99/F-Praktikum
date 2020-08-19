@@ -5,9 +5,15 @@ Hans~Joachim Eichler and J{\"u}rgen Eichler.
 \newblock {\em Laser: Bauformen, Strahlf{\"u}hrung, Anwendungen}.
 \newblock Springer-Verlag, 1990.
 
+\bibitem{Eichler_strahlqualitaet}
+J{\"u}rgen Eichler, Lothar D{\"u}nkel, and Bernd Eppich.
+\newblock Die strahlqualit{\"a}t von lasern. wie bestimmt man beugungsmasszahl
+  und strahldurchmesser in der praxis?
+\newblock {\em Laser Technik Journal}, 1(2):63--66, 2004.
+
 \bibitem{Hecht}
 Eugene Hecht.
-\newblock Optics, 1016.
+\newblock Optics, 2016.
 
 \bibitem{Anleitung}
 Schlenvoigt; Hein.
@@ -23,5 +29,10 @@ Ulf Peschel.
 Bahaa~EA Saleh and Malvin~Carl Teich.
 \newblock {\em ``Fundamentals of Photonics''}.
 \newblock Wiley, 2019.
+
+\bibitem{Sigrist}
+Markus~Werner Sigrist.
+\newblock {\em Laser: Theorie, Typen und Anwendungen}.
+\newblock Springer, 2018.
 
 \end{thebibliography}
