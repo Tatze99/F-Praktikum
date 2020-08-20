@@ -145,13 +145,13 @@ Der schematische Aufbau des SPM2s ist in Abbildung \ref{fig:SPM2} dargestellt. D
     \label{fig:SPM2}
 \end{wrapfigure}
 
-Eintritts (2)- und Austrittsspalt (8) liegen sich gegenüber und in deren Verbindungslinie befindet sich ein Umlenkspiegel(7), der so in Verbindung mit dem Parabolspiegel(1) sowohl als Kollimator, als auch auf Kameraspiegel verwendet wird. Die Spalte befinden sich dabei jeweils in dessen Brennweite. Das Prisma (3) wird doppelt durchsetzt und ist in Verbindung mit einem Wadsworth-Spiegel (4) aufgebaut, was wie schon beim SPM1 für eine minimale Ablenkung der selektierten Wellenlänge sorgt. Entscheidend beim SPM2 ist, dass das Verändern der Prismenschraube automatisch durch das angeschlossene Labview Programm gesteuert wird. Auf dem SMP2 befindet sich eine, je nach verwendeten Prisma angepasste, Anzeige der Wellenlänge. Diese Eichung muss in die digitalisierten Daten übernommen werden. Dieses Verfahren wird in~\ref{par:EichungSPM2} beschrieben.
+Eintritts (2)- und Austrittsspalt (8) liegen sich gegenüber und in deren Verbindungslinie befindet sich ein Umlenkspiegel (7), der so in Verbindung mit dem Parabolspiegel (1) sowohl als Kollimator, als auch auf Kameraspiegel verwendet wird. Die Spalte befinden sich dabei jeweils in dessen Brennweite. Das Prisma (3) wird doppelt durchsetzt und ist in Verbindung mit einem Wadsworth-Spiegel (4) aufgebaut, was wie schon beim SPM1 für eine minimale Ablenkung der selektierten Wellenlänge sorgt. Entscheidend beim SPM2 ist, dass das Verändern der Prismenschraube automatisch mithilfe eines Motors geschieht, welcher durch ein angeschlossenes Labview Programm gesteuert wird. Auf dem SMP2 befindet sich eine, je nach verwendeten Prisma angepasste, Anzeige der Wellenlänge. Diese Eichung muss in die digitalisierten Daten übernommen werden. Dieses Verfahren wird in~\ref{par:EichungSPM2} beschrieben.
 
 \input{Bilder/SPM2.tex}
 
 \subsection{Lock-In-Verstärker}
 Lock-in-Verstärker sind wesentliche Bestandteile zahlreicher hochempfindlicher Messaufbauten, denn sie bieten die Möglichkeit, Signale schwacher Amplitude aus dem Rauschen gewinnen zu können und zu messen.
-Dazu wird die Strahlung periodisch unterbrochen bzw. moduliert. So gelingt es, das Signal gut von der Umgebungsstrahlung unterscheiden zu können sowie es leichter elektronisch verarbeiten zu können. Ein Lock-Inn-Verstärker ist folgendermaßen aufgebaut: zuerst befindet sich ein Modulator mit Lichtschranke im Strahlengang. Dahinter folgt ein Empfänger (z.B. wie im Versuch ein Vakuumthermoelement).Von dort aus gelangt das Signal in einen aus drei Komponenten aufgebauten Selektivverstärker, bestehend aus einem Breitbandverstärker, einem TT-Filter in Gegenkopplung und einem Nachverstärker. Anschließend passiert das Signal einen Verstärker mit Relais, der als phasenempfindlicher Gleichrichter wirkt, sowie ein RC-Glied, durch welches das Signal geglättet wird. Der Verlauf des Signals ist in Abbildung \ref{fig:Lock-Inn} dargestellt.
+Dazu wird die Strahlung periodisch unterbrochen bzw. moduliert. So gelingt es, das Signal gut von der Umgebungsstrahlung unterscheiden zu können, sowie es leichter elektronisch verarbeiten zu können. Ein Lock-In-Verstärker ist folgendermaßen aufgebaut: zuerst befindet sich ein Modulator mit Lichtschranke im Strahlengang. Dahinter folgt ein Empfänger (z.B. wie im Versuch ein Vakuumthermoelement). Von dort aus gelangt das Signal in einen aus drei Komponenten aufgebauten Selektivverstärker, bestehend aus einem Breitbandverstärker, einem TT-Filter in Gegenkopplung und einem Nachverstärker. Anschließend passiert das Signal einen Verstärker mit Relais, der als phasenempfindlicher Gleichrichter wirkt, sowie ein RC-Glied, durch welches das Signal geglättet wird. Der Verlauf des Signals ist in Abbildung \ref{fig:Lock-Inn} dargestellt.
 
 \begin{figure}[ht]
     \centering
@@ -160,27 +160,27 @@ Dazu wird die Strahlung periodisch unterbrochen bzw. moduliert. So gelingt es, d
     \label{fig:Lock-Inn}
 \end{figure}
 
-So gelingt es, Signale, deren Phasenlage gegenüber dem Referenzsignal nicht konstant bzw. deren Frequenz nicht mit dem Referenzsignal übereinstimmt, rauszufiltern, da diese sich nach der Glättung zu Null ergeben.
+So gelingt es, Signale, deren Phasenlage gegenüber dem Referenzsignal nicht konstant bzw. deren Frequenz nicht mit dem Referenzsignal übereinstimmt herauszufiltern, da diese sich nach der Glättung zu Null ergeben.
 
 \subsection{Auflösung und spektralen Spaltbreite}\label{sec:spektraleSpaltbreite}
 \subsubsection{Auflösung}
 Um die Auflösung der Abbildung mit einem Prismenspektrometer herzuleiten, werden geometrische Überlegungen angestellt. Grundlage der Herleitung ist die Tatsache, dass das Strahlenbündel beim Passieren des Prismas eingeschränkt wird, weshalb dieses als Spalt wirkt und es deshalb zu Beugungsphänomenen kommt. Resultat dieser Herleitung ist das theoretische beugungsbegrenzte Auflösungsvermögen eines Prismas
 \begin{align}
-  R = - P \frac{dn}{d\lambda}
+  R = - P \dv{n}{\lambda}
 \end{align}
-wobei P die Basislänge des Prismas ist. \\
+wobei $P$ die Basislänge des Prismas ist. \\
 Das reale Auflösungsvermögen ergibt sich dann zu
 \begin{align}
   \frac{\Delta\lambda}{\lambda}=\frac{\lambda R}{\lambda+\Phi b}
 \end{align}
-mit $\Phi$ = Kollimatorspiegeldurchmesser/Brennweite und b=Spaltbreite.
+mit $\Phi =$ Kollimatorspiegeldurchmesser/Brennweite und $b=$ Spaltbreite.
 
-\subsubsection{spektrale Spaltbreite}
+\subsubsection{Spektrale Spaltbreite}
 Bei Messungen dieser Art liegt immer eine konstante geometrische Spaltbreite vor. Aufgrund der Winkeldispersion passieren diesen Spalt nicht nur Strahlen einer Wellenlänge, sondern immer die eines ganzen Wellenlängenintervalls. Dabei zeigt die Abhängigkeit der spektralen Strahlungsleistung eines engen Wellenlängenintervalls nach dem Durchgang durch einen Spalt einen charakteristischen Verlauf. Bei gleicher Eintritts- und Austrittsspaltbreite kann diese durch eine Dreiecksfunktion mit Maximum bei der eingestellten Wellenlänge beschrieben werden. Diese Funktion gibt eine Wahrscheinlichtkeitsaussage über denjenigen Strahlungsanteil, der den Detektor erreicht, an. \\
 Das Wellenlängenintervall, das diese immer gleiche geometrische Spaltbreite passiert ist jedoch auf Grund der Winkeldispersion des Prismas nicht immer gleich groß, sondern abhängig von dem Wellenlängenbereich, der betrachtet wird. So ist bei der Aufnahme der Spektralverteilung zu beachten, dass die Strahlungsdichte aus dem Planck-Gesetz von einem konstanten Wellenlängenintervall ausgeht. Um die Messwerte als mit den Theoriewerten in Deckung zu bringen, ist eine Korrektur durch Division $\Delta \lambda$ = const$\cdot \dv{\lambda}{l}$ nötig, wobei $\dd{l}$ die infinitesimale Änderung der Schraubeneinstellung darstellt.
 
 \subsection{Empfänger}\label{sec:Empfänger)}
-\subsubsection{thermische Detektoren}
+\subsubsection{Thermische Detektoren}
 Thermische Detektoren beruhen auf der Messung von Effekten, die aufgrund der Temperaturänderung nach Strahlungseinfall enstehen. Deshalb ist das so entstehende Photosignal nur vom auftreffenden Strahlungsfluss abhängig und deshalb wellenlängenunabhängig. \\
 Je nach ausgenutzten Effekt unterscheidet man unterschiedliche thermische Detektoren. Das \emph{Thermoelement} nutzt die temperaturabhängige Änderung der Thermospannung, die sich an der Kontaktstelle zweier verschiedener Materialien ergibt, da deren Ferminiveaus sich bei Änderung der Temperatur materialspezifisch verschieben.
 Die Widerstandsänderung eines elektrischen Leiters aufgrund der Temperaturänderung durch Strahlungsabsorption zu messen, ist das Prinzip des \emph{Bolometers}.
@@ -192,7 +192,7 @@ Auch hier können zwei unterschiedliche Effekte genutzt werden.\\
 \emph{Photospannung}: Detektoren, die auf diesem Effekt beruhen, bestehen aus einer n- sowie einer p-Schicht. Durch die einfallende Strahlung bildet sich ein Ladungsträgerpaar, welches über die n- und p-Grenzschicht getrennt wird und damit eine elektrische Spannung entsteht, die gemessen wird. \\
 Photodetektoren haben eine höhere Empfindlichkeit, als thermische Detektoren, sind aber aufgrund der Notwenigkeit der Überwindung der Bandlücke wellenlängenabhängig in ihrer Empfindlichkeit.
 
-\subsubsection{spektrale Empfindlichkeit}
+\subsubsection{Spektrale Empfindlichkeit}
 Weil thermische Empfänger ausschließlich auf Effekten beruhen, die aufgrund einer Temperaturänderung auftreten, ist die Empfindlichkeit dieser Empfänger wellenlängenunabhängig. Anders verhält es sich mit den Halbleiterdetektoren. Da es bei diesen nur dann zur Entstehung eines Signals kommen kann, wenn die Energie aufgebracht wird, um ein Elektron vom Valenz- ins Leitungsband zu heben, also wenn mindestens die Bandlückenenergie aufgebracht wird, zeigen diese Detektoren eine Wellenlängenabhängigkeit. \\
 Die spektrale Empfindlichkeit $r(\lambda)$ eines Empfängern bei der Wellenlänge $\lambda$ ist definiert als Verhältnis der vom Empfänger abgegebenen Messgröße $M(\lambda)$ (z.B. Spannung, Strom, Ausschlag) zu der Strahlungsleistung $P_S(\lambda)$:
 \begin{align}
@@ -205,21 +205,35 @@ Da die Empfindlichkeit des Thermoelements, wie in Abschnitt \ref{sec:Empfänger}
 
 wobei A der Ausschlag des Galvanometers ist.
 
-\subsection{Absorption und Reflexion}\label{sec:AbsorptionundReflexion}
-\subsubsection{Absorption}
-Die Transmission eines homogenen Stoffes mit geringem Reflexionsvermögen wird beschrieben durch das \textsc{Beer}'sche Gesetz:
+\subsection{Wechselwirkungen im Infrarotbereich}\label{sec:Wechselwirkungen}
+
+Damit Molekülübergänge im infraroten Bereich stattfinden können, müssen die beteiligten Moleküle ein permanentes oder induziertes Dipolmoment aufweisen. Moleküle, die diese Eigenschaft erfüllen, werden \emph{infrarotaktiv} bezeichnet. Für homonukleare, symmetrische Moleküle wie \ce{N2}, \ce{O2} verschwindet das Kerndipolmoment und es können keine Schwingungsbanden im IR angeregt werden. Aus diesem Grund tragen diese Gase nicht zum Treibhauseffekt der Erde bei, im Gegensatz zu \ce{H2O} oder \ce{CO2}, welche die von der Erde emittierte IR-Strahlung absorbieren und reemittieren.
+
+Damit ein Photon von einem Molekül absorbiert werden kann, muss ein entsprechender Schwingungsübergang nach der Quantenmechanik erlaubt sein. Für Schwingungs- Rotationsübergänge gelten daher gewisse Auswahlregeln ($\Delta J = \pm 1, \Delta m = 0, \pm 1$). Eine beispielhafte Darstellung eines solchen Spektrums zeigt Abbildung~\ref{Rotationsschwingung}. Die Wellenlängenunterschiede von Rotationsschwingungen sind meist jedoch zu klein, damit diese von einem Prismenspektrometer aufgelöst werden können.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{Bilder/Rotationsschwingung.pdf}
+  \caption{Simulierte Rotationsschwingungsbande für \ce{CO} im elektronischen Grundzustand nach~\cite{Hertel}. Es findet ein Schwingungsübergang bei einer Temperatur von \SI{293}{\kelvin} statt. Der Einschub zeigt auch die zweite harmonische ($\nu=2 \to \nu=0$).}
+\end{figure}
+
+Für komplexere Moleküle werden die Schwingungsübergänge zu verschiedenen Gruppen zusammengefasst. So können einerseits Valenzschwingungen entlang der Bindungsachse auftreten (Streckschwingungen) oder Schwingungen mit Deformation der Kernverbindungsachse (Deformationsschwingungen).
+
+In Halbleitermaterialien sind insbesondere Interbandübergänge möglich, die auf dem inneren photoelektrischen Effekt beruhen. Hier werden die Elektronen aus dem Valenzband in das Leitungsband angehoben. Die Voraussetzung dafür ist, dass die Energie des absorbierten Photons größer ist, als die Bandlückenenergie. Weiterhin ist es möglich, dass in Materialien, die im sichtbaren transparent sind, im IR-Bereich Gitterschwingungen auftreten, die beispielsweise die Transparenz von Glas reduzieren.
+
+Im Versuch werden zur Untersuchung verschiedener Proben Transmissionsspektren aufgenommen. Die Transmission eines homogenen Stoffes mit geringem Reflexionsvermögen wird beschrieben durch das \textsc{Lambert-Beer}'sche Gesetz:
 \begin{align}
   T=\frac{I_D}{I_0}=(1-R)^2\cdot\exp(-Kd)
 \end{align}
-wobei $K$ die Extinktionskonstante ist und $d$ die Schichtdicke angibt.
-\subsubsection{Reflexionsvermögen}
-Bei quasi senkrechtem Lichteinfall berechnet sich das Reflexionsvermögen an einer Grenzfläche bei Anwesenheit von Absorption zu
+wobei $K$ die Extinktionskonstante ist und $d$ die Schichtdicke angibt. Die Größe $R$ beschreibt das Reflexionsvermögen.
+
+Zur Auswertung von Spektren in Reflexionsmessung wird das Reflexionsvermögen heragezogen. Bei quasi senkrechtem Lichteinfall berechnet sich das Reflexionsvermögen nach den \textsc{Fresnel}'schen Formeln an einer Grenzfläche bei Anwesenheit von Absorption zu
 
 \begin{align}
   R(\lambda)=\frac{N_1(\lambda)-N_2(\lambda)}{N_1(\lambda)+N_2(\lambda)}
 \end{align}
 
-mit dem komplexen Brechungsindex $N(\lambda) = n(\lambda)+\mathrm{i}k(\lambda)$  und dem Absorptionsindex k.
+mit dem komplexen Brechungsindex $N(\lambda) = n(\lambda)+\mathrm{i}k(\lambda)$  und dem Absorptionsindex $k$.
 Werden als Medien Luft (N=1) und ein beliebiges Medium mit $N_2 = N$ verwendet, ergibt sich für das Reflexionsvermögen
 \begin{align}
   R(\lambda)=\frac{(n-1)^2+k^2}{(n+1)^2+k^2}
