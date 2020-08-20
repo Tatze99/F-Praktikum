@@ -1,0 +1,15 @@
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=\textwidth, height=6cm, ylabel=Spannung U in \si{volt}, xlabel=Wellenlänge $\lambda$ in \si{\micro\metre}, xmin = 1000, xmax=13000, xtick={}, legend cell align={left}, scaled x ticks={real:1000}, xtick scale label code/.code={}]
+      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_KBrPrisma_Keramik19_4V_Si02_Reflexionsmessung_Referenzmessung_Silberspiegel_1_8Grad_1500nm_all500nmMaker_Spalt_1500mu.txt};
+      \addlegendentry{Referenzmessung}
+      \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_KBrPrisma_Keramik19_4V_Polypropylen_3_6_Grad_1000nm_all500nmMaker_Spalt_1500mu_inReflexionsstellunggemessen.txt};
+      \addlegendentry{Polypropylen}
+      \addplot[green!50!black, thick] file[x index=1,y index=2]{Daten/Kalibrierung_KBrPrisma_Keramik19_4V_Acetat_3_6_Grad_1000nm_all500nmMaker_Spalt_1500mu_inReflexionsstellunggemessen.txt};
+      \addlegendentry{Acetatfolie}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Transmissionsspektrum verschiedener Kunststoffe. In blau ist die Referenzmessung ohne Probe dargestellt.}
+  \label{fig:Kunststoffe}
+\end{figure}

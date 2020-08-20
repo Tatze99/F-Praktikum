@@ -87,7 +87,7 @@ Alle Körper strahlen in Abhängigkeit zu ihrer Temperatur $T$ elektromagnetisch
     u(\nu,T)\dd{\nu} = \frac{8\pi h \nu^3}{c^3}\frac{1}{\exp(\frac{h\nu}{k_B T})-1}\dd{\nu} \quad\text{oder}\quad u(\lambda,T)\dd{\lambda} = \frac{8\pi h c^2}{\lambda^5}\frac{1}{\exp(\frac{hc}{\lambda k_B T})-1}\dd{\lambda}.
 \end{align}
 
-\begin{figure}[htp ]\label{fig:Planck}
+\begin{figure}[htp ]
   \centering
   \begin{tikzpicture}
     \begin{axis}[width=\textwidth, height=8cm, samples=300, xmin=0.5, xmax=10, ymin=0, ymax=55000, xlabel={Wellenlänge $\lambda$ in \si{\micro\metre}}, ylabel={Energiedichte $u(\lambda,T)$ in \si{\watt\per\metre\per\micro\metre}}]
@@ -107,6 +107,7 @@ Alle Körper strahlen in Abhängigkeit zu ihrer Temperatur $T$ elektromagnetisch
     \end{axis}
   \end{tikzpicture}
   \caption{\textsc{Planck}'sches Strahlungsgesetz in Abhängigkeit der Wellenlänge für verschiedene Temperaturen. Die schwarze Kurve zeigt die \textsc{Wien}'sche Näherung für $T=\SI{1000}{\kelvin}$. Das \textsc{Wien}'sche Verschiebungsgesetz ist gestrichelt dargestellt.}
+  \label{fig:Planck}
 \end{figure}
 Für kleine Wellenlängen lässt sich als Näherungsformel der von \textsc{Wien} aufgestellte Ausdruck verwenden. Hier wird die Näherung $\exp\qty(\frac{hc}{\lambda k_B T}) \gg 1$ verwendet:
 \begin{align}
@@ -128,95 +129,58 @@ Verfahren zur Vermessung der Wellenlänge werden unter dem Begriff der Spektrosk
 \paragraph{Wadsworth-Anordnung} Die im Versuch verwendeten Prismen sind beide in sogenannter Wadworth-Anordnung aufgebaut. Durch einen Spiegel, der sich in der Ebene der Basisfläche des Prismas befindet, wird erreicht, dass der Strahl der Wellenlänge, der das Prisma in minimaler Ablenkung durchsetzt, hinter dem Prisma parallel zum Strahl vor dem Prisma liegt. Genau die Richtung, in der das für eine bestimmte Wellenlänge der Fall ist, wird durch den Austrittsspalt aussortiert.
 
 \paragraph{SPM1} Der im ersten Versuchsteil verwendete Spektrograph ist ein Prismen-Monochromator, dessen schematischer Aufbau in Abbildung~\ref{fig:Prismenspektrograph} dargestellt ist.
-\begin{figure}[htp]
-  \centering
-  \begin{tikzpicture}
-  \coordinate (B1) at (-1,0);
-  \coordinate (S1) at (5,0);
-  \coordinate(S11) at ($(S1)+(180+105:0.4)$);
-  \coordinate(S12) at ($(S1)+(105:0.4)$);
-  \coordinate(S2) at (-1,-2.1);
-  \coordinate(S21) at ($(S2)+(-45:0.4)$);
-  \coordinate(S22) at ($(S2)+(135:0.4)$);
-  \coordinate (B2) at (2,2);
-  \coordinate (WS) at (3,-1.5);
-  \coordinate (M) at ($(WS)+(-0.479-0.72,0)$);
-  \draw[dashed,thick] ($(S1)!+7.4cm!(B1)$) -- (S1) -- (WS);
-  \draw[thick] ($(S12)!+7.3cm!(B1)$) -- (S12) -- ($(WS)+(-0.479,0)$);
-  \draw[thick] ($(S11)!+7.5cm!(B1)$) -- (S11) -- ($(WS)+(0.479,0)$) -- ($(WS)+(0.479,0)+(-4/3*1.26,1.26)$);
-  \draw[thick] ($(WS)+(-0.6,0)$) rectangle +(1.2,-0.15);
-  \draw[thick] (M) -- +(0.72,0) --+(0,1.73*0.72) --+(-0.72,0) -- cycle;
-  \draw[thick] ($(M)+(0,1.73*0.72)$) --(S22) -- ($(S22)!+6.4cm!(B2)$);
-  \draw[thick] ($(M)+(-0.72,0)$) --(S21)-- ($(S21)!+6.5cm!(B2)$);
-  \draw[thick,dashed] (WS) -- +(-4/3*.62,.62) -- +(-4/3*.62-0.74,.62) -- (S2)-- (B2);
-  \begin{scope}[shift={($(S1)+(-.05,0)$)},rotate=15]
-    \filldraw[thick, fill=white] (0,0.5) arc (30:-30:1cm) -- (0.3,-.5) -- (.3,.5) -- cycle;
-    \node (A) at (.6,0){$S_1$};
-  \end{scope}
-  \begin{scope}[shift={($(S2)+(.05,.05)$)},rotate=-135]
-    \filldraw[thick, fill=white] (0,0.5) arc (30:-30:1cm) -- (0.3,-.5) -- (.3,.5) -- cycle;
-    \node (A) at (.6,0){$S_2$};
-  \end{scope}
-  \draw[<-, thick] (B1) -- +(0,.707)node[above]{$B_1$};
-  \draw[<-, thick] (B1) -- +(0,-.707);
-  \draw[<-, thick] (B2) -- +(.5,-.5);
-  \draw[<-, thick] (B2) -- +(-.5,.5)node[above]{$B_2$};
-  \node (A) at ($(WS)+(0,-.5)$){WS};
-  \node (A) at ($(M)+(0,-.3)$){M};
-\end{tikzpicture}
-  \caption{Schematischer Aufbau eines Prismen-Monochromators mit Wadsworth-Spiegel WS.}
-  \label{fig:Prismenspektrograph}
-\end{figure}
+
+\input{Bilder/Prismenspektrograph.tex}
 
 Am Eingang des Spektrographen befindet sich eine Blende, welche als Kollimator dient. Diese befindet sich im Brennpunkt des ersten Spiegels $S_1$, welcher daraufhin ein paralleles Strahlenbündel erzeugt. Anschließend erfolgt über die Reflexion am Wadsworth-Spiegel, welcher die notwendige Minimalablenkung sicherstellt, die wellenlängenabhängige Brechung des Strahlenbündels im Prisma, wobei schließlich nur eine bestimmte Wellenlänge vom zweiten Spiegel $S_2$ auf die Ausgangsblende $B_2$ abgebildet wird. Die minimale Ablenkung tritt ein, wenn das Prisma symmetrisch zur Hauptachse vom Strahl durchlaufen wird. Dies führt zwar zu einem minimalen Auflösungsvermögen, allerdings sind dabei ebenfalls Abbildungsfehler minimiert. In der Wadsworth-Anordnung wird der Spiegel WS parallel zur Basis des Prismas platziert.
 
+\newpage
 \paragraph{SPM2}
 Der schematische Aufbau des SPM2s ist in Abbildung \ref{fig:SPM2} dargestellt. Das SPM2, wie es im Versuch verwendet wird, ist außerdem modellhaft in \ref{fig:ModellSPM2} zu sehen.
-\begin{figure}[htp]\label{fig:SMP2}
+
+\begin{wrapfigure}{r}{\textwidth/2}
     \centering
-        \includegraphics[width=0.9\textwidth]{Bilder/SPM2.pdf}
-    \caption{schematischer Aufbau des SPM2}
+        \includegraphics[width=\textwidth/2]{Bilder/SPM2.pdf}
+    \caption{Spiegelkonfiguration des SPM2.}
     \label{fig:SPM2}
-\end{figure}
+\end{wrapfigure}
 
-\input{Bilder/SPM2.tex}\label{fig:ModellSPM2}
+Eintritts (2)- und Austrittsspalt (8) liegen sich gegenüber und in deren Verbindungslinie befindet sich ein Umlenkspiegel (7), der so in Verbindung mit dem Parabolspiegel (1) sowohl als Kollimator, als auch auf Kameraspiegel verwendet wird. Die Spalte befinden sich dabei jeweils in dessen Brennweite. Das Prisma (3) wird doppelt durchsetzt und ist in Verbindung mit einem Wadsworth-Spiegel (4) aufgebaut, was wie schon beim SPM1 für eine minimale Ablenkung der selektierten Wellenlänge sorgt. Entscheidend beim SPM2 ist, dass das Verändern der Prismenschraube automatisch mithilfe eines Motors geschieht, welcher durch ein angeschlossenes Labview Programm gesteuert wird. Auf dem SMP2 befindet sich eine, je nach verwendeten Prisma angepasste, Anzeige der Wellenlänge. Diese Eichung muss in die digitalisierten Daten übernommen werden. Dieses Verfahren wird in~\ref{par:EichungSPM2} beschrieben.
 
-Eintrits (2)- und Austrittsspalt(8) liegen sich gegenüber und in deren Verbindungslinie befindet sich ein Umlenkspiegel(7), der so in Verbindung mit dem Parabolspiegel(1) sowohl als Kollimator, als auch auf Kameraspiegel verwendet wird. Die Spalte befinden sich dabei jeweils in dessen Brennweite. Das Prisma (3) wird doppelt durchsetzt und ist in Verbindung mit einem Wadsworth-Spiegel (4) aufgebaut, was wie schon beim SPM1 für eine minimale Ablenkung der selektierten Wellenlänge sorgt. Entscheidend beim SPM2 ist, dass das Verändern der Prismenschraube automatisch durch das angeschlossene Labview Programm gesteuert wird. Auf dem SMP2 befindet sich eine, je nach verwendeten Prisma angepasste, Anzeige der Wellenlänge. Diese Eichung muss in die digitalisierten Daten übernommen werden. Dieses Verfahren wird in \ref{par:EichungSPM2} beschrieben.
-
-
+\input{Bilder/SPM2.tex}
 
 \subsection{Lock-In-Verstärker}
 Lock-in-Verstärker sind wesentliche Bestandteile zahlreicher hochempfindlicher Messaufbauten, denn sie bieten die Möglichkeit, Signale schwacher Amplitude aus dem Rauschen gewinnen zu können und zu messen.
-Dazu wird die Strahlung periodisch unterbrochen bzw. moduliert. So gelingt es, das Signal gut von der Umgebungsstrahlung unterscheiden zu können sowie es leichter elektronisch verarbeiten zu können. Ein Lock-Inn-Verstärker ist folgendermaßen aufgebaut: zuerst befindet sich ein Modulator mit Lichtschranke im Strahlengang. Dahinter folgt ein Empfänger (z.B. wie im Versuch ein Vakuumthermoelement).Von dort aus gelangt das Signal in einen aus drei Komponenten aufgebauten Selektivverstärker, bestehend aus einem Breitbandverstärker, einem TT-Filter in Gegenkopplung und einem Nachverstärker. Anschließend passiert das Signal einen Verstärker mit Relais, der als phasenempfindlicher Gleichrichter wirkt, sowie ein RC-Glied, durch welches das Signal geglättet wird. Der Verlauf des Signals ist in Abbildung \ref{fig:Lock-Inn} dargestellt.
+Dazu wird die Strahlung periodisch unterbrochen bzw. moduliert. So gelingt es, das Signal gut von der Umgebungsstrahlung unterscheiden zu können, sowie es leichter elektronisch verarbeiten zu können. Ein Lock-In-Verstärker ist folgendermaßen aufgebaut: zuerst befindet sich ein Modulator mit Lichtschranke im Strahlengang. Dahinter folgt ein Empfänger (z.B. wie im Versuch ein Vakuumthermoelement). Von dort aus gelangt das Signal in einen aus drei Komponenten aufgebauten Selektivverstärker, bestehend aus einem Breitbandverstärker, einem TT-Filter in Gegenkopplung und einem Nachverstärker. Anschließend passiert das Signal einen Verstärker mit Relais, der als phasenempfindlicher Gleichrichter wirkt, sowie ein RC-Glied, durch welches das Signal geglättet wird. Der Verlauf des Signals ist in Abbildung \ref{fig:Lock-Inn} dargestellt.
 
-\begin{figure}[ht]\label{fig:Lock-Inn}
+\begin{figure}[ht]
     \centering
     \input{Bilder/Gleichrichtung.tex}
     \caption{Phasenabhängigkeit der Gleichrichtung im Zeitverlauf.}
-    \label{fig:Gleichrichtung}
+    \label{fig:Lock-Inn}
 \end{figure}
 
-So gelingt es, Signale, deren Phasenlage gegenüber dem Referenzsignal nicht konstant bzw. deren Frequenz nicht mit dem Referenzsignal übereinstimmt, rauszufiltern, da diese sich nach der Glättung zu Null ergeben.
+So gelingt es, Signale, deren Phasenlage gegenüber dem Referenzsignal nicht konstant bzw. deren Frequenz nicht mit dem Referenzsignal übereinstimmt herauszufiltern, da diese sich nach der Glättung zu Null ergeben.
 
 \subsection{Auflösung und spektralen Spaltbreite}\label{sec:spektraleSpaltbreite}
 \subsubsection{Auflösung}
 Um die Auflösung der Abbildung mit einem Prismenspektrometer herzuleiten, werden geometrische Überlegungen angestellt. Grundlage der Herleitung ist die Tatsache, dass das Strahlenbündel beim Passieren des Prismas eingeschränkt wird, weshalb dieses als Spalt wirkt und es deshalb zu Beugungsphänomenen kommt. Resultat dieser Herleitung ist das theoretische beugungsbegrenzte Auflösungsvermögen eines Prismas
 \begin{align}
-  R = - P \frac{dn}{d\lambda}
+  R = - P \dv{n}{\lambda}
 \end{align}
-wobei P die Basislänge des Prismas ist. \\
+wobei $P$ die Basislänge des Prismas ist. \\
 Das reale Auflösungsvermögen ergibt sich dann zu
 \begin{align}
   \frac{\Delta\lambda}{\lambda}=\frac{\lambda R}{\lambda+\Phi b}
 \end{align}
-mit $\Phi$ = Kollimatorspiegeldurchmesser/Brennweite und b=Spaltbreite.
+mit $\Phi =$ Kollimatorspiegeldurchmesser/Brennweite und $b=$ Spaltbreite.
 
-\subsubsection{spektrale Spaltbreit}
+\subsubsection{Spektrale Spaltbreite}
 Bei Messungen dieser Art liegt immer eine konstante geometrische Spaltbreite vor. Aufgrund der Winkeldispersion passieren diesen Spalt nicht nur Strahlen einer Wellenlänge, sondern immer die eines ganzen Wellenlängenintervalls. Dabei zeigt die Abhängigkeit der spektralen Strahlungsleistung eines engen Wellenlängenintervalls nach dem Durchgang durch einen Spalt einen charakteristischen Verlauf. Bei gleicher Eintritts- und Austrittsspaltbreite kann diese durch eine Dreiecksfunktion mit Maximum bei der eingestellten Wellenlänge beschrieben werden. Diese Funktion gibt eine Wahrscheinlichtkeitsaussage über denjenigen Strahlungsanteil, der den Detektor erreicht, an. \\
 Das Wellenlängenintervall, das diese immer gleiche geometrische Spaltbreite passiert ist jedoch auf Grund der Winkeldispersion des Prismas nicht immer gleich groß, sondern abhängig von dem Wellenlängenbereich, der betrachtet wird. So ist bei der Aufnahme der Spektralverteilung zu beachten, dass die Strahlungsdichte aus dem Planck-Gesetz von einem konstanten Wellenlängenintervall ausgeht. Um die Messwerte als mit den Theoriewerten in Deckung zu bringen, ist eine Korrektur durch Division $\Delta \lambda$ = const$\cdot \dv{\lambda}{l}$ nötig, wobei $\dd{l}$ die infinitesimale Änderung der Schraubeneinstellung darstellt.
 
 \subsection{Empfänger}\label{sec:Empfänger)}
-\subsubsection{thermische Detektoren}
+\subsubsection{Thermische Detektoren}
 Thermische Detektoren beruhen auf der Messung von Effekten, die aufgrund der Temperaturänderung nach Strahlungseinfall enstehen. Deshalb ist das so entstehende Photosignal nur vom auftreffenden Strahlungsfluss abhängig und deshalb wellenlängenunabhängig. \\
 Je nach ausgenutzten Effekt unterscheidet man unterschiedliche thermische Detektoren. Das \emph{Thermoelement} nutzt die temperaturabhängige Änderung der Thermospannung, die sich an der Kontaktstelle zweier verschiedener Materialien ergibt, da deren Ferminiveaus sich bei Änderung der Temperatur materialspezifisch verschieben.
 Die Widerstandsänderung eines elektrischen Leiters aufgrund der Temperaturänderung durch Strahlungsabsorption zu messen, ist das Prinzip des \emph{Bolometers}.
@@ -228,7 +192,7 @@ Auch hier können zwei unterschiedliche Effekte genutzt werden.\\
 \emph{Photospannung}: Detektoren, die auf diesem Effekt beruhen, bestehen aus einer n- sowie einer p-Schicht. Durch die einfallende Strahlung bildet sich ein Ladungsträgerpaar, welches über die n- und p-Grenzschicht getrennt wird und damit eine elektrische Spannung entsteht, die gemessen wird. \\
 Photodetektoren haben eine höhere Empfindlichkeit, als thermische Detektoren, sind aber aufgrund der Notwenigkeit der Überwindung der Bandlücke wellenlängenabhängig in ihrer Empfindlichkeit.
 
-\subsubsection{spektrale Empfindlichkeit}
+\subsubsection{Spektrale Empfindlichkeit}
 Weil thermische Empfänger ausschließlich auf Effekten beruhen, die aufgrund einer Temperaturänderung auftreten, ist die Empfindlichkeit dieser Empfänger wellenlängenunabhängig. Anders verhält es sich mit den Halbleiterdetektoren. Da es bei diesen nur dann zur Entstehung eines Signals kommen kann, wenn die Energie aufgebracht wird, um ein Elektron vom Valenz- ins Leitungsband zu heben, also wenn mindestens die Bandlückenenergie aufgebracht wird, zeigen diese Detektoren eine Wellenlängenabhängigkeit. \\
 Die spektrale Empfindlichkeit $r(\lambda)$ eines Empfängern bei der Wellenlänge $\lambda$ ist definiert als Verhältnis der vom Empfänger abgegebenen Messgröße $M(\lambda)$ (z.B. Spannung, Strom, Ausschlag) zu der Strahlungsleistung $P_S(\lambda)$:
 \begin{align}
@@ -236,32 +200,46 @@ Die spektrale Empfindlichkeit $r(\lambda)$ eines Empfängern bei der Wellenläng
 \end{align}
 Da die Empfindlichkeit des Thermoelements, wie in Abschnitt \ref{sec:Empfänger} verdeutlicht, wellenlängenunabhängig ist, gibt der Verlauf der Messung mit dem Thermoelement den Verlauf von $P_S(\lambda)$ wieder. So ergibt sich, dass die $r(\lambda)$ gemessen werden kann, indem die Messung einmal mit dem zu vermessenden (Halbleiter-)Empfänger, sowie anschließend mit dem Thermoelement durchgeführt wird und die spektrale Empfindlichkeit dann berechnet werden kann als
 \begin{align}
-  r(\lambda) = \frac{A_{Empfänger}(\lambda)}{A_{Thermoelement}(\lambda)}
+  r(\lambda) = \frac{A_\text{Empfänger}(\lambda)}{A_\text{Thermoelement}(\lambda)}
 \end{align}
 
 wobei A der Ausschlag des Galvanometers ist.
 
-\subsection{Absorption und Reflexion}\label{sec:AbsorptionundReflexion}
-\subsubsection{Absorption}
-Die Transmission eines homogenen Stoffes mit geringem Reflexionsvermögen wird beschrieben durch das \textsc{Beer}'sche Gesetz:
+\subsection{Wechselwirkungen im Infrarotbereich}\label{sec:Wechselwirkungen}
+
+Damit Molekülübergänge im infraroten Bereich stattfinden können, müssen die beteiligten Moleküle ein permanentes oder induziertes Dipolmoment aufweisen. Moleküle, die diese Eigenschaft erfüllen, werden \emph{infrarotaktiv} bezeichnet. Für homonukleare, symmetrische Moleküle wie \ce{N2}, \ce{O2} verschwindet das Kerndipolmoment und es können keine Schwingungsbanden im IR angeregt werden. Aus diesem Grund tragen diese Gase nicht zum Treibhauseffekt der Erde bei, im Gegensatz zu \ce{H2O} oder \ce{CO2}, welche die von der Erde emittierte IR-Strahlung absorbieren und reemittieren.
+
+Damit ein Photon von einem Molekül absorbiert werden kann, muss ein entsprechender Schwingungsübergang nach der Quantenmechanik erlaubt sein. Für Schwingungs- Rotationsübergänge gelten daher gewisse Auswahlregeln ($\Delta J = \pm 1, \Delta m = 0, \pm 1$). Eine beispielhafte Darstellung eines solchen Spektrums zeigt Abbildung~\ref{Rotationsschwingung}. Die Wellenlängenunterschiede von Rotationsschwingungen sind meist jedoch zu klein, damit diese von einem Prismenspektrometer aufgelöst werden können.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{Bilder/Rotationsschwingung.pdf}
+  \caption{Simulierte Rotationsschwingungsbande für \ce{CO} im elektronischen Grundzustand nach~\cite{Hertel}. Es findet ein Schwingungsübergang bei einer Temperatur von \SI{293}{\kelvin} statt. Der Einschub zeigt auch die zweite harmonische ($\nu=2 \to \nu=0$).}
+\end{figure}
+
+Für komplexere Moleküle werden die Schwingungsübergänge zu verschiedenen Gruppen zusammengefasst. So können einerseits Valenzschwingungen entlang der Bindungsachse auftreten (Streckschwingungen) oder Schwingungen mit Deformation der Kernverbindungsachse (Deformationsschwingungen).
+
+In Halbleitermaterialien sind insbesondere Interbandübergänge möglich, die auf dem inneren photoelektrischen Effekt beruhen. Hier werden die Elektronen aus dem Valenzband in das Leitungsband angehoben. Die Voraussetzung dafür ist, dass die Energie des absorbierten Photons größer ist, als die Bandlückenenergie. Weiterhin ist es möglich, dass in Materialien, die im sichtbaren transparent sind, im IR-Bereich Gitterschwingungen auftreten, die beispielsweise die Transparenz von Glas reduzieren.
+
+Im Versuch werden zur Untersuchung verschiedener Proben Transmissionsspektren aufgenommen. Die Transmission eines homogenen Stoffes mit geringem Reflexionsvermögen wird beschrieben durch das \textsc{Lambert-Beer}'sche Gesetz:
 \begin{align}
-  T=\frac{I_D}{I_0}=(1-R)^2*\exp(-Kd)
+  T=\frac{I_D}{I_0}=(1-R)^2\cdot\exp(-Kd)
 \end{align}
-wobei K die Extinktionskonstante ist und d die Schichtdicke angibt.
-\subsubsection{Reflexionsvermögen}
-Bei quasi senkrechtem Lichteinfall berechnet sich das Reflexionsvermögen an einer Grenzfläche bei Anwesenheit von Absorption zu
+wobei $K$ die Extinktionskonstante ist und $d$ die Schichtdicke angibt. Die Größe $R$ beschreibt das Reflexionsvermögen.
+
+Zur Auswertung von Spektren in Reflexionsmessung wird das Reflexionsvermögen heragezogen. Bei quasi senkrechtem Lichteinfall berechnet sich das Reflexionsvermögen nach den \textsc{Fresnel}'schen Formeln an einer Grenzfläche bei Anwesenheit von Absorption zu
 
 \begin{align}
   R(\lambda)=\frac{N_1(\lambda)-N_2(\lambda)}{N_1(\lambda)+N_2(\lambda)}
 \end{align}
 
-mit dem komplexen Brechungsindex $N(\lambda) = n(\lambda)+\mathrm{i}k(\lambda)$  und dem Absorptionsindex k.
+mit dem komplexen Brechungsindex $N(\lambda) = n(\lambda)+\mathrm{i}k(\lambda)$  und dem Absorptionsindex $k$.
 Werden als Medien Luft (N=1) und ein beliebiges Medium mit $N_2 = N$ verwendet, ergibt sich für das Reflexionsvermögen
 \begin{align}
   R(\lambda)=\frac{(n-1)^2+k^2}{(n+1)^2+k^2}
 \end{align}
 
-Daraus wird ersichtlich, dass in den Wellenlängenbereichen, wo Absorption auftritt, also n un k groß sind, auch das Reflexionsvermögen groß wird.
+Daraus wird ersichtlich, dass in den Wellenlängenbereichen, wo Absorption auftritt, also $n$ und $k$ groß sind, auch das Reflexionsvermögen groß wird.
 
 % *********************************************
 % ***** KAPITEL 4 *****************************
@@ -270,7 +248,7 @@ Daraus wird ersichtlich, dass in den Wellenlängenbereichen, wo Absorption auftr
 \section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
 % \input{Bilder/Kalibrierung_Wolframlampe3_6.tex}
 \subsection{Aufbau und Wellenlängeneichung eines Prismenmonochromators (SPM1)}
-\subsubsection{Justieren des Prismenmonochromators in Wadsworth-Anordung}
+\subsubsection{Justage des Prismenmonochromators in Wadsworth-Anordung}
 Um den Prismenmonochromator in Wadsworth-Anordnung zu justieren wird eine Quecksilberdampflampe verwendet. Diese wird so justiert, dass der Fokuspunkt ihres Strahls auf dem Eintrittsspalt lokalisiert ist. Gleichzeitig ist darauf zu achten, dass der erste Spiegel möglichst voll ausgeleuchtet ist. Auch der zweite Spiegel wird so justiert, dass die aus dem Prisma kommenden Strahlen auf diesen fallen. Die Austrittsblende agiert als Monochromator. Mit der Kombination aus Thermoelement und Galvanometer kann auch bei optimaler Justage kein Ausschlag gemessen werden, weshalb eine Photodiode als Empfänger genutzt wird. Diese wird so positioniert, dass der Detektor sich im Fokuspunkt des Strahls befindet.
 
 \subsubsection{Eichung und Auflösungsvermögen}
@@ -363,24 +341,6 @@ Zunächst wurden zur Aufzeichnung der Referenz die Spektren der Wolframlampe mit
 
 \input{Bilder/Referenzspektren.tex}
 
-\subsubsection{Bestimmung der Bandlückenenergie von Halbleitern}
-
-Im Folgenden werden die Transmissionsspektren von zwei zunächst unbekannten Halbleitern untersucht. Zur Verfügung standen hierfür zwei kreisförmige, im sichtbaren Spektrum undurchsichtige, Halbleiterproben. Die Plättchen wurden zur Transmissionsmessung in den Strahlengang gestellt. Die Messergebnisse sind qualitativ in Abbildung~\ref{fig:Halbleitermessung} dargestellt.
-
-\input{Bilder/Wolframlampe5Volt.tex}
-
-Zur besseren Diskussion der Spektren wurden diese durch das in blau dargestellte Spektrum der Referenz geteilt. Dadurch ergibt sich die Absorptionsrate der Halbleiter als relative Größe. Zur Bestimmung der Bandlückenenergie wird der Punkt gesucht, ab der die Transmissionsrate ansteigt, denn erst Photonen mit einer Energie, die kleiner als die Bandlücke ist, werden von der Probe mit einer Dicke von \SIrange{1}{2}{\milli\metre} nicht mehr absorbiert und können detektiert werden Die entsprechende Grenzwellenlänge ist in Abbildung~\ref{fig:Halbleitermessung_relativ} mit eingezeichnet.
-
-\input{Bilder/Halbleitermessung.tex}
-
-Die beiden Grenzwellenlängen für den Beginn der Absorption lassen sich über die nach Einstein gegebene Beziehung $E = h \nu = \frac{h c}{\lambda}$ in eine Energie umrechnen. Danach ergibt sich
-\begin{align}
-  E_g(\ce{Si}) &= \frac{h c}{\SI{1050\pm50}{\nano\metre}} = \SI{1.181\pm0.056}{\electronvolt}\\
-  E_g(\ce{Ge}) &= \frac{h c}{\SI{1800\pm50}{\nano\metre}} = \SI{0.689\pm0.019}{\electronvolt}.
-\end{align}
-Die in~\cite{Hunklinger} gegeben Literaturwerte für Silizium $E_g = \SI{1.12}{\electronvolt}$ und Germanium $E_g = \SI{0.66}{\electronvolt}$ bei einer Temperatur von \SI{300}{\kelvin} liegen innerhalb des angegebenen Fehlerintervalls.
-
-
 \subsubsection{Molekülschwingungsbanden von Ethanoldampf}
 Zur Untersuchung der Schwingungsbanden von Ethanoldampf wurde ein Glasrohr in der Mitte mit Ethanol gefüllt und mithilfe des Keramikstrahlers ein Transmissionsspektrum aufgenommen, welches anschließend mit einem Referenzspektrum verglichen wurde. Beide Spektren sind im Vergleich in Abbildung~\ref{fig:Ethanoldampf} dargestellt.
 
@@ -417,6 +377,33 @@ Im Bereich von \SIrange{2}{10}{\micro\metre} wurden insgesamt vier Absorptionsba
 Es muss jedoch noch angemerkt werden, dass bei der Messung Fehler auftreten können, da im verwendeten Rohr, in dem sich der Ethanoldampf befand, ebenfalls Absorption an den Glas auftreten kann. Von daher wäre es ratsam gewesen, eine weitere Referenzmessung mit dem Rohr im Strahlengang durchzuführen.
 \FloatBarrier
 
+\subsubsection{Absorptionsspektren von Kunststoffen}
+
+Zwei weitere, mit dem SPM2 vermessene Proben bestanden aus im sichtbaren Spektralbereich durchsichtigen Kunsstoffen. Dabei handelt es sich einerseits um eine durchsichtige Folie aus Polypropylen, welche mit der Folie der Praktikumsanleitung vergleichbar ist und andererseits um eine Acetatfolie. Die Folien wurden in den Strahlengang gestellt und die auftretende Absorption gemessen.
+
+\input{Bilder/Kunststoffe.tex}
+
+Die Transmissionsrate ergibt sich wieder als der Quotient aus gemessenem Spektrum gegenüber der Referenzkurve und ist in Abbildung~\ref{fig:Absorption_Kunststoffe} dargestellt. Wird die Transmissionsrate mit den für Ethanoldampf aufgenommen Spektren verglichen, so ergeben sich hier Molekülschwingungen in den gleichen Bereichen, nämlich Streckschwingungen von \ce{OH}- und \ce{CH}-Gruppen im Bereich von \SIrange{3}{4}{\micro\metre} und für das Polypropylen Deformationsschwingungen bei \SI{7.2}{\micro\metre}.
+
+\input{Bilder/Absorption_Kunststoffe.tex}
+
+\FloatBarrier
+\subsubsection{Bestimmung der Bandlückenenergie von Halbleitern}
+
+Im Folgenden werden die Transmissionsspektren von zwei zunächst unbekannten Halbleitern untersucht. Zur Verfügung standen hierfür zwei kreisförmige, im sichtbaren Spektrum undurchsichtige, Halbleiterproben. Die Plättchen wurden zur Transmissionsmessung in den Strahlengang gestellt. Die Messergebnisse sind qualitativ in Abbildung~\ref{fig:Halbleitermessung} dargestellt.
+
+\input{Bilder/Wolframlampe5Volt.tex}
+
+Zur besseren Diskussion der Spektren wurden diese durch das in blau dargestellte Spektrum der Referenz geteilt. Dadurch ergibt sich die Absorptionsrate der Halbleiter als relative Größe. Zur Bestimmung der Bandlückenenergie wird der Punkt gesucht, ab der die Transmissionsrate ansteigt, denn erst Photonen mit einer Energie, die kleiner als die Bandlücke ist, werden von der Probe mit einer Dicke von \SIrange{1}{2}{\milli\metre} nicht mehr absorbiert und können detektiert werden Die entsprechende Grenzwellenlänge ist in Abbildung~\ref{fig:Halbleitermessung_relativ} mit eingezeichnet.
+
+\input{Bilder/Halbleitermessung.tex}
+
+Die beiden Grenzwellenlängen für den Beginn der Absorption lassen sich über die nach Einstein gegebene Beziehung $E = h \nu = \frac{h c}{\lambda}$ in eine Energie umrechnen. Danach ergibt sich
+\begin{align}
+  E_g(\ce{Si}) &= \frac{h c}{\SI{1050\pm50}{\nano\metre}} = \SI{1.181\pm0.056}{\electronvolt}\\
+  E_g(\ce{Ge}) &= \frac{h c}{\SI{1800\pm50}{\nano\metre}} = \SI{0.689\pm0.019}{\electronvolt}.
+\end{align}
+Die in~\cite{Hunklinger} gegeben Literaturwerte für Silizium $E_g = \SI{1.12}{\electronvolt}$ und Germanium $E_g = \SI{0.66}{\electronvolt}$ bei einer Temperatur von \SI{300}{\kelvin} liegen innerhalb des angegebenen Fehlerintervalls.
 
 \subsubsection{Absorption und Reflektivität von \ce{SiO2}}
 \paragraph{Absorption}

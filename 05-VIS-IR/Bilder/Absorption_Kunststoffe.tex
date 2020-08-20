@@ -1,0 +1,16 @@
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[ width=\textwidth, height=6cm, ylabel=Transmissionsrate, xlabel=Wellenlänge $\lambda$ in \si{\micro\metre}, xmin = 1500, xmax=13000, ymin = 0, ymax = 1.1, scaled x ticks={real:1000}, xtick scale label code/.code={}, legend cell align={left}]
+      \addplot[black!50!white, thick, opacity=0.5] file[x index=1,y index=2]{Daten/Absorption_Kalibrierung_KBrPrisma_Keramik19_4V_Polypropylen_3_6_Grad_1000nm_all500nmMaker_Spalt_1500mu_inReflexionsstellunggemessen.txt};
+      \addlegendentry{}
+      \addplot[black!50!white, thick, opacity=0.5] file[x index=1,y index=2]{Daten/Absorption_Kalibrierung_KBrPrisma_Keramik19_4V_Acetat_3_6_Grad_1000nm_all500nmMaker_Spalt_1500mu_inReflexionsstellunggemessen.txt};
+      \addplot[orange, thick] file[x index=1,y index=2]{Daten/Absorption_Smooth_Kalibrierung_KBrPrisma_Keramik19_4V_Polypropylen_3_6_Grad_1000nm_all500nmMaker_Spalt_1500mu_inReflexionsstellunggemessen.txt};
+      \addlegendentry{}
+      \addplot[green!50!black, thick] file[x index=1,y index=2]{Daten/Absorption_Smooth_Kalibrierung_KBrPrisma_Keramik19_4V_Acetat_3_6_Grad_1000nm_all500nmMaker_Spalt_1500mu_inReflexionsstellunggemessen.txt};
+      \legend{, ,Polypropylen, Acetat};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Aufgenommene Transmissionsrate verschiedener Kunststoffe. In grau ist jeweils die Kurve für das ungeglättete Lock-In-Signal dargestellt.}
+  \label{fig:Absorption_Kunststoffe}
+\end{figure}

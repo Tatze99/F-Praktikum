@@ -15,45 +15,45 @@ I was expecting a `,' or a `}'---line 39 of file Literatur.bib
  : author={Br{\"u}gel, Werner}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You've used 3 entries,
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            513 strings with 4231 characters,
-and the built_in function-call counts, 679 in all, are:
-= -- 57
-> -- 27
+            518 strings with 4418 characters,
+and the built_in function-call counts, 908 in all, are:
+= -- 76
+> -- 40
 < -- 0
-+ -- 11
-- -- 8
-* -- 27
-:= -- 122
-add.period$ -- 8
-call.type$ -- 3
-change.case$ -- 11
++ -- 16
+- -- 12
+* -- 36
+:= -- 159
+add.period$ -- 10
+call.type$ -- 4
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 31
-empty$ -- 67
-format.name$ -- 8
-if$ -- 142
+cite$ -- 4
+duplicate$ -- 38
+empty$ -- 89
+format.name$ -- 12
+if$ -- 191
 int.to.chr$ -- 0
-int.to.str$ -- 3
+int.to.str$ -- 4
 missing$ -- 4
-newline$ -- 17
-num.names$ -- 6
-pop$ -- 25
+newline$ -- 21
+num.names$ -- 8
+pop$ -- 34
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 14
 quote$ -- 0
-skip$ -- 23
+skip$ -- 34
 stack$ -- 0
-substring$ -- 15
-swap$ -- 3
+substring$ -- 20
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 12
 warning$ -- 0
-while$ -- 6
-width$ -- 4
-write$ -- 29
+while$ -- 8
+width$ -- 5
+write$ -- 36
 (There were 2 error messages)
