@@ -119,6 +119,7 @@ Die Rate der Emissionsprozesse ist proportional zur Anzahl an Atomen im angeregt
   \dv{N_1}{t} &= - B_{12} N_1 u(\nu) & \text{Absorption}\\
   \dv{N_2}{t} &= - A_{12} N_2 u(\nu) & \text{spontane Emission}\\
   \dv{N_2}{t} &= - B_{21} N_2 u(\nu) & \text{induzierte Emission}.
+  \label{equ:Ratengleichungen}
 \end{align}
 Die Proportionalitätskonstanten stellen hierbei die Einsteinkoeffizienten dar. Im thermodynamischen Gleichgewicht ergibt sich eine Balance zwischen Absorption und Emission:
 \begin{align}
@@ -126,7 +127,7 @@ Die Proportionalitätskonstanten stellen hierbei die Einsteinkoeffizienten dar. 
 \end{align}
 Wird damit nun die spektrale Energiedichte $u(\nu)$ bestimmt und mit der \textsc{Planck}'schen Strahlungsformel verglichen, ergibt sich
 \begin{align}
-  \frac{A_{21}}{B_{21}} = \frac{8\pi h \nu^3}{c^3} \quad \text{und} \quad B_{12} = B_{21}.
+  \frac{A_{21}}{B_{21}} = \frac{8\pi h \nu^3}{c^3} \quad \text{und} \quad B_{12} = B_{21}.\label{equ:Einsteinkoeffizienten}
 \end{align}
 Es ergibt sich somit eine Gleichheit der Koeffizienten der Absorption und induzierten Emission. Zudem ist für hohe Frequenzen die spontane Emission $A_{21}$ dominant gegenüber der induzierten Emission $B_{21}$, was den Grund darstellt, warum es schwierig ist, UV-Laser zu konstruieren.
 
@@ -155,8 +156,68 @@ Im Festkörper beruht die Stoßverbreiterung auf der Wechselwirkung von Phonen.
 Bewegt sich das angeregte Atom mit der Geschwindigkeit $\bm{v}$, so wird die Mittenfrequenz $\nu_0$ um einen Betrag verschoben, welcher der Dopplerverschiebung einer bewegten Quelle entspricht. Es handelt sich hierbei um eine inhomogene Verbreiterung, welche sich in einem gaußförmigen Linienprofil zeigt. Für den im Versuch benutzten Übergang beträgt die Dopplerverbreiterung \SI{1500}{\mega\hertz} und stellt die dominante Größe der Verbreiterung dar.
 
 \subsection{Die Laserbedingungen}
+Das Prinzip des Lasers ist es, Licht zu verstärken. Damit dies möglich wird, bedarf es eines Mediums, welches genau das gewährleistet, das sogenannte \textit{aktive Medium}. Verstärkung tritt auf, wenn die Photonenzahldichte
+\begin{align}
+  \dv{q}{t} \geq 0
+  \label{equ:Photonenzahldichte}
+\end{align}
+gilt. Um einen Ausdruck für die Photonenzahldichte herzuleiten, stellen wir die Bilanz aus den das Laserniveau verlassenden, also induziert emittierten und den zum Laserniveau hinzukommenden, also den absorbierten Photonen auf. Die spontane Emission wird hier vernachlässtigt. Mit den oben hergeleiteten Formeln \ref{equ:Ratengleichungen} ergibt sich für die Photonenzahldichte
+\begin{align}
+    \dv{q}{t}=-\dv{N_2}{dt}+\dv{N_1}{dt}=u(\nu)(B_{21}N_2-B_{12}N_1)=u(\nu)B_21(N_2-N1)
+\end{align}
+Da weiterhin Gleichung \ref{Photonenzahldichte} gelten muss, bedeutet das, eine Verstärkung tritt auf, wenn
+\begin{align}
+  N_2 ß\geq N_1 \qquad 1. Laserbedingung
+\end{align}
+also wenn sich mehr Atome im angeregten, als im Grundniveau befinden. Im thermischen Gleichgewicht gilt genau das Inverse, nämlich $N_1\geqN_2$, weshalb dieser Zustand als \textit{Besetzungsinversion} bezeichnet wird. Ihn erreicht man also nicht durch thermische Anregungen, egal, wie hoch man die Temperaturen wählt, sondern nur durch spezielle Anregungsvorgänge- das sogenannte \textit{Pumpen}.\\
+Die zur Anregung nötige Energie kann auf unterschiedliche Wege zugeführt werden, was zur Unterscheidung der unterschieldlichen Lasertypen führt.
+\begin{itemize}
+  \item optisch gepumpte Laser (Anregung durch Blitzlampe, kontinuierliche Lampe, Laser, Leuchtdiode)
+  \item elektronenstrahlgepumpte Laser
+  \item Gasentladungslaser
+  \item Injektionslaser (Anregung durch Stromdurchgang in Halbleiter)
+  \item chemische Laser(Anregung durch chemische Reaktion)
+  \item gasdynamische Laser (Inversionserzeugung durch Expansion eines heißen Gases)
+  \item nuklear gepumpte Laser
+\end{itemize}
+
+Die Besetzungsinversion wird dabei grundsätzlich theoretisch immer gleich erzielt. Man unterscheidet zwischen 2-Niveau, 3-Niveau und 4-Niveau-System, wobei bei Zweiniveausystem aufgrund Gleichung \ref{equ:Einsteinkoeffizienten} die Erzeugung einer Inversion durch optisches Pumpen nicht möglich ist. Bei einem 3-Niveau-System gibt es ein Hilfsniveau $E_3$ welches sich dadurch auszeichnet, dass es ein breites Absoprtionsband, dass Licht einer Blitzlampe gut absorbieren kann und dann schnell in Niveau $E_2$ zerfällt. Entscheidender Nachteil ist, dass hier eine hohe Pumprate nötig ist. Dieses Problem löst das 4-Niveau-System, indem hier der Laserübergang nicht zum Grundzustand sondern zu einem Zwischenzustand erfolgt. \\
+Um den Lichtverstärker zum Oszillator - dem Laser-zu machen, bedienen wir uns einem Prinzip der Elektronik, der Rückkopplung: Ein Teil der verstärkten Ausgangsstrahlung wird wieder in das System zurückgeführt. Dies wird realisiert durch zwei Spiegel rechts und links vom aktiven Medium. Sie bilden den \textit{Resonator}. Entscheidend für die Entstehung der Oszillation ist, dass die Verluste pro Umlauf geringer sind, als die Verstärkung pro Umlauf. Für die Verstärkung nach einem doppelten Durchlauf wird in Analogie zum Labert-Beer'schen Gesetz für die Absoprtion
+\begin{align}
+  I(2L)=I(0)\cdot \exp{g2L} \\qquad \tex{mit} g = B_{21} \frac{h\nu}{c} (N_2-N_1)
+\end{align}
+gefunden. Gleichzeitig kann, wenn alle Verluste (Spiegeltransmission, Streuung, Beugung, Absoprtion) in einem Verlustkoeffizienten $\kappa$ zusammengefasst werden, die Bedigung, dass die Verstärkug die die Verluste nach einem Umlauf kompensiert, als
+\begin{align}
+  I(0)=I(2L)\cdot \ecp{-\kappa}
+\end{align}
+Da der Laser wie eingangs beschrieben, nur dann oszilliseren kann, wenn die Verstäkrung größer oder gleich den Verlusten pro Umlauf ist, ergibt sich so die \textit{zweite Laserbedingung}
+\begin{align}
+  \sigma_{21}(N_2-N_1)\cdot2L \geq \kappa
+  \label{equ:zweiteLB}
+\end{align}
+Die Erfüllung von \ref{equ:zweiteLB} wird durch die Lage der zweiten Verlustlinie charakterisiert.
+
 
 \subsection{Der Inversionsabbau und Lamb-Dip}
+ Der Laserprozess läuft folgendermaßen ab: In der zunächste eintretenden Einschwingphase liegen kleine Intensitäten vor. Bei diesen tritt eine exponentielle Verstärkung auf. Bei höheren Intensitäten wird die Inversion und damit die Verstärkung durch induzierte Emission zunehmend abgebaut. Bei konstantem Pumpem kommt es durch diesen zunehmenden Inversionsabbau zu einem Gleichgewichtszustand, der sogenannten Sättigung der Verstärkung. Die Besetzungsinversion wird dabei bis zur Verlustlinie abgebaut. \\
+
+Bei homogener Linienverbreiterung können alle invertierten Atome mit dem Strahlungsfeld bzw. der Mode wechselwirken, so kann sie von allen Atomen ihre Verstäkung beziehen, der Abbau erfolgt gleichermaßen. Bei inhomogener Linienverbreiterung kann das Strahlungsfeld hingegen nur mit bestimmten Atomen wechselwirken, die Mode kann also nur einen Teil der invertierten Atome abbauen, nämlich die, die aufgrund der homogenen Linienbreite trotz des Dopplereffekts noch die Resonatorfrequenz haben. Die Verstärkung wird dann nur in einem engen Frequenzbereich um die Frequenz der wechselwirkenden Atome abgebaut. Aufgrund des sich ergebenden Bildes im Verstärkungsprofil spricht man vom "hole burning". \\
+Aufgrund des Dopplereffekts können beim Gaslaser nur Atome wechselwirken, die sich gerade mit der passenden Geschwindigkeit $\pm v_z$ in z-Richtung (Laserachsenrichtung) bewegen, sodass ihre Frequenz gerade der Resonatorfrequenz entspricht.  Symmetrisch um die Null kommt es bei $pm v_z$ zu einer Eindellung des Verstärkungsprofil bei der negativen sowie bei der positiven Geschwindigkeit. Zur Ausgangsleistung tragen hier zwei Gruppen von Atomen bei, nämlich die, die sich mit der Geschwindigkeit $v_z$ bewegen, sie sorgen für eine Emission des Lichts in positive z-Richtung und die, die sich mit der Geschwindigkeit $-v_z$ bewegen, sie sorgen für eine Emission des Lichts in negative z-Richtung, haben aber die gleiche Frequenz. Ist aber die Resonatorfrequenz gleich der Resonanzfrequenz des optischen Übergangs, verschiebt man die Frequenz also zur Linienmitte, kommt es zum Überlappen der beiden Löcher. Jetzt tragen nur noch Atome mit $v_z = 0$, also viel weniger, als in den anderen Fällen, zur Verstärkung bei. Es kommt deshalb zur Eindellung der Intensität. Da hier alle Atome $v_z = 0 $ haben, tritt auch kein Dopplereffekt mehr auf, weshalb die Eindellung bei jenem $\nu$ nur noch homogen verbreitert ist und keine Dopplerverbreiterung aufweist, weshalb gilt
+\begin{align}
+  \Delta \nu_{HL} = \Delta \nu_{LD}
+\end{align}
+
+
+\subsubsection{Moden}
+Im Laser treten longitudinale und transversale Moden  auf. Longitudinale Moden sind die Eigenschwingungen des Resonators und entsprechen stehenden Wellen. Für sie gilt also
+\begin{align}
+  n L = k_i \frac{\lambda}{2_i}
+\end{align}
+wobei $ k_i$ die Anzahl der stehenden Halbwellen und $\lambda_i$ die Wellenlänge der i-ten Mode entsprechen, n ist der Brechungsindex und L die Länge des Resonators. Im Resonator werden jetzt nicht wie noch im Lichtverstärker ein Kontinuum von Frequenzen unter dem Verstärungsprofil verstärkt, sondern nur die Eigenfrewquenzen des Resonators erfahren eine Verstärkung. Die Selbstoszillation der Eigenfrequenzen ist nur möglich, da die induzierte Emission die Eigenschaften der Phasenstarre, der Frequenzidentität und der Polarisationserhaltung mitbringt. Wird die Frequenzdifferenz zwischen zwei stehenden Wellen mit k und k+1 betrachtet, ergibt sich der Frequenzabstand zwischen zwei Axialmoden zu
+\begin{align}
+  \Delta \nu = \frac{c}{2nL}
+\end{align}
+Transversalmoden treten durch eine leichte Phasenverschiebung bei der Reflexion an den Resonatorspiegeln, die sich in einer kleinen Frequenzänderung ausdrückt. Jeweils gleiche transversale Moden haben aber ebenfalls einen konstanten Frequenzabstand, wie die longitudinalen.
 
 \subsection{Gaußsche Strahlenoptik}
 Um die Eigenschaften der Strahlenoptik, welche die Ausbreitung von Licht in optischen Systemen beschreibt, mit der Wellenoptik zu vereinen, werden Gaußstrahlen eingeführt. Sie stellen eine paraxiale Lösung der \textsc{Helmholtz}-Gleichung dar und eignen sich zur Beschreibung der Ausbreitung kohärenter Laserstrahlen. Ein kollimierte Laserstrahl propagiert gerichtet in einem homogenen Material. Aufgrund von Dispersioneffekten divergiert der Gaußstrahl jedoch. Der Gaußstrahl wird im Gegensatz zu einer ebenen Welle modelliert mit einer gaußförmig verlaufenden Amplitude entlang axialer Richtung. Damit lässt sich die komplexe Amplitude des Gaußstrahles schreiben als~\cite{Saleh}
@@ -221,8 +282,14 @@ Hinsichtlich der Krümmungsradien lassen sich drei wichtige Typen unterscheiden:
   \item \emph{Konzentrischer Resonator}: Hier liegen die Krümmungsmittelpunkte im gleichen Punkt, die Spiegel weisen den Abstand $L=2R$ auf. Die transversale Ausdehnung der Feldverteilung hängt nur von den begrenzenden Aperturen ab.
 \end{enumerate}
 \subsection{Der Helium-Neon-Laser}
-
-
+Der Helium-Neon-Laser ist ein Gaslaser, der als aktives Medium ein He-Ne-Gas benutzt. Das Helium wird durch Elektronenstöße angeregt und gibt seine Energie durch Stöße zweiter Art an das Neonatom ab, in welchem dann die Laserübergänge passieren. Wobei ein Stoß zweiter Art folgenden Prozess benennt:
+\begin{align}
+  \text{He}* + \text{Ne} \Rightarrow \text{He}+\text{Ne}*+\Delta E
+\end{align}
+Das Termschema des He-Ne ist in Abbildung \ref{fig:Termschema} zu sehen.
+%EINFÜGEN!
+Die resonante Übertragung der Energie von He auf Neon ist der hauptsächliche Pumpvorgang. Der für den Versuch relevante Übergang ist der 3s $\rightarrow$ 2p, durch den die rote Linie bei \SI{632,8}{\nano\meter} entsteht. Da die Entleerung des 1s Niveaus hauptsächlich durch Stöße mit der Wand passiert, wird beim Bau der Röhren auf ein dünnes Rohr geachtet, was die Ausgangsleistung der Laser auf \SI{10}{\milli\watt} beschränkt. \\
+Der Aufbau des He-Ne-Lasers ist in Abbildung \ref{fig:Aufbau} dargestellt. Die Elektronen, die für die Anregung des Heliums nötig sind, entstehen durch Gasentladung. Hierfür ist eine Hochspannung im Bereich \SI{2}{\kilo\volt} erforderlich. Technisch wichtitg ist die bereits oben diskutierte kleine Kappillardurchmesser, sowie die Notwendigkeit von Spiegeln mit hohen Reflexionsvermögen, da unter relalistischen Bedingungen nur eine Verstärkung von g$=\SI{0,1}{\per\meter}$ erzielt werden kann. Außerdem entscheidend ist für die Selektion einer Polarisationsrichtig die Verwendung von unter dem Brewster-Winkel geneigten Fenstern. Diese bewirken, dass nur senkrecht polarisiertes Licht die Kapillare verlässt. Typischerweise wird, wie auch im Versuch, an einem Spiegel ausgekoppelt, der z.B. ein Reflexionsvermögen von \SI{98}{\percent} aufweist. Das Mischungsverhältnis zwischen beiden Gasen bestimmt die emittierte Wellenlänge. Für die verwendete Rotlinie wird ein Verhältnis von 5:1 gewählt.
 
 % *********************************************
 % ***** KAPITEL 4 *****************************
@@ -428,7 +495,175 @@ Die Fotos in Abbildung~\ref{fig:TransversaleModen} zeigen, dass für steigende O
 \FloatBarrier
 
 \subsection{Messungen der spektralen Intensitätsverteilung}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\subsubsection{Spektrum eines Singlemodelasers}
+Um das Spektrum eines Singlemodelasers aufzunehmen wird dieser im sogenannten Wobbelungs-Betrieb betrieben. Dabei wird die Resonatorlänge L des Singlemodelasers mit Hilfe einer angelegten sich zeitlich periodisch ändernden Spannung varriert. Im Versuch wird dazu eine Dreiecksspannung verwendet. Durch diese Spannung ändert sich also die Länge des Resonators zeitlich periodisch. Da im Resonator nur stehende Wellen entstehen, muss
+\begin{align}
+  nL = \frac{m\lambda}{2} \text{mit} \quad \text{m} \in \mathbb{N}
+\end{align}
+
+gelten. Dabei ist n der Brechungsindex.
+In diesem Experiment ist das zu betrachtende Medium Luft, weshalb $n=1$ gilt. Somit ergeben sich die möglichen Frequenzen bzw. Wellenlängen in Abhängigkeit der Resonatorlänge zu
+\begin{align}
+  \lambda = \frac{2L}{m}\quad \text{mit} \quad \text{m}\in \mathbb{N}
+\end{align}
+und
+\begin{align}
+  \nu = m \frac{c}{2L}
+\end{align}
+Wird also die Länge des Resonators durch das Wobbeln variiert, ändert sich die jeweilige Frequenz der Welle. \\
+Im Bereich der Dreiecksspannung zwischen zwei Peaks, wo keine Vorzeichenänderung im Anstieg auftritt, ändert sich die Spannung in eine Richtung, nimmt also entweder nur zu oder nur ab. In Folge dessen ändert sich auch die Resonatorlänge in diesem Bereich nur in eine Richtung. Hierbei wird ein charakteristischer Verlauf der Intensität beobachtet, der in Abbildung \ref{fig:Zeitverlauf} dargestellt ist.
+
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Profil_SML_Zeitverlauf.pdf}
+    \caption{Zeitverlauf der Intensität des Singlemodelasers bei Wobbelung mit Dreiecksspannung}
+    \label{fig:Zeitverlauf}
+\end{figure}
+
+Jener stellt sich als ein sich periodisch wiederholenden Gauß dar, welcher eine Eindellung in der Mitte aufweist. Dies ergibt sich, da die Modenfrequenz sich bei in eine Richtung ändernde Resonatorlänge so verändert, dass sie sich unter dem aus der Linienbreite gegebenen Verstärkungsprofil \glqq in einer Richtung (abhängig davon ob ansteigende oder abfallende Spannunng und damit vergrößernder oder verkleindernder Resonator) hindurchbewegt\grqq. Abhängig von der Frequenz, die sich in Folge der sich über die Zeit ändernden Dreiecksspannung auch periodisch ändert, tritt unterschiedlich starke Verstärkung auf. Entscheidend ist hier, dass sich der Verlauf bei weiter in eine Richtung ändernde Dreiecksspannung, also z.B. weiter vergrößern der Resonatorlänge, wiederholt. Das liegt daran, dass dann die zweite Mode, die sich im charakteristischen Abstand
+\begin{align}
+  \Delta \nu = \frac{c}{2nL}
+\end{align}
+befindet, sich, bildlich gesprochen, unter das Verstärkungsprofil schiebt. Aus dieser Überlegung ergibt sich, dass der Abstand der Nullstellen, wo sich also der charakteristische Verlauf der Kurve zu wiederholen beginnt, der Abstand zweier Moden entspricht.\\
+Diese Überlegung erlaubt es, eine Umrechnung von Zeitbereich in Frequenzbereich durchzuführen. Es gilt
+\begin{align}
+  \Delta \nu = \Delta \text{t}
+\end{align}.
+und
+\begin{align}
+  \Delta \nu = \frac{c}{2nL} \overset{n=1}{=} \frac{c}{2L} \overset{L=\SI{0,17}{\meter}}{=} \frac{c}{2\cdot \SI{0,17}{\meter}}=\SI{881}{\mega\hertz}
+\end{align}
+sowie
+\begin{align}
+  \Delta \text{t} \overset{s. Abb.}=\SI{5,28}{\milli\second}
+\end{align}
+und damit
+\begin{align}
+  \SI{1}{\milli\second}=\SI{1,67}{\mega\hertz}
+\end{align}
+
+Diese Umrechnung ermöglicht eine Darstellung im Frequenzbereich, der in Abbildung \ref{fig:Frequenzverlauf} dargestellt ist.
+
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Profil_SML_Frequenzbild.pdf}
+    \caption{Frequenzspektrum des Singlemodelasers}
+    \label{fig:Frequenzverlauf}
+\end{figure}
+
+Hieran kann nun die \textit{Oszillationsbandbreite} des Singemodelasers als Halbwertsbreite des Spektrums auf
+\begin{align}
+  \Delta \nu = \SI{713}{\mega\hertz}
+\end{align}
+bestimmt werden.\\
+Das theoretische \textit{Auflösungsvermögen} dieses Spektrometers ist bestimmt durch die Diskretisierung des Oszilloskops, ergibt sich aus dem Abstand der Samplepunkte dieses und beläuft sich auf \SI{0,7}{\mega\hertz}. Bei einem Wellenlängenbereich von \SI{632,8}{\nano\meter}, was einer Frequenz von \SI{474}{\tera\hertz} entspricht,  ergibt sich eine spektrales Auflösungsvermögen von
+\begin{align}
+  \frac{\nu}{\Delta\nu} \approx 6,8\cdot10^8
+\end{align}
+Im \textit{Vergleich zum Auflösungsvermögen eines Prismas} wird deutlich, welch entscheidende Verbesserung durch das Laserspektrometer gewonnen werden kann. Bei einem Flintglas-Prisma mit der Basislänge b $=$\SI{1}{\centi\meter} beläuft sich die Auflösung auf $A \approx 10^3$, was um vielen Größenordnungen unter der Auflösung des Laserspektrometers liegt. \\
+An der Darstellung des Frequenzspektrums in Abbildung \ref{fig:Frequenzverlauf} ist deutlich die Eindellung in der Mitte des Spektrums, der sogenannte \textit{Lamb-Dip} zu sehen. Der dieser Eindellung zugrunde liegende Effekt ist, wie in Abschnitt \ref{sec:InversionsabbauLambDip} beschrieben, der Dopplereffekt. Ebenso ist dort begründet, dass die Breite des Lamb-Dips ungefähr der homogenen Linienverbreiterung entspricht, sodass wir mit den Daten aus Abbildung \ref{fig:Frequenzverlauf} für die homogene Linienverbreiterung erhalten
+\begin{align}
+  \Delta \nu_{HL} \approx \SI{154,3}{\mega \hertz}
+\end{align}
+Die Dopplerbreite liegt dagegen bei
+\begin{align}
+  \Delta \nu_{D}= \frac{f_0}{c} \sqrt{\frac{8 k_B T \text{ln} 2}{\text{m}}} = \SI{1,5}{\giga\hertz} \qquad \text{mit}\quad \text{m} = \text{m}_{\text{Ne}}
+ = \SI{20,1797}{u} \qquad \text{und} \quad T= \SI{400}{K}
+\end{align}
+und die natürliche Linienbreite bei
+\begin{align}
+  \Delta \nu = \frac{1}{2\pi\tau}\approx \SI{16}{\mega\hertz}
+\end{align}
+Somit wird deutlich, dass die Dopplerverbreiterung die entscheidene Verbreiterung bei diesem Übergang ist.
+
+\subsubsection{optisches Heterodyn}
+Indem der Singlemodelaser im Wobbelungsbetrieb mit dem Multimodelaser überlagert wird, lassen sich die Lagen der Axialmoden des Multimodelasers feststellen: Immer dann, wenn die Frequenz des Singlemodelasers, die durch die Wobbelung periodisch varriert wird, mit der Frequenz des Multimodelasers übereinstimmt, kommt es zur konstruktiven Interferenz und auf dem Spektrum tritt ein Ausschlag auf. \\
+Zu beachten ist, dass, damit die Interferenz überhaupt mit dem integrierenden Photodetektor detektiert werden kann, die Abstände der Interferenzmaxima kleiner seien müssen, als die Ausdehnung des Photodetektors. Mit einfachen geometrischen Überlegungen ergibt sich, dass bei einer Detektorausdehung von \SI{1}{\milli\meter} der Winkel der beiden Laser sich nur um $6\cdot 10^(-4)$ unterscheiden darf. Es ist also eine sehr genaue Justage und ein möglichst großer Abstand zwischen Detektor und Lasern nötig. \\
+Der Aufbau hat sich dahingehend verändert, dass eine Irisblende in den Strahlengang eingesetzt wurde. Durch diese werden höhere Transversalemoden geblockt, denn diese haben ihre Intensität hauptsächlich in größerem radialen Abstand. Durch die teilweise geschlossene Irisblende werden die Verluste für diese Transversalmoden als so erhöht, dass diese nach der zweiten Laserbedingung nicht mehr anschwingen können. \\
+Es werden mehrere Schwerpunkte untersucht. Zum einen werden die Resonatorenlängen varriert, um zu untersuchen bzw. darzustellen, dass sich, wie die Theorie es vorhersagt, bei längerer Resonatorlänge, mehrere Axialmoden ausbilden. Dies ist in Abbildung \ref{fig:Resonatorveränderung} zu sehen. Hierbei wurde durch eine Irisblende wie oben beschrieben alle Transversalmoden verhindert, weshalb sich in den Messungen nur eine Transversalmode, nämlich die Grundmode, ausgebildet hat.
+
+\begin{figure}[htp]
+  \centering
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/mehrereResonatorlaengen_50cm_1Mode.pdf}
+    \caption{Resonatorlänge \SI{50}{\centi\meter}}
+  \end{subfigure}
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/mehrereResonatorlaengen_75cm_1Mode.pdf}
+    \caption{Resonatorlänge \SI{75}{\centi\meter}}
+  \end{subfigure}
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/1TransversaleMode_94cm.pdf}
+    \caption{Resonatorlänge \SI{94}{\centi\meter}}
+  \end{subfigure}
+  \caption{Signal des SML überlagert mit MML bei unterschiedlichen Resonatorlängen des MML. Höhrere Transversalmoden durch Irisblende geblockt. Nur Grundmode kann anschwingen}
+  \label{fig:Resonatorveränderung}
+\end{figure}
+
+\FloatBarrier
+
+Der oben theoretisch hergeleitete Einfluss der Irisblende wird in folgender Messung, die in Abbildung \ref{fig:Transversalemode} dargestellt ist, nachgewiesen. Während der ersten Messung war die Irisblende soweit geschlossen, dass bereits die erste höhere Transversalmode ausgeblendet war. In der zweiten Messung wurde sie soweit geöffnet, dass erst die dritte Transversalmode die Blende nicht passieren konnte. Dass in Messung zwei die zweite Transversalmode tatsächlich anschwingt, wird an den nur in kleinem Abstand zur ersten Mode auftretenden Intensitätsverstärkung deutlich. Jeweils gleiche Frequenzen, also die der jeweils zweiten Transversalmoden haben wieder den gleichen Abstand. Es wurde eine Resonatorlänge von \SI{94}{\centi\meter} verwendet.
+
+\begin{figure}[htp]
+  \centering
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/1TransversaleMode_94cm.pdf}
+    \caption{erste Transversalmode kann anschwingen}
+  \end{subfigure}
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/2TransversaleModen_94cm.pdf}
+    \caption{erste und zweite Transversalmode kann anschwingen}
+  \end{subfigure}
+  \caption{Erzeugung von unterschiedlicher Anzahl von Transversalmoden}
+  \label{fig:Transversalmoden}
+\end{figure}
+\FloatBarrier
+
+%
+Anhand der folgenden Messung, welche in Abbildung \ref{fig:berührung} zu sehen ist, wird die Empfindlichkeit des Aufbaus deutlich. Bereits eine leichte Berührung des Aufbaus des MML und infolge dessen eine kleine Längenänderung des Resonators auftritt, drückt sich im gemessenen Signal aus. Das bedeutet, dass bereits Längenänderungen im Nanometerbereich mit der Messanordnung vermessen werden können. In der Messung wurde eine Resonatorlänge von \SI{50}{\centi\meter} verwendet und die Irisblende so eingestellt, dass nur eine Transversale Mode anschwingen kann.
+
+\begin{figure}[htp]
+  \centering
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/ungedrueckt_50cm_1Mode.pdf}
+    \caption{ohne Druck auf Halterung des Aufbaus}
+  \end{subfigure}
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/gedrueckt_50cm_1Mode.pdf}
+    \caption{mit Druck auf Halterung des Aufbaus}
+  \end{subfigure}
+  \caption{Frequenzspektrum der Überlagerung der beiden Signal mit und ohne leichten Druck auf den Aufbau}
+  \label{fig:berührung}
+\end{figure}
+
+
+\subsubsection{Kurzzeitfluktuationen}
+Um die Kurzzeitfluktuationen der Laserfrequenz zu untersuchen wird das Schwebungssignal zwischen den Frequenzen beider Laser in Echtzeit, d.h. ohne Wobbelung des Singlemodelasers eingestellt. Dazu überlagern sich beide Laser weiterhin, das Spannungssignal, dass beim Singlemodelaser für die Länge des Resonators sorgt, ist jetzt jedoch nicht mehr als Dreiecksspannung, sondern als konstante Offsetspannung eingestellt, die so gewählt wird, dass die Frequenzen beider Laser sich nur minimal unterscheiden. Es kommt zu einer Schwebung, die in Abbildung \ref{fig:Schwebung} zu sehen ist.
+
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Schwebungssignal.pdf}
+    \caption{Schwebungssignal des Single- und des Multimodelasers}
+    \label{fig:Schwebungssignal}
+\end{figure}
+
+Anhand dieser lassen sich deutlich die Kurzzeitfluktuationen in der Frequenz des Laser erkennen. Zu sehen ist hier die Intensität, die abhängig ist von der Differenzfrequenz. Wird davon ausgegangen, dass der Referenzlaser nahezu fluktuationsfrei ist, ergeben sich die sichtbaren Änderungen der Frequenz also aus einer Frequenzfluktuation des Singlemodelasers. Eine Größenordnung der Kurzzeitfluktuationen ergibt sich, indem immer zwischen zwei gleichen Minima die Zeitdifferenz und damit die Periodendauer T bestimmt wird und diese der Zeit des rechten Minimas zugeordnet wird. Damit ergibt sich die Gerade in Abbildung \ref{fig: Kurzzeitfluktuationen} aus der die Größenordnung der Kurzzeitfluktuationen auf \SI{0,015}{\mega\hertz\per\micro\meter} bestimmt werden kann.
+
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Kurzzeitfluktuationen.pdf}
+    \caption{Kurzeitfrequenzflukuationen in Abhängigkeit der Zeit}
+      \label{fig:Schwebungssignal}
+\end{figure}
+
+Des Weiteren wird auch makroskopisch ein charakteristischer Verlauf deutlich. Wird das Signal auf etwas größeren Zeitskalen betrachtet, fällt das Anschwingen der Schwebungen im regelmäßigem Bild auf. Jeweils in ein kürzerer und ein längerer Abstand wechseln sich ab. Die Erklärung dafür ist die \SI{50}{\hertz} Netzfrequenz bzw. eine Oberschwingung dieser.
+
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Fluktuationen_makroskopisch.pdf}
+    \caption{Schwebungssignal auf größeren Zeitabständen}
+    \label{fig:Schwebungssignal_makro}
+\end{figure}
 
 % *********************************************
 % ***** KAPITEL 5 *****************************
