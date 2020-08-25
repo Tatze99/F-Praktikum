@@ -181,6 +181,65 @@ was mit den experimentellen Messungen der spezifischen Wärme für Festkörper �
 \newpage
 \section{Ergebnisse und Diskussion}\label{sec:ErgebnisseUndDiskussion}
 
+\subsection{Wahl der geeigneten Tieftemperaturmesstechnik}
+Für die Messung tiefer Temperaturen ist die Wahl eines geeigneten Temperaturmessungsverfahren wichtig. Im Versuch werden zur Bestimmung der Temperatur Widerstandsthermometer wie Pt100 und Pt1000 verwendet. Dabei handelt es sich um Platinwiderstände, deren Widerstand bei \SI{273}{\kelvin} auf \SI{100}{\ohm} bzw. \SI{1000}{\ohm} liegt. Der Grund, warum Platin verwendet wird, liegt darin, dass es einerseits ein guter Wärmeleiter und ein edles Metall ist und andererseits in besonders reiner Form hergestellt werden kann, da sein Siedepunkt fern von denen anderer Metalle liegt.
+
+\paragraph{Temperaturmessung mit Digitalmultimeter}$~$
+
+Zu Beginn wird die Anfangstemperatur an den Platinwiderständen direkt mit der Temperatureinstellung des Digitalvoltmeters (DVM) gemessen, welche in Tabelle~\ref{tab:Temperaturmessung} dargestellt ist.
+
+\begin{table}[htp]
+    \centering
+    \caption{Temperaturmessung der Raumtemperatur mithilfe von Pt100 und Pt1000 mithilfe eines Digitalmultimeters. Als Vergleich diente die Messung mit einem Quecksilberthermometer mit  $T = \SI{22.5\pm 0.2}{\celsius}$.}
+    \label{tab:Temperaturmessung}
+    \begin{tabular}{c S c}
+      \toprule
+      Widerstand & {Kompensation} & Temperatur \\
+      \midrule
+      Pt 100 & 0\,\si{\ohm} & \SI{35.1}{\celsius}\\
+      & 4.9\,\si{\ohm} & \SI{22.4}{\celsius}\\
+      Pt 1000 & 0\,\si{\ohm} & \SI{23.1}{\celsius}\\
+      & 4.9\,\si{\ohm} & \SI{21.9}{\celsius}\\
+      \bottomrule
+    \end{tabular}
+\end{table}
+
+Es wurde jeweils eine Messung mit und ohne Kompensation des Leitungswiderstandes durchgeführt. Die Kompensation kann als Zahlenwert in das Multimeter eingegeben werden. Die Zuleitungswiderstände führen jeweils zur Hälfte hin und weg vom Platinwiderstand. Es ergab sich für den linken $R_1 = \SI{5.1}{\ohm}$ und $R_2 = \SI{4.7}{\ohm}$ für den rechten Zuleitungswiderstand. Für die Kompensation wurde der gemittelte Wert verwendet. Da die Vermessung der Leitungswiderstände für den Pt1000 Widerstand nicht möglich war, wurde hier der gleiche Widerstandswert angenommen. Tabelle~\ref{tab:Temperaturmessung} zeigt deutlich den Unterschied der Platinwiderstände ohne Kompensationsmessung. Für Pt100 ergibt sich ohne Leitungskompensation ein viel zu großer Temperaturwert, während der Zuleitungswiderstand beim Pt1000 ein prozentual geringeren Einfluss hat und das Ergebnis kaum verfälscht.
+
+\input{Bilder/Pt100.tex}
+
+Im weiteren Verlauf des Versuchs wird zur Temperaturmessung eine Konstantstromquelle verwendet und der temperaturabhängige Widerstand indirekt durch eine Spannungsmessung ermittelt. Zur Umrechnung der Widerstände in eine Temperatur wurde die Kalibrierungsdaten des Pt100 Sensors der Versuchsanleitung entnommen. Der Temperaturverlauf des Pt100 Sensors ist in Abbildung~\ref{fig:Pt100} dargestellt. Der Temperaturverlauf wurde zwischen den Literaturdaten interpoliert, damit beliebigen Widerständen im angegeben Bereich eine Temperatur zugeordnet werden kann.
+
+\paragraph{Zweileiter- und Vierleiterschaltung}$~$
+
+Für die Messung wurde eine regelbare Konstantstromquelle verwendet. Die Vermessung des Spannungsabfalls über den Widerstand erfolgt für beide Platinwiderstände jeweils in Zweileiter- und Vierleiterschaltung für drei verschiedene Ströme. Die Ergebnisse sind in Tabelle~\ref{tab:Zwei_Vierleiterschaltung} dargestellt.
+
+\begin{table}[htp]
+    \centering
+    \caption{Bestimmung der Raumtemperatur durch Spannungsmessung mit dem Digitalmultimeter in Zweileiter- und Vierleiterschaltung für verschiedene Ströme.}
+    \label{tab:Zwei_Vierleiterschaltung}
+    \begin{tabular}{c c r S S S S}
+      \toprule
+      Widerstand & Schaltung & {$I$ [\si{\micro\ampere}]} & {$U$ [\si{\milli\volt}]} & {$R$ [\si{\ohm}]} & {$T$ [\si{\kelvin}]} & $\vartheta$ [\si{\celsius}]\\
+      \midrule
+      Pt 100 & Zweileiter & 100 & 11.328 & 113.33 & 307.4 & 34.3 \\
+       & & 10 & 1.130 & 113.00 & 306.6 & 33.4 \\
+       & & 5 & 0.567 & 113.40 & 307.6 & 34.5 \\
+      & Vierleiter & 100 & 10.862 & 108.86 & 295.9 & 22.8 \\
+      & & 10 & 1.084 & 108.40 & 294.7 & 21.6 \\
+      & & 5 & 0.545 & 109.00 & 296.3 & 23.1\\
+      \midrule
+      Pt 1000 & Zweileiter & 100 & 108.621 & 108.62 & 295.2 & 22.1 \\
+      & & 10 & 10.8 & 108.00 & 293.7 & 20.5 \\
+      & & 5 & 5.402 & 108.04 & 293.7 & 20.5 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
+
+Es zeigt sich auch hier, dass die gemessene Temperatur des Pt 100 in Zweileiterschaltung zu groß ist, was durch endlichen Leitungswiderstände hervorgerufen wird. Wird die Schaltung jedoch als Vierleiterschaltung aufgebaut, kann das Problem der Leitungswiderstände umgangen werden. Einen Vergleich von Zwei- und Vierleiterschaltung zeigt Abbildung~\ref{fig:Schaltung}
+
+\input{Bilder/Schaltung.tex}
+% \input{Bilder/Abkuehlung.tex}
 % *********************************************
 % ***** KAPITEL 5 *****************************
 % *********************************************
