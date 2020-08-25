@@ -156,21 +156,21 @@ Im Festkörper beruht die Stoßverbreiterung auf der Wechselwirkung von Phonen.
 Bewegt sich das angeregte Atom mit der Geschwindigkeit $\bm{v}$, so wird die Mittenfrequenz $\nu_0$ um einen Betrag verschoben, welcher der Dopplerverschiebung einer bewegten Quelle entspricht. Es handelt sich hierbei um eine inhomogene Verbreiterung, welche sich in einem gaußförmigen Linienprofil zeigt. Für den im Versuch benutzten Übergang beträgt die Dopplerverbreiterung \SI{1500}{\mega\hertz} und stellt die dominante Größe der Verbreiterung dar.
 
 \subsection{Die Laserbedingungen}
-Das Prinzip des Lasers ist es, Licht zu verstärken. Damit dies möglich wird, bedarf es eines Mediums, welches genau das gewährleistet, das sogenannte \textit{aktive Medium}. Verstärkung tritt auf, wenn die Photonenzahldichte
+Das Prinzip des Lasers ist es, Licht zu verstärken. Damit dies möglich wird, bedarf es eines Mediums, welches genau das gewährleistet, das sogenannte \textit{aktive Medium}. Verstärkung tritt auf, wenn für die Photonenzahldichte $q$
 \begin{align}
   \dv{q}{t} \geq 0
   \label{equ:Photonenzahldichte}
 \end{align}
-gilt. Um einen Ausdruck für die Photonenzahldichte herzuleiten, stellen wir die Bilanz aus den das Laserniveau verlassenden, also induziert emittierten und den zum Laserniveau hinzukommenden, also den absorbierten Photonen auf. Die spontane Emission wird hier vernachlässtigt. Mit den oben hergeleiteten Formeln \ref{equ:Ratengleichungen} ergibt sich für die Photonenzahldichte
+gilt. Um einen Ausdruck für die Photonenzahldichte herzuleiten, stellen wir die Bilanz aus den das Laserniveau verlassenden, also induziert emittierten und den zum Laserniveau hinzukommenden, also den absorbierten Photonen auf. Die spontane Emission wird hier vernachlässtigt. Mit den oben hergeleiteten Formeln \eqref{equ:Ratengleichungen} ergibt sich für die Photonenzahldichte
 \begin{align}
-    \dv{q}{t}=-\dv{N_2}{dt}+\dv{N_1}{dt}=u(\nu)(B_{21}N_2-B_{12}N_1)=u(\nu)B_21(N_2-N1)
+    \dv{q}{t}=-\dv{N_2}{t}+\dv{N_1}{t}=u(\nu)(B_{21}N_2-B_{12}N_1)=u(\nu)B_21(N_2-N1)
 \end{align}
-Da weiterhin Gleichung \ref{Photonenzahldichte} gelten muss, bedeutet das, eine Verstärkung tritt auf, wenn
+Da weiterhin Gleichung \eqref{equ:Photonenzahldichte} gelten muss, bedeutet das, eine Verstärkung tritt auf, wenn
 \begin{align}
-  N_2 ß\geq N_1 \qquad 1. Laserbedingung
+  \boxed{N_2 ß\geq N_1 \qquad \emph{1. Laserbedingung}}
 \end{align}
-also wenn sich mehr Atome im angeregten, als im Grundniveau befinden. Im thermischen Gleichgewicht gilt genau das Inverse, nämlich $N_1\geqN_2$, weshalb dieser Zustand als \textit{Besetzungsinversion} bezeichnet wird. Ihn erreicht man also nicht durch thermische Anregungen, egal, wie hoch man die Temperaturen wählt, sondern nur durch spezielle Anregungsvorgänge- das sogenannte \textit{Pumpen}.\\
-Die zur Anregung nötige Energie kann auf unterschiedliche Wege zugeführt werden, was zur Unterscheidung der unterschieldlichen Lasertypen führt.
+also wenn sich mehr Atome im angeregten, als im Grundniveau befinden. Im thermischen Gleichgewicht gilt genau das Inverse, nämlich $N_1 \geq N_2$, weshalb dieser Zustand als \textit{Besetzungsinversion} bezeichnet wird. Ihn erreicht man also nicht durch thermische Anregungen, egal, wie hoch man die Temperaturen wählt, sondern nur durch spezielle Anregungsvorgänge- das sogenannte \textit{Pumpen}.\\
+Die zur Anregung nötige Energie kann auf unterschiedliche Wege zugeführt werden, was zur Unterscheidung der unterschiedlichen Lasertypen führt.
 \begin{itemize}
   \item optisch gepumpte Laser (Anregung durch Blitzlampe, kontinuierliche Lampe, Laser, Leuchtdiode)
   \item elektronenstrahlgepumpte Laser
@@ -181,27 +181,27 @@ Die zur Anregung nötige Energie kann auf unterschiedliche Wege zugeführt werde
   \item nuklear gepumpte Laser
 \end{itemize}
 
-Die Besetzungsinversion wird dabei grundsätzlich theoretisch immer gleich erzielt. Man unterscheidet zwischen 2-Niveau, 3-Niveau und 4-Niveau-System, wobei bei Zweiniveausystem aufgrund Gleichung \ref{equ:Einsteinkoeffizienten} die Erzeugung einer Inversion durch optisches Pumpen nicht möglich ist. Bei einem 3-Niveau-System gibt es ein Hilfsniveau $E_3$ welches sich dadurch auszeichnet, dass es ein breites Absoprtionsband, dass Licht einer Blitzlampe gut absorbieren kann und dann schnell in Niveau $E_2$ zerfällt. Entscheidender Nachteil ist, dass hier eine hohe Pumprate nötig ist. Dieses Problem löst das 4-Niveau-System, indem hier der Laserübergang nicht zum Grundzustand sondern zu einem Zwischenzustand erfolgt. \\
+Die Besetzungsinversion wird dabei grundsätzlich theoretisch immer gleich erzielt. Es wird zwischen 2-Niveau, 3-Niveau und 4-Niveau-System unterschieden, wobei bei 2-Niveau-Systemen aufgrund Gleichung \eqref{equ:Einsteinkoeffizienten} die Erzeugung einer Inversion durch optisches Pumpen nicht möglich ist. Bei einem 3-Niveau-System gibt es ein Hilfsniveau $E_3$ welches sich dadurch auszeichnet, dass es ein breites Absoprtionsband, dass Licht einer Blitzlampe gut absorbieren kann und dann schnell in Niveau $E_2$ zerfällt. Entscheidender Nachteil ist, dass hier eine hohe Pumprate nötig ist. Dieses Problem löst das 4-Niveau-System, indem hier der Laserübergang nicht zum Grundzustand sondern zu einem Zwischenzustand erfolgt. \\
 Um den Lichtverstärker zum Oszillator - dem Laser-zu machen, bedienen wir uns einem Prinzip der Elektronik, der Rückkopplung: Ein Teil der verstärkten Ausgangsstrahlung wird wieder in das System zurückgeführt. Dies wird realisiert durch zwei Spiegel rechts und links vom aktiven Medium. Sie bilden den \textit{Resonator}. Entscheidend für die Entstehung der Oszillation ist, dass die Verluste pro Umlauf geringer sind, als die Verstärkung pro Umlauf. Für die Verstärkung nach einem doppelten Durchlauf wird in Analogie zum Labert-Beer'schen Gesetz für die Absoprtion
 \begin{align}
-  I(2L)=I(0)\cdot \exp{g2L} \\qquad \tex{mit} g = B_{21} \frac{h\nu}{c} (N_2-N_1)
+  I(2L)=I(0)\cdot \exp{g2L} \qquad \text{mit} g = B_{21} \frac{h\nu}{c} (N_2-N_1)
 \end{align}
 gefunden. Gleichzeitig kann, wenn alle Verluste (Spiegeltransmission, Streuung, Beugung, Absoprtion) in einem Verlustkoeffizienten $\kappa$ zusammengefasst werden, die Bedigung, dass die Verstärkug die die Verluste nach einem Umlauf kompensiert, als
 \begin{align}
-  I(0)=I(2L)\cdot \ecp{-\kappa}
+  I(0)=I(2L)\cdot \exp{-\kappa}
 \end{align}
 Da der Laser wie eingangs beschrieben, nur dann oszilliseren kann, wenn die Verstäkrung größer oder gleich den Verlusten pro Umlauf ist, ergibt sich so die \textit{zweite Laserbedingung}
 \begin{align}
-  \sigma_{21}(N_2-N_1)\cdot2L \geq \kappa
+  \boxed{\sigma_{21}(N_2-N_1)\cdot2L \geq \kappa}
   \label{equ:zweiteLB}
 \end{align}
-Die Erfüllung von \ref{equ:zweiteLB} wird durch die Lage der zweiten Verlustlinie charakterisiert.
+Die Erfüllung von \eqref{equ:zweiteLB} wird durch die Lage der zweiten Verlustlinie charakterisiert.
 
 
 \subsection{Der Inversionsabbau und Lamb-Dip}
- Der Laserprozess läuft folgendermaßen ab: In der zunächste eintretenden Einschwingphase liegen kleine Intensitäten vor. Bei diesen tritt eine exponentielle Verstärkung auf. Bei höheren Intensitäten wird die Inversion und damit die Verstärkung durch induzierte Emission zunehmend abgebaut. Bei konstantem Pumpem kommt es durch diesen zunehmenden Inversionsabbau zu einem Gleichgewichtszustand, der sogenannten Sättigung der Verstärkung. Die Besetzungsinversion wird dabei bis zur Verlustlinie abgebaut. \\
+ Der Laserprozess läuft folgendermaßen ab: In der zunächste eintretenden Einschwingphase liegen kleine Intensitäten vor. Bei diesen tritt eine exponentielle Verstärkung auf. Bei höheren Intensitäten wird die Inversion und damit die Verstärkung durch induzierte Emission zunehmend abgebaut. Bei konstantem Pumpem kommt es durch diesen zunehmenden Inversionsabbau zu einem Gleichgewichtszustand, der sogenannten Sättigung der Verstärkung. Die Besetzungsinversion wird dabei bis zur Verlustlinie abgebaut.
 
-Bei homogener Linienverbreiterung können alle invertierten Atome mit dem Strahlungsfeld bzw. der Mode wechselwirken, so kann sie von allen Atomen ihre Verstäkung beziehen, der Abbau erfolgt gleichermaßen. Bei inhomogener Linienverbreiterung kann das Strahlungsfeld hingegen nur mit bestimmten Atomen wechselwirken, die Mode kann also nur einen Teil der invertierten Atome abbauen, nämlich die, die aufgrund der homogenen Linienbreite trotz des Dopplereffekts noch die Resonatorfrequenz haben. Die Verstärkung wird dann nur in einem engen Frequenzbereich um die Frequenz der wechselwirkenden Atome abgebaut. Aufgrund des sich ergebenden Bildes im Verstärkungsprofil spricht man vom "hole burning". \\
+Bei homogener Linienverbreiterung können alle invertierten Atome mit dem Strahlungsfeld bzw. der Mode wechselwirken, so kann sie von allen Atomen ihre Verstäkung beziehen, der Abbau erfolgt gleichermaßen. Bei inhomogener Linienverbreiterung kann das Strahlungsfeld hingegen nur mit bestimmten Atomen wechselwirken, die Mode kann also nur einen Teil der invertierten Atome abbauen, nämlich die, die aufgrund der homogenen Linienbreite trotz des Dopplereffekts noch die Resonatorfrequenz haben. Die Verstärkung wird dann nur in einem engen Frequenzbereich um die Frequenz der wechselwirkenden Atome abgebaut. Aufgrund des sich ergebenden Bildes im Verstärkungsprofil spricht man vom ``hole burning''. \\
 Aufgrund des Dopplereffekts können beim Gaslaser nur Atome wechselwirken, die sich gerade mit der passenden Geschwindigkeit $\pm v_z$ in z-Richtung (Laserachsenrichtung) bewegen, sodass ihre Frequenz gerade der Resonatorfrequenz entspricht.  Symmetrisch um die Null kommt es bei $pm v_z$ zu einer Eindellung des Verstärkungsprofil bei der negativen sowie bei der positiven Geschwindigkeit. Zur Ausgangsleistung tragen hier zwei Gruppen von Atomen bei, nämlich die, die sich mit der Geschwindigkeit $v_z$ bewegen, sie sorgen für eine Emission des Lichts in positive z-Richtung und die, die sich mit der Geschwindigkeit $-v_z$ bewegen, sie sorgen für eine Emission des Lichts in negative z-Richtung, haben aber die gleiche Frequenz. Ist aber die Resonatorfrequenz gleich der Resonanzfrequenz des optischen Übergangs, verschiebt man die Frequenz also zur Linienmitte, kommt es zum Überlappen der beiden Löcher. Jetzt tragen nur noch Atome mit $v_z = 0$, also viel weniger, als in den anderen Fällen, zur Verstärkung bei. Es kommt deshalb zur Eindellung der Intensität. Da hier alle Atome $v_z = 0 $ haben, tritt auch kein Dopplereffekt mehr auf, weshalb die Eindellung bei jenem $\nu$ nur noch homogen verbreitert ist und keine Dopplerverbreiterung aufweist, weshalb gilt
 \begin{align}
   \Delta \nu_{HL} = \Delta \nu_{LD}
@@ -281,8 +281,9 @@ Hinsichtlich der Krümmungsradien lassen sich drei wichtige Typen unterscheiden:
   \item \emph{Konfokaler Resonator}: Hier bildet sich ohne Einfluss begrenzender Aperturen eine begrenzte, gaußförmige Feldverteilung aus.
   \item \emph{Konzentrischer Resonator}: Hier liegen die Krümmungsmittelpunkte im gleichen Punkt, die Spiegel weisen den Abstand $L=2R$ auf. Die transversale Ausdehnung der Feldverteilung hängt nur von den begrenzenden Aperturen ab.
 \end{enumerate}
+\FloatBarrier
 \subsection{Der Helium-Neon-Laser}
-Der Helium-Neon-Laser ist ein Gaslaser, der als aktives Medium ein He-Ne-Gas benutzt. Das Helium wird durch Elektronenstöße angeregt und gibt seine Energie durch Stöße zweiter Art an das Neonatom ab, in welchem dann die Laserübergänge passieren. Wobei ein Stoß zweiter Art folgenden Prozess benennt:
+Der Helium-Neon-Laser ist ein Gaslaser, der als aktives Medium ein He-Ne-Gasgemisch benutzt. Das Helium wird durch Elektronenstöße angeregt und gibt seine Energie durch Stöße zweiter Art an das Neonatom ab, in welchem dann die Laserübergänge passieren. Wobei ein Stoß zweiter Art folgenden Prozess benennt:
 \begin{align}
   \text{He}* + \text{Ne} \Rightarrow \text{He}+\text{Ne}*+\Delta E
 \end{align}

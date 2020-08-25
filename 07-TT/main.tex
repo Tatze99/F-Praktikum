@@ -239,6 +239,18 @@ Für die Messung wurde eine regelbare Konstantstromquelle verwendet. Die Vermess
 Es zeigt sich auch hier, dass die gemessene Temperatur des Pt 100 in Zweileiterschaltung zu groß ist, was durch endlichen Leitungswiderstände hervorgerufen wird. Wird die Schaltung jedoch als Vierleiterschaltung aufgebaut, kann das Problem der Leitungswiderstände umgangen werden. Einen Vergleich von Zwei- und Vierleiterschaltung zeigt Abbildung~\ref{fig:Schaltung}
 
 \input{Bilder/Schaltung.tex}
+
+Für den Pt 1000 Widerstand konnte aufgrund des Aufbaus keine Messung in Vierleiterschaltung durchgeführt werden. Allerdings sind hier die Auswirkungen des Leitungswiderstandes um das zehnfache geringer. Es zeigt sich, dass eine große Temperaturauflösung durch die Wahl eines größeren Stromes erzielt werden kann, da hierbei eine kleinere Spannungsänderung noch durch das Digitalmultimeter aufgelöst werden kann. Jedoch steigt die Heizleistung $P = I R^2$ linear mit der Stromstärke an. Für hohe Stromstärken heizt sich der Temperaturfühler auf und gerät mit der zu messenden Probe aus dem thermischen Gleichgewicht. Die Messung wird verfälscht.
+
+Zur Bestimmung des optimalen Stroms der Konstantstromquelle wird zunächst eine Überlegung durchgeführt, welche Temperaturauflösung gewünscht ist. Für die Messung wurde eine Auflösung von $\Delta T = \SI{0.1}{\kelvin}$ angepeilt. Ein Vergleich mit den Kalibrierungsdaten zeigt, dass der lineare Anstieg des Widerstandes
+\begin{align}
+  \frac{(100.72-98.76)\si{\ohm}}{(275-270)\si{\kelvin}} = \SI{0.392}{\ohm\per\kelvin}
+\end{align}
+entspricht. Für die gewünschte Temperaturauflösung ist somit eine Widerstandsauflösung von $\Delta R = \SI{0.04}{\ohm}$ nötig. Mit einer Spannungsauflösung des Multimeters von $\Delta U = \SI{1}{\micro\volt}$ ergibt sich ein Strom von
+\begin{align}
+  I = \frac{\Delta U}{\Delta R} = \SI{25}{\micro\ampere}.
+\end{align}
+
 % \input{Bilder/Abkuehlung.tex}
 % *********************************************
 % ***** KAPITEL 5 *****************************
