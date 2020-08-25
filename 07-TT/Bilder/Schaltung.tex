@@ -1,0 +1,13 @@
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0) to[current source] (3,0) to (3,3) to[R=$R$] (0,3) to (0,0);
+    \draw (0,1.5)node[circ]{} to (1.5,1.5)node[draw,circle,fill=white] {V} to (3,1.5)node[circ]{};
+    \node (A) at (1.5,-.7){Zweileiterschaltung};
+    \begin{scope}[shift={(6,0)}]
+      \draw (0,0) to[current source] (3,0) to (3,3) to[R=$R$] (0,3) to (0,0);
+      \draw (0.7,3)node[circ]{} to(0.7,1.5) to (1.5,1.5)node[draw,circle,fill=white] {V} to (2.3,1.5) to (2.3,3)node[circ]{};
+      \node (A) at (1.5,-.7){Vierleiterschaltung};
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}

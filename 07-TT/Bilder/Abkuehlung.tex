@@ -1,0 +1,13 @@
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Temperatur $T$ in \si{\kelvin}, xmin=0, xmax=290, xlabel={Zeit $t$ in \si{\second}}, legend cell align={left}]
+      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Pt100_abkuehlung_Widerstand.txt};
+      \addlegendentry{ohne Isolierung}
+      \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Pt100_Isolierung_Widerstand.txt};
+      \addlegendentry{mit Isolierung}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Zeitlicher Temperaturverlauf eines Kupferzylinders beim Eintauchen in flüssigen Stickstoff.}
+  \label{fig:Abkuehlung}
+\end{figure}
