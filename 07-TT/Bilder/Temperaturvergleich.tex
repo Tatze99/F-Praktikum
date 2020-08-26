@@ -1,0 +1,14 @@
+\begin{wrapfigure}{r}{6cm}
+  \vspace{-.5cm}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=6cm, height=6cm, xlabel=Zeit $t$ in \si{\minute}, xmin=100, xmax=140, ymin=110, ymax=160, ylabel={$T$ in \si{\kelvin}}, legend cell align={left}, xtick scale label code/.code={}]
+      \addplot[blue] table[x index=0,y index=1]{Daten/Halbleitermessung_Zeitverlauf.txt};
+      \addplot[orange ] table[x index=0,y index=2]{Daten/Halbleitermessung_Zeitverlauf.txt};
+      \addplot[green!50!black] table[x index=0,y index=3]{Daten/Halbleitermessung_Zeitverlauf.txt};
+      \legend{Pt 100, Pt 1000, Diode};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Temperaturkurven verschiedener Messwiderstände}
+  \label{fig:Temperaturvergleich}
+\end{wrapfigure}

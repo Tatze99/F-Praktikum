@@ -111,7 +111,7 @@ Im realen Halbleiter treten immer Verunreinigungen durch Fremdatome auf, die die
 Durch das Einbringen der Dotieratome verschiebt sich das Fermi-Niveau im Halbleiter. Dies zeigt Abbildung~\ref{fig:Störstellenniveaus}.
 
 \input{Bilder/Störstellenniveaus}
-\subsection{Temperaturabhängigkeit des elektrischen Widerstandes}
+\subsection{Temperaturabhängigkeit des elektrischen Widerstandes}\label{sec:Widerstand}
 Für das Verständnis der elektrischen Eigenschaften und Widerstände im Festkörper ist das im vorherigen Abschnitt eingeführte Bändermodell notwendig. Im Halbleiter kann die Elektronendichte im Leitungsband $n$ mithilfe einer \textsc{Fermi-Dirac}-Verteilung beschrieben werden. Für Elektronenenergien $E > 2k_B T$ kann dies durch eine \textsc{Maxwell-Boltzmann} Verteilung genähert werden. Die Besetzungswahrscheinlichkeit ergibt sich dann zu~\cite{Thurk}
 \begin{align}
   n = n_0 \exp\qty(-\frac{\Delta E}{k_B T}),
@@ -122,7 +122,7 @@ Für eine konstante Elektronenmobilität $\mu$ folgt für die elektrische Leitf�
   \sigma = \frac{j}{E} = n \cdot \mu \cdot e = \sigma_0 \exp\qty(-\frac{\Delta E}{k_B T}).
 \end{align}
 Mit der Beziehung $\sigma = 1/\varrho \propto 1/R$ folgt
-\begin{align}
+\begin{align}\label{eqn:Anstieg_Bandlücke}
   \frac{1}{R} = \frac{1}{R_0} \exp\qty(\frac{\Delta E}{k_B T}) \quad \Rightarrow \quad \ln\qty(\frac{R_0}{R}) = -\frac{\Delta E}{k_B}\frac{1}{T}.
 \end{align}
 Aus dem linearen Fit des Anstieges $-\Delta E/k_B$ lässt sich die Bandlücke ablesen. Im Praktikum werden zur Messung Widerstandsthermometer wie Pt 100 bzw. Pt 1000 verwendet, welche bei $T = \SI{273}{\kelvin}$ einen Widerstand von \SI{100}{\ohm} bzw. \SI{1000}{\ohm} besitzen. Die Temperaturabhängigkeit dieser Stoffe ist genau dokumentiert. Somit lässt sich unter Voraussetzung, dass sich Thermometer und Probe im thermischen Gleichgewicht befinden, die Energielücke $\Delta E$ im Halbleiter bestimmen.
@@ -251,7 +251,64 @@ entspricht. Für die gewünschte Temperaturauflösung ist somit eine Widerstands
   I = \frac{\Delta U}{\Delta R} = \SI{25}{\micro\ampere}.
 \end{align}
 
-% \input{Bilder/Abkuehlung.tex}
+\paragraph{Temperaturmessung mit Siliziumdiode}$~$
+
+Zur Messung des temperaturabhängigen Widerstandes einer Siliziumdiode wurde eine separate Gleichstromquelle mit $I = \SI{10}{\micro\ampere}$ verwendet. Die Kalibrierungsdaten der Temperatur als Funktion der Spannung sind in Abbildung~\ref{fig:Diode} dargestellt.
+
+\input{Bilder/Kalibrierung_Diode.tex}
+
+Bei der Messung ergaben sich die in Tabelle~\ref{tab:Diode} dargestellten Ergebnisse.
+\begin{table}[htp]
+    \centering
+    \caption{Spannungsmessung an einer Siliziumdiode bei Raumtemperatur mithilfe eines Digitalmultimeters mit einer Messgenauigkeit von \SI{10}{\micro\volt}. Als Vergleich diente die Messung mit einem Quecksilberthermometer mit  $T = \SI{22.5\pm 0.2}{\celsius}$.}
+    \label{tab:Diode}
+    \begin{tabular}{c S S S}
+      \toprule
+      Schaltung & {$U$ [\si{\milli\volt}]} & {$T$ [\si{\kelvin}]} & $\vartheta$ [\si{\celsius}] \\
+      \midrule
+      Zweileiter & 0.52918 & 295.73 \pm 0.01 & 22.58 \pm 0.01 \\
+      Vierleiter & 0.52916 & 295.74 \pm 0.01 & 22.59 \pm 0.01 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
+
+Es zeigt sich, dass die Messwerte für beide Schaltungstypen beinahe identisch sind, was sich durch den großen Widerstand der Diode erklären lässt. Bei Raumtemperatur beträgt dieser
+\begin{align}
+  R = \frac{U}{I} = \frac{\SI{0.52918}{\volt}}{\SI{10}{\micro\ampere}} = \SI{52.92}{\kilo\ohm}.
+\end{align}
+
+\newpage
+\subsection{Bandlückenbestimmung eines dotierten Halbleiters}
+
+\input{Bilder/Temperaturvergleich.tex}
+
+In diesem Versuchsteil wurde der temperaturabhängige Widerstand eines golddotierten Germaniumhalbleiters untersucht. Dieser weist, wie in Abschnitt~\ref{sec:Widerstand} erläutert, eine exponentielle Abhängigkeit von der Temperatur auf. Der Halbleiter wurde in einem Zeitraum von \SI{2.5}{\hour} kontinuierlich mithilfe einer Gifford-McMahon Kleinkältemaschine von Zimmertemperatur auf \SI{80}{\kelvin} abgekühlt. Zur Aufzeichnung der Temperatur wurden ein Pt 100 Widerstand in Vierleiterschaltung, ein Pt 1000 Widerstand in Zweileiterschaltung und eine Siliziumdiode verwendet. Für die Datenauswertung wurde die Diode verwendet, da aufgrund der großen Änderung des Widerstands bei kryogenen Temperaturen die Temperaturbestimmung am genauesten erfolgt. Ein Vergleich der drei Temperaturbestimmungsarten in Abbildung~\ref{fig:Temperaturvergleich} zeigt jedoch, dass alle drei Widerstandsthermometer fast identische Temperaturwerte liefern, die sich maximal um \SI{\pm1}{\kelvin} unterscheiden.
+
+Die aufgenommenen Spannungswerte wurden mithilfe der in der Versuchsanleitung~\cite{Thurk} gegebenen Kalibrierungstabelle (siehe Abbildung~\ref{fig:Diode}) in Temperaturen umgerechnet. Als Referenzwiderstand wurde $R_0 = \SI{1}{\ohm}$ gewählt.
+
+\input{Bilder/Halbleitermessung.tex}
+
+Die Größe der Bandlücke lässt sich nun mithilfe von Gleichung~\label{eqn:Anstieg_Bandlücke} bestimmen. Dafür wird wird der natürliche Logarithmus $\ln(R_0/R)$ über die inverse Temperatur $1/T$ aufgetragen und eine lineare Funktion an die Messdaten angefittet, wie in Abbildung~\ref{fig:Halbleitermessung} dargestellt ist. Es ergibt sich nun für eine lineare Fitfunktion der Form $y(x) = a + b\cdot x$
+\begin{align}
+  \ln\qty(\frac{R_0}{R}) = - \frac{\Delta E}{k_B}\frac{1}{T} \quad \Rightarrow \quad \Delta E = - b \cdot k_B.
+\end{align}
+Der lineare Anstieg, kann aus dem Fit abgelesen werden und es ergibt sich
+\begin{align}
+  \Delta E = -\SI{-1698.3\pm 1.3}{\kelvin} \cdot k_B = \SI{0.1463\pm0.0001}{\electronvolt}.
+\end{align}
+Da die Dotierung des Germaniums nicht genau bekannt ist, kann dieser Wert nicht mit der Literatur verglichen werden. Es lässt sich nur die Abschätzung treffen, dass die Bandlücke des dotierten Halbleiters unterhalb der von reinem Germanium liegt, welche bei $T=\SI{300}{\kelvin}$ die Größe $E_g = \SI{0.66}{\electronvolt}$ hat~\cite{Hunklinger}. Die ermittelte Bandlücke ist nur ein fünftel von der des reinen Germaniums. Dies lässt sich dadurch erklären, dass im Mangelhalbleiter das Akzeptorniveau knapp oberhalb des Valenzbandes liegt und Elektronen schon bei geringeren Energien in das Leitungsband gelangen können.
+
+\subsection{Abkühlverhalten kryogener Flüssigkeiten}
+
+Dieser Abschnitt beschäftigt sich mit dem Abkühlverhalten eines Kupferzylinders, welcher in flüssigen Stickstoff getaucht wird. Der zylindrische Probenkörper enthält in der Mitte einen Pt~100 Widerstand, der als Temperaturfühler dient. Zur Messung der Temperatur, wird der Pt~100 an eine Stromversorgung angeschlossen, bei welcher der Strom so eingestellt wurde, dass der Spannungsabfall über den Widerstand den Wert \SI{10}{\volt} nicht übersteigt, weil der Analog-Digital-Wandler zur PC gestützen Aufnahme der Daten nur maximal diese Spannung akzeptiert. Da die Messung bei Raumtemperatur startet, wurde an der Stromquelle ein Wert von $I = \SI{68.46}{\milli\ampere}$ eingestellt. Das aufgenommene Spannungssignal kann damit in einen Widerstand und anschließend eine Temperatur umgerechnet werden.
+
+Die Abkühlung des Probenkörpers erfolgte auf zwei verschiedene Arten und Weisen. Zunächst wurde der Probenkörper ohne Isolierung in den Stickstoff getaucht und anschließend ein zweiter, identischer Probenkörper mit einer aus Papier bestehenden Isolierung. Die aufgenommenen Temperaturverläufe sind in Abbildung~\ref{fig:Abkuehlung} dargestellt.
+
+\input{Bilder/Abkuehlung.tex}
+
+Der Temperaturverlauf des Probenkörpers mit Isolierung zeigt, dass der eingestellte Strom zu groß gewählt wurde, weil sich zu Beginn der Datenaufnahme (die Messung beginnt erst bei $t= \SI{25}{\second}$) die Probe auf über \SI{300}{\kelvin} erwärmt. Die Platinwiderstand wird also durch den Stromfluss erwärmt und verfälscht die Messung, der qualitative Verlauf bleibt jedoch trotzdem erhalten.
+
+Es zeigt sich, dass der 
 % *********************************************
 % ***** KAPITEL 5 *****************************
 % *********************************************

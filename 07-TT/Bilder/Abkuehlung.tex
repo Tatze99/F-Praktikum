@@ -6,6 +6,7 @@
       \addlegendentry{ohne Isolierung}
       \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Pt100_Isolierung_Widerstand.txt};
       \addlegendentry{mit Isolierung}
+      \draw[dashed] (0,77.35)node[above right]{\SI{77.4}{\kelvin}} -- +(290,0);
     \end{axis}
   \end{tikzpicture}
   \caption{Zeitlicher Temperaturverlauf eines Kupferzylinders beim Eintauchen in flüssigen Stickstoff.}
