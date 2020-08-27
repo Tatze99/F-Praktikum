@@ -1,6 +1,7 @@
 \documentclass[parskip=half, a4paper,twoside,final]{article}
 %----Eingebundene Bibliotheken-----
 \input{../LaTeX-Packages.tex}
+\DeclareSIUnit{\calorie}{cal}
 
 \begin{document}
 \setlength{\marginparsep}{2em}
@@ -175,6 +176,14 @@ was mit den experimentellen Messungen der spezifischen Wärme für Festkörper �
   \caption{Spezifische Wärme von Diamant in logarithmischer Darstellung~\cite{Hunklinger}. (Messwerte: Y.S. Touloukian, Thermophysical properties of Matter, Band V)}
   \label{fig:Debye_Einstein}
 \end{figure}
+
+
+%%%%%%% Gleichung mit einarbeiten %%%%%%%%%s
+% \begin{align}\label{eqn:Waermeuebergangszahl}
+%   \dot{Q} = \alpha \cdot A \cdot \Delta T, \quad \dot{q} = \alpha \Delta T.
+% \end{align}
+
+
 % *********************************************
 % ***** KAPITEL 4 *****************************
 % *********************************************
@@ -308,7 +317,103 @@ Die Abkühlung des Probenkörpers erfolgte auf zwei verschiedene Arten und Weise
 
 Der Temperaturverlauf des Probenkörpers mit Isolierung zeigt, dass der eingestellte Strom zu groß gewählt wurde, weil sich zu Beginn der Datenaufnahme (die Messung beginnt erst bei $t= \SI{25}{\second}$) die Probe auf über \SI{300}{\kelvin} erwärmt. Die Platinwiderstand wird also durch den Stromfluss erwärmt und verfälscht die Messung, der qualitative Verlauf bleibt jedoch trotzdem erhalten.
 
-Es zeigt sich, dass der 
+Es zeigt sich, dass sich der Probenkörper mit Isolierschicht schneller abkühlt als der Kupferzylinder ohne Isoliermaterial. Trotz der isolierenden Wirkung des Papiermantels verläuft die Wärmeübertragung schneller. Diese zunächst widersprüchliche erscheinende Beobachtung lässt sich mithilfe des \textsc{Leidenfrost}'schen Phänomens und dem damit verbundenen Filmsieden erklären. Ohne Papierschicht bildet sich auf der Oberfläche des Kupferzylinders aufgrund des großen Temperaturgefälles ein Gasfilm aus Stickstoff aus, der eine höhere isolierende Wirkung als das Papier aufweist, weshalb dieser Siedevorgang als Filmsieden bezeichnet wird. Der Wärmeübergangskoeffizient $\alpha$ liegt beim Filmsieden wesentlich niedriger als beim Blasensieden, wo ein direkter Kontakt der Flüssigkeit besteht, da beim Filmsieden der Wärmetransport hauptsächlich durch Strahlung anstatt durch Konvektion erfolgt. Der Grund, warum sich auf dem Papier kein Gasfilm ausbildet, liegt in der schlechten Wärmeleitfähigkeit des Papiers. Hier ergibt sich zwischen Papierinnenseite und -oberfläche ein großer Temperaturgradient. Die Temperatur auf der Papieroberfläche ist damit gering genug, damit das Filmsieden ausbleibt und direkt das Blasensieden (siehe Abschnitt~\ref{sec:Sieden}) einsetzt.
+
+Experimentell lässt sich der Umschlag zwischen Film- und Blasensieden nach \SI{140}{\second} nach Eintauchen des Probenkörpers beobachten, weil dort eine stark erhöhte Blasenbildung auftritt, da hier die Wärmestromdichte und somit die Menge des verdampften Stickstoffs besonders hoch ist.
+
+Für den Kupferzylinder mit Papierisolierung lässt sich keine Wärmeübergangszahl bestimmen, da aufgrund des großen Temperaturgradienten keine homogene Temperaturverteilung zustande kommt. Stattdessen finden zwei Wärmeübergänge statt, vom Kupfer zum Papier und anschließend zum Stickstoff.
+
+\subsubsection{Bestimmung der Wärmeübergangszahl}
+
+Zur Bestimmung der Wärmeübergangszahl nach~\eqref{eqn:Waermeuebergangszahl} muss zunächst die Heizleistung $\dot{Q}$ bestimmt werden. Diese ergibt sich nach dem ersten Hauptsatz der Thermodynamik zu
+\begin{align}\label{eqn:Heizleistung}
+  \dot{Q} = m_\text{Cu} C_\text{Cu} \dv{T}{t},
+\end{align}
+wobei $C_\text{Cu}$ die spezifische Wärmekapazität und $m_\text{Cu}$ die Masse von Kupfer bezeichnen. Der Temperaturgradient lässt sich aus dem Anstieg der Temperaturkurve in Abbildung~\ref{fig:Abkuehlung} gewinnen durch eine lineare Anpassung. Für das Film- und Blasensieden ergibt
+\begin{align}
+  \dv{T}{t} &= \SI{-0.3614\pm 0.0055}{\kelvin\per\second} \quad (\text{Blasensieden})\\
+  \dv{T}{t} &= \SI{-0.5762\pm 0.0004}{\kelvin\per\second} \quad (\text{Filmsieden}).
+\end{align}
+Die Masse des Kupferzylinders kann mithilfe des Volumens und der Dichte $\varrho = \SI[per-mode=symbol]{8960}{\kilo\gram\per\metre\cubed}$~\cite{Fastowski} von Kupfer bestimmt werden. Mit einem Durchmesser $d = \SI{3 \pm 0.05}{\centi\metre}$ und einer Höhe von $h=\SI{8.5\pm 0.05}{\centi\metre}$ ergibt sich eine Masse von
+\begin{align}
+  m = \varrho \cdot V = \varrho \frac{\pi d^2}{4}h = \SI{0.359\pm 0.021}{\kilo\gram}.
+\end{align}
+Ein Vergleich von~\eqref{eqn:Waermeuebergangszahl} mit~\eqref{eqn:Heizleistung} ergibt sich
+\begin{align}\label{eqn:alpha}
+  \alpha = \frac{\dot{Q}}{A (T_\text{\ce{N2}}-T_\text{Cu})} = \frac{m_\text{Cu} C_\text{Cu} \dv{T}{t}}{A (T_\text{\ce{N2}}-T_\text{Cu})}.
+\end{align}
+Die Oberfläche des Zylinders ergibt sich zu $A = \SI{94.3\pm5.3}{\centi\metre\squared}$.
+
+Die spezifische Wärmekapazität von Kupfer wurde an einem ausgewählten Punkt jeweils fürs Film- und Blasensieden berechnet (siehe Abbildung~\ref{fig:Abkuehlung}). Dabei wird eine Tabelle aus~\cite[S.353]{Fastowski} für die spezifische Wärme in Abhängigkeit von $\Theta/T$ genutzt. Die spezifische Wärmekapazität bei den beiden Temperaturen zeigt Tabelle~\ref{tab:Waermekapazität_Kupfer}.
+\begin{table}[htp]
+  \centering
+  \caption{Bestimmung der Wärmekapazität des Kupfers bei verschiedenen Temperaturen. Zur Umrechnung in die masseabhängige Wärmekapazität wurde durch die molare Masse von Kupfer $M_\text{Cu} = \SI{63.55}{\gram\per\mol}$ geteilt.}
+  \label{tab:Waermekapazität_Kupfer}
+  \begin{tabular}{c c c c}
+    \toprule
+    & $T$ [\si{\kelvin}] & $C_V$ [\si{\calorie\per\mole\per\kelvin}] & $C_V$ [\si{\joule\per\kilo\gram\per\kelvin}]\\
+    \midrule
+    Filmsieden & 138 & 4.74 & 312.1  \\
+    Blasensieden & 80.5 & 3.18 & 209.4 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Mithilfe des Siedepunkts von Stickstoff bei $T_\text{\ce{N2}} = \SI{77.4}{\kelvin}$ ergibt sich für die Wärmeübergangszahl $\alpha$ nach~\eqref{eqn:alpha}
+\begin{align}
+  \alpha_\text{FS,exp.} &= %\frac{-0.359\cdot 312.1\cdot \SI{0.5762}{\watt}}{\SI{8.8e-3}{\metre\squared}(77.4-138)\si{\kelvin}} =
+  \SI{112\pm 17}{\watt\per\square\metre\per\kelvin}\\
+  \alpha_\text{BS,exp.} &= %\frac{-0.359\cdot 209.4\cdot \SI{0.3614}{\watt}}{\SI{8.8e-3}{\metre\squared}(77.4-80.5)\si{\kelvin}} =
+  \SI{930\pm 150}{\watt\per\square\metre\per\kelvin}
+\end{align}
+Die großen Fehlerbereiche ergeben sich aufgrund der nur recht ungenau bestimmbaren Masse des Kupferzylinders und der Oberfläche. Weitere mögliche Fehler durch die Wärmekapazität wurden nicht berücksichtigt. Es wurde zudem die Annahme getroffen, dass der Zylinder vollständig aus Kupfer besteht, jedoch befindet sich innerhalb noch der Pt 100 Widerstand.
+
+Mit der Literatur~\cite{Fastowski} lässt sich eine Vergleichsrechnung durchführen. Ein Vergleich mit Abbildung~\ref{fig:Sieden_Stickstoff} ergibt einen Ausdruck für die Wärmestromdichte für das Film- und Blasensieden.
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Bilder/Sieden_Stickstoff.pdf}
+  \caption{Zusammengefasste Ergebnisse des Blasen- und Filmsiedens von Stickstoff im großen Volumen ($d=$ Durchmesser des Heizers)~\cite[S.230]{Fastowski}.}
+  \ref{fig:Sieden_Stickstoff}
+\end{figure}
+
+Für das Filmsieden ergibt sich mit $d = \SI{3}{\centi\metre} > \SI{1}{\centi\metre}$ und einer Temperaturdifferenz von  \SI{60\pm 1}{\kelvin} eine Wärmestromdichte von $\dot{q} = \SI[per-mode=symbol]{0.85\pm 0.05}{\watt\per\centi\metre\squared}$. Für das Blasensieden ergibt sich bei Normaldruck\footnote{Das Kilopond ist eine veraltete Einheit der Kraft. $\SI{1}{\kilo\text{p}} = \SI{9.807}{\newton}$}. $p \approx \SI{1}{\kilo\text{p}\per\centi\metre\squared}$ und einer Temperaturdifferenz von \SI{3\pm 0.2}{\kelvin} eine Wärmestromstromdichte von $\dot{q}= \SI{0.3 \pm 0.05}{\watt\per\centi\metre\squared}$. Somit lässt sich nach~\eqref{eqn:Waermeuebergangszahl} die Wärmeübergangszahl schreiben als
+\begin{align}
+  \alpha_\text{FS,Theorie} &=
+  \SI{141\pm 10}{\watt\per\square\metre\per\kelvin}\\
+  \alpha_\text{BS,Theorie} &=
+  \SI{1000\pm 170}{\watt\per\square\metre\per\kelvin}.
+\end{align}
+
+\subsubsection{Wärmeübergangszahl des Filmsiedens nach der Ähnlichkeitstheorie}
+
+Die Wärmeübertragung beim Filmsieden erfolgt ebenfalls durch Strahlung. Dabei lässt sich das Filmsieden eines verflüssigten Gases an der äußeren Oberfläche eines horizontalen Zylinders durch folgende Gleichung beschreiben~\cite{Fastowski}:
+\begin{align}\label{eqn:Filmsieden_Theorie}
+  \frac{\alpha d}{\lambda_m} = 0.62 \qty[\frac{d^3 \varrho_m(\varrho_\text{fl}-\varrho_m)g \cdot l_d}{\lambda_m \eta_m \Delta T}\qty(1+0.4\frac{c_{p,m}\Delta T}{l_d})^2]^{\frac{1}{4}}.
+\end{align}
+Für den Temperaturunterschied wurde $\Delta T = (138-77.4)\si{kelvin} = \SI{60.6}{\kelvin}$ angenommen. Die weiteren  von Stickstoff erforderlichen Größen sind mit der Fallbeschleunigung in Tabelle~\ref{tab:Groessen} zusammengefasst.
+\begin{table}[htp]
+  \centering
+  \caption{Größen für die Bestimmung der Wärmeübergangszahl. Der Index $m$ weist darauf hin, dass für die charakteristischen Größen des Gases die mittlere Temperatur $\frac{1}{2}(T_\text{Cu}+T_\text{\ce{N2}}) = \SI{107.7}{\kelvin}$ verwendet wird.}
+  \label{tab:Groessen}
+  \begin{tabular}{l l l c}
+    \toprule
+    Größe & & Wert & Quelle \\
+    \midrule
+    Dichte von \ce{N2(g)} & $\varrho_m$ & \SI{3.24}{\kilo\gram\per\metre\cubed} & \cite{Wolfram}\\
+    Dichte von \ce{N2(l)} & $\varrho_{fl}$ & \SI{810.6}{\kilo\gram\per\metre\cubed} & \cite{Wolfram}\\
+    Wärmeleitfähigkeit von \ce{N2(g)} & $\lambda_m$ &\SI{10.1e-3}{\watt\per\metre\per\kelvin} & \cite{Wolfram}\\
+    Dynamische Viskosität von \ce{N2(g)} & $\eta_m$ & \SI{7.48e-6}{\kilo\gram\per\metre\per\second} & \cite{Wolfram}\\
+    Verdampfungswärme \ce{N2} & $l_d$ & \SI{47.073}{\calorie\per\gram} & \cite{Fastowski}\\
+    Fallbeschleunigung & $g$ & \SI{9.81}{\metre\per\second\squared} & \\
+    Spezifische Wärme \ce{N2(g)} & $c_{p,m}$ & \SI{1064}{\joule\per\kilo\gram\per\kelvin} & \cite{Wolfram}\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Werden alle Größe in Gleichung~\eqref{eqn:Filmsieden_Theorie} eingesetzt, ergibt sich umgestellt nach der Wärmeübergangszahl $\alpha$
+\begin{align}
+  \alpha = \SI{92.3\pm 4.5}{\watt\per\metre\squared\per\kelvin}.
+\end{align}
+Zur Fehlerabschätzung wurden nur mögliche Fehler der Temperaturmessung $\Delta T$ und Durchmesserbestimmung beachtet und die Größen in Tabelle~\ref{tab:Groessen} als fehlerlos angenommen. Es zeigt sich, dass der Messwert für die Übergangszahl des Filmsiedens zwischen den berechneten Werten nach dem ähnlichen Modell und Abbildung~\ref{fig:Sieden_Stickstoff} liegt. Allerdings lässt sich durch das Modell das reale Experiment nicht vollständig beschreiben, da ebenfalls der Einfluss der Befestigungsstab vernachlässigt wird und von einem idealen Kupferzylinder ausgegangen wird.
 % *********************************************
 % ***** KAPITEL 5 *****************************
 % *********************************************

@@ -1,9 +1,18 @@
 \begin{thebibliography}{1}
 
+\bibitem{Fastowski}
+W.G. Fastowski.
+\newblock {\em Kryophysik}.
+\newblock Akademie-Verlag Berlin, 1970.
+
 \bibitem{Hunklinger}
 Siegfried Hunklinger.
 \newblock {\em Festk{\"o}rperphysik}.
 \newblock Oldenbourg Verlag, 2009.
+
+\bibitem{Wolfram}
+Wolfram~Research{,} Inc.
+\newblock Wolfram|alpha knowledgebase, 2020.
 
 \bibitem{Thurk}
 Matthias Thürk.

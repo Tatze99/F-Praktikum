@@ -1,14 +1,30 @@
 \begin{figure}[htp]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Temperatur $T$ in \si{\kelvin}, xmin=0, xmax=290, xlabel={Zeit $t$ in \si{\second}}, legend cell align={left}]
+    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Temperatur $T$ in \si{\kelvin}, xmin=0, xmax=300, ymin=50, xlabel={Zeit $t$ in \si{\second}}, legend cell align={left}]
+      \fill[fill=blue!50!black, opacity = 0.05] (10,0) rectangle (241,350);
+      \fill[fill=green!50!black, opacity = 0.05] (300,0) rectangle (250,350);
       \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Pt100_abkuehlung_Widerstand.txt};
       \addlegendentry{ohne Isolierung}
       \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Pt100_Isolierung_Widerstand.txt};
       \addlegendentry{mit Isolierung}
-      \draw[dashed] (0,77.35)node[above right]{\SI{77.4}{\kelvin}} -- +(290,0);
+      \draw[dotted] (0,77.35) -- +(290,0);
+      \node at (30,84){\SI{77.4}{\kelvin}};
+      \draw[dashed, green!50!black] (241,0) -- +(0,300);
+      \draw[dashed, green!50!black] (250,0) -- +(0,300);
+      \node[anchor=east]at (241,175) {\small Filmsieden};
+      \node[anchor=west]at (250,175) {\small Blasensieden};
+      % \addplot[red, thick, domain=246:254]{757.525-2.61864*x};
+      % \addplot[red, thick, domain=251:261]{457.12515-1.43091*x};
+      \addplot[red, thick, domain=262:278]{178.3379-0.36135*x};
+      \addlegendentry{Lineare Anpassung}
+      \addplot[red, thick, domain=183:238]{259.41293-0.57618*x};
+      \fill[red!50!black] (211,138) circle(1pt)node[below left]{\small\SI{138}{\kelvin}};
+      % \fill[red!50!black] (250,102) circle(1pt)node[above right]{\small\SI{102}{\kelvin}};
+      % \fill[red!50!black] (256,90) circle(1pt)node[above right]{\small\SI{90}{\kelvin}};
+      \fill[red!50!black] (270,80.58) circle(1pt)node[above right]{\small\SI{80.5}{\kelvin}};
     \end{axis}
   \end{tikzpicture}
-  \caption{Zeitlicher Temperaturverlauf eines Kupferzylinders beim Eintauchen in flüssigen Stickstoff.}
+  \caption{Zeitlicher Temperaturverlauf eines Kupferzylinders beim Eintauchen in flüssigen Stickstoff. Es sind weiterhin die Bereich des Film und Blasensiedens eingezeichnet. Dazwischen liegt ein Übergangsgebiet mit einer stark ansteigenden Wärmestromdichte. Für beide Siedevorgänge wurde mithilfe einer linearen Anpassung der Temperaturgradient bestimmt.}
   \label{fig:Abkuehlung}
 \end{figure}
