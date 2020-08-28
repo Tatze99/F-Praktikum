@@ -65,7 +65,7 @@ Es werden Widerstandsthermometer Pt 100 und Pt 1000, sowie Siliziumdioden als Se
 
 Es werden die Vor- und Nachteile der betrachteten Verfahren diskutiert.
 
-\subsection{Bestimmung des temperaturabhängigen Widerstandes eines Halbleiters}
+\subsection{Temperaturabhängiger Widerstandes eines Halbleiters}
 
 \begin{enumerate}
   \item Es wird eine Messchaltung zur Bestimmung des temperaturabhängigen Widerstandes und der Temperatur eines Gold-dotierten Germaniumhalbleiters aufgebaut.
@@ -84,7 +84,7 @@ Es wird die Frage beantwortet, warum die Wärmeübergangszahl $\alpha$ für den 
 
 \subsection{Temperaturabhängigkeit der molaren Wärmekapazität fester Stoffe bei kryogenen Temperaturen}
 
-Es wird eine thermische Zyklierung der Probenkörper aus Kupfer und Blei realisiert und die molare Wärmekapazität für jeweils zwei Temperaturbereich bestimmt.
+Es wird eine thermische Zyklierung der Probenkörper aus Kupfer und Blei realisiert und die molare Wärmekapazität für jeweils zwei Temperaturbereiche bestimmt.
 
 
 
@@ -297,7 +297,7 @@ Die aufgenommenen Spannungswerte wurden mithilfe der in der Versuchsanleitung~\c
 
 \input{Bilder/Halbleitermessung.tex}
 
-Die Größe der Bandlücke lässt sich nun mithilfe von Gleichung~\label{eqn:Anstieg_Bandlücke} bestimmen. Dafür wird wird der natürliche Logarithmus $\ln(R_0/R)$ über die inverse Temperatur $1/T$ aufgetragen und eine lineare Funktion an die Messdaten angefittet, wie in Abbildung~\ref{fig:Halbleitermessung} dargestellt ist. Es ergibt sich nun für eine lineare Fitfunktion der Form $y(x) = a + b\cdot x$
+Die Größe der Bandlücke lässt sich nun mithilfe von Gleichung~\eqref{eqn:Anstieg_Bandlücke} bestimmen. Dafür wird wird der natürliche Logarithmus $\ln(R_0/R)$ über die inverse Temperatur $1/T$ aufgetragen und eine lineare Funktion an die Messdaten angefittet, wie in Abbildung~\ref{fig:Halbleitermessung} dargestellt ist. Es ergibt sich nun für eine lineare Fitfunktion der Form $y(x) = a + b\cdot x$
 \begin{align}
   \ln\qty(\frac{R_0}{R}) = - \frac{\Delta E}{k_B}\frac{1}{T} \quad \Rightarrow \quad \Delta E = - b \cdot k_B.
 \end{align}
@@ -373,7 +373,7 @@ Mit der Literatur~\cite{Fastowski} lässt sich eine Vergleichsrechnung durchfüh
   \centering
   \includegraphics[width=0.7\textwidth]{Bilder/Sieden_Stickstoff.pdf}
   \caption{Zusammengefasste Ergebnisse des Blasen- und Filmsiedens von Stickstoff im großen Volumen ($d=$ Durchmesser des Heizers)~\cite[S.230]{Fastowski}.}
-  \ref{fig:Sieden_Stickstoff}
+  \label{fig:Sieden_Stickstoff}
 \end{figure}
 
 Für das Filmsieden ergibt sich mit $d = \SI{3}{\centi\metre} > \SI{1}{\centi\metre}$ und einer Temperaturdifferenz von  \SI{60\pm 1}{\kelvin} eine Wärmestromdichte von $\dot{q} = \SI[per-mode=symbol]{0.85\pm 0.05}{\watt\per\centi\metre\squared}$. Für das Blasensieden ergibt sich bei Normaldruck\footnote{Das Kilopond ist eine veraltete Einheit der Kraft. $\SI{1}{\kilo\text{p}} = \SI{9.807}{\newton}$}. $p \approx \SI{1}{\kilo\text{p}\per\centi\metre\squared}$ und einer Temperaturdifferenz von \SI{3\pm 0.2}{\kelvin} eine Wärmestromstromdichte von $\dot{q}= \SI{0.3 \pm 0.05}{\watt\per\centi\metre\squared}$. Somit lässt sich nach~\eqref{eqn:Waermeuebergangszahl} die Wärmeübergangszahl schreiben als
