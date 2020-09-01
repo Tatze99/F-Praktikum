@@ -253,12 +253,8 @@ Um den Prismenmonochromator in Wadsworth-Anordnung zu justieren wird eine Quecks
 
 \subsubsection{Eichung und Auflösungsvermögen}
 Die Skale der Prismenverstellung wird bezüglich der Wellenlänge mit Hilfe der Linien der Quecksilberdampflampe geeicht. Zum Eichen wird bei der grünen Spektrallinie begonnen, da die Photodiode bei dieser eine bessere Empfindlichkeit aufweist, als für den blauen Spektralbereich. Dazu wird das Prisma so eingestellt, dass die grüne Spektrallinie den Austrittsspalt passieren kann. Aufgrund der bekannten Daten für die Spektrallinien der Quecksilberdampflampe kann dem in dem Bereich gefunden Maxima und dem dazugehörigem am Rad der Prismeneinstellung abgelesenen Skalenwert eine Wellenlänge zugeordnet werden. Die unterschiedlichen Einstellungen des Prismas werden durchgefahren und jeweils bei den gefundenen Maxima kann dem zugehörigen Skalenwert nach gleichem Prinzip wie oben beschrieben eine Wellenlänge zugeordnet werden. Die erhaltenen Datenpaare können dargestellt und gefittet werden, woraus eine Funktion erhalten wird, die den am Rad der Prismeneinstellung abgelesenen Skalenwerten eine Wellenlänge zuordnet.
-\begin{figure}[htp]
-    \centering
-        \includegraphics[width=0.9\textwidth]{Bilder/Eichung_SPM1_mitQuecksilberdapflampe.pdf}
-    \caption{Eichung der Prismenverstellung}
-    \label{fig:EichungSPM1}
-\end{figure}
+
+\input{Bilder/Eichung_SPM1_mitQuecksilberdapflampe.tex}
 
 Zur Abschätzung der Auflösung wird die Natriumdampflampe verwendet. Der Aufbau wird auf die Doppellinie des Natriums eingestellt. Anstelle des Spiegels zwei wird ein Fernrohr aufgebaut, um die Linien direkt beobachten zu können. Trotz kleinster Öffnungsweite der Blenden können die zwei gelben Linien des Natriums, welche sich bei \SI{588.9951}{\nano\meter} und bei \SI{589.5924}{\nano\meter} befinden, nicht unterschieden werden.
 
@@ -412,32 +408,24 @@ Die in~\cite{Hunklinger} gegeben Literaturwerte für Silizium $E_g = \SI{1.12}{\
 \subsubsection{Absorption und Reflektivität von \ce{SiO2}}
 \paragraph{Absorption}
 Um die Absorption von \ce{SiO2} zu messen, wurde sowohl ein Plättchen aus undotiertem als auch ein Plättchen mit dotiertem \ce{SiO2} in den Strahlengang positioniert.
-\begin{figure}[htp]
-  \centering
-    \includegraphics[width=\textwidth]{Bilder/AbsorptionSiO2.pdf}
-    \caption{Signale am Thermoelement bei Plättchen mit dotiertem sowie mit undotierten \ce{SiO2} im Strahlengang sowie ohne Plättchen im Strahlengang}
-\end{figure}
+
+\input{Bilder/AbsorptionSiO2.tex}
+
 Um Gebiete mit Absorption besser kenntlich zu machen, wird das Verhältnis aus jeweiligem Signal zu Referenzsignal dargestellt.
 
-\begin{figure}[htp]
-  \centering
-    \includegraphics[width=\textwidth]{Bilder/Absorptionsrate_Si02.pdf}
-    \caption{Verhältnis jeweiliges Signal zu Referenzsignal}
-\end{figure}
+\input{Bilder/AbsorptionsrateSiO2.tex}
 \FloatBarrier
 Der Bereich der Absorption ist beim undotierten Präparat im Strahlengang deutlich zu erkennen und liegt bei \SI{10.24}{\micro\meter}.
 
 \paragraph{Reflexionsvermögen}
 Für die Messung des Reflexionsvermögens wird der Aufbau teilweise geändert. Vom zweitem Spiegel wird der Strahl auf eine reflektierende Einheit gelenkt. Der Detektor ist so positioniert, um den reflektierten Anteil zu erfassen. Die Messung wird zweimal durchgeführt. Einmal mit einem komplett reflektierenden Aluminiumspiegel als reflektierendes Element (Referenz) und einmal ist an der exakt selben Stelle ein \ce{SiO2} Plättchen positioniert.
-\begin{figure}[htp]
-  \centering
-    \includegraphics[width=\textwidth]{Bilder/Reflektivität_SiO2.pdf}
-    \caption{Messungen des Signals nach Reflexion an \ce{SiO2} Plättchen bzw. an Aluminiumspiegel. Die Darstellung ist nicht maßstabsgetreuen. Zusätzlich ist die Reflexionsrate, also das Verhältnis aus Signal zu Referenz, dargestellt. Der zweite Peak des \ce{SiO2} Signal entspricht ungefähr \SI{50}{\percent} des ursprünglichen Signals. }
-\end{figure}
+
+\input{Bilder/ReflektivitätSiO2.tex}
+
 \FloatBarrier
 Wie an der Reflexionsrate zu erkennen ist, ist die Reflexion vor allem im Bereich um $\lambda = \SI{9.01}{\micro\meter}$ besonders groß. Obwohl hier der Referenzwert der reflektierten Strahlung sehr gering ist, wird fast genauso viel reflektiert, wie in dem Bereich, in dem die Referenz ihr deutliches Maximum trägt.\\
 
-Wie in Abschnitt \ref{sec:AbsorptionundReflexion} diskutiert, sind die Wellenlängenbereiche hoher Absorption zugleich diese, in denen gut reflektiert wird. Das können die Messdaten teilweise bestätigen. Der Absorptionsbereich liegt im Bereich um \SI{10.24}{\micro\meter}, während der Reflexionsbereich um die \SI{9.01}{\micro\meter} lokalisiert ist. Die Größenordnung ist somit bei beiden Messungen die gleiche und es treten Überschneidungen der Bereiche auf. Die Abweichung lässt sich durch möglicherweise auftretenden Verunreinigungen des \ce{SiO2} auf den beiden unterschiedlichen Elementen sowie durch etwaige abweichende chemische Zusammensetzung oder Reinheit erklären.
+Wie in Abschnitt~\ref{sec:AbsorptionundReflexion} diskutiert, sind die Wellenlängenbereiche hoher Absorption zugleich diese, in denen gut reflektiert wird. Das können die Messdaten teilweise bestätigen. Der Absorptionsbereich liegt im Bereich um \SI{10.24}{\micro\meter}, während der Reflexionsbereich um die \SI{9.01}{\micro\meter} lokalisiert ist. Die Größenordnung ist somit bei beiden Messungen die gleiche und es treten Überschneidungen der Bereiche auf. Die Abweichung lässt sich durch möglicherweise auftretenden Verunreinigungen des \ce{SiO2} auf den beiden unterschiedlichen Elementen sowie durch etwaige abweichende chemische Zusammensetzung oder Reinheit erklären.
 
 
 

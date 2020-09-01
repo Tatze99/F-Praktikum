@@ -1,7 +1,7 @@
 \begin{figure}[htp]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Absorptionsrate, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin = 950, xmax=2150, xtick={}, ymin =-.1, ymax = 1.15, legend cell align={left}]
+    \begin{axis}[axis on top, disabledatascaling, width=\textwidth, height=6cm, ylabel=Absorptionsrate, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin = 950, xmax=2150, xtick={}, ymin =-.1, ymax = 1.15, legend cell align={left}]
       \filldraw[draw=white!80!orange,fill=white!90!orange] (1020,-.1) rectangle (1080,1.2);
       \draw[thick, white!50!orange] (1050,-.1) -- (1050,1.2);
       \filldraw[draw=green!50!black, draw opacity = 0.2,fill=green!50!black, fill opacity = 0.1] (1770,-.1) rectangle (1830,1.2);
