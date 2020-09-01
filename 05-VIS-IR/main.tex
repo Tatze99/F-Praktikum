@@ -266,33 +266,37 @@ Zur Abschätzung der Auflösung wird die Natriumdampflampe verwendet. Der Aufbau
 \subsubsection{Spektrale Empfindlichkeit eines Halbleiterempfängers}
 Die spektrale Empfindlichkeit eines Empfängers kann nach Abschnitt \ref{sec:Empfänger)} berechnet werden, indem das Signal mit dem Empfänger, sowie mit einem Thermoelement vermessen  und das Verhältnis der Messwerte gebildet wird. Dazu wird nach der Austrittsblende einmal das Thermoelement, sowie bei anschließenden Messungen ein InGaAs-Halbleiterdetektor und ein Si-Halbleiterdetektor in den Fokuspunkt des austretenden Strahl positioniert. Das Signal der Halbleiterdetektoren wird mit einem Verstärker verstärkt und anschließend am Multimeter abgelesen, während das Signal des Thermoelements mit dem Galvanometer vermessen wird. Bei Letzterem ist das Ablesen nur mit einer sehr schlechten Auflösung möglich, weshalb vorallem kleine Signale schlecht vermessen bzw. überhaupt detektiert werden können. So ergibt sich, dass nur die Bereich der Empfindlichkeitskurven vermessen werden können, in denen das Signal des Thermoelements sich von Null unterscheiden lässt, weshalb die erhaltenen Empfindlichkeitskurven nur unvollständig vermessen werden konnten. Eine vollständige Vermessung kann mit einem Messgerät mit besserer Auflösung vorallem in niedrigen Signalbereichen realisiert werden.
 
-\begin{figure}[htp]
-  \centering
-  \begin{subfigure}{0.9\textwidth}
-    \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_InGaAs.pdf}
-    \caption{aus Messdaten}
-  \end{subfigure}
-  \begin{subfigure}{0.7\textwidth}
-    \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_InGaAsHalbleiter_manual.jpeg}
-    \caption{vom Hersteller}
-  \end{subfigure}\hspace{1cm}
-  \caption{spektrale Empfindlichkeit eines InGaAs-Halbleiterdetektors}
-  \label{fig:Empf_InGaAs}
-\end{figure}
+\input{Bilder/Si_Halbleiter.tex}
 
-\begin{figure}[htp]
-  \centering
-  \begin{subfigure}{0.9\textwidth}
-    \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_SI.pdf}
-    \caption{aus Messdaten}
-  \end{subfigure}
-  \begin{subfigure}{0.7\textwidth}
-    \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_SIHalbleiter_manual.jpeg}
-    \caption{vom Hersteller}
-  \end{subfigure}\hspace{1cm}
-  \caption{spektrale Empfindlichkeit eines Si-Halbleiterdetektors}
-  \label{fig:Empf_Si}
-\end{figure}
+\input{Bilder/InGaAs.tex}
+
+% \begin{figure}[htp]
+%   \centering
+%   \begin{subfigure}{0.9\textwidth}
+%     \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_InGaAs.pdf}
+%     \caption{aus Messdaten}
+%   \end{subfigure}
+%   \begin{subfigure}{0.7\textwidth}
+%     \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_InGaAsHalbleiter_manual.jpeg}
+%     \caption{vom Hersteller}
+%   \end{subfigure}\hspace{1cm}
+%   \caption{spektrale Empfindlichkeit eines InGaAs-Halbleiterdetektors}
+%   \label{fig:Empf_InGaAs}
+% \end{figure}
+%
+% \begin{figure}[htp]
+%   \centering
+%   \begin{subfigure}{0.9\textwidth}
+%     \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_SI.pdf}
+%     \caption{aus Messdaten}
+%   \end{subfigure}
+%   \begin{subfigure}{0.7\textwidth}
+%     \includegraphics[width=\textwidth]{Bilder/Empfindlichkeit_SIHalbleiter_manual.jpeg}
+%     \caption{vom Hersteller}
+%   \end{subfigure}\hspace{1cm}
+%   \caption{spektrale Empfindlichkeit eines Si-Halbleiterdetektors}
+%   \label{fig:Empf_Si}
+% \end{figure}
 
 \FloatBarrier
 

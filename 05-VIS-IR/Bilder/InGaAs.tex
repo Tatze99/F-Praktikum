@@ -1,0 +1,18 @@
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}
+  \begin{axis}[height = 6cm, width=.9\textwidth, axis y line*=left, ylabel={$A_\text{Thermoelement}/A_\text{Halbleiter}$}, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin=808, xmax=2600]
+    \addplot[only marks, mark=*, black,thick] table[x index=0,y index=1]{Daten/InGaAs_Thermoelement.txt};\label{plot_three}
+    \addplot[blue,thick] table[x index=0,y index=1]{Daten/InGaAs_Interpolation.txt};\label{plot_four}
+  \end{axis}
+  \begin{axis}[compat=1.3, axis y line*=right, ylabel={Empfindlichkeit in \si{\ampere\per\watt}}, axis x line=none, height = 6cm, width=.9\textwidth, legend pos = north west, xmin=324, xmax=2600]
+    \addplot[orange,thick] table[x index=0,y index=1, col sep=semicolon]{Daten/Empfindlichkeit_InGaAsHalbleiter_manual.csv};
+    \addlegendentry{\small Hersteller}
+    \addlegendimage{/pgfplots/refstyle=plot_three}
+    \addlegendentry{\small Messdaten}
+    \addlegendimage{/pgfplots/refstyle=plot_four}
+    \addlegendentry{\small Interpolation}
+  \end{axis}
+\end{tikzpicture}
+\caption{Spektrale Empfindlichkeit eines InGaAs-Halbleiterdetektors.}
+\end{figure}
