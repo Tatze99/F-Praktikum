@@ -177,6 +177,79 @@ was mit den experimentellen Messungen der spezifischen Wärme für Festkörper �
   \label{fig:Debye_Einstein}
 \end{figure}
 
+\subsection{Erzeugung tiefer Temperaturen}
+Zur Erzeugung kryogener Temperaturen im Labor werden Kleinkältemaschinen oder tiefsiedende Gase in Kryostaten verwendet. Beides findet im Versuch Anwendung, wobei als Kältemaschine die Giffhord-McMahon Kältemaschine zum Einsatz kommt, deren Funktionsprinzip im Folgenden erläutert wird.
+\paragraph{Giffhord-McMahon-Verfahren}
+Das Giffhord McMahon Verfahren ist ein Prozess regenerativer Wärmeübertragung. Charakteristisch für diese Art von Kältemaschinen ist der Aufbau, der in Abbildung \ref{fig:Kältemaschine}, dargestellt ist, bestehend aus einem Verdränger, einem Regenerator, einem kalten und einem warmen Arbeitsraum.
+
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=0.8\textwidth]{Bilder/Kalteprozess regenerativer Wärmeübertragung.pdf}
+    \caption{Schema eines Kälteprozesses mit regenerativer Wärmeübertragung}
+    \label{fig:Kältemaschine}
+\end{figure}
+
+
+Das Schlüsselelement ist der Regenerator, der ein Wärmespeicher mit großer Wärmekapazität und großer Wärmeübertragungsfläche ist und den warmen und den kalten Arbeitsraum miteinander verbindet. An ihm liegt im Betriebszustand ein Temperaturgefälle $T_W - T_C$ vor. Bewegt sich der Verdränger nach unten, strömt das Gas über den Regenerator, wo es sich abkühlt, in den kalten Arbeitsraum. Durch die Abkühlung fällt der Druck im isochoren System. Wird der Verdänger nun aufwärts bewegt, wird das kalte Gas erneut über den Regernator, wo es sich nun aufwärmt, in den warmen Arbeitsraum gedrückt. Durch die Erwärmung steigt der Druck. Es lässt sich zeigen, dass in diesem System $\dot{Q} = 0 $ gilt. Um $\dot{Q} \neq 0 $ zu erreichen, bedarf es der Aufbringung von Arbeit in Form von Druckvariationen, die gegenüber den Variationen der Verdrängerpostion eine geeignete Phasenverschiebung $\phi \neq 0$ oder $\pi$ haben. \\
+Je nach Realisierung dieser Druckänderung unterscheidet man die unterschiedlichen Prozesse: der Stirling-Prozess, der Vuilleumier-Prozess sowie der Giffhord-McMahon-Prozess. Beim Giffhord-McMahon-Prozess wird die Druckvariation durch einen Kompressor erreicht. Dieser ist abwechselnd mit dessen Hoch-bzw. Niederdruckseite mit dem System verbunden und sorgt dabei für Druckvariationen durch die Variation des Gasinhaltes des Systems, wie in Abbildung \ref{fig:Giffhord-McMahon} zu sehen ist.  \\
+
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=0.8\textwidth]{Bilder/McMahanMaschine.pdf}
+    \caption{Schema eines Giffhord-McMahan Prozesses}
+    \label{fig:Giffhord-McMahon}
+\end{figure}
+
+Wird beim Niederdruck $p_n$ sowie einem in unterer Totpunktlage gestartet, ergibt sich der in Abbildung \ref{fig:Giffhord-McMahon} dargestellte Zyklus. \\
+Über h strömt Gas in den Arbeitsraum, wo es auf ein Druckgefälle trifft, und durch das nachfolgende Gas adiabatisch komprimiert wird, weshalb es zu einer Temperaturerhöhung kommt. Das Druckgefälle baut sich mit der Zeit ab, weshalb das später nachströmende Gas nicht mehr so stark erwärmt wird. Es kommt zu einer Durchmischung der Temperaturen,weshalb sich die anfängliche Temperatur im Laufe der Zeit noch absenkt (Zustand zwischen 3 und 4). Wird der Verdränger anschließend in die obere Totpunktlage bewegt, strömt das Gas vom warmen in den kalten Arbeitsraum  über den Regenerator, wo es abkühlt. Außerdem nimmt zunächst der Druck ab, weshalb weiteres Gas nachströmen kann und sich so die Temperatur am warmen Regeneratorende wieder auf $T_3$ erhöht. Nun wird die Niederdruckseite des Kompressors angeschlossen. Als Folge strömt das Gas aus dem Regenerator aus, was zu einer Entspannung des Gases führt. Dabei schiebt das Gas das ausströmende Gas vor sich her, verrichtet damit Arbeit und kühlt sich selbst ab (Zustand 6). Das Äquivalent dieser Arbeit wird dem zu kühlenden Objekt entzogen. Anschließend kommt es noch zum Auslassen des Gases, wo der Verdränger wieder in die Ausgangslage zurückkehrt und dabei das Gas aus dem kalten in den warmen Arbeitsraum strömt, sich dabei über den Regenerator wieder erwärmt und durch das Druckgefälle in den Leitungen isenthalp entspannt.
+
+\paragraph{Sieden von kryogenen Flüssigkeiten}
+Wenn die Temperatur der wärmeabgebenden Oberfläche höher ist als die Siedetemperatur der Flüssigkeit bei dem herrschenden Druck, kommt es zum Sieden der Flüssigkeit. Dabei treten, je nach Temperaturdifferenz zwischen der wärmeabgebenden Oberfläche und der Flüssigkeit im Sättigungszustand, unterschiedliche Arten des Siedens auf. Bei geringer Temperaturdifferenz tritt Sieden durch die Entstehung von Keimen im Volumen, das sogenannte Blasensieden, auf. Bei größerer Temperaturdifferenz kommt es zum Filmsieden. Dazwischen tritt bei der Wärmestromdichte ein charakteristisches Übergangsgebiet auf. Zu sehen ist die Wärmestromdichte in Abhängigkeit der Temperaturdifferenz mit den unterschiedlichen Arten des Siedens in \ref{fig:Wärmestromdichte}.
+\begin{figure}[htp]
+    \centering
+        \includegraphics[width=0.6\textwidth]{Bilder/Filmsieden_Blasensieden.pdf}
+    \caption{verschiedene Siedezustände am Beispiel von Stickstoff}
+    \label{fig:Wärmestromdichte}
+\end{figure}
+
+Letztere bestimmt wesentlich die Abkühlgeschwindigkeit der Probe und wird durch die Wärmeübergangszahl $\alpha$ charakterisiert. Für diese gilt der Zusammenhang
+\begin{align}\label{eqn:Waermeuebergangszahl}
+  \dot{Q}=\alpha\cdot A \cdot \Delta T, \quad \dot{q}=\alpha\Delta T
+\end{align}
+Über jenen kann die Wärmestromdichte aus der Messung des Temperatur-Zeit-Verlaufs sowie dem ersten Hauptsatz der Thermodynamik ermittelt werden.
+
+\subsection{Bestimmung der Wärmekapazität}
+\subsubsection{Vermessen der Abkühlkurve}\label{sec:CV_Abkühlkurve}
+Zur Bestimmung der Wärmekapazität wird eine Analogie zwischen Wärme- und Stromfluss herangezogen. Der Temperaturdifferenz zwischen Probenblock und Kaltkopf $\Delta T $ entspricht der Potentialdifferenz $\Delta U$, das Analogon des durch die Probenheizung verursachten Wärmestroms $\dot{Q}$ ist der Strom, die Probe dient als Wärmespeicher, was der Funktion eines Kondensators entspricht und die Probenhalterung, über die die Wärme abfließen kann, entspricht den thermischen Widerständen $R_th$. In dieser Analogie entspricht der Abkühlprozess dem Entladen eines Kondensators und kann deshalb, kühlt die Probe ohne angelegte Heizleistung ab, beschrieben werden durch
+\begin{align}
+  \Delta T = \Delta T_0 \exp{-\frac{t}{C\cdot R_{th}}} \quad \text{bzw.} \quad ln\Delta T = ln \Delta T_0 - \frac{1}{C\cdot R_{th}}
+\end{align}
+bzw. wenn eine konstante Heizleistung angelegt wird, die dem Abkühlen entgegen wirkt, ausgedrückt werden durch
+\begin{align}
+  \Delta T - T_A = \Delta T_0 \exp{-\frac{t}{C\cdot R_{th}}} \quad \text{bzw.} \quad ln\Delta T -T_A= ln \Delta T_0 - \frac{1}{C\cdot R_{th}}
+\end{align}
+
+So kann durch Plotten des Logarithmus naturales der Temperaturdifferenz $\Delta T$ bzw. der Temperaturdifferenz verringert um die Ausgleichstemperatur und Bestimmung des Anstieges mit bekanntem $R_{th}$ die Wärmekapazität bestimmt werden. \\
+Dabei ergibt sich $R_{th}$ als
+\begin{align}
+  R_{th} = \frac{\Delta T_0}{\cdot{Q}}
+\end{align}
+wobei $\cdot{Q}$ die Heizleistung ist, mit der die Probe beaufschlagt wird und $T_0$ die Temperatur, die sich nach gewisser Temperatur einstellt. $R_{th}$ bezieht sich im Experiment immer auf den vorm Abkühlen eingestellten stabilen Zustand.
+
+\subsubsection{Dual-Slope-Verfahren}\label{sec:Dual-Slope}
+Eine weitere Möglichkeit die Wärmekapazität zu bestimmen, ist das Dual-Slop-Verfahren. Hierbei werden der Heiz- sowie der Kühlvorgang einer Probe betrachtet. Bei der jeweils gleichen Temperatur lassen sich folgende Bilanzen aufstellen
+\begin{align}
+  C(T)\dot{T}^h (T) = \dot{Q}_{h,1} (T) - \dot{Q}_0(T)+\dot{Q}_P (T)\\
+  C(T)\dot{T}^c (T) = \dot{Q}_{h,2} (T) - \dot{Q}_0(T)+\dot{Q}_P (T)
+\end{align}
+
+Hier muss beachtet werden, dass sich im Falle eines Abkühlens ohne Restheizen, $\dot{Q}_{h,2}$ zu Null ergibt.\\
+Damit ergibt sich für die Wärmekapazität
+\begin{align}\label{equ:DS}
+  C(T) = \frac{\dot{Q}_{h,1}-\dot{Q}_{h,2}}{\dot{T}_h - \dot{T}_c}
+\end{align}
+
+In der Auswertung kann also ein kleiner Bereich der Temperatur sowohl im Aufheiz., als auch im Abkühlvorgang betrachtet werden, der so klein ist, dass angenommen werden kann, dass hier der Anstieg, also die Ableitung, einer konstanten entspricht und damit $\dot{T}^(h/c)$ berechnet werden.
 
 %%%%%%% Gleichung mit einarbeiten %%%%%%%%%s
 % \begin{align}\label{eqn:Waermeuebergangszahl}
@@ -414,6 +487,154 @@ Werden alle Größe in Gleichung~\eqref{eqn:Filmsieden_Theorie} eingesetzt, ergi
   \alpha = \SI{92.3\pm 4.5}{\watt\per\metre\squared\per\kelvin}.
 \end{align}
 Zur Fehlerabschätzung wurden nur mögliche Fehler der Temperaturmessung $\Delta T$ und Durchmesserbestimmung beachtet und die Größen in Tabelle~\ref{tab:Groessen} als fehlerlos angenommen. Es zeigt sich, dass der Messwert für die Übergangszahl des Filmsiedens zwischen den berechneten Werten nach dem ähnlichen Modell und Abbildung~\ref{fig:Sieden_Stickstoff} liegt. Allerdings lässt sich durch das Modell das reale Experiment nicht vollständig beschreiben, da ebenfalls der Einfluss der Befestigungsstab vernachlässigt wird und von einem idealen Kupferzylinder ausgegangen wird.
+
+\subsection{Bestimmung der molaren Wärmekapazität}
+\subsubsection{mittels Abkühlkurve}
+Um mit den Methoden aus Abschnitt \ref{sec:CV_Abkühlkurve} sowie \ref{sec:Dual-Slope} beschrieben vorgehen zu können, wird eine Aufheizungs- und Abkühlungskurve aufgenommen. Die Probe wird dabei zunächst mit \SI{800}{\milli\ampere} geheizt, hat sich hier ein Gleichgewicht eingestellt, wird diese mit \SI{400}{\milli\volt} geheizt und anschließend wird kein Heizen mehr vorgenommen. Die Probe wird mit einem PT1000 in 2 Leiterschaltung gemessen. Zusätzlich wird der Kaltkopf als Referenz sowohl mit PT1000 als auch mit Diode gemessen. Dabei wurden jeweils die Widerstände bzw die Spannung gemessen, aus denen dann durch die angegebenen Kalibrationskurven die Temperaturen gewonnen werden können. Diese Graphen sind für Kupfer und Blei jeweils in Abbildung \ref{fig: Aufheiz-und Entladekurven} zu sehen. Zusätzlich ist hier noch die Temperaturdifferenz zwischen Probe und Kaltkopf, die wie eingangs disuktiert entscheidend für die Auswertung ist, dargestellt.
+
+\begin{figure}[htp]
+  \centering
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/Abkühlkurve_Cu.pdf}
+    \caption{Kupfer}
+  \end{subfigure}
+  \begin{subfigure}{0.8\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/Abkühlkurve_Blei.pdf}
+    \caption{Blei}
+  \end{subfigure}
+  \caption{Aufheiz- und Entladekurven von Kupfer und Blei. Geheizt wurde in den jeweiligen Abschnitten jeweils mit den angegebenen Strömen}
+  \label{fig:Abkühkurven}
+\end{figure}
+
+Aus diesen Kurven wird nun in jedem der zwei letzten Bereiche ein Temperaturausschnitt der Probe betrachtet und in diesem jeweils der logarithmus naturalis der Temperaturdifferenz verringert um die Ausgleichstemperatur (Cu: \SI{35,1}{\kelvin}, Pb: \SI{33,8}{\kelvin}) für den Bereich \SI{400}{\milli\ampere} bzw. der logarithmus naturlais der Differenz im Bereich\SI{0}{\ampere} über der Zeit geplottet. Dies ist in Abbildung \ref{fig:lnDeltaT} dargestellt. Es wird darauf geachtet, jeweils einen Bereich in der Mitte des Abfalles der Probentemperatur auszuwählen, um Randeffekte zu vermeiden, sowie unter Beachtung der Temperaturabhängigkeit der Wärmekapazität nur kleine Temperaturbereiche zu wählen.
+
+
+\begin{figure}[ht!]
+  \centering
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/77_1_80_29__lnDeltaT_TA.pdf}
+    \caption{Kupfer, T=\SI{80,29}{\kelvin} bis \SI{77,1}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/28_98__37_19__lnDeltaT.pdf}
+    \caption{Kupfer, T=\SI{37,19}{\kelvin} bis \SI{28,98}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/90_02__87_10_lnDetlaT_TA}
+    \caption{Blei, \SI{90,02}{\kelvin} bis \SI{87,10}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/41_71__37_06_lnT.pdf}
+    \caption{Blei, T=\SI{47,71}{\kelvin} bis \SI{37,06}{\kelvin}}
+  \end{subfigure}
+  \caption{ln $\Delta T $ bzw. ln ($\Delta$ T - $T_A$) für die beiden unterschiedlichen Proben bei jeweils unterschiedlichen Temperaturbereichen}
+  \label{fig:lnDeltaT}
+\end{figure}
+
+
+Aus den ermittelten Anstiegen kann nach den Überlegungen in Abschnitt \ref{sec:CV_Abkühlkurve} beschrieben, die Wärmekapazität über
+\begin{align}
+  C = \frac{1}{R_{th}\cdot b}
+\end{align}
+wobei b der jeweilige Anstieg ist, bestimmt werden.  Um $R_{th}$ zu bestimmen, wird $\dot{Q}$ sowie $\Delta T_0$ benötigt. $\Delta T_0$ wird aus dem jeweiligen vorherigen stabilen (Ausgleichs-) Zustand als Differenz zwischen Ausgleichstemperatur der Probe minus Ausgleichstemperatur Kaltkopf bestimmt. Um $\dot{Q}$ zu bestimmen werden die jeweiligen Widerstände sowie die Zuleitunsgwiderstände vermessen. $\dot{Q} $ ergibt sich dann aus
+\begin{align}
+  \dot{Q} = U\cdot I = (R_{ges}-R_{th})\cdot I^2
+\end{align}
+Auch hier wird sich auf den vor der jeweiligen Abkühlung eingestellten Gleichgewichtszustand bezogen. (z.B. I=\SI{800}{\milli\ampere} zur Berechnung von $R_{th}$ für den Bereich I=\SI{400}{\milli\ampere})
+Die sich wie oben beschrieben ergebenden Werte sind in folgender Tabelle \ref{tab:CV} zusammengefasst.
+
+\begin{table}[htp]
+  \centering
+  \caption{In der Tabelle werden alle Werte, die zur Berechnung der molaren Wärmekapazität benötigt werden, zusammengefasst. Dabei ist der Anstieg b bereits in \si{\per\second} umgerechnet}
+  \label{tab:CV}
+  \begin{tabular}{l l l 1 1 c}
+    \toprule
+     & Cu 1. Ber & Cu 2. Ber & Pb 1. Ber & Pb 2. Ber\\
+    \midrule
+    Temperaturbereich & \SI{80,29}{\kelvin}-\SI{77,1}{\kelvin} & \SI{37,19}{\kelvin}-\SI{29,98}{\kelvin}&\SI{90,02}{\kelvin}-\SI{87,10}{\kelvin} & \SI{41,71}{\kelvin} - \SI{37,06}{\kelvin}
+    \\
+    Anstieg b & 0,001317&0,005993167&0,0009285
+    &0,000770333
+    \\
+    $\dot{Q}$ & 2,1504 &0,4784& 2,1504&0,4784
+    \\
+    $\Delta T_0$ & 69,8 &	34,8	&70,39711&	33,68231
+    \\
+    $R_th$&32,45907738 & 72,74247492 & 32,7367513	&70,40616639
+    \\
+    $C_v $ & 23,39257625 &	2,293800123	& 32,89898602	& 18,43786418
+    \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\subsubsection{mittels Dual-Slope-Methode}
+Eine andere Methode zur Bestimmung der Wärmekapazität wird in Abschnitt \ref{sec:Dual-Slope} beschrieben. Sie beruht auf dem Paper %PAPER EINFÜGEN
+An der dort vorgestellten Methode muss lediglich berücksichtigt werden, dass wir im Bereich der \SI{400}{\milli\volt} auch im Kühlbereich weiterhin eine Heizleistung haben. Dieser Umstand ist bei der in Gleichung \ref{equ:DS} bereits berücksichtigt. Für den Bereich der \SI{0}{\milli\ampere} wird die zweite Heizleistung Null gesetzt. Wird dies beachtet, ist keine weitere Messung für die Bestimmung der Wärmekapazität mit diesem Verfahren im Vergleich zum vorherigen nötig. Zur besseren Vergleichbarkeit der Ergebnisse werden die gleichen Temperaturbereiche betrachtet. \\
+Hierfür wird die Heizleistung wie zuvor berechnet und die Änderung der Temperatur durch einen Fit im linearen Bereich errechnet.
+
+
+\begin{figure}[ht!]
+  \centering
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/77_02__80_17_Anstieg.pdf}
+    \caption{Kupfer, T=\SI{77,02}{\kelvin} bis \SI{80,17}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/77_1__80_29_Abfall.pdf}
+    \caption{Kupfer, T=\SI{80,29}{\kelvin} bis \SI{77,10}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/28_71__36_97__Anstieg.pdf}
+    \caption{Kupfer, \SI{28,71}{\kelvin} bis \SI{36,97}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/37_19__28_98__Abfall.pdf}
+    \caption{Kupfer, T=\SI{37,19}{\kelvin} bis \SI{28,98}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/87_13__90_06__Anstieg.pdf}
+    \caption{Blei, T=\SI{87,13}{\kelvin} bis \SI{90,06}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/90_02_87_10__Abfall.pdf}
+    \caption{Blei, T=\SI{90,02}{\kelvin} bis \SI{87,10}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/37_06_41_79_Anstieg.pdf}
+    \caption{Blei, \SI{37.06}{\kelvin} bis \SI{41,79}{\kelvin}}
+  \end{subfigure}
+  \begin{subfigure}[b!]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Bilder/37,06-41,71.pdf}
+    \caption{Blei, T=\SI{41,71}{\kelvin} bis \SI{37,06}{\kelvin}} \end{subfigure}
+  \caption{zur Ermittlung der Wärmekapazität mit Dual-Slope-Methode bestimmte Anstiege der Temperatur}
+  \label{fig:DS_LineareFits}
+\end{figure}
+
+\FloatBarrier
+Mit den so erhaltenen Werten lässt sich jetzt nach Gleichung \ref{equ:DS} die Wärmekapazität berechnen. Die dafür nötigen Werte sowie die Ergebnisse sind in \ref{tab:ergebnisseDS} zusammengefasst.
+
+
+\begin{tabular}{l l l 1 1 c}\label{tab:ergebnisseDS}
+  \toprule
+   & Cu 1. Ber & Cu 2. Ber & Pb 1. Ber & Pb 2. Ber\\
+  \midrule
+  Temperaturbereich & T=\SI{77,02}{\kelvin} bis \SI{80,17}{\kelvin} & \\SI{28,71}{\kelvin} bis \SI{36,97}{\kelvin} & T=\SI{87,13}{\kelvin} bis \SI{90,06}{\kelvin} & \SI{37.06}{\kelvin} bis \SI{41,79}\\
+  & T=\SI{80,29}{\kelvin} bis \SI{77,10}{\kelvin} & T=\SI{37,19}{\kelvin} bis \SI{28,98}{\kelvin} & T=\SI{90,02}{\kelvin} bis \SI{87,10}{\kelvin} &T=\SI{41,71}{\kelvin} bis \SI{37,06}{\kelvin}\\
+  $\dot{T}_C$ &-0,042302833	&-0,125922	&-0,038845	& -0,022994333\\
+  $\dot{T}_H$ & 0,0446835 &	0,5490845	&0,034475&	0,1044335\\
+
+  $C_v$ & 19,22141026	& 3,1857471	& 22,80414621	& 16,87543407\\
+
+  Referenz&12,4-13,0 &	1,6-3,1	&23,7-23,8	&19,1-20,2\\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+
+Die ausgerechnete Wärmekapazität entspricht in allen Fällen der molaren Wärmekapazität, da die Probenmenge genau ein Mol betrug. \\
+Vorteile des Dual-Slope-Verfahrens werden an den Ergebnissen für die Wärmekapazitöt deutlich. Das Dual Slope Verfahren liefert genauere Werte für die Wärmekapazität. Gleichzeitig ist der Aufwand der Messung geringer, da hier kein Referenzsignal des Kaltkopfes benötigt wird, sowie weniger Auswerteaufwand betrieben werden muss. Negativ ist hierbei jedoch anzuführen, dass der Kaltkopf, da er nicht in die Auswertung eingeht, konstant zu halten ist und etwaige Abweichungen nicht berücksichtigt werden. Außerdem wurden in der Auswertung Bereiche ausgewählt, wo der Anstieg der Temperatur einen linearen Verlauf zeigt. Deshalb war es möglich hier auch größere Temperaturbereiche, d.h. also mehr Messpunkte zu berücksichtigen, was zu einem kleineren Fehler führt. In stark nicht linearen Gebieten, wo nur sehr kleine Ausschnitte benutzt werden können, wird das Dual-Slope Verfahren stärker fehleranfällig sein. Ein Vorteil ist jedoch, dass sich hier gut auf kleine Temperaturen bezogen werden kann, was in Anbetracht der Temperaturabhängigkeit der Wärmekapazität einen deutlichen Vorteil darstellt.
 % *********************************************
 % ***** KAPITEL 5 *****************************
 % *********************************************
