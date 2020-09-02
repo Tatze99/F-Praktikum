@@ -3,6 +3,19 @@
 \bibitem{Roempp}
 Ingrid Brehm.
 \newblock Ir-spektroskopie.
+\newblock 2017 (besucht am 14.08.2020).
+\newblock \url{https://roempp.thieme.de/lexicon/RD-09-01400}.
+
+\bibitem{Demtroder}
+Wolfgang Demtr{\"o}der.
+\newblock {\em Experimentalphysik 3: Atome, Molek{\"u}le und Festk{\"o}rper}.
+\newblock Springer-Verlag, 2016.
+
+\bibitem{Forker}
+Roman Forker.
+\newblock {\em Anleitung zum Messtechnikpraktikum: Versuch 7,
+  Lock-In-Verstärker}.
+\newblock Friedrich-Schiller-Universität Jena.
 
 \bibitem{Gunzler}
 Helmut G{\"u}nzler and Hans-Ulrich Gremlich.
@@ -11,12 +24,18 @@ Helmut G{\"u}nzler and Hans-Ulrich Gremlich.
 
 \bibitem{Hertel}
 IW~Hertel and CP~Schulz.
-\newblock Atome, molek{\"u}le und optische physik 2: Molek{\"u}le und
-  photonen-spektroskopie und streuphysik. 2010.
+\newblock {\em Atome, Molek{\"u}le und optische Physik 2: Molek{\"u}le und
+  Photonen-Spektroskopie und Streuphysik. 2010}.
+\newblock Springer: Heidelberg Dordrecht London New York.
 
 \bibitem{Hunklinger}
 Siegfried Hunklinger.
 \newblock {\em Festk{\"o}rperphysik}.
 \newblock Oldenbourg Verlag, 2009.
+
+\bibitem{Mutschke}
+Mutschke and Reichmann.
+\newblock {\em VIS-IR-Spektroskopie}.
+\newblock Friedrich-Schiller-Universität Jena, 2019.
 
 \end{thebibliography}
