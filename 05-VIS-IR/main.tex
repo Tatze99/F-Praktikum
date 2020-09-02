@@ -82,7 +82,7 @@ Zunächst wird die wellenlängenabhängige Messung mit Vakuumthermoelement reali
 \newpage
 \section{Grundlagen} \label{sec:Grundlagen}
 \subsection{Strahlungsgesetze}
-Alle Körper strahlen in Abhängigkeit zu ihrer Temperatur $T$ elektromagnetische Strahlung ab. Die dabei emittierte Energiedichte $u(\nu,T)$ lässt sich durch die von~\textsc{Max Planck} als Folge der Energiequantisierung aufgestellten Formel aus der \textsc{Heisenberg}'schen Unschärferelation und der Bose-Einstein-Verteilung für Photonen herleiten. Sie ergibt sich zu
+Alle Körper strahlen in Abhängigkeit zu ihrer Temperatur $T$ elektromagnetische Strahlung ab. Die dabei emittierte Energiedichte $u(\nu,T)$ lässt sich durch die von~\textsc{Max Planck} als Folge der Energiequantisierung aufgestellten Formel aus der \textsc{Heisenberg}'schen Unschärferelation und der Bose-Einstein-Verteilung für Photonen herleiten. Sie ergibt sich zu~\cite[75]{Demtroder}
 \begin{align}\label{eqn:2.1}
     u(\nu,T)\dd{\nu} = \frac{8\pi h \nu^3}{c^3}\frac{1}{\exp(\frac{h\nu}{k_B T})-1}\dd{\nu} \quad\text{oder}\quad u(\lambda,T)\dd{\lambda} = \frac{8\pi h c^2}{\lambda^5}\frac{1}{\exp(\frac{hc}{\lambda k_B T})-1}\dd{\lambda}.
 \end{align}
@@ -121,7 +121,7 @@ Es zeigt sich damit, dass das Produkt aus Temperatur und Wellenlänge maximaler 
 
 Die gesamte Strahlungsleistung eines schwarzen Körpers lässt sich durch die Integration von~\eqref{eqn:2.1} über den gesamten Spektralbereich und die Oberfläche des Körpers gewinnen. Sie ist durch das \textsc{Stefan-Boltzmann} Gesetz gegeben
 \begin{align}
-  P(T) = \sigma A T^4, \quad \sigma = \SI[per-mode=fraction]{5.67e-8}{\watt\per\metre\squared\per\kelvin}
+  P(T) = \sigma A T^4, \quad \sigma = \SI[per-mode=fraction]{5.67e-8}{\watt\per\metre\squared\per\kelvin}.
 \end{align}
 
 \subsection{Prismen-Spektrographen}
@@ -141,7 +141,7 @@ Der schematische Aufbau des SPM2s ist in Abbildung \ref{fig:SPM2} dargestellt. D
 \begin{wrapfigure}{r}{\textwidth/2}
     \centering
         \includegraphics[width=\textwidth/2]{Bilder/SPM2.pdf}
-    \caption{Spiegelkonfiguration des SPM2.}
+    \caption{Spiegelkonfiguration des SPM2~\cite{Mutschke}.}
     \label{fig:SPM2}
 \end{wrapfigure}
 
@@ -156,7 +156,7 @@ Dazu wird die Strahlung periodisch unterbrochen bzw. moduliert. So gelingt es, d
 \begin{figure}[ht]
     \centering
     \input{Bilder/Gleichrichtung.tex}
-    \caption{Phasenabhängigkeit der Gleichrichtung im Zeitverlauf.}
+    \caption{Phasenabhängigkeit der Gleichrichtung im Zeitverlauf~\cite{Forker}.}
     \label{fig:Lock-Inn}
 \end{figure}
 
@@ -177,28 +177,28 @@ mit $\Phi =$ Kollimatorspiegeldurchmesser/Brennweite und $b=$ Spaltbreite.
 
 \subsubsection{Spektrale Spaltbreite}
 Bei Messungen dieser Art liegt immer eine konstante geometrische Spaltbreite vor. Aufgrund der Winkeldispersion passieren diesen Spalt nicht nur Strahlen einer Wellenlänge, sondern immer die eines ganzen Wellenlängenintervalls. Dabei zeigt die Abhängigkeit der spektralen Strahlungsleistung eines engen Wellenlängenintervalls nach dem Durchgang durch einen Spalt einen charakteristischen Verlauf. Bei gleicher Eintritts- und Austrittsspaltbreite kann diese durch eine Dreiecksfunktion mit Maximum bei der eingestellten Wellenlänge beschrieben werden. Diese Funktion gibt eine Wahrscheinlichtkeitsaussage über denjenigen Strahlungsanteil, der den Detektor erreicht, an. \\
-Das Wellenlängenintervall, das diese immer gleiche geometrische Spaltbreite passiert ist jedoch auf Grund der Winkeldispersion des Prismas nicht immer gleich groß, sondern abhängig von dem Wellenlängenbereich, der betrachtet wird. So ist bei der Aufnahme der Spektralverteilung zu beachten, dass die Strahlungsdichte aus dem Planck-Gesetz von einem konstanten Wellenlängenintervall ausgeht. Um die Messwerte als mit den Theoriewerten in Deckung zu bringen, ist eine Korrektur durch Division $\Delta \lambda$ = const$\cdot \dv{\lambda}{l}$ nötig, wobei $\dd{l}$ die infinitesimale Änderung der Schraubeneinstellung darstellt.
+Das Wellenlängenintervall, das diese immer gleiche geometrische Spaltbreite passiert, ist jedoch auf Grund der Winkeldispersion des Prismas nicht immer gleich groß, sondern abhängig von dem Wellenlängenbereich, der betrachtet wird. So ist bei der Aufnahme der Spektralverteilung zu beachten, dass die Strahlungsdichte aus dem Planck-Gesetz von einem konstanten Wellenlängenintervall ausgeht. Um die Messwerte mit den Theoriewerten in Deckung zu bringen, ist eine Korrektur durch Division $\Delta \lambda$ = const$\cdot \dv{\lambda}{l}$ nötig, wobei $\dd{l}$ die infinitesimale Änderung der Schraubeneinstellung darstellt.
 
-\subsection{Empfänger}\label{sec:Empfänger)}
-\subsubsection{Thermische Detektoren}
+\subsection{Empfänger}
+\subsubsection{Thermische Detektoren}\label{sec:Empfänger}
 Thermische Detektoren beruhen auf der Messung von Effekten, die aufgrund der Temperaturänderung nach Strahlungseinfall enstehen. Deshalb ist das so entstehende Photosignal nur vom auftreffenden Strahlungsfluss abhängig und deshalb wellenlängenunabhängig. \\
 Je nach ausgenutzten Effekt unterscheidet man unterschiedliche thermische Detektoren. Das \emph{Thermoelement} nutzt die temperaturabhängige Änderung der Thermospannung, die sich an der Kontaktstelle zweier verschiedener Materialien ergibt, da deren Ferminiveaus sich bei Änderung der Temperatur materialspezifisch verschieben.
 Die Widerstandsänderung eines elektrischen Leiters aufgrund der Temperaturänderung durch Strahlungsabsorption zu messen, ist das Prinzip des \emph{Bolometers}.
-\emph{Pyroelektrische Strahlunsgempfänger} nutzen den Effekt aus, dass bei ferromagnetischen Materialien unterhalb des \textsc{Curie}-Punktes Polarisationsänderungen auftreten. Die bei bestimmten Materialien auftretende spontane Polarisation kann als elektrisches Signal gemessen werden. Der \emph{Golay-Detektor} beruht auf der Änderung des Gasdruckes durch die Absorptionswärme. Diese verformt einen flexiblen Spiegel, der Teil eines optisches Systems ist, welches in Folge dessen eine Änderung registriert.
+\emph{Pyroelektrische Strahlunsgempfänger} nutzen den Effekt aus, dass bei ferromagnetischen Materialien unterhalb des \textsc{Curie}-Punktes Polarisationsänderungen auftreten. Die bei bestimmten Materialien auftretende spontane Polarisation kann als elektrisches Signal gemessen werden. Der \emph{Golay-Detektor} beruht auf der Änderung des Gasdruckes durch die Absorptionswärme. Diese verformt einen flexiblen Spiegel, der Teil eines optisches Systems ist, welches in Folge dessen eine Änderung registriert~\cite{Gunzler}.
 
 \subsubsection{Photodetektoren}
-Auch hier können zwei unterschiedliche Effekte genutzt werden.\\
+Auch hier können zwei unterschiedliche Effekte genutzt werden~\cite{Gunzler}.\\
 \emph{Photoleitfähigkeit}: Die einfallende Strahlung erzeugt Elektronen-Loch-Paare. Dadurch ändert sich die elektrische Leitfähigkeit eines Halbleiters beim Einfall von Strahlung. Das Photosignal wird dann entweder als Spannungsänderung über einen Widerstand abgenommen oder als Stromänderung gemessen. \\
 \emph{Photospannung}: Detektoren, die auf diesem Effekt beruhen, bestehen aus einer n- sowie einer p-Schicht. Durch die einfallende Strahlung bildet sich ein Ladungsträgerpaar, welches über die n- und p-Grenzschicht getrennt wird und damit eine elektrische Spannung entsteht, die gemessen wird. \\
 Photodetektoren haben eine höhere Empfindlichkeit, als thermische Detektoren, sind aber aufgrund der Notwenigkeit der Überwindung der Bandlücke wellenlängenabhängig in ihrer Empfindlichkeit.
 
 \subsubsection{Spektrale Empfindlichkeit}
 Weil thermische Empfänger ausschließlich auf Effekten beruhen, die aufgrund einer Temperaturänderung auftreten, ist die Empfindlichkeit dieser Empfänger wellenlängenunabhängig. Anders verhält es sich mit den Halbleiterdetektoren. Da es bei diesen nur dann zur Entstehung eines Signals kommen kann, wenn die Energie aufgebracht wird, um ein Elektron vom Valenz- ins Leitungsband zu heben, also wenn mindestens die Bandlückenenergie aufgebracht wird, zeigen diese Detektoren eine Wellenlängenabhängigkeit. \\
-Die spektrale Empfindlichkeit $r(\lambda)$ eines Empfängern bei der Wellenlänge $\lambda$ ist definiert als Verhältnis der vom Empfänger abgegebenen Messgröße $M(\lambda)$ (z.B. Spannung, Strom, Ausschlag) zu der Strahlungsleistung $P_S(\lambda)$:
+Die spektrale Empfindlichkeit $r(\lambda)$ eines Empfängern bei der Wellenlänge $\lambda$ ist definiert als Verhältnis der vom Empfänger abgegebenen Messgröße $M(\lambda)$ (z.B. Spannung, Strom, Ausschlag) zu der Strahlungsleistung $P_S(\lambda)$~\cite{Mutschke}:
 \begin{align}
   r(\lambda) = \frac{M(\lambda)}{P_S(\lambda)}
 \end{align}
-Da die Empfindlichkeit des Thermoelements, wie in Abschnitt \ref{sec:Empfänger} verdeutlicht, wellenlängenunabhängig ist, gibt der Verlauf der Messung mit dem Thermoelement den Verlauf von $P_S(\lambda)$ wieder. So ergibt sich, dass die $r(\lambda)$ gemessen werden kann, indem die Messung einmal mit dem zu vermessenden (Halbleiter-)Empfänger, sowie anschließend mit dem Thermoelement durchgeführt wird und die spektrale Empfindlichkeit dann berechnet werden kann als
+Da die Empfindlichkeit des Thermoelements, wie in Abschnitt \ref{sec:Empfänger} verdeutlicht, wellenlängenunabhängig ist, gibt der Verlauf der Messung mit dem Thermoelement den Verlauf von $P_S(\lambda)$ wieder. So ergibt sich, dass die spektrale Empfindlichkeit $r(\lambda)$ gemessen werden kann, indem die Messung einmal mit dem zu vermessenden (Halbleiter-)Empfänger, sowie anschließend mit dem Thermoelement durchgeführt wird und die spektrale Empfindlichkeit dann berechnet werden kann als
 \begin{align}
   r(\lambda) = \frac{A_\text{Empfänger}(\lambda)}{A_\text{Thermoelement}(\lambda)}
 \end{align}
@@ -215,6 +215,7 @@ Damit ein Photon von einem Molekül absorbiert werden kann, muss ein entsprechen
   \centering
   \includegraphics{Bilder/Rotationsschwingung.pdf}
   \caption{Simulierte Rotationsschwingungsbande für \ce{CO} im elektronischen Grundzustand nach~\cite{Hertel}. Es findet ein Schwingungsübergang bei einer Temperatur von \SI{293}{\kelvin} statt. Der Einschub zeigt auch die zweite harmonische ($\nu=2 \to \nu=0$).}
+  \label{Rotationsschwingung}
 \end{figure}
 
 Für komplexere Moleküle werden die Schwingungsübergänge zu verschiedenen Gruppen zusammengefasst. So können einerseits Valenzschwingungen entlang der Bindungsachse auftreten (Streckschwingungen) oder Schwingungen mit Deformation der Kernverbindungsachse (Deformationsschwingungen).
