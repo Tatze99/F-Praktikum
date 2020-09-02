@@ -57,7 +57,7 @@
 
 \subsection{Aufbau geeigneter Tieftemperaturmesstechnik}
 
-Es werden Widerstandsthermometer Pt 100 und Pt 1000, sowie Siliziumdioden als Sekundärthermometer verwendet. Es soll die Anfangstemperatur an den Sensoren auf folgende Weisen vermessen werden:
+Es werden Widerstandsthermometer Pt100 und Pt1000, sowie Siliziumdioden als Sekundärthermometer verwendet. Es soll die Anfangstemperatur an den Sensoren auf folgende Weisen vermessen werden:
 \begin{enumerate}
   \item Zweileiterschaltung mit Temperaturmessfunktion des Digitalvoltmeters (DVM), einmal ohne und einmal mit Kompensation des Messleitungswiderstandes.
   \item Zweileiterschaltung mit Konstantstromquelle und Spannungsmessung mit DVM.
@@ -98,13 +98,13 @@ Es wird eine thermische Zyklierung der Probenkörper aus Kupfer und Blei realisi
 \subsection{Eigenschaften von Halbleitern}
 Für einzelne Atome lassen sich mithilfe der \textsc{Schrödinger}-Gleichung diskrete Energieniveaus für die im Atom befindlichen Elektronen berechnen. Nähern sich zwei Atome einander an, dann verschieben sich die Energieniveaus aufgrund der elektrostatischen Wechselwirkung der vorhandenen Elektronen. Für einen Kristall mit einer Vielzahl an Atomen verschmieren schließlich die Energieniveaus zu sogenannten Energiebändern. Zwischen diesen treten verbotene Zonen elektrischer Zustände der Elektronen auf.
 
-Das höchste, bei $T=\SI{0}{\kelvin}$ besetzte Energieband ist das Valenzband und das darüberliegende energiereichere Band wird Letungsband genannt. Die Energiedifferenz zwischen Leitungsbandunterkante $E_L$ und Valenzbandoberkante $E_V$ ist die Bandlücke $E_g$ und charakterisiert die Eigenschaften des Festkörpers. Je nach Größe der Bandlücke wird zwischen Nicht-, Halbleitern und Leitern unterschieden, wie Abbildung~\ref{fig:Bandschema} zeigt.
+Das höchste, bei $T=\SI{0}{\kelvin}$ besetzte Energieband ist das Valenzband und das darüberliegende energiereichere Band wird Leitungsband genannt. Die Energiedifferenz zwischen Leitungsbandunterkante $E_L$ und Valenzbandoberkante $E_V$ ist die Bandlücke $E_g$ und charakterisiert die Eigenschaften des Festkörpers. Je nach Größe der Bandlücke wird zwischen Nicht-, Halbleitern und Leitern unterschieden, wie Abbildung~\ref{fig:Bandschema} zeigt.
 
 \input{Bilder/Bändermodell.tex}
 
-Eine endliche Leitfähigkeit von Halbleitern kann erreicht werden, indem Elektronen die nötige Energie zugeführt wird, um die Bandlücke zu überwinden. Dies kann durch thermische Anregung $E_\text{th} = k_B T$ geschehen, was bei Zimmertemperatur etwas $\SI{25}{\milli\electronvolt}$ sind. Dies reicht nicht aus, um Eigenleitung im typischen Halbleiter zu erzeugen.
+Eine endliche Leitfähigkeit von Halbleitern kann erreicht werden, indem Elektronen die nötige Energie zugeführt wird, um die Bandlücke zu überwinden. Dies kann durch thermische Anregung $E_\text{th} = k_B T$ geschehen, was bei Zimmertemperatur $\SI{25}{\milli\electronvolt}$ entspricht. Dies reicht nicht aus, um Eigenleitung im typischen Halbleiter zu erzeugen.
 
-Im realen Halbleiter treten immer Verunreinigungen durch Fremdatome auf, die die Leitfähigkeit erhöhen. Oft wird dieser Effekt gezielt durch das Einbringen Dotieratomen genutzt. Das Dotieratome verdrängt dabei ein Atom aus dem Kristallgitter. Es lässt sich zwischen zwei Arten unterscheiden:
+Im realen Halbleiter treten immer Verunreinigungen durch Fremdatome auf, die die Leitfähigkeit erhöhen. Oft wird dieser Effekt gezielt durch das Einbringen von Dotieratomen genutzt. Das Dotieratom verdrängt dabei ein Atom aus dem Kristallgitter. Es lässt sich zwischen zwei Arten unterscheiden:
 \begin{enumerate}
   \item p-Dotierung: Ein Atom mit weniger Valenzelektronen wird eingebracht. Es entsteht ein Elektronenloch, was durch benachbarte Elektronen besetzt werden kann und einen Stromfluss erzeugt.
   \item n-Dotierung: Ein Atom mit mehr Valenzelektronen wird eingebracht. Das zusätzliche Elektron ist schwächer gebunden und kann sich im Halbleiter frei bewegen.
@@ -127,9 +127,9 @@ Mit der Beziehung $\sigma = 1/\varrho \propto 1/R$ folgt
 \begin{align}\label{eqn:Anstieg_Bandlücke}
   \frac{1}{R} = \frac{1}{R_0} \exp\qty(\frac{\Delta E}{k_B T}) \quad \Rightarrow \quad \ln\qty(\frac{R_0}{R}) = -\frac{\Delta E}{k_B}\frac{1}{T}.
 \end{align}
-Aus dem linearen Fit des Anstieges $-\Delta E/k_B$ lässt sich die Bandlücke ablesen. Im Praktikum werden zur Messung Widerstandsthermometer wie Pt 100 bzw. Pt 1000 verwendet, welche bei $T = \SI{273}{\kelvin}$ einen Widerstand von \SI{100}{\ohm} bzw. \SI{1000}{\ohm} besitzen. Die Temperaturabhängigkeit dieser Stoffe ist genau dokumentiert. Somit lässt sich unter Voraussetzung, dass sich Thermometer und Probe im thermischen Gleichgewicht befinden, die Energielücke $\Delta E$ im Halbleiter bestimmen.
+Aus dem linearen Fit des Anstieges $-\Delta E/k_B$ lässt sich die Bandlücke ablesen. Im Praktikum werden zur Messung Widerstandsthermometer wie Pt100 bzw. Pt1000 verwendet, welche bei $T = \SI{273}{\kelvin}$ einen Widerstand von \SI{100}{\ohm} bzw. \SI{1000}{\ohm} besitzen. Die Temperaturabhängigkeit dieser Stoffe ist genau dokumentiert. Somit lässt sich unter Voraussetzung, dass sich Thermometer und Probe im thermischen Gleichgewicht befinden, die Energielücke $\Delta E$ im Halbleiter bestimmen.
 
-In Metallen ist das Verhalten des Widerstands $R$ anders. Für hohe Temperaturen wird der Elektronenfluss durch Streuung an Phononen verhindert, dessen Einfluss proportional zur Temperatur verläuft. Für tiefe Temperaturen dominiert die Streuung der Elektronen an Defekten im Metall, insgesamt ergibt sich eine $T^5$-Proportionalität aufweist. Für den Grenzfall $T \to 0$ tritt nach der \textsc{Matthiesen}'schen Regel ein \emph{Restwiderstand} auf, da die Streuung an Defekten temperaturunabhängig ist~\cite{Hunklinger}. Der Restwiderstand unterscheidet Metalle von Supraleitern unterscheidet. Die Temperaturabhängigkeit des elektrischen Widerstands für verschiedene Festkörper zeigt Abbildung~\ref{fig:Elektrischer_Widerstand}.
+In Metallen ist das Verhalten des Widerstands $R$ anders. Für hohe Temperaturen wird der Elektronenfluss durch Streuung an Phononen verhindert, dessen Einfluss proportional zur Temperatur verläuft. Für tiefe Temperaturen dominiert die Streuung der Elektronen an Defekten im Metall, insgesamt ergibt sich eine $T^5$-Proportionalität. Für den Grenzfall $T \to 0$ tritt nach der \textsc{Matthiesen}'schen Regel ein \emph{Restwiderstand} auf, da die Streuung an Defekten temperaturunabhängig ist~\cite{Hunklinger}. Der Restwiderstand unterscheidet Metalle von Supraleitern. Die Temperaturabhängigkeit des elektrischen Widerstands für verschiedene Festkörper zeigt Abbildung~\ref{fig:Elektrischer_Widerstand}.
 
 \input{Bilder/Elektrischer_Widerstand}
 \FloatBarrier
@@ -139,7 +139,7 @@ Die spezifische Wärme wird in Festkörpern durch thermisch angeregte Phononen b
 \begin{align}
   C_V = \qty(\pdv{U}{T})_V.
 \end{align}
-Beide Größen können mithilfe der Kenntnis des linearen Ausdehnungskoeffizienten $\alpha$ und der Kompressibilität $\kappa$ in einander überführt werden
+Beide Größen können mithilfe der Kenntnis des linearen Ausdehnungskoeffizienten $\alpha$ und der Kompressibilität $\kappa$ in einander überführen
 \begin{align}
   C_P - C_V = 9 \alpha^2 \frac{V T}{\kappa}.
 \end{align}
@@ -149,9 +149,9 @@ Die klassische Betrachtungsweise geht von $3N$-Schwingungsfreiheitsgraden der At
 \begin{align}
   C_V = 3 N k_B \approx  \SI{25}{\joule\per\mole\per\kelvin}, \quad \emph{Dulong-Petit-Gesetz}.
 \end{align}
-Dieser konstante Wert für alle Festkörper gilt jedoch nur für hohe Temperaturen. Experimentell zeigt sich nämlich, dass für $T \to 0$ die spezifische Wärme verschwindet $C_V \to 0$.
+Dieser konstante Wert aller Festkörper gilt jedoch nur für hohe Temperaturen. Experimentell zeigt sich nämlich, dass für $T \to 0$ die spezifische Wärme verschwindet $C_V \to 0$.
 
-Die beobachtete starke Abnahme der spezifischen Temperatur wurde 1907 von \textsc{Einstein} erklärt. Er nahm an, dass die Atome als ungekoppelte, harmonische Oszillatoren mit einheitlicher Eigenfrequenz $\Omega$ aufgefasst werden können. Mithilfe der \textsc{Boltzmann}-Verteilung lässt sich die innere Energie der Oszillatoren berechnen, woraus für die spezifische Wärme folgt~\cite{Demtröder3}.
+Die beobachtete starke Abnahme der spezifischen Temperatur wurde 1907 von \textsc{Einstein} erklärt. Er nahm an, dass die Atome als ungekoppelte, harmonische Oszillatoren mit einheitlicher Eigenfrequenz $\Omega$ aufgefasst werden können. Mithilfe der \textsc{Boltzmann}-Verteilung lässt sich die innere Energie der Oszillatoren berechnen, woraus für die spezifische Wärme folgt~\cite{Demtroeder3}.
 \begin{align}
   C_V = 3R\frac{\Theta^2}{T^2} \frac{\exp\qty(\frac{\Theta}{T})}{\exp(\frac{\Theta}{T}-1)^2}, \quad \Theta = \frac{\hbar \Omega}{k_B}.
 \end{align}
@@ -181,23 +181,23 @@ was mit den experimentellen Messungen der spezifischen Wärme für Festkörper �
 \subsection{Erzeugung tiefer Temperaturen}
 Zur Erzeugung kryogener Temperaturen im Labor werden Kleinkältemaschinen oder tiefsiedende Gase in Kryostaten verwendet. Beides findet im Versuch Anwendung, wobei als Kältemaschine die Giffhord-McMahon Kältemaschine zum Einsatz kommt, deren Funktionsprinzip im Folgenden erläutert wird.
 \paragraph{Giffhord-McMahon-Verfahren}
-Das Giffhord McMahon Verfahren ist ein Prozess regenerativer Wärmeübertragung. Charakteristisch für diese Art von Kältemaschinen ist der Aufbau, der in Abbildung \ref{fig:Kältemaschine}, dargestellt ist, bestehend aus einem Verdränger, einem Regenerator, einem kalten und einem warmen Arbeitsraum.
+Das Giffhord McMahon Verfahren ist ein Prozess regenerativer Wärmeübertragung. Charakteristisch für diese Art von Kältemaschinen ist der Aufbau, der in Abbildung \ref{fig:Kältemaschine} dargestellt ist, bestehend aus einem Verdränger, einem Regenerator, einem kalten und einem warmen Arbeitsraum.
 
 \begin{figure}[htp]
     \centering
         \includegraphics[height=0.9\textwidth, angle=90]{Bilder/Kalteprozess regenerativer Wärmeübertragung.pdf}
-    \caption{Schema eines Kälteprozesses mit regenerativer Wärmeübertragung}
+    \caption{Schema eines Kälteprozesses mit regenerativer Wärmeübertragung~\cite{Frey}.}
     \label{fig:Kältemaschine}
 \end{figure}
 
 
-Das Schlüsselelement ist der Regenerator, der ein Wärmespeicher mit großer Wärmekapazität und großer Wärmeübertragungsfläche ist und den warmen und den kalten Arbeitsraum miteinander verbindet. An ihm liegt im Betriebszustand ein Temperaturgefälle $T_W - T_C$ vor. Bewegt sich der Verdränger nach unten, strömt das Gas über den Regenerator, wo es sich abkühlt, in den kalten Arbeitsraum. Durch die Abkühlung fällt der Druck im isochoren System. Wird der Verdränger nun aufwärts bewegt, wird das kalte Gas erneut über den Regenernator, wo es sich nun aufwärmt, in den warmen Arbeitsraum gedrückt. Durch die Erwärmung steigt der Druck. Es lässt sich zeigen, dass in diesem System $\dot{Q} = 0 $ gilt. Um $\dot{Q} \neq 0 $ zu erreichen, bedarf es der Aufbringung von Arbeit in Form von Druckvariationen, die gegenüber den Variationen der Verdrängerposition eine geeignete Phasenverschiebung $\phi \neq 0$ oder $\pi$ haben. \\
-Je nach Realisierung dieser Druckänderung unterscheidet man die unterschiedlichen Prozesse: der Stirling-Prozess, der Vuilleumier-Prozess sowie der Giffhord-McMahon-Prozess. Beim Giffhord-McMahon-Prozess wird die Druckvariation durch einen Kompressor erreicht. Dieser ist abwechselnd mit dessen Hoch-bzw. Niederdruckseite mit dem System verbunden und sorgt dabei für Druckvariationen durch die Variation des Gasinhaltes des Systems, wie in Abbildung \ref{fig:Giffhord-McMahon} zu sehen ist.
+Das Schlüsselelement ist der Regenerator, der ein Wärmespeicher mit großer Wärmekapazität und großer Wärmeübertragungsfläche ist und den warmen und kalten Arbeitsraum miteinander verbindet. An ihm liegt im Betriebszustand ein Temperaturgefälle $T_W - T_C$ vor. Bewegt sich der Verdränger nach unten, strömt das Gas über den Regenerator, wo es sich abkühlt, in den kalten Arbeitsraum. Durch die Abkühlung fällt der Druck im isochoren System. Wird der Verdränger nun aufwärts bewegt, wird das kalte Gas erneut über den Regenernator, wo es sich nun aufwärmt, in den warmen Arbeitsraum gedrückt. Durch die Erwärmung steigt der Druck. Es lässt sich zeigen, dass in diesem System $\dot{Q} = 0 $ gilt. Um $\dot{Q} \neq 0 $ zu erreichen, bedarf es der Aufbringung von Arbeit in Form von Druckvariationen, die gegenüber den Variationen der Verdrängerposition eine geeignete Phasenverschiebung $\phi \neq 0$ oder $\pi$ haben~\cite{Frey}. \\
+Je nach Realisierung dieser Druckänderung unterscheidet man die unterschiedlichen Prozesse: der Stirling-Prozess, der Vuilleumier-Prozess sowie der Giffhord-McMahon-Prozess. Beim Giffhord-McMahon-Prozess wird die Druckvariation durch einen Kompressor erreicht. Dieser ist abwechselnd mit dessen Hoch- bzw. Niederdruckseite mit dem System verbunden und sorgt dabei für Druckvariationen durch die Variation des Gasinhaltes des Systems, wie in Abbildung \ref{fig:Giffhord-McMahon} zu sehen ist.
 
 \begin{figure}[htp]
     \centering
         \includegraphics[height=0.9\textwidth, angle =90.7]{Bilder/McMahanMaschine.pdf}
-    \caption{Schema eines Giffhord-McMahan Prozesses}
+    \caption{Schema eines Giffhord-McMahon Prozesses~\cite{Frey}.}
     \label{fig:Giffhord-McMahon}
 \end{figure}
 
@@ -209,7 +209,7 @@ Wenn die Temperatur der wärmeabgebenden Oberfläche höher ist als die Siedetem
 \begin{figure}[htp]
     \centering
         \includegraphics[width=0.6\textwidth]{Bilder/Filmsieden_Blasensieden.pdf}
-    \caption{verschiedene Siedezustände am Beispiel von Stickstoff}
+    \caption{Verschiedene Siedezustände am Beispiel von Stickstoff~\cite{Fastowski}.}
     \label{fig:Wärmestromdichte}
 \end{figure}
 
@@ -221,27 +221,27 @@ Letztere bestimmt wesentlich die Abkühlgeschwindigkeit der Probe und wird durch
 
 \subsection{Bestimmung der Wärmekapazität}
 \subsubsection{Vermessen der Abkühlkurve}\label{sec:CV_Abkühlkurve}
-Zur Bestimmung der Wärmekapazität wird eine Analogie zwischen Wärme- und Stromfluss herangezogen. Der Temperaturdifferenz zwischen Probenblock und Kaltkopf $\Delta T $ entspricht der Potentialdifferenz $\Delta U$, das Analogon des durch die Probenheizung verursachten Wärmestroms $\dot{Q}$ ist der Strom, die Probe dient als Wärmespeicher, was der Funktion eines Kondensators entspricht und die Probenhalterung, über die die Wärme abfließen kann, entspricht den thermischen Widerständen $R_th$. In dieser Analogie entspricht der Abkühlprozess dem Entladen eines Kondensators und kann deshalb, kühlt die Probe ohne angelegte Heizleistung ab, beschrieben werden durch
+Zur Bestimmung der Wärmekapazität wird eine Analogie zwischen Wärme- und Stromfluss herangezogen. Der Temperaturdifferenz zwischen Probenblock und Kaltkopf $\Delta T $ entspricht der Potentialdifferenz $\Delta U$, das Analogon des durch die Probenheizung verursachten Wärmestroms $\dot{Q}$ ist der Strom, die Probe dient als Wärmespeicher, was der Funktion eines Kondensators entspricht und die Probenhalterung, über die die Wärme abfließen kann, entspricht den thermischen Widerständen $R_{th}$. In dieser Analogie entspricht der Abkühlprozess dem Entladen eines Kondensators und kann deshalb, kühlt die Probe ohne angelegte Heizleistung ab, beschrieben werden durch
 \begin{align}
   \Delta T = \Delta T_0 \exp{-\frac{t}{C\cdot R_{th}}} \quad \text{bzw.} \quad ln\Delta T = ln \Delta T_0 - \frac{1}{C\cdot R_{th}}
 \end{align}
 bzw. wenn eine konstante Heizleistung angelegt wird, die dem Abkühlen entgegen wirkt, ausgedrückt werden durch
 \begin{align}
-  \Delta T - T_A = \Delta T_0 \exp{-\frac{t}{C\cdot R_{th}}} \quad \text{bzw.} \quad ln\Delta T -T_A= ln \Delta T_0 - \frac{1}{C\cdot R_{th}}
+  \Delta T - T_A = \Delta T_0 \exp{-\frac{t}{C\cdot R_{th}}} \quad \text{bzw.} \quad \ln\Delta T -T_A= \ln \Delta T_0 - \frac{1}{C\cdot R_{th}}
 \end{align}
 
 So kann durch Plotten des Logarithmus naturalis der Temperaturdifferenz $\Delta T$ bzw. der Temperaturdifferenz verringert um die Ausgleichstemperatur und Bestimmung des Anstieges mit bekanntem $R_{th}$ die Wärmekapazität bestimmt werden. \\
 Dabei ergibt sich $R_{th}$ als
 \begin{align}
-  R_{th} = \frac{\Delta T_0}{\cdot{Q}}
+  R_{th} = \frac{\Delta T_0}{\dot{Q}}
 \end{align}
-wobei $\cdot{Q}$ die Heizleistung ist, mit der die Probe beaufschlagt wird und $T_0$ die Temperatur, die sich nach gewisser Temperatur einstellt. $R_{th}$ bezieht sich im Experiment immer auf den vorm Abkühlen eingestellten stabilen Zustand.
+wobei $\dot{Q}$ die Heizleistung ist, mit der die Probe beaufschlagt wird und $T_0$ die Temperatur, die sich nach gewisser Temperatur einstellt. $R_{th}$ bezieht sich im Experiment immer auf den vorm Abkühlen eingestellten stabilen Zustand.
 
 \subsubsection{Dual-Slope-Verfahren}\label{sec:Dual-Slope}
-Eine weitere Möglichkeit die Wärmekapazität zu bestimmen, ist das Dual-Slop-Verfahren. Hierbei werden der Heiz- sowie der Kühlvorgang einer Probe betrachtet. Bei der jeweils gleichen Temperatur lassen sich folgende Bilanzen aufstellen
+Eine weitere Möglichkeit die Wärmekapazität zu bestimmen, ist das Dual-Slope-Verfahren~\cite{Riegel}. Hierbei werden der Heiz- sowie der Kühlvorgang einer Probe betrachtet. Bei der jeweils gleichen Temperatur lassen sich folgende Bilanzen aufstellen
 \begin{align}
   C(T)\dot{T}^h (T) = \dot{Q}_{h,1} (T) - \dot{Q}_0(T)+\dot{Q}_P (T)\\
-  C(T)\dot{T}^c (T) = \dot{Q}_{h,2} (T) - \dot{Q}_0(T)+\dot{Q}_P (T)
+  C(T)\dot{T}^c (T) = \dot{Q}_{h,2} (T) - \dot{Q}_0(T)+\dot{Q}_P (T).
 \end{align}
 
 Hier muss beachtet werden, dass sich im Falle eines Abkühlens ohne Restheizen, $\dot{Q}_{h,2}$ zu Null ergibt.\\
@@ -250,7 +250,7 @@ Damit ergibt sich für die Wärmekapazität
   C(T) = \frac{\dot{Q}_{h,1}-\dot{Q}_{h,2}}{\dot{T}_h - \dot{T}_c}
 \end{align}
 
-In der Auswertung kann also ein kleiner Bereich der Temperatur sowohl im Aufheiz-, als auch im Abkühlvorgang betrachtet werden, der so klein ist, dass angenommen werden kann, dass hier der Anstieg, also die Ableitung, einer konstanten entspricht und damit $\dot{T}^(h/c)$ berechnet werden.
+In der Auswertung kann also ein kleiner Bereich der Temperatur sowohl im Aufheiz-, als auch im Abkühlvorgang betrachtet werden, der so klein ist, dass angenommen werden kann, dass hier der Anstieg, also die Ableitung, einer Konstanten entspricht und damit $\dot{T}_{h/c}$ berechnet werden.
 
 % *********************************************
 % ***** KAPITEL 4 *****************************
@@ -273,9 +273,9 @@ Zu Beginn wird die Anfangstemperatur an den Platinwiderständen direkt mit der T
       \toprule
       Widerstand & {Kompensation} & Temperatur \\
       \midrule
-      Pt 100 & 0\,\si{\ohm} & \SI{35.1}{\celsius}\\
+      Pt100 & 0\,\si{\ohm} & \SI{35.1}{\celsius}\\
       & 4.9\,\si{\ohm} & \SI{22.4}{\celsius}\\
-      Pt 1000 & 0\,\si{\ohm} & \SI{23.1}{\celsius}\\
+      Pt1000 & 0\,\si{\ohm} & \SI{23.1}{\celsius}\\
       & 4.9\,\si{\ohm} & \SI{21.9}{\celsius}\\
       \bottomrule
     \end{tabular}
@@ -299,25 +299,25 @@ Für die Messung wurde eine regelbare Konstantstromquelle verwendet. Die Vermess
       \toprule
       Widerstand & Schaltung & {$I$ [\si{\micro\ampere}]} & {$U$ [\si{\milli\volt}]} & {$R$ [\si{\ohm}]} & {$T$ [\si{\kelvin}]} & $\vartheta$ [\si{\celsius}]\\
       \midrule
-      Pt 100 & Zweileiter & 100 & 11.328 & 113.33 & 307.4 & 34.3 \\
+      Pt100 & Zweileiter & 100 & 11.328 & 113.33 & 307.4 & 34.3 \\
        & & 10 & 1.130 & 113.00 & 306.6 & 33.4 \\
        & & 5 & 0.567 & 113.40 & 307.6 & 34.5 \\
       & Vierleiter & 100 & 10.862 & 108.86 & 295.9 & 22.8 \\
       & & 10 & 1.084 & 108.40 & 294.7 & 21.6 \\
       & & 5 & 0.545 & 109.00 & 296.3 & 23.1\\
       \midrule
-      Pt 1000 & Zweileiter & 100 & 108.621 & 108.62 & 295.2 & 22.1 \\
+      Pt1000 & Zweileiter & 100 & 108.621 & 108.62 & 295.2 & 22.1 \\
       & & 10 & 10.8 & 108.00 & 293.7 & 20.5 \\
       & & 5 & 5.402 & 108.04 & 293.7 & 20.5 \\
       \bottomrule
     \end{tabular}
 \end{table}
 
-Es zeigt sich auch hier, dass die gemessene Temperatur des Pt 100 in Zweileiterschaltung zu groß ist, was durch endlichen Leitungswiderstände hervorgerufen wird. Wird die Schaltung jedoch als Vierleiterschaltung aufgebaut, kann das Problem der Leitungswiderstände umgangen werden. Einen Vergleich von Zwei- und Vierleiterschaltung zeigt Abbildung~\ref{fig:Schaltung}
+Es zeigt sich auch hier, dass die gemessene Temperatur des Pt100 in Zweileiterschaltung zu groß ist, was durch die endlichen Leitungswiderstände hervorgerufen wird. Wird die Schaltung jedoch als Vierleiterschaltung aufgebaut, kann das Problem der Leitungswiderstände umgangen werden. Einen Vergleich von Zwei- und Vierleiterschaltung zeigt Abbildung~\ref{fig:Schaltung}.
 
 \input{Bilder/Schaltung.tex}
 
-Für den Pt 1000 Widerstand konnte aufgrund des Aufbaus keine Messung in Vierleiterschaltung durchgeführt werden. Allerdings sind hier die Auswirkungen des Leitungswiderstandes um das zehnfache geringer. Es zeigt sich, dass eine große Temperaturauflösung durch die Wahl eines größeren Stromes erzielt werden kann, da hierbei eine kleinere Spannungsänderung noch durch das Digitalmultimeter aufgelöst werden kann. Jedoch steigt die Heizleistung $P = I R^2$ linear mit der Stromstärke an. Für hohe Stromstärken heizt sich der Temperaturfühler auf und gerät mit der zu messenden Probe aus dem thermischen Gleichgewicht. Die Messung wird verfälscht.
+Für den Pt1000 Widerstand konnte aufgrund des Aufbaus keine Messung in Vierleiterschaltung durchgeführt werden. Allerdings sind hier die Auswirkungen des Leitungswiderstandes um das zehnfache geringer. Es zeigt sich, dass eine große Temperaturauflösung durch die Wahl eines größeren Stromes erzielt werden kann, da hierbei eine kleinere Spannungsänderung noch durch das Digitalmultimeter aufgelöst werden kann. Jedoch steigt die Heizleistung $P = I R^2$ linear mit der Stromstärke an. Für hohe Stromstärken heizt sich der Temperaturfühler auf und gerät mit der zu messenden Probe aus dem thermischen Gleichgewicht. Die Messung wird verfälscht.
 
 Zur Bestimmung des optimalen Stroms der Konstantstromquelle wird zunächst eine Überlegung durchgeführt, welche Temperaturauflösung gewünscht ist. Für die Messung wurde eine Auflösung von $\Delta T = \SI{0.1}{\kelvin}$ angepeilt. Ein Vergleich mit den Kalibrierungsdaten zeigt, dass der lineare Anstieg des Widerstandes
 \begin{align}
@@ -359,13 +359,14 @@ Es zeigt sich, dass die Messwerte für beide Schaltungstypen beinahe identisch s
 
 \input{Bilder/Temperaturvergleich.tex}
 
-In diesem Versuchsteil wurde der temperaturabhängige Widerstand eines golddotierten Germaniumhalbleiters untersucht. Dieser weist, wie in Abschnitt~\ref{sec:Widerstand} erläutert, eine exponentielle Abhängigkeit von der Temperatur auf. Der Halbleiter wurde in einem Zeitraum von \SI{2.5}{\hour} kontinuierlich mithilfe einer Gifford-McMahon Kleinkältemaschine von Zimmertemperatur auf \SI{80}{\kelvin} abgekühlt. Zur Aufzeichnung der Temperatur wurden ein Pt 100 Widerstand in Vierleiterschaltung, ein Pt 1000 Widerstand in Zweileiterschaltung und eine Siliziumdiode verwendet. Für die Datenauswertung wurde die Diode verwendet, da aufgrund der großen Änderung des Widerstands bei kryogenen Temperaturen die Temperaturbestimmung am genauesten erfolgt. Ein Vergleich der drei Temperaturbestimmungsarten in Abbildung~\ref{fig:Temperaturvergleich} zeigt jedoch, dass alle drei Widerstandsthermometer fast identische Temperaturwerte liefern, die sich maximal um \SI{\pm1}{\kelvin} unterscheiden.
+In diesem Versuchsteil wurde der temperaturabhängige Widerstand eines golddotierten Germaniumhalbleiters untersucht. Dieser weist, wie in Abschnitt~\ref{sec:Widerstand} erläutert, eine exponentielle Abhängigkeit von der Temperatur auf. Der Halbleiter wurde in einem Zeitraum von \SI{2.5}{\hour} kontinuierlich mithilfe einer Gifford-McMahon Kleinkältemaschine von Zimmertemperatur auf \SI{80}{\kelvin} abgekühlt. Zur Aufzeichnung der Temperatur wurden ein Pt100 Widerstand in Vierleiterschaltung, ein Pt1000 Widerstand in Zweileiterschaltung und eine Siliziumdiode verwendet. Für die Datenauswertung wurde die Diode verwendet, da aufgrund der großen Änderung des Widerstands bei kryogenen Temperaturen die Temperaturbestimmung am genauesten erfolgt. Ein Vergleich der drei Temperaturbestimmungsarten in Abbildung~\ref{fig:Temperaturvergleich} zeigt jedoch, dass alle drei Widerstandsthermometer fast identische Temperaturwerte liefern, die sich maximal um \SI{\pm1}{\kelvin} unterscheiden.
 
 Die aufgenommenen Spannungswerte wurden mithilfe der in der Versuchsanleitung~\cite{Thurk} gegebenen Kalibrierungstabelle (siehe Abbildung~\ref{fig:Diode}) in Temperaturen umgerechnet. Als Referenzwiderstand wurde $R_0 = \SI{1}{\ohm}$ gewählt.
 
+Die Größe der Bandlücke lässt sich nun mithilfe von Gleichung~\eqref{eqn:Anstieg_Bandlücke} bestimmen. Dafür wird wird der natürliche Logarithmus $\ln(R_0/R)$ über die inverse Temperatur $1/T$ aufgetragen und eine lineare Funktion an die Messdaten angefittet, wie in Abbildung~\ref{fig:Halbleitermessung} dargestellt ist. Es ergibt sich nun für eine lineare Fitfunktion der Form $y(x) = a + b\cdot x$
+
 \input{Bilder/Halbleitermessung.tex}
 
-Die Größe der Bandlücke lässt sich nun mithilfe von Gleichung~\eqref{eqn:Anstieg_Bandlücke} bestimmen. Dafür wird wird der natürliche Logarithmus $\ln(R_0/R)$ über die inverse Temperatur $1/T$ aufgetragen und eine lineare Funktion an die Messdaten angefittet, wie in Abbildung~\ref{fig:Halbleitermessung} dargestellt ist. Es ergibt sich nun für eine lineare Fitfunktion der Form $y(x) = a + b\cdot x$
 \begin{align}
   \ln\qty(\frac{R_0}{R}) = - \frac{\Delta E}{k_B}\frac{1}{T} \quad \Rightarrow \quad \Delta E = - b \cdot k_B.
 \end{align}
@@ -434,7 +435,7 @@ Mithilfe des Siedepunkts von Stickstoff bei $T_\text{\ce{N2}} = \SI{77.4}{\kelvi
   \alpha_\text{BS,exp.} &= %\frac{-0.359\cdot 209.4\cdot \SI{0.3614}{\watt}}{\SI{8.8e-3}{\metre\squared}(77.4-80.5)\si{\kelvin}} =
   \SI{930\pm 150}{\watt\per\square\metre\per\kelvin}
 \end{align}
-Die großen Fehlerbereiche ergeben sich aufgrund der nur recht ungenau bestimmbaren Masse des Kupferzylinders und der Oberfläche. Weitere mögliche Fehler durch die Wärmekapazität wurden nicht berücksichtigt. Es wurde zudem die Annahme getroffen, dass der Zylinder vollständig aus Kupfer besteht, jedoch befindet sich innerhalb noch der Pt 100 Widerstand.
+Die großen Fehlerbereiche ergeben sich aufgrund der nur recht ungenau bestimmbaren Masse des Kupferzylinders und der Oberfläche. Weitere mögliche Fehler durch die Wärmekapazität wurden nicht berücksichtigt. Es wurde zudem die Annahme getroffen, dass der Zylinder vollständig aus Kupfer besteht, jedoch befindet sich innerhalb noch der Pt100 Widerstand.
 
 Mit der Literatur~\cite{Fastowski} lässt sich eine Vergleichsrechnung durchführen. Ein Vergleich mit Abbildung~\ref{fig:Sieden_Stickstoff} ergibt einen Ausdruck für die Wärmestromdichte für das Film- und Blasensieden.
 \begin{figure}[htp]
@@ -444,13 +445,14 @@ Mit der Literatur~\cite{Fastowski} lässt sich eine Vergleichsrechnung durchfüh
   \label{fig:Sieden_Stickstoff}
 \end{figure}
 
-Für das Filmsieden ergibt sich mit $d = \SI{3}{\centi\metre} > \SI{1}{\centi\metre}$ und einer Temperaturdifferenz von  \SI{60\pm 1}{\kelvin} eine Wärmestromdichte von $\dot{q} = \SI[per-mode=symbol]{0.85\pm 0.05}{\watt\per\centi\metre\squared}$. Für das Blasensieden ergibt sich bei Normaldruck\footnote{Das Kilopond ist eine veraltete Einheit der Kraft. $\SI{1}{\kilo\text{p}} = \SI{9.807}{\newton}$}. $p \approx \SI{1}{\kilo\text{p}\per\centi\metre\squared}$ und einer Temperaturdifferenz von \SI{3\pm 0.2}{\kelvin} eine Wärmestromstromdichte von $\dot{q}= \SI{0.3 \pm 0.05}{\watt\per\centi\metre\squared}$. Somit lässt sich nach~\eqref{eqn:Waermeuebergangszahl} die Wärmeübergangszahl schreiben als
+Für das Filmsieden ergibt sich mit $d = \SI{3}{\centi\metre} > \SI{1}{\centi\metre}$ und einer Temperaturdifferenz von  \SI{60\pm 1}{\kelvin} eine Wärmestromdichte von $\dot{q} = \SI[per-mode=symbol]{0.85\pm 0.05}{\watt\per\centi\metre\squared}$. Für das Blasensieden ergibt sich bei Normaldruck\footnote{Das Kilopond ist eine veraltete Einheit der Kraft. $\SI{1}{\kilo\text{p}} = \SI{9.807}{\newton}$} $p \approx \SI{1}{\kilo\text{p}\per\centi\metre\squared}$ und einer Temperaturdifferenz von \SI{3\pm 0.2}{\kelvin} eine Wärmestromstromdichte von $\dot{q}= \SI{0.3 \pm 0.05}{\watt\per\centi\metre\squared}$. Somit lässt sich nach~\eqref{eqn:Waermeuebergangszahl} die Wärmeübergangszahl schreiben als
 \begin{align}
   \alpha_\text{FS,Theorie} &=
   \SI{141\pm 10}{\watt\per\square\metre\per\kelvin}\\
   \alpha_\text{BS,Theorie} &=
   \SI{1000\pm 170}{\watt\per\square\metre\per\kelvin}.
 \end{align}
+Es zeigt sich, dass die Fehlerbereich der Messung für das Blasensieden mit der Theorie übereinstimmen, beim Filmsieden jedoch nicht. Dies lässt sich durch die grobe Abschätzung des experimentellen Messfehlers unter Vernachlässigung des Fehlers der Wärmekapazität begründen.
 
 \subsubsection{Wärmeübergangszahl des Filmsiedens nach der Ähnlichkeitstheorie}
 
@@ -477,17 +479,18 @@ Für den Temperaturunterschied wurde $\Delta T = (138-77.4)\si{\kelvin} = \SI{60
     \bottomrule
   \end{tabular}
 \end{table}
+
 Werden alle Größe in Gleichung~\eqref{eqn:Filmsieden_Theorie} eingesetzt, ergibt sich umgestellt nach der Wärmeübergangszahl $\alpha$
 \begin{align}
   \alpha = \SI{92.3\pm 4.5}{\watt\per\metre\squared\per\kelvin}.
 \end{align}
-Zur Fehlerabschätzung wurden nur mögliche Fehler der Temperaturmessung $\Delta T$ und Durchmesserbestimmung beachtet und die Größen in Tabelle~\ref{tab:Groessen} als fehlerlos angenommen. Es zeigt sich, dass der Messwert für die Übergangszahl des Filmsiedens zwischen den berechneten Werten nach dem ähnlichen Modell und Abbildung~\ref{fig:Sieden_Stickstoff} liegt. Allerdings lässt sich durch das Modell das reale Experiment nicht vollständig beschreiben, da ebenfalls der Einfluss der Befestigungsstab vernachlässigt wird und von einem idealen Kupferzylinder ausgegangen wird.
+Zur Fehlerabschätzung wurden nur mögliche Fehler der Temperaturmessung $\Delta T$ und Durchmesserbestimmung beachtet und die Größen in Tabelle~\ref{tab:Groessen} als fehlerlos angenommen. Es zeigt sich, dass der Messwert für die Übergangszahl des Filmsiedens zwischen den berechneten Werten nach dem Ähnlichkeitsmodell und Abbildung~\ref{fig:Sieden_Stickstoff} liegt. Allerdings lässt sich durch das Modell das reale Experiment nicht vollständig beschreiben, da ebenfalls der Einfluss der Befestigungsstab vernachlässigt wird und von einem idealen Kupferzylinder ausgegangen wird.
 
 \subsection{Bestimmung der molaren Wärmekapazität}
 \subsubsection{Bestimmung der Wärmekapazität mittels Abkühlkurve}
-Um mit den Methoden aus Abschnitt \ref{sec:CV_Abkühlkurve} sowie \ref{sec:Dual-Slope} beschrieben vorgehen zu können, wird eine Aufheizungs- und Abkühlungskurve aufgenommen. Die Probe wird dabei zunächst mit \SI{800}{\milli\ampere} geheizt, hat sich hier ein Gleichgewicht eingestellt, wird diese mit \SI{400}{\milli\volt} geheizt und anschließend wird kein Heizen mehr vorgenommen. Die Probe wird mit einem PT1000 in 2 Leiterschaltung gemessen. Zusätzlich wird der Kaltkopf als Referenz sowohl mit PT1000 als auch mit Diode gemessen. Dabei wurden jeweils die Widerstände bzw die Spannung gemessen, aus denen dann durch die angegebenen Kalibrationskurven die Temperaturen gewonnen werden können. Diese Graphen sind für Kupfer und Blei jeweils in Abbildung \ref{fig:Aufheiz-und Entladekurven} zu sehen. Zusätzlich ist hier noch die Temperaturdifferenz zwischen Probe und Kaltkopf, die wie eingangs disuktiert entscheidend für die Auswertung ist, dargestellt.
+Um mit den Methoden aus Abschnitt \ref{sec:CV_Abkühlkurve} sowie \ref{sec:Dual-Slope} beschrieben vorgehen zu können, wird eine Aufheizungs- und Abkühlungskurve aufgenommen. Die Probe wird dabei zunächst mit \SI{800}{\milli\ampere} geheizt, hat sich hier ein Gleichgewicht eingestellt, wird diese mit \SI{400}{\milli\ampere} geheizt und anschließend wird kein Heizen mehr vorgenommen. Die Probe wird mit einem PT1000 in Zweileiterschaltung gemessen. Zusätzlich wird der Kaltkopf als Referenz sowohl mit PT1000 als auch mit Diode gemessen. Dabei wurden jeweils die Widerstände bzw die Spannung gemessen, aus denen dann durch die angegebenen Kalibrierungskurven die Temperaturen gewonnen werden können. Diese Graphen sind für Kupfer und Blei jeweils in Abbildung \ref{fig:Aufheiz-und Entladekurven} zu sehen. Zusätzlich ist hier noch die Temperaturdifferenz zwischen Probe und Kaltkopf, die wie eingangs disuktiert entscheidend für die Auswertung ist, dargestellt.
 
-\begin{figure}[htp]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}{0.95\textwidth}
     \includegraphics[width=\textwidth]{Bilder/Abkühlkurve_Cu.pdf}
@@ -500,9 +503,8 @@ Um mit den Methoden aus Abschnitt \ref{sec:CV_Abkühlkurve} sowie \ref{sec:Dual-
   \caption{Aufheiz- und Abkühlungskurven von Kupfer und Blei. Geheizt wurde in den jeweiligen Abschnitten jeweils mit den angegebenen Strömen.}
   \label{fig:Aufheiz-und Entladekurven}
 \end{figure}
-
-Aus diesen Kurven wird nun in jedem der zwei letzten Bereiche ein Temperaturausschnitt der Probe betrachtet und in diesem jeweils der logarithmus naturalis der Temperaturdifferenz verringert um die Ausgleichstemperatur (Cu: \SI{35,1}{\kelvin}, Pb: \SI{33,8}{\kelvin}) für den Bereich \SI{400}{\milli\ampere} bzw. der logarithmus naturalis der Differenz im Bereich\SI{0}{\ampere} über der Zeit geplottet. Dies ist in Abbildung \ref{fig:lnDeltaT} dargestellt. Es wird darauf geachtet, jeweils einen Bereich in der Mitte des Abfalles der Probentemperatur auszuwählen, um Randeffekte zu vermeiden, sowie unter Beachtung der Temperaturabhängigkeit der Wärmekapazität nur kleine Temperaturbereiche zu wählen.
-
+\newpage
+Aus diesen Kurven wird nun in jedem der zwei letzten Bereiche ein Temperaturausschnitt der Probe betrachtet und in diesem jeweils der logarithmus naturalis der Temperaturdifferenz verringert um die Ausgleichstemperatur (Cu: \SI{35,1}{\kelvin}, Pb: \SI{33,8}{\kelvin}) für den Bereich \SI{400}{\milli\ampere} bzw. der logarithmus naturalis der Differenz im Bereich \SI{0}{\ampere} über der Zeit geplottet. Dies ist in Abbildung \ref{fig:lnDeltaT} dargestellt. Es wird darauf geachtet, jeweils einen Bereich in der Mitte des Abfalles der Probentemperatur auszuwählen, um Randeffekte zu vermeiden, sowie unter Beachtung der Temperaturabhängigkeit der Wärmekapazität nur kleine Temperaturbereiche zu wählen.
 
 \begin{figure}[ht!]
   \centering
@@ -526,7 +528,7 @@ Aus diesen Kurven wird nun in jedem der zwei letzten Bereiche ein Temperaturauss
   \label{fig:lnDeltaT}
 \end{figure}
 
-
+\newpage
 Aus den ermittelten Anstiegen kann nach den Überlegungen in Abschnitt \ref{sec:CV_Abkühlkurve} beschrieben, die Wärmekapazität über
 \begin{align}
   C = \frac{1}{R_{th}\cdot b}
@@ -535,7 +537,7 @@ wobei b der jeweilige Anstieg ist, bestimmt werden.  Um $R_{th}$ zu bestimmen, w
 \begin{align}
   \dot{Q} = U\cdot I = (R_{ges}-R_{th})\cdot I^2
 \end{align}
-Auch hier wird sich auf den vor der jeweiligen Abkühlung eingestellten Gleichgewichtszustand bezogen. (z.B. I=\SI{800}{\milli\ampere} zur Berechnung von $R_{th}$ für den Bereich I=\SI{400}{\milli\ampere})
+Auch hier wird sich auf den vor der jeweiligen Abkühlung eingestellten Gleichgewichtszustand bezogen. (z.B. $I=\SI{800}{\milli\ampere}$ zur Berechnung von $R_{th}$ für den Bereich $I=\SI{400}{\milli\ampere}$)
 Die sich wie oben beschrieben ergebenden Werte sind in folgender Tabelle \ref{tab:CV} zusammengefasst.
 
 \begin{table}[htp]
@@ -600,7 +602,7 @@ Eine andere Methode zur Bestimmung der Wärmekapazität wurde in Abschnitt \ref{
 \end{figure}
 
 \newpage
-An der dort vorgestellten Methode muss lediglich berücksichtigt werden, dass im Bereich der \SI{400}{\milli\volt} auch im Kühlbereich weiterhin eine Heizleistung vorliegt. Dieser Umstand ist bei der in Gleichung \eqref{equ:DS} bereits berücksichtigt. Für den Bereich der \SI{0}{\milli\ampere} wird die zweite Heizleistung Null gesetzt. Wird dies beachtet, ist keine weitere Messung für die Bestimmung der Wärmekapazität mit diesem Verfahren im Vergleich zum vorherigen nötig. Zur besseren Vergleichbarkeit der Ergebnisse werden die gleichen Temperaturbereiche betrachtet. \\
+An der dort vorgestellten Methode muss lediglich berücksichtigt werden, dass im Bereich der \SI{400}{\milli\volt} auch im Kühlbereich weiterhin eine Heizleistung vorliegt. Dieser Umstand ist bei der in Gleichung \eqref{equ:DS} angegebenen Formel bereits berücksichtigt. Für den Bereich der \SI{0}{\milli\ampere} wird die zweite Heizleistung auf Null gesetzt. Wird dies beachtet, ist keine weitere Messung für die Bestimmung der Wärmekapazität mit diesem Verfahren im Vergleich zum vorherigen nötig. Zur besseren Vergleichbarkeit der Ergebnisse werden die gleichen Temperaturbereiche betrachtet. \\
 Hierfür wird die Heizleistung wie zuvor berechnet und die Änderung der Temperatur durch einen Fit im linearen Bereich errechnet.
 
 \begin{figure}[ht!]
