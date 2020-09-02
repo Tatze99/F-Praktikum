@@ -201,22 +201,23 @@ Die Erfüllung von \eqref{equ:zweiteLB} wird durch die Lage der zweiten Verlustl
 \subsection{Der Inversionsabbau und Lamb-Dip}
  Der Laserprozess läuft folgendermaßen ab: In der zunächst eintretenden Einschwingphase liegen kleine Intensitäten vor. Bei diesen tritt eine exponentielle Verstärkung auf. Bei höheren Intensitäten wird die Inversion und damit die Verstärkung durch induzierte Emission zunehmend abgebaut. Bei konstantem Pumpen kommt es durch diesen zunehmenden Inversionsabbau zu einem Gleichgewichtszustand, der sogenannten Sättigung der Verstärkung. Die Besetzungsinversion wird dabei bis zur Verlustlinie abgebaut.
 
-Bei homogener Linienverbreiterung können alle invertierten Atome mit dem Strahlungsfeld bzw. der Mode wechselwirken, so kann sie von allen Atomen ihre Verstärkung beziehen, der Abbau erfolgt, wie in Abbildung \ref{fig:homogen} gleichermaßen. Bei inhomogener Linienverbreiterung kann das Strahlungsfeld hingegen nur mit bestimmten Atomen wechselwirken, die Mode kann also nur einen Teil der invertierten Atome abbauen, nämlich die, die aufgrund der homogenen Linienbreite trotz des Dopplereffekts noch die Resonatorfrequenz haben. Die Verstärkung wird dann nur in einem engen Frequenzbereich um die Frequenz der wechselwirkenden Atome abgebaut, was in Abbildung \ref{fig:inhomogen} visualisiert ist. Aufgrund des sich ergebenden Bildes im Verstärkungsprofil spricht man vom ``hole burning''. \\
+Bei homogener Linienverbreiterung können alle invertierten Atome mit dem Strahlungsfeld bzw. der Mode wechselwirken, so kann sie von allen Atomen ihre Verstärkung beziehen, der Abbau erfolgt, wie in Abbildung \ref{fig:homogen} gleichermaßen.
 
 \begin{figure}[htp]
     \centering
-        \includegraphics[height=0.9\textwidth]{Bilder/Saettigung_homogen.pdf}
+        \includegraphics[width=0.5\textwidth]{Bilder/Saettigung_homogen.pdf}
     \caption{homogene Sättigung des Linienprofils}
     \label{fig:homogen}
 \end{figure}
 
+Bei inhomogener Linienverbreiterung kann das Strahlungsfeld hingegen nur mit bestimmten Atomen wechselwirken, die Mode kann also nur einen Teil der invertierten Atome abbauen, nämlich die, die aufgrund der homogenen Linienbreite trotz des Dopplereffekts noch die Resonatorfrequenz haben. Die Verstärkung wird dann nur in einem engen Frequenzbereich um die Frequenz der wechselwirkenden Atome abgebaut, was in Abbildung \ref{fig:inhomogen} visualisiert ist. Aufgrund des sich ergebenden Bildes im Verstärkungsprofil spricht man vom ``hole burning''.
+
 \begin{figure}[htp]
     \centering
-        \includegraphics[height=0.9\textwidth]{Bilder/Saettigung_inhomogen.pdf}
+        \includegraphics[width=0.5\textwidth]{Bilder/Saettigung_inhomogen.pdf}
     \caption{Sättigung bei einer inhomogenen Linie}
     \label{fig:inhomogen}
 \end{figure}
-
 
 Aufgrund des Dopplereffekts können beim Gaslaser nur Atome wechselwirken, die sich gerade mit der passenden Geschwindigkeit $\pm v_z$ in z-Richtung (Laserachsenrichtung) bewegen, sodass ihre Frequenz gerade der Resonatorfrequenz entspricht.  Symmetrisch um die Null kommt es bei $pm v_z$ zu einer Eindellung des Verstärkungsprofil bei der negativen sowie bei der positiven Geschwindigkeit. Zur Ausgangsleistung tragen hier zwei Gruppen von Atomen bei, nämlich die, die sich mit der Geschwindigkeit $v_z$ bewegen, sie sorgen für eine Emission des Lichts in positive z-Richtung und die, die sich mit der Geschwindigkeit $-v_z$ bewegen, sie sorgen für eine Emission des Lichts in negative z-Richtung, haben aber die gleiche Frequenz. Ist aber die Resonatorfrequenz gleich der Resonanzfrequenz des optischen Übergangs, verschiebt man die Frequenz also zur Linienmitte, kommt es zum Überlappen der beiden Löcher. Jetzt tragen nur noch Atome mit $v_z = 0$, also viel weniger, als in den anderen Fällen, zur Verstärkung bei. Es kommt deshalb zur Eindellung der Intensität. Da hier alle Atome $v_z = 0 $ haben, tritt auch kein Dopplereffekt mehr auf, weshalb die Eindellung bei jenem $\nu$ nur noch homogen verbreitert ist und keine Dopplerverbreiterung aufweist, weshalb gilt
 \begin{align}
@@ -304,25 +305,24 @@ Der Helium-Neon-Laser ist ein Gaslaser, der als aktives Medium ein He-Ne-Gasgemi
   \text{He}* + \text{Ne} \Rightarrow \text{He}+\text{Ne}*+\Delta E
 \end{align}
 Das Termschema des He-Ne ist in Abbildung \ref{fig:Termschema} zu sehen.
-%EINFÜGEN!
-Die resonante Übertragung der Energie von He auf Neon ist der hauptsächliche Pumpvorgang. Der für den Versuch relevante Übergang ist der 3s $\rightarrow$ 2p, durch den die rote Linie bei \SI{632,8}{\nano\meter} entsteht. Da die Entleerung des 1s Niveaus hauptsächlich durch Stöße mit der Wand passiert, wird beim Bau der Röhren auf ein dünnes Rohr geachtet, was die Ausgangsleistung der Laser auf \SI{10}{\milli\watt} beschränkt. \\
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Bilder/HeNe-Termschema.pdf}
+  \caption{Thermschema des He-Ne-Lasers}
+  \label{fig:Termschema}
+\end{figure}
+
+Die resonante Übertragung der Energie von He auf Neon ist der hauptsächliche Pumpvorgang. Der für den Versuch relevante Übergang ist der 3s $\rightarrow$ 2p, durch den die rote Linie bei \SI{632,8}{\nano\meter} entsteht. Da die Entleerung des 1s Niveaus hauptsächlich durch Stöße mit der Wand passiert, wird beim Bau der Röhren auf ein dünnes Rohr geachtet, was die Ausgangsleistung der Laser auf \SI{10}{\milli\watt} beschränkt.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Bilder/HeNe-Laser_Aufbau.pdf}
+  \caption{schematischer Aufbau eines He-Ne-Lasers}
+  \label{fig:Aufbau}
+\end{figure}
+
 Der Aufbau des He-Ne-Lasers ist in Abbildung \ref{fig:Aufbau} dargestellt. Die Elektronen, die für die Anregung des Heliums nötig sind, entstehen durch Gasentladung. Hierfür ist eine Hochspannung im Bereich \SI{2}{\kilo\volt} erforderlich. Technisch wichtig ist die bereits oben diskutierte kleine Kapillardurchmesser, sowie die Notwendigkeit von Spiegeln mit hohen Reflexionsvermögen, da unter realistischen Bedingungen nur eine Verstärkung von g$=\SI{0,1}{\per\meter}$ erzielt werden kann. Außerdem entscheidend ist für die Selektion einer Polarisationsrichtig die Verwendung von unter dem Brewster-Winkel geneigten Fenstern. Diese bewirken, dass nur senkrecht polarisiertes Licht die Kapillare verlässt. Typischerweise wird, wie auch im Versuch, an einem Spiegel ausgekoppelt, der z.B. ein Reflexionsvermögen von \SI{98}{\percent} aufweist. Das Mischungsverhältnis zwischen beiden Gasen bestimmt die emittierte Wellenlänge. Für die verwendete Rotlinie wird ein Verhältnis von 5:1 gewählt.
-
-\begin{figure}[htp]
-    \centering
-        \includegraphics[height=0.9\textwidth]{Bilder/HeNe-Termschema.pdf}
-    \caption{Thermschema des He-Ne-Lasers}
-    \label{fig:Termschema}
-\end{figure}
-
-
-\begin{figure}[htp]
-    \centering
-        \includegraphics[height=0.9\textwidth]{Bilder/HeNe-Laser_Aufbau.pdf}
-    \caption{schematischer Aufbau eines He-Ne-Lasers}
-    \label{fig:Aufbau}
-\end{figure}
-
 
 % *********************************************
 % ***** KAPITEL 4 *****************************
