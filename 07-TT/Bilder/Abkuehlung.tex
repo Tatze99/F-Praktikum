@@ -1,7 +1,7 @@
 \begin{figure}[htp]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Temperatur $T$ in \si{\kelvin}, xmin=0, xmax=300, ymin=50, xlabel={Zeit $t$ in \si{\second}}, legend cell align={left}]
+    \begin{axis}[disabledatascaling, width=.95\textwidth, height=6cm, ylabel=Temperatur $T$ in \si{\kelvin}, xmin=0, xmax=300, ymin=50, xlabel={Zeit $t$ in \si{\second}}, legend cell align={left}]
       \fill[fill=blue!50!black, opacity = 0.05] (10,0) rectangle (241,350);
       \fill[fill=green!50!black, opacity = 0.05] (300,0) rectangle (250,350);
       \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Pt100_abkuehlung_Widerstand.txt};
