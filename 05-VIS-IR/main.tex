@@ -82,7 +82,7 @@ Zunächst wird die wellenlängenabhängige Messung mit Vakuumthermoelement reali
 \newpage
 \section{Grundlagen} \label{sec:Grundlagen}
 \subsection{Strahlungsgesetze}
-Alle Körper strahlen in Abhängigkeit zu ihrer Temperatur $T$ elektromagnetische Strahlung ab. Die dabei emittierte Energiedichte $u(\nu,T)$ lässt sich durch die von~\textsc{Max Planck} als Folge der Energiequantisierung aufgestellten Formel aus der \textsc{Heisenberg}'schen Unschärferelation und der Bose-Einstein-Verteilung für Photonen herleiten. Sie ergibt sich zu~\cite[75]{Demtroder}
+Alle Körper strahlen in Abhängigkeit zu ihrer Temperatur $T$ elektromagnetische Strahlung ab. Die dabei emittierte Energiedichte $u(\nu,T)$ lässt sich durch die von~\textsc{Max Planck} als Folge der Energiequantisierung aufgestellten Formel aus der \textsc{Heisenberg}'schen Unschärferelation und der \textsc{Bose-Einstein}-Verteilung für Photonen herleiten. Sie ergibt sich zu~\cite[S.75]{Demtroder}
 \begin{align}\label{eqn:2.1}
     u(\nu,T)\dd{\nu} = \frac{8\pi h \nu^3}{c^3}\frac{1}{\exp(\frac{h\nu}{k_B T})-1}\dd{\nu} \quad\text{oder}\quad u(\lambda,T)\dd{\lambda} = \frac{8\pi h c^2}{\lambda^5}\frac{1}{\exp(\frac{hc}{\lambda k_B T})-1}\dd{\lambda}.
 \end{align}
@@ -90,7 +90,7 @@ Alle Körper strahlen in Abhängigkeit zu ihrer Temperatur $T$ elektromagnetisch
 \begin{figure}[htp ]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=\textwidth, height=8cm, samples=300, xmin=0.5, xmax=10, ymin=0, ymax=55000, xlabel={Wellenlänge $\lambda$ in \si{\micro\metre}}, ylabel={Energiedichte $u(\lambda,T)$ in \si{\watt\per\metre\per\micro\metre}}]
+    \begin{axis}[width=0.98\textwidth, height=8cm, samples=300, xmin=0.5, xmax=10, ymin=0, ymax=55000, xlabel={Wellenlänge $\lambda$ in \si{\micro\metre}}, ylabel={Energiedichte $u(\lambda,T)$ in \si{\watt\per\metre\per\micro\metre}}]
       % \addplot[blue, no marks]{(1.495*10^(15)/x^5)*1/(exp(14388/(x*1000))-1)};
       \addplot[domain=2:10,thick, black, dashed, no marks]{1.495*10^9/(x^5*(exp(14388/(2897.8))-1))};
       \addlegendentry{Verschiebung}
@@ -181,8 +181,8 @@ Das Wellenlängenintervall, das diese immer gleiche geometrische Spaltbreite pas
 
 \subsection{Empfänger}
 \subsubsection{Thermische Detektoren}\label{sec:Empfänger}
-Thermische Detektoren beruhen auf der Messung von Effekten, die aufgrund der Temperaturänderung nach Strahlungseinfall enstehen. Deshalb ist das so entstehende Photosignal nur vom auftreffenden Strahlungsfluss abhängig und deshalb wellenlängenunabhängig. \\
-Je nach ausgenutzten Effekt unterscheidet man unterschiedliche thermische Detektoren. Das \emph{Thermoelement} nutzt die temperaturabhängige Änderung der Thermospannung, die sich an der Kontaktstelle zweier verschiedener Materialien ergibt, da deren Ferminiveaus sich bei Änderung der Temperatur materialspezifisch verschieben.
+Thermische Detektoren beruhen auf der Messung von Effekten, die aufgrund der Temperaturänderung nach Strahlungseinfall entstehen. Deshalb ist das so entstehende Photosignal nur vom auftreffenden Strahlungsfluss abhängig und deshalb wellenlängenunabhängig. \\
+Je nach ausgenutzten Effekt wird zwischen verschiedenen thermische Detektoren unterschieden. Das \emph{Thermoelement} nutzt die temperaturabhängige Änderung der Thermospannung, die sich an der Kontaktstelle zweier verschiedener Materialien ergibt, da deren Ferminiveaus sich bei Änderung der Temperatur materialspezifisch verschieben.
 Die Widerstandsänderung eines elektrischen Leiters aufgrund der Temperaturänderung durch Strahlungsabsorption zu messen, ist das Prinzip des \emph{Bolometers}.
 \emph{Pyroelektrische Strahlunsgempfänger} nutzen den Effekt aus, dass bei ferromagnetischen Materialien unterhalb des \textsc{Curie}-Punktes Polarisationsänderungen auftreten. Die bei bestimmten Materialien auftretende spontane Polarisation kann als elektrisches Signal gemessen werden. Der \emph{Golay-Detektor} beruht auf der Änderung des Gasdruckes durch die Absorptionswärme. Diese verformt einen flexiblen Spiegel, der Teil eines optisches Systems ist, welches in Folge dessen eine Änderung registriert~\cite{Gunzler}.
 
@@ -193,7 +193,7 @@ Auch hier können zwei unterschiedliche Effekte genutzt werden~\cite{Gunzler}.\\
 Photodetektoren haben eine höhere Empfindlichkeit, als thermische Detektoren, sind aber aufgrund der Notwenigkeit der Überwindung der Bandlücke wellenlängenabhängig in ihrer Empfindlichkeit.
 
 \subsubsection{Spektrale Empfindlichkeit}
-Weil thermische Empfänger ausschließlich auf Effekten beruhen, die aufgrund einer Temperaturänderung auftreten, ist die Empfindlichkeit dieser Empfänger wellenlängenunabhängig. Anders verhält es sich mit den Halbleiterdetektoren. Da es bei diesen nur dann zur Entstehung eines Signals kommen kann, wenn die Energie aufgebracht wird, um ein Elektron vom Valenz- ins Leitungsband zu heben, also wenn mindestens die Bandlückenenergie aufgebracht wird, zeigen diese Detektoren eine Wellenlängenabhängigkeit. \\
+Weil thermische Empfänger ausschließlich auf Effekten beruhen, die aufgrund einer Temperaturänderung auftreten, ist die Empfindlichkeit dieser Empfänger wellenlängenunabhängig. Anders verhält es sich mit den Halbleiterdetektoren. Da es bei diesen nur dann zur Entstehung eines Signals kommen kann, wenn die Energie aufgebracht wird, um ein Elektron vom Valenz- ins Leitungsband zu heben, also wenn mindestens die Bandlückenenergie aufgebracht wird, liefert der Detektor ein Signal. \\
 Die spektrale Empfindlichkeit $r(\lambda)$ eines Empfängern bei der Wellenlänge $\lambda$ ist definiert als Verhältnis der vom Empfänger abgegebenen Messgröße $M(\lambda)$ (z.B. Spannung, Strom, Ausschlag) zu der Strahlungsleistung $P_S(\lambda)$~\cite{Mutschke}:
 \begin{align}
   r(\lambda) = \frac{M(\lambda)}{P_S(\lambda)}
@@ -235,7 +235,7 @@ Zur Auswertung von Spektren in Reflexionsmessung wird das Reflexionsvermögen he
 \end{align}
 
 mit dem komplexen Brechungsindex $N(\lambda) = n(\lambda)+\mathrm{i}k(\lambda)$  und dem Absorptionsindex $k$.
-Werden als Medien Luft (N=1) und ein beliebiges Medium mit $N_2 = N$ verwendet, ergibt sich für das Reflexionsvermögen
+Werden als Medien Luft (N=1) und ein beliebiges Medium mit $N_2 = n$ verwendet, ergibt sich für das Reflexionsvermögen
 \begin{align}
   R(\lambda)=\frac{(n-1)^2+k^2}{(n+1)^2+k^2}
 \end{align}
@@ -261,7 +261,7 @@ Zur Abschätzung der Auflösung wird die Natriumdampflampe verwendet. Der Aufbau
 
 \subsection{Messungen anhand des Wolframlampenspektrums}
 \subsubsection{Spektrale Empfindlichkeit eines Halbleiterempfängers}
-Die spektrale Empfindlichkeit eines Empfängers kann nach Abschnitt \ref{sec:Empfänger)} berechnet werden, indem das Signal mit dem Empfänger, sowie mit einem Thermoelement vermessen  und das Verhältnis der Messwerte gebildet wird. Dazu wird nach der Austrittsblende einmal das Thermoelement, sowie bei anschließenden Messungen ein InGaAs-Halbleiterdetektor und ein Si-Halbleiterdetektor in den Fokuspunkt des austretenden Strahl positioniert. Das Signal der Halbleiterdetektoren wird mit einem Verstärker verstärkt und anschließend am Multimeter abgelesen, während das Signal des Thermoelements mit dem Galvanometer vermessen wird. Bei Letzterem ist das Ablesen nur mit einer sehr schlechten Auflösung möglich, weshalb vorallem kleine Signale schlecht vermessen bzw. überhaupt detektiert werden können. So ergibt sich, dass nur die Bereich der Empfindlichkeitskurven vermessen werden können, in denen das Signal des Thermoelements sich von Null unterscheiden lässt, weshalb die erhaltenen Empfindlichkeitskurven nur unvollständig vermessen werden konnten. Eine vollständige Vermessung kann mit einem Messgerät mit besserer Auflösung vorallem in niedrigen Signalbereichen realisiert werden.
+Die spektrale Empfindlichkeit eines Empfängers kann nach Abschnitt \ref{sec:Empfänger} berechnet werden, indem das Signal mit dem Empfänger, sowie mit einem Thermoelement vermessen  und das Verhältnis der Messwerte gebildet wird. Dazu wird nach der Austrittsblende einmal das Thermoelement, sowie bei anschließenden Messungen ein InGaAs-Halbleiterdetektor und ein Si-Halbleiterdetektor in den Fokuspunkt des austretenden Strahl positioniert. Das Signal der Halbleiterdetektoren wird mit einem Verstärker verstärkt und anschließend am Multimeter abgelesen, während das Signal des Thermoelements mit dem Galvanometer vermessen wird. Bei Letzterem ist das Ablesen nur mit einer sehr schlechten Auflösung möglich, weshalb vorallem kleine Signale schlecht vermessen bzw. überhaupt detektiert werden können. So ergibt sich, dass nur die Bereich der Empfindlichkeitskurven vermessen werden können, in denen das Signal des Thermoelements sich von Null unterscheiden lässt, weshalb die erhaltenen Empfindlichkeitskurven nur unvollständig vermessen werden konnten. Eine vollständige Vermessung kann mit einem Messgerät mit besserer Auflösung vorallem in niedrigen Signalbereichen realisiert werden.
 
 \input{Bilder/Si_Halbleiter.tex}
 
@@ -298,40 +298,31 @@ Die spektrale Empfindlichkeit eines Empfängers kann nach Abschnitt \ref{sec:Emp
 \FloatBarrier
 
 Es wird festgestellt, dass die Bereiche die aufgrund der Auflösung vermessbar sind, gut mit den vom Hersteller angegebenen Verlauf übereinstimmen. \\
-Es zeigt sich deutlich, dass die Empfindlichkeit des Empfängers stark von der Wellenlänge abhängig ist, weshalb bei jeder Messung zu überlegen ist, in welchem Spektralbereich die zu vermessenden Werte liegen und daraus den passenden Halbleiterdetektor zu wählen ist. Wie in Abschnitt \ref{sec:Empfänger)} beschrieben, ergibt sich der Abknickpunkt als Bandlückenenergie des jeweiligen Halbleiters. Auch dies kann anhand der Messwerte des Siliziums bestätigt werden. Die Bandlückenenergie von Silizium bei \SI{300}{\kelvin} liegt bei \SI{1.12}{\electronvolt}. Dies entspricht einer Wellenlänge von \SI{1.11}{\micro\meter}. Der vermessene Abknickpunkt liegt in diesem Bereich.
+Es zeigt sich deutlich, dass die Empfindlichkeit des Empfängers stark von der Wellenlänge abhängig ist, weshalb bei jeder Messung zu überlegen ist, in welchem Spektralbereich die zu vermessenden Werte liegen und daraus den passenden Halbleiterdetektor zu wählen ist. Wie in Abschnitt \ref{sec:Empfänger} beschrieben, ergibt sich der Abknickpunkt als Bandlückenenergie des jeweiligen Halbleiters. Auch dies kann anhand der Messwerte des Siliziums bestätigt werden. Die Bandlückenenergie von Silizium bei \SI{300}{\kelvin} liegt bei \SI{1.12}{\electronvolt}. Dies entspricht einer Wellenlänge von \SI{1.11}{\micro\meter}. Der vermessene Abknickpunkt liegt in diesem Bereich.
 
-\subsubsection{spektrale Energieverteilung einer Wolframlampe}
-Für diese Messung wird das SPM2 verwendet.
-\paragraph{Eichung SPM2}\label{par:EichungSPM2} Das SPM2 enthält eine eingebaute Wellenlängenanzeige. Diese wird verwendet, um auch die digitalisierten Daten zu eichen. Dazu wird in vorher festgelegten regelmäßigen Abständen bei der Aufnahme der Daten ein Marker gesetzt. Aus diesem Marker sowie der Kenntnis des Abstandes, in dem die Marker gesetzt werden, lassen sich Wellenlängen-Samplezahl Paare finden, womit eine Eichfunktion, also der Zusammenhang zwischen Sample und Wellenlänge, rekonstruiert werden kann und damit dann die Sampleanzahl in eine Wellenlänge umgerechnet wird.
+\subsubsection{spektrale Energieverteilung einer Wolframlampe}\label{par:EichungSPM2}
+Für diese Messung wird das SPM2 verwendet. Das SPM2 enthält eine eingebaute Wellenlängenanzeige. Diese wird verwendet, um die digitalisierten Daten zu eichen. Dazu wird in vorher festgelegten regelmäßigen Abständen bei der Aufnahme der Daten ein Marker gesetzt. Aus diesen Markern sowie der Kenntnis des Abstandes, in dem die Marker gesetzt werden, lassen sich Wellenlängen-Samplezahl Paare finden, womit eine Eichfunktion, also der Zusammenhang zwischen Sample und Wellenlänge, rekonstruiert werden kann und damit den Samples eine Wellenlänge zugeordnet werden kann. Da der direkte Zusammenhang zwischen Drehwinkel des Prismas und zugehöriger Wellenlänge nicht bekannt ist, wird als Eichfunktion eine \emph{Cubic Spline Interpolation} genutzt, um die Werte zwischen den Samplepunkten zuzuordnen.
 
 Als Strahlungsquelle dient eine Wolframlampe, die bei einer Betriebsspannung von \SI{2}{V} und \SI{5}{V} betrieben wird. Die spektrale Energieverteilung wird mit einem Thermoelement, das an einen Lock-In-Verstärker angeschlossen ist, detektiert. Zu beachten ist hier die Theorie der spektralen Spaltbreite, die in \ref{sec:spektraleSpaltbreite} eingeführt wurde. Aufgrund der wellenlängenabhängigen Brechung des Prismas sind die mit der konstanten geometrischen Spaltbreite erfassten Wellenlängenbereiche unterschiedlich breit. Dies erfordert die Korrektur der gemessen Werte, indem durch $\Delta \lambda$ dividiert wird, um diese mit dem Planckspektrum vergleichen zu können. Für $\Delta \lambda$ gilt
 \begin{align}
-  \Delta \lambda = const* \frac{d\lambda}{dl}
+  \Delta \lambda = const* \dv{\lambda}{l}
 \end{align}
 
-wobei dl die Verschiebung der Mikrometerschraube ist.
-$\frac{d\lambda}{dl}$ wird durch die Ableitung der oben beschriebenen Eichfunktion erhalten.\\
+wobei dl die Verschiebung der Mikrometerschraube ist. $\frac{d\lambda}{dl}$ wird durch die Ableitung der oben beschriebenen Eichfunktion erhalten.
 
-Aus den gemessenen Spektren wird mit Hilfe des \textsc{Wien}'schen Verschiebungsgesetzes die Temperatur der Wolframlampe berechnet. Hierzu wird das Maximum der gemessenen Verteilung bestimmt sowie die dazugehörige Wellenlänge. Über die Gleichung \ref{equ:WienscheVerschiebung} wird dann die Temperatur gewonnen. \\
-Mit dieser Temperatur lässt sich die theoretische Planckkurve nach Gleichung \ref{eqn:2.1} berechnen.
+Aus den gemessenen Spektren wird mit Hilfe des \textsc{Wien}'schen Verschiebungsgesetzes die Temperatur der Wolframlampe berechnet. Hierzu wird das Maximum der gemessenen Verteilung bestimmt sowie die dazugehörige Wellenlänge. Über die Gleichung \eqref{equ:WienscheVerschiebung} wird dann die Temperatur gewonnen
+\begin{align}
+  &\SI{2}{\volt}: \quad \lambda_\text{max} = \SI{1.552}{\micro\metre} \Rightarrow T = \SI{1867}{\kelvin}\\
+  &\SI{5}{\volt}: \quad \lambda_\text{max} = \SI{1.227}{\micro\metre} \Rightarrow T = \SI{2362}{\kelvin}
+\end{align}
+. \\
+Mit dieser Temperatur lässt sich die theoretische Planckkurve nach Gleichung~\eqref{eqn:2.1} berechnen.
 
-\begin{figure}[htp]
-  \centering
-  \begin{subfigure}{0.9\textwidth}
-    \includegraphics[width=\textwidth]{Bilder/Wolframlampe2V.jpg}
-    \caption{Betriebsspannung = \SI{2}{\volt}}
-  \end{subfigure}
-  \begin{subfigure}{0.9\textwidth}
-    \includegraphics[width=\textwidth]{Bilder/Wolframlampe5V.jpg}
-    \caption{Betriebsspannung = \SI{5}{\volt}}
-  \end{subfigure}\hspace{0.5cm}
-  \caption{spektrale Energiedichte einer Wolframdampflampe bei unterschiedlichen Betriebsspannungen}
-  \label{fig:Wolframlampe}
-\end{figure}
+\input{Bilder/Wolframlampe.tex}
 
 \FloatBarrier
-An den Grafiken ist zu erkennen, dass die Messwerte dem in Abbildung \ref{fig:Planck} dargestellten Verhalten folgen. Für höhere Temperaturen schiebt sich das Maxima zu kleineren Wellenlängen, außerdem wird die Kurve höher. Die theoretische Kurve passt bei \SI{5}{\volt} Betriebsspannung sehr gut mit den gemessenen Werten überein. Bei \SI{2}{\volt} bestätigt sich der prinzipielle Verlauf, wenn auch die Kurve schmaler ist, als die Theoriekurve.\\
-Der gemessene Galvanometerausschlag ergibt sich aus der Strahlungsdichte, einem Dispersionsanteil, sowie der Transmissionsfunktion. Durch Letztere wird berücksichtig, dass die sich im Strahlengang befindlichen Stoffe, wie z.B. die Aluminiumspiegel sowie das Prisma und die Luft, Strahlung absorbieren bzw. reflektieren können. An den Grafiken sind die Wellenlängen, bei denen es zu Absorption deutlich sichtbar. So finden sich in den Messungen die Absorptionsbanden von \ce{H2O} und \ce{CO2}, die theoretisch bei \SI{1.38}{\micro\meter} und \SI{1.87}{\micro\meter} liegen bei \SI{1.41}{\micro\meter} und \SI{1.89}{\micro\meter} für \SI{2}{\volt} bzw. \SI{5}{\volt}. Auch die Absorption der Aluminiumspiegel, die theoretisch bei \SI{0.85}{\micro\meter} liegt, tritt im Spektrum bei \SI{0.83}{\micro\meter} auf~\cite{Mutschke}.
+An den Grafiken in Abbildung~\ref{fig:Wolframlampe} ist zu erkennen, dass die Messwerte dem in Abbildung \ref{fig:Planck} dargestellten Verhalten folgen. Für höhere Temperaturen schiebt sich das Maxima zu kleineren Wellenlängen. Die theoretische Kurve passt bei \SI{5}{\volt} Betriebsspannung sehr gut mit den gemessenen Werten überein. Bei \SI{2}{\volt} bestätigt sich der prinzipielle Verlauf, wenn auch die Kurve schmaler ist, als die Theoriekurve.\\
+Der gemessene Galvanometerausschlag ergibt sich aus der Strahlungsdichte, einem Dispersionsanteil, sowie der Transmissionsfunktion. Durch Letztere wird berücksichtigt, dass die sich im Strahlengang befindlichen Stoffe, wie z.B. die Aluminiumspiegel sowie das Prisma und die Luft, Strahlung absorbieren bzw. reflektieren können. An den Grafiken sind die Wellenlängen, bei denen es zu Absorption deutlich sichtbar. So finden sich in den Messungen die Absorptionsbanden von \ce{H2O} und \ce{CO2}, die theoretisch bei \SI{1.38}{\micro\meter} und \SI{1.87}{\micro\meter} liegen bei \SI{1.41}{\micro\meter} und \SI{1.89}{\micro\meter} für \SI{2}{\volt} bzw. \SI{5}{\volt}. Auch die Absorption der Aluminiumspiegel, die theoretisch bei \SI{0.85}{\micro\meter} liegt, tritt im Spektrum bei \SI{0.83}{\micro\meter} auf~\cite{Mutschke}.
 %DIE ANDEREN WERTE???
 
 \subsection{Spektroskopische Messungen mit dem SPM2}
@@ -347,7 +338,8 @@ Zur Untersuchung der Schwingungsbanden von Ethanoldampf wurde ein Glasrohr in de
 
 \input{Bilder/NaCl_Ethanoldampf1500mu.tex}
 
-Die Spektren wurden jeweils geglättet, um den Einfluss des Rauschens des Lock-In-Verstärkers zu reduzieren. Die Absorptionsrate des Ethanoldampfes ist in Abbildung~\ref{fig:Absorption_Ethanol} dargestellt. Dort ist in grau die Absorptionsrate für die ungeglätteten Kurven der Transmissionsspektren abgebildet. Es zeigt sich, dass die Glättung den qualitativen Verlauf nicht ändert.
+Die Spektren wurden jeweils geglättet, um den Einfluss des Rauschens des Lock-In-Verstärkers zu reduzieren. Dies wurde durch eine Mittelung des aktuellen Wertes über die fünf vorherigen und nachfolgenden Messwerte realisiert.\\
+Die Absorptionsrate des Ethanoldampfes ist in Abbildung~\ref{fig:Absorption_Ethanol} dargestellt. Dort ist in grau die Absorptionsrate für die ungeglätteten Kurven der Transmissionsspektren abgebildet. Es zeigt sich, dass die Glättung den qualitativen Verlauf nicht ändert.
 
 \input{Bilder/NaCl_Ethanoldampf1500_Absorption.tex}
 
@@ -375,9 +367,9 @@ Im Bereich von \SIrange{2}{10}{\micro\metre} wurden insgesamt vier Absorptionsba
   \label{tab:Ethanoldampf}
 \end{table}
 
-Es muss jedoch noch angemerkt werden, dass bei der Messung Fehler auftreten können, da im verwendeten Rohr, in dem sich der Ethanoldampf befand, ebenfalls Absorption an den Glas auftreten kann. Von daher wäre es ratsam gewesen, eine weitere Referenzmessung mit dem Rohr im Strahlengang durchzuführen.
-\FloatBarrier
+Es muss jedoch noch angemerkt werden, dass bei der Messung Fehler auftreten können, da im verwendeten Rohr, in dem sich der Ethanoldampf befand, ebenfalls Absorption an dem Glas auftreten kann. Von daher wäre es ratsam gewesen, eine weitere Referenzmessung mit dem Rohr im Strahlengang durchzuführen.
 
+\clearpage
 \subsubsection{Transmissionsspektren von Kunststoffen}
 
 Zwei weitere, mit dem SPM2 vermessene Proben bestanden aus im sichtbaren Spektralbereich durchsichtigen Kunsstoffen. Dabei handelt es sich einerseits um eine durchsichtige Folie aus Polypropylen, welche mit der Folie der Praktikumsanleitung vergleichbar ist und andererseits um eine Acetatfolie. Die Folien wurden in den Strahlengang gestellt und die auftretende Absorption gemessen.
@@ -388,14 +380,14 @@ Die Transmissionsrate ergibt sich wieder als der Quotient aus gemessenem Spektru
 
 \input{Bilder/Absorption_Kunststoffe.tex}
 
-\FloatBarrier
+\clearpage
 \subsubsection{Bestimmung der Bandlückenenergie von Halbleitern}
 
 Im Folgenden werden die Transmissionsspektren von zwei zunächst unbekannten Halbleitern untersucht. Zur Verfügung standen hierfür zwei kreisförmige, im sichtbaren Spektrum undurchsichtige, Halbleiterproben. Die Plättchen wurden zur Transmissionsmessung in den Strahlengang gestellt. Die Messergebnisse sind qualitativ in Abbildung~\ref{fig:Halbleitermessung} dargestellt.
 
 \input{Bilder/Wolframlampe5Volt.tex}
 
-Zur besseren Diskussion der Spektren wurden diese durch das in blau dargestellte Spektrum der Referenz geteilt. Dadurch ergibt sich die Absorptionsrate der Halbleiter als relative Größe. Zur Bestimmung der Bandlückenenergie wird der Punkt gesucht, ab der die Transmissionsrate ansteigt, denn erst Photonen mit einer Energie, die kleiner als die Bandlücke ist, werden von der Probe mit einer Dicke von \SIrange{1}{2}{\milli\metre} nicht mehr absorbiert und können detektiert werden Die entsprechende Grenzwellenlänge ist in Abbildung~\ref{fig:Halbleitermessung_relativ} mit eingezeichnet.
+Zur besseren Diskussion der Spektren wurden diese durch das in blau dargestellte Spektrum der Referenz geteilt. Dadurch ergibt sich die Transmissionsrate der Halbleiter als relative Größe. Zur Bestimmung der Bandlückenenergie wird der Punkt gesucht, ab der die Transmissionsrate ansteigt, denn erst Photonen mit einer Energie, die kleiner als die Bandlücke ist, werden von der Probe mit einer Dicke von \SIrange{1}{2}{\milli\metre} nicht mehr absorbiert und können detektiert werden Die entsprechende Grenzwellenlänge ist in Abbildung~\ref{fig:Halbleitermessung_relativ} mit eingezeichnet.
 
 \input{Bilder/Halbleitermessung.tex}
 
@@ -418,22 +410,24 @@ Um Gebiete mit Absorption besser kenntlich zu machen, wird das Verhältnis aus j
 \FloatBarrier
 Der Bereich der Absorption ist beim undotierten Präparat im Strahlengang deutlich zu erkennen und liegt bei \SI{10.24}{\micro\meter}.
 
+\newpage
 \paragraph{Reflexionsvermögen}
 Für die Messung des Reflexionsvermögens wird der Aufbau teilweise geändert. Vom zweitem Spiegel wird der Strahl auf eine reflektierende Einheit gelenkt. Der Detektor ist so positioniert, um den reflektierten Anteil zu erfassen. Die Messung wird zweimal durchgeführt. Einmal mit einem komplett reflektierenden Aluminiumspiegel als reflektierendes Element (Referenz) und einmal ist an der exakt selben Stelle ein \ce{SiO2} Plättchen positioniert.
 
 \input{Bilder/ReflektivitätSiO2.tex}
 
 \FloatBarrier
-Wie an der Reflexionsrate zu erkennen ist, ist die Reflexion vor allem im Bereich um $\lambda = \SI{9.01}{\micro\meter}$ besonders groß. Obwohl hier der Referenzwert der reflektierten Strahlung sehr gering ist, wird fast genauso viel reflektiert, wie in dem Bereich, in dem die Referenz ihr deutliches Maximum trägt.\\
+Wie an der Reflexionsrate zu erkennen ist, ist die Reflexion vor allem im Bereich um $\lambda = \SI{9.01}{\micro\meter}$ besonders groß. Obwohl hier der Referenzwert der reflektierten Strahlung sehr gering ist, wird fast genauso viel reflektiert, wie in dem Bereich, in dem die Referenz ihr deutliches Maximum trägt.
 
 Wie in Abschnitt~\ref{sec:Wechselwirkungen} diskutiert, sind die Wellenlängenbereiche hoher Absorption zugleich diese, in denen gut reflektiert wird. Das können die Messdaten teilweise bestätigen. Der Absorptionsbereich liegt im Bereich um \SI{10.24}{\micro\meter}, während der Reflexionsbereich um die \SI{9.01}{\micro\meter} lokalisiert ist. Die Größenordnung ist somit bei beiden Messungen die gleiche und es treten Überschneidungen der Bereiche auf. Die Abweichung lässt sich durch möglicherweise auftretenden Verunreinigungen des \ce{SiO2} auf den beiden unterschiedlichen Elementen sowie durch etwaige abweichende chemische Zusammensetzung oder Reinheit erklären.
 % *********************************************
 % ***** KAPITEL 5 *****************************
 % *********************************************
+\clearpage
 \section{Zusammenfassung}
 Im Rahmen des Versuchs wurden sowohl theoretische, als auch praktische Grundlagen der Infrarotspektroskopie erarbeitet. Dabei wurde ein Prismenspektrograph in der der Fuchs-Wadworth-Anordnung aufgebaut und mittels charakteristischer Spektrallinien einer Quecksilberdampflampe kalibriert. Die Funktionalität des Spektrometers wurde mithilfe einer Wolframlampe überprüft und das zugehörige Planckspektrum aufgenommen, wobei es möglich war, die charakteristischen Absorptionsbanden von \ce{H2O} und \ce{CO2} zu identifizieren. Die spektrale Auflösung des Spektrographen wurde getestet, dabei konnte das charakteristische Linienpaar des Natriums jedoch nicht aufgelöst werden. Mithilfe des Wolframlampenspektrums wurde außerdem die spektrale Empfindlichkeit zweier Halbleiterempfänger ermittelt und mit den Herstellerdaten verglichen.
 
-An einem kommerziellen Prismenmonochromator (SPM2) wurde eine computergestützte und bereits kalibrierte Messung realisiert. Hierbei mit drei verschiedene Prismen Planckspektren einer Wolframlampe und eines Keramikstrahlers aufgenommen. Durch einen Lock-in-Verstärker wurde das Hintergrundrauschen unterdrückt, wodurch sich eine höhere Messgenauigkeit ergibt. Der Spektrograph wurde zur Aufnahme von Transmissions- und Reflektionsspektren eingesetzt. Dabei wurde das Transmissionsspektrum von Ethanoldampf und verschiedener Kunststoffe aufgenommen und die charakteristischen Schwingungsbanden identifiziert. Weiterhin wurde das Transmissionsspektrum von Silizium und Germanium aufgenommen und die Bandlückenenergie bestimmt. Zuletzt wurde noch das Reflexions- und Transmissionsverhalten von dotiertem und undotiertem Siliziumdioxid untersucht, wobei in Bereichen geringer Transmission eine hohe Reflexionsrate beobachtet wurde.
+An einem kommerziellen Prismenmonochromator (SPM2) wurde eine computergestützte und bereits kalibrierte Messung realisiert. Hierbei wurdne mit drei verschiedenen Prismen die Planckspektren einer Wolframlampe und eines Keramikstrahlers aufgenommen. Durch einen Lock-in-Verstärker wurde das Hintergrundrauschen unterdrückt, wodurch sich eine höhere Messgenauigkeit ergibt. Der Spektrograph wurde zur Aufnahme von Transmissions- und Reflektionsspektren eingesetzt. Dabei wurde das Transmissionsspektrum von Ethanoldampf und verschiedener Kunststoffe aufgenommen und die charakteristischen Schwingungsbanden identifiziert. Weiterhin wurde das Transmissionsspektrum von Silizium und Germanium aufgenommen und die Bandlückenenergie bestimmt. Zuletzt wurde noch das Reflexions- und Transmissionsverhalten von dotiertem und undotiertem Siliziumdioxid untersucht, wobei in Bereichen geringer Transmission eine hohe Reflexionsrate beobachtet wurde.
 % ***** Literaturverzeichnis ******************
 
 \bibliography{Literatur}{}

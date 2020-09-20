@@ -50,7 +50,7 @@ x         y    y-min  y-max
 
 \setcounter{equation}{0}
 \setcounter{figure}{0}
-
+\sisetup{range-phrase=$-$,range-units=single}
 % *********************************************
 % ***** KAPITEL 1 *****************************
 % *********************************************
@@ -149,7 +149,7 @@ Zusätzlich zur endlichen Lebensdauer können elastische Stöße zwischen den Ga
     \Delta \nu_\text{St.} = \frac{1}{2\pi \tau_\text{St.}},
 \end{align}
 wobei $\tau_\text{St.}$ die mittlere Zeit zwischen zwei Stößen angibt. Für den He-Ne-Laser ergibt sich damit einer Verbreiterung von \SI{50}{\mega\hertz\per\milli\bar}.
-Im Festkörper beruht die Stoßverbreiterung auf der Wechselwirkung von Phonon.
+Im Festkörper beruht die Stoßverbreiterung auf der Wechselwirkung von Phononen.
 
 \paragraph{Dopplerverbreiterung}$~$
 
@@ -161,15 +161,15 @@ Das Prinzip des Lasers ist es, Licht zu verstärken. Damit dies möglich wird, b
   \dv{q}{t} \geq 0
   \label{equ:Photonenzahldichte}
 \end{align}
-gilt. Um einen Ausdruck für die Photonenzahldichte herzuleiten, stellen wir die Bilanz aus den das Laserniveau verlassenden, also induziert emittierten und den zum Laserniveau hinzukommenden, also den absorbierten Photonen auf. Die spontane Emission wird hier vernachlässigt. Mit den oben hergeleiteten Formeln \eqref{equ:Ratengleichungen} ergibt sich für die Photonenzahldichte
+gilt. Um einen Ausdruck für die Photonenzahldichte herzuleiten, wird die Bilanz aus den das Laserniveau verlassenden, also induziert emittierten und den zum Laserniveau hinzukommenden, also den absorbierten Photonen aufgestellt. Die spontane Emission wird hier vernachlässigt. Mit den oben hergeleiteten Formeln \eqref{equ:Ratengleichungen} ergibt sich für die Photonenzahldichte
 \begin{align}
     \dv{q}{t}=-\dv{N_2}{t}+\dv{N_1}{t}=u(\nu)(B_{21}N_2-B_{12}N_1)=u(\nu)B_21(N_2-N1)
 \end{align}
-Da weiterhin Gleichung \eqref{equ:Photonenzahldichte} gelten muss, bedeutet das, eine Verstärkung tritt auf, wenn
+Da weiterhin Gleichung \eqref{equ:Photonenzahldichte} gelten muss, tritt eine Verstärkung dann auf, wenn
 \begin{align}
-  \boxed{N_2 ß\geq N_1 \qquad \emph{1. Laserbedingung}}
+  \boxed{N_2 \geq N_1 \qquad \emph{1. Laserbedingung},}
 \end{align}
-also wenn sich mehr Atome im angeregten, als im Grundniveau befinden. Im thermischen Gleichgewicht gilt genau das Inverse, nämlich $N_1 \geq N_2$, weshalb dieser Zustand als \textit{Besetzungsinversion} bezeichnet wird. Ihn erreicht man also nicht durch thermische Anregungen, egal, wie hoch man die Temperaturen wählt, sondern nur durch spezielle Anregungsvorgänge- das sogenannte \textit{Pumpen}.\\
+also wenn sich mehr Atome im angeregten, als im Grundniveau befinden. Im thermischen Gleichgewicht gilt genau das Inverse, nämlich $N_1 \geq N_2$, weshalb dieser Zustand als \textit{Besetzungsinversion} bezeichnet wird. Die Inversion wird nicht durch thermische Anregungen erreicht, egal, wie hoch die Temperaturen gewählt wird, sondern nur durch spezielle Anregungsvorgänge- das sogenannte \textit{Pumpen}.\\
 Die zur Anregung nötige Energie kann auf unterschiedliche Wege zugeführt werden, was zur Unterscheidung der unterschiedlichen Lasertypen führt.
 \begin{itemize}
   \item optisch gepumpte Laser (Anregung durch Blitzlampe, kontinuierliche Lampe, Laser, Leuchtdiode)
@@ -182,13 +182,13 @@ Die zur Anregung nötige Energie kann auf unterschiedliche Wege zugeführt werde
 \end{itemize}
 
 Die Besetzungsinversion wird dabei grundsätzlich theoretisch immer gleich erzielt. Es wird zwischen 2-Niveau, 3-Niveau und 4-Niveau-System unterschieden, wobei bei 2-Niveau-Systemen aufgrund Gleichung \eqref{equ:Einsteinkoeffizienten} die Erzeugung einer Inversion durch optisches Pumpen nicht möglich ist. Bei einem 3-Niveau-System gibt es ein Hilfsniveau $E_3$ welches sich dadurch auszeichnet, dass es ein breites Absorptionsband, dass Licht einer Blitzlampe gut absorbieren kann und dann schnell in Niveau $E_2$ zerfällt. Entscheidender Nachteil ist, dass hier eine hohe Pumprate nötig ist. Dieses Problem löst das 4-Niveau-System, indem hier der Laserübergang nicht zum Grundzustand sondern zu einem Zwischenzustand erfolgt. \\
-Um den Lichtverstärker zum Oszillator - dem Laser-zu machen, bedienen wir uns einem Prinzip der Elektronik, der Rückkopplung: Ein Teil der verstärkten Ausgangsstrahlung wird wieder in das System zurückgeführt. Dies wird realisiert durch zwei Spiegel rechts und links vom aktiven Medium. Sie bilden den \textit{Resonator}. Entscheidend für die Entstehung der Oszillation ist, dass die Verluste pro Umlauf geringer sind, als die Verstärkung pro Umlauf. Für die Verstärkung nach einem doppelten Durchlauf wird in Analogie zum \textsc{Lambert-Beer}'schen Gesetz für die Absorption
+Um den Lichtverstärker zum Oszillator - dem Laser-zu machen, wird sich einem Prinzip der Elektronik bedient, der Rückkopplung: Ein Teil der verstärkten Ausgangsstrahlung wird wieder in das System zurückgeführt. Dies wird realisiert durch zwei Spiegel rechts und links vom aktiven Medium. Sie bilden den \textit{Resonator}. Entscheidend für die Entstehung der Oszillation ist, dass die Verluste pro Umlauf geringer sind, als die Verstärkung pro Umlauf. Für die Verstärkung nach einem doppelten Durchlauf wird in Analogie zum \textsc{Lambert-Beer}'schen Gesetz für die Absorption
 \begin{align}
-  I(2L)=I(0)\cdot \exp{g2L} \qquad \text{mit} g = B_{21} \frac{h\nu}{c} (N_2-N_1)
+  I(2L)=I(0)\cdot \exp(g2L) \qquad \text{mit } g = B_{21} \frac{h\nu}{c} (N_2-N_1)
 \end{align}
-gefunden. Gleichzeitig kann, wenn alle Verluste (Spiegeltransmission, Streuung, Beugung, Absorption) in einem Verlustkoeffizienten $\kappa$ zusammengefasst werden, die Bedingung, dass die Verstärkung die die Verluste nach einem Umlauf kompensiert, als
+gefunden. Gleichzeitig kann, wenn alle Verluste (Spiegeltransmission, Streuung, Beugung, Absorption) in einem Verlustkoeffizienten $\kappa$ zusammengefasst werden. Die Bedingung, dass die Verstärkung die Verluste nach einem Umlauf kompensiert ergibt sich als
 \begin{align}
-  I(0)=I(2L)\cdot \exp{-\kappa}
+  I(0)=I(2L)\cdot \exp(-\kappa).
 \end{align}
 Da der Laser wie eingangs beschrieben, nur dann oszillieren kann, wenn die Verstärkung größer oder gleich den Verlusten pro Umlauf ist, ergibt sich so die \textit{zweite Laserbedingung}
 \begin{align}
@@ -198,8 +198,8 @@ Da der Laser wie eingangs beschrieben, nur dann oszillieren kann, wenn die Verst
 Die Erfüllung von \eqref{equ:zweiteLB} wird durch die Lage der zweiten Verlustlinie charakterisiert.
 
 
-\subsection{Der Inversionsabbau und Lamb-Dip}
- Der Laserprozess läuft folgendermaßen ab: In der zunächst eintretenden Einschwingphase liegen kleine Intensitäten vor. Bei diesen tritt eine exponentielle Verstärkung auf. Bei höheren Intensitäten wird die Inversion und damit die Verstärkung durch induzierte Emission zunehmend abgebaut. Bei konstantem Pumpen kommt es durch diesen zunehmenden Inversionsabbau zu einem Gleichgewichtszustand, der sogenannten Sättigung der Verstärkung. Die Besetzungsinversion wird dabei bis zur Verlustlinie abgebaut.
+\subsection{Der Inversionsabbau und Lamb-Dip}\label{sec:InversionsabbauLambDip}
+ Der Laserprozess läuft folgendermaßen ab. In der zunächst eintretenden Einschwingphase liegen kleine Intensitäten vor. Bei diesen tritt eine exponentielle Verstärkung auf. Bei höheren Intensitäten wird die Inversion und damit die Verstärkung durch induzierte Emission zunehmend abgebaut. Bei konstantem Pumpen kommt es durch diesen zunehmenden Inversionsabbau zu einem Gleichgewichtszustand, der sogenannten Sättigung der Verstärkung. Die Besetzungsinversion wird dabei bis zur Verlustlinie abgebaut.
 
 Bei homogener Linienverbreiterung können alle invertierten Atome mit dem Strahlungsfeld bzw. der Mode wechselwirken, so kann sie von allen Atomen ihre Verstärkung beziehen, der Abbau erfolgt, wie in Abbildung \ref{fig:homogen} gleichermaßen.
 
@@ -210,7 +210,7 @@ Bei homogener Linienverbreiterung können alle invertierten Atome mit dem Strahl
     \label{fig:homogen}
 \end{figure}
 
-Bei inhomogener Linienverbreiterung kann das Strahlungsfeld hingegen nur mit bestimmten Atomen wechselwirken, die Mode kann also nur einen Teil der invertierten Atome abbauen, nämlich die, die aufgrund der homogenen Linienbreite trotz des Dopplereffekts noch die Resonatorfrequenz haben. Die Verstärkung wird dann nur in einem engen Frequenzbereich um die Frequenz der wechselwirkenden Atome abgebaut, was in Abbildung \ref{fig:inhomogen} visualisiert ist. Aufgrund des sich ergebenden Bildes im Verstärkungsprofil spricht man vom ``hole burning''.
+Bei inhomogener Linienverbreiterung kann das Strahlungsfeld hingegen nur mit bestimmten Atomen wechselwirken, die Mode kann also nur einen Teil der invertierten Atome abbauen, nämlich die, die aufgrund der homogenen Linienbreite trotz des Dopplereffekts noch die Resonatorfrequenz haben. Die Verstärkung wird dann nur in einem engen Frequenzbereich um die Frequenz der wechselwirkenden Atome abgebaut, was in Abbildung \ref{fig:inhomogen} visualisiert ist. Aufgrund des sich ergebenden Bildes im Verstärkungsprofil wird vom ``hole burning'' gesprochen.
 
 \begin{figure}[htp]
     \centering
@@ -219,9 +219,9 @@ Bei inhomogener Linienverbreiterung kann das Strahlungsfeld hingegen nur mit bes
     \label{fig:inhomogen}
 \end{figure}
 
-Aufgrund des Dopplereffekts können beim Gaslaser nur Atome wechselwirken, die sich gerade mit der passenden Geschwindigkeit $\pm v_z$ in z-Richtung (Laserachsenrichtung) bewegen, sodass ihre Frequenz gerade der Resonatorfrequenz entspricht.  Symmetrisch um die Null kommt es bei $pm v_z$ zu einer Eindellung des Verstärkungsprofil bei der negativen sowie bei der positiven Geschwindigkeit. Zur Ausgangsleistung tragen hier zwei Gruppen von Atomen bei, nämlich die, die sich mit der Geschwindigkeit $v_z$ bewegen, sie sorgen für eine Emission des Lichts in positive z-Richtung und die, die sich mit der Geschwindigkeit $-v_z$ bewegen, sie sorgen für eine Emission des Lichts in negative z-Richtung, haben aber die gleiche Frequenz. Ist aber die Resonatorfrequenz gleich der Resonanzfrequenz des optischen Übergangs, verschiebt man die Frequenz also zur Linienmitte, kommt es zum Überlappen der beiden Löcher. Jetzt tragen nur noch Atome mit $v_z = 0$, also viel weniger, als in den anderen Fällen, zur Verstärkung bei. Es kommt deshalb zur Eindellung der Intensität. Da hier alle Atome $v_z = 0 $ haben, tritt auch kein Dopplereffekt mehr auf, weshalb die Eindellung bei jenem $\nu$ nur noch homogen verbreitert ist und keine Dopplerverbreiterung aufweist, weshalb gilt
+Aufgrund des Dopplereffekts können beim Gaslaser nur Atome wechselwirken, die sich gerade mit der passenden Geschwindigkeit $\pm v_z$ in z-Richtung (Laserachsenrichtung) bewegen, sodass ihre Frequenz gerade der Resonatorfrequenz entspricht.  Symmetrisch um die Null kommt es bei $pm v_z$ zu einer Eindellung des Verstärkungsprofils bei der negativen sowie bei der positiven Geschwindigkeit. Zur Ausgangsleistung tragen hier zwei Gruppen von Atomen bei, nämlich die, die sich mit der Geschwindigkeit $v_z$ bewegen, sie sorgen für eine Emission des Lichts in positive $z$-Richtung und die, die sich mit der Geschwindigkeit $-v_z$ bewegen, sie sorgen für eine Emission des Lichts in negative $z$-Richtung, haben aber die gleiche Frequenz. Ist aber die Resonatorfrequenz gleich der Resonanzfrequenz des optischen Übergangs, wird also die Frequenz zur Linienmitte verschoben, kommt es zum Überlappen der beiden Löcher. Jetzt tragen nur noch Atome mit $v_z = 0$, also viel weniger, als in den anderen Fällen, zur Verstärkung bei. Es kommt deshalb zur Eindellung der Intensität. Da hier alle Atome $v_z = 0 $ haben, tritt auch kein Dopplereffekt mehr auf, weshalb die Eindellung bei jenem $\nu$ nur noch homogen verbreitert ist und keine Dopplerverbreiterung aufweist, weshalb gilt
 \begin{align}
-  \Delta \nu_{HL} = \Delta \nu_{LD}
+  \Delta \nu_{HL} = \Delta \nu_{LD}.
 \end{align}
 
 
@@ -230,24 +230,24 @@ Im Laser treten longitudinale und transversale Moden  auf. Longitudinale Moden s
 \begin{align}
   n L = k_i \frac{\lambda}{2_i}
 \end{align}
-wobei $k_i$ die Anzahl der stehenden Halbwellen und $\lambda_i$ die Wellenlänge der i-ten Mode entsprechen, n ist der Brechungsindex und L die Länge des Resonators. Im Resonator werden jetzt nicht wie noch im Lichtverstärker ein Kontinuum von Frequenzen unter dem Verstärkungsprofil verstärkt, sondern nur die Eigenfrequenzen des Resonators erfahren eine Verstärkung. Die Selbstoszillation der Eigenfrequenzen ist nur möglich, da die induzierte Emission die Eigenschaften der Phasenstarre, der Frequenzidentität und der Polarisationserhaltung mitbringt. Wird die Frequenzdifferenz zwischen zwei stehenden Wellen mit k und k+1 betrachtet, ergibt sich der Frequenzabstand zwischen zwei Axialmoden zu
+wobei $k_i$ die Anzahl der stehenden Halbwellen und $\lambda_i$ die Wellenlänge der $i$-ten Mode entsprechen, $n$ ist der Brechungsindex und $L$ die Länge des Resonators. Im Resonator werden jetzt nicht wie noch im Lichtverstärker ein Kontinuum von Frequenzen unter dem Verstärkungsprofil verstärkt, sondern nur die Eigenfrequenzen des Resonators erfahren eine Verstärkung. Die Selbstoszillation der Eigenfrequenzen ist nur möglich, da die induzierte Emission die Eigenschaften der Phasenstarre, der Frequenzidentität und der Polarisationserhaltung mitbringt. Wird die Frequenzdifferenz zwischen zwei stehenden Wellen mit $k$ und $k+1$ betrachtet, ergibt sich der Frequenzabstand zwischen zwei Axialmoden zu
 \begin{align}
   \Delta \nu = \frac{c}{2nL}
 \end{align}
-Transversalmoden treten durch eine leichte Phasenverschiebung bei der Reflexion an den Resonatorspiegeln, die sich in einer kleinen Frequenzänderung ausdrückt. Jeweils gleiche transversale Moden haben aber ebenfalls einen konstanten Frequenzabstand, wie die longitudinalen.
+Transversalmoden treten durch eine leichte Phasenverschiebung bei der Reflexion an den Resonatorspiegeln auf, die sich in einer kleinen Frequenzänderung ausdrückt. Jeweils gleiche transversale Moden haben aber ebenfalls einen konstanten Frequenzabstand, wie die longitudinalen.
 
 \subsection{Gaußsche Strahlenoptik}
-Um die Eigenschaften der Strahlenoptik, welche die Ausbreitung von Licht in optischen Systemen beschreibt, mit der Wellenoptik zu vereinen, werden Gaußstrahlen eingeführt. Sie stellen eine paraxiale Lösung der \textsc{Helmholtz}-Gleichung dar und eignen sich zur Beschreibung der Ausbreitung kohärenter Laserstrahlen. Ein kollimierter Laserstrahl propagiert gerichtet in einem homogenen Material. Aufgrund von Dispersionseffekten divergiert der Gaußstrahl jedoch. Der Gaußstrahl wird im Gegensatz zu einer ebenen Welle modelliert mit einer gaußförmig verlaufenden Amplitude entlang axialer Richtung. Damit lässt sich die komplexe Amplitude des Gaußstrahles schreiben als~\cite{Saleh}
+Um die Eigenschaften der Strahlenoptik, welche die Ausbreitung von Licht in optischen Systemen beschreibt, mit der Wellenoptik zu vereinen, werden Gaußstrahlen eingeführt. Sie stellen eine paraxiale Lösung der \textsc{Helmholtz}-Gleichung dar und eignen sich zur Beschreibung der Ausbreitung kohärenter Laserstrahlen. Ein kollimierter Laserstrahl propagiert gerichtet in einem homogenen Material. Aufgrund von Beugungseffekten divergiert der Gaußstrahl jedoch. Der Gaußstrahl wird im Gegensatz zu einer ebenen Welle modelliert mit einer gaußförmig verlaufenden Amplitude entlang radialer Richtung. Damit lässt sich die komplexe Amplitude des Gaußstrahles schreiben als~\cite{Saleh}
 \begin{align}
-  E(\bm{r}) = E_0 \frac{W_0}{W(z)} \exp\qty(-\frac{\varrho}{W(Z)})^2 \exp[-\mathrm{i}\qty(kz + k \frac{\varrho^2}{2R(z)}+ \arctan\qty(\frac{z}{z_R})^2)],
+  E(\bm{r}) = E_0 \frac{w_0}{w(z)} \exp\qty(-\frac{\varrho^2}{w(Z)^2}) \exp[-\mathrm{i}\qty(kz + k \frac{\varrho^2}{2R(z)}+ \arctan\qty(\frac{z}{z_r})^2)],
 \end{align}
-wobei $\varrho^2 = x^2 + y^2$ die transversale Koordinate beschreibt. Der Ausdruck $W(z)$ beschreibt den Radius des Strahls entlang der Ausbreitungsrichtung $z$ und $R(z)$ definiert den Krümmungsradius der Wellenfront aufgrund der Divergenz des Strahls. Sie sind definiert als
+wobei $\varrho^2 = x^2 + y^2$ die transversale Koordinate beschreibt. Der Ausdruck $w(z)$ beschreibt den Radius des Strahls entlang der Ausbreitungsrichtung $z$ und $R(z)$ definiert den Krümmungsradius der Wellenfront aufgrund der Divergenz des Strahls. Sie sind definiert als
 \begin{align}\label{eqn:Strahlradius_Krümmung}
-  W(z) = W_0 \sqrt{1+\qty(\frac{z}{z_R})^2}, \qquad R(Z) = z \qty[1+\qty(\frac{z_R}{z})^2]
+  w(z) = w_0 \sqrt{1+\qty(\frac{z}{z_r})^2}, \qquad R(Z) = z \qty[1+\qty(\frac{z_r}{z})^2]
 \end{align}
-Die Größe $z_R$ wird \textsc{Rayleigh}-Länge genannt und beschreibt den Abstand zum Fokuspunkt ($z=0$) bei dem die Leistung der Strahlungsachse auf die Hälfte des Maximalwertes abgefallen ist. Es ergibt sich
+Die Größe $z_r$ wird \textsc{Rayleigh}-Länge genannt und beschreibt den Abstand zum Fokuspunkt ($z=0$) bei dem die Leistung der Strahlungsachse auf die Hälfte des Maximalwertes abgefallen ist. Es ergibt sich
 \begin{align}\label{eqn:z_r}
-  z_R = \frac{\pi W_0^2}{\lambda}.
+  z_r = \frac{\pi W_0^2}{\lambda}.
 \end{align}
 
 \begin{figure}[htp]
@@ -265,7 +265,7 @@ Wie in der Strahlenoptik lässt sich die Ausbreitung eines Gaußstrahls mithilfe
 \end{pmatrix} & \text{Freiraum der Länge }L \label{eqn:Matrix_Freiraum}\\
   M &= \begin{pmatrix}
   1 & 0 \\ -\frac{1}{f} & 1
-\end{pmatrix} & \text{Linse mit Brennweite }f \label{eqn:Matrix_Brennweite}\\
+\end{pmatrix} & \text{Linse mit Brennweite }f \label{eqn:Matrix_Linse}\\
   M &= \begin{pmatrix}
   1 & 0 \\ \frac{2}{R} & 1
 \end{pmatrix} & \text{Spiegel mit Krümmungsradius }R.
@@ -322,7 +322,7 @@ Die resonante Übertragung der Energie von He auf Neon ist der hauptsächliche P
   \label{fig:Aufbau}
 \end{figure}
 
-Der Aufbau des He-Ne-Lasers ist in Abbildung \ref{fig:Aufbau} dargestellt. Die Elektronen, die für die Anregung des Heliums nötig sind, entstehen durch Gasentladung. Hierfür ist eine Hochspannung im Bereich \SI{2}{\kilo\volt} erforderlich. Technisch wichtig ist die bereits oben diskutierte kleine Kapillardurchmesser, sowie die Notwendigkeit von Spiegeln mit hohen Reflexionsvermögen, da unter realistischen Bedingungen nur eine Verstärkung von g$=\SI{0,1}{\per\meter}$ erzielt werden kann. Außerdem entscheidend ist für die Selektion einer Polarisationsrichtig die Verwendung von unter dem Brewster-Winkel geneigten Fenstern. Diese bewirken, dass nur senkrecht polarisiertes Licht die Kapillare verlässt. Typischerweise wird, wie auch im Versuch, an einem Spiegel ausgekoppelt, der z.B. ein Reflexionsvermögen von \SI{98}{\percent} aufweist. Das Mischungsverhältnis zwischen beiden Gasen bestimmt die emittierte Wellenlänge. Für die verwendete Rotlinie wird ein Verhältnis von 5:1 gewählt.
+Der Aufbau des He-Ne-Lasers ist in Abbildung \ref{fig:Aufbau} dargestellt. Die Elektronen, die für die Anregung des Heliums nötig sind, entstehen durch Gasentladung. Hierfür ist eine Hochspannung im Bereich \SI{2}{\kilo\volt} erforderlich. Technisch wichtig ist die bereits oben diskutierte kleine Kapillardurchmesser, sowie die Notwendigkeit von Spiegeln mit hohen Reflexionsvermögen, da unter realistischen Bedingungen nur eine Verstärkung von $g=\SI{0,1}{\per\meter}$ erzielt werden kann. Außerdem entscheidend ist für die Selektion einer Polarisationsrichtung die Verwendung von unter dem Brewster-Winkel geneigten Fenstern (siehe Anhang~\ref{sec:Anhang}). Diese bewirken, dass nur parallel polarisiertes Licht die Kapillare verlässt. Typischerweise wird, wie auch im Versuch, an einem Spiegel ausgekoppelt, der z.\,B. ein Reflexionsvermögen von \SI{98}{\percent} aufweist. Das Mischungsverhältnis zwischen beiden Gasen bestimmt die emittierte Wellenlänge. Für die verwendete Rotlinie wird ein Verhältnis von 5:1 gewählt.
 
 % *********************************************
 % ***** KAPITEL 4 *****************************
@@ -356,7 +356,7 @@ Die Funktionen $H_m(\xi)$ bezeichnen die Hermite-Polynome, wobei $H_1(\xi) = 1$ 
 \begin{align}
   E_{02}(0,y) \overset{!}{=} 0, \quad \Rightarrow \xi = \pm \frac{1}{\sqrt{2}} = \frac{y \sqrt{2}}{w(z)}.
 \end{align}
-Damit folgt direkt $w(z) = 2y$. Somit ergibt sich, dass der Abstand der Nullstellen der TEM$_{02}$-Mode mit der Bündelbreite $w(z)$ übereinstimmt. Die TEM$_{02}$-Mode kann erzwungen werden, indem ein dünner Draht in den Resonator platziert wird. Wird dieser nun in einer Nullstelle einer Mode positioniert, so bleibt die Feldverteilung dieser Mode unbeeinflusst und alle anderen Moden können ausgeblendet werden. Der durch die Messung ermittelte Radius $w(z)$ lässt sich nun angeben, in beide Gleichungen aus~\eqref{eqn:Strahlradius_Krümmung} ineinander eingesetzt werden. Für einen festen Bündelradius $w(z)$ ergibt sich die Breite der Strahltaille zu~\cite{Anleitung}
+Damit folgt direkt $w(z) = 2y$. Somit ergibt sich, dass der Abstand der Nullstellen der TEM$_{02}$-Mode mit der Bündelbreite $w(z)$ übereinstimmt. Die TEM$_{02}$-Mode kann erzwungen werden, indem ein dünner Draht in den Resonator platziert wird. Wird dieser nun in einer Nullstelle einer Mode positioniert, so bleibt die Feldverteilung dieser Mode unbeeinflusst und alle anderen Moden können ausgeblendet werden. Der durch die Messung ermittelte Radius $w(z)$ lässt sich nun angeben, indem beide Gleichungen aus~\eqref{eqn:Strahlradius_Krümmung} ineinander eingesetzt werden. Für einen festen Bündelradius $w(z)$ ergibt sich die Breite der Strahltaille zu~\cite{Anleitung}
 \begin{align}\label{eqn:Strahltaille_Experimentell}
   w_0(w,z) = \sqrt{\frac{1}{2}} \sqrt{w^2 \pm \sqrt{w^4-\frac{4z^2 \lambda^2}{\pi^2}}}.
 \end{align}
@@ -391,7 +391,7 @@ Für $L = \SI{75}{\centi\metre}$ ergibt sich in der Rechnung kein reelles Ergebn
 
 \paragraph{Strahltaillenbestimmung außerhalb des Resonators}$~$
 
-Zusätzlich zur Messung der Bündelbreite innerhalb des Resonators wurde die durch den Draht erzwungene TEM$_{02}$-Mode auf einen Schirm im Abstand von $D = \SI{4.84}{\metre}$ projiziert und dort der Abstand der Nullstellen der TEM$_{02}$-Mode mithilfe von Millimeterpapier ausgemessen. Zur Berechnung der Strahltaille kann die Veränderung des $q$-Parameters genutzt werden. Hierfür wird angenommen, dass der Spiegel zur Auskoppelung des Laserstrahls aus dem Resonator als eine Linse wirkt, deren Brennweite unter Annahme einer dünnen Linse mit der ``Linsenmacher''-Formel berechnet werden kann~\cite{Hecht}:
+Zusätzlich zur Messung der Bündelbreite innerhalb des Resonators wurde die durch den Draht erzwungene TEM$_{02}$-Mode auf einen Schirm im Abstand von $D = \SI{4.84}{\metre}$ projiziert und dort der Abstand der Nullstellen der TEM$_{02}$-Mode mithilfe von Millimeterpapier ausgemessen. Zur Berechnung der Strahltaille kann die Veränderung des $q$-Parameters genutzt werden. Hierfür wird angenommen, dass der Spiegel zur Auskoppelung des Laserstrahls aus dem Resonator als eine Linse wirkt, deren Brennweite unter Annahme einer dünnen Linse mit der ´´Linsenmacher''-Formel berechnet werden kann~\cite{Hecht}:
 \begin{align}
   \frac{1}{f} = (n-1)\qty(\frac{1}{R_1}-\frac{1}{R_2}), \qquad \text{mit } R_2 = \infty, R_1 = -\SI{0.5}{\metre}, n = 1.5.
 \end{align}
@@ -458,12 +458,12 @@ Die Ergebnisse sind in Tabelle~\ref{tab:Strahltaille_außerhalb} zusammengefasst
 \end{table}
 
 Der Vergleich für die berechneten Bündelbreiten zeigt, dass die Berücksichtigung der Linsenwirkung des Auskoppelspiegels nicht vernachlässigbar ist. Die größte Fehlerquelle in diesem Teil ist die Ausmessung der Nullstellen der TEM$_{02}$-Moden auf dem Schirm, da diese meist \SIrange{1}{2}{\milli\metre} breit sind. \\
-Es wird weiterhin noch angemerkt, dass durch Ausmessen der Strahltaille außerhalb des Resonators prinzipiell eine Bestimmung der Strahltaille im Resonator möglich ist, indem die Matrix $M$ invertiert wird und der $q$-Parameter des Gaußbündels auf dem Schirm $q = z_F - z_R'$ eingesetzt wird (für die Bestimmung des $q$-Parameters ist die Kenntnis der Strahltaille $w_0'$ außerhalb nötig).
+Es wird weiterhin noch angemerkt, dass durch Ausmessen der Strahltaille außerhalb des Resonators prinzipiell eine Bestimmung der Strahltaille im Resonator möglich ist, indem die Matrix $M$ invertiert wird und der $q$-Parameter des Gaußbündels auf dem Schirm $q = z_F - z_r'$ eingesetzt wird (für die Bestimmung des $q$-Parameters ist die Kenntnis der Strahltaille $w_0'$ außerhalb nötig).
 
 \newpage
 \subsection{Messung der Laserleistung}
 
-Im Folgenden Versuchsteil wurde jeweils die Laserleistung für verschiedene Moden und Resonatorlängen gemessen. Die Erzeugung der Moden erfolgte wieder durch eine Positionierung des Drahtes im Resonator. Zur Aufnahme der Grundmode muss beachtet werden, dass sie sich optisch kaum vom normalen Laserstrahl unterscheidet, jedoch liegen dort alle Moden überlagert vor, was eine Leistungsmessung verfälschen würde. Da sich die Grundmode jedoch nicht durch einen Draht erzeugen lässt, wurde hier eine Blende in den Strahlengang platziert, da die höheren Moden jeweils eine größere transversale Ausdehnung besitzen und auf der Strahlachse eine Nullstelle aufweisen. Die Blendenpositionierung kann durch Variation der Drahtposition überprüft werden, da entweder nur ein kreisförmiger Strahl oder gar nichts zu sehen sein sollte. Der Verlauf der Laserleistung ist in Abbildung~\ref{fig:Laserleistung} gezeigt und die Messwerte nochmals in Tabelle~\ref{tab:Laserleistung} dargestellt.
+Im folgenden Versuchsteil wurde jeweils die Laserleistung für verschiedene Moden und Resonatorlängen gemessen. Die Erzeugung der Moden erfolgte wieder durch eine Positionierung des Drahtes im Resonator. Zur Aufnahme der Grundmode muss beachtet werden, dass sie sich optisch kaum vom normalen Laserstrahl unterscheidet, jedoch liegen dort alle Moden überlagert vor, was eine Leistungsmessung verfälschen würde. Da sich die Grundmode jedoch nicht durch einen Draht erzeugen lässt, wurde hier eine Blende in den Strahlengang platziert, da die höheren Moden jeweils eine größere transversale Ausdehnung besitzen und auf der Strahlachse eine Nullstelle aufweisen. Die Blendenpositionierung kann durch Variation der Drahtposition überprüft werden, da entweder nur ein kreisförmiger Strahl oder gar nichts zu sehen sein sollte. Der Verlauf der Laserleistung ist in Abbildung~\ref{fig:Laserleistung} gezeigt und die Messwerte nochmals in Tabelle~\ref{tab:Laserleistung} dargestellt.
 
 \begin{table}[htp]
   \centering
@@ -482,11 +482,11 @@ Im Folgenden Versuchsteil wurde jeweils die Laserleistung für verschiedene Mode
 
 \input{Bilder/Laserleistung.tex}
 
-Abbildung~\ref{fig:Laserleistung} zeigt, dass die Leistung mit steigender Resonatorlänge abnimmt. Dies lässt sich dadurch begründen, dass aufgrund der sinkenden Strahltaille und steigenden Divergenz Beugungsverluste auftreten. Im Grenzfall $L = 2R$ des konzentrischen Resonators sind die Verluste so groß, dass der Resonator instabil wird. Nun noch Strahlen, die durch das Zentrum des Resonators verlaufen, verbleiben dort. Zur Charakterisierung der transversalen Moden eignet sich die Beugungsmaßzahl $M^2$. Für eine TEM$_{0n}$ Mode lässt sie sich schreiben als~\cite{Eichler_strahlqualitaet}
+Abbildung~\ref{fig:Laserleistung} zeigt, dass die Leistung mit steigender Resonatorlänge abnimmt. Dies lässt sich dadurch begründen, dass aufgrund der sinkenden Strahltaille und steigenden Divergenz Beugungsverluste auftreten. Im Grenzfall $L = 2R$ des konzentrischen Resonators sind die Verluste so groß, dass der Resonator instabil wird. Nur noch Strahlen, die durch das Zentrum des Resonators verlaufen, verbleiben dort. Zur Charakterisierung der transversalen Moden eignet sich die Beugungsmaßzahl $M^2$. Für eine TEM$_{0n}$ Mode lässt sie sich schreiben als~\cite{Eichler_strahlqualitaet}
 \begin{align}
   M_x^2 = 1, \quad M_y^2 = 2n +1.
 \end{align}
-Die Beugungsmaßzahl limitiert die Fokussierung bei einer vorgegebenen Strahldivergenz und damit die maximale Leistungsdichte. Es ergibt sich folgender Zusammenhang:~\cite{Sigrist}
+Die Beugungsmaßzahl limitiert die Fokussierung bei einer vorgegebenen Strahldivergenz und damit die maximale Leistungsdichte. Es ergibt sich folgender Zusammenhang~\cite{Sigrist}
 \begin{align}
   \theta w_0 = M^2 \frac{\lambda}{\pi}.
 \end{align}
@@ -561,7 +561,7 @@ befindet, sich, bildlich gesprochen, unter das Verstärkungsprofil schiebt. Aus 
 Diese Überlegung erlaubt es, eine Umrechnung von Zeitbereich in Frequenzbereich durchzuführen. Es gilt
 \begin{align}
   \Delta \nu = \Delta \text{t}
-\end{align}.
+\end{align}
 und
 \begin{align}
   \Delta \nu = \frac{c}{2nL} \overset{n=1}{=} \frac{c}{2L} \overset{L=\SI{0,17}{\meter}}{=} \frac{c}{2\cdot \SI{0,17}{\meter}}=\SI{881}{\mega\hertz}
@@ -594,7 +594,7 @@ Das theoretische \textit{Auflösungsvermögen} dieses Spektrometers ist bestimmt
   \frac{\nu}{\Delta\nu} \approx 6,8\cdot10^8
 \end{align}
 Im \textit{Vergleich zum Auflösungsvermögen eines Prismas} wird deutlich, welche entscheidende Verbesserung durch das Laserspektrometer gewonnen werden kann. Bei einem Flintglas-Prisma mit der Basislänge $b =\SI{1}{\centi\meter}$ beläuft sich die Auflösung auf $A \approx 10^3$, was um vielen Größenordnungen unter der Auflösung des Laserspektrometers liegt. \\
-An der Darstellung des Frequenzspektrums in Abbildung \ref{fig:Frequenzverlauf} ist deutlich die Eindellung in der Mitte des Spektrums, der sogenannte \textit{Lamb-Dip} zu sehen. Der dieser Eindellung zugrunde liegende Effekt ist, wie in Abschnitt \ref{sec:InversionsabbauLambDip} beschrieben, der Dopplereffekt. Ebenso ist dort begründet, dass die Breite des Lamb-Dips ungefähr der homogenen Linienverbreiterung entspricht, sodass wir mit den Daten aus Abbildung \ref{fig:Frequenzverlauf} für die homogene Linienverbreiterung erhalten
+An der Darstellung des Frequenzspektrums in Abbildung \ref{fig:Frequenzverlauf} ist deutlich die Eindellung in der Mitte des Spektrums, der sogenannte \textit{Lamb-Dip} zu sehen. Der dieser Eindellung zugrunde liegende Effekt ist, wie in Abschnitt \ref{sec:InversionsabbauLambDip} beschrieben, der Dopplereffekt. Ebenso ist dort begründet, dass die Breite des Lamb-Dips ungefähr der homogenen Linienverbreiterung entspricht, sodass mit den Daten aus Abbildung \ref{fig:Frequenzverlauf} für die homogene Linienverbreiterung folgt
 \begin{align}
   \Delta \nu_{HL} \approx \SI{154,3}{\mega \hertz}
 \end{align}
@@ -611,11 +611,12 @@ Somit wird deutlich, dass die Dopplerverbreiterung die entscheidende Verbreiteru
 
 \subsubsection{optisches Heterodyn}
 Indem der Singlemodelaser im Wobbelungsbetrieb mit dem Multimodelaser überlagert wird, lassen sich die Lagen der Axialmoden des Multimodelasers feststellen: Immer dann, wenn die Frequenz des Singlemodelasers, die durch die Wobbelung periodisch variiert wird, mit der Frequenz des Multimodelasers übereinstimmt, kommt es zur konstruktiven Interferenz und auf dem Spektrum tritt ein Ausschlag auf. \\
-Zu beachten ist, dass damit die Interferenz überhaupt mit dem integrierenden Photodetektor detektiert werden kann, die Abstände der Interferenzmaxima kleiner seien müssen als die Ausdehnung des Photodetektors. Mit einfachen geometrischen Überlegungen ergibt sich, dass bei einer Detektorausdehnung von \SI{1}{\milli\meter} der Winkel der beiden Laser sich nur um $6\cdot 10^{-4}$ unterscheiden darf. Es ist also eine sehr genaue Justage und ein möglichst großer Abstand zwischen Detektor und Lasern nötig. \\
+Zu beachten ist, dass damit die Interferenz überhaupt mit dem integrierenden Photodetektor detektiert werden kann, die Abstände der Interferenzmaxima kleiner sein müssen als die Ausdehnung des Photodetektors. Mit einfachen geometrischen Überlegungen ergibt sich, dass bei einer Detektorausdehnung von \SI{1}{\milli\meter} der Winkel der beiden Laser sich nur um $6\cdot 10^{-4}$ unterscheiden darf. Es ist also eine sehr genaue Justage und ein möglichst großer Abstand zwischen Detektor und Lasern nötig. \\
 Der Aufbau hat sich dahingehend verändert, dass eine Irisblende in den Strahlengang eingesetzt wurde. Durch diese werden höhere Transversalmoden geblockt, denn diese haben ihre Intensität hauptsächlich in größerem radialen Abstand. Durch die teilweise geschlossene Irisblende werden die Verluste für diese Transversalmoden als so erhöht, dass diese nach der zweiten Laserbedingung nicht mehr anschwingen können. \\
 Es werden mehrere Schwerpunkte untersucht. Zum einen werden die Resonatorenlängen variiert, um zu untersuchen bzw. darzustellen, dass sich, wie die Theorie es vorhersagt, bei längerer Resonatorlänge, mehrere Axialmoden ausbilden. Dies ist in Abbildung \ref{fig:Resonatorveränderung} zu sehen. Hierbei wurden durch eine Irisblende wie oben beschrieben alle Transversalmoden verhindert, weshalb sich in den Messungen nur eine Transversalmode, die Grundmode, ausgebildet hat.
 
 \begin{figure}[htp]
+  \vspace{-5mm}
   \centering
   \begin{subfigure}{0.8\textwidth}
     \includegraphics[width=\textwidth]{Bilder/mehrereResonatorlaengen_50cm_1Mode.pdf}
@@ -629,13 +630,13 @@ Es werden mehrere Schwerpunkte untersucht. Zum einen werden die Resonatorenläng
     \includegraphics[width=\textwidth]{Bilder/1TransversaleMode_94cm.pdf}
     \caption{Resonatorlänge \SI{94}{\centi\meter}}
   \end{subfigure}
-  \caption{Signal des SML überlagert mit MML bei unterschiedlichen Resonatorlängen des MML. Höhere Transversalmoden durch Irisblende geblockt. Nur Grundmode kann anschwingen}
+  \caption{Signal des SML überlagert mit MML bei unterschiedlichen Resonatorlängen des MML. Höhere Transversalmoden durch Irisblende geblockt. Nur die Grundmode kann anschwingen}
   \label{fig:Resonatorveränderung}
 \end{figure}
 
 \FloatBarrier
 
-Der oben theoretisch hergeleitete Einfluss der Irisblende wird in folgender Messung, die in Abbildung \ref{fig:Transversalemode} dargestellt ist, nachgewiesen. Während der ersten Messung war die Irisblende soweit geschlossen, dass bereits die erste höhere Transversalmode ausgeblendet war. In der zweiten Messung wurde sie soweit geöffnet, dass erst die dritte Transversalmode die Blende nicht passieren konnte. Dass in Messung zwei die zweite Transversalmode tatsächlich anschwingt, wird an den nur in kleinem Abstand zur ersten Mode auftretenden Intensitätsverstärkung deutlich. Jeweils gleiche Frequenzen, also die der jeweils zweiten Transversalmoden haben wieder den gleichen Abstand. Es wurde eine Resonatorlänge von \SI{94}{\centi\meter} verwendet.
+Der oben theoretisch hergeleitete Einfluss der Irisblende wird in folgender Messung, die in Abbildung \ref{fig:Transversalmoden} dargestellt ist, nachgewiesen. Während der ersten Messung war die Irisblende soweit geschlossen, dass bereits die erste höhere Transversalmode ausgeblendet war. In der zweiten Messung wurde sie soweit geöffnet, dass erst die dritte Transversalmode die Blende nicht passieren konnte. Dass in Messung zwei die zweite Transversalmode tatsächlich anschwingt, wird an den nur in kleinem Abstand zur ersten Mode auftretenden Intensitätsverstärkung deutlich. Jeweils gleiche Frequenzen, also die der jeweils zweiten Transversalmoden haben wieder den gleichen Abstand. Es wurde eine Resonatorlänge von \SI{94}{\centi\meter} verwendet.
 
 \begin{figure}[htp]
   \centering
@@ -655,8 +656,9 @@ Der oben theoretisch hergeleitete Einfluss der Irisblende wird in folgender Mess
 %
 Anhand der folgenden Messung, welche in Abbildung \ref{fig:berührung} zu sehen ist, wird die Empfindlichkeit des Aufbaus deutlich. Bereits eine leichte Berührung des Aufbaus des MML und infolge dessen eine kleine Längenänderung des Resonators auftritt, drückt sich im gemessenen Signal aus. Das bedeutet, dass bereits Längenänderungen im Nanometerbereich mit der Messanordnung vermessen werden können. In der Messung wurde eine Resonatorlänge von \SI{50}{\centi\meter} verwendet und die Irisblende so eingestellt, dass nur eine transversale Mode anschwingen kann.
 
-\begin{figure}[htp]
+\begin{figure}[ht]
   \centering
+  \vspace{-5mm}
   \begin{subfigure}{0.8\textwidth}
     \includegraphics[width=\textwidth]{Bilder/ungedrueckt_50cm_1Mode.pdf}
     \caption{ohne Druck auf Halterung des Aufbaus}
@@ -669,29 +671,30 @@ Anhand der folgenden Messung, welche in Abbildung \ref{fig:berührung} zu sehen 
   \label{fig:berührung}
 \end{figure}
 
-
 \subsubsection{Kurzzeitfluktuationen}
 Um die Kurzzeitfluktuationen der Laserfrequenz zu untersuchen wird das Schwebungssignal zwischen den Frequenzen beider Laser in Echtzeit, d.\,h. ohne Wobbelung des Singlemodelasers eingestellt. Dazu überlagern sich beide Laser weiterhin, das Spannungssignal, dass beim Singlemodelaser für die Länge des Resonators sorgt, ist jetzt jedoch nicht mehr als Dreiecksspannung, sondern als konstante Offsetspannung eingestellt, die so gewählt wird, dass die Frequenzen beider Laser sich nur minimal unterscheiden. Es kommt zu einer Schwebung, die in Abbildung~\ref{fig:Schwebung} zu sehen ist.
 
 \begin{figure}[htp]
+  \vspace{-5mm}
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Schwebungssignal.pdf}
     \caption{Schwebungssignal des Single- und des Multimodelasers}
     \label{fig:Schwebung}
 \end{figure}
 
-Anhand dieser lassen sich deutlich die Kurzzeitfluktuationen in der Frequenz des Laser erkennen. Zu sehen ist hier die Intensität, die abhängig ist von der Differenzfrequenz. Wird davon ausgegangen, dass der Referenzlaser nahezu fluktuationsfrei ist, ergeben sich die sichtbaren Änderungen der Frequenz also aus einer Frequenzfluktuation des Singlemodelasers. Eine Größenordnung der Kurzzeitfluktuationen ergibt sich, indem immer zwischen zwei gleichen Minima die Zeitdifferenz und damit die Periodendauer T bestimmt wird und diese der Zeit des rechten Minimas zugeordnet wird. Damit ergibt sich die Gerade in Abbildung \ref{fig: Kurzzeitfluktuationen} aus der die Größenordnung der Kurzzeitfluktuationen auf \SI{0,015}{\mega\hertz\per\micro\meter} bestimmt werden kann.
+Anhand dieser lassen sich deutlich die Kurzzeitfluktuationen in der Frequenz des Laser erkennen. Zu sehen ist hier die Intensität, die abhängig ist von der Differenzfrequenz. Wird davon ausgegangen, dass der Referenzlaser nahezu fluktuationsfrei ist, ergeben sich die sichtbaren Änderungen der Frequenz also aus einer Frequenzfluktuation des Singlemodelasers. Eine Größenordnung der Kurzzeitfluktuationen ergibt sich, indem immer zwischen zwei gleichen Minima die Zeitdifferenz und damit die Periodendauer $T$ bestimmt wird und diese der Zeit des rechten Minimas zugeordnet wird. Damit ergibt sich die Gerade in Abbildung \ref{fig:Kurzzeitfluktuationen} aus der die Größenordnung der Kurzzeitfluktuationen auf \SI{0,015}{\mega\hertz\per\micro\meter} bestimmt werden kann.
 
-\begin{figure}[htp]
+\begin{figure}[h!t]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Kurzzeitfluktuationen.pdf}
     \caption{Kurzzeitfrequenzflukuationen in Abhängigkeit der Zeit}
       \label{fig:Kurzzeitfluktuationen}
 \end{figure}
 
-Des Weiteren wird auch makroskopisch ein charakteristischer Verlauf deutlich. Wird das Signal auf etwas größeren Zeitskalen betrachtet, fällt das Anschwingen der Schwebungen im regelmäßigem Bild auf. Jeweils in ein kürzerer und ein längerer Abstand wechseln sich ab. Die Erklärung dafür ist die \SI{50}{\hertz} Netzfrequenz bzw. eine Oberschwingung dieser.
+Des Weiteren wird auch auf größeren Zeitskalen ein charakteristischer Verlauf deutlich. Wird das Signal in einem größeren Zeitbereich betrachtet, fällt das Anschwingen der Schwebungen in regelmäßigen Abständen (siehe Abbildung~\ref{fig:Schwebungssignal_makro}) auf. Jeweils ein kürzerer und ein längerer Abstand wechseln sich ab. Die Erklärung dafür ist die \SI{50}{\hertz} Netzfrequenz bzw. eine Oberschwingung dieser.
 
-\begin{figure}[htp]
+\begin{figure}[h!t]
+  \vspace{-5mm}
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Fluktuationen_makroskopisch.pdf}
     \caption{Schwebungssignal auf größeren Zeitabständen}
@@ -703,10 +706,14 @@ Des Weiteren wird auch makroskopisch ein charakteristischer Verlauf deutlich. Wi
 % *********************************************
 \newpage
 \section{Zusammenfassung}
-Im Versuch konnten die Grundlagen, die Grundprinzipien und die charakteristischen Eigenschaften des Laser nachvollzogen und nachgemessen werden. So konnten durch unterschiedliche Platzierungen eines dünnen Drahtes unterschiedliche Transversal- sowie durch Variation der Resonatorlänge unterschiedliche Longitudinalmoden erzwungen werden, mit Hilfe der $TEM_02$ Mode, die Strahltaille innerhalb und außerhalb bestimmt sowie die Laserleistungen vermessen werden. Außerdem wurde der Wobbelungsbetrieb eines Lasers zur Aufnahme des Laserspektrums erforscht und anhand dessen charakteristische Größen wie die natürliche Linienbreite bestimmt. Durch Überlagerung eines Singlemodelaser und eines Multimodelasers, also Bildung eines optischen Heterodyns, konnten die Position der Moden letzteren bestimmt werden und daran deutlich die Veränderungen bei Längenänderungen beobachtet werden. Dessen Bedeutung als präzises Längenmessungsinstrument wurde deutlich. Außerdem konnten Kurzzeitfluktuationen des Lasers vermessen werden.
+Im Versuch konnten die Grundlagen, die Grundprinzipien und die charakteristischen Eigenschaften des Laser nachvollzogen und nachgemessen werden. So konnten durch unterschiedliche Platzierungen eines dünnen Drahtes unterschiedliche Transversal- sowie durch Variation der Resonatorlänge unterschiedliche Longitudinalmoden erzwungen werden. Unter Verwendung der TEM$_{02}$ Mode wurde die Strahltaille innerhalb und außerhalb  des Resonators bestimmt, sowie die Laserleistungen vermessen. Außerdem wurde der Wobbelungsbetrieb eines Lasers zur Aufnahme des Laserspektrums realisiert und anhand dessen charakteristische Größen wie die homogene Linienbreite bestimmt. Durch Überlagerung eines Singlemodelasers (SML) und eines Multimodelasers (MML), also Bildung eines optischen Heterodyns, konnten die Position der Moden dem MML bestimmt werden und daran deutlich die Veränderungen bei Längenänderungen beobachtet werden. Dessen Bedeutung als präzises Längenmessungsinstrument wurde deutlich. Außerdem konnten Kurzzeitfluktuationen des Lasers vermessen werden.
 
+\bibliography{Literatur}{}
+\bibliographystyle{plain}
+
+\newpage
 \appendix
-\section{Fresnel Formeln dielektrischer Medien}
+\section{Fresnel Formeln dielektrischer Medien}\label{sec:Anhang}
 Im Folgenden wird die Bedeutung der \textsc{Fresnel}'schen Formeln für die Reflexion an Grenzflächen verdeutlicht. Für ideale dielektrische Medien ist der Absorptionskoeffizient $\kappa$ des komplexen Brechungsindex gleich Null. Auf beiden Seiten der Grenzfläche wird elektromagnetische Strahlung nicht absorbiert. Damit vereinfachen sich die \textsc{Fresnel}'schen Formeln und es gilt für den Transmissionsfaktor $r$ und Reflexionsfaktor $t$~\cite{Demtroeder2}
 \begin{itemize}
   \item \emph{Senkrechte Polarisation} (TE)
@@ -733,6 +740,5 @@ Das entspricht der bekannten Reflektivität von Glas. Für senkrecht polarisiert
 
 % ***** Literaturverzeichnis ******************
 
-\bibliography{Literatur}{}
-\bibliographystyle{plain}
+
 \end{document}

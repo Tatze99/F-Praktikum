@@ -98,17 +98,18 @@
 \setlength{\marginparwidth}{1.7cm}
 \interfootnotelinepenalty=10000
 
-% Damit das auch im Mathemodus anwendbar ist und dort z.B. die Leerzeichen nicht wie im Textmodus gesetzt werden.
+\pgfplotsset{
+tick label style={font=\small},
+label style={font=\small},
+legend style={font=\footnotesize},
+every axis post/.style={legend cell align={left}}}
 
-\pgfplotsset
-{compat=newest, % aktuelle Version: 1.16 [29.05.2018]
-	/pgf/number format/.cd, % cd steht fuer current directory
-	%  	use comma, % Komma als Dezimaltrennzeichen %%% UNCOMMENT THIS !!!
-	1000 sep={} % Legt das Tausendertrennzeichen fest
-}
+\pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
+
 %\usepgfplotslibrary{external} % Section 7.1.1 Using the Automatic Externalization Framework of TikZ
 %\tikzexternalize[prefix=FiguresTikZ/] % activate externalization! Use subdirectory [FiguresTikZ]
 \usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{polar}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{calc}

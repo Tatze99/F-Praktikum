@@ -1,7 +1,7 @@
 \begin{figure}[htp]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=\textwidth, height=6cm, ylabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xlabel=Radeinstellung in a.u., legend cell align={left}]
+    \begin{axis}[width=0.98\textwidth, height=6cm, ylabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xlabel=Radeinstellung in a.u., legend cell align={left}]
         \addplot[blue, thick] table[x index=0,y index=1, col sep=semicolon]{Daten/Eichung_SPM1_mitQuecksilberdapflampe.csv};
           \addplot[color=black,mark=*, only marks] coordinates {
     		(3.443, 2325)

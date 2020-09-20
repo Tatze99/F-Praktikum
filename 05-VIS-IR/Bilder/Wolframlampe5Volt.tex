@@ -1,7 +1,7 @@
 \begin{figure}[htp]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Spannung U in \si{volt}, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin = 500, xmax=3250, xtick={}, legend cell align={left}]
+    \begin{axis}[disabledatascaling, width=0.98\textwidth, height=6cm, ylabel=Spannung U in \si{volt}, xlabel=Wellenlänge $\lambda$ in \si{\nano\metre}, xmin = 500, xmax=3250, xtick={}, legend cell align={left}]
       \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Wolframlampe500-3200nm.txt};
       \addlegendentry{Referenzmessung}
       \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Glasprisma_Wolframlampe5V_kleinesHalbleiterplaettchen_3_6Grad_500nm_all100nmMaker_Spalt_500mu.txt};
@@ -10,6 +10,6 @@
       \addlegendentry{Germanium}
     \end{axis}
   \end{tikzpicture}
-  \caption{Transmissionsspektren von Silizium und Galiumarsenid im Vergleich zu einer Referenzmessung. Es muss jedoch beachtet werden, dass zur Aufnahme der Transmissionsspektren von Si und Ge eine höhere Verstärkung im Lock-In verwendet wurde, was einen quantitativen Vergleich der Kurven erschwert.}
+  \caption{Transmissionsspektren von Silizium und Germanium im Vergleich zu einer Referenzmessung. Es muss jedoch beachtet werden, dass zur Aufnahme der Transmissionsspektren von Si und Ge eine höhere Verstärkung im Lock-In verwendet wurde, was einen quantitativen Vergleich der Kurven erschwert.}
   \label{fig:Halbleitermessung}
 \end{figure}

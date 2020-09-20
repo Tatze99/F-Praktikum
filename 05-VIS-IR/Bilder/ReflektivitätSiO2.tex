@@ -1,12 +1,12 @@
 \begin{figure}[htp]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=\textwidth, height=6cm, ylabel=Spannung $U$ in \si{\volt}, xlabel=Wellenlänge $\lambda$ in \si{\micro\metre},xmin=1500, xmax=14000, legend cell align={left}, scaled x ticks={real:1000}, xtick scale label code/.code={}]
-      \addplot[blue, thick] table[x index=0,y index=1, col sep=semicolon]{Daten/Reflektivität_SiO2.csv};
+    \begin{axis}[width=0.98\textwidth, height=6cm, ylabel=Spannung $U$ in \si{\volt}, xlabel=Wellenlänge $\lambda$ in \si{\micro\metre},xmin=1500, xmax=14000, legend cell align={left}, scaled x ticks={real:1000}, xtick scale label code/.code={}]
+      \addplot[blue, thick] table[x index=0,y index=1, col sep=semicolon]{Daten/Reflektivitaet_SiO2.csv};
       \addlegendentry{\ce{SiO2}}
-      \addplot[orange, thick] table[x index=0,y index=2, col sep=semicolon]{Daten/Reflektivität_SiO2.csv};
+      \addplot[orange, thick] table[x index=0,y index=2, col sep=semicolon]{Daten/Reflektivitaet_SiO2.csv};
       \addlegendentry{Referenz (Spiegel)}
-      \addplot[green!50!black, thick] table[x index=0,y index=3, col sep=semicolon]{Daten/Reflektivität_SiO2.csv};
+      \addplot[green!50!black, thick] table[x index=0,y index=3, col sep=semicolon]{Daten/Reflektivitaet_SiO2.csv};
       \addlegendentry{Reflexionsrate}
     \end{axis}
   \end{tikzpicture}
