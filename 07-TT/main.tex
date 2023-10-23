@@ -282,7 +282,7 @@ Zu Beginn wird die Anfangstemperatur an den Platinwiderständen direkt mit der T
 \end{table}
 
 Es wurde jeweils eine Messung mit und ohne Kompensation des Leitungswiderstandes durchgeführt. Die Kompensation kann als Zahlenwert in das Multimeter eingegeben werden. Die Zuleitungswiderstände führen jeweils zur Hälfte hin und weg vom Platinwiderstand. Es ergab sich für den linken $R_1 = \SI{5.1}{\ohm}$ und $R_2 = \SI{4.7}{\ohm}$ für den rechten Zuleitungswiderstand. Für die Kompensation wurde der gemittelte Wert verwendet. Da die Vermessung der Leitungswiderstände für den Pt1000 Widerstand nicht möglich war, wurde hier der gleiche Widerstandswert angenommen. Tabelle~\ref{tab:Temperaturmessung} zeigt deutlich den Unterschied der Platinwiderstände ohne Kompensationsmessung. Für Pt100 ergibt sich ohne Leitungskompensation ein viel zu großer Temperaturwert, während der Zuleitungswiderstand beim Pt1000 ein prozentual geringeren Einfluss hat und das Ergebnis kaum verfälscht.
-
+ 
 \input{Bilder/Pt100.tex}
 
 Im weiteren Verlauf des Versuchs wird zur Temperaturmessung eine Konstantstromquelle verwendet und der temperaturabhängige Widerstand indirekt durch eine Spannungsmessung ermittelt. Zur Umrechnung der Widerstände in eine Temperatur wurden die Kalibrierungsdaten des Pt100 Sensors der Versuchsanleitung entnommen. Der Temperaturverlauf des Pt100 Sensors ist in Abbildung~\ref{fig:Pt100} dargestellt. Der Temperaturverlauf wurde zwischen den Literaturdaten interpoliert, damit beliebigen Widerständen im angegeben Bereich eine Temperatur zugeordnet werden kann.
@@ -361,11 +361,11 @@ Es zeigt sich, dass die Messwerte für beide Schaltungstypen beinahe identisch s
 
 In diesem Versuchsteil wurde der temperaturabhängige Widerstand eines golddotierten Germaniumhalbleiters untersucht. Dieser weist, wie in Abschnitt~\ref{sec:Widerstand} erläutert, eine exponentielle Abhängigkeit von der Temperatur auf. Der Halbleiter wurde in einem Zeitraum von \SI{2.5}{\hour} kontinuierlich mithilfe einer Gifford-McMahon Kleinkältemaschine von Zimmertemperatur auf \SI{80}{\kelvin} abgekühlt. Zur Aufzeichnung der Temperatur wurden ein Pt100 Widerstand in Vierleiterschaltung, ein Pt1000 Widerstand in Zweileiterschaltung und eine Siliziumdiode verwendet. Für die Datenauswertung wurde die Diode verwendet, da aufgrund der großen Änderung des Widerstands bei kryogenen Temperaturen die Temperaturbestimmung am genauesten erfolgt. Ein Vergleich der drei Temperaturbestimmungsarten in Abbildung~\ref{fig:Temperaturvergleich} zeigt jedoch, dass alle drei Widerstandsthermometer fast identische Temperaturwerte liefern, die sich maximal um \SI{\pm1}{\kelvin} unterscheiden.
 
-Die aufgenommenen Spannungswerte wurden mithilfe der in der Versuchsanleitung~\cite{Thurk} gegebenen Kalibrierungstabelle (siehe Abbildung~\ref{fig:Diode}) in Temperaturen umgerechnet. Als Referenzwiderstand wurde $R_0 = \SI{1}{\ohm}$ gewählt.
+Die aufgenommenen Spannungswerte wurden mithilfe der in der Versuchsanleitung~\cite{Thurk} gegebenen Kalibrierungstabelle (siehe Abbildung~\ref{fig:Diode}) in Temperaturen umgerechnet. Als Referenzwiderstand wurde $R_0 = \SI{1}{\ohm}$ gewählt.   
 
 Die Größe der Bandlücke lässt sich nun mithilfe von Gleichung~\eqref{eqn:Anstieg_Bandlücke} bestimmen. Dafür wird wird der natürliche Logarithmus $\ln(R_0/R)$ über die inverse Temperatur $1/T$ aufgetragen und eine lineare Funktion an die Messdaten angefittet, wie in Abbildung~\ref{fig:Halbleitermessung} dargestellt ist. Es ergibt sich nun für eine lineare Fitfunktion der Form $y(x) = a + b\cdot x$
 
-\input{Bilder/Halbleitermessung.tex}
+\input{Bilder/Halbleitermessung.tex} 
 
 \begin{align}
   \ln\qty(\frac{R_0}{R}) = - \frac{\Delta E}{k_B}\frac{1}{T} \quad \Rightarrow \quad \Delta E = - b \cdot k_B.
@@ -405,7 +405,7 @@ wobei $C_\text{Cu}$ die spezifische Wärmekapazität und $m_\text{Cu}$ die Masse
 \end{align}
 Die Masse des Kupferzylinders kann mithilfe des Volumens und der Dichte $\varrho = \SI[per-mode=symbol]{8960}{\kilo\gram\per\metre\cubed}$~\cite{Fastowski} von Kupfer bestimmt werden. Mit einem Durchmesser $d = \SI{3 \pm 0.05}{\centi\metre}$ und einer Höhe von $h=\SI{8.5\pm 0.05}{\centi\metre}$ ergibt sich eine Masse von
 \begin{align}
-  m = \varrho \cdot V = \varrho \frac{\pi d^2}{4}h = \SI{0.359\pm 0.021}{\kilo\gram}.
+  m = \varrho \cdot V = \varrho \frac{\pi d^2}{4}h = \SI{0.539\pm 0.018}{\kilo\gram}.
 \end{align}
 Ein Vergleich von~\eqref{eqn:Waermeuebergangszahl} mit~\eqref{eqn:Heizleistung} ergibt sich
 \begin{align}\label{eqn:alpha}
@@ -431,9 +431,9 @@ Die spezifische Wärmekapazität von Kupfer wurde an einem ausgewählten Punkt j
 Mithilfe des Siedepunkts von Stickstoff bei $T_\text{\ce{N2}} = \SI{77.4}{\kelvin}$ ergibt sich für die Wärmeübergangszahl $\alpha$ nach~\eqref{eqn:alpha}
 \begin{align}
   \alpha_\text{FS,exp.} &= %\frac{-0.359\cdot 312.1\cdot \SI{0.5762}{\watt}}{\SI{8.8e-3}{\metre\squared}(77.4-138)\si{\kelvin}} =
-  \SI{112\pm 17}{\watt\per\square\metre\per\kelvin}\\
+  \SI{169\pm 14}{\watt\per\square\metre\per\kelvin}\\
   \alpha_\text{BS,exp.} &= %\frac{-0.359\cdot 209.4\cdot \SI{0.3614}{\watt}}{\SI{8.8e-3}{\metre\squared}(77.4-80.5)\si{\kelvin}} =
-  \SI{930\pm 150}{\watt\per\square\metre\per\kelvin}
+  \SI{1394\pm 97}{\watt\per\square\metre\per\kelvin}
 \end{align}
 Die großen Fehlerbereiche ergeben sich aufgrund der nur recht ungenau bestimmbaren Masse des Kupferzylinders und der Oberfläche. Weitere mögliche Fehler durch die Wärmekapazität wurden nicht berücksichtigt. Es wurde zudem die Annahme getroffen, dass der Zylinder vollständig aus Kupfer besteht, jedoch befindet sich innerhalb noch der Pt100 Widerstand.
 
@@ -452,16 +452,16 @@ Für das Filmsieden ergibt sich mit $d = \SI{3}{\centi\metre} > \SI{1}{\centi\me
   \alpha_\text{BS,Theorie} &=
   \SI{1000\pm 170}{\watt\per\square\metre\per\kelvin}.
 \end{align}
-Es zeigt sich, dass die Fehlerbereich der Messung für das Blasensieden mit der Theorie übereinstimmen, beim Filmsieden jedoch nicht. Dies lässt sich durch die grobe Abschätzung des experimentellen Messfehlers unter Vernachlässigung des Fehlers der Wärmekapazität begründen.
+Es zeigt sich, dass die Fehlerbereich der Messung für das Filmsieden mit der Theorie übereinstimmen, beim Blasensieden jedoch nicht. Dies lässt sich durch die grobe Abschätzung des experimentellen Messfehlers unter Vernachlässigung des Fehlers der Wärmekapazität begründen.
 
 \subsubsection{Wärmeübergangszahl des Filmsiedens nach der Ähnlichkeitstheorie}
 
 Die Wärmeübertragung beim Filmsieden erfolgt ebenfalls durch Strahlung. Dabei lässt sich das Filmsieden eines verflüssigten Gases an der äußeren Oberfläche eines horizontalen Zylinders durch folgende Gleichung beschreiben~\cite{Fastowski}:
 \begin{align}\label{eqn:Filmsieden_Theorie}
   \frac{\alpha d}{\lambda_m} = 0.62 \qty[\frac{d^3 \varrho_m(\varrho_\text{fl}-\varrho_m)g \cdot l_d}{\lambda_m \eta_m \Delta T}\qty(1+0.4\frac{c_{p,m}\Delta T}{l_d})^2]^{\frac{1}{4}}.
-\end{align}
+\end{align} 
 Für den Temperaturunterschied wurde $\Delta T = (138-77.4)\si{\kelvin} = \SI{60.6}{\kelvin}$ angenommen. Die weiteren  von Stickstoff erforderlichen Größen sind mit der Fallbeschleunigung in Tabelle~\ref{tab:Groessen} zusammengefasst.
-\begin{table}[htp]
+\begin{table}[htp]  
   \centering
   \caption{Größen für die Bestimmung der Wärmeübergangszahl. Der Index $m$ weist darauf hin, dass für die charakteristischen Größen des Gases die mittlere Temperatur $\frac{1}{2}(T_\text{Cu}+T_\text{\ce{N2}}) = \SI{107.7}{\kelvin}$ verwendet wird.}
   \label{tab:Groessen}
@@ -671,7 +671,7 @@ Im Versuch wurden die Grundlagen der Festkörpereigenschaften Leitfähigkeit und
 Mithilfe einer Gifford-McMahon Kleinkältemaschine wurde ein golddotierter Germaniumhalbleiter abgekühlt und die Bandlücke bestimmt. Dabei konnte die Existens eines in der Nähe des Valenzbandes liegenden Akzeptorniveaus gezeigt werden. Unter Verwendung von flüssigen Stickstoff wurde ein Kupferzylinder von Raumtemperatur abgekühlt und das zeitliche Verhalten mit und ohne Isolierung gemessen. Dabei konnten die charakteristischen Siedebereiche, das Film- und Blasensieden beobachtet werden, wobei das Filmsieden bei der Umantelung mit Papier nicht auftrat. Für beide Siedebereiche wurde ein Wert für die Wärmeübergangszahl ermittelt, welche sowohl mit Literaturdaten, als auch der Ähnlichkeitstheorie verglichen wurden. Dabei lag der ermittelte Wert zwischen den beiden theoretischen Vergleichswerten.
 
 Über einen Zeitraum von drei Stunden wurden für zwei Proben aus Kupfer und Blei jeweils Aufheizungs- und Abkühlungskurven aufgenommen. Damit konnte die spezifische Wärmekapazität für zwei charakteristische Temperaturbereiche bestimmt werden. Hierfür wurde eine Betrachtung der Heizleistung und des thermischen Widerstandes zur Bestimmung der Wärmekapazität genutzt und ein zweites Verfahren, die Dual-Slope-Methode, angewendet. Für beide Verfahren ergaben sich Werte, die im Bereich der theoretischen Werte nach den Vorhersagen von \textsc{Debye} liegen.
-% ***** Literaturverzeichnis ******************
+% % ***** Literaturverzeichnis ******************
 \newpage
 \bibliography{Literatur}{}
 \bibliographystyle{plain}

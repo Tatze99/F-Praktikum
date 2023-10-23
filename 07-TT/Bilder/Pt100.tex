@@ -2,7 +2,7 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[disabledatascaling, width=0.98\textwidth, height=6cm, ylabel=Temperatur $T$ in \si{\kelvin}, xmin=0, xmax=120, xlabel={Widerstand $R$ in \si{\ohm}}]
-      \addplot[mark=*,mark size=1pt,blue, thick] file[x index=1,y index=2, delimiter=';']{Daten/Pt100_Kalibrierung.csv};
+      \addplot[mark=*,mark size=1pt,blue, thick] table[x index=0,y index=1]{Daten/Pt100_Kalibrierung.csv};
     \end{axis}
   \end{tikzpicture}
   \caption{Widerstandsabhängiger Temperaturverlauf des Pt100.}

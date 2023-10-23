@@ -2,7 +2,7 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[width=\textwidth, height=6cm, ylabel=$\ln\qty(\frac{R_0}{R})$, xmin=0.0035, xmax=0.0115, xlabel={$\frac{1}{T}$ in \si{\per\kelvin}}, legend cell align={left}, xtick={0.004, 0.006, 0.008, 0.010}, xticklabels={0.004, 0.006, 0.008, 0.010},  xtick scale label code/.code={}]
-      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Halbleitermessung_Logarithmisch_Diode.txt};
+      \addplot[blue, thick] table[x index=0,y index=1]{Daten/Halbleitermessung_Logarithmisch_Diode.txt};
       \addplot[orange, thick, domain=0.0035:0.0115]{2.62583-1698.34845*x};
       \legend{Messdaten, Lineare Anpassung};
       \node[anchor=west] (A) at (0.0037,-14){\begin{tabular}{|c | c|}

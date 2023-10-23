@@ -4,9 +4,9 @@
     \begin{axis}[disabledatascaling, width=.95\textwidth, height=6cm, ylabel=Temperatur $T$ in \si{\kelvin}, xmin=0, xmax=300, ymin=50, xlabel={Zeit $t$ in \si{\second}}, legend cell align={left}]
       \fill[fill=blue!50!black, opacity = 0.05] (10,0) rectangle (241,350);
       \fill[fill=green!50!black, opacity = 0.05] (300,0) rectangle (250,350);
-      \addplot[blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Pt100_abkuehlung_Widerstand.txt};
+      \addplot[blue, thick] table[x index=0,y index=1]{Daten/Kalibrierung_Pt100_abkuehlung_Widerstand.txt};
       \addlegendentry{ohne Isolierung}
-      \addplot[orange, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Pt100_Isolierung_Widerstand.txt};
+      \addplot[orange, thick] table[x index=0,y index=1]{Daten/Kalibrierung_Pt100_Isolierung_Widerstand.txt};
       \addlegendentry{mit Isolierung}
       \draw[dotted] (0,77.35) -- +(290,0);
       \node at (30,84){\SI{77.4}{\kelvin}};

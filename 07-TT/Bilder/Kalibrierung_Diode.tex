@@ -2,7 +2,7 @@
   \centering
   \begin{tikzpicture}
     \begin{axis}[disabledatascaling, width=\textwidth, height=6cm, ylabel=Temperatur $T$ in \si{\kelvin}, xmin=0.1, xmax=1.7, xlabel={Spannung $U$ in \si{\volt}}]
-      \addplot[mark=*,mark size=1pt,blue, thick] file[x index=1,y index=2]{Daten/Kalibrierung_Diode.csv};
+      \addplot[mark=*,mark size=1pt,blue, thick] table[x index=0,y index=1]{Daten/Kalibrierung_Diode.csv};
     \end{axis}
   \end{tikzpicture}
   \caption{Spannungsabhängiger Temperaturverlauf der Siliziumdiode. Es handelt sich um aus der Versuchsanleitung entnommene Kalibrierungsdaten.}
